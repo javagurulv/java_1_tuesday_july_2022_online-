@@ -1,0 +1,13 @@
+What is GIT?
+
+GIT is a distributed version control system
+and source code management (SCM) system
+with an emphasis to handle small and large
+projects with speed and efficiency.
+
+
+What is a repository in GIT?
+
+A repository contains a directory named .git,
+where git keeps all of its metadata for the repository.
+The content of the .git directory are private to git.

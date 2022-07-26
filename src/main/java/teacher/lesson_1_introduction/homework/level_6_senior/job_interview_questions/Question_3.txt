@@ -1,0 +1,11 @@
+What is Java compiler?
+
+A Java compiler is a compiler for the programming language Java.
+The most common form of output from a Java compiler is Java class
+files containing platform-neutral Java bytecode, but there are also
+compilers that output optimized native machine code for a particular
+hardware/operating system combination.
+
+The Java virtual machine (JVM) loads the class files and either interprets
+the bytecode or just-in-time compiles it to machine code and then possibly
+optimizes it using dynamic compilation.

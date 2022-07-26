@@ -1,0 +1,162 @@
+WARNING: не создавайте лишние свойства на уровне класса.
+Какой смысл в свойствах number и isEven?
+Эти свойства класса не используются!
+
+class Calculator {
+    public int number;
+    boolean isEven = true;
+
+    public boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+Лучше:
+
+class Calculator {
+
+    public boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+}
+
+-----------------------------------------------------------
+
+WARNING: не достаточное покрытие тестами.
+Если у вас в коде встречается оператор if, то значит есть
+позитивный и негативный сценарий. Поэтому, при написании
+тестов, нужно проверять оба сценария, а не один.
+
+class Calculator {
+
+    public boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+}
+
+class CalculatorTest {
+    public static void main(String[] args) {
+        CalculatorTest testRunner = new CalculatorTest();
+        testRunner.testIsEven();
+    }
+
+    public void testIsEven() {
+        Calculator subject = new Calculator();
+        boolean actualResult = subject.isEven(9);
+        if (actualResult) {
+            System.out.println("Test has passed!");
+        } else {
+            System.out.println("Test failed");
+            System.out.println("Expected: true but actual: " + actualResult);
+        }
+    }
+}
+
+Лучше:
+
+class CalculatorTest {
+    public static void main(String[] args) {
+        CalculatorTest testRunner = new CalculatorTest();
+        testRunner.testIsEven();
+        testRunner.testIsOdd();
+    }
+
+    public void testIsEven() {
+        Calculator subject = new Calculator();
+        boolean actualResult = subject.isEven(9);
+        if (actualResult) {
+            System.out.println("Test has passed!");
+        } else {
+            System.out.println("Test failed");
+            System.out.println("Expected: true but actual: " + actualResult);
+        }
+    }
+
+    public void testIsOdd() {
+        Calculator subject = new Calculator();
+        boolean actualResult = subject.isEven(10);
+        if (!actualResult) {
+            System.out.println("Test has passed!");
+        } else {
+            System.out.println("Test failed");
+            System.out.println("Expected: true but actual: " + actualResult);
+        }
+    }
+
+}
+
+-----------------------------------------------------------
+
+WARNING: не нарушайте правила форматирования кода!
+Их нарушение ведёт к ухудшению читабельности кода
+и к негативной реакции программиста, который будет
+читать ваш код (например в процессе code review).
+
+    String company;
+    int currentPrice;
+    int maxPrice;
+    int minPrice;
+
+
+??????  WTF - зачем тут столько пустых строк ??????
+
+
+    public Stock(String company, int currentPrice){
+
+
+Лучше:
+
+    String company;
+    int currentPrice;
+    int maxPrice;
+    int minPrice;
+
+    public Stock(String company, int currentPrice){
+
+-----------------------------------------------------------
+
+GOOD: Отличная реализация!
+If условия вынесены в отдельные методы для лучшей читабельности!
+Используйте этот приём! С помощью этого приёма можно превратить
+сложные условия написанные внутри if в легко читаемые и понимаемые!
+
+class LeapYear {
+
+    public boolean isLapYear(int year) {
+        if (!isDividedBy4(year)) {
+            return false;
+        } else if (!isDividedBy100(year)) {
+            return true;
+        } else if ((isDividedBy400(year))) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isDividedBy4(int year) {
+        return year % 4 == 0;
+    }
+
+    private boolean isDividedBy100(int year) {
+        return year % 100 == 0;
+    }
+
+    private boolean isDividedBy400(int year) {
+        return year % 400 == 0;
+    }
+
+}

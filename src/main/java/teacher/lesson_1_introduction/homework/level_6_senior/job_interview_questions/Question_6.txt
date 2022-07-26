@@ -1,0 +1,39 @@
+What is IDE - Integrated Development Environment?
+
+An integrated development environment (IDE) is a software application
+that provides comprehensive facilities to computer programmers for software development.
+An IDE normally consists of at least a source code editor, build automation tools
+and a debugger.
+
+The boundary between an IDE and other parts of the broader software
+development environment is not well-defined; sometimes a version control
+system or various tools to simplify the construction of a graphical user
+interface (GUI) are integrated. Many modern IDEs also have a class browser,
+an object browser, and a class hierarchy diagram for use in object-oriented
+software development.
+
+Syntax highlighting
+The IDE editor usually provides syntax highlighting, it can show both the structures,
+the language keywords and the syntax errors with visually distinct colors and font effects.
+
+Code completion
+Code completion is an important IDE feature, intended to speed up programming.
+Modern IDEs even have intelligent code completion.
+
+Refactoring
+Advanced IDEs provide support for automated refactoring.
+
+Version control
+An IDE is expected to provide integrated version control,
+in order to interact with source repositories.
+
+Debugging
+IDEs are also used for debugging, using an integrated debugger,
+with support for setting breakpoints in the editor, visual rendering of steps, etc.
+
+Code search
+IDEs may provide advanced support for code search:
+in order to find class and function declarations,
+usages, variable and field read/write, etc.
+IDEs can use different kinds of user interface for code search,
+for example form-based widgets[5] and natural-language based interfaces.
