@@ -1,7 +1,5 @@
 package student_artjom_vakhromeev.lesson_1;
 
-import javax.naming.spi.DirStateFactory;
-
 public class HelloWorld {
 
     public static void main(String[] args) {
