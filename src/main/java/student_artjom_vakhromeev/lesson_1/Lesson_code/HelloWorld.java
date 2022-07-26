@@ -1,4 +1,4 @@
-package student_artjom_vakhromeev.lesson_1;
+package student_artjom_vakhromeev.lesson_1.Lesson_code;
 
 public class HelloWorld {
 
