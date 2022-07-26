@@ -1,4 +1,4 @@
-package Aleksejs.leasson_1;
+package student_aleksejs.lesson_1;
 
 public class Hello {
 
