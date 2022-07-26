@@ -1,6 +1,6 @@
-package teacher.lesson_1_introduction.lessoncode;
+package student_levs_blinnikovs.lesson_1;
 
-class HelloWorld {
+public class HelloWorld {
 
     public static void main(String[] args) {
         System.out.println("Hello!");
