@@ -1,6 +1,7 @@
 package teacher.lesson_1_introduction.lessoncode;
 
-class Book {
+class
+Book {
 
 
     public static void main(String[] args) {
