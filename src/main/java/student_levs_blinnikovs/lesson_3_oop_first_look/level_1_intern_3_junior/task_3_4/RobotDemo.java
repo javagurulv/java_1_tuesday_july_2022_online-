@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_1_intern.task_3_4;
+package student_levs_blinnikovs.lesson_3_oop_first_look.level_1_intern_3_junior.task_3_4;
 
 // Task 3
 /*
@@ -23,17 +23,17 @@ task2 (?? This is from task 3) Создайте отдельный класс Ro
 виртуальный обьект робот напечатал на консоли слово "Hello!".
  */
 
-import student_levs_blinnikovs.lesson_3_oop_first_look.level_1_intern.task_1_2_5_6.Robot;
+import student_levs_blinnikovs.lesson_3_oop_first_look.level_1_intern_3_junior.task_1_2_5_6_11_12_13.Robot;
 
 public class RobotDemo extends Robot {  // did extend to use Robot class methods for RobotDemo
 
-    public RobotDemo() {
-
+    public RobotDemo(String robotName) {
+        super(robotName);
     }
 
     public static void main(String[] args) {
 
-        RobotDemo demoRobot = new RobotDemo();
+        RobotDemo demoRobot = new RobotDemo("DemoRobot");
         demoRobot.sayHello();
         demoRobot.sayYourName();
 
