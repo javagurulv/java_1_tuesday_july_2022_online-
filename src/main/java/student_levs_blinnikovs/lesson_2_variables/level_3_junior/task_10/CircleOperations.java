@@ -29,8 +29,6 @@ public class CircleOperations {
         return PI * pow(radius, 2);
     }
 
-
-
     public static void main(String[] args) {
 
         System.out.println("This program will calculate circle perimeter and area. Program expects radius with a type of double.");
