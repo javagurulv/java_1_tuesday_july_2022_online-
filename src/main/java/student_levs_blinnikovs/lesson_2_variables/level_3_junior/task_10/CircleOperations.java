@@ -16,16 +16,17 @@ Area is = 176.71458676442586
  */
 
 import java.util.Scanner;
+import static java.lang.Math.PI;
+import static java.lang.Math.pow;
 
 public class CircleOperations {
 
-    static double pi = Math.PI;
     static double getCircumference(double radius) {
-        return 2 * pi * radius;
+        return 2 * PI * radius;
     }
 
     static double getArea(double radius) {
-        return pi * radius * radius;
+        return PI * pow(radius, 2);
     }
 
 
