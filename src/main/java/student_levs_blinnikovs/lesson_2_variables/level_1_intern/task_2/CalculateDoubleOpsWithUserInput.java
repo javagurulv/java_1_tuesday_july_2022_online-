@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_2.level_1_intern;
+package student_levs_blinnikovs.lesson_2_variables.level_1_intern.task_2;
 
 /*
 
@@ -13,10 +13,9 @@ package student_levs_blinnikovs.lesson_2.level_1_intern;
  */
 
 
-import java.sql.Array;
 import java.util.Scanner;
 
-public class TaskTwoCalculateDoubleWithUserInput {
+public class CalculateDoubleOpsWithUserInput {
 
     static double userDoubleOne;
     static double userDoubleTwo;

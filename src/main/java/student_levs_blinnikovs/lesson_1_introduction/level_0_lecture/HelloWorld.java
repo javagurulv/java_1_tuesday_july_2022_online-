@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_1;
+package student_levs_blinnikovs.lesson_1_introduction.level_0_lecture;
 
 public class HelloWorld {
 

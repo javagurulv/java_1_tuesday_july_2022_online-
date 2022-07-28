@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_2.level_1_intern;
+package student_levs_blinnikovs.lesson_2_variables.level_1_intern.task_1;
 
 /*
 
@@ -23,7 +23,7 @@ package student_levs_blinnikovs.lesson_2.level_1_intern;
 
 import java.util.Scanner;
 
-public class TaskOneCalculateWithUserInput {
+public class CalculateIntOpsWithUserInput {
 
     static int userIntOne;
     static int userIntTwo;

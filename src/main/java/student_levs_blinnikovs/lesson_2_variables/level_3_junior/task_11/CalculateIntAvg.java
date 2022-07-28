@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_2.level_3_junior;
+package student_levs_blinnikovs.lesson_2_variables.level_3_junior.task_11;
 
 /*
 
@@ -12,7 +12,7 @@ package student_levs_blinnikovs.lesson_2.level_3_junior;
 
 import java.util.Scanner;
 
-public class TaskElevenCalculateAvg {
+public class CalculateIntAvg {
 
     static int userInputOne;
     static int userInputTwo;

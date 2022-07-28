@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_1.level_4_junior;
+package student_levs_blinnikovs.lesson_1_introduction.level_4_junior.task_12;
 
 /*
 Напишите Java программу, которая выведет на консоль сумму двух чисел.
@@ -11,7 +11,7 @@ package student_levs_blinnikovs.lesson_1.level_4_junior;
 
  */
 
-public class TaskTwelveIntSum {
+public class IntSum {
 
     // Input
     static int var1 = 74;

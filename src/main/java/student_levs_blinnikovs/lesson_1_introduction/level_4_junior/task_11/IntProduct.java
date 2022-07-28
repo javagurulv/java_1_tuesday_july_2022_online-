@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_1.level_4_junior;
+package student_levs_blinnikovs.lesson_1_introduction.level_4_junior.task_11;
 
 /*
 
@@ -12,7 +12,7 @@ package student_levs_blinnikovs.lesson_1.level_4_junior;
 
  */
 
-public class TaskElevenIntProduct {
+public class IntProduct {
 
     // Input
     static int var1 = 50;

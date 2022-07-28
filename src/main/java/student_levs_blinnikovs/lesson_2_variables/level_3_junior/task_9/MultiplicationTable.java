@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_2.level_3_junior;
+package student_levs_blinnikovs.lesson_2_variables.level_3_junior.task_9;
 
 /*
 
@@ -19,7 +19,7 @@ Expected Output :
 
 import java.util.Scanner;
 
-public class TaskNineMultiplicationTable {
+public class MultiplicationTable {
 
     static int userInputInt;
 
