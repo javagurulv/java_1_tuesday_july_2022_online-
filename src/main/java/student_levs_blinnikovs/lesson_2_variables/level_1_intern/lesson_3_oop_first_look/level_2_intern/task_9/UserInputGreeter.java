@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_2_intern.task_9;
+package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_9;
 
 /*
 Учимся работать со строками.
@@ -14,7 +14,7 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_2_intern.task_9;
 "как в Java считать строку с консоли".
  */
 
-import student_levs_blinnikovs.lesson_3_oop_first_look.level_2_intern.task_8.StringConcatenator;
+import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.StringConcatenator;
 
 import java.util.Scanner;
 

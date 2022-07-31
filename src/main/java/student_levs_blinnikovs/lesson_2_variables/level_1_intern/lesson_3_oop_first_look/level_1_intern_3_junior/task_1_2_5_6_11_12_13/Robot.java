@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_1_intern_3_junior.task_1_2_5_6_11_12_13;
+package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_1_intern_3_junior.task_1_2_5_6_11_12_13;
 
 // Task 1
 /*

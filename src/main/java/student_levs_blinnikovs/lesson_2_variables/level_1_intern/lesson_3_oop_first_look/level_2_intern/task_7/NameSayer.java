@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_2_intern.task_7;
+package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_7;
 
 /*
 Учимся работать со строками.
