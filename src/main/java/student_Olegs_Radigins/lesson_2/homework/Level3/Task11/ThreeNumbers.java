@@ -8,10 +8,13 @@ public class ThreeNumbers {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое число: ");
         double firstNumber = scanner.nextDouble();
+
         System.out.println("Введите второе число: ");
         double secondNumber = scanner.nextDouble();
+
         System.out.println("Введите третее число: ");
         double thirdNumber = scanner.nextDouble();
+
         double average = (firstNumber + secondNumber + thirdNumber) / 3;
         System.out.println("Среднее арифметическое трех чисел равно " + average);
 
