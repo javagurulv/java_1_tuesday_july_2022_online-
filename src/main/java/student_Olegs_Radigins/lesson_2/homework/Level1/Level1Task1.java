@@ -1,4 +1,4 @@
-package student_Olegs_Radigins.lesson_2.homework;
+package student_Olegs_Radigins.lesson_2.homework.Level1;
 
 
 import java.util.Scanner;
