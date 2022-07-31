@@ -1,4 +1,4 @@
-package student_roman_hytt.lesson_2;
+package student_roman_hytt.lesson_2.level_1_intern;
 
 import java.util.Scanner;
 
