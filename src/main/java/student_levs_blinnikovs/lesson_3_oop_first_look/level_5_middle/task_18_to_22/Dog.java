@@ -30,6 +30,25 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_5_middle.task_18_t
 кличка собаки и ее возраст. ??? Тоже три раза?
  */
 
+// Task 20
+/*
+Бизнес требования:
+- Должна быть возможность увеличивать возраст собаки на один.
+
+PS: научите собаку праздновать свой день рождения,
+создайте в классе Dog метод:
+
+    void happyBirthday() {
+        // напишите тут команду увеличения возраста на 1
+    }
+
+Создайте собаку,
+заставьте её подать голос,
+заставте её отпраздновать день рождение,
+заставьте её подать голос снова и убедитесь в том,
+что её возраст увеличился на 1.
+ */
+
 class Dog {
 
     final String dogName; // Task 18.1, 18.2 (first and second requirement)
@@ -46,6 +65,10 @@ class Dog {
         }
     }
 
+    void happyBirthday() {  // Task 20;
+        this.dogAge++;
+    }
+
 }
 
 class DogDemo {
@@ -54,6 +77,8 @@ class DogDemo {
 
         Dog mutt = new Dog("Rex", 5);
         mutt.voice();
+        mutt.happyBirthday();
+        mutt.voice(); // Task 20;
 
     }
 
