@@ -18,7 +18,7 @@ import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_fi
 
 import java.util.Scanner;
 
-public class UserInputGreeter extends StringConcatenator {
+class UserInputGreeter extends StringConcatenator {
 
     public static void main(String[] args) {
 
