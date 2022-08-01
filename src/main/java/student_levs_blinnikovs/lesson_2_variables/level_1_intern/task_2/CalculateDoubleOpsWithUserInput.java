@@ -15,7 +15,7 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.task_2;
 
 import java.util.Scanner;
 
-public class CalculateDoubleOpsWithUserInput {
+class CalculateDoubleOpsWithUserInput {
 
     static double userDoubleOne;
     static double userDoubleTwo;

@@ -12,7 +12,7 @@ package student_levs_blinnikovs.lesson_2_variables.level_3_junior.task_11;
 
 import java.util.Scanner;
 
-public class CalculateIntAvg {
+class CalculateIntAvg {
 
     static int userInputOne;
     static int userInputTwo;

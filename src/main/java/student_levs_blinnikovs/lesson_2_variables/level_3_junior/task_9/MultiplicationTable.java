@@ -19,7 +19,7 @@ Expected Output :
 
 import java.util.Scanner;
 
-public class MultiplicationTable {
+class MultiplicationTable {
 
     static int userInputInt;
 

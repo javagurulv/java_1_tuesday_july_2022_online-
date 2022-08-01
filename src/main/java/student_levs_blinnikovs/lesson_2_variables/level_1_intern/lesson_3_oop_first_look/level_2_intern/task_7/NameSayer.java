@@ -16,7 +16,7 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_f
 
  */
 
-public class NameSayer {
+class NameSayer {
 
     static String myName = "Lev";
 

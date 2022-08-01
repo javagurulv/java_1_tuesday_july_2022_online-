@@ -1,4 +1,4 @@
-package student_artjom_vakhromeev.lesson_1.Task_12;
+package student_artjom_vakhromeev.lesson_1.task_12;
 
 import java.util.Scanner;
 

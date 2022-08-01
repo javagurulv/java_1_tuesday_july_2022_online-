@@ -2,7 +2,7 @@ package student_levs_blinnikovs.lesson_2_variables.level_7_senior.task_29;
 
 // Исправьте ошибки компиляции в данной программе.
 
-public class SumTwoNumbers {
+class SumTwoNumbers {
 
     public static void main(String[] args) {
 

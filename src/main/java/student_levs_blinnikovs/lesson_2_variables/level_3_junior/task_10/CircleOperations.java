@@ -19,7 +19,7 @@ import java.util.Scanner;
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 
-public class CircleOperations {
+class CircleOperations {
 
     static double getCircumference(double radius) {
         return 2 * PI * radius;
