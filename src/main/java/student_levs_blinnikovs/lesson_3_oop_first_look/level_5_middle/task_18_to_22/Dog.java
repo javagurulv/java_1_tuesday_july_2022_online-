@@ -63,6 +63,28 @@ PS: добавте свойство color в класс Dog,
 дополните метод voice() выводом цвета на консоль.
  */
 
+// Task 22
+/*
+Бизнес требования:
+- Должна быть возможность менять цвет собаки на другой.
+
+PS: создайте в классе Dog метод:
+
+    void changeColor(String newColor) {
+        // напишите тут команду сохранения нового цвета в свойство класса
+    }
+
+Создать отдельный класс DogDemo,
+объявить в нём main() метод и продемонстрировать
+использование класса собака (Dog).
+
+Создайте собаку,
+заставьте её подать голос,
+заставте её поменять цвет,
+заставьте её подать голос снова и убедитесь в том,
+что собака изменила свой цвет.
+ */
+
 class Dog {
 
     final String dogName; // Task 18.1, 18.2 (first and second requirement)
@@ -75,7 +97,7 @@ class Dog {
         this.dogColor = dogColor;
     }
 
-    public void voice() {   // third requirement
+    public void voice() {
         for (int i = 0; i < 3; i++) {
             System.out.println(dogName + " is " + dogAge + " years old and it is " + dogColor + " color.");
         }
@@ -83,6 +105,11 @@ class Dog {
 
     void happyBirthday() {  // Task 20;
         this.dogAge++;
+    }
+
+    void changeColor(String newColor) { // Task 22
+        this.dogColor = newColor;
+        System.out.println("The dog has been dyed to " + dogColor + " color!");
     }
 
 }
@@ -93,8 +120,12 @@ class DogDemo {
 
         Dog mutt = new Dog("Rex", 5, "black");
         mutt.voice();
+
         mutt.happyBirthday();
         mutt.voice(); // Task 20;
+
+        mutt.changeColor("yellow");
+        mutt.voice();
 
     }
 
