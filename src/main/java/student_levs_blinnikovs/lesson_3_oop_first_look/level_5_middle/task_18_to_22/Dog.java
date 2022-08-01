@@ -49,19 +49,35 @@ PS: научите собаку праздновать свой день рож�
 что её возраст увеличился на 1.
  */
 
+// Task 21
+/*
+Бизнес требования:
+- Сделайте возможность указывать цвет собаки.
+- Пусть цвет задаётся просто строкой: "Red", "Black", etc.
+- Собака должна уметь выполнять команду голос (voice()),
+при выполнении этой команды на консоль должно выводиться
+кличка собаки, ее возраст и цвет.
+
+PS: добавте свойство color в класс Dog,
+добавте в конструктор класса новое свойство и сохраните его,
+дополните метод voice() выводом цвета на консоль.
+ */
+
 class Dog {
 
     final String dogName; // Task 18.1, 18.2 (first and second requirement)
     int dogAge; // Task 19.1
+    String dogColor; // Task 20
 
-    Dog(String dogName, int dogAge) {
+    Dog(String dogName, int dogAge, String dogColor) {
         this.dogName = dogName;
         this.dogAge = dogAge;
+        this.dogColor = dogColor;
     }
 
     public void voice() {   // third requirement
         for (int i = 0; i < 3; i++) {
-            System.out.println(dogName + " is " + dogAge + " years old.");
+            System.out.println(dogName + " is " + dogAge + " years old and it is " + dogColor + " color.");
         }
     }
 
@@ -75,7 +91,7 @@ class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog mutt = new Dog("Rex", 5);
+        Dog mutt = new Dog("Rex", 5, "black");
         mutt.voice();
         mutt.happyBirthday();
         mutt.voice(); // Task 20;
