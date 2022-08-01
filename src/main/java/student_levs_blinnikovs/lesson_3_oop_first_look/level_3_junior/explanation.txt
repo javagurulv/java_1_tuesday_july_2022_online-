@@ -1,0 +1,3 @@
+Задачи этого уровня относились к задачам по Роботу и поэтому выполнены в классах Robot и RobotDemo и находятся в:
+
+    src/main/java/student_levs_blinnikovs/lesson_2_variables/level_1_intern/lesson_3_oop_first_look/level_1_intern_3_junior
