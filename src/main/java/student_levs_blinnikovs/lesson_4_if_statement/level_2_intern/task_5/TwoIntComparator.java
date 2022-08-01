@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_4_if_statement.level_2_intern.task_2;
+package student_levs_blinnikovs.lesson_4_if_statement.level_2_intern.task_5;
 
 /*
 Написать программу, которая запрашивает у пользователя
