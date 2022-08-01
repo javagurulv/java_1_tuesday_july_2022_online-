@@ -19,17 +19,30 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_5_middle.task_18_t
 использование класса собака (Dog).
  */
 
+// Task 19
+/*
+Бизнес требования:
+- Должна быть возможность указывать возраст собаки.
+- Возраст указывается в годах (целам числом).
+- Возраст собаке дают в момент создания.
+- Собака должна уметь выполнять команду голос (voice()),
+при выполнении этой команды на консоль должно выводиться
+кличка собаки и ее возраст. ??? Тоже три раза?
+ */
+
 class Dog {
 
-    final String dogName; // first and second requirement
+    final String dogName; // Task 18.1, 18.2 (first and second requirement)
+    int dogAge; // Task 19.1
 
-    Dog(String dogName) {
+    Dog(String dogName, int dogAge) {
         this.dogName = dogName;
+        this.dogAge = dogAge;
     }
 
     public void voice() {   // third requirement
         for (int i = 0; i < 3; i++) {
-            System.out.println(dogName);
+            System.out.println(dogName + " is " + dogAge + " years old.");
         }
     }
 
@@ -39,7 +52,7 @@ class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog mutt = new Dog("Rex");
+        Dog mutt = new Dog("Rex", 5);
         mutt.voice();
 
     }
