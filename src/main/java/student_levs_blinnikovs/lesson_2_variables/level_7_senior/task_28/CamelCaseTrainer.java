@@ -26,7 +26,7 @@ task1
 Создайте эти классы с корректными с точки зрения Java кода назнаниями.
  */
 
-public class CamelCaseTrainer {
+class CamelCaseTrainer {
     public static void main(String[] args) {
         System.out.println("Book");
         System.out.println("BankAccount");

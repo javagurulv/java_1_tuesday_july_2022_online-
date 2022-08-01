@@ -23,7 +23,7 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.task_1;
 
 import java.util.Scanner;
 
-public class CalculateIntOpsWithUserInput {
+class CalculateIntOpsWithUserInput {
 
     static int userIntOne;
     static int userIntTwo;

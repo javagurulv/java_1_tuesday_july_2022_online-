@@ -11,7 +11,7 @@ package student_levs_blinnikovs.lesson_1_introduction.level_4_junior.task_12;
 
  */
 
-public class IntSum {
+class IntSum {
 
     // Input
     static int var1 = 74;

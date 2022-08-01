@@ -10,7 +10,7 @@ Expected Output :
 
  */
 
-public class IntDivide {
+class IntDivide {
 
     // Input
     static int var1 = 50;

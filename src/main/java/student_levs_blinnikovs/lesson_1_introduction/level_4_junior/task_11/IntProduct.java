@@ -12,7 +12,7 @@ package student_levs_blinnikovs.lesson_1_introduction.level_4_junior.task_11;
 
  */
 
-public class IntProduct {
+class IntProduct {
 
     // Input
     static int var1 = 50;
