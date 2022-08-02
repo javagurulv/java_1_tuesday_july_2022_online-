@@ -36,17 +36,3 @@ class Car {
 
 }
 
-class CarDemo {
-    public static void main(String[] args) {
-
-        Car beamer = new Car("BMW", "330i", 2006, "black");
-        beamer.display();
-
-        beamer.paint("red");
-        beamer.display();
-
-        beamer.paint("yellow");
-        beamer.display();
-
-    }
-}

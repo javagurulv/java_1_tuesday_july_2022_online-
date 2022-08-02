@@ -114,19 +114,3 @@ class Dog {
 
 }
 
-class DogDemo {
-
-    public static void main(String[] args) {
-
-        Dog mutt = new Dog("Rex", 5, "black");
-        mutt.voice();
-
-        mutt.happyBirthday();
-        mutt.voice(); // Task 20;
-
-        mutt.changeColor("yellow");
-        mutt.voice();
-
-    }
-
-}

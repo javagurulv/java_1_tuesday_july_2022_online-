@@ -56,23 +56,4 @@ class Human {
 
 }
 
-class HumanDemo {
 
-    public static void main(String[] args) {
-
-        Human randomHuman = new Human("John", "Smith", 29);
-
-        randomHuman.greet();
-        randomHuman.employ("factory");
-        randomHuman.greet();
-
-        randomHuman.layoff();
-        randomHuman.greet();
-
-        randomHuman.changeIdentity("Al", "Capone", 65);
-
-        randomHuman.greetWithfakeName("Frank");
-
-    }
-
-}
