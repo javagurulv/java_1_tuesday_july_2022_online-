@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29;
+package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29.human;
 
 class HumanDemo {
 

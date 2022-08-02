@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29;
+package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29.car;
 
 /*
 Выберите два разных объекта из реального мира.
@@ -12,12 +12,12 @@ Demo класс для каждого описанного вами объект
 
 class Car {
 
-    final String make;
+    final CarMake make;
     final String model;
     int productionYear;
     String color;
 
-    Car(String make, String model, int productionYear, String color) {
+    Car(CarMake make, String model, int productionYear, String color) {
         this.make = make;
         this.model = model;
         this.productionYear = productionYear;
