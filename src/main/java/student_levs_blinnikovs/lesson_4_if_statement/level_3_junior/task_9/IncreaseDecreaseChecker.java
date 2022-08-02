@@ -24,7 +24,7 @@ class IncreaseDecreaseChecker {
             return "increasing";
         } else if (this.firstNumber > this.secondNumber && this.secondNumber > this.thirdNumber) {
             return "decreasing";
-        } else return "Neither all are equal or different";
+        } else return "Neither increasing or decreasing order";
     }
 
 }
