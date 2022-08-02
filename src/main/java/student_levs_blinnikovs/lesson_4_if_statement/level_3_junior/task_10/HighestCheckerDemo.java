@@ -61,7 +61,7 @@ class HighestCheckerDemo {
 
         // all three the same
         HighestChecker test13 = new HighestChecker(3,3,3);
-        System.out.println("Should return that there are no highest number: " + test13.checkHighest());
+        System.out.println("Should return that there are no highest number (all three equal): " + test13.checkHighest());
 
     }
 
