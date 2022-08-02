@@ -17,12 +17,12 @@ class TwoIntComparatorSmaller {
         this.numberTwo = numberTwo;
     }
 
-    void printSmallerNumber() {
+    String printSmallerNumber() {
         if (this.numberOne < this.numberTwo) {
-            System.out.println(this.numberOne);
+            return "Smaller number is " + this.numberOne;
         } else if (this.numberOne > this.numberTwo) {
-            System.out.println(this.numberTwo);
-        } else System.err.println("N/A! Numbers are equal!");
+            return "Smaller number is " + this.numberTwo;
+        } else return "Numbers are equal!";
     }
 
 }
@@ -41,8 +41,7 @@ class TwoIntComparatorSmallerDemo {
         int savedUserInputTwo = userInput.nextInt();
 
         TwoIntComparatorSmaller testData = new TwoIntComparatorSmaller(savedUserInputOne, savedUserInputTwo);
-        System.out.print("Smaller number is ");
-        testData.printSmallerNumber();
+        System.out.print(testData.printSmallerNumber());
 
     }
 

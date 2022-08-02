@@ -18,12 +18,12 @@ class TwoIntComparator {
         this.numberTwo = numberTwo;
     }
 
-    void printHigherNumber() {
+    String printHigherNumber() {
         if (this.numberOne > this.numberTwo) {
-            System.out.println(this.numberOne);
+            return "Higher number is " + this.numberOne;
         } else if (this.numberOne < this.numberTwo) {
-            System.out.println(this.numberTwo);
-        } else System.err.println("N/A! Numbers are equal!");
+            return "Higher number is " + this.numberTwo;
+        } else return "Numbers are equal!";
     }
 
 }
@@ -42,8 +42,7 @@ class TwoIntComparatorDemo {
         int savedUserInputTwo = userInput.nextInt();
 
         TwoIntComparator testData = new TwoIntComparator(savedUserInputOne, savedUserInputTwo);
-        System.out.print("Higher number is ");
-        testData.printHigherNumber();
+        System.out.print(testData.printHigherNumber());
 
     }
 
