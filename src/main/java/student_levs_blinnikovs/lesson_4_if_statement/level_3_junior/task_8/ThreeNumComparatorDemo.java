@@ -8,6 +8,8 @@ class ThreeNumComparatorDemo {
         ThreeNumComparator test2 = new ThreeNumComparator(1,2,3);
         ThreeNumComparator test3 = new ThreeNumComparator(1,2,1);
 
+        // TODO user input
+
         System.out.println(test1.compareNumbers());
         System.out.println(test2.compareNumbers());
         System.out.println(test3.compareNumbers());
