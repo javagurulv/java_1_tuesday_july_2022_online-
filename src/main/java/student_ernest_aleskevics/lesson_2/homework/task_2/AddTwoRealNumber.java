@@ -29,7 +29,7 @@ public class AddTwoRealNumber {
         System.out.println("Sum of number :" + resultSum);
         System.out.println("Subtract of number :" + resultSubtract);
         System.out.println("Divide of number :" + resultDivide);
-        System.out.println("Multiply of number :" + resultMultiply);
+        System.out.println("Multiply of numbers :" + resultMultiply);
 
     }
 
