@@ -24,22 +24,25 @@ class HighestChecker {
 
     /*
 
-    321 at first pos
-    312
+    at first pos
+    3 2 1
+    3 1 2
 
-    132 at middle pos
-    231
+    at middle pos
+    1 3 2
+    2 3 1
 
-    123 at last pos
-    213
+    at last pos
+    1 2 3
+    2 1 3
 
-    311 at first pos, other - same
-    131 at middle pos, other - same
-    113 at last pos, other - same
+    3 1 1   at first pos, other - same
+    1 3 1   at middle pos, other - same
+    1 1 3   at last pos, other - same
 
-    133 two similar, no highest
-    331
-    313
+    1 3 3   two similar, no highest
+    3 3 1
+    3 1 3
 
     333 all same
 
