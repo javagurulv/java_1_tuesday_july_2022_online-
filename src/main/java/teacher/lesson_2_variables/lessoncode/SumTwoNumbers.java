@@ -7,6 +7,8 @@ public class SumTwoNumbers {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
+		//String text = scanner.nextLine();
+
 		// Step 1 - zaprositj pervoe chislo
 		System.out.println("Enter first number:");
 		int firstNumber = scanner.nextInt();
@@ -20,6 +22,18 @@ public class SumTwoNumbers {
 
 		// Step 4 - vivesti na ekran rezultat
 		System.out.println("Sum = " + sum);
+
+
+
+		int number1 = 5;
+		int number2 = 3;
+		int resultI = number1 / number2;
+		System.out.println("Result = " + resultI);
+
+		double number1D = 5;
+		double number2D = 3;
+		double resultD = number1D / number2D;
+		System.out.println("Result = " + resultD);
 	}
 
 }
