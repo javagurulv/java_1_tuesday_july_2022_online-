@@ -14,11 +14,12 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_f
 "как в Java считать строку с консоли".
  */
 
-import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.StringConcatenator;
+import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.GreetingConcatenator;
+import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.GreetingLanguage;
 
 import java.util.Scanner;
 
-class UserInputGreeter extends StringConcatenator {
+class UserInputGreeter extends GreetingConcatenator {
 
     public static void main(String[] args) {
 
@@ -26,7 +27,12 @@ class UserInputGreeter extends StringConcatenator {
         System.out.println("Hello, what's your name? Enter below: ");
         String userName = userInput.next();
 
-        System.out.println(doGreet(userName));
+        System.out.println("What language do you speak?");
+        System.out.println("Enter EN for English, RU for Russian, LV for Latvian, PL for Polish, EN for Spanish: ");
+        String language = userInput.next();
+        GreetingLanguage greetingLanguage = GreetingLanguage.valueOf(language.toUpperCase());
+
+        System.out.println(doGreet(userName, greetingLanguage));
 
     }
 

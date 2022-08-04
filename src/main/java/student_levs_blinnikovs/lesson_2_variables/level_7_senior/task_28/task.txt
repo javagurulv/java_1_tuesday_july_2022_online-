@@ -1,6 +1,3 @@
-package student_levs_blinnikovs.lesson_2_variables.level_7_senior.task_28;
-
-/*
 При написании Java кода для названий классов принято использовать
 нотацию под названием CamelCase (с англ. — «ВерблюжийРегистр»,
 также «ГорбатыйРегистр», «СтильВерблюда») — стиль написания
@@ -24,15 +21,3 @@ banktransaction
 task1
 
 Создайте эти классы с корректными с точки зрения Java кода назнаниями.
- */
-
-class CamelCaseTrainer {
-    public static void main(String[] args) {
-        System.out.println("Book");
-        System.out.println("BankAccount");
-        System.out.println("SystemUnit");
-        System.out.println("LoginService");
-        System.out.println("BankTransaction");
-        System.out.println("Task1");
-    }
-}

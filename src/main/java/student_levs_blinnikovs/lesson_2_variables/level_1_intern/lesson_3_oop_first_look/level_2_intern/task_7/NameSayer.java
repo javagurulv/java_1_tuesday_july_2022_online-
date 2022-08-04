@@ -21,7 +21,7 @@ import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
-		+ "Зачем это нужно? Вы понимаете смысл static?")
+		+ "Зачем это нужно? Вы понимаете смысл static?", student = "Fixed")
 class NameSayer {
 
     public static void main(String[] args) {

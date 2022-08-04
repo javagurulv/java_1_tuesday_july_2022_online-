@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
-		+ "Зачем это нужно? Вы понимаете смысл static?")
+		+ "Зачем это нужно? Вы понимаете смысл static?", student = "Fixed")
 class IntProduct {
 
     // Function returns product of 2 integer values

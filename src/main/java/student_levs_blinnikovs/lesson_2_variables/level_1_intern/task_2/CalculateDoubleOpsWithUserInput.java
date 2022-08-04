@@ -17,9 +17,6 @@ import java.util.Scanner;
 
 class CalculateDoubleOpsWithUserInput {
 
-    static double userDoubleOne;
-    static double userDoubleTwo;
-
     // Sum method
     public static double doubleSum(double var1, double var2) {
         return var1 + var2;
@@ -48,9 +45,11 @@ class CalculateDoubleOpsWithUserInput {
         System.out.println("This program will sum, subtract, multiply and divide your two numbers (double) of choice.");
         System.out.println("Please use '.' dot delimiter and not ','. Validation to be implemented. \n");
         System.out.println("Please enter first double: ");
+        double userDoubleOne;
         userDoubleOne = userInput.nextDouble();
 
         System.out.println("Please enter second double: ");
+        double userDoubleTwo;
         userDoubleTwo = userInput.nextDouble();
 
         System.out.println("Results: \n");

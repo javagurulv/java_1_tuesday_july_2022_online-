@@ -21,8 +21,6 @@ import java.util.Scanner;
 
 class MultiplicationTable {
 
-    static int userInputInt;
-
     static void calculateMultiplication(int inputInt) {
         for (int i = 0; i <= 10; i++) {
             System.out.println(inputInt + " x " + i + " = " + i * inputInt);
@@ -34,6 +32,7 @@ class MultiplicationTable {
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("This program will print out multiplication table for desired integer. Please enter below: ");
+        int userInputInt;
         userInputInt = userInput.nextInt();
 
         System.out.println("Results: ");

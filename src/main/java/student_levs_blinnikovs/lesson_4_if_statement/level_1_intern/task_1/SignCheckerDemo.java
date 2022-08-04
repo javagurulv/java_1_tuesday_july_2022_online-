@@ -6,8 +6,8 @@ class SignCheckerDemo {
         SignChecker pos = new SignChecker(1);
         pos.printPosOrNeg();
 
-        SignChecker nill = new SignChecker(0);
-        nill.printPosOrNeg();
+        SignChecker zero = new SignChecker(0);
+        zero.printPosOrNeg();
 
         SignChecker neg = new SignChecker(-1);
         neg.printPosOrNeg();

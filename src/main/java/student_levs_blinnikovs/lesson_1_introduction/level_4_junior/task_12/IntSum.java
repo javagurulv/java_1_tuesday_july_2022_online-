@@ -16,7 +16,7 @@ import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
-		+ "Зачем это нужно? Вы понимаете смысл static?")
+		+ "Зачем это нужно? Вы понимаете смысл static?", student = "Fixed")
 class IntSum {
 
     // Function returns sum of 2 integer values

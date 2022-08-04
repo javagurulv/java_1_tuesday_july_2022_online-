@@ -25,9 +25,6 @@ import java.util.Scanner;
 
 class CalculateIntOpsWithUserInput {
 
-    static int userIntOne;
-    static int userIntTwo;
-
     // Sum method
     public static int intSum(int var1, int var2) {
         return var1 + var2;
@@ -55,9 +52,11 @@ class CalculateIntOpsWithUserInput {
 
         System.out.println("This program will sum, subtract, multiply and divide your two numbers (integers) of choice.");
         System.out.println("Please enter first number: ");
+        int userIntOne;
         userIntOne = userInput.nextInt();
 
         System.out.println("Please enter second number: ");
+        int userIntTwo;
         userIntTwo = userInput.nextInt();
 
         int intSumResult = intSum(userIntOne, userIntTwo);
