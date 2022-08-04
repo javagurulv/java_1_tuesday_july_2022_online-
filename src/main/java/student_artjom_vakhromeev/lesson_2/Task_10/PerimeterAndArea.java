@@ -2,6 +2,11 @@ package student_artjom_vakhromeev.lesson_2.Task_10;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "radius - не используется, ее надо удалить!")
 public class PerimeterAndArea {
     public static void main(String[] args) {
         double radius,pi,area;

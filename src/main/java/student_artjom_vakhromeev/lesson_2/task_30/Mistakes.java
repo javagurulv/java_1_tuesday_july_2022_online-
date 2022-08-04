@@ -1,5 +1,8 @@
 package student_artjom_vakhromeev.lesson_2.task_30;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Mistakes {
     public static void main(String[] args) {
 

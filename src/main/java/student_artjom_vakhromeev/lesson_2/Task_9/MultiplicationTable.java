@@ -2,6 +2,11 @@ package student_artjom_vakhromeev.lesson_2.Task_9;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "int num1,sum; и название переменной sum!")
 class MultiplicationTable {
      public static void main(String[] args) {
          int num1,sum;
