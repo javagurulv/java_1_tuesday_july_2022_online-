@@ -24,9 +24,8 @@ import teacher.codereview.CodeReviewComment;
 		+ "Зачем это нужно? Вы понимаете смысл static?")
 class NameSayer {
 
-    static String myName = "Lev";
-
     public static void main(String[] args) {
+        String myName = "Lev";
         System.out.println(myName);
     }
 
