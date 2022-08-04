@@ -52,14 +52,26 @@ class HighestChecker {
         return firstNumber == secondNumber && firstNumber == thirdNumber;
     }
 
+    boolean isFirstPosHighest() {
+        return firstNumber > secondNumber && firstNumber > thirdNumber;
+    }
+
+    boolean isSecondPosHighest() {
+        return secondNumber > firstNumber && secondNumber > thirdNumber;
+    }
+
+    boolean isThirdPosHighest() {
+        return thirdNumber > firstNumber && thirdNumber > secondNumber;
+    }
+
     String checkHighest() {
         if (areAllSame()) { // technically then highest is any number (?)
             return "All three numbers are same.";
-        } else if (firstNumber > secondNumber && firstNumber > thirdNumber) { // first pos scenario + at first pos, other - same
+        } else if (isFirstPosHighest()) { // first pos scenario + at first pos, other - same
             return "First number is highest. It's value is " + firstNumber;
-        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) { // second pos scenario + at middle pos, other - same
+        } else if (isSecondPosHighest()) { // second pos scenario + at middle pos, other - same
             return "Second number is highest. It's value is " + secondNumber;
-        } else if (thirdNumber > firstNumber && thirdNumber > secondNumber) { // last pos scenario + at last pos, other - same
+        } else if (isThirdPosHighest()) { // last pos scenario + at last pos, other - same
             return "Third number is highest. It's value is " + thirdNumber;
         } else { // two similar, no highest ... technically then highest is one of those that are same (?)
             return "There is no highest number as two of the numbers are same.";
