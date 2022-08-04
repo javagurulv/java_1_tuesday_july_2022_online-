@@ -82,6 +82,28 @@ class CalculatorTest {
     }
 
 }
+
+Добавьте в класс Calculator метод для определения
+максимального из двух целых чисел.
+
+Добавьте в класс CalculatorTest тесты для этого метода.
+Тесты должны покрывать следующие тестовые сценарии:
+- первое число больше второго
+- второе число больше первого
+- оба числа равны
+Создайте по одному тесту на каждый из сценариев!
+
+
+Подсказка:
+
+class Calculator {
+
+    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        // реализуйте этот метод
+    }
+
+}
+
  */
 
 class CalculatorTest {
@@ -125,6 +147,19 @@ class CalculatorTest {
         }
     }
 
+    public void divideZeroTest() {
+        int firstNumber = 10;
+        int secondNumber = 0;
+        int expectedResult = -1;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.divide(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Divide zero error test = OK");
+        } else {
+            System.out.println("Divide zero error test = FAIL");
+        }
+    }
+
     public void multiplyTest() {
         int firstNumber = 10;
         int secondNumber = 5;
@@ -164,16 +199,62 @@ class CalculatorTest {
         }
     }
 
+    public void maxOfTwoNumbersFirstHigherTest() {
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of two numbers - first highest test = OK");
+        } else {
+            System.out.println("Max of two numbers - first highest test = FAIL");
+        }
+    }
+
+    public void maxOfTwoNumbersSecondHigherTest() {
+        int firstNumber = 5;
+        int secondNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of two numbers - second highest test = OK");
+        } else {
+            System.out.println("Max of two numbers - second highest test = FAIL");
+        }
+    }
+
+    public void maxOfTwoNumbersEqualTest() {
+        int firstNumber = 10;
+        int secondNumber = 10;
+        int expectedResult = -1;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("No max of two numbers - equal test = OK");
+        } else {
+            System.out.println("No max of two numbers - equal test = FAIL");
+        }
+    }
+
     public static void main(String[] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
         calculatorTest.sumTest();
         calculatorTest.subtractTest();
+
         calculatorTest.divideTest();
+        calculatorTest.divideZeroTest();
+
         calculatorTest.multiplyTest();
 
         calculatorTest.evenTest();
         calculatorTest.oddTest();
+
+        calculatorTest.maxOfTwoNumbersFirstHigherTest();
+        calculatorTest.maxOfTwoNumbersSecondHigherTest();
+        calculatorTest.maxOfTwoNumbersEqualTest();
 
     }
 

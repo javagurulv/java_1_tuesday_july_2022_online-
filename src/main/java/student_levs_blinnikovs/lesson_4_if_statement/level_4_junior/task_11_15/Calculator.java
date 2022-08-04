@@ -35,6 +35,28 @@ class Calculator {
     }
 
 }
+
+
+Добавьте в класс Calculator метод для определения
+максимального из двух целых чисел.
+
+Добавьте в класс CalculatorTest тесты для этого метода.
+Тесты должны покрывать следующие тестовые сценарии:
+- первое число больше второго
+- второе число больше первого
+- оба числа равны
+Создайте по одному тесту на каждый из сценариев!
+
+
+Подсказка:
+
+class Calculator {
+
+    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        // реализуйте этот метод
+    }
+
+}
  */
 
 
@@ -63,6 +85,17 @@ class Calculator {
 
     public boolean isEven(int firstNumber, int secondNumber) {
         return firstNumber % secondNumber == 0;
+    }
+
+    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        if (firstNumber > secondNumber) {
+            return firstNumber;
+        } else if (secondNumber > firstNumber) {
+            return secondNumber;
+        } else {
+            System.out.println("No maximum, numbers are equal!");
+            return -1;
+        }
     }
 
 }
