@@ -1,6 +1,6 @@
 package student_olegs_radigins.lesson_1;
 
-public class Umnozhenije {
+public class Multiplication {
     public static void main(String[] args) {
         int a = 50;
         int b = 3;

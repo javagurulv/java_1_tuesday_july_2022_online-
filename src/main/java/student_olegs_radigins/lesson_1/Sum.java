@@ -1,6 +1,6 @@
 package student_olegs_radigins.lesson_1;
 
-public class Summa {
+public class Sum {
     public static void main(String[] args) {
         int a = 74;
         int b = 36;
