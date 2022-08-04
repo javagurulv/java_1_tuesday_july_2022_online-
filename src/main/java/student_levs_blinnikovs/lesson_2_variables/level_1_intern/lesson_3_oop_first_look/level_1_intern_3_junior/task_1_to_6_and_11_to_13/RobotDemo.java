@@ -23,6 +23,9 @@ task2 (?? This is from task 3) Создайте отдельный класс Ro
 виртуальный обьект робот напечатал на консоли слово "Hello!".
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class RobotDemo {
     public static void main(String[] args) {
 

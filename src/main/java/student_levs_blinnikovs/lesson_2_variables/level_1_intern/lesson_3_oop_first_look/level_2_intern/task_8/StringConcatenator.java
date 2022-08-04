@@ -15,6 +15,12 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_f
     String greeting = "Hi "
  */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
+		+ "Зачем это нужно? Вы понимаете смысл static?")
 public class StringConcatenator {
 
     static String userName = "Lev";

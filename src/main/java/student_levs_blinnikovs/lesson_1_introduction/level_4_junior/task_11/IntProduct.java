@@ -12,6 +12,12 @@ package student_levs_blinnikovs.lesson_1_introduction.level_4_junior.task_11;
 
  */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
+		+ "Зачем это нужно? Вы понимаете смысл static?")
 class IntProduct {
 
     // Input

@@ -150,6 +150,9 @@ robot2.sayYourName();
 что каждый робот теперь запомнил своё имя!
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Robot {
 
     String robotName;
