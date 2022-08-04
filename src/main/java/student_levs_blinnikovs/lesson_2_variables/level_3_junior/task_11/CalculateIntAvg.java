@@ -14,10 +14,6 @@ import java.util.Scanner;
 
 class CalculateIntAvg {
 
-    static int userInputOne;
-    static int userInputTwo;
-    static int userInputThree;
-
     static double calculateAvg(int var1, int var2, int var3) {
         return (double) (var1 + var2 + var3) / 3;
     }
@@ -29,16 +25,16 @@ class CalculateIntAvg {
         System.out.println("This program will calculate double average from your three integer input. Please enter 3 values below: ");
 
         System.out.println("First integer: ");
-        userInputOne = userInput.nextInt();
+        int userInputOne = userInput.nextInt();
 
         System.out.println("Second integer: ");
-        userInputTwo = userInput.nextInt();
+        int userInputTwo = userInput.nextInt();
 
         System.out.println("Third integer: ");
-        userInputThree = userInput.nextInt();
+        int userInputThree = userInput.nextInt();
 
-        System.out.println("Average result is: ");
-        System.out.println(calculateAvg(userInputOne, userInputTwo, userInputThree));
+        double result = calculateAvg(userInputOne, userInputTwo, userInputThree);
+        System.out.println("Average result is: " + result);
 
     }
 
