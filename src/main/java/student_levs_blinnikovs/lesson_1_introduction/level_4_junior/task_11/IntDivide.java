@@ -13,21 +13,35 @@ Expected Output :
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+import java.util.Scanner;
+
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Что это за использование static и свойств класса? "
 		+ "Зачем это нужно? Вы понимаете смысл static?")
 class IntDivide {
 
-    // Input
-    static int var1 = 50;
-    static int var2 = 3;
-
     // Function returns division result of 2 integer values
-    public static int intDivide(int int1, int int2) {
-        return int1 / int2;
+    static int intDivide(int int1, int int2) {
+        if (int2 != 0) {
+            return int1 / int2;
+        } else {
+            System.out.println("Can't divide by zero!");
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
-        System.out.println("Result of division: " + intDivide(var1, var2));
+
+        System.out.println("Input two integers, system will calculate division. Remember. Can't divide by zero.");
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("Enter first number: ");
+        int savedInput1 = userInput.nextInt();
+
+        System.out.println("Enter second number. Make sure it's not zero: ");
+        int savedInput2 = userInput.nextInt();
+
+        int result = intDivide(savedInput1, savedInput2);
+        System.out.println("Result of division: " + result);
     }
 }
