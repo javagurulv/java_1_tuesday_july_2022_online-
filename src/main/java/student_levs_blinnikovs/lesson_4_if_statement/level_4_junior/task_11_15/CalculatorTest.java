@@ -238,6 +238,27 @@ class CalculatorTest {
         }
     }
 
+    public void maxOfThreeNumbersAllEqualTest() {
+    }
+
+    public void maxOfThreeNumbersFirstAndThirdEqualAndHigherTest() {
+    }
+
+    public void maxOfThreeNumbersLastTwoEqualAndHigherTest() {
+    }
+
+    public void maxOfThreeNumbersFirstTwoEqualAndHigherTest() {
+    }
+
+    public void maxOfThreeNumbersThirdHighestTest() {
+    }
+
+    public void maxOfThreeNumbersSecondHighestTest() {
+    }
+
+    public void maxOfThreeNumbersFirstHighestTest() {
+    }
+
     public static void main(String[] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
@@ -255,6 +276,16 @@ class CalculatorTest {
         calculatorTest.maxOfTwoNumbersFirstHigherTest();
         calculatorTest.maxOfTwoNumbersSecondHigherTest();
         calculatorTest.maxOfTwoNumbersEqualTest();
+
+        calculatorTest.maxOfThreeNumbersFirstHighestTest();
+        calculatorTest.maxOfThreeNumbersSecondHighestTest();
+        calculatorTest.maxOfThreeNumbersThirdHighestTest();
+
+        calculatorTest.maxOfThreeNumbersFirstTwoEqualAndHigherTest();
+        calculatorTest.maxOfThreeNumbersLastTwoEqualAndHigherTest();
+        calculatorTest.maxOfThreeNumbersFirstAndThirdEqualAndHigherTest();
+
+        calculatorTest.maxOfThreeNumbersAllEqualTest();
 
     }
 
