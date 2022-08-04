@@ -2,6 +2,13 @@ package student_artjom_vakhromeev.lesson_1.task_11;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "int num1, num2, sum; - объявлять все переменные в "
+		+ "начале метода не надо! Объявление переменной должно быть там "
+		+ "где ее первый раз используете.")
 class SumOfTwoNumbers {
         public static void main(String[] args) {
 

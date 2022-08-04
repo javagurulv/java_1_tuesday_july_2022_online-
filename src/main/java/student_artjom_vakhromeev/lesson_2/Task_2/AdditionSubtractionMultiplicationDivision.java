@@ -2,6 +2,12 @@ package student_artjom_vakhromeev.lesson_2.Task_2;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "average - придумай более правильное "
+		+ "название для переменной!")
 class AdditionSubtractionMultiplicationDivision {
 
     public static void main(String[] args) {

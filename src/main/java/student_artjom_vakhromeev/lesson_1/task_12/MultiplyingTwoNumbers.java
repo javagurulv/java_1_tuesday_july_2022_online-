@@ -2,6 +2,16 @@ package student_artjom_vakhromeev.lesson_1.task_12;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "int num1, num2, sum; - объявлять все переменные в "
+		+ "начале метода не надо! Объявление переменной должно быть там "
+		+ "где ее первый раз используете.")
+
+@CodeReviewComment(teacher = "sum; - sum = num1 * num2; - переменная "
+		+ "sum названа неправильно! В ней хранится не сумма!")
 class MultiplyingTwoNumbers {
 
 

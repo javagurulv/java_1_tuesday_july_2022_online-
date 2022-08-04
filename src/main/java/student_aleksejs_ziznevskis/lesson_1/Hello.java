@@ -1,5 +1,8 @@
 package student_aleksejs_ziznevskis.lesson_1;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Hello {
 
     public static void main(String[] args) {

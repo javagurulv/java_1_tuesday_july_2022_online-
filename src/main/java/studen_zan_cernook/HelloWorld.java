@@ -1,7 +1,8 @@
 package studen_zan_cernook;
 
+import teacher.codereview.CodeReview;
 
-
+@CodeReview(approved = true)
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Results = " +4 / 2 + 6 );
