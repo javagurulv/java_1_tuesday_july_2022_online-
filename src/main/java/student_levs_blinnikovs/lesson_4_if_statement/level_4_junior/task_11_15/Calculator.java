@@ -17,6 +17,27 @@ class Calculator {
 }
  */
 
+// Task 13
+/*
+Добавьте в класс Calculator метод для определения
+        чётное число или не чётное.
+
+        Добавьте в класс CalculatorTest тесты для этого метода.
+
+        Подсказка:
+
+class Calculator {
+
+    public boolean isEven(int number) {
+        // реализуйте этот метод:
+        // return true - если число чётное (делится на 2 без остатка)
+        // иначе return false
+    }
+
+}
+ */
+
+
 class Calculator {
 
     public int sum(int firstNumber, int secondNumber) {
@@ -38,6 +59,10 @@ class Calculator {
 
     public int multiply(int firstNumber, int secondNumber) {
         return firstNumber * secondNumber;
+    }
+
+    public boolean isEven(int firstNumber, int secondNumber) {
+        return firstNumber % secondNumber == 0;
     }
 
 }

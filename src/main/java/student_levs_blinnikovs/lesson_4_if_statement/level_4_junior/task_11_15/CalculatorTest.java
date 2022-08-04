@@ -138,6 +138,32 @@ class CalculatorTest {
         }
     }
 
+    public void evenTest() {
+        int firstNumber = 10;
+        int secondNumber = 5;
+        boolean expectedResult = true;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.isEven(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Even test = OK");
+        } else {
+            System.out.println("Even test = FAIL");
+        }
+    }
+
+    public void oddTest() {
+        int firstNumber = 10;
+        int secondNumber = 4;
+        boolean expectedResult = false;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.isEven(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Odd test = OK");
+        } else {
+            System.out.println("Odd test = FAIL");
+        }
+    }
+
     public static void main(String[] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
@@ -145,6 +171,9 @@ class CalculatorTest {
         calculatorTest.subtractTest();
         calculatorTest.divideTest();
         calculatorTest.multiplyTest();
+
+        calculatorTest.evenTest();
+        calculatorTest.oddTest();
 
     }
 
