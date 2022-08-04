@@ -1,5 +1,8 @@
 package student_Eduard_Minajev.Lesson_01;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class HelloWorldV1 {
   public static void main(String[] args){
       System.out.println("HelloWorldV1");

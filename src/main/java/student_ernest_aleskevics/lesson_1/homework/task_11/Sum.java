@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_1.homework.task_11;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Sum {
     public static void main(String[] args) {
         /*
