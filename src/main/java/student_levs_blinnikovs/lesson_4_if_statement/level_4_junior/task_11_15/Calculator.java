@@ -18,4 +18,26 @@ class Calculator {
  */
 
 class Calculator {
+
+    public int sum(int firstNumber, int secondNumber) {
+        return firstNumber + secondNumber;
+    }
+
+    public int subtract(int firstNumber, int secondNumber) {
+        return firstNumber - secondNumber;
+    }
+
+    public int divide(int firstNumber, int secondNumber) {
+        if (secondNumber != 0) {
+            return firstNumber / secondNumber;
+        } else {
+            System.out.println("Cannot divide by zero!");
+            return -1;
+        }
+    }
+
+    public int multiply(int firstNumber, int secondNumber) {
+        return firstNumber * secondNumber;
+    }
+
 }
