@@ -1,14 +1,13 @@
 package student_levs_blinnikovs.lesson_4_if_statement.level_3_junior.task_10;
 
+
+import java.util.Scanner;
+
 class HighestCheckerDemo {
 
     public static void main(String[] args) {
 
-
-        // TODO user input
-
-        // TDD :)
-
+        // Tests
         // all three different
         // highest first
         HighestChecker test1 = new HighestChecker(3,2,1);
@@ -62,6 +61,25 @@ class HighestCheckerDemo {
         // all three the same
         HighestChecker test13 = new HighestChecker(3,3,3);
         System.out.println("Should return that there are no highest number (all three equal): " + test13.checkHighest());
+
+        // and now user input
+
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("System expects three numbers and will check whether whey are increasing, decreasing or neither.");
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        int savedUserInputFirst = userInput.nextInt();
+
+        System.out.println("Enter second number: ");
+        int savedUserInputSecond = userInput.nextInt();
+
+        System.out.println("Enter third number: ");
+        int savedUserInputThird = userInput.nextInt();
+
+        HighestChecker test = new HighestChecker(savedUserInputFirst, savedUserInputSecond, savedUserInputThird);
+        System.out.println(test.checkHighest());
 
     }
 

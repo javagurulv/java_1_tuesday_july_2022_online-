@@ -20,7 +20,7 @@ class ThreeNumComparator {
     }
 
     String compareNumbers() {
-        if (this.firstNumber == this.secondNumber && this.firstNumber == this.thirdNumber && this.secondNumber == this.thirdNumber) {
+        if (this.firstNumber == this.secondNumber && this.firstNumber == this.thirdNumber) {
             return "All numbers are equal";
         } else if (this.firstNumber != this.secondNumber && this.firstNumber != this.thirdNumber && this.secondNumber != this.thirdNumber ) {
             return "All numbers are different";
