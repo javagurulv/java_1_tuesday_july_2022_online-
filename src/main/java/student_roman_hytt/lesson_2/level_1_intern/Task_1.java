@@ -2,6 +2,9 @@ package student_roman_hytt.lesson_2.level_1_intern;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_1 {
     public static void main (String [] args) {
         System.out.println (" Please write number 1 or 2");

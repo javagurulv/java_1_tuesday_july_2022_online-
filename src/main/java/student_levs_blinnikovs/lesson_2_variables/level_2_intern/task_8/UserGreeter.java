@@ -7,20 +7,33 @@ package student_levs_blinnikovs.lesson_2_variables.level_2_intern.task_8;
 Hello имя пользователя!
  */
 
+import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 import java.util.Scanner;
 
 
-@CodeReviewComment(student = "is it better to create variable? If we don't have an intent to use it later? Should this operation even be in the System Out Prinln args.. I think I did not correctly")
+@CodeReviewComment(student = "is it better to create variable? "
+		+ "If we don't have an intent to use it later? "
+		+ "Should this operation even be in the System Out Prinln args.. I think I did not correctly")
+
+
+@CodeReviewComment(teacher = "Хороший вопрос был задан в комменте! "
+		+ "Поэтому отвечу тут  для всех. Программу надо стараться "
+		+ "писать не более коротко укладываясь в "
+		+ "минимальное количество строк кода, а более понятно! "
+		+ "Между коротко и понятно есть тонкая грань. "
+		+ "С одной стороны многие думают, что чем меньше строк в программе тем она быстрее будет выполняться - поэтому будем все писать как можно короче и экономить строки. Но в действительности это не так! Внутри компилятора Java встроет оптимизатор кода, он в процессе компиляции проводит много улучшений в коде и хорошо его оптимизирует для ускорения его работы. Поэтому программы написанные в большее количество строк будут выполняться с такой же скоростью как и более короткие - очень часто так будет (иногда втроенный оптимизатор этого не добъется конечно но приблизится к этому значительно). Современные процессоры настолько быстрые, что даже если будет разница в скорости выполнения более короткой и более длинной программы, то вы как пользователь этого не заметите. Миллионы операций в секунду на каждом из ядер процессора, туда сюда пару операций ничего не поменяют.  Так если практически нет разницы в скорости выполнения программ, в чём же тогда есть разница? А разница будет в скорости чтения и понимания программы другим человеком. И вот тут программу более короткую в которой много команд напихано в одной строке, в которой используются непонятные названия переменных, методов и т.д. будет читать и понимать намного сложнее чем программу более длинную с более качественными названиями и более простым, более длинным но более понятным кодом.")
+
+@CodeReview(approved = true)
 class UserGreeter {
 
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);
-
         System.out.println("Please write your name: ");
-        System.out.println("Hello, " + userInput.next()); // question
+		String yourName = userInput.next();
+        System.out.println("Hello, " + yourName); // question
 
     }
 

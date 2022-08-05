@@ -7,6 +7,9 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_32;
         Менять можно только класс BankAccount.
 */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BankAccount {
 
     String owner;

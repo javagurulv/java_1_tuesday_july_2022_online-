@@ -19,6 +19,9 @@ Expected Output :
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class MultiplicationTable {
 
     static void calculateMultiplication(int inputInt) {

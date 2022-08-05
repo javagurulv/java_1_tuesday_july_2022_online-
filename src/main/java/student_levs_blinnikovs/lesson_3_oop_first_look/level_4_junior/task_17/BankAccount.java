@@ -5,6 +5,9 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_4_junior.task_17;
         Исправить и запустить программу.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BankAccount {
 
     String ownerFirstName;

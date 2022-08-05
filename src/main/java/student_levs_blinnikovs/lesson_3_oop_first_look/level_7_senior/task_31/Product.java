@@ -19,6 +19,9 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_31;
 Класс с демонстрацией работы должен называться "ProductDemo".
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Product {
 
     String name;

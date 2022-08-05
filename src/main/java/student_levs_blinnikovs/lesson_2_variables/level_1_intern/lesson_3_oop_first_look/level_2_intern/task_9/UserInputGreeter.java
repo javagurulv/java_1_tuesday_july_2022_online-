@@ -16,9 +16,11 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_f
 
 import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.GreetingConcatenator;
 import student_levs_blinnikovs.lesson_2_variables.level_1_intern.lesson_3_oop_first_look.level_2_intern.task_8.GreetingLanguage;
+import teacher.codereview.CodeReview;
 
 import java.util.Scanner;
 
+@CodeReview(approved = true)
 class UserInputGreeter extends GreetingConcatenator {
 
     public static void main(String[] args) {

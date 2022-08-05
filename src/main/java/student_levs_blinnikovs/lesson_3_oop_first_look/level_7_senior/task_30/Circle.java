@@ -2,6 +2,8 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_30;
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 
+import teacher.codereview.CodeReview;
+
 /*
 Разработать класс - круг, у которого должны быть следующие характеристики:
 Свойства: радиус (double radius),
@@ -11,6 +13,7 @@ import static java.lang.Math.pow;
 Класс с демонстрацией работы должен называться "CircleDemo".
  */
 
+@CodeReview(approved = true)
 class Circle {
 
     double radius;

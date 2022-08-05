@@ -2,6 +2,9 @@ package student_olegs_radigins.lesson_2.homework.level5.task15;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Stroka {
     public static void main(String[] args) {
 

@@ -12,6 +12,9 @@ Demo класс для каждого описанного вами объект
 
 import java.util.Date;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Human {
 
     String firstName;

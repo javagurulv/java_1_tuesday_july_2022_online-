@@ -23,6 +23,9 @@ package student_levs_blinnikovs.lesson_2_variables.level_1_intern.task_1;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CalculateIntOpsWithUserInput {
 
     // Sum method

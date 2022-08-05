@@ -19,12 +19,18 @@ import java.util.Scanner;
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
 class CircleOperations {
 
+	@CodeReviewComment(teacher = "calculateCircumference(...)")
     static double getCircumference(double radius) {
         return 2 * PI * radius;
     }
 
+	@CodeReviewComment(teacher = "calculateArea(...)")
     static double getArea(double radius) {
         return PI * pow(radius, 2);
     }

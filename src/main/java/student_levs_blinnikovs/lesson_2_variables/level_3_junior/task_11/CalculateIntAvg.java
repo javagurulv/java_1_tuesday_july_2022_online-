@@ -12,6 +12,9 @@ package student_levs_blinnikovs.lesson_2_variables.level_3_junior.task_11;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CalculateIntAvg {
 
     static double calculateAvg(int var1, int var2, int var3) {

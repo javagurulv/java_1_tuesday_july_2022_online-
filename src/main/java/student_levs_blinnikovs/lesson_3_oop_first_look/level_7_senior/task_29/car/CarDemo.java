@@ -1,6 +1,9 @@
 package student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29.car;
 import static student_levs_blinnikovs.lesson_3_oop_first_look.level_7_senior.task_29.car.CarManufacturer.*;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CarDemo {
     public static void main(String[] args) {
 

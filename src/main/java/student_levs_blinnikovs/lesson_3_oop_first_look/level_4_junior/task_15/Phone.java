@@ -6,6 +6,9 @@ package student_levs_blinnikovs.lesson_3_oop_first_look.level_4_junior.task_15;
         Менять можно только класс Phone.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Phone {
 
     String model; // unexpected {

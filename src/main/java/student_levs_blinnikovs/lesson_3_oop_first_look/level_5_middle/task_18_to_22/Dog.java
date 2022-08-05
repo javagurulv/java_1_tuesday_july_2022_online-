@@ -85,6 +85,9 @@ PS: создайте в классе Dog метод:
 что собака изменила свой цвет.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Dog {
 
     final String dogName; // Task 18.1, 18.2 (first and second requirement)

@@ -10,6 +10,9 @@ Demo класс для каждого описанного вами объект
 и продемонстрируйте работу с объектом.
 */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Car {
 
     final CarManufacturer manufacturer;

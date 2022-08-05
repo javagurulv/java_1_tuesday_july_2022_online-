@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_2_variables.level_5_middle.task_18;
 
 //Заставьте эту программу работать!
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class SizeMatters {
     public static void main(String[] args) {
         System.out.println("Sorry, I have an errors.");
