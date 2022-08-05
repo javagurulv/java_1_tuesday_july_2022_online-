@@ -3,8 +3,10 @@ package student_roman_hytt.lesson_2.level_1_intern;
 import java.util.Scanner;
 
 import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = true)
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "double num1,num2,sum; - не надо объявлять все переменные в начале метода!")
 public class Task_3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
