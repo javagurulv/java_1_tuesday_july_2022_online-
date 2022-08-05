@@ -1,5 +1,8 @@
 package student_Yurii_Panasiuk.L1;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Math {
 
     public static void main(String[] args) {
