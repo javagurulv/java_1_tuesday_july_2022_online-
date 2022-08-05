@@ -12,20 +12,20 @@ Demo класс для каждого описанного вами объект
 
 class Car {
 
-    final CarMake make;
+    final CarManufacturer manufacturer;
     final String model;
     int productionYear;
     String color;
 
-    Car(CarMake make, String model, int productionYear, String color) {
-        this.make = make;
+    Car(CarManufacturer manufacturer, String model, int productionYear, String color) {
+        this.manufacturer = manufacturer;
         this.model = model;
         this.productionYear = productionYear;
         this.color = color;
     }
 
     void display() {
-        System.out.println("Current car on display is a " + productionYear + " " + make + " " + model + " in " + color + " color.");
+        System.out.println("Current car on display is a " + productionYear + " " + manufacturer + " " + model + " in " + color + " color.");
     }
 
     void paint(String color) {
