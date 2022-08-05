@@ -1,5 +1,8 @@
 package student_roman_hytt.lesson_2.level_7_senior;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class SumTwoNumbers {
 
 
