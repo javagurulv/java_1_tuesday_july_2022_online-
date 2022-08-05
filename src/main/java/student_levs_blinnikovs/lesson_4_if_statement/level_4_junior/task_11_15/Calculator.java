@@ -103,18 +103,11 @@ class Calculator {
     }
 
     public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
-        if (firstNumber > secondNumber) {
-            return firstNumber;
-        } else if (secondNumber > firstNumber) {
-            return secondNumber;
-        } else {
-            System.out.println("No maximum, numbers are equal!");
-            return -1;
-        }
+        return firstNumber > secondNumber ? firstNumber : secondNumber;
     }
 
     public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-        return -1;
+        return maxOfTwoNumbers(maxOfTwoNumbers(firstNumber, secondNumber), thirdNumber);
     }
 
 

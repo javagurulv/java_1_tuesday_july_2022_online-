@@ -228,35 +228,154 @@ class CalculatorTest {
     public void maxOfTwoNumbersEqualTest() {
         int firstNumber = 10;
         int secondNumber = 10;
-        int expectedResult = -1;
+        int expectedResult = 10;
         Calculator calculator = new Calculator();
         int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("No max of two numbers - equal test = OK");
+            System.out.println("Max of two numbers - equal test = OK");
         } else {
-            System.out.println("No max of two numbers - equal test = FAIL");
+            System.out.println("Max of two numbers - equal test = FAIL");
         }
     }
 
     public void maxOfThreeNumbersAllEqualTest() {
+        int firstNumber = 10;
+        int secondNumber = 10;
+        int thirdNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers - equal test = OK");
+        } else {
+            System.out.println("Max of three numbers - equal test = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersFirstAndThirdEqualAndHigherTest() {
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int thirdNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersLastTwoEqualAndHigherTest() {
+        int firstNumber = 5;
+        int secondNumber = 10;
+        int thirdNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersFirstTwoEqualAndHigherTest() {
+        int firstNumber = 10;
+        int secondNumber = 10;
+        int thirdNumber = 5;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersThirdHighestTest() {
+        int firstNumber = 5;
+        int secondNumber = 6;
+        int thirdNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersSecondHighestTest() {
+        int firstNumber = 5;
+        int secondNumber = 10;
+        int thirdNumber = 6;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public void maxOfThreeNumbersFirstHighestTest() {
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int thirdNumber = 6;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersFirstHighestOtherSameTest() {
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int thirdNumber = 5;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersSecondHighestOtherSameTest() {
+        int firstNumber = 5;
+        int secondNumber = 10;
+        int thirdNumber = 5;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersThirdHighestOtherSameTest() {
+        int firstNumber = 5;
+        int secondNumber = 5;
+        int thirdNumber = 10;
+        int expectedResult = 10;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Max of three numbers = OK");
+        } else {
+            System.out.println("Max of three numbers = FAIL");
+        }
     }
 
     public static void main(String[] args) {
@@ -284,6 +403,11 @@ class CalculatorTest {
         calculatorTest.maxOfThreeNumbersFirstTwoEqualAndHigherTest();
         calculatorTest.maxOfThreeNumbersLastTwoEqualAndHigherTest();
         calculatorTest.maxOfThreeNumbersFirstAndThirdEqualAndHigherTest();
+
+        // maybe too many scenarios... unnecessary?
+        calculatorTest.maxOfThreeNumbersFirstHighestOtherSameTest();
+        calculatorTest.maxOfThreeNumbersSecondHighestOtherSameTest();
+        calculatorTest.maxOfThreeNumbersThirdHighestOtherSameTest();
 
         calculatorTest.maxOfThreeNumbersAllEqualTest();
 
