@@ -10,6 +10,9 @@ PS: перед решением этой задачи распишите на б
 Нельзя пользоваться классом Math.
  */
 
+import teacher.codereview.CodeReviewComment;
+
+@CodeReviewComment(student = "I think I've fixed.")
 class HighestChecker {
 
     int firstNumber;
@@ -22,39 +25,29 @@ class HighestChecker {
         this.thirdNumber = thirdNumber;
     }
 
-    /*
-    scenarios at first pos
-    3 2 1
-    3 1 2
-    3 1 1   at first pos, other - same
+    // 1. find highest among 1 and 2 and write result into highest at the moment
+    // 2. next, find highest among highest at the moment result and 3rd.
+    // 3. if highest at the moment result is higher than third, then answer is highest of first two - current highest result.
+    // 4. Otherwise third number.
 
-    scenarios at middle pos
-    1 3 2
-    2 3 1
-    1 3 1   at middle pos, other - same
-
-    scenarios at last pos
-    1 2 3
-    2 1 3
-    1 1 3   at last pos, other - same
-
-    at least two the same
-    1 3 3   two same, both (any of) is highest
-    3 3 1
-    3 1 3
-    3 3 3   all same
-     */
-
-    // find higher among 1 and 2 and write into highest result
-    // find higher among result and 3. If result smaller, then third. otherwise first remains highest.
-
-
-    int maxOfTwo(int first, int second) {
-        return first > second ? first : second;
+    int maxOfTwo(int firstNum, int secondNum) {
+        return firstNum > secondNum ? firstNum : secondNum;
     }
 
     int getHighest() {
-        return 0;
+        return maxOfTwo(maxOfTwo(firstNumber, secondNumber), thirdNumber);
     }
+
+        /*
+    previous version... will delete after review
+
+    int getHighest() {
+        int currentMax = maxOfTwo(firstNumber, secondNumber);
+        if (maxOfTwo(currentMax, thirdNumber) > thirdNumber) {
+            return currentMax;
+        } else return thirdNumber;
+    }
+
+     */
 
 }
