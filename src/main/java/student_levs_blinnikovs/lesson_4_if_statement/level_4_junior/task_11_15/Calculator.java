@@ -113,39 +113,6 @@ class Calculator {
         }
     }
 
-    /*
-    public boolean areAllSame() {
-        return firstNumber == secondNumber && firstNumber == thirdNumber;
-    }
-
-    public boolean isFirstPosHighest() {
-        return firstNumber > secondNumber && firstNumber > thirdNumber;
-    }
-
-    public boolean isSecondPosHighest() {
-        return secondNumber > firstNumber && secondNumber > thirdNumber;
-    }
-
-    public boolean isThirdPosHighest() {
-        return thirdNumber > firstNumber && thirdNumber > secondNumber;
-    }
-
-    String checkHighest() {
-        if (areAllSame()) { // technically then highest is any number (?)
-            return "All three numbers are same.";
-        } else if (isFirstPosHighest()) { // first pos scenario + at first pos, other - same
-            return "First number is highest. It's value is " + firstNumber;
-        } else if (isSecondPosHighest()) { // second pos scenario + at middle pos, other - same
-            return "Second number is highest. It's value is " + secondNumber;
-        } else if (isThirdPosHighest()) { // last pos scenario + at last pos, other - same
-            return "Third number is highest. It's value is " + thirdNumber;
-        } else { // two similar, no highest ... technically then highest is one of those that are same (?)
-            return "There is no highest number as two of the numbers are same.";
-        }
-    }
-
-     */
-
     public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
         return -1;
     }

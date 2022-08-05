@@ -24,58 +24,75 @@ class HighestChecker {
 
     /*
 
-    at first pos
+    scenarios at first pos
     3 2 1
     3 1 2
+    3 1 1   at first pos, other - same
 
-    at middle pos
+    scenarios at middle pos
     1 3 2
     2 3 1
+    1 3 1   at middle pos, other - same
 
-    at last pos
+    scenarios at last pos
     1 2 3
     2 1 3
-
-    3 1 1   at first pos, other - same
-    1 3 1   at middle pos, other - same
     1 1 3   at last pos, other - same
 
-    1 3 3   two same, no highest
+    at least two the same
+    1 3 3   two same, both (any of) is highest
     3 3 1
     3 1 3
-
-    333 all same
+    3 3 3   all same
 
      */
 
-    boolean areAllSame() {
-        return firstNumber == secondNumber && firstNumber == thirdNumber;
+    int getHighest() {
+        if (isFirstHighest() || areFirstTwoEquallyHigherThanThird() || areFirstAndLastEquallyHigherThanSecond()) {
+            return firstNumber;
+        } else if (isSecondHighest() || areFirstTwoEquallyHigherThanThird() || areLastTwoEquallyHigherThanFirst()) {
+            return secondNumber;
+        } else if (isThirdHighest() || areLastTwoEquallyHigherThanFirst() || areFirstAndLastEquallyHigherThanSecond()) {
+            return thirdNumber;
+        } else return firstNumber; // all three the same
     }
 
-    boolean isFirstPosHighest() {
-        return firstNumber > secondNumber && firstNumber > thirdNumber;
+    boolean isFirstHighest() {
+        return firstNumber > secondNumber && firstNumber > thirdNumber; // helper method to return first
     }
 
-    boolean isSecondPosHighest() {
-        return secondNumber > firstNumber && secondNumber > thirdNumber;
+    boolean isSecondHighest() {
+        return secondNumber > firstNumber && secondNumber > thirdNumber; // helper method to return second
     }
 
-    boolean isThirdPosHighest() {
-        return thirdNumber > firstNumber && thirdNumber > secondNumber;
+    boolean isThirdHighest() {
+        return thirdNumber > firstNumber && thirdNumber > secondNumber; // helper method to return third
     }
 
-    String checkHighest() {
-        if (areAllSame()) { // technically then highest is any number (?)
-            return "All three numbers are same.";
-        } else if (isFirstPosHighest()) { // first pos scenario + at first pos, other - same
-            return "First number is highest. It's value is " + firstNumber;
-        } else if (isSecondPosHighest()) { // second pos scenario + at middle pos, other - same
-            return "Second number is highest. It's value is " + secondNumber;
-        } else if (isThirdPosHighest()) { // last pos scenario + at last pos, other - same
-            return "Third number is highest. It's value is " + thirdNumber;
-        } else { // two similar, no highest ... technically then highest is one of those that are same (?)
-            return "There is no highest number as two of the numbers are same.";
-        }
+    boolean areFirstTwoEqual () { // is this even needed... maybe better put inside areFirstTwoEquallyHigherThanThird()
+        return firstNumber == secondNumber;
     }
+
+    boolean areLastTwoEqual () {
+        return secondNumber == thirdNumber;
+    }
+
+    boolean areFirstAndLastEqual () {
+        return firstNumber == thirdNumber;
+    }
+
+    boolean areFirstTwoEquallyHigherThanThird() {
+        return areFirstTwoEqual() && firstNumber > thirdNumber; // helper method to return first || second
+    }
+
+    boolean areLastTwoEquallyHigherThanFirst() {
+        return areLastTwoEqual() && secondNumber > firstNumber; // helper method to return second || third
+    }
+
+    boolean areFirstAndLastEquallyHigherThanSecond() {
+        return areFirstAndLastEqual() && firstNumber > secondNumber; // helper method to return first || third
+    }
+
+    // not sure if areAllEqual()  method is even needed. if areTwoEquallyHigh() == true, then it can print the highest number already. Question is which.
 
 }

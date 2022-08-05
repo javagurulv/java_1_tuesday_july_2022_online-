@@ -11,56 +11,51 @@ class HighestCheckerDemo {
         // all three different
         // highest first
         HighestChecker test1 = new HighestChecker(3,2,1);
-        System.out.println("Should return first position (value 3) as highest (smaller are later - medium is next, smallest is last): " + test1.checkHighest());
+        System.out.println("Should return first position (value 3) as highest (smaller are later - medium is next, smallest is last): " + test1.getHighest());
 
         HighestChecker test2 = new HighestChecker(3,1,2);
-        System.out.println("Should return first position (value 3) as highest (smallest are later - smallest is next, medium is last): " + test2.checkHighest());
+        System.out.println("Should return first position (value 3) as highest (smallest are later - smallest is next, medium is last): " + test2.getHighest());
+
+        HighestChecker test3 = new HighestChecker(3,1,1);
+        System.out.println("Should return first position (value 3) as highest (smaller are later): " + test3.getHighest());
+
 
         // highest second (middle)
-        HighestChecker test3 = new HighestChecker(1,3,2);
-        System.out.println("Should return middle position (value 3) as highest (smallest is first, medium is last): " + test3.checkHighest());
+        HighestChecker test4 = new HighestChecker(1,3,2);
+        System.out.println("Should return middle position (value 3) as highest (smallest is first, medium is last): " + test4.getHighest());
 
-        HighestChecker test4 = new HighestChecker(2,3,1);
-        System.out.println("Should return middle position (value 3) as highest (medium is first, smallest is last): " + test4.checkHighest());
+        HighestChecker test5 = new HighestChecker(2,3,1);
+        System.out.println("Should return middle position (value 3) as highest (medium is first, smallest is last): " + test5.getHighest());
 
-        // highest last
-        HighestChecker test5 = new HighestChecker(1,2,3);
-        System.out.println("Should return last position (value 3) as highest (smallest is first, medium is second): " + test5.checkHighest());
-
-        HighestChecker test6 = new HighestChecker(2,1,3);
-        System.out.println("Should return last position (value 3) as highest (medium is first, smallest is second): " + test6.checkHighest());
-
-        // some (two of) are the same but there is one highest
-        // highest first
-        HighestChecker test7 = new HighestChecker(3,1,1);
-        System.out.println("Should return first position (value 3) as highest (smaller are later): " + test7.checkHighest());
-
-        // highest second (middle)
-        HighestChecker test8 = new HighestChecker(1,3,1);
-        System.out.println("Should return middle position (value 3) as highest (smallest is first and last): " + test8.checkHighest());
+        HighestChecker test6 = new HighestChecker(1,3,1);
+        System.out.println("Should return middle position (value 3) as highest (smallest is first and last): " + test6.getHighest());
 
         // highest last
+        HighestChecker test7 = new HighestChecker(1,2,3);
+        System.out.println("Should return last position (value 3) as highest (smallest is first, medium is second): " + test7.getHighest());
+
+        HighestChecker test8 = new HighestChecker(2,1,3);
+        System.out.println("Should return last position (value 3) as highest (medium is first, smallest is second): " + test8.getHighest());
+
         HighestChecker test9 = new HighestChecker(1,1,3);
-        System.out.println("Should return last position (value 3) as highest (smallest is first and second): " + test9.checkHighest());
+        System.out.println("Should return last position (value 3) as highest (smallest is first and second): " + test9.getHighest());
 
-
-        // some (two of) are the same and there are two highest (both)
+        // some (two of) are the same, and they are also highest (each of them/both considered highest)
         // highest middle and last
         HighestChecker test10 = new HighestChecker(1,3,3);
-        System.out.println("Should return that there are no highest number: " + test10.checkHighest());
+        System.out.println("Second and third are equally high, first is the smallest: " + test10.getHighest());
 
         // highest first and second (middle)
         HighestChecker test11 = new HighestChecker(3,3,1);
-        System.out.println("Should return that there are no highest number: " + test11.checkHighest());
+        System.out.println("First and second are equally high, last is the smallest: " + test11.getHighest());
 
         // highest first and last
         HighestChecker test12 = new HighestChecker(3,1,3);
-        System.out.println("Should return that there are no highest number: " + test12.checkHighest());
-
+        System.out.println("First and third are equally high, middle is the smallest: " + test12.getHighest());
 
         // all three the same
         HighestChecker test13 = new HighestChecker(3,3,3);
-        System.out.println("Should return that there are no highest number (all three equal): " + test13.checkHighest());
+        System.out.println("All three equally high. Should return any: " + test13.getHighest());
 
         // and now user input
 
@@ -79,7 +74,8 @@ class HighestCheckerDemo {
         int savedUserInputThird = userInput.nextInt();
 
         HighestChecker test = new HighestChecker(savedUserInputFirst, savedUserInputSecond, savedUserInputThird);
-        System.out.println(test.checkHighest());
+        System.out.println(test.getHighest());
+
 
     }
 
