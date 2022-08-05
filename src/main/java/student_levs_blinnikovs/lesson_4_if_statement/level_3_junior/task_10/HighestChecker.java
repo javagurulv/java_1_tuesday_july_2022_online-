@@ -48,13 +48,13 @@ class HighestChecker {
      */
 
     int getHighest() {
-        if (isFirstHighest() || isSecondSmallestAmongOtherEqual() || isThirdSmallestAmongOtherEqual()) {
+        if (isFirstHighest() || isFirstAndThirdEquallyHighAndSecondSmallest() || isFirstAndSecondEquallyHighAndThirdSmallest()) { // that means can return first
             return firstNumber;
-        } else if (isFirstSmallestAmongOtherEqual() || isSecondHighest() || isThirdSmallestAmongOtherEqual()) {
+        } else if (isSecondAndThirdEquallyHighAndFirstSmallest() || isSecondHighest() || isFirstAndSecondEquallyHighAndThirdSmallest()) { // that means can return second
             return secondNumber;
-        } else if (isFirstSmallestAmongOtherEqual() || isSecondSmallestAmongOtherEqual() || isThirdHighest()) {
+        } else if (isSecondAndThirdEquallyHighAndFirstSmallest() || isFirstAndThirdEquallyHighAndSecondSmallest() || isThirdHighest()) { // that means can return third
             return thirdNumber;
-        } else return firstNumber; // all three the same
+        } else return firstNumber; // all three the same, can return any
     }
 
     boolean isFirstHighest() {
@@ -81,15 +81,15 @@ class HighestChecker {
         return firstNumber == thirdNumber;
     }
 
-    boolean isThirdSmallestAmongOtherEqual() {
+    boolean isFirstAndSecondEquallyHighAndThirdSmallest() {
         return areFirstTwoEqual() && firstNumber > thirdNumber; // helper method to return first || second
     }
 
-    boolean isFirstSmallestAmongOtherEqual() {
+    boolean isSecondAndThirdEquallyHighAndFirstSmallest() {
         return areLastTwoEqual() && secondNumber > firstNumber; // helper method to return second || third
     }
 
-    boolean isSecondSmallestAmongOtherEqual() {
+    boolean isFirstAndThirdEquallyHighAndSecondSmallest() {
         return areFirstAndLastEqual() && firstNumber > secondNumber; // helper method to return first || third
     }
 
