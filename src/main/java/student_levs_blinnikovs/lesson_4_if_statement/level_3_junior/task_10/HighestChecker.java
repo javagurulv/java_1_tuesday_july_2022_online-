@@ -23,7 +23,6 @@ class HighestChecker {
     }
 
     /*
-
     scenarios at first pos
     3 2 1
     3 1 2
@@ -44,55 +43,10 @@ class HighestChecker {
     3 3 1
     3 1 3
     3 3 3   all same
-
      */
 
     int getHighest() {
-        if (isFirstHighest() || isFirstAndThirdEquallyHighAndSecondSmallest() || isFirstAndSecondEquallyHighAndThirdSmallest()) { // that means can return first
-            return firstNumber;
-        } else if (isSecondAndThirdEquallyHighAndFirstSmallest() || isSecondHighest() || isFirstAndSecondEquallyHighAndThirdSmallest()) { // that means can return second
-            return secondNumber;
-        } else if (isSecondAndThirdEquallyHighAndFirstSmallest() || isFirstAndThirdEquallyHighAndSecondSmallest() || isThirdHighest()) { // that means can return third
-            return thirdNumber;
-        } else return firstNumber; // all three the same, can return any
+        return 0;
     }
-
-    boolean isFirstHighest() {
-        return firstNumber > secondNumber && firstNumber > thirdNumber; // helper method to return first
-    }
-
-    boolean isSecondHighest() {
-        return secondNumber > firstNumber && secondNumber > thirdNumber; // helper method to return second
-    }
-
-    boolean isThirdHighest() {
-        return thirdNumber > firstNumber && thirdNumber > secondNumber; // helper method to return third
-    }
-
-    boolean areFirstTwoEqual() { // is this even needed... maybe better put inside areFirstTwoEquallyHigherThanThird()
-        return firstNumber == secondNumber;
-    }
-
-    boolean areLastTwoEqual() {
-        return secondNumber == thirdNumber;
-    }
-
-    boolean areFirstAndLastEqual() {
-        return firstNumber == thirdNumber;
-    }
-
-    boolean isFirstAndSecondEquallyHighAndThirdSmallest() {
-        return areFirstTwoEqual() && firstNumber > thirdNumber; // helper method to return first || second
-    }
-
-    boolean isSecondAndThirdEquallyHighAndFirstSmallest() {
-        return areLastTwoEqual() && secondNumber > firstNumber; // helper method to return second || third
-    }
-
-    boolean isFirstAndThirdEquallyHighAndSecondSmallest() {
-        return areFirstAndLastEqual() && firstNumber > secondNumber; // helper method to return first || third
-    }
-
-    // not sure if areAllEqual()  method is even needed. if areTwoEquallyHigh() == true, then it can print the highest number already. Question is which.
 
 }
