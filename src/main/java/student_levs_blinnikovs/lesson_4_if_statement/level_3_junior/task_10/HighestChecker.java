@@ -48,11 +48,11 @@ class HighestChecker {
      */
 
     int getHighest() {
-        if (isFirstHighest() || areFirstTwoEquallyHigherThanThird() || areFirstAndLastEquallyHigherThanSecond()) {
+        if (isFirstHighest() || isSecondSmallestAmongOtherEqual() || isThirdSmallestAmongOtherEqual()) {
             return firstNumber;
-        } else if (isSecondHighest() || areFirstTwoEquallyHigherThanThird() || areLastTwoEquallyHigherThanFirst()) {
+        } else if (isFirstSmallestAmongOtherEqual() || isSecondHighest() || isThirdSmallestAmongOtherEqual()) {
             return secondNumber;
-        } else if (isThirdHighest() || areLastTwoEquallyHigherThanFirst() || areFirstAndLastEquallyHigherThanSecond()) {
+        } else if (isFirstSmallestAmongOtherEqual() || isSecondSmallestAmongOtherEqual() || isThirdHighest()) {
             return thirdNumber;
         } else return firstNumber; // all three the same
     }
@@ -69,27 +69,27 @@ class HighestChecker {
         return thirdNumber > firstNumber && thirdNumber > secondNumber; // helper method to return third
     }
 
-    boolean areFirstTwoEqual () { // is this even needed... maybe better put inside areFirstTwoEquallyHigherThanThird()
+    boolean areFirstTwoEqual() { // is this even needed... maybe better put inside areFirstTwoEquallyHigherThanThird()
         return firstNumber == secondNumber;
     }
 
-    boolean areLastTwoEqual () {
+    boolean areLastTwoEqual() {
         return secondNumber == thirdNumber;
     }
 
-    boolean areFirstAndLastEqual () {
+    boolean areFirstAndLastEqual() {
         return firstNumber == thirdNumber;
     }
 
-    boolean areFirstTwoEquallyHigherThanThird() {
+    boolean isThirdSmallestAmongOtherEqual() {
         return areFirstTwoEqual() && firstNumber > thirdNumber; // helper method to return first || second
     }
 
-    boolean areLastTwoEquallyHigherThanFirst() {
+    boolean isFirstSmallestAmongOtherEqual() {
         return areLastTwoEqual() && secondNumber > firstNumber; // helper method to return second || third
     }
 
-    boolean areFirstAndLastEquallyHigherThanSecond() {
+    boolean isSecondSmallestAmongOtherEqual() {
         return areFirstAndLastEqual() && firstNumber > secondNumber; // helper method to return first || third
     }
 
