@@ -30,10 +30,9 @@ class UserInputGreeter extends GreetingConcatenator {
         String userName = userInput.next();
 
         System.out.println("What language do you speak?");
-        System.out.println("Enter EN for English, RU for Russian, LV for Latvian, PL for Polish, EN for Spanish: ");
-        String language = userInput.next();
-        GreetingLanguage greetingLanguage = GreetingLanguage.valueOf(language.toUpperCase());
-
+        System.out.println("Enter EN for English, RU for Russian, LV for Latvian, PL for Polish, EN for Spanish (case insensitive, program will fix to uppercase): ");
+        String language = userInput.next().toUpperCase();
+        GreetingLanguage greetingLanguage = GreetingLanguage.valueOf(language);
         System.out.println(doGreet(userName, greetingLanguage));
 
     }

@@ -10,8 +10,6 @@ Demo класс для каждого описанного вами объект
 и продемонстрируйте работу с объектом.
 */
 
-import java.util.Date;
-
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
@@ -35,7 +33,7 @@ class Human {
         } else System.out.println("Hello, my name is " + firstName + " " + lastName + " and I'm currently working at " + jobName + ".");
     }
 
-    void greetWithfakeName(String fakeName) {
+    void greetWithFakeName(String fakeName) {
         System.out.println("My name is " + fakeName + ". Just kidding. My real name is " + this.firstName + "!");
     }
 

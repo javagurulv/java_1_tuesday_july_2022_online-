@@ -18,7 +18,7 @@ class HumanDemo {
 
         randomHuman.changeIdentity("Al", "Capone", 65);
 
-        randomHuman.greetWithfakeName("Frank");
+        randomHuman.greetWithFakeName("Frank");
 
     }
 
