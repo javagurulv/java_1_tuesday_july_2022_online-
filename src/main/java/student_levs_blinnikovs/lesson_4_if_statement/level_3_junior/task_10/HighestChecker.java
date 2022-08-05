@@ -45,6 +45,14 @@ class HighestChecker {
     3 3 3   all same
      */
 
+    // find higher among 1 and 2 and write into highest result
+    // find higher among result and 3. If result smaller, then third. otherwise first remains highest.
+
+
+    int maxOfTwo(int first, int second) {
+        return first > second ? first : second;
+    }
+
     int getHighest() {
         return 0;
     }

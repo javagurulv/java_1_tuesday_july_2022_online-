@@ -59,6 +59,8 @@ class HighestCheckerDemo {
 
         // and now user input
 
+        /*
+
         System.out.println("-----------------------------------------------------------------------------------------------");
         System.out.println("-----------------------------------------------------------------------------------------------");
         System.out.println("-----------------------------------------------------------------------------------------------");
@@ -76,6 +78,7 @@ class HighestCheckerDemo {
         HighestChecker test = new HighestChecker(savedUserInputFirst, savedUserInputSecond, savedUserInputThird);
         System.out.println(test.getHighest());
 
+        */
 
     }
 

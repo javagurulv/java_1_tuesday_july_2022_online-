@@ -59,7 +59,7 @@ class CalculateDoubleOpsWithUserInput {
         System.out.println("Sum is: " + doubleSum(userDoubleOne, userDoubleTwo));
         System.out.println("Subtraction result is: " + doubleSubtract(userDoubleOne, userDoubleTwo));
         System.out.println("Product is: " + doubleProduct(userDoubleOne, userDoubleTwo));
-        System.out.println("Division result is: " + doubleProduct(userDoubleOne, userDoubleTwo));
+        System.out.println("Division result is: " + doubleDivision(userDoubleOne, userDoubleTwo));
 
     }
 
