@@ -1,4 +1,4 @@
-package student_Eduard_Minajev.Lesson_01.Lesson_02.Homework.Level_1;
+package student_Eduard_Minajev.Lesson_02.homework.level_1;
 import java.util.Scanner;
 
 public class Task2 {

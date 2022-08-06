@@ -1,4 +1,4 @@
-package student_Eduard_Minajev.Lesson_01.Lesson_02.Homework.Level3;
+package student_Eduard_Minajev.Lesson_02.homework.level3;
 import java.util.Scanner;
 public class Task_8 {
     public static void main(String[] args){
