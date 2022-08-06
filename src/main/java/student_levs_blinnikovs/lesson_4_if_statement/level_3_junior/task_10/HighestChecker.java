@@ -35,8 +35,22 @@ class HighestChecker {
     }
 
     int getHighest() {
-        return maxOfTwo(maxOfTwo(firstNumber, secondNumber), thirdNumber);
+        int currentMax = maxOfTwo(firstNumber, secondNumber);
+        currentMax = maxOfTwo(currentMax, thirdNumber);
+        return currentMax;
     }
+
+    /*
+
+    alternatively ...
+
+    int getHighest() {
+        return maxOfTwo(maxOfTwo(firstNumber, secondNumber), thirdNumber)
+    }
+
+    but maybe current option is better for readability.
+
+     */
 
         /*
     previous version... will delete after review
