@@ -1,7 +1,7 @@
-package student_Yurii_Panasiuk.L2;
+package student_Yurii_Panasiuk.L2.Level1and2;
 import java.util.Scanner;
 
-public class Task2 {
+public class TaskL1T2 {
 
     public static void main(String[] args) {
 
