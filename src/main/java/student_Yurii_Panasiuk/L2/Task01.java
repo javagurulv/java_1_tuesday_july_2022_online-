@@ -1,6 +1,6 @@
 package student_Yurii_Panasiuk.L2;
 import java.util.Scanner;
-public class Task1 {
+public class Task01 {
 
     public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class Task1 {
     int division1 = firstNumber/secondNumber;
     int division2 = secondNumber/firstNumber;
 
-    System.out.println("результат сложения " + addition); // выводим в консоаль результаты
+    System.out.println("результат сложения " + addition); // выводим в консоль результаты
     System.out.println("результат вычитания второго числа из первого " + subtraction1);
     System.out.println("результат вычитания первого числа из вторго " + subtraction2);
     System.out.println("результат умножения " + multiplication);
