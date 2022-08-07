@@ -1,4 +1,4 @@
-package student_andrei_kholiavskii.lesson_1_introduction.Task_12;
+package student_andrei_kholiavskii.lesson_1_introduction.task_12;
 
 import teacher.codereview.CodeReview;
 
