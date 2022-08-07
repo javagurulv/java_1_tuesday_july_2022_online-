@@ -9,14 +9,6 @@ class Dog {
         this.dogAge = dogAge;
     }
 
-    public String getDogName() {
-        return dogName;
-    }
-
-    public int getDogAge() {
-        return dogAge;
-    }
-
     void dogVoice() {
         System.out.println("Dog's name: " + dogName + ", age: " + dogAge);
     }

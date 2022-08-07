@@ -9,10 +9,6 @@ class Dog {
         this.dogAge = dogAge;
     }
 
-    String getDogName() {
-        return dogName;
-    }
-
     int getDogAge() {
         return dogAge;
     }
