@@ -4,16 +4,16 @@ class Dog {
     String dogName;
     int dogAge;
 
-   Dog(String dogName, int dogAge) {
+    public Dog(String dogName, int dogAge) {
         this.dogName = dogName;
         this.dogAge = dogAge;
     }
 
-    String getDogName() {
+    public String getDogName() {
         return dogName;
     }
 
-    int getDogAge() {
+    public int getDogAge() {
         return dogAge;
     }
 
@@ -21,6 +21,7 @@ class Dog {
         System.out.println("Dog's name: " + dogName + ", age: " + dogAge);
     }
     void happyBirthday() {
-        dogAge++;
+       dogAge++;
     }
+
 }
