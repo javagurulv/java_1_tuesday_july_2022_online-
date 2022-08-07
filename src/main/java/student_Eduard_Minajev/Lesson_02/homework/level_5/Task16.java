@@ -1,4 +1,4 @@
-package student_Eduard_Minajev.Lesson_02.homework.level_5;
+package student_eduard_minajev.Lesson_02.homework.level_5;
 
 public class Task16 {
     public static void main(String[] args){
