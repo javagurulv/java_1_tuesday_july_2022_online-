@@ -72,9 +72,9 @@ class Stock {
     }
 
     final String companyName;
-    int currentStockPrice;
-    int minimumStockPrice;
-    int maximumStockPrice;
+    private int currentStockPrice;
+    private int minimumStockPrice;
+    private int maximumStockPrice;
 
     void updatePrice(int currentStockPrice) {
         System.out.println("|----------PRICE UPDATE---------------");
