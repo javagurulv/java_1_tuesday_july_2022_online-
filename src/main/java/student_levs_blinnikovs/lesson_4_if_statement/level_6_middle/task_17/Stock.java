@@ -30,11 +30,11 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_6_middle.task_17;
 
 Test case max:
 
-Изменение цены акции: 999  = Максимальная цена за указанный переуд: 999
-Изменение цены акции: 999 -> 1  = Максимальная цена за указанный переуд: 999
-Изменение цены акции: 999 -> 2 -> 1000 = Максимальная цена за указанный переуд: 1000
-Изменение цены акции: 999 -> 2 -> 1000 -> 8 = Максимальная цена за указанный переуд: 1000
-Изменение цены акции: 9 -> 27 = Максимальная цена за указанный переуд: 27
+Изменение цены акции: 999  = Максимальная цена за указанный период: 999
+Изменение цены акции: 999 -> 1  = Максимальная цена за указанный период: 999
+Изменение цены акции: 999 -> 2 -> 1000 = Максимальная цена за указанный период: 1000
+Изменение цены акции: 999 -> 2 -> 1000 -> 8 = Максимальная цена за указанный период: 1000
+Изменение цены акции: 9 -> 27 = Максимальная цена за указанный период: 27
 
 
 Пример работы с классом Stock:
@@ -50,7 +50,7 @@ google.updatePrice(14);
 priceInformation = google.getPriceInformation();
 System.out.println(priceInformation);
 
-После выполнения кода вывод в консоли должет быть следующим:
+После выполнения кода вывод в консоли должен быть следующим:
 Company = "GOOG", Current Price = 10, Min Price = 10, Max Price = 10
 Company = "GOOG", Current Price = 14, Min Price = 7, Max Price = 15
  */
@@ -63,6 +63,10 @@ class Stock {
     Stock(String companyName, int currentStockPrice) {
         this.companyName = companyName;
         this.currentStockPrice = currentStockPrice;
+        System.out.println("|----------MARKET UPDATE--------------");
+        System.out.println("| New stock on the market!");
+        System.out.println("| \"" + companyName + "\" is now selling for " + currentStockPrice);
+        System.out.println("|-------------------------------------\n");
     }
 
     final String companyName;
@@ -71,11 +75,17 @@ class Stock {
     int maximumStockPrice;
 
     void updatePrice(int currentStockPrice) {
+        System.out.println("|----------PRICE UPDATE---------------");
+        System.out.println("| " + companyName + " stock price changing from " + this.currentStockPrice + " to " + currentStockPrice);
         this.currentStockPrice = currentStockPrice;
+        System.out.println("| " + companyName + " stock price update has finished. Current price is " + this.currentStockPrice);
+        System.out.println("|-------------------------------------\n");
     }
 
-    int getPriceInformation() {
-        return this.currentStockPrice;
+    void getPriceInformation() {
+        System.out.println("|----------" + companyName + " MARKET INFO-----------");
+        System.out.println("| Company = \"" + companyName + "\", Current Price = " + currentStockPrice + ", Min Price = " + minimumStockPrice + ", Max Price = " + maximumStockPrice);
+        System.out.println("|-------------------------------------\n");
     }
 
 }
