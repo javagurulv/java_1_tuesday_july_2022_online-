@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class Radius {
+class Radius {
     public static void main(String[] args) {
         double pi = 3.14;
         Scanner scanner = new Scanner(System.in);

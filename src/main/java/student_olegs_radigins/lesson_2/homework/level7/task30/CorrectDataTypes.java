@@ -3,7 +3,7 @@ package student_olegs_radigins.lesson_2.homework.level7.task30;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class CorrectDataTypes {
+class CorrectDataTypes {
     public static void main(String[] args) {
         int numberOne = 10;
         double numberTwo = 20.0;

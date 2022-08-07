@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class Multiplication {
+class Multiplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("напишите целое число: ");
