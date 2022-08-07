@@ -76,20 +76,20 @@ class Stock {
     private int minimumStockPrice;
     private int maximumStockPrice;
 
-    void updatePrice(int currentStockPrice) {
+    void updatePrice(int newPrice) {
         System.out.println("|----------PRICE UPDATE---------------");
-        System.out.println("| " + companyName + " stock price changing from " + this.currentStockPrice + " to " + currentStockPrice);
+        System.out.println("| " + companyName + " stock price changing from " + currentStockPrice + " to " + newPrice);
 
-        this.currentStockPrice = currentStockPrice;
-        if (this.currentStockPrice > maximumStockPrice) {
-            maximumStockPrice = this.currentStockPrice;
+        currentStockPrice = newPrice;
+        if (currentStockPrice > maximumStockPrice) {
+            maximumStockPrice = currentStockPrice;
             System.out.println("| This is also an all time highest price!");
-        } else if (this.currentStockPrice < minimumStockPrice) {
-            minimumStockPrice = this.currentStockPrice;
+        } else if (currentStockPrice < minimumStockPrice) {
+            minimumStockPrice = currentStockPrice;
             System.out.println("| This is also an all time lowest price!");
         }
 
-        System.out.println("| " + companyName + " stock price update has finished. Current price is " + this.currentStockPrice);
+        System.out.println("| " + companyName + " stock price update has finished. Current price is " + currentStockPrice);
         System.out.println("|-------------------------------------\n");
     }
 
