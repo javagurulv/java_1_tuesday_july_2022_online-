@@ -1,4 +1,4 @@
-package student_Yurii_Panasiuk.L1;
+package student_Yurii_Panasiuk.lesson_1;
 
 import teacher.codereview.CodeReview;
 

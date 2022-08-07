@@ -1,4 +1,4 @@
-package student_Yurii_Panasiuk.L2.Level5;
+package student_Yurii_Panasiuk.lesson_2.level_5;
 
 public class Task18 {
 

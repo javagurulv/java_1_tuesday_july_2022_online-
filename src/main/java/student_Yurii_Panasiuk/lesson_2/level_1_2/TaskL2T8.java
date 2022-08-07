@@ -1,4 +1,4 @@
-package student_Yurii_Panasiuk.L2.Level1and2;
+package student_Yurii_Panasiuk.lesson_2.level_1_2;
 
 import java.util.Scanner;
 

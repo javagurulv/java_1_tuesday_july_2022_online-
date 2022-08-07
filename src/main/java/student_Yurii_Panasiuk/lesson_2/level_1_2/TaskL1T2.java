@@ -1,21 +1,22 @@
-package student_Yurii_Panasiuk.L2.Level1and2;
+package student_Yurii_Panasiuk.lesson_2.level_1_2;
 import java.util.Scanner;
-public class TaskL1T1 {
+
+public class TaskL1T2 {
 
     public static void main(String[] args) {
 
         System.out.println("enter the first number"); // вводим числа с помощью Scanner
             Scanner scanner = new Scanner(System.in);
-            int firstNumber = scanner.nextInt();
+            double firstDoubleNumber = scanner.nextDouble();
         System.out.println("enter the second number");
-            int secondNumber = scanner.nextInt();
+            double secondDoubleNumber = scanner.nextDouble();
 
-    int addition = firstNumber+secondNumber; // записываем в переменные результаты сложения, вычитания, умножения и деления.
-    int subtraction1 = firstNumber-secondNumber;
-    int subtraction2 = secondNumber-firstNumber;
-    int multiplication = firstNumber*secondNumber;
-    int division1 = firstNumber/secondNumber;
-    int division2 = secondNumber/firstNumber;
+    double addition = firstDoubleNumber+secondDoubleNumber; // записываем в переменные результаты сложения, вычитания, умножения и деления.
+    double subtraction1 = firstDoubleNumber-secondDoubleNumber;
+    double subtraction2 = secondDoubleNumber-firstDoubleNumber;
+    double multiplication = firstDoubleNumber*secondDoubleNumber;
+    double division1 = firstDoubleNumber/secondDoubleNumber;
+    double division2 = secondDoubleNumber/firstDoubleNumber;
 
     System.out.println("результат сложения " + addition); // выводим в консоль результаты
     System.out.println("результат вычитания второго числа из первого " + subtraction1);
@@ -23,7 +24,6 @@ public class TaskL1T1 {
     System.out.println("результат умножения " + multiplication);
     System.out.println("результат деления первого числа на второе " + division1);
     System.out.println("результат деления второго числа на первое "+ division2);
-
 
     }
 
