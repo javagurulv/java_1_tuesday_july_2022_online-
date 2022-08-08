@@ -32,7 +32,7 @@ public class ExtraHomework {
         Scanner userSelect = new Scanner(System.in);
         int formulaArgument = userSelect.nextInt();
         if ( formulaArgument == 1){
-            System.out.println("The formula is (" + (operandA) + " + " + (operandB) + ") ^2 = " + (operandA) + "^2 − 2(" + (operandA) + " * " + (operandB) + ") + " + (operandB) + "^2 and after calculation the result is = " +  result );
+            System.out.println("The formula is (" + (operandA) + "+" + (operandB) + ") ^2 = " + (operandA) + "^2 + 2(" + (operandA) + " * " + (operandB) + ") + " + (operandB) + "^2 and after calculation the result is = " +  result );
         }
 
 
