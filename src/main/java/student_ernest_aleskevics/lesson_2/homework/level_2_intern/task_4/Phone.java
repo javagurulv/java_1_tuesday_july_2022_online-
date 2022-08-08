@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_2.homework.task_4;
+package student_ernest_aleskevics.lesson_2.homework.level_2_intern.task_4;
 
 import teacher.codereview.CodeReview;
 

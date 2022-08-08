@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_2.homework.task_1;
+package student_ernest_aleskevics.lesson_2.homework.level_1_intern.task_1;
 
 import java.util.Scanner;
 
