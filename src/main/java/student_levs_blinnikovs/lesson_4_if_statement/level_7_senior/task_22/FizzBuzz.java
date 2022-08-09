@@ -24,18 +24,15 @@ class FizzBuzz {
 
 class FizzBuzz {
 
-
     public String detect(int number) {
         String result;
-        result = String.valueOf(number);
+        if (number % 3 == 0 && number % 5 == 0) {
+            result = "FizzBuzz";
+        } else if (number % 3 == 0) {
+            result = "Fizz";
+        } else if (number % 5 == 0) {
+            result = "Buzz";
+        } else result = String.valueOf(number);
         return result;
     }
-
-
-    public static void main(String[] args) {
-
-
-
-    }
-
 }
