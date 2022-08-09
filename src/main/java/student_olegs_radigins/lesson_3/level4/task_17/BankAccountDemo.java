@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_3.level4.task_17;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BankAccountDemo {
     public static void main(String[] args) {
             BankAccount bankAccount = new BankAccount("Viktor", "Savonin", 100000);

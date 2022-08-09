@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_1_intern.task_4;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class OddOrEvenCheckerDemo {
 
     public static void main(String[] args) {

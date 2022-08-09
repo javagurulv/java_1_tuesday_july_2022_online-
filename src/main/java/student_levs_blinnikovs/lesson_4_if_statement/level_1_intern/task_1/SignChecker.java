@@ -7,6 +7,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_1_intern.task_1;
 положительное оно или отрицательное.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class SignChecker {
 
     int number;

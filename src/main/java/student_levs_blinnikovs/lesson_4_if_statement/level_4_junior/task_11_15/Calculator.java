@@ -74,7 +74,9 @@ Task 15
 
  */
 
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 class Calculator {
 
     public int sum(int firstNumber, int secondNumber) {

@@ -13,6 +13,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_1_intern.task_3;
 Вывод: Friday
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class DayOfTheWeekResolver {
 
     int dayOfTheWeek;

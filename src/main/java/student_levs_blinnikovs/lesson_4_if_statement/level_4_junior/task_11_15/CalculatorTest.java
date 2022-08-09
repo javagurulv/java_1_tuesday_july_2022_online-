@@ -106,6 +106,9 @@ class Calculator {
 
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CalculatorTest {
 
     public void sumTest() {

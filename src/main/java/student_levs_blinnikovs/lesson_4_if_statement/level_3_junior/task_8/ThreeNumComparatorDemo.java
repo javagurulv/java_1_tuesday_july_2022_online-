@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_3_junior.task_8;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ThreeNumComparatorDemo {
 
     public static void main(String[] args) {

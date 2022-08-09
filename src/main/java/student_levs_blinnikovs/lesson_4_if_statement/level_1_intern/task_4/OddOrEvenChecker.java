@@ -9,6 +9,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_1_intern.task_4;
 равен нулю то число чётное, иначе не чётное.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class OddOrEvenChecker {
 
     int userInput;

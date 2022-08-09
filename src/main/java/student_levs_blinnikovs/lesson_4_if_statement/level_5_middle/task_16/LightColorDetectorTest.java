@@ -1,7 +1,9 @@
 package student_levs_blinnikovs.lesson_4_if_statement.level_5_middle.task_16;
 
+import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+@CodeReview(approved = true)
 class LightColorDetectorTest {
 
     @CodeReviewComment(student = "Better that null safe equals (Object.equals(realColor, expectedColor) as Idea is suggesting?")

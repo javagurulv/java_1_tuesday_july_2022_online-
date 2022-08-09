@@ -1,11 +1,14 @@
 package student_sobit_eshniyozov.lesson_1.homework;
 
+import teacher.codereview.CodeReview;
+
 //      Напишите Java программу, которая выведет на консоль сумму двух чисел.
 //      Числа можно придумать любые, их не надо запрашивать у пользователя.
 //      Тестовые данные:
 //      74 + 36
 //      Ожидаемый результат:
 //      110
+@CodeReview(approved = true)
 public class Summa {
     public static void main(String[] args) {
 

@@ -1,8 +1,8 @@
 package student_levs_blinnikovs.lesson_4_if_statement.level_3_junior.task_10;
 
+import teacher.codereview.CodeReview;
 
-import java.util.Scanner;
-
+@CodeReview(approved = true)
 class HighestCheckerDemo {
 
     public static void main(String[] args) {

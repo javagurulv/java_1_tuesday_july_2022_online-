@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_2_intern.task_6;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class TwoIntComparatorSmallerDemo {
 
     public static void main(String[] args) {

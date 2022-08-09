@@ -15,11 +15,15 @@ Test case max:
 Изменение цены акции: 9 -> 27 = Максимальная цена за указанный период: 27
  */
 
+import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+@CodeReview(approved = true)
 class StockTest {
 
-    @CodeReviewComment(student = "Should it be each own test methods? And also should it be all one scenario from 999 ... and then just call getCurrentPrice? ")
+    @CodeReviewComment(student = "Should it be each own test methods? "
+			+ "And also should it be all one scenario from 999 ... and then just call getCurrentPrice? ")
+	@CodeReviewComment(teacher = "Each test scenario in separate test method.")
     public static void main(String[] args) {
 
         // this first 10 -> .. 77

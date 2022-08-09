@@ -2,6 +2,9 @@ package student_olegs_radigins.lesson_3.level2.Task_9;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class UserName {
     public static void main(String[] args) {
 

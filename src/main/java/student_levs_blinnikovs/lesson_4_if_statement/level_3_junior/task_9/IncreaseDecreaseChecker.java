@@ -7,6 +7,9 @@ Write a program that accepts three numbers from the user and prints:
 - "Neither increasing or decreasing order" otherwise.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class IncreaseDecreaseChecker {
 
     int firstNumber;

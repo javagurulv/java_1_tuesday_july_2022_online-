@@ -6,6 +6,9 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_2_intern.task_5;
 Нельзя пользоваться классом Math, можно использовать только if else.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class TwoIntComparator {
 
     int numberOne;

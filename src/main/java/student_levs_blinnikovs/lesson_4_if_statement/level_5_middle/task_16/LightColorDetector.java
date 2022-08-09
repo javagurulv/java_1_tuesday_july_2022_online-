@@ -32,8 +32,10 @@ class LightColorDetector {
 покрывать все возможные варианты.
  */
 
+import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+@CodeReview(approved = true)
 class LightColorDetector {
     @CodeReviewComment(student = "better initialize String color and assign per each action, and then return in the end, after ifs?")
     public String detect(int wavelength) {

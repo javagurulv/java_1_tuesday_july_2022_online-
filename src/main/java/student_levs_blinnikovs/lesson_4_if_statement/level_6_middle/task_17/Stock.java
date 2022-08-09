@@ -55,8 +55,9 @@ Company = "GOOG", Current Price = 10, Min Price = 10, Max Price = 10
 Company = "GOOG", Current Price = 14, Min Price = 7, Max Price = 15
  */
 
-import teacher.codereview.CodeReviewComment;
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 class Stock {
 
     Stock(String companyName, int currentStockPrice) {

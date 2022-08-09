@@ -10,8 +10,10 @@ PS: перед решением этой задачи распишите на б
 Нельзя пользоваться классом Math.
  */
 
+import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+@CodeReview(approved = true)
 @CodeReviewComment(student = "I think I've fixed.")
 class HighestChecker {
 

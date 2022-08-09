@@ -7,6 +7,9 @@ Write a Java program that accepts three numbers and prints:
 - "Neither all are equal or different" otherwise.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ThreeNumComparator {
 
     int firstNumber;

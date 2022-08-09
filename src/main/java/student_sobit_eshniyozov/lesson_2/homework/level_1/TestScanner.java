@@ -2,6 +2,9 @@ package student_sobit_eshniyozov.lesson_2.homework.level_1;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class TestScanner {
     public static void main(String[] args) {
             // Version 1

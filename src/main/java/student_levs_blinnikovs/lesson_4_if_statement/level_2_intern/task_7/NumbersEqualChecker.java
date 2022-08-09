@@ -2,6 +2,8 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_2_intern.task_7;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
 /*
 Написать программу, которая запрашивает у пользователя
 два целых числа и выводит на консоль:
@@ -9,6 +11,7 @@ import java.util.Scanner;
 - "Numbers are different" - если числа не равны
  */
 
+@CodeReview(approved = true)
 class NumbersEqualChecker {
 
     int numberOne;
