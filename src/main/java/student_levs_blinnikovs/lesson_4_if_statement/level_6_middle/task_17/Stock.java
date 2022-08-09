@@ -77,6 +77,10 @@ class Stock {
     private int minimumStockPrice;
     private int maximumStockPrice;
 
+    int getMaximumStockPrice() {
+        return maximumStockPrice;
+    }
+
     void updatePrice(int newPrice) {
         System.out.println("|----------PRICE UPDATE---------------");
         System.out.println("| " + companyName + " stock price changing from " + currentStockPrice + " to " + newPrice);

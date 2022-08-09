@@ -6,11 +6,11 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 class LightColorDetectorTest {
 
-    @CodeReviewComment(student = "Better that null safe equals (Object.equals(realColor, expectedColor) as Idea is suggesting?")
+    @CodeReviewComment(student = "Better that null safe equals (Objects.equals(realColor, expectedColor) as Idea is suggesting?")
     public void colorTest(int wavelength, String expectedColor) {
         LightColorDetector lightColorDetector = new LightColorDetector();
         String realColor = lightColorDetector.detect(wavelength);
-        if (realColor.equals(expectedColor)) { // better that null safe equals (Object.equals(realColor, expectedColor) as Idea is suggesting?
+        if (realColor.equals(expectedColor)) { // better that null safe equals (Objects.equals(realColor, expectedColor) as Idea is suggesting?
             System.out.println("Color test = OK");
         } else {
             System.out.println("Color test = FAIL");
@@ -27,6 +27,7 @@ class LightColorDetectorTest {
         lightColorDetectorTest.colorTest(570, "Yellow");
         lightColorDetectorTest.colorTest(619, "Orange");
         lightColorDetectorTest.colorTest(740, "Red");
+
         lightColorDetectorTest.colorTest(0, "Invisible Light");
         lightColorDetectorTest.colorTest(751, "Invisible Light");
 
