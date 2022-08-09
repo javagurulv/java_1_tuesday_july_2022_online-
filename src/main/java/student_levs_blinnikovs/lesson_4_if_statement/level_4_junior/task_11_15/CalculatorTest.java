@@ -114,7 +114,6 @@ class Calculator {
 результата и замените её вызовом метода в каждом тесте.
  */
 
-import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReviewComment(student = "I'd like to try to pass Calculator obj function call in test function calls e.g. testGeneric(int a, int b, Calculator method()..). How to do it?")
