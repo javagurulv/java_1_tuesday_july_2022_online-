@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_4_if_statement.level_4_junior.task_11_15;
+package student_levs_blinnikovs.lesson_4_if_statement.level_4_junior_7_senior.task_11_15_24;
 
 /*
 Создайте класс Calculator. В этом классе создайте методы

@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_4_if_statement.level_5_middle.task_16;
+package student_levs_blinnikovs.lesson_4_if_statement.level_5_middle_7_senior.task_16_25;
 
 /*
 Разработать программу,
