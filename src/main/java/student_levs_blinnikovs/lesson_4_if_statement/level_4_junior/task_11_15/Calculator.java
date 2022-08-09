@@ -88,12 +88,14 @@ class Calculator {
     }
 
     public int divide(int firstNumber, int secondNumber) {
+        int result;
         if (secondNumber != 0) {
-            return firstNumber / secondNumber;
+            result = firstNumber / secondNumber;
         } else {
             System.out.println("Cannot divide by zero!");
-            return -1;
+            result = -1;
         }
+        return result;
     }
 
     public int multiply(int firstNumber, int secondNumber) {
@@ -104,12 +106,12 @@ class Calculator {
         return firstNumber % secondNumber == 0;
     }
 
-    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+    public int maxOf(int firstNumber, int secondNumber) {
         return firstNumber > secondNumber ? firstNumber : secondNumber;
     }
 
-    public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-        return maxOfTwoNumbers(maxOfTwoNumbers(firstNumber, secondNumber), thirdNumber);
+    public int maxOf(int firstNumber, int secondNumber, int thirdNumber) {
+        return maxOf(maxOf(firstNumber, secondNumber), thirdNumber);
     }
 
 
