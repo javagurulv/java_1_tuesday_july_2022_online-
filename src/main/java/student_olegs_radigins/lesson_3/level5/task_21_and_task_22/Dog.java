@@ -9,7 +9,7 @@ class Dog {
     int dogAge;
 
 	@CodeReviewComment(teacher = "Why this class property public?")
-   public String dogColor;
+   String dogColor;
 
     Dog(String dogName, int dogAge, String dogColor) {
         this.dogName = dogName;
