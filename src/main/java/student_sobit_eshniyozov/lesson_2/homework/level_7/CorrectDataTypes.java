@@ -1,6 +1,7 @@
 package student_sobit_eshniyozov.lesson_2.homework.level_7;
 
 public class CorrectDataTypes {
+
     public static void main(String[] args) {
 
         int numberOne = 10;
