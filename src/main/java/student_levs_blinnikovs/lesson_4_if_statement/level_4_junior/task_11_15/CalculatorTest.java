@@ -115,8 +115,9 @@ class Calculator {
  */
 
 import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = true)
+@CodeReviewComment(student = "I'd like to try to pass Calculator obj function call in test function calls e.g. testGeneric(int a, int b, Calculator method()..). How to do it?")
 class CalculatorTest {
 
     public void compareRealExpected(int realResult, int expectedResult, String testScenario) {
