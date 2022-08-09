@@ -2,6 +2,9 @@ package student_eduard_minajev.lesson_2_variables.homework.level_1_intern;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task1 {
     public static void main (String [] args){
         Scanner scanner = new Scanner (System.in); //запускаем сканер

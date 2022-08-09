@@ -1,4 +1,4 @@
-package student_eduard_minajev.lesson_01;
+package student_eduard_minajev.lesson_1;
 
 import teacher.codereview.CodeReview;
 

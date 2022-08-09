@@ -2,6 +2,9 @@ package student_andrei_kholiavskii.lesson_2_variables.level_3_junior.task_9;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class MultiplicationTable {
 
     public static void main(String[] args){

@@ -2,6 +2,9 @@ package student_andrei_kholiavskii.lesson_2_variables.level_1_intern.task_1;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class AddTwoNumbers {
 
     public static void main(String[] args) {
