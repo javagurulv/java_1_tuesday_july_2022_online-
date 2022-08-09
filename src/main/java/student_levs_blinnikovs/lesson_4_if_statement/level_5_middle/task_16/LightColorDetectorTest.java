@@ -28,6 +28,7 @@ class LightColorDetectorTest {
         lightColorDetectorTest.colorTest(619, "Orange");
         lightColorDetectorTest.colorTest(740, "Red");
         lightColorDetectorTest.colorTest(0, "Invisible Light");
+        lightColorDetectorTest.colorTest(751, "Invisible Light");
 
     }
 
