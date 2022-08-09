@@ -62,21 +62,22 @@ class LightColorDetector {
         return wavelength >= 620 && wavelength <= 750;
     }
 
-    @CodeReviewComment(student = "better initialize String color and assign per each action, and then return in the end, after ifs?")
     public String detect(int wavelength) {
+        String color = "Invisible Light";
         if (isViolet(wavelength)) {
-            return "Violet"; // better initialize String color and assign per each action, and then return in the end, after ifs?
+            color = "Violet";
         } else if (isBlue(wavelength)) {
-            return "Blue";
+            color = "Blue";
         } else if (isGreen(wavelength)) {
-            return "Green";
+            color = "Green";
         } else if (isYellow(wavelength)) {
-            return "Yellow";
+            color = "Yellow";
         } else if (isOrange(wavelength)) {
-            return "Orange";
+            color = "Orange";
         } else if (isRed(wavelength)) {
-            return "Red";
-        } else return "Invisible Light";
+            color = "Red";
+        }
+        return color;
     }
 
 }
