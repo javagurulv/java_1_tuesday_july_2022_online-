@@ -20,11 +20,20 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 class StockTest {
 
+    public void compareRealExpected(int realData, int expectedData) {
+        if (realData == expectedData) {
+            System.out.println("Stock test = OK");
+        } else {
+            System.out.println("Stock test = FAIL");
+        }
+    }
+
     // 10 -> 12 -> 5 -> 7 -> 99 -> 77
     public void stockTest0() {
         int startingPrice = 10;
         int expectedMaxPrice = 99;
         Stock testStock = new Stock("TEST", startingPrice);
+
         // steps
         testStock.updatePrice(12);
         testStock.updatePrice(5);
@@ -34,11 +43,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
 
@@ -51,11 +56,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
     //Изменение цены акции: 999 -> 1  = Максимальная цена за указанный период: 999
@@ -68,11 +69,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
     //Изменение цены акции: 999 -> 2 -> 1000 = Максимальная цена за указанный период: 1000
@@ -86,11 +83,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
     //Изменение цены акции: 999 -> 2 -> 1000 -> 8 = Максимальная цена за указанный период: 1000
@@ -105,11 +98,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
     //Изменение цены акции: 9 -> 27 = Максимальная цена за указанный период: 27
@@ -122,11 +111,7 @@ class StockTest {
         int realMaxPrice = testStock.getMaximumStockPrice();
 
         // check
-        if (realMaxPrice == expectedMaxPrice) {
-            System.out.println("Stock test = OK");
-        } else {
-            System.out.println("Stock test = FAIL");
-        }
+        compareRealExpected(realMaxPrice, expectedMaxPrice);
     }
 
     @CodeReviewComment(student = "Should it be each own test methods? "
@@ -135,14 +120,14 @@ class StockTest {
     public static void main(String[] args) {
 
         // tests 2
-        StockTest multiplePriceChangeTest = new StockTest();
+        StockTest stockTest = new StockTest();
 
-        multiplePriceChangeTest.stockTest0();
-        multiplePriceChangeTest.stockTest1();
-        multiplePriceChangeTest.stockTest2();
-        multiplePriceChangeTest.stockTest3();
-        multiplePriceChangeTest.stockTest4();
-        multiplePriceChangeTest.stockTest5();
+        stockTest.stockTest0();
+        stockTest.stockTest1();
+        stockTest.stockTest2();
+        stockTest.stockTest3();
+        stockTest.stockTest4();
+        stockTest.stockTest5();
 
     }
 }
