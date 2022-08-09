@@ -104,6 +104,14 @@ class Calculator {
 
 }
 
+Найдите способ упростить тесты в CalculatorTest.
+
+Тесты тоже должны быть написаны как можно лучше и качественнее!
+Дублирование кода - это почти всегда плохая идея в программировании.
+Поэтому от дублирования кода нужно избавляться.
+
+Подсказка: вынесите в отдельный метод проверку
+результата и замените её вызовом метода в каждом тесте.
  */
 
 import teacher.codereview.CodeReview;
@@ -127,191 +135,43 @@ class CalculatorTest {
         }
     }
 
-    public void sumTest() {
-        int firstNumber = 10;  // подготавливаем тестовые данные
-        int secondNumber = 5;  // подготавливаем тестовые данные
-        int expectedResult = 15;  // подготавливаем тестовые данные
+    public void sumTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
-        int realResult = calculator.sum(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResult = calculator.sum(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void subtractTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 5;
+    public void subtractTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.subtract(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void divideTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 2;
+    public void divideTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.divide(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void divideZeroTest() {
-        int firstNumber = 10;
-        int secondNumber = 0;
-        int expectedResult = -1;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.divide(firstNumber, secondNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void multiplyTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 50;
+    public void multiplyTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.multiply(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void evenTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        boolean expectedResult = true;
+    public void isEvenTest(int firstNumber, int secondNumber, boolean expectedResult) {
         Calculator calculator = new Calculator();
         boolean realResult = calculator.isEven(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void oddTest() {
-        int firstNumber = 10;
-        int secondNumber = 4;
-        boolean expectedResult = false;
-        Calculator calculator = new Calculator();
-        boolean realResult = calculator.isEven(firstNumber, secondNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfTwoNumbersFirstHigherTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 10;
+    public void maxOfTwoNumbersTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
         compareRealExpected(realResult, expectedResult);
     }
 
-    public void maxOfTwoNumbersSecondHigherTest() {
-        int firstNumber = 5;
-        int secondNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfTwoNumbersEqualTest() {
-        int firstNumber = 10;
-        int secondNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersAllEqualTest() {
-        int firstNumber = 10;
-        int secondNumber = 10;
-        int thirdNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersFirstAndThirdEqualAndHigherTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int thirdNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersLastTwoEqualAndHigherTest() {
-        int firstNumber = 5;
-        int secondNumber = 10;
-        int thirdNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersFirstTwoEqualAndHigherTest() {
-        int firstNumber = 10;
-        int secondNumber = 10;
-        int thirdNumber = 5;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersThirdHighestTest() {
-        int firstNumber = 5;
-        int secondNumber = 6;
-        int thirdNumber = 10;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersSecondHighestTest() {
-        int firstNumber = 5;
-        int secondNumber = 10;
-        int thirdNumber = 6;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersFirstHighestTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int thirdNumber = 6;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersFirstHighestOtherSameTest() {
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int thirdNumber = 5;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersSecondHighestOtherSameTest() {
-        int firstNumber = 5;
-        int secondNumber = 10;
-        int thirdNumber = 5;
-        int expectedResult = 10;
-        Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void maxOfThreeNumbersThirdHighestOtherSameTest() {
-        int firstNumber = 5;
-        int secondNumber = 5;
-        int thirdNumber = 10;
-        int expectedResult = 10;
+    public void maxOfThreeNumbersTest(int firstNumber, int secondNumber, int thirdNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
         compareRealExpected(realResult, expectedResult);
@@ -320,35 +180,30 @@ class CalculatorTest {
     public static void main(String[] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
-        calculatorTest.sumTest();
-        calculatorTest.subtractTest();
+        calculatorTest.sumTest(10, 5, 15);
+        calculatorTest.subtractTest(10, 5, 5);
 
-        calculatorTest.divideTest();
-        calculatorTest.divideZeroTest();
+        calculatorTest.divideTest(10, 5, 2);
+        calculatorTest.divideTest(10, 0, -1);
 
-        calculatorTest.multiplyTest();
+        calculatorTest.multiplyTest(10, 5, 50);
 
-        calculatorTest.evenTest();
-        calculatorTest.oddTest();
+        calculatorTest.isEvenTest(10, 5, true);
+        calculatorTest.isEvenTest(10, 4, false);
 
-        calculatorTest.maxOfTwoNumbersFirstHigherTest();
-        calculatorTest.maxOfTwoNumbersSecondHigherTest();
-        calculatorTest.maxOfTwoNumbersEqualTest();
+        calculatorTest.maxOfTwoNumbersTest(10, 5, 10);
+        calculatorTest.maxOfTwoNumbersTest(10, 20, 20);
+        calculatorTest.maxOfTwoNumbersTest(10, 10, 10);
 
-        calculatorTest.maxOfThreeNumbersFirstHighestTest();
-        calculatorTest.maxOfThreeNumbersSecondHighestTest();
-        calculatorTest.maxOfThreeNumbersThirdHighestTest();
+        calculatorTest.maxOfThreeNumbersTest(10, 2, 5, 10);
+        calculatorTest.maxOfThreeNumbersTest(10, 20, 5, 20);
+        calculatorTest.maxOfThreeNumbersTest(10, 20, 50, 50);
 
-        calculatorTest.maxOfThreeNumbersFirstTwoEqualAndHigherTest();
-        calculatorTest.maxOfThreeNumbersLastTwoEqualAndHigherTest();
-        calculatorTest.maxOfThreeNumbersFirstAndThirdEqualAndHigherTest();
+        calculatorTest.maxOfThreeNumbersTest(10, 10, 5, 10);
+        calculatorTest.maxOfThreeNumbersTest(5, 10, 10, 10);
+        calculatorTest.maxOfThreeNumbersTest(10, 2, 10, 10);
 
-        // maybe too many scenarios... unnecessary?
-        calculatorTest.maxOfThreeNumbersFirstHighestOtherSameTest();
-        calculatorTest.maxOfThreeNumbersSecondHighestOtherSameTest();
-        calculatorTest.maxOfThreeNumbersThirdHighestOtherSameTest();
-
-        calculatorTest.maxOfThreeNumbersAllEqualTest();
+        calculatorTest.maxOfThreeNumbersTest(10, 10, 10, 10);
 
     }
 
