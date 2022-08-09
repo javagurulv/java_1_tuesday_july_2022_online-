@@ -2,20 +2,22 @@ package student_ivan_mostepanov.lesson_2;
 
 import java.util.Scanner;
 
-public class Task1 { public static void main(String[] args) {
+public class Task_2 {
+
+    public static void main(String[] args) {
 
     Scanner scanner =  new Scanner(System.in);
     System.out.println("Please enter first number: ");
-    int firstNumber = scanner.nextInt();
+    double firstDoubleNumber = scanner.nextDouble();
 
     System.out.println("Please enter second number: ");
-    int secondNumber = scanner.nextInt();
+    double secondDoubleNumber = scanner.nextDouble();
 
 
-    int resoultSum = firstNumber + secondNumber;
-    int resoultSubtraction = firstNumber - secondNumber;
-    int resoultMulti = firstNumber * secondNumber;
-    int resoultDivide = firstNumber / secondNumber;
+    double resoultSum = firstDoubleNumber + secondDoubleNumber;
+    double resoultSubtraction = firstDoubleNumber - secondDoubleNumber;
+    double resoultMulti = firstDoubleNumber * secondDoubleNumber;
+    double resoultDivide = firstDoubleNumber / secondDoubleNumber;
 
     System.out.println(" Sum =  " + resoultSum);
     System.out.println(" Subtraction =  " + resoultSubtraction);
