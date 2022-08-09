@@ -179,31 +179,32 @@ class CalculatorTest {
 
     public static void main(String[] args) {
 
-        CalculatorTest calculatorTest = new CalculatorTest();
-        calculatorTest.sumTest(10, 5, 15);
-        calculatorTest.subtractTest(10, 5, 5);
+        CalculatorTest test = new CalculatorTest();
 
-        calculatorTest.divideTest(10, 5, 2);
-        calculatorTest.divideTest(10, 0, -1);
+        test.sumTest(10, 5, 15);
+        test.subtractTest(10, 5, 5);
 
-        calculatorTest.multiplyTest(10, 5, 50);
+        test.divideTest(10, 5, 2);
+        test.divideTest(10, 0, -1);
 
-        calculatorTest.isEvenTest(10, 5, true);
-        calculatorTest.isEvenTest(10, 4, false);
+        test.multiplyTest(10, 5, 50);
 
-        calculatorTest.maxOfTwoNumbersTest(10, 5, 10);
-        calculatorTest.maxOfTwoNumbersTest(10, 20, 20);
-        calculatorTest.maxOfTwoNumbersTest(10, 10, 10);
+        test.isEvenTest(10, 5, true);
+        test.isEvenTest(10, 4, false);
 
-        calculatorTest.maxOfThreeNumbersTest(10, 2, 5, 10);
-        calculatorTest.maxOfThreeNumbersTest(10, 20, 5, 20);
-        calculatorTest.maxOfThreeNumbersTest(10, 20, 50, 50);
+        test.maxOfTwoNumbersTest(10, 5, 10);
+        test.maxOfTwoNumbersTest(10, 20, 20);
+        test.maxOfTwoNumbersTest(10, 10, 10);
 
-        calculatorTest.maxOfThreeNumbersTest(10, 10, 5, 10);
-        calculatorTest.maxOfThreeNumbersTest(5, 10, 10, 10);
-        calculatorTest.maxOfThreeNumbersTest(10, 2, 10, 10);
+        test.maxOfThreeNumbersTest(10, 2, 5, 10);
+        test.maxOfThreeNumbersTest(10, 20, 5, 20);
+        test.maxOfThreeNumbersTest(10, 20, 50, 50);
 
-        calculatorTest.maxOfThreeNumbersTest(10, 10, 10, 10);
+        test.maxOfThreeNumbersTest(10, 10, 5, 10);
+        test.maxOfThreeNumbersTest(5, 10, 10, 10);
+        test.maxOfThreeNumbersTest(10, 2, 10, 10);
+
+        test.maxOfThreeNumbersTest(10, 10, 10, 10);
 
     }
 
