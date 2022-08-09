@@ -37,19 +37,44 @@ import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
 class LightColorDetector {
+
+    boolean isViolet(int wavelength) {
+        return wavelength >= 380 && wavelength <= 449;
+    }
+
+    boolean isBlue(int wavelength) {
+        return wavelength >= 450 && wavelength <= 494;
+    }
+
+    boolean isGreen(int wavelength) {
+        return wavelength >= 495 && wavelength <= 569;
+    }
+
+    boolean isYellow(int wavelength) {
+        return wavelength >= 570 && wavelength <= 589;
+    }
+
+    boolean isOrange(int wavelength) {
+        return wavelength >= 590 && wavelength <= 619;
+    }
+
+    boolean isRed(int wavelength) {
+        return wavelength >= 620 && wavelength <= 750;
+    }
+
     @CodeReviewComment(student = "better initialize String color and assign per each action, and then return in the end, after ifs?")
     public String detect(int wavelength) {
-        if (wavelength >= 380 && wavelength <= 449) {
+        if (isViolet(wavelength)) {
             return "Violet"; // better initialize String color and assign per each action, and then return in the end, after ifs?
-        } else if (wavelength >= 450 && wavelength <= 494) {
+        } else if (isBlue(wavelength)) {
             return "Blue";
-        } else if (wavelength >= 495 && wavelength <= 569) {
+        } else if (isGreen(wavelength)) {
             return "Green";
-        } else if (wavelength >= 570 && wavelength <= 589) {
+        } else if (isYellow(wavelength)) {
             return "Yellow";
-        } else if (wavelength >= 590 && wavelength <= 619) {
+        } else if (isOrange(wavelength)) {
             return "Orange";
-        } else if (wavelength >= 620 && wavelength <= 750) {
+        } else if (isRed(wavelength)) {
             return "Red";
         } else return "Invisible Light";
     }
