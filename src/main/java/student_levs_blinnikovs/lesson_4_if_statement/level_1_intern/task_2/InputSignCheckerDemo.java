@@ -8,7 +8,7 @@ import teacher.codereview.CodeReview;
 class InputSignCheckerDemo {
     public static void main(String[] args) {
 
-        System.out.println("Please enter the number, system will check if it's positive, negative or nil: ");
+        System.out.println("Please enter the number, system will check if it's positive, negative or zero: ");
         Scanner userInput = new Scanner(System.in);
         int savedUserInput = userInput.nextInt();
 

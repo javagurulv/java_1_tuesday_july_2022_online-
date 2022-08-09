@@ -21,7 +21,7 @@ class InputSignChecker {
         if (this.userInput > 0) {
             System.out.println(this.userInput + " is a positive number.");
         } else if (this.userInput == 0) {
-            System.out.println(this.userInput + " is a nil.");
+            System.out.println(this.userInput + " is a zero.");
         } else if (this.userInput < 0) {
             System.out.println(this.userInput + " is a negative number.");
         } else System.err.println("Error, not a number!");

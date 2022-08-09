@@ -91,8 +91,8 @@ import teacher.codereview.CodeReview;
 class Dog {
 
     final String dogName; // Task 18.1, 18.2 (first and second requirement)
-    int dogAge; // Task 19.1
-    String dogColor; // Task 20
+    private int dogAge; // Task 19.1
+    private String dogColor; // Task 20
 
     Dog(String dogName, int dogAge, String dogColor) {
         this.dogName = dogName;

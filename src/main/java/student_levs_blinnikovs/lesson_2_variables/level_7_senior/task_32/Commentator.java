@@ -15,7 +15,7 @@ import teacher.codereview.CodeReview;
 //Напишите программу и продемонстрируйте в ней использование однострочного и многострочного комментариев.
 
 @CodeReview(approved = true)
-class Commentor {
+class Commentator {
     public static void main(String[] args) {
         System.out.println("See code above!");
     }
