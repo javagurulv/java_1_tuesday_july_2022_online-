@@ -1,30 +1,31 @@
 package teacher.lesson_3_oop_first_look.lessoncode;
 
-public class Dog {
+class Dog {
 
-	private String name;
-	private int age;
+	String nickname;
+	int age;
 
-	public Dog(String dogName, int dogAge) {
-		this.name = dogName;
-		this.age = dogAge;
+	Dog(String nickname, int age) {
+		this.nickname = nickname;
+		this.age = age;
 	}
 
-	public void voice() {
-
-        System.out.println("Gaf Gaf Gaf");
+	void celebrateHappyBirthday() {
+		int age = 10;
+		this.age = this.age + 1;
+		System.out.println(this.nickname + " celebrate Happy Birthday!");
 	}
 
-	public void voiceYourName() {
-		System.out.println("My name is " + this.name);
+	void voice() {
+		System.out.println("My nic = " + this.nickname);
 	}
 
-	public void voiceYourAge() {
-		System.out.println("My age is " + this.age);
+	void changeNickname(String newNickname) {
+		this.nickname = newNickname;
 	}
 
-	public void changeName(String newName) {
-		this.name = newName;
+	int getAge() {
+		return this.age;
 	}
 
 }

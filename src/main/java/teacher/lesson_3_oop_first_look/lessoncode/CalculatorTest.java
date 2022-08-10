@@ -21,9 +21,9 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         int actualResult = calculator.sum(10, -10);
         if (actualResult == 0) {
-            System.out.println("Test 1 = OK");
+            System.out.println("Test 2 = OK");
         } else {
-            System.out.println("Test 1 = FAIL");
+            System.out.println("Test 2 = FAIL");
         }
     }
 
