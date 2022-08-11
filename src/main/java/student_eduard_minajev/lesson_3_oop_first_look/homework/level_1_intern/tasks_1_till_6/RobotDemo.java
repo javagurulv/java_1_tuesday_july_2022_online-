@@ -26,13 +26,13 @@ public class RobotDemo {
 
 
 
-        Robot unknow = new Robot ("unknow", "idle");
-        unknow.statusChange("looking with red glowing eyes in the dark");
-        unknow.statusReport();
-        unknow.newNameChange("I'm Terminator T-800 Cyberdyne Systems, Model 1-0-1");
-        unknow.saySarahConnor();
-        unknow.selfIntroduce();
-        unknow.sayComeWithMe();
+        Robot unknown = new Robot ("unknown", "idle");
+        unknown.statusChange("looking with red glowing eyes in the dark");
+        unknown.statusReport();
+        unknown.newNameChange("I'm Terminator T-800 Cyberdyne Systems, Model 1-0-1");
+        unknown.saySarahConnor();
+        unknown.selfIntroduce();
+        unknown.sayComeWithMe();
 
     };
 
