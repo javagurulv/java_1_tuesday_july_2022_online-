@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_2.level_3_junior;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Average {
 
     public static void main(String[] args) {

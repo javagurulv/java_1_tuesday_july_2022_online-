@@ -1,8 +1,14 @@
+package student_yurii_panasiuk.lesson_3.level_7_senior.task_32;
+
 /*Найти логическую ошибку в коде.
         Исправить и запустить программу так, что бы она выводила
         на консоль владельца банковского счёта и количество денег.
         Менять можно только класс BankAccount
 */
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BankAccount {
 
     String owner;

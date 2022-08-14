@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_3.level_7_senior.task_31;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ProductDemo {
 
 

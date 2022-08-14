@@ -1,7 +1,11 @@
 package student_yurii_panasiuk.lesson_2.level_7_senior;
 import java.util.Scanner; // инициализация функции сканера
 
+import teacher.codereview.CodeReview;
+
 //the distance (in a straight line) between two points on a plane in Cartesian coordinates
+
+@CodeReview(approved = true)
 public class Task32_33 {
 
 /* создаем функцию которая:

@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_2.level_5_middle;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task18 {
 
     private static class SizeMatters {

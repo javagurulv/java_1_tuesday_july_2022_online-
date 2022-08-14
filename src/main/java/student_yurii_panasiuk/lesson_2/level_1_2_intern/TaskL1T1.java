@@ -1,5 +1,10 @@
 package student_yurii_panasiuk.lesson_2.level_1_2_intern;
+
 import java.util.Scanner;
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class TaskL1T1 {
 
     public static void main(String[] args) {

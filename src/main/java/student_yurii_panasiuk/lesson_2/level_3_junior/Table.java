@@ -2,6 +2,11 @@ package student_yurii_panasiuk.lesson_2.level_3_junior;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Лучшее название класса - MultiplicationTable")
 public class Table {
 
     public static void main(String[] args) {

@@ -1,8 +1,14 @@
 package student_yurii_panasiuk.lesson_3.level_4_junior.task_15;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
 class Phone {
 
     String model;
+
+	@CodeReviewComment(teacher = "Зачем это свойство?")
     String newModel;
 
         Phone(String newModel) {

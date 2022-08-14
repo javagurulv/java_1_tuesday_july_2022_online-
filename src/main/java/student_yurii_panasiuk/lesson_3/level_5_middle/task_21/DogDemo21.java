@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_3.level_5_middle.task_21;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class DogDemo21 {
 
     public static void main(String[] args){

@@ -16,11 +16,17 @@
 
 package student_yurii_panasiuk.lesson_3.level_7_senior.task_31;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
      class Product {
 
          String name = "noname";
          double regularPrice = 0.0;
          double discount = 0.0;
+
+	@CodeReviewComment(teacher = "Зачем это свойство? Где оно используется?")
          double actualPrice = 0.0;
 
          public Product(String name) {
