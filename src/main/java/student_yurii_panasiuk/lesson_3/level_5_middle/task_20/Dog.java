@@ -7,7 +7,7 @@ class DogTask20 {
 
     DogTask20(String nick, int dogAge) {this.nick = nick; this.dogAge = dogAge;}
 
-    public DogTask20() {
+     DogTask20() {
 
     }
 

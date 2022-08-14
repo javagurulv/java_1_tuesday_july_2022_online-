@@ -8,7 +8,7 @@ class DogTask22 {
 
     DogTask22(String nick, int dogAge, String color) {this.nick = nick; this.dogAge = dogAge; this.color = color;}
 
-    public DogTask22() {
+     DogTask22() {
 
     }
 
