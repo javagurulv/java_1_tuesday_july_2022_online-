@@ -10,11 +10,13 @@ class Robot {
 
 
     public Robot(String robotName) {
-		this.robotName = robotName;
+
+        this.robotName = robotName;
 	}
 
     public void sayHello() {
-		System.out.println("Hello!");
+
+        System.out.println("Hello!");
     }
 
     public void sayYourName() {
