@@ -6,12 +6,12 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 @CodeReviewComment(teacher = "Методы не пиши в одну строку!")
 class Robot {
-     String robotName;
+     String name;
 
 
-    public Robot(String robotName) {
+    Robot(String robotName) {
 
-        this.robotName = robotName;
+        this.name = robotName;
 	}
 
     public void sayHello() {
@@ -20,7 +20,7 @@ class Robot {
     }
 
     public void sayYourName() {
-		System.out.println("My name is " + robotName);
+		System.out.println("My name is " + this.name);
 	}
 
 }
