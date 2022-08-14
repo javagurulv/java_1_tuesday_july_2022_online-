@@ -1,6 +1,6 @@
 package student_yurii_panasiuk.lesson_3.level_7_senior.task_30;
 
-public class CircleDemo {
+ class CircleDemo {
 
     public static void main(String[] args){
 
