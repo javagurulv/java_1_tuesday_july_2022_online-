@@ -15,11 +15,14 @@ public class Dog {
         this.dogAge=dogAge;
         this.dogHair=dogHair;
     }
-    String sayDogName() {return this.dogName;}
+    String sayDogName() {
+        return this.dogName;}
 
-    String sayDogHair() {return this.dogHair;}
+    String sayDogHair() {
+        return this.dogHair;}
 
-    int sayDogAge() {return this.dogAge;}
+    int sayDogAge() {
+        return this.dogAge;}
 
     void changeHair(String newDogHair) {
         this.dogHair=newDogHair;

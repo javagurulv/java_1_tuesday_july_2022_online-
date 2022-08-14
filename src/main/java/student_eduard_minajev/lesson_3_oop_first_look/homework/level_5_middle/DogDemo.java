@@ -18,7 +18,7 @@ public class DogDemo {
         String hairOfDog = dogHairColor.nextLine();
         Dog dog1 = new Dog(nameForDog,ageOfDog,hairOfDog);
         String doggyName = dog1.sayDogName();
-        for (int i=1; i<4; i++){
+        for (int i = 1; i < 4; i++){
             System.out.println(doggyName);}
         dog1.celebrateBirthday();
         System.out.println("What color you want to re-paint your dog?");
