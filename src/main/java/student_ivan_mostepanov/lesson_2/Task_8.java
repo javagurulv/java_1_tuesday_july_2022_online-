@@ -2,6 +2,9 @@ package student_ivan_mostepanov.lesson_2;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
     public class Task_8 {
 
 

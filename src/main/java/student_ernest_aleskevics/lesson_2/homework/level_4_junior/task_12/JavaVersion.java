@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_2.homework.level_4_junior.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class JavaVersion {
 
 /* openjdk version "11.0.6" 2020-01-14
