@@ -1,6 +1,6 @@
 package student_andrei_kholiavskii.lesson_3_oop_first_look.level_4_junior.task_15;
 
-public class Phone {
+class Phone {
 
     String model;
 
