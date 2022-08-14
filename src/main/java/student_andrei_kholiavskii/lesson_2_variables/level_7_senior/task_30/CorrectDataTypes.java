@@ -1,5 +1,8 @@
 package student_andrei_kholiavskii.lesson_2_variables.level_7_senior.task_30;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class CorrectDataTypes {
 
     public static void main(String[] args) {
