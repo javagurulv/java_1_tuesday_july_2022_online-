@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_3.level_4.Task_14;
+package student_yurii_panasiuk.lesson_3.level_4.task_14;
 
 public class Book {
 

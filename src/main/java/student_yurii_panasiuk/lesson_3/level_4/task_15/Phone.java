@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_3.level_4.Task_15;
+package student_yurii_panasiuk.lesson_3.level_4.task_15;
 
 class Phone {
 
