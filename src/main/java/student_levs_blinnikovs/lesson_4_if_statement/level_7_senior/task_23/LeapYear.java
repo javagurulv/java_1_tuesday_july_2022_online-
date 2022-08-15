@@ -28,12 +28,11 @@ import teacher.codereview.CodeReview;
 class LeapYear {
 
 	public boolean isLeapYear(int year) {
-		return isDividedBy4(year) && !isDividedBy100(year)
-			|| isDividedBy4(year) && isDividedBy100(year) && isDividedBy400(year);
-    }
+		return !isCommonYear(year) && !isDividedBy100(year) || isDividedBy400(year);
+	}
 
-	private boolean isDividedBy4(int year) {
-		return year % 4 == 0;
+	private boolean isCommonYear(int year) {
+		return year % 4 != 0;
 	}
 
 	private boolean isDividedBy100(int year) {
