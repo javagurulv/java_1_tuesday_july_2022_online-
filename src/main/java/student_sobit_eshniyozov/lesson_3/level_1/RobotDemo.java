@@ -3,7 +3,6 @@ package student_sobit_eshniyozov.lesson_3.level_1;
 public class RobotDemo {
     public static void main(String[] args) {
 
-
         Robot Robot1 = new Robot("Mashuko");
         Robot1.sayHello();
         Robot1.sayYourName();
