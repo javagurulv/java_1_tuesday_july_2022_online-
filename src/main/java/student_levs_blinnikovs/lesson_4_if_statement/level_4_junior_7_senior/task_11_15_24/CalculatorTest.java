@@ -116,6 +116,8 @@ class Calculator {
 
 import teacher.codereview.CodeReviewComment;
 
+import java.util.function.Function;
+
 @CodeReviewComment(student = "I'd like to try to pass Calculator obj function call in test function calls e.g. testGeneric(int a, int b, Calculator method()..). How to do it?")
 class CalculatorTest {
 
@@ -135,6 +137,7 @@ class CalculatorTest {
         }
     }
 
+    // Function ... or lambdas. TODO
     public void sumTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.sum(firstNumber, secondNumber);
