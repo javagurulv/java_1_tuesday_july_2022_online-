@@ -23,10 +23,8 @@ class LeapYear {
  */
 
 import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Можно ли этот код улучшить? Если да то как?", student = "Для начала спрячем булевы в методы. Но предполагаю что можно еще улучить if конструкцию.")
 class LeapYear {
 
 	public boolean isLeapYear(int year) {
