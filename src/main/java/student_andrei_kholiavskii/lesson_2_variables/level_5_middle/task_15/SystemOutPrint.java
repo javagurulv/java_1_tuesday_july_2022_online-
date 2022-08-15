@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class SystemOutPrint {
+class SystemOutPrint {
     public static void main(String[] args){
 
     Scanner numberScanner = new Scanner(System.in);

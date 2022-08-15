@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class Average {
+class Average {
 
     public static void main(String[] args) {
 

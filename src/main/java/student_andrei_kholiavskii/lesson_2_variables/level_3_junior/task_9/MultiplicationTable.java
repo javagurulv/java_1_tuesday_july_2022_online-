@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class MultiplicationTable {
+class MultiplicationTable {
 
     public static void main(String[] args){
 
