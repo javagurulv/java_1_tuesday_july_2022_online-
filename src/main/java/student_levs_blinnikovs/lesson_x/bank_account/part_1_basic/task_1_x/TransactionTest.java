@@ -19,33 +19,20 @@ class TransactionTest {
         }
     }
 
-    public void transactionTypeDepositTest(boolean expectedResult) {
+    public void transactionTypeDepositTest() {
         // prepare test data
-        Transaction transactionDeposit = new Transaction(100, TransactionType.DEPOSIT);
+        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);
         // test steps
-        boolean realResult = transactionDeposit.isDeposit();
+        boolean realResult = testedTransaction.isDeposit();
         // validate
-        compareRealExpected(realResult, expectedResult);
-    }
-
-    public void transactionTypeWithdrawalTest(boolean expectedResult) {
-        // prepare test data
-        Transaction transactionDeposit = new Transaction(100, TransactionType.WITHDRAWAL);
-        // test steps
-        boolean realResult = transactionDeposit.isWithdrawal();
-        // validate
-        compareRealExpected(realResult, expectedResult);
+        compareRealExpected(realResult, testedTransaction.isDeposit());
     }
 
     public static void main(String[] args) {
 
         TransactionTest test = new TransactionTest();
 
-        test.transactionTypeDepositTest(true);
-        test.transactionTypeWithdrawalTest(true);
-
-        test.transactionTypeDepositTest(false);
-        test.transactionTypeWithdrawalTest(false);
+        test.transactionTypeDepositTest();
 
     }
 
