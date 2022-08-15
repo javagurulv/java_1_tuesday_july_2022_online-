@@ -6,7 +6,7 @@ class Car {
     Double engineVolume;
     String color;
 
-    public Car(String type, String typeOfFuel, Double engineVolume, String color) {
+     Car(String type, String typeOfFuel, Double engineVolume, String color) {
         this.type = type;
         this.typeOfFuel = typeOfFuel;
         this.engineVolume = engineVolume;
