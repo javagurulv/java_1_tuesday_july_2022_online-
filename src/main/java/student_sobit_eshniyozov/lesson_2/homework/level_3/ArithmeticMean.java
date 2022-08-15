@@ -1,9 +1,10 @@
 package student_sobit_eshniyozov.lesson_2.homework.level_3;
 
-
 import java.util.Scanner;
-import java.lang.Math;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ArithmeticMean {
     public static void main(String[] args) {
 

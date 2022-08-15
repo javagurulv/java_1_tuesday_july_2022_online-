@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_4_if_statement.level_7_senior.task_23;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class LeapYearTest {
 
     // https://kalender-365.de/leap-years.php - leap years calendar

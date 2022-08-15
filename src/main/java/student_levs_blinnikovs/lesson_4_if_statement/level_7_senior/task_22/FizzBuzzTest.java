@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_4_if_statement.level_7_senior.task_22;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FizzBuzzTest {
 
     public void compareRealExpected(String realData, String expectedData) {

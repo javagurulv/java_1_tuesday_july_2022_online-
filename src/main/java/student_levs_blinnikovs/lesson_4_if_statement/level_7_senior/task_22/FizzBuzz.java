@@ -22,6 +22,11 @@ class FizzBuzz {
 которые покрывают все возможные сценарии.
  */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Можно ли этот код улучшить? Если да то как?")
 class FizzBuzz {
 
     public String detect(int number) {
