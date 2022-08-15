@@ -1,0 +1,25 @@
+WARNING: не объявляйте переменные, которые программа не использует.
+Объявления таких переменных только засоряет текст программы.
+
+    public static void main(String[] args) {
+        double radius, pi, area;  // переменная radius не используется в программе
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter radius:");
+        double r = sc.nextDouble();
+        pi = + 3.1415926;
+
+        area = r * r * pi;
+        System.out.println("Area = " + area);
+    }
+
+BETTER:
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter radius:");
+        double radius = sc.nextDouble();
+        double pi = + 3.1415926;
+
+        double area = r * r * pi;
+        System.out.println("Area = " + area);
+    }
