@@ -78,6 +78,51 @@ class MultiplicationApplication {
             cubeDiffer.provideExplanation();
 
         }
+        if (formulaSelection == 5) {
+            DifferenceOfSquares differenceOfSquares = new DifferenceOfSquares(0,0);
+
+            System.out.println("Now, please provide operand a!");
+            Scanner operandA = new Scanner(System.in);
+            int valueOperandA = operandA.nextInt();
+            System.out.println("Now please provide operand b!");
+            Scanner operandB = new Scanner(System.in);
+            int valueOperandB = operandB.nextInt();
+            differenceOfSquares.changeOperandA(valueOperandA);
+            differenceOfSquares.changeOperandB(valueOperandB);
+            differenceOfSquares.calculateResult();
+            differenceOfSquares.provideExplanation();
+
+        }
+        if (formulaSelection == 6) {
+            SumOfCubes sumOfCubes = new SumOfCubes(0,0);
+
+            System.out.println("Now, please provide operand a!");
+            Scanner operandA = new Scanner(System.in);
+            int valueOperandA = operandA.nextInt();
+            System.out.println("Now please provide operand b!");
+            Scanner operandB = new Scanner(System.in);
+            int valueOperandB = operandB.nextInt();
+            sumOfCubes.changeOperandA(valueOperandA);
+            sumOfCubes.changeOperandB(valueOperandB);
+            sumOfCubes.calculateResult();
+            sumOfCubes.provideExplanation();
+
+        }
+        if (formulaSelection == 7) {
+            DifferenceOfCubes differenceOfCubes = new DifferenceOfCubes(0,0);
+
+            System.out.println("Now, please provide operand a!");
+            Scanner operandA = new Scanner(System.in);
+            int valueOperandA = operandA.nextInt();
+            System.out.println("Now please provide operand b!");
+            Scanner operandB = new Scanner(System.in);
+            int valueOperandB = operandB.nextInt();
+            differenceOfCubes.changeOperandA(valueOperandA);
+            differenceOfCubes.changeOperandB(valueOperandB);
+            differenceOfCubes.calculateResult();
+            differenceOfCubes.provideExplanation();
+
+        }
 
 
 
