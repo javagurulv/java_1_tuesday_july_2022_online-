@@ -3,7 +3,7 @@ package student_olegs_radigins.lesson_3.level7.task_29;
 class Car {
     String type;
     String typeOfFuel;
-    Double engineVolume;
+    double engineVolume;
     String color;
 
      Car(String type, String typeOfFuel, Double engineVolume, String color) {
