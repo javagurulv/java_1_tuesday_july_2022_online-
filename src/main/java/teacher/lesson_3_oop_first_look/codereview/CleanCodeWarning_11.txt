@@ -1,0 +1,23 @@
+WARNING: не правильные имена свойств класса (объекта).
+
+class Robot {
+
+    private String sayYourName;
+
+    public Robot(String robotName) {
+        this.sayYourName = robotName;
+    }
+
+Свойства класса (объекта) не должны быть глаголами, они должны
+быть существительными. Глаголы выражают действия, они должны
+присутствовать в названии методов.
+
+Лучше:
+
+class Robot {
+
+    private String robotName;
+
+    public Robot(String robotName) {
+        this.robotName = robotName;
+    }

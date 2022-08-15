@@ -1,0 +1,45 @@
+WARNING: вычисляемое (из других свойств) свойство класса.
+
+class Circle {
+
+    private double radius;
+    private double calculateArea;
+
+    public Circle(double radius) {
+        this.radius = radius;
+        this.calculateArea = 0;
+    }
+
+    void calculateArea(){
+        this.calculateArea = (Math.PI*radius*radius);
+        System.out.println("Square is " + this.calculateArea);
+    }
+
+}
+
+Свойство calculateArea является вычисляемым, его значение рассчитывается
+на основе другого свойств (радиуса). Если формула расчёта не является
+слишком большой и сложной, то лучше такие свойства отдельно не хранить
+как свойства класса. Лучше создать для их вычисления отдельный метод,
+который можно всегда вызвать и получить нужное значение. Бонус еще
+и в том, что этот метод можно будет еще и протестировать!
+
+Лучше:
+
+class Circle {
+
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    void printAreaToConsole(){
+        System.out.println("Square is " + calculateArea());
+    }
+
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+}

@@ -1,0 +1,12 @@
+WARNING: давайте тестовым методам выразительные названия,
+которые говорят о том что проверяется в тесте.
+
+    public void sumTest()
+
+    public void mulTest()
+
+Лучше:
+
+    public void shouldSumTwoNumbers()
+
+    public void shouldMultiplyTwoNumbers()

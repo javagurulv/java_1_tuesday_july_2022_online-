@@ -1,0 +1,15 @@
+WARNING: не используемое свойство класса.
+
+class Papagoi {
+
+    private String talk;
+    private int age;
+    private String newColor;
+
+    public Papagoi (int age, String color) {
+        this.newColor = color;
+        this.age = age;
+        this.talk = talk;
+    }
+
+Свойство talk не используется, такие свойства нужно удалять из кода!

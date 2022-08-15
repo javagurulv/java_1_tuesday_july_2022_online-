@@ -1,0 +1,20 @@
+WARNING: не усложняйте код за счёт лишнего if оператора.
+
+    public boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+В данном случае метод возвращает boolean и отвечает на вопрос
+чётное число или нет. Проверка чётное число или нет
+number % 2 == 0. Так почему же результат этой проверки сразу не
+вернуть в качестве результата метода?
+
+Лучше:
+
+    public boolean isEven(int number) {
+        return (number % 2) == 0;
+    }
