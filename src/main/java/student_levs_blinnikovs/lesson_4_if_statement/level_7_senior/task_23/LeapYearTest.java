@@ -8,8 +8,12 @@ class LeapYearTest {
     // https://kalender-365.de/leap-years.php - leap years calendar
     // test data: leap years
 
-    public void compareRealExpected(boolean realData, boolean expectedData) {
-        if (realData == expectedData) {
+    public boolean isRealEqualExpected(boolean realResult, boolean expectedResult) {
+        return realResult == expectedResult;
+    }
+
+    public void compareRealExpected(boolean realResult, boolean expectedResult) {
+        if (isRealEqualExpected(realResult, expectedResult)) {
             System.out.print("LeapYear test = OK\n");
         } else {
             System.out.print("LeapYear test = FAIL\n");

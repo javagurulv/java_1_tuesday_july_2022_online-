@@ -20,8 +20,12 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 class StockTest {
 
-    public void compareRealExpected(int realData, int expectedData) {
-        if (realData == expectedData) {
+    public boolean isRealEqualExpected(int realResult, int expectedResult) {
+        return realResult == expectedResult;
+    }
+
+    public void compareRealExpected(int realResult, int expectedResult) {
+        if (isRealEqualExpected(realResult, expectedResult)) {
             System.out.println("Stock test = OK");
         } else {
             System.out.println("Stock test = FAIL");
