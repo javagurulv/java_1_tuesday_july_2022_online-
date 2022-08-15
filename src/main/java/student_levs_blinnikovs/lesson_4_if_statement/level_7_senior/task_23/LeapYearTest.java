@@ -31,17 +31,18 @@ class LeapYearTest {
         LeapYearTest test = new LeapYearTest();
 
         // Если год не делится на 4, значит он обычный.
-        test.leapYearTest(2022, false, "Doesn't divide by 4");
+        test.leapYearTest(1904, true, "Divides by 4 and is a leap year");
+        test.leapYearTest(2022, false, "Doesn't divide by 4 and is not a leap year");
 
         // Иначе надо проверить не делится ли год на 100.
         // Если не делится, значит это не столетие и можно сделать вывод, что год високосный.
-        test.leapYearTest(2020, true, "Doesn't divide by 100");
+        test.leapYearTest(2020, true, "Doesn't divide by 100 and is a leap year");
 
         // Если делится на 100, значит это столетие и его следует проверить его делимость на 400.
-        test.leapYearTest(1900, false, "Divides by 100 but not by 400");
+        test.leapYearTest(1900, false, "Divides by 100 but not by 400 and is not a leap year");
 
         // Если год делится на 400, то он високосный.
-        test.leapYearTest(2000, true, "Divides by 100 and by 400");
+        test.leapYearTest(2000, true, "Divides by 100 and by 400 and is a leap year");
 
     }
 
