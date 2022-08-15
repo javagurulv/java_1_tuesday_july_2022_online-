@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_3.homework.robot;
+package student_ernest_aleskevics.lesson_3.homework.task_1_till_6.robot;
 
 class Robot {
     String name;
