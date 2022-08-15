@@ -33,8 +33,25 @@ class Transaction {
         this.transactionType = transactionType;
     }
 
-    private int getAmount() {
+    public int getAmount() {
         return this.amount;
     }
+
+    // создайте метод isDeposit(), данный метод должен возвращать boolean:
+    // - true если транзакция является депозитом
+    // - false если транзакция не является депозитом
+
+    // создайте метод isWithdrawal(), данный метод должен возвращать boolean:
+    // - true если транзакция является снятием денег со счёта
+    // - false если транзакция не является снятием денег со счёта
+
+    public boolean isDeposit() {
+        return transactionType == TransactionType.DEPOSIT;
+    }
+
+    public boolean isWithdrawal() {
+        return transactionType == TransactionType.WITHDRAWAL;
+    }
+
 
 }
