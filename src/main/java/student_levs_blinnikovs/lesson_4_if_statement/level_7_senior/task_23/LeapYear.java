@@ -23,27 +23,25 @@ class LeapYear {
  */
 
 import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Можно ли этот код улучшить? Если да то как?", student = "Для начала спрячем булевы в методы. Но предполагаю что можно еще улучить if конструкцию.")
 class LeapYear {
 
 	public boolean isLeapYear(int year) {
-		return !isCommonYear(year) && isDevidedTo100(year)
-			|| !isCommonYear(year) && isDevidedTo400(year);
+		return isDevidedBy4(year) && !isDevidedBy100(year)
+			|| isDevidedBy4(year) && isDevidedBy100(year) && isDevidedBy400(year);
     }
 
-	private boolean isCommonYear(int year) {
-		return year % 4 != 0;
+	private boolean isDevidedBy4(int year) {
+		return (year % 4) == 0;
 	}
 
-	private boolean isDevidedTo100(int year) {
-		return year % 100 != 0;
+	private boolean isDevidedBy100(int year) {
+		return (year % 100) == 0;
 	}
 
-	private boolean isDevidedTo400(int year) {
-		return year % 400 != 0;
+	private boolean isDevidedBy400(int year) {
+		return (year % 400) == 0;
 	}
 
 }
