@@ -29,27 +29,21 @@ import teacher.codereview.CodeReviewComment;
 @CodeReviewComment(teacher = "Можно ли этот код улучшить? Если да то как?", student = "Для начала спрячем булевы в методы. Но предполагаю что можно еще улучить if конструкцию.")
 class LeapYear {
 
-    public boolean isLeapYear(int year) {
-        boolean result;
-        if (year % 4 != 0) {
-            // Если год не делится на 4, значит он обычный.
-            result = false;
-        } else { // Иначе надо проверить не делится ли год на 100.
-            if (year % 100 != 0) {
-                // Если не делится, значит это не столетие и можно сделать вывод, что год високосный.
-                result = true;
-            } else { // Если делится на 100, значит это столетие и его следует проверить его делимость на 400.
-                if (year % 400 == 0) {
-                    // Если год делится на 400, то он високосный.
-                    result = true;
-                } else {
-                    // Иначе год обычный.
-                    result = false;
-                }
-            }
-        }
-        return result;
-
+	public boolean isLeapYear(int year) {
+		return !isCommonYear(year) && isDevidedTo100(year)
+			|| !isCommonYear(year) && isDevidedTo400(year);
     }
+
+	private boolean isCommonYear(int year) {
+		return year % 4 != 0;
+	}
+
+	private boolean isDevidedTo100(int year) {
+		return year % 100 != 0;
+	}
+
+	private boolean isDevidedTo400(int year) {
+		return year % 400 != 0;
+	}
 
 }
