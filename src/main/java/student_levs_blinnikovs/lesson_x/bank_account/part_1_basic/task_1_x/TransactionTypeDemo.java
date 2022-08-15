@@ -9,9 +9,11 @@ package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x;
     TransactionType deposit = TransactionType.DEPOSIT;
     TransactionType withdrawal = TransactionType.WITHDRAWAL;
     TransactionType transactionType = TransactionType.WITHDRAWAL;
-- присвоение нового заначения переменной типа enum:
+
+- присвоение нового значения переменной типа enum:
     TransactionType transactionType = TransactionType.WITHDRAWAL;
     transactionType = TransactionType.DEPOSIT;
+
 - сравнение переменной типа enum:
     TransactionType transactionType = TransactionType.WITHDRAWAL;
     if (transactionType == TransactionType.WITHDRAWAL) {
@@ -25,4 +27,23 @@ package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x;
  */
 
 class TransactionTypeDemo {
+
+    public static void main(String[] args) {
+
+        TransactionType deposit = TransactionType.DEPOSIT;
+        TransactionType withdrawal = TransactionType.WITHDRAWAL;
+
+        TransactionType transactionType = TransactionType.WITHDRAWAL;
+
+        // transactionType = TransactionType.DEPOSIT;
+
+        if (transactionType == TransactionType.WITHDRAWAL) {
+            System.out.println("This transaction is withdrawal transaction!");
+        }
+        if (transactionType == TransactionType.DEPOSIT) {
+            System.out.println("This transaction is deposit transaction!");
+        }
+
+    }
+
 }
