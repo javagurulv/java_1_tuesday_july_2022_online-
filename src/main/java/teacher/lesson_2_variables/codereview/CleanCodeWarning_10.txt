@@ -1,0 +1,26 @@
+WARNING: не используйте static inner classes, вы еще не
+понимаете их смысл и не знаете для чего они используются.
+
+public class Task_23 {  static class AttentionPlease {
+    public static void main(String[] args) {
+        System.out.println("Code outside the method will not compile!");
+
+    }
+}
+}
+
+BETTER:
+
+public class Task_23 {
+    public static void main(String[] args) {
+        System.out.println("Code outside the method will not compile!");
+    }
+}
+
+или
+
+class AttentionPlease {
+    public static void main(String[] args) {
+        System.out.println("Code outside the method will not compile!");
+    }
+}

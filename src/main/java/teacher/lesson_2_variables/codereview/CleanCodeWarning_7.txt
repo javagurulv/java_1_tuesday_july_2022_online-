@@ -1,0 +1,10 @@
+WARNING: не добавляйте в название переменной ее тип данных.
+Находясь в любом месте программы наведите курсор на переменную
+и нажмите комбинацию Ctrl + Q, вы увидите подсказку о типе
+данных переменной.
+
+double secondDoubleNumber = scanner.nextDouble();
+
+BETTER:
+
+double secondNumber = scanner.nextDouble();

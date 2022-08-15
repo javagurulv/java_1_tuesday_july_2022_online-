@@ -1,0 +1,5 @@
+WARNING: старайтесь в названии класса не использовать нижние подчёркивания.
+
+class Task1_mathematical_operations {
+
+BETTER: Task1MathematicalOperations

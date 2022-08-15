@@ -1,0 +1,13 @@
+WARNING: не используйте в названии переменных (особенно в их начале)
+нижнее подчёркивание. Этот стиль программирования часто используется
+в языке С++, а на Java так лучше не делать. Не загружайте код
+программы дополнительными символами.
+
+    public String setValues(String _bookName, String _bookGenre, int _bookID, int _bookNumber, int[] _cordPlaced) {
+        String param = (_bookName + _bookGenre + _bookID + _bookNumber);
+
+
+BETTER:
+
+    public String setValues(String bookName, String bookGenre, int bookID, int bookNumber, int[] cordPlaced) {
+        String param = (bookName + bookGenre + bookID + bookNumber);

@@ -1,0 +1,27 @@
+WARNING: давайте корректные названия переменным!
+Названия должны показывать, что хранится в этих переменных,
+а не быть фейками вводящими в заблуждение.
+double sum = enterDoubleNumber * 2 * 3.1415;  // Разве это сумма?
+double sum2 = enterDoubleNumber * enterDoubleNumber  * 3.1415;  // Разве это сумма?
+
+
+    System.out.println("Enter Radius:");
+    double enterDoubleNumber = scanner.nextDouble();
+
+    double sum = enterDoubleNumber * 2 * 3.1415;
+    System.out.println("Perimeter is = " + sum);
+
+    double sum2 = enterDoubleNumber * enterDoubleNumber  * 3.1415;
+    System.out.println("Area is = " + sum2);
+
+
+BETTER:
+
+    System.out.println("Enter Radius:");
+    double radius = scanner.nextDouble();
+
+    double perimeter = radius * 2 * 3.1415;
+    System.out.println("Perimeter is = " + perimeter);
+
+    double area = radius * radius  * 3.1415;
+    System.out.println("Area is = " + area);
