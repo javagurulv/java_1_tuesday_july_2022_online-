@@ -4,12 +4,9 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = false)
-public class Book {
-
-    String title;
-
+ class Book {
 	@CodeReviewComment(teacher = "Зачем это свойство?")
-    String newTitle;
+
 
         Book(String bookTitle) {
             this.title = bookTitle;

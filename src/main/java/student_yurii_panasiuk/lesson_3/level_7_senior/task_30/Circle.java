@@ -15,7 +15,7 @@ import teacher.codereview.CodeReviewComment;
  class Circle {
 
 	@CodeReviewComment(teacher = "Зачем тут присваивается 1?")
-     double radius = 1;
+     double radius;
 
      Circle(double radius) {
          this.radius = radius;
