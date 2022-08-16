@@ -1,0 +1,46 @@
+WARNING: давайте корректные названия переменным!
+Названия должны показывать, что хранится в этих переменных,
+а не быть фейками вводящими в заблуждение.
+
+double average = num1 - num2; // такое название переменной вводит в заблуждение
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first number :");
+        double num1 = sc.nextDouble() ;
+
+        System.out.println("Enter second number :");
+        double num2 = sc.nextDouble() ;
+
+        double average = num1 - num2;
+        System.out.println("Addition - " + average);
+
+        average = num1 + num2;
+        System.out.println("Subtraction - " + average);
+
+        average  = num1 * num2;
+        System.out.println("Multiplication - " + average);
+
+        average  = num1 / num2 ;
+        System.out.println("Division - " + average);
+
+
+BETTER:
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first number :");
+        double num1 = sc.nextDouble() ;
+
+        System.out.println("Enter second number :");
+        double num2 = sc.nextDouble() ;
+
+        double subtractionResult = num1 - num2;
+        System.out.println("Subtraction - " + subtractionResult);
+
+        double additionResult = num1 + num2;
+        System.out.println("Addition - " + additionResult);
+
+        double multiplicationResult  = num1 * num2;
+        System.out.println("Multiplication - " + multiplicationResult);
+
+        double divisionResult  = num1 / num2 ;
+        System.out.println("Division - " + divisionResult);

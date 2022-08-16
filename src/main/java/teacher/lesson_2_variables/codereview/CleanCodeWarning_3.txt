@@ -1,0 +1,20 @@
+WARNING: плохое название переменной. О чём говорит название
+переменной "a"? Если программа будет большой, а код длинным,
+то встретив где в середине кода название переменной "a"
+человеку не будет понятно что это за переменная и для чего
+она предназначена. Название переменной должно сразу говорить
+для чего эта переменная была создана и что в ней хранится.
+
+System.out.print("Enter number: ");
+int a = scanner.nextInt();
+
+double r = scanner.nextDouble();
+double p = 3.14159;
+
+BETTER:
+
+System.out.print("Enter number: ");
+int number = scanner.nextInt();
+
+double radius = scanner.nextDouble();
+double pi = 3.14159;

@@ -3,7 +3,7 @@ package student_andrei_kholiavskii.lesson_2_variables.level_6_middle.task_23;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class AttentionPlease {
+class AttentionPlease {
 
     public static void main(String[] args){
 

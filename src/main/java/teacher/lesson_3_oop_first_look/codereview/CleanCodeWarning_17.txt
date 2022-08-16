@@ -1,0 +1,31 @@
+WARNING: плохое название метода класса. Метод класса - это действие,
+которое могут совершать объекты этого класса. Действие описывается
+глаголом. Поэтому в названии метода должен присутствовать глагол.
+
+class Circle {
+
+     double radius;
+
+     Circle(double radius) {
+         this.radius = radius;
+     }
+
+     double circleArea() {
+         return Math.PI * Math.pow(radius, 2);
+     }
+}
+
+Лучше:
+
+class Circle {
+
+     double radius;
+
+     Circle(double radius) {
+         this.radius = radius;
+     }
+
+     double calculateArea() {
+         return Math.PI * Math.pow(radius, 2);
+     }
+}

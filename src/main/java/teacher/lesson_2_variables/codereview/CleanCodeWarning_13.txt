@@ -1,0 +1,50 @@
+WARNING: не объявляйте все переменные в начале программы.
+Объявлять переменную нужно в том месте, где она первый раз используется.
+
+    public static void main(String[] args) {
+        double num1, num2, result;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter first number :");
+        num1 = sc.nextDouble() ;
+
+        System.out.println("Enter second number :");
+        num2 = sc.nextDouble() ;
+
+        result = num1 + num2;
+        System.out.println("Addition - " + result);
+
+        result = num1 - num2;
+        System.out.println("Subtraction - " + result);
+
+        result = num1 * num2;
+        System.out.println("Multiplication - " + result);
+
+        result = num1 / num2 ;
+        System.out.println("Division - " + result);
+    }
+
+BETTER:
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter first number :");
+        double num1 = sc.nextDouble() ;
+
+        System.out.println("Enter second number :");
+        double num2 = sc.nextDouble() ;
+
+        double result = num1 + num2;
+        System.out.println("Addition - " + result);
+
+        result = num1 - num2;
+        System.out.println("Subtraction - " + result);
+
+        result = num1 * num2;
+        System.out.println("Multiplication - " + result);
+
+        result = num1 / num2 ;
+        System.out.println("Division - " + result);
+    }

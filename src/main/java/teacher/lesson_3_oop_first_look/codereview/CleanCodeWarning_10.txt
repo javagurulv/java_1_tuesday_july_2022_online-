@@ -1,0 +1,53 @@
+WARNING: пример запутанной (сложной) реализации бизнес логики.
+Плюс пример не корректной реализации бизнес логики.
+
+class Stock {
+    String companyName;
+    int currentPrice;
+    int minPrice;
+    int maxPrice;
+
+    public Stock(String companyName, int currentPrice) {
+        this.companyName = companyName;
+        this.currentPrice = currentPrice;
+        this.minPrice = currentPrice;
+        this.maxPrice = currentPrice;
+    }
+
+    public void updatePrice(int price) {
+        if (maxPrice > currentPrice && minPrice < currentPrice) {
+            this.currentPrice = price;
+        } else if (price > currentPrice) {
+            this.maxPrice = price;
+        } else if (price < currentPrice) {
+            this.minPrice = price;
+        }
+    }
+
+Когда будет меняться минимальная или максимальная цена акции?
+Просто ли это понять из программного кода? Мне кажется нет.
+Проблема этого кода заключается в том, что изменение максимальной
+или минимальной цены зависят от первого условия
+maxPrice > currentPrice && minPrice < currentPrice, условия,
+которое определяет изменение текущей стоимости акции.
+
+А правильно ли меняется текущая цена? Что произойдёт если текущая
+цена станет больше чем максимальная? Изменится ли в этом случае
+текущая цена?
+
+Проблема этого кода в том, что изменения максимальной, минимальной
+и текущей цен зависят друг от друга. Хотя в реальной жизни
+определение максимальной, минимальной и текущей цены никак друг
+с другом не связаны.
+
+Лучше:
+
+    public void updatePrice(int price) {
+        this.currentPrice = price;
+        if (price > maxPrice) {
+            this.maxPrice = price;
+        }
+        if (price < minPrice) {
+            this.minPrice = price;
+        }
+    }

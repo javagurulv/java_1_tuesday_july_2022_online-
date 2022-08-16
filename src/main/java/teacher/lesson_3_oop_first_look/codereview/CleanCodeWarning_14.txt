@@ -1,0 +1,40 @@
+WARNING: не логичное название метода класса.
+
+class Computer {
+
+    private String brand;
+    private boolean computerOn;
+
+    public Computer(String brand, boolean computer){
+        this.brand = brand;
+        this.computerOn = computerOn;
+    }
+
+    public void command() {
+        System.out.println("My brand is - " + this.brand);
+    }
+
+Какой смысл вложен в название метода command()?
+Представьте себя на месте человека, который читает ваш код.
+Что он сможет понять по названию метода command()?
+Будет ли ему понятен смысл этого метода?
+В идеале по названию метода должно быть понятно, что он делает.
+Иначе в сложных программах придётся вникать в реализацию
+каждого метода, читать и изучать каждую строчку программы.
+А на это нужно очень много времени!
+
+Лучше:
+
+class Computer {
+
+    private String brand;
+    private boolean computerOn;
+
+    public Computer(String brand, boolean computer){
+        this.brand = brand;
+        this.computerOn = computerOn;
+    }
+
+    public void printBrandToConsole() {
+        System.out.println("My brand is - " + this.brand);
+    }

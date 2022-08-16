@@ -116,11 +116,21 @@ class Calculator {
 
 import teacher.codereview.CodeReviewComment;
 
+import java.util.function.Function;
+
 @CodeReviewComment(student = "I'd like to try to pass Calculator obj function call in test function calls e.g. testGeneric(int a, int b, Calculator method()..). How to do it?")
 class CalculatorTest {
 
+    public boolean isRealEqualExpected(int realResult, int expectedResult) {
+        return realResult == expectedResult;
+    }
+
+    public boolean isRealEqualExpected(boolean realResult, boolean expectedResult) {
+        return realResult == expectedResult;
+    }
+
     public void compareRealExpected(int realResult, int expectedResult, String testScenario) {
-        if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
+        if (isRealEqualExpected(realResult, expectedResult)) {  // проверяем правильно ли сработал тестируемый код
             System.out.println(testScenario + " test = OK\n");
         } else {
             System.out.println(testScenario + " test = FAIL\n");
@@ -128,13 +138,14 @@ class CalculatorTest {
     }
 
     public void compareRealExpected(boolean realResult, boolean expectedResult, String testScenario) {
-        if (realResult == expectedResult) {
+        if (isRealEqualExpected(realResult, expectedResult)) {
             System.out.println(testScenario + " test = OK\n");
         } else {
             System.out.println(testScenario + " test = FAIL\n");
         }
     }
 
+    // Function ... or lambdas. TODO
     public void sumTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.sum(firstNumber, secondNumber);

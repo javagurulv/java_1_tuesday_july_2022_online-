@@ -22,29 +22,25 @@ class LeapYear {
 и покрыть тестами весь функционал класса LeapYear.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class LeapYear {
 
-    public boolean isLeapYear(int year) {
-        boolean result;
-        if (year % 4 != 0) {
-            // Если год не делится на 4, значит он обычный.
-            result = false;
-        } else { // Иначе надо проверить не делится ли год на 100.
-            if (year % 100 != 0) {
-                // Если не делится, значит это не столетие и можно сделать вывод, что год високосный.
-                result = true;
-            } else { // Если делится на 100, значит это столетие и его следует проверить его делимость на 400.
-                if (year % 400 == 0) {
-                    // Если год делится на 400, то он високосный.
-                    result = true;
-                } else {
-                    // Иначе год обычный.
-                    result = false;
-                }
-            }
-        }
-        return result;
+	public boolean isLeapYear(int year) {
+			return isDividedBy4(year) && !isDividedBy100(year) || isDividedBy400(year);
+	}
 
-    }
+	private boolean isDividedBy4(int year) {
+		return year % 4 == 0;
+	}
+
+	private boolean isDividedBy100(int year) {
+		return year % 100 == 0;
+	}
+
+	private boolean isDividedBy400(int year) {
+		return year % 400 == 0;
+	}
 
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class UserName {
+class UserName {
     public static void main(String[] args){
 
         Scanner userScanner = new Scanner(System.in);

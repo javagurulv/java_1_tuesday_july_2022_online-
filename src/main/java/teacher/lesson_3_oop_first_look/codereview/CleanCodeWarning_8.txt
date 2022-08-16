@@ -1,0 +1,40 @@
+WARNING: упрощайте код методов используя приём рефакторинга
+вынесения части кода в отдельный метод и его использование повторно.
+
+    public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+
+        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+            return firstNumber;
+        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+            return secondNumber;
+        } else if (firstNumber == secondNumber && firstNumber > thirdNumber) {
+            return firstNumber; //or return secondNumber
+        } else if (firstNumber == thirdNumber && firstNumber > secondNumber) {
+            return firstNumber; //or return  thirdNumber
+        } else if (secondNumber == thirdNumber && secondNumber > firstNumber) {
+            return secondNumber; // or return thirdNumber
+        } else if (firstNumber == secondNumber && secondNumber == thirdNumber) {
+            return secondNumber; //return any
+        } else {
+            return thirdNumber;
+        }
+    }
+
+Что такое максимальное из трёх чисел? Ответить на такой вопрос в лоб
+не просто, надо начинать описывать сложные условия (первое число
+больше второго и больше третьего и так далее). Перед нами очевидно
+задача, которая требует упрощения! Попробуйте поделить ее на более
+мелкие подзадачи. Более простой задачей кажется нахождение
+максимального числа из двух. Найдя максимальное из первых двух
+и сравнив его с третьим числом мы и найдём максимальное число из трёх.
+
+Лучше:
+
+    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        return Math.max(firstNumber, secondNumber);
+    }
+
+    public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+        int max = maxOfTwoNumbers(firstNumber, secondNumber);
+        return maxOfTwoNumbers(max, thirdNumber);
+    }
