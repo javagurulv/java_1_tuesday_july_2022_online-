@@ -1,10 +1,5 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_5_middle;
-
 import java.util.Scanner;
-
-import teacher.codereview.CodeReview;
-
-@CodeReview(approved = true)
 public class DogDemo {
     public static void main(String[] args){
         Scanner dogName = new Scanner(System.in);

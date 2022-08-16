@@ -1,10 +1,5 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_3_junior;
-
 import java.util.Scanner;
-
-import teacher.codereview.CodeReview;
-
-@CodeReview(approved = true)
 public class CyborgOps {
     public static void main(String[] args){
 

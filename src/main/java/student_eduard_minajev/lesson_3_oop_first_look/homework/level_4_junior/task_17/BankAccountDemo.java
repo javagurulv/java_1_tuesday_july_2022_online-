@@ -1,8 +1,5 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_4_junior.task_17;
 
-import teacher.codereview.CodeReview;
-
-@CodeReview(approved = true)
 public class BankAccountDemo {
     public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount("Viktor", "Savonin", 100000);
