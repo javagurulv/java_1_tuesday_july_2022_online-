@@ -6,15 +6,12 @@ package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x;
 другой на негативный.
  */
 
-import java.util.function.Function;
-
-import static student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x.TransactionType.*;
-
 class TransactionTest {
 
     public boolean isRealEqualExpected(boolean realData, boolean expectedData) {
         return realData == expectedData;
     }
+
     public void compareRealExpected(boolean realData, boolean expectedData, String scenario) {
         System.out.println("\nScenario: " + scenario + ": ");
         if (isRealEqualExpected(realData, expectedData)) {
@@ -24,47 +21,18 @@ class TransactionTest {
         }
     }
 
-    public void transactionTypeDepositTest(String scenario) {
+    public void transactionTypeDepositPositiveTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, DEPOSIT);          // is imported static better than TransactionType.DEPOSIT for example?
-        // test steps
-        boolean realResult = testedTransaction.isDeposit();
-        boolean expectedResult = true;                                                  // is it better to use transactionType getter for it?
-        // validate
-        compareRealExpected(realResult, expectedResult, scenario);
-    }
-
-    public void transactionTypeDepositTest(String scenario, boolean expectedResult) {
-        // prepare test data
-        Transaction testedTransaction = new Transaction(100, DEPOSIT);
+        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);
         // test steps
         boolean realResult = testedTransaction.isDeposit();
         // validate
-        compareRealExpected(realResult, expectedResult, scenario);
+        compareRealExpected(realResult, true, scenario);
     }
 
-    public void transactionTypeDepositTest(String scenario, TransactionType transactionType) {
+    public void transactionTypeWithdrawalPositiveTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, transactionType);
-        // test steps
-        boolean realResult = testedTransaction.isDeposit();
-        boolean expectedResult = true;
-        // validate
-        compareRealExpected(realResult, expectedResult, scenario);
-    }
-
-    public void transactionTypeDepositTest(String scenario, TransactionType transactionType, boolean expectedResult) {
-        // prepare test data
-        Transaction testedTransaction = new Transaction(100, transactionType);
-        // test steps
-        boolean realResult = testedTransaction.isDeposit();
-        // validate
-        compareRealExpected(realResult, expectedResult, scenario);
-    }
-
-    public void transactionTypeWithdrawalTest(String scenario) {
-        // prepare test data
-        Transaction testedTransaction = new Transaction(100, WITHDRAWAL);
+        Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
         boolean expectedResult = true;
@@ -72,30 +40,24 @@ class TransactionTest {
         compareRealExpected(realResult, expectedResult, scenario);
     }
 
-    public void transactionTypeWithdrawalTest(String scenario, boolean expectedResult) {
+    public void transactionTypeDepositNegativeTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, WITHDRAWAL);
+        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);          // is imported static better than TransactionType.DEPOSIT for example?
+        // is it better to hide test object prep in a separate method?
         // test steps
-        boolean realResult = testedTransaction.isWithdrawal();
+        boolean realResult = testedTransaction.isDeposit();
+        boolean expectedResult = false;                                                  // is it better to use transactionType getter for it?
+        // is it better to hide test steps under method?
         // validate
         compareRealExpected(realResult, expectedResult, scenario);
     }
 
-    public void transactionTypeWithdrawalTest(String scenario, TransactionType transactionType) {
+    public void transactionTypeWithdrawalNegativeTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, transactionType);
+        Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
-        boolean expectedResult = true;
-        // validate
-        compareRealExpected(realResult, expectedResult, scenario);
-    }
-
-    public void transactionTypeWithdrawalTest(String scenario, TransactionType transactionType, boolean expectedResult) {
-        // prepare test data
-        Transaction testedTransaction = new Transaction(100, transactionType);
-        // test steps
-        boolean realResult = testedTransaction.isWithdrawal();
+        boolean expectedResult = false;
         // validate
         compareRealExpected(realResult, expectedResult, scenario);
     }
@@ -105,36 +67,11 @@ class TransactionTest {
         TransactionTest test = new TransactionTest();
 
         // simple hardcoded tests - without ability to catch negative test case
-        test.transactionTypeDepositTest("create DEPOSIT transaction hard way and call deposit test - expect OK");
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction hard way and call withdrawal test - expect OK");
+        test.transactionTypeDepositPositiveTest("create DEPOSIT transaction hard way and call deposit test - expect OK");
+        test.transactionTypeWithdrawalPositiveTest("create WITHDRAWAL transaction hard way and call withdrawal test - expect OK");
 
-        // possible to simulate negative test case
-        // allow expected to change
-        test.transactionTypeDepositTest("create DEPOSIT transaction hard way and call deposit test on it expecting it's true - expect OK", true);
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction hard way and call withdrawal test on it expecting it's true - expect OK", true);
-
-        test.transactionTypeDepositTest("create DEPOSIT transaction hard way and call deposit test on it expecting it's false - should FAIL", false);
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction hard way and call withdrawal test on it expecting it's false - should FAIL", false);
-
-        // allow transaction type to change
-        test.transactionTypeDepositTest("create DEPOSIT transaction by passing it and call deposit test on it - expect OK", DEPOSIT); // is imported static better than TransactionType.DEPOSIT for example?
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction by passing it and call withdrawal test on it - expect OK", WITHDRAWAL);
-
-        test.transactionTypeDepositTest("create WITHDRAWAL transaction by passing it and call deposit test on it - should FAIL", WITHDRAWAL);
-        test.transactionTypeWithdrawalTest("create DEPOSIT transaction by passing it and call withdrawal test on it - should FAIL", DEPOSIT);
-
-        // allow both to change
-        test.transactionTypeDepositTest("create DEPOSIT transaction by passing it and call deposit test on it expecting it's true - expect OK", DEPOSIT, true);
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction by passing it and call withdrawal test on it expecting it's true - expect OK", WITHDRAWAL, true);
-
-        test.transactionTypeDepositTest("create DEPOSIT transaction by passing it and call deposit test on it expecting it's false - should FAIL", DEPOSIT, false);
-        test.transactionTypeWithdrawalTest("create WITHDRAWAL transaction by passing it and call withdrawal test on it expecting it's false - should FAIL", WITHDRAWAL, false);
-
-        test.transactionTypeDepositTest("create WITHDRAWAL transaction by passing it and call deposit test on it expecting it's true - should FAIL", WITHDRAWAL, true); // not good... like false positive
-        test.transactionTypeWithdrawalTest("create DEPOSIT transaction by passing it and call withdrawal test on it expecting it's true - should FAIL", DEPOSIT, true);
-
-        test.transactionTypeDepositTest("create WITHDRAWAL transaction by passing it and call deposit test on it expecting it's false - expect OK", WITHDRAWAL, false);
-        test.transactionTypeWithdrawalTest("create DEPOSIT transaction by passing it and call withdrawal test on it expecting it's false - expect OK", DEPOSIT, false);
+        test.transactionTypeDepositNegativeTest("create DEPOSIT transaction hard way and call deposit test expecting it's false - expect FAIL");
+        test.transactionTypeWithdrawalNegativeTest("create WITHDRAWAL transaction hard way and call deposit test expecting it's false - expect FAIL");
 
     }
 
