@@ -5,10 +5,8 @@ import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = false)
  class Book {
-    private final String title;
-
-    @CodeReviewComment(teacher = "Зачем это свойство?")
-
+	@CodeReviewComment(teacher = "Зачем это свойство?")
+			private String title;
 
         Book(String bookTitle) {
             this.title = bookTitle;
