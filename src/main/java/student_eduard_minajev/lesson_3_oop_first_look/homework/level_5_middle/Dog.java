@@ -3,9 +3,8 @@ package student_eduard_minajev.lesson_3_oop_first_look.homework.level_5_middle;
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Напиши все методы в несколько строк: сигнатура и тело на разных строках.")
-public class Dog {
+
+ class Dog {
     String dogName;
     int dogAge;
     String dogHair;
@@ -16,13 +15,16 @@ public class Dog {
         this.dogHair=dogHair;
     }
     String sayDogName() {
-        return this.dogName;}
+        return this.dogName;
+    }
 
     String sayDogHair() {
-        return this.dogHair;}
+        return this.dogHair;
+    }
 
     int sayDogAge() {
-        return this.dogAge;}
+        return this.dogAge;
+    }
 
     void changeHair(String newDogHair) {
         this.dogHair=newDogHair;
@@ -35,7 +37,8 @@ public class Dog {
     }
 
      void dogTellEverything() {
-        System.out.println(dogName + " is " + dogAge + " years old and has " + dogHair + " hair.");}
+        System.out.println(dogName + " is " + dogAge + " years old and has " + dogHair + " hair.");
+    }
 
 
 }
