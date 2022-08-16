@@ -3,7 +3,7 @@ package student_andrei_kholiavskii.lesson_1_introduction.level_0_lecture;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class HelloWorld {
+class HelloWorld {
 
     public static void main(String[] args) {
         System.out.println("Hello!");

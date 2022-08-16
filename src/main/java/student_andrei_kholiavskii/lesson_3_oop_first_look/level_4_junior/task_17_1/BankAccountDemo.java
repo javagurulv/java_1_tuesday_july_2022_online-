@@ -1,6 +1,6 @@
 package student_andrei_kholiavskii.lesson_3_oop_first_look.level_4_junior.task_17_1;
 
-public class BankAccountDemo {
+class BankAccountDemo {
 
     public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount("Viktor", "Savonin", 100000);

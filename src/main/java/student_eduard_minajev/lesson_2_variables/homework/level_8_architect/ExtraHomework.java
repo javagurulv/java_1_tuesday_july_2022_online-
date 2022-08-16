@@ -34,9 +34,6 @@ public class ExtraHomework {
         if ( formulaArgument == 1){
             System.out.println("The formula is (" + (operandA) + "+" + (operandB) + ") ^2 = " + (operandA) + "^2 + 2(" + (operandA) + " * " + (operandB) + ") + " + (operandB) + "^2 and after calculation the result is = " +  result );
         }
-        long squareOfDifferenceOne = (long) pow(operandA, 2);
-        long squareOfDifferenceTwo = (long) pow(operandB, 2);
-
 
 
 

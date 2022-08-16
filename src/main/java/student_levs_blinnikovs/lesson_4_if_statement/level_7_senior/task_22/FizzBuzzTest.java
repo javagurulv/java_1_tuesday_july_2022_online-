@@ -5,8 +5,12 @@ import teacher.codereview.CodeReview;
 @CodeReview(approved = true)
 class FizzBuzzTest {
 
-    public void compareRealExpected(String realData, String expectedData) {
-        if (realData.equals(expectedData)) {
+    public boolean isRealEqualExpected(String realResult, String expectedResult) {
+        return realResult.equals(expectedResult);
+    }
+
+    public void compareRealExpected(String realResult, String expectedResult) {
+        if (isRealEqualExpected(realResult, expectedResult)) {
             System.out.println("FizzBuzz test = OK");
         } else {
             System.out.println("FizzBuzz test = FAIL");

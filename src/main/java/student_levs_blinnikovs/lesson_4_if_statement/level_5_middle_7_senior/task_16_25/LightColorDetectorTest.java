@@ -6,8 +6,12 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 class LightColorDetectorTest {
 
+    public boolean isRealEqualExpected(String realResult, String expectedResult) {
+        return realResult.equals(expectedResult);
+    }
+
     public void compareRealExpected(String realColor, String expectedColor) {
-        if (realColor.equals(expectedColor)) {
+        if (isRealEqualExpected(realColor, expectedColor)) {
             System.out.println(expectedColor + " test = OK. \n");
         } else {
             System.out.println(expectedColor + " test = FAIL. Actually is " + realColor + "\n");
@@ -48,6 +52,7 @@ class LightColorDetectorTest {
         test.colorTest(751, "Invisible Light");
 
         // testing incorrect scenarios
+        System.out.println("Testing fail scenario: ");
         test.colorTest(400, "Yellow");
 
     }
