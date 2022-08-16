@@ -35,21 +35,17 @@ class TransactionTest {
         Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
-        boolean expectedResult = true;
         // validate
-        compareRealExpected(realResult, expectedResult, scenario);
+        compareRealExpected(realResult, true, scenario);
     }
 
     public void transactionTypeDepositNegativeTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);          // is imported static better than TransactionType.DEPOSIT for example?
-        // is it better to hide test object prep in a separate method?
+        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);
         // test steps
         boolean realResult = testedTransaction.isDeposit();
-        boolean expectedResult = false;                                                  // is it better to use transactionType getter for it?
-        // is it better to hide test steps under method?
         // validate
-        compareRealExpected(realResult, expectedResult, scenario);
+        compareRealExpected(realResult, false, scenario);
     }
 
     public void transactionTypeWithdrawalNegativeTest(String scenario) {
@@ -57,16 +53,14 @@ class TransactionTest {
         Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
-        boolean expectedResult = false;
         // validate
-        compareRealExpected(realResult, expectedResult, scenario);
+        compareRealExpected(realResult, false, scenario);
     }
 
     public static void main(String[] args) {
 
         TransactionTest test = new TransactionTest();
 
-        // simple hardcoded tests - without ability to catch negative test case
         test.transactionTypeDepositPositiveTest("create DEPOSIT transaction hard way and call deposit test - expect OK");
         test.transactionTypeWithdrawalPositiveTest("create WITHDRAWAL transaction hard way and call withdrawal test - expect OK");
 
