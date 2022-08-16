@@ -2,6 +2,7 @@ package student_eduard_minajev.lesson_3_oop_first_look.homework.level_1_intern.t
 
 public class RobotDemo {
     public static void main(String[] args){
+/*
         Robot roby = new Robot("Roby","idle");
         roby.sayHello();
         roby.sayYourName();
@@ -33,6 +34,7 @@ public class RobotDemo {
         unknown.saySarahConnor();
         unknown.selfIntroduce();
         unknown.sayComeWithMe();
+*/
 
     }
 
