@@ -17,10 +17,12 @@ public class CubeOfDifference {
     }
 
     void changeOperandA (double newOperandA){
+
         this.operandA=newOperandA;
     }
 
     void changeOperandB (double newOperandB){
+
         this.operandB=newOperandB;
     }
 
