@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-public class DogDemo {
+ class DogDemo {
     public static void main(String[] args){
         Scanner dogName = new Scanner(System.in);
         System.out.println("Please give dog name!");
