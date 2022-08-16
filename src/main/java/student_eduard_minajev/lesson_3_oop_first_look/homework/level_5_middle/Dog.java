@@ -1,5 +1,10 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_5_middle;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Напиши все методы в несколько строк: сигнатура и тело на разных строках.")
 public class Dog {
     String dogName;
     int dogAge;

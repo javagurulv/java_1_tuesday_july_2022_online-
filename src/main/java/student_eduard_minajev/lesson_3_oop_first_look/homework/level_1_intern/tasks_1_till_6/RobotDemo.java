@@ -1,8 +1,11 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_1_intern.tasks_1_till_6;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class RobotDemo {
     public static void main(String[] args){
-/*
+
         Robot roby = new Robot("Roby","idle");
         roby.sayHello();
         roby.sayYourName();
@@ -34,7 +37,7 @@ public class RobotDemo {
         unknown.saySarahConnor();
         unknown.selfIntroduce();
         unknown.sayComeWithMe();
-*/
+
 
     }
 

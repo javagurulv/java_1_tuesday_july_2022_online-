@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_4_junior.task_16;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class CarDemo {
     public static void main(String[] args) {
         Car myCar = new Car("Nissan");
