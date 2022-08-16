@@ -35,11 +35,11 @@ class BankAccount {
         this.transactions = transactions;
     }
 
-    private String getOwner() {
+    public String getOwner() {
         return this.owner;
     }
 
-    private Transaction[] getTransactions() {
+    public Transaction[] getTransactions() {
         return this.transactions;
     }
 

@@ -9,7 +9,7 @@ class Phone {
     String model;
 
 	@CodeReviewComment(teacher = "Зачем это свойство?")
-    String newModel;
+
 
         Phone(String newModel) {
             this.model = newModel;
