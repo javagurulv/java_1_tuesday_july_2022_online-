@@ -37,6 +37,10 @@ class Transaction {
         return this.amount;
     }
 
+    public TransactionType getTransactionType() {
+        return this.transactionType;
+    }
+
     // создайте метод isDeposit(), данный метод должен возвращать boolean:
     // - true если транзакция является депозитом
     // - false если транзакция не является депозитом
@@ -46,11 +50,11 @@ class Transaction {
     // - false если транзакция не является снятием денег со счёта
 
     public boolean isDeposit() {
-        return transactionType == TransactionType.DEPOSIT;
+        return this.transactionType == TransactionType.DEPOSIT;
     }
 
     public boolean isWithdrawal() {
-        return transactionType == TransactionType.WITHDRAWAL;
+        return this.transactionType == TransactionType.WITHDRAWAL;
     }
 
 
