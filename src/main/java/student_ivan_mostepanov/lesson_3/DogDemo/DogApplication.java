@@ -22,7 +22,7 @@ class DogApplication {
 
     }
     Dog maxAge(Dog dog1, Dog dog2){
-        if (dog1)
+        return null;
     }
 
 
