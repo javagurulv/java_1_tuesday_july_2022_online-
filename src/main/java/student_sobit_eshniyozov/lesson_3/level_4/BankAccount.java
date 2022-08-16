@@ -12,7 +12,6 @@ public class BankAccount {
         this.ownerLastName = ownerLastName;
         this.moneyAmount = moneyAmount;
     }
-
     String getOwnerFirstName() {
         return this.ownerFirstName;
     }
