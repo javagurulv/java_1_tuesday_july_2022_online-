@@ -27,7 +27,8 @@ class BankAccountCurrentBalanceCalculator {
 
         // iterate through all array elements
         for (Transaction transaction : transactions) {
-            System.out.println(transaction.getTransactionType());
+            System.out.println("There were following transactions: ");
+            System.out.println(transaction.getTransactionType() + " of " + transaction.getAmount() + " EUR.");
         }
 
         // check type of TransactionType in each element
