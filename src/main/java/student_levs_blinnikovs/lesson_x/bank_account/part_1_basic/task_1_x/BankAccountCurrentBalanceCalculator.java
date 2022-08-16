@@ -26,14 +26,16 @@ class BankAccountCurrentBalanceCalculator {
         Transaction[] transactions = bankAccount.getTransactions();
 
         // iterate through all array elements
-        for (Transaction transaction : transactions) {
-            System.out.println("There were following transactions: ");
-            System.out.println(transaction.getTransactionType() + " of " + transaction.getAmount() + " EUR.");
-        }
-
         // check type of TransactionType in each element
         // if DEPOSIT, add amount to balance.
         // if WITHDRAWAl, subtract amount from balance
+        for (Transaction transaction : transactions) {
+            if (transaction.isDeposit()) {
+                balance = balance + transaction.getAmount();
+            } else if (transaction.isWithdrawal()) {
+                balance = balance - transaction.getAmount();
+            }
+        }
 
         // return balance
         return balance;

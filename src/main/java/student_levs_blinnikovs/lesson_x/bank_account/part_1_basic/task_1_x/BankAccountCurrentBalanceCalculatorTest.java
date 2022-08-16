@@ -21,7 +21,8 @@ class BankAccountCurrentBalanceCalculatorTest {
         BankAccountCurrentBalanceCalculator test = new BankAccountCurrentBalanceCalculator();
 
         // call tests
-        test.calculate(bankAccount);
+        int result = test.calculate(bankAccount);
+        System.out.println("Final balance is: " + result + " EUR.");
 
     }
 
