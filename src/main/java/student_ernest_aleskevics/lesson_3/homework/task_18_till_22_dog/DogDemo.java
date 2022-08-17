@@ -1,6 +1,6 @@
 package student_ernest_aleskevics.lesson_3.homework.task_18_till_22_dog;
 
-public class DogDemo {
+class DogDemo {
     public static void main(String[] args) {
         Dog neo = new Dog ("Neo", 8, "red");
         neo.voice();
