@@ -1,8 +1,7 @@
 package student_ernest_aleskevics.lesson_3.homework.task_19;
 
 class Dog {
-    String nickName;
-    String color;
+    String nickName, color;
     int age;
     Dog(String nickName, int age, String color) {
         this.nickName = nickName;
@@ -16,9 +15,11 @@ class Dog {
         this.age = this.age +1;
         System.out.println("Happy Birthday");
         System.out.println("My nickname = " + this.nickName + ". " + "I am " + this.age + " old dog. I am " + this.color);
-
     }
-
+    void changeColor(String newColor) {
+        this.color = newColor;
+        System.out.println("Hello I change my color to " + this.color);
+    }
 
 
 
