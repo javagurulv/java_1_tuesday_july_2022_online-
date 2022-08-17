@@ -2,18 +2,20 @@ package student_ernest_aleskevics.lesson_3.homework.task_19;
 
 class Dog {
     String nickName;
+    String color;
     int age;
-    Dog(String nickName, int age) {
+    Dog(String nickName, int age, String color) {
         this.nickName = nickName;
         this.age = age;
+        this.color = color;
     }
     public void voice(){
-        System.out.println("My nickname = " + this.nickName + ". " + "I am " + this.age + " old dog.");
+        System.out.println("My nickname = " + this.nickName + ". " + "I am " + this.age + " old dog. I am " + this.color);
     }
     void happyBirthday() {
         this.age = this.age +1;
         System.out.println("Happy Birthday");
-        System.out.println("My nickname = " + this.nickName + ". " + "I am " + this.age + " old dog.");
+        System.out.println("My nickname = " + this.nickName + ". " + "I am " + this.age + " old dog. I am " + this.color);
 
     }
 
