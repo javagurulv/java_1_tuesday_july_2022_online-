@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_3.homework.task_19;
+package student_ernest_aleskevics.lesson_3.homework.task_18_till_22_dog;
 
 class Dog {
     String nickName, color;
