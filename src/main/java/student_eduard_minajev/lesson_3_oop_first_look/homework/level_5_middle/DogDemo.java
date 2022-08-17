@@ -1,6 +1,11 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_5_middle;
+
 import java.util.Scanner;
-public class DogDemo {
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
+ class DogDemo {
     public static void main(String[] args){
         Scanner dogName = new Scanner(System.in);
         System.out.println("Please give dog name!");

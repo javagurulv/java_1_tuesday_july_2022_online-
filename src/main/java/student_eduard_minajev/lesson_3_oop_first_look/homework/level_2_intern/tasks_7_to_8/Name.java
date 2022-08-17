@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_2_intern.tasks_7_to_8;
-import java.util.Scanner;
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class Name {
      String myName;
 

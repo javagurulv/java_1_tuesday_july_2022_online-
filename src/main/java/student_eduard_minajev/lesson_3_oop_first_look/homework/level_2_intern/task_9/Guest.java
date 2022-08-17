@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_2_intern.task_9;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Guest{
     String guestName;
 

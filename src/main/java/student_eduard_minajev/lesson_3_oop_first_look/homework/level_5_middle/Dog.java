@@ -1,6 +1,10 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_5_middle;
 
-public class Dog {
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+
+ class Dog {
     String dogName;
     int dogAge;
     String dogHair;
@@ -11,13 +15,16 @@ public class Dog {
         this.dogHair=dogHair;
     }
     String sayDogName() {
-        return this.dogName;}
+        return this.dogName;
+    }
 
     String sayDogHair() {
-        return this.dogHair;}
+        return this.dogHair;
+    }
 
     int sayDogAge() {
-        return this.dogAge;}
+        return this.dogAge;
+    }
 
     void changeHair(String newDogHair) {
         this.dogHair=newDogHair;
@@ -30,7 +37,8 @@ public class Dog {
     }
 
      void dogTellEverything() {
-        System.out.println(dogName + " is " + dogAge + " years old and has " + dogHair + " hair.");}
+        System.out.println(dogName + " is " + dogAge + " years old and has " + dogHair + " hair.");
+    }
 
 
 }

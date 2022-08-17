@@ -9,13 +9,13 @@ class BankAccountCurrentBalanceCalculatorTest {
         Transaction rentPayment = new Transaction(350, TransactionType.WITHDRAWAL);
         Transaction gasPayment = new Transaction(150, TransactionType.WITHDRAWAL);
         Transaction taxReturnPayment = new Transaction(300, TransactionType.DEPOSIT);
-        // expected to have 1k at the end
+        // expected to have 1000 at the end
 
         // saving all transactions to an array
-        Transaction[] finalBalance = {salaryPayment, rentPayment, gasPayment, taxReturnPayment};
+        Transaction[] transactions = {salaryPayment, rentPayment, gasPayment, taxReturnPayment};
 
-        // pass bank account owner and finalBalance array
-        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", finalBalance);
+        // pass bank account owner and transactions array
+        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", transactions);
 
         // create test object
         BankAccountCurrentBalanceCalculator test = new BankAccountCurrentBalanceCalculator();
