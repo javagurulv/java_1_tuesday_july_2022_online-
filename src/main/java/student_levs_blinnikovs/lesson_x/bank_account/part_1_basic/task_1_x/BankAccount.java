@@ -29,10 +29,12 @@ class BankAccount {
 
     private String owner;
     private Transaction[] transactions;
+    int creditLimit;
 
-    BankAccount(String owner, Transaction[] transactions) {
+    BankAccount(String owner, int creditLimit, Transaction[] transactions) {
         this.owner = owner;
         this.transactions = transactions;
+        this.creditLimit = creditLimit;
     }
 
     public String getOwner() {

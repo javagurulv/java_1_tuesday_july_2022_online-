@@ -11,7 +11,7 @@ class BankAccountTransactionApproverTest {
         Transaction[] bankAccountBalanceCreateTransactions = {salaryPayment};
 
         // pass bank account owner and transactions array
-        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", bankAccountBalanceCreateTransactions);
+        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", 0, bankAccountBalanceCreateTransactions);
 
         // prep data for transactions to test
         Transaction rentPayment = new Transaction(300, TransactionType.WITHDRAWAL); // should be allowed as per amount

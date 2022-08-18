@@ -15,7 +15,7 @@ class BankAccountMaxBalanceFinderTest {
         Transaction[] transactions = {salaryPayment, rentPayment, taxReturnPayment, leasePayment};
 
         // pass bank account owner and transactions array
-        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", transactions);
+        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", 0, transactions);
 
         // create test object
         BankAccountMaxBalanceFinder test = new BankAccountMaxBalanceFinder();

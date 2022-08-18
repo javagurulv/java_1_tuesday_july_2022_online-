@@ -15,7 +15,7 @@ class BankAccountCurrentBalanceCalculatorTest {
         Transaction[] transactions = {salaryPayment, rentPayment, gasPayment, taxReturnPayment};
 
         // pass bank account owner and transactions array
-        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", transactions);
+        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", 0, transactions);
 
         // create test object
         BankAccountCurrentBalanceCalculator test = new BankAccountCurrentBalanceCalculator();
