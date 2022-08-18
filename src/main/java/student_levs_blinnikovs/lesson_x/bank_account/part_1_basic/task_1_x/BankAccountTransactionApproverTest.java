@@ -4,15 +4,14 @@ class BankAccountTransactionApproverTest {
 
     public static void main(String[] args) {
 
-        // don't test, preparing account
+        // don't test, preparing account. no point if adding more, we are not testing calculate method here.
         Transaction salaryPayment = new Transaction(2000, TransactionType.DEPOSIT);
-        // no point if adding more, we are not testing calculate method here.
 
-        // saving all transactions to an array
-        Transaction[] transactions = {salaryPayment};
+        // saving salary transaction to an array
+        Transaction[] bankAccountBalanceCreateTransactions = {salaryPayment};
 
         // pass bank account owner and transactions array
-        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", transactions);
+        BankAccount bankAccount = new BankAccount("Levs Blinnikovs", bankAccountBalanceCreateTransactions);
 
         // prep data for transactions to test
         Transaction rentPayment = new Transaction(300, TransactionType.WITHDRAWAL); // should be allowed as per amount
