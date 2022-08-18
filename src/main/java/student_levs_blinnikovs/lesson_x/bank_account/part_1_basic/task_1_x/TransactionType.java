@@ -17,6 +17,7 @@ public enum TransactionType {
 enum TransactionType {
 
     DEPOSIT,
-    WITHDRAWAL
+    WITHDRAWAL,
+    TEST_TRANSACTION
 
 }

@@ -61,11 +61,11 @@ class TransactionTest {
 
         TransactionTest test = new TransactionTest();
 
-        test.transactionTypeDepositPositiveTest("create DEPOSIT transaction hard way and call deposit test - expect OK");
-        test.transactionTypeWithdrawalPositiveTest("create WITHDRAWAL transaction hard way and call withdrawal test - expect OK");
+        test.transactionTypeDepositPositiveTest("create DEPOSIT transaction hard way and call deposit test, \nExpect OK");
+        test.transactionTypeWithdrawalPositiveTest("create WITHDRAWAL transaction hard way and call withdrawal test, \nExpect OK");
 
-        test.transactionTypeDepositNegativeTest("create DEPOSIT transaction hard way and call deposit test expecting it's false - expect FAIL");
-        test.transactionTypeWithdrawalNegativeTest("create WITHDRAWAL transaction hard way and call deposit test expecting it's false - expect FAIL");
+        test.transactionTypeDepositNegativeTest("create DEPOSIT transaction hard way and call deposit test expecting it's false, \nExpect FAIL");
+        test.transactionTypeWithdrawalNegativeTest("create WITHDRAWAL transaction hard way and call deposit test expecting it's false, \nExpect FAIL");
 
     }
 
