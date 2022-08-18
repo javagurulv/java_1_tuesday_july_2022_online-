@@ -37,6 +37,7 @@ class BankAccountTransactionApprover {
     public boolean isApproved(BankAccount bankAccount, Transaction transactionToApprove) {
         // setting false by default for error cases
         boolean isApproved = false;
+        int currentBalance = currentBalanceCalculator.calculate(bankAccount);
 
         // for DEPOSIT no limits, only WITHDRAWAl
         if (transactionToApprove.isDeposit()) {
@@ -44,10 +45,10 @@ class BankAccountTransactionApprover {
             isApproved = true;
         } else if (transactionToApprove.isWithdrawal()) {
             // if isWithdrawal, start logic check
-            if (currentBalanceCalculator.calculate(bankAccount) >= transactionToApprove.getAmount()) {
+            if (currentBalance >= transactionToApprove.getAmount()) {
                 System.out.println("Bank account balance allows withdrawing transaction. OK.");
                 isApproved = true;
-            } else if (currentBalanceCalculator.calculate(bankAccount) < transactionToApprove.getAmount()) {
+            } else if (currentBalance < transactionToApprove.getAmount()) {
                 System.out.println("Bank account balance doesn't allow withdrawing transaction. Not OK.");
                 // remains false from default case
             } else {
