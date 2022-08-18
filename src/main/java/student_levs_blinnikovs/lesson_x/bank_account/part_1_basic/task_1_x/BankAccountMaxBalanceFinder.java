@@ -37,7 +37,8 @@ class BankAccountMaxBalanceFinder {
         for (Transaction transaction : transactions) {
             if (transaction.isDeposit()) {
                 currentBalance = currentBalance + transaction.getAmount();
-            } else if (transaction.isWithdrawal()) {
+            }
+            if (transaction.isWithdrawal()) {
                 currentBalance = currentBalance - transaction.getAmount();
             }
             if (currentBalance > maxBalance) {

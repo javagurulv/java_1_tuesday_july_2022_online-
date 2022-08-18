@@ -28,4 +28,34 @@ class BankAccountTransactionApprover {
 
 class BankAccountTransactionApprover {
 
+    private BankAccountCurrentBalanceCalculator currentBalanceCalculator;
+
+    BankAccountTransactionApprover(BankAccountCurrentBalanceCalculator currentBalanceCalculator) {
+        this.currentBalanceCalculator = currentBalanceCalculator;
+    }
+
+    public boolean isApproved(BankAccount bankAccount, Transaction transactionToApprove) {
+        // setting false by default for error cases
+        boolean isApproved = false;
+
+        // for DEPOSIT no limits, only WITHDRAWAl
+        if (transactionToApprove.isDeposit()) {
+            System.out.println("This is deposit transaction. No limitations. OK.");
+            isApproved = true;
+        } else if (transactionToApprove.isWithdrawal()) {
+            // if isWithdrawal, start logic check
+            if (currentBalanceCalculator.calculate(bankAccount) >= transactionToApprove.getAmount()) {
+                System.out.println("Bank account balance allows withdrawing transaction. OK.");
+                isApproved = true;
+            } else if (currentBalanceCalculator.calculate(bankAccount) < transactionToApprove.getAmount()) {
+                System.out.println("Bank account balance doesn't allow withdrawing transaction. Not OK.");
+                // remains false from default case
+            } else {
+                System.out.println("Error has occurred. Please try again.");
+            }
+        }
+        return isApproved;
+    }
+
+
 }

@@ -32,7 +32,8 @@ class BankAccountCurrentBalanceCalculator {
         for (Transaction transaction : transactions) {
             if (transaction.isDeposit()) {
                 balance = balance + transaction.getAmount();
-            } else if (transaction.isWithdrawal()) {
+            }
+            if (transaction.isWithdrawal()) {
                 balance = balance - transaction.getAmount();
             }
         }
