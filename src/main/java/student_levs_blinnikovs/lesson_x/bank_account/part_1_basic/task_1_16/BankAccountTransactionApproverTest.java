@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x;
+package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_16;
 
 class BankAccountTransactionApproverTest {
 

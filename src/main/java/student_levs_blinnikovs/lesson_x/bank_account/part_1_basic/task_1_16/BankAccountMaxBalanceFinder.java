@@ -1,30 +1,27 @@
-package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_x;
+package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_16;
 
 /*
-Решаем задачу: какая наименьшая сумма денег была у пользователя
-на счету за всё время (наименьший текущий баланс)?
+Решаем задачу: какая наибольшая сумма денег была у пользователя
+на счету за всё время (наибольший текущий баланс)?
 
-Этот вопрос стал особо актуальным после введения кредитного лимита.
-Если пользователь пользуется кредитным лимитом, то наименьшая сумма
-денег у него на счету будет отрицательной.
+Для выполнения этого расчёта создайте новый класс BankAccountMaxBalanceFinder.
 
-Для выполнения этого расчёта создайте новый классе BankAccountMinBalanceFinder.
-
-class BankAccountMinBalanceFinder {
+class BankAccountMaxBalanceFinder {
 
     public int find(BankAccount bankAccount) {
         // реализуйте данный метод, за основу возьмите способ расчёта
         // текущего баланса описанный в предыдущих заданиях
-        // и адаптируйте его под нахождение минимального заначения баланса.
+        // и адаптируйте его под нахождение максимального значения баланса.
     }
 
 }
  */
 
-class BankAccountMinBalanceFinder {
+class BankAccountMaxBalanceFinder {
 
     public int find(BankAccount bankAccount) {
         // assume currentBalance is 0
+        // credit limit has to impact balance from the start. If credit limit exists, assume balance = 0 + creditLimit
         int currentBalance;
         if (!bankAccount.hasCreditLimit()) {
             currentBalance = 0;
@@ -33,7 +30,7 @@ class BankAccountMinBalanceFinder {
         }
 
         // assign currentBalance value to maxBalance as it's highest at the moment
-        int minBalance = currentBalance;
+        int maxBalance = currentBalance;
 
         // get all transactions, store in some array
         Transaction[] transactions = bankAccount.getTransactions();
@@ -50,11 +47,11 @@ class BankAccountMinBalanceFinder {
             if (transaction.isWithdrawal()) {
                 currentBalance = currentBalance - transaction.getAmount();
             }
-            if (currentBalance < minBalance) {
-                minBalance = currentBalance;
+            if (currentBalance > maxBalance) {
+                maxBalance = currentBalance;
             }
         }
-        return minBalance;
+        return maxBalance;
     }
 
 }
