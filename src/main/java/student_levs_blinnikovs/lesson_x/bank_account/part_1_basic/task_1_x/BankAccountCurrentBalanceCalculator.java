@@ -20,7 +20,13 @@ class BankAccountCurrentBalanceCalculator {
     // текущего баланса описанный выше.
     public int calculate(BankAccount bankAccount) {
         // assume balance is 0
-        int balance = 0;
+        // credit limit has to impact balance from the start. If credit limit exists, assume balance = 0 + creditLimit
+        int balance;
+        if (!bankAccount.hasCreditLimit()) {
+            balance = 0;
+        } else {
+            balance = bankAccount.getCreditLimit();
+        }
 
         // get all transactions, store in some array
         Transaction[] transactions = bankAccount.getTransactions();

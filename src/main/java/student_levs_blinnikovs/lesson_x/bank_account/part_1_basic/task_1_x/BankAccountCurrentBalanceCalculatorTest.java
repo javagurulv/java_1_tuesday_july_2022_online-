@@ -24,6 +24,22 @@ class BankAccountCurrentBalanceCalculatorTest {
         int result = test.calculate(bankAccount);
         System.out.println("Final balance is: " + result + " EUR.");
 
+
+        // test with credit limit using same transactions
+
+        // saving all transactions to an array
+
+        // pass bank account owner and transactions array
+        BankAccount bankAccountWithCreditLimit = new BankAccount("Levs Blinnikovs", 500, transactions);
+
+        // create test object
+        BankAccountCurrentBalanceCalculator testWithCreditLimit = new BankAccountCurrentBalanceCalculator();
+
+        // call tests
+        int resultTestWithCreditLimit = testWithCreditLimit.calculate(bankAccountWithCreditLimit);
+        System.out.println("Final balance for account with credit limit is: " + resultTestWithCreditLimit + " EUR.");
+
+
     }
 
 }

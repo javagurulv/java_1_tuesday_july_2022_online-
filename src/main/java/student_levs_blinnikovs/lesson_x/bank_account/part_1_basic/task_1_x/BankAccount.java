@@ -49,4 +49,8 @@ class BankAccount {
         return this.creditLimit;
     }
 
+    public boolean hasCreditLimit() {
+        return creditLimit > 0;
+    }
+
 }
