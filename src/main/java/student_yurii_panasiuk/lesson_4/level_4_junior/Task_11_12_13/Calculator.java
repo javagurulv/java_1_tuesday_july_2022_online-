@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12;
+package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
 
 class Calculator {
 
@@ -18,6 +18,15 @@ class Calculator {
         return firstNumber * secondNumber;
     }
 
+    boolean isEven(int number) {
+
+
+        if ((number % 2) == 0) { return true; }
+
+        else {  return false; }
     }
+    }
+
+
 
 

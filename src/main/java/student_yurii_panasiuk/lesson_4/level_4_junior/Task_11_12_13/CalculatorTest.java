@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12;
+package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
 
  class CalculatorTest {
 
@@ -46,6 +46,17 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12;
         } else {
             System.out.println("Mul test = FAIL");
         }
+
+        boolean realResultEven = calculator.isEven(firstNumber);
+        boolean realResultOdd = calculator.isEven(secondNumber); // вызываем продакшен код, который хотим протестировать
+
+        if ( realResultEven  && !realResultOdd ) {  // проверяем правильно ли сработал тестируемый код
+            System.out.println("Even/Odd test = OK");
+        } else {
+            System.out.println("Mul Even/Odd = FAIL");
+        }
+
+
 
 }
 }
