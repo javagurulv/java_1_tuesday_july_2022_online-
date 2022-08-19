@@ -21,7 +21,13 @@ class BankAccountMaxBalanceFinder {
 
     public int find(BankAccount bankAccount) {
         // assume currentBalance is 0
-        int currentBalance = 0;
+        // credit limit has to impact balance from the start. If credit limit exists, assume balance = 0 + creditLimit
+        int currentBalance;
+        if (!bankAccount.hasCreditLimit()) {
+            currentBalance = 0;
+        } else {
+            currentBalance = bankAccount.getCreditLimit();
+        }
 
         // assign currentBalance value to maxBalance as it's highest at the moment
         int maxBalance = currentBalance;

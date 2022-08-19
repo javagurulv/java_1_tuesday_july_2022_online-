@@ -26,11 +26,8 @@ class BankAccountCurrentBalanceCalculatorTest {
 
 
         // test with credit limit using same transactions
-
-        // saving all transactions to an array
-
         // pass bank account owner and transactions array
-        BankAccount bankAccountWithCreditLimit = new BankAccount("Levs Blinnikovs", 500, transactions);
+        BankAccount bankAccountWithCreditLimit = new BankAccount("Mike Creditlover", 500, transactions);
 
         // create test object
         BankAccountCurrentBalanceCalculator testWithCreditLimit = new BankAccountCurrentBalanceCalculator();

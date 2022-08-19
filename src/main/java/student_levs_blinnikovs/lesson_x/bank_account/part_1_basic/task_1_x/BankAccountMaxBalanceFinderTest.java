@@ -24,6 +24,17 @@ class BankAccountMaxBalanceFinderTest {
         int result = test.find(bankAccount);
         System.out.println("Highest balance was: " + result + " EUR.");
 
+        // test with credit limit using same transactions
+        // pass bank account owner and transactions array
+        BankAccount bankAccountWithCreditLimit = new BankAccount("Mike Creditlover", 500, transactions);
+
+        // create test object
+        BankAccountMaxBalanceFinder testWithCreditLimit = new BankAccountMaxBalanceFinder();
+
+        // call tests
+        int resultTestWithCreditLimit = testWithCreditLimit.find(bankAccountWithCreditLimit);
+        System.out.println("Max balance for account with credit limit is: " + resultTestWithCreditLimit + " EUR.");
+
     }
 
 }
