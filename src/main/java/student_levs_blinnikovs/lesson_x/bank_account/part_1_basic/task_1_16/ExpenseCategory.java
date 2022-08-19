@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_x.bank_account.part_2_expense_analyser.task_17_28;
+package student_levs_blinnikovs.lesson_x.bank_account.part_1_basic.task_1_16;
 
 enum ExpenseCategory {
 

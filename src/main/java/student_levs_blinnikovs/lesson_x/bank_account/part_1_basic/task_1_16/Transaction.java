@@ -27,8 +27,15 @@ class Transaction {
     private String transactionOwner;
     private int amount;
     private TransactionType transactionType;
+    private ExpenseCategory expenseCategory;
 
-    Transaction(int amount, TransactionType transactionType){
+    Transaction(int amount, TransactionType transactionType, ExpenseCategory expenseCategory){
+        this.amount = amount;
+        this.transactionType = transactionType;
+        this.expenseCategory = expenseCategory;
+    }
+
+    Transaction(int amount, TransactionType transactionType) {  // used overloading to be able to set without expense cat
         this.amount = amount;
         this.transactionType = transactionType;
     }
@@ -51,6 +58,10 @@ class Transaction {
 
     public boolean isWithdrawal() {
         return this.transactionType == TransactionType.WITHDRAWAL;
+    }
+
+    public ExpenseCategory getExpenseCategory() {
+        return this.expenseCategory;
     }
 
 
