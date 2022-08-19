@@ -1,6 +1,6 @@
 package student_sobit_eshniyozov.lesson_3_oop_first_look.level_7;
 
-public class PlayersDemo {
+class PlayersDemo {
     public static void main(String[] args) {
     Players player1 = new Players("Lionel","Barselona",10,200);
     Players player2 = new Players("Cristiano","Real Madrid",7,200);

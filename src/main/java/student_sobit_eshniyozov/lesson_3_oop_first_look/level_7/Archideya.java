@@ -1,8 +1,5 @@
 package student_sobit_eshniyozov.lesson_3_oop_first_look.level_7;
 
-
-
-
 class Archideya {
     double height;
     int leaves;

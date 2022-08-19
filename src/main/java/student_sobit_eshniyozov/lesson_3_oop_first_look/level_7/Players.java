@@ -1,7 +1,6 @@
 package student_sobit_eshniyozov.lesson_3_oop_first_look.level_7;
 
-public class Players {
-
+class Players {
     String nameOfPlayer;
     String teamOfPlayer;
     int numberOfPlayer;
