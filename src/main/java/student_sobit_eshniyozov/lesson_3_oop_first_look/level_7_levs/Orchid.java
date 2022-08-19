@@ -16,10 +16,9 @@ class Orchid { // первое изменение - название сдела�
     void printParameters() {    // этот метод печатет параметры. Так что лучше его назвать printParameters или showParameters ... в таком духе
         System.out.println("About "+this.variety+":\n" + "Variety is: " + this.variety + " Height is: " + this.height + " Number of leaves: " + this.numberOfLeaves + " Age of flower: " + this.age);
     }
-    void halfAYearLater(){                            // не совсем понял почему используешь единицу пол года но может так по бизнесу, так что тут ничего не меняю
-        System.out.println("Half a year later");
-        this.height = this.height+0.2;
-        this.age = this.age+0.5;
-        this.numberOfLeaves = this.numberOfLeaves +2;
-        }
+    void increaseAgeByHalfYear(){                            // не совсем понял почему используешь единицу пол года но может так по бизнесу, так что тут ничего не меняю
+        this.height = this.height + 0.2;
+        this.age = this.age + 0.5;
+        this.numberOfLeaves = this.numberOfLeaves + 2;
+        }                                           // убрал тут принт потому что этот метод только чтобы сделать всех старше
    }
