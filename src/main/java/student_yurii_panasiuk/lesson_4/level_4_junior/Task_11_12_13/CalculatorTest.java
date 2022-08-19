@@ -9,9 +9,10 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
 
     }
 
-    public void Test() {
+    public  void Test() {
         int firstNumber = 10;  // подготавливаем тестовые данные
         int secondNumber = 5;  // подготавливаем тестовые данные
+        int thirdNumber = 5;  // подготавливаем тестовые данные
         int expectedResultSum = 15;  // подготавливаем тестовые данные
         int expectedResultSub = 5;  // подготавливаем тестовые данные
         int expectedResultMul = 50;  // подготавливаем тестовые данные
@@ -55,7 +56,16 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
         } else {
             System.out.println("Mul Even/Odd = FAIL");
         }
+        int realResulеLarger = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int realResulеSmaller = calculator.maxOfTwoNumbers(secondNumber, firstNumber);
+        int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber);
 
+        if ( realResulеLarger  == firstNumber ) {  // проверяем правильно ли сработал тестируемый код
+            System.out.println("Larger test = OK");}
+        if ( realResulеSmaller  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
+            System.out.println("Smaller test = OK");}
+        if ( realResulEqual  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
+            System.out.println("Equal test = OK");}
 
 
 }
