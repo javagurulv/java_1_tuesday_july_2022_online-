@@ -45,4 +45,8 @@ class BankAccount {
         return this.transactions;
     }
 
+    public int getCreditLimit() {
+        return this.creditLimit;
+    }
+
 }
