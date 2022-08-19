@@ -51,8 +51,6 @@ class BankAccountMaxBalanceFinder {
                 maxBalance = currentBalance;
             }
         }
-
-        // return maxBalance
         return maxBalance;
     }
 

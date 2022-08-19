@@ -43,8 +43,6 @@ class BankAccountCurrentBalanceCalculator {
                 balance = balance - transaction.getAmount();
             }
         }
-
-        // return balance
         return balance;
     }
 
