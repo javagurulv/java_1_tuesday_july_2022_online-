@@ -29,7 +29,6 @@ class Calculator {
 
     int maxOfTwoNumbers(int firstNumber, int secondNumber) {
 
-
         if (firstNumber > secondNumber) { return  firstNumber; }
 
         else if (firstNumber == secondNumber) {return firstNumber;} // ну незнаю что тут еще можно вернуть

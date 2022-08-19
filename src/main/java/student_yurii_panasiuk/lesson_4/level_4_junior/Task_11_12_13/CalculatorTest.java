@@ -4,12 +4,12 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
 
     public static void main(String[] args) {
         CalculatorTest calculatorTest = new CalculatorTest();
-        calculatorTest.Test();
+        calculatorTest.Test(); // тут пусто
 
 
     }
 
-    public  void Test() {
+      void Test() {
         int firstNumber = 10;  // подготавливаем тестовые данные
         int secondNumber = 5;  // подготавливаем тестовые данные
         int thirdNumber = 5;  // подготавливаем тестовые данные
@@ -69,7 +69,7 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
         if ( realResulEqual  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Equal test = OK");}
         else { System.out.println("Equal test = FAIL");}
-// все это очень криво так как calculator.maxOfTwoNumbers возврашает только большее число
+// все это странно так как calculator.maxOfTwoNumbers возврашает только большее число
 
 }
 }
