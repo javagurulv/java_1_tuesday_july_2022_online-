@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task_6 {
 
-    public static void main(String[] args) {
+     static void main(String[] args) {
         System.out.println("Введите чило первое целое число");
 
         Scanner scanner = new Scanner(System.in);

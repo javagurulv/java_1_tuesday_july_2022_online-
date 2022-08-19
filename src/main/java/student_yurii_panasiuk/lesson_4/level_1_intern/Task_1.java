@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_4.level_1_intern;
 
 import java.util.Scanner;
 
-public class Task_1 {
+ class Task_1 {
 
     public static void main(String[] args) {
 
