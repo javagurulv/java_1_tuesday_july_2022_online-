@@ -58,15 +58,18 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
         }
         int realResulеLarger = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
         int realResulеSmaller = calculator.maxOfTwoNumbers(secondNumber, firstNumber);
-        int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber);
+        int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber); // вызываем продакшен код, который хотим протестировать
 
         if ( realResulеLarger  == firstNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Larger test = OK");}
-        if ( realResulеSmaller  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
+        else { System.out.println("Larger test = FAIL");}
+        if ( realResulеSmaller  != secondNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Smaller test = OK");}
+        else { System.out.println("Smaller test = FAIL " + realResulEqual);}
         if ( realResulEqual  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Equal test = OK");}
-
+        else { System.out.println("Equal test = FAIL");}
+// все это очень криво так как calculator.maxOfTwoNumbers возврашает только большее число
 
 }
 }
