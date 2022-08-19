@@ -12,11 +12,13 @@ class BankAccountTransactionApproverTest {
 
         // pass bank account owner and transactions array
         BankAccount bankAccount = new BankAccount("Levs Blinnikovs", 0, bankAccountBalanceCreateTransactions);
+        // for credit enabled test
+        BankAccount bankAccountWithCreditLimit = new BankAccount("Mike CreditLover", 500, bankAccountBalanceCreateTransactions);
 
         // prep data for transactions to test
         Transaction rentPayment = new Transaction(300, TransactionType.WITHDRAWAL); // should be allowed as per amount
         Transaction receiveGiftPayment = new Transaction(100, TransactionType.DEPOSIT); // should be allowed as per type
-        Transaction carBuyWithCashPayment = new Transaction(16000, TransactionType.WITHDRAWAL);  // should NOT be allowed as per amount
+        Transaction carBuyWithCashPayment = new Transaction(2450, TransactionType.WITHDRAWAL);  // should NOT be allowed as per amount but not with credit limit case
 
         // create calculator object to pass to approver constructor
         BankAccountCurrentBalanceCalculator calculator = new BankAccountCurrentBalanceCalculator();
@@ -33,6 +35,9 @@ class BankAccountTransactionApproverTest {
 
         boolean carBuyWithCashPaymentTestResult = test.isApproved(bankAccount, carBuyWithCashPayment);
         System.out.println("Car buy with cash payment should be NOT OK, expect false, is: " + carBuyWithCashPaymentTestResult + "\n");
+
+        boolean carBuyWithCashPaymentWithCreditLimitTestResult = test.isApproved(bankAccountWithCreditLimit, carBuyWithCashPayment);
+        System.out.println("Car buy with cash payment with credit limit should be OK, expect true, is: " + carBuyWithCashPaymentWithCreditLimitTestResult + "\n");
 
 
     }
