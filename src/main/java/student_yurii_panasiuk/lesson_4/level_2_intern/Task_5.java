@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_4.level_2_intern;
 
 import java.util.Scanner;
 
-public class Task_5 {
+ class Task_5 {
 
     public static void main(String[] args) {
         System.out.println("Введите чило первое целое число");

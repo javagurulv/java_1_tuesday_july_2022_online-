@@ -8,7 +8,7 @@ Write a Java program that accepts three numbers and prints:
 - "All numbers are different" if all three numbers are different
 - "Neither all are equal or different" otherwise.
  */
-public class Task_8 {
+ class Task_8 {
 
     public static void main(String[] args) {
         System.out.println("Введите чило первое целое число");

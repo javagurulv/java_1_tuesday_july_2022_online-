@@ -9,7 +9,7 @@ Write a program that accepts three numbers from the user and prints:
 
 import java.util.Scanner;
 
-public class Task_9 {
+ class Task_9 {
 
     public static void main(String[] args) {
         System.out.println("Введите чило первое целое число");

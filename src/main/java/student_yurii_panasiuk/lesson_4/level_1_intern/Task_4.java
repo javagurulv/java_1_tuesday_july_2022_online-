@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_4.level_1_intern;
 
 import java.util.Scanner;
 
-public class Task_4 {
+ class Task_4 {
 
     public static void main(String[] args) {
         System.out.println("Введите чило");

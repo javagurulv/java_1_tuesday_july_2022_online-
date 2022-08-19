@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_4.level_1_intern;
 
 import java.util.Scanner;
 
-public class Task_3 {
+ class Task_3 {
 
     public static void main(String[] args) {
     System.out.println("Введите целое чило от 1 до 7");
