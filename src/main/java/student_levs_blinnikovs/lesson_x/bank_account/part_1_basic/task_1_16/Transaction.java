@@ -29,15 +29,16 @@ class Transaction {
     private TransactionType transactionType;
     private ExpenseCategory expenseCategory;
 
-    Transaction(int amount, TransactionType transactionType, ExpenseCategory expenseCategory) {
+    Transaction(int amount) {
         this.amount = amount;
-        this.transactionType = transactionType;
-        this.expenseCategory = expenseCategory;
+        this.transactionType = TransactionType.DEPOSIT;
+        this.expenseCategory = null;
         }
 
-    Transaction(int amount, TransactionType transactionType) {
+    Transaction(int amount, ExpenseCategory expenseCategory) {
         this.amount = amount;
-        this.transactionType = transactionType;
+        this.transactionType = TransactionType.WITHDRAWAL;
+        this.expenseCategory = expenseCategory;
     }
 
 

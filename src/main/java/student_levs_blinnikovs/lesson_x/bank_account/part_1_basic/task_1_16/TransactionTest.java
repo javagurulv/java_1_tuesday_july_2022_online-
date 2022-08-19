@@ -23,7 +23,7 @@ class TransactionTest {
 
     public void transactionTypeDepositPositiveTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);
+        Transaction testedTransaction = new Transaction(100);
         // test steps
         boolean realResult = testedTransaction.isDeposit();
         // validate
@@ -32,7 +32,7 @@ class TransactionTest {
 
     public void transactionTypeWithdrawalPositiveTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
+        Transaction testedTransaction = new Transaction(100, ExpenseCategory.OTHERS);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
         // validate
@@ -41,7 +41,7 @@ class TransactionTest {
 
     public void transactionTypeDepositNegativeTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, TransactionType.DEPOSIT);
+        Transaction testedTransaction = new Transaction(100);
         // test steps
         boolean realResult = testedTransaction.isDeposit();
         // validate
@@ -50,7 +50,7 @@ class TransactionTest {
 
     public void transactionTypeWithdrawalNegativeTest(String scenario) {
         // prepare test data
-        Transaction testedTransaction = new Transaction(100, TransactionType.WITHDRAWAL);
+        Transaction testedTransaction = new Transaction(100, ExpenseCategory.OTHERS);
         // test steps
         boolean realResult = testedTransaction.isWithdrawal();
         // validate

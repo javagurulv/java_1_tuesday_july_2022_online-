@@ -5,11 +5,11 @@ class BankAccountMinBalanceFinderTest {
     public static void main(String[] args) {
 
         // create transactions
-        Transaction salaryPayment = new Transaction(1200, TransactionType.DEPOSIT);   // current 1200 min 1200
-        Transaction rentPayment = new Transaction(300, TransactionType.WITHDRAWAL);   // current 900 min 900
-        Transaction taxReturnPayment = new Transaction(500, TransactionType.DEPOSIT); // current 1400 min 900
-        Transaction leasePayment = new Transaction(600, TransactionType.WITHDRAWAL);  // current 800 min 800
-        Transaction otherPayment = new Transaction(850, TransactionType.WITHDRAWAL); // current -50 (450 for cred lim)
+        Transaction salaryPayment = new Transaction(1200);   // current 1200 min 1200
+        Transaction rentPayment = new Transaction(300, ExpenseCategory.UTILITIES);   // current 900 min 900
+        Transaction taxReturnPayment = new Transaction(500); // current 1400 min 900
+        Transaction leasePayment = new Transaction(600, ExpenseCategory.LOANS);  // current 800 min 800
+        Transaction otherPayment = new Transaction(850, ExpenseCategory.OTHERS); // current -50 (450 for cred lim)
         // expected to have 1400 at the end as it was the highest
 
         // saving all transactions to an array
