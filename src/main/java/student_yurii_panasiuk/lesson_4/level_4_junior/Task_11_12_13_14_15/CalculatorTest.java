@@ -74,7 +74,9 @@ class CalculatorTest {
         else { System.out.println("Equal test = FAIL");}
 // все это странно так как calculator.maxOfTwoNumbers возврашает только большее число
 
-          //System.out.println (calculator.maxOfThreeNumbers(1, 10, 3));
+          //System.out.println (calculator.maxOfThreeNumbers(1, 10, 3)); // ручной тест большее из трех чисел
+
+          //сейчас будет автоматиченский тест  на большее из трех чисел (в виде заданных переменных) ))
 
         int [] numbers = new int [] {firstNumber, secondNumber, fourthNumber}; // сделаем массив для перебора всех возможных комбинаций
         int i1; // счетчик перебор вариантов в первой позиции массива
