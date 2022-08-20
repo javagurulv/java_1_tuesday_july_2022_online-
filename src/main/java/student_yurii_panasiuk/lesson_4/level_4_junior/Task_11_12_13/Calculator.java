@@ -40,6 +40,21 @@ class Calculator {
         else { return secondNumber; }
     }
 
+    int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+        int extra;
+        if (firstNumber > secondNumber) {
+            extra = firstNumber;
+        }
+        else {
+            extra = secondNumber;
+        }
+
+        if (extra < thirdNumber){
+            extra = thirdNumber;
+        }
+         return extra;
+    }
+
     }
 
 

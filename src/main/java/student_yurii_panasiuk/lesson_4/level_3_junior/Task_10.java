@@ -4,6 +4,8 @@ package student_yurii_panasiuk.lesson_4.level_3_junior;
 
 import teacher.codereview.CodeReview;
 
+import java.util.Scanner;
+
 @CodeReview(approved = true)
  class Task_10 {
 
