@@ -15,6 +15,7 @@ public class Product {
      }
 
      void printInformation (){
+
          System.out.println("The product is " + name + " and it costs " + regularPrice);
      }
 
@@ -24,6 +25,7 @@ public class Product {
      }
 
      double calculateDiscount () {
+
          return this.discount = regularPrice * discount/100;
      }
 
