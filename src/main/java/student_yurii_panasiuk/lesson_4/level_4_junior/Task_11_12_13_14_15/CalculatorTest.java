@@ -59,14 +59,14 @@ class CalculatorTest {
         } else {
             System.out.println("Mul Even/Odd = FAIL");
         }
-        int realResulеLarger = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
-        int realResulеSmaller = calculator.maxOfTwoNumbers(secondNumber, firstNumber);
+        int realResultLarger = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int realResultSmaller = calculator.maxOfTwoNumbers(secondNumber, firstNumber);
         int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber); // вызываем продакшен код, который хотим протестировать
 
-        if ( realResulеLarger  == firstNumber ) {  // проверяем правильно ли сработал тестируемый код
+        if ( realResultLarger == firstNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Larger test = OK");}
         else { System.out.println("Larger test = FAIL");}
-        if ( realResulеSmaller  != secondNumber ) {  // проверяем правильно ли сработал тестируемый код
+        if ( realResultSmaller  != secondNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Smaller test = OK");}
         else { System.out.println("Smaller test = FAIL " + realResulEqual);}
         if ( realResulEqual  == secondNumber ) {  // проверяем правильно ли сработал тестируемый код
@@ -87,7 +87,7 @@ class CalculatorTest {
                  for (i3 = 0; i3 < numbers.length; i3++) {
                      i4++;
                      int [] numbersSort = new int[]{numbers[i1], numbers[i2], numbers[(i3)]};
-                     Arrays.sort(numbersSort);
+                     Arrays.sort(numbersSort); // сортируем  ))
                      if (calculator.maxOfThreeNumbers(numbers[i1], numbers[i2], numbers[(i3)]) == numbersSort[numbersSort.length-1]) {
                          i5++;
                      }
