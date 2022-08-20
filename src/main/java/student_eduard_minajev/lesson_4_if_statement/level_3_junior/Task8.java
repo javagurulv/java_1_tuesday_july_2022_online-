@@ -15,7 +15,7 @@ public class Task8 {
 
         System.out.println("Please enter third number");
         Scanner numberC = new Scanner(System.in);
-        int numberThree = numberB.nextInt();
+        int numberThree = numberC.nextInt();
 
         if ((numberOne == numberTwo) && (numberTwo == numberThree)){
             System.out.println("All numbers are equal!");
