@@ -9,6 +9,9 @@ Write a program that accepts three numbers from the user and prints:
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class Task_9 {
 
     public static void main(String[] args) {

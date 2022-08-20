@@ -1,7 +1,12 @@
 package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
 import java.util.Scanner;
 
+@CodeReviewComment(teacher = "Лишний import, убери его.")
+@CodeReview(approved = true)
 class Calculator {
 
      int sum(int firstNumber, int secondNumber) {
