@@ -1,0 +1,25 @@
+WARNING: не нарушайте правила форматирования кода!
+Их нарушение ведёт к ухудшению читабельности кода
+и к негативной реакции программиста, который будет
+читать ваш код (например в процессе code review).
+
+    String company;
+    int currentPrice;
+    int maxPrice;
+    int minPrice;
+
+
+??????  WTF - зачем тут столько пустых строк ??????
+
+
+    public Stock(String company, int currentPrice){
+
+
+Лучше:
+
+    String company;
+    int currentPrice;
+    int maxPrice;
+    int minPrice;
+
+    public Stock(String company, int currentPrice){

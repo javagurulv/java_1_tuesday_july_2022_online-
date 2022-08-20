@@ -13,6 +13,10 @@ class BooleanExample {
 
 		int number = 10;
 
+		// <, <=, >, >=, !=, ==
+
+		boolean isZero = number == 0;
+
 		boolean isPositive = number > 0;
 		System.out.println("Positive = " + isPositive);
 
