@@ -1,6 +1,6 @@
 package student_yurii_panasiuk.lesson_4.level_3_junior;
 
-import java.util.Scanner;
+
 
 import teacher.codereview.CodeReview;
 
