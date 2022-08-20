@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_4.level_4_junior.Task_16;
+package student_yurii_panasiuk.lesson_4.level_5_middle;
 
 class LightColorDetector {
 
