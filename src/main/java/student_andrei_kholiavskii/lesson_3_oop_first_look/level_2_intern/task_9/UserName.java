@@ -2,6 +2,9 @@ package student_andrei_kholiavskii.lesson_3_oop_first_look.level_2_intern.task_9
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class UserName {
 
     public static void main(String[] args){
