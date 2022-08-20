@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13;
+package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13_14_15;
 
 import java.util.Arrays;
 
@@ -91,7 +91,7 @@ class CalculatorTest {
                      if (calculator.maxOfThreeNumbers(numbers[i1], numbers[i2], numbers[(i3)]) == numbersSort[numbersSort.length-1]) {
                          i5++;
                      }
-                        /* способ отслеживания результатов кода
+                      /* //  способ отслеживания результатов кода
                      System.out.print(i1 + " " +i2 + " " + i3 + "    "); // можно посмотреть коомбинации
                      System.out.print(i4 + " " + i5 + "    " ); // вывод счетчика правильных ответов
                      System.out.print(calculator.maxOfThreeNumbers(numbers[i1], numbers[i2], numbers[(i3)]) + "          ");
@@ -99,8 +99,8 @@ class CalculatorTest {
                                       numbers[i1] + " " +
                                       numbers[i2] + " " +
                                       numbers[i3] + " " + "\n" );
+                       */
 
-                         */
                  }
              }
          }
