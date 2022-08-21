@@ -11,11 +11,12 @@ class NumberComparison {
 
         System.out.println("Enter a second number: ");
         int secondNumber = scanner.nextInt();
+
         if(firstNumber == secondNumber){
             System.out.println("The numbers are equals.");
-
         }else {
             System.out.println("Numbers are different.");
+
             if(firstNumber > secondNumber){
                 System.out.println("The first number is greater.");
             }else {
