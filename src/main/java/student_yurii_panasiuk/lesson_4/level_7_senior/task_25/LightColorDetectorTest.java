@@ -4,47 +4,33 @@ class LightColorDetectorTest {
     public static void main(String[] args) {
         LightColorDetector detector = new LightColorDetector();
 
-        if(detector.wavelength(405).equals("Violet")) {
-            System.out.println("LightColorDetector test - Violet = OK");
-        } else {
-            System.out.println("LightColorDetector test - Violet = FAIL");
-        }
+        System.out.print("LightColorDetector test - Violet = ");
+        testResult (detector.wavelength(405).equals("Violet"));
 
-        if(detector.wavelength(475).equals("Blue")) {
-            System.out.println("LightColorDetector test - Blue = OK");
-        } else {
-            System.out.println("LightColorDetector test - Blue = FAIL");
-        }
+        System.out.print("LightColorDetector test - Blue = ");
+        testResult(detector.wavelength(475).equals("Blue"));
 
-        if(detector.wavelength(505).equals("Green")) {
-            System.out.println("LightColorDetector test - Green = OK");
-        } else {
-            System.out.println("LightColorDetector test - Green = FAIL");
-        }
+        System.out.print("LightColorDetector test - Green = ");
+        testResult(detector.wavelength(505).equals("Green"));
 
-        if(detector.wavelength(585).equals("Yellow")) {
-            System.out.println("LightColorDetector test - Yellow = OK");
-        } else {
-            System.out.println("LightColorDetector test - Yellow = FAIL");
-        }
+        System.out.print("LightColorDetector test - Yellow =");
+        testResult(detector.wavelength(585).equals("Yellow"));
 
-        if(detector.wavelength(619).equals("Orange")) {
-            System.out.println("LightColorDetector test - Orange = OK");
-        } else {
-            System.out.println("LightColorDetector test - Orange = FAIL");
-        }
+        System.out.print("LightColorDetector test - Orange = ");
+        testResult(detector.wavelength(619).equals("Orange"));
 
-        if(detector.wavelength(620).equals("Red")) {
-            System.out.println("LightColorDetector test - Red = OK");
-        } else {
-            System.out.println("LightColorDetector test - Red = FAIL");
-        }
+        System.out.print("LightColorDetector test - Red = ");
+        testResult(detector.wavelength(620).equals("Red"));
 
-        if(detector.wavelength(760).equals("Invisible Light")) {
-            System.out.println("LightColorDetector test - Invisible Light = OK");
-        } else {
-            System.out.println("LightColorDetector test - Invisible Light = FAIL");
-        }
+        System.out.print("LightColorDetector test - Invisible Light = ");
+        testResult(detector.wavelength(760).equals("Invisible Light"));
+
+    }
+
+    private static void testResult(boolean check) {
+
+        if (check){ System.out.println(" OK");}
+        else {System.out.println(" FAIL");}
 
     }
 

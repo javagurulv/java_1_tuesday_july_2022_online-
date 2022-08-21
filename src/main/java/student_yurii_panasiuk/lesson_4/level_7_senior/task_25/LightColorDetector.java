@@ -23,6 +23,8 @@ package student_yurii_panasiuk.lesson_4.level_7_senior.task_25;
                   return "Invisible Light";
               }
           }
+
+
           }
 
 
