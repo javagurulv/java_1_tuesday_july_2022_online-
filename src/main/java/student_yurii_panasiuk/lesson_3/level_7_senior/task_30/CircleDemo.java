@@ -8,6 +8,6 @@ import teacher.codereview.CodeReview;
     public static void main(String[] args){
 
     Circle newCircle = new Circle(1.5);
-    newCircle.circleArea();
+    newCircle.circleAreaCalculation();
     }
 }
