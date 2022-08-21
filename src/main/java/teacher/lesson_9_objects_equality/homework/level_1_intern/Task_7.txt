@@ -1,0 +1,11 @@
+Исправьте код класса PrivateClass так, чтобы он компилировался.
+
+private class PrivateClass {
+
+    private String title;
+    private String author;
+
+
+}
+
+PS: можно ли применять идентификатор доступа private на уровне класса?
