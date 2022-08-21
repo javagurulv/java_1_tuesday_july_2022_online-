@@ -12,6 +12,13 @@ public class CalculatorTest {
         calculatorTest.maxOfTwoNumbersOne();
         calculatorTest.maxOfTwoNumbersTwo();
         calculatorTest.maxOfTwoNumbersThree();
+        calculatorTest.maxOfThreeNumbersOne();
+        calculatorTest.maxOfThreeNumbersTwo();
+        calculatorTest.maxOfThreeNumbersThree();
+        calculatorTest.maxOfThreeNumbersFour();
+        calculatorTest.maxOfThreeNumbersFive();
+        calculatorTest.maxOfThreeNumbersSix();
+        calculatorTest.maxOfThreeNumbersSeven();
 
     }
 
@@ -118,4 +125,110 @@ public class CalculatorTest {
             System.out.println("MaxNumberThree = FAIL");
         }
     }
+
+    public void maxOfThreeNumbersOne (){
+        int firstNumber = 9;
+        int secondNumber = 6;
+        int thirdNumber = 4;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersOne = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersOne = FAIL");
+        }
+    }
+    public void maxOfThreeNumbersTwo (){
+        int firstNumber = 6;
+        int secondNumber = 9;
+        int thirdNumber = 4;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersTwo = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersTwo = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersThree (){
+        int firstNumber = 4;
+        int secondNumber = 6;
+        int thirdNumber = 9;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersThree = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersThree = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersFour (){
+        int firstNumber = 9;
+        int secondNumber = 9;
+        int thirdNumber = 6;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersFour = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersFour = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersFive (){
+        int firstNumber = 9;
+        int secondNumber = 6;
+        int thirdNumber = 9;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersFive = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersFive = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersSix (){
+        int firstNumber = 6;
+        int secondNumber = 9;
+        int thirdNumber = 9;
+        int expectedResult = 9;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersSix = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersSix = FAIL");
+        }
+    }
+
+    public void maxOfThreeNumbersSeven (){
+        int firstNumber = 9;
+        int secondNumber = 9;
+        int thirdNumber = 9;
+        int expectedResult = 0;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber,secondNumber,thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("MaxOfThreeNumbersSeven = OK");
+        }else {
+            System.out.println("MaxOfThreeNumbersSeven = FAIL");
+        }
+    }
+
+
+
+
+
+
+
+
+
 }

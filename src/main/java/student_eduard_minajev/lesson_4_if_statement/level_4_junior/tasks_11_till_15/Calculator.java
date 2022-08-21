@@ -39,5 +39,22 @@ public class Calculator {
         }
 
     }
+    
+    public int maxOfThreeNumbers (int firstNumber, int secondNumber, int thirdNumber){
+        if ((firstNumber > secondNumber) && (firstNumber > thirdNumber)){
+            return firstNumber; //1
+        } else if ((firstNumber < secondNumber) && (secondNumber > thirdNumber)) {
+            return secondNumber; //2
+        } else if ((firstNumber < thirdNumber) && (secondNumber < thirdNumber)) {
+            return thirdNumber; //3
+        } else if ((firstNumber == secondNumber) && (secondNumber > thirdNumber)) {
+            return firstNumber; //4
+        } else if ((firstNumber == thirdNumber) && (secondNumber < thirdNumber)) {
+            return firstNumber; //5
+        } else if ((firstNumber < thirdNumber) && (secondNumber == thirdNumber)) {
+            return thirdNumber;//6
+        } else { return 0;//7
+        }
+    }
 
 }
