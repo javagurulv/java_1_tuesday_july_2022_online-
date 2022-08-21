@@ -81,14 +81,14 @@ class CalculatorTest {
         int [] numbers = new int [] {firstNumber, secondNumber, fourthNumber}; // сделаем массив для перебора всех возможных комбинаций
         int i1; // счетчик перебор вариантов в первой позиции массива
         int i2; // счетчик перебор вариантов в второй позиции массива
-        int i3; // счетчик перебор вариантов в третьей позиции массива. можно было и по другому но я ошибся вначале с методом.
+        int i3; // счетчик перебор вариантов в третьей позиции массива. можно было и по другому но я ошибся вначале с подходом.
         int i4=0; // счетчик итераций, каждый раз увеличивается на 1
         int i5=0; // счетчик правильных ответов, каждый раз увеличивается на 1
         for(i1 = 0; i1 < numbers.length; i1 ++) {
              for (i2 = 0; i2 < numbers.length; i2++) {
                  for (i3 = 0; i3 < numbers.length; i3++) {
                      i4++;
-                     int [] numbersSort = new int[]{numbers[i1], numbers[i2], numbers[(i3)]};
+                     int [] numbersSort = new int[]{numbers[i1], numbers[i2], numbers[(i3)]}; // вспомогательный масссив )) большее число "вычисляется" сортировкой
                      Arrays.sort(numbersSort); // сортируем  ))
                      if (calculator.maxOfThreeNumbers(numbers[i1], numbers[i2], numbers[(i3)]) == numbersSort[numbersSort.length-1]) {
                          i5++;
