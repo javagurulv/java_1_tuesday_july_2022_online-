@@ -8,6 +8,8 @@ package student_ivan_mostepanov.lesson_3_oop_first_look.task_29;
 
     lg.demonstration();
     lg.firmWareUpdate();
+    lg.firmWareRollback();
+    lg.firmWareReturnToFactory();
 
         }
 }

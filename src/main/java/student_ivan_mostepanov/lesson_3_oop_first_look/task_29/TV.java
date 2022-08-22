@@ -35,4 +35,20 @@ class TV {
 
     }
 
+    void firmWareRollback(){
+        this.firmWare = this.firmWare - 5;
+        System.out.println("Rollback");
+        System.out.println("Firmware Rollbacked");
+        System.out.println("Firmware Version " + firmWare);
+
+    }
+
+    void firmWareReturnToFactory(){
+        this.firmWare = 1000;
+        System.out.println("Returning to Factory Settings");
+        System.out.println("Firmware Returned");
+        System.out.println("Firmware Version " + this.firmWare);
+
+    }
+
 }
