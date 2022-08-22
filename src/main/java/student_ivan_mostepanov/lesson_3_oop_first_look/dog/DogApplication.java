@@ -1,4 +1,4 @@
-package student_ivan_mostepanov.lesson_3.DogDemo;
+package student_ivan_mostepanov.lesson_3_oop_first_look.dog;
 
 import teacher.codereview.CodeReview;
 
