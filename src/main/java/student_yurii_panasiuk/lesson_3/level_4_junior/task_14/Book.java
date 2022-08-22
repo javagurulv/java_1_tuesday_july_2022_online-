@@ -1,19 +1,15 @@
 package student_yurii_panasiuk.lesson_3.level_4_junior.task_14;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
-
-@CodeReview(approved = false)
  class Book {
-	@CodeReviewComment(teacher = "Зачем это свойство?")
-			String title;
+
+			String bookTitle;
 
         Book(String bookTitle) {
-            this.title = bookTitle;
+            this.bookTitle = bookTitle;
         }
 
         String getTitle() {
-            return this.title;
+            return this.bookTitle;
         }
 
     }
