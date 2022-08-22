@@ -7,22 +7,22 @@ package student_ivan_mostepanov.lesson_3.Task_17_1;
         int moneyAmount;
 
         BankAccount(String ownerFirstName,
-                    String ownerLastName,
+                    String ownerLastName,       /*пропущена запятая*/
                 int moneyAmount) {
             this.ownerFirstName = ownerFirstName;
             this.ownerLastName = ownerLastName;
             this.moneyAmount = moneyAmount;
         }
 
-        String getOwnerFirstName() {
-            return this.ownerFirstName;
+        String getOwnerFirstName() {          /*пропущена скобка*/
+            return this.ownerFirstName;           /* нету ";" */
         }
 
-        String getOwnerLastName() {
-            return this.ownerLastName;
+        String getOwnerLastName() {           /*пропущена скобка*/
+            return this.ownerLastName;         /* поменять ownerFirstName на ownerLastName, нету ";" */
         }
 
-        int getMoneyAmount() {
+        int getMoneyAmount() {                  /* поменять void на int */
             return this.moneyAmount;
         }
 }
