@@ -1,4 +1,4 @@
-package student_roman_hytt.lesson_3;
+package student_roman_hytt.level_1_intern;
 
 public class Robot {
 
