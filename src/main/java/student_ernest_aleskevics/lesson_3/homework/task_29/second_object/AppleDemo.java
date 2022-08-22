@@ -1,6 +1,6 @@
 package student_ernest_aleskevics.lesson_3.homework.task_29.second_object;
 
-public class AppleDemo {
+class AppleDemo {
 
     public static void main(String[] args) {
 
