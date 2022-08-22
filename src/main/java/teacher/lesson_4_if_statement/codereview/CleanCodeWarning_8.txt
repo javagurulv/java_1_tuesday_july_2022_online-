@@ -1,0 +1,52 @@
+WARNING: плохой метод это тот метод, который делает несколько
+действий вместо одного. В примере ниже метод calculateArea()
+засчитывает площадь круга и выводит ее на консоль. В программировании
+такие методы считаются плохими и их следует избегать. Они не
+универсальны, их будет трудно применять в разных ситуациях.
+В данном случае метод calculateArea() содержит как бизнес логику
+(расчёт площади по формуле, так и вывод результатов на консоль,
+часть программы относящуюся к отображению данных конечному
+пользователю). Например, что будет если у вашей программы в будущем
+появится web интерфейс? Сможете ли вы воспользоваться написанным кодом
+ниже?
+
+class Circle {
+
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    void calculateArea() {
+        double result = Math.PI * this.radius * this.radius;
+        System.out.println("Circle radius is " + this.radius + ". Circle area is " + result);
+    }
+
+}
+
+Лучше:
+
+class Circle {
+
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    double calculateArea() {
+        return Math.PI * this.radius * this.radius;
+    }
+
+}
+
+class CircleDemo {
+
+    public static void main(String[] args) {
+        Circle circle = new Circle(10);
+        double area = circleOne.calculateArea();
+        System.out.println("Circle area = " + area);
+    }
+
+}

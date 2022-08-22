@@ -1,5 +1,8 @@
 package student_andrei_kholiavskii.lesson_3_oop_first_look.level_7_senior.task_29;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Animal {
 
     String animalType;
