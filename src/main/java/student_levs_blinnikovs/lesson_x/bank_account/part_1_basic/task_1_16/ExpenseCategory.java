@@ -6,7 +6,10 @@ enum ExpenseCategory {
     FOOD,               // еда
     ENTERTAINMENT,      // развлечения
     GAMBLING,           // азартные игры
-    LOANS,              // кредиты
-    OTHERS              // остальное
+    LOANS,
+    LEASE,
+    OTHERS,              // остальное
+    RENT,
+    MORTGAGE
 
 }
