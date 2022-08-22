@@ -1,4 +1,4 @@
-package student_ivan_mostepanov.lesson_3.Task_15;
+package student_ivan_mostepanov.lesson_3_oop_first_look.task_15;
 
 class PhoneDemo {
     public static void main(String[] args) {
