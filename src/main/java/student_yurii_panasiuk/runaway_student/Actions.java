@@ -41,9 +41,10 @@ class Actions {
 
        System.out.println (teacher.getCoordinates()[1]);
        System.out.println(getDistanse(student.getCoordinates()[0], student.getCoordinates()[1], teacher.getCoordinates()[0], teacher.getCoordinates()[1]));
-     /*  System.out.println(studentMove(vektorDescription(student.getCoordinates()[0], student.getCoordinates()[1], teacher.getCoordinates()[0], teacher.getCoordinates()[1])),
-               ortDescription()
-       ) */
+       System.out.println(vektorDescription(student.getCoordinates()[0], student.getCoordinates()[1], teacher.getCoordinates()[0], teacher.getCoordinates()[1])[0]
+               + " " +
+               vektorDescription(student.getCoordinates()[2], student.getCoordinates()[3], teacher.getCoordinates()[2], teacher.getCoordinates()[3])[1]);
+
        ;
 
 
