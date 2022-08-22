@@ -1,6 +1,6 @@
 package student_ivan_mostepanov.lesson_3;
 
-public class RobotDemo {
+class RobotDemo {
 
     public static void main(String[] args){
 
