@@ -5,7 +5,7 @@ class WirelessLoudSpeaker {
 	private static final int MIN_SOUND_VOLUME = 0;
 	private static final int MAX_SOUND_VOLUME = 10;
 
-	private final String model;
+	private String model;
 	private boolean isOn;
 	private int soundVolume;
 
@@ -26,6 +26,7 @@ class WirelessLoudSpeaker {
 	}
 
 	public void switchOff() {
+		this.soundVolume = MIN_SOUND_VOLUME;
 		this.isOn = false;
 		System.out.println("Switched OFF!");
 	}
@@ -53,17 +54,9 @@ class WirelessLoudSpeaker {
 	}
 
 	public void decreaseSound() {
-		if ((this.isOn == true)
-				&& (this.soundVolume > MIN_SOUND_VOLUME)) {
+		if (isOn() && isSoundVolumeBiggerThenMin()){
 			this.soundVolume = this.soundVolume - 1;
 		}
-
-		/*
-		if (isOn() && isSoundVolumeBiggerThenMin()) {
-			this.soundVolume = this.soundVolume - 1;
-		}
-		*/
-
 	}
 
 }

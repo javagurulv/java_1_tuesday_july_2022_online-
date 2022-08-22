@@ -1,6 +1,9 @@
 package student_ernest_aleskevics.lesson_3.homework.task_7;
 
-public class MyName {
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
+class MyName {
 
     public static void main(String[] args) {
         String myName = "Ernests";

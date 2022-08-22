@@ -22,12 +22,12 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
      class Product {
 
-         String name = "noname";
-         double regularPrice = 0.0;
-         double discount = 0.0;
+         String name;
+         double regularPrice;
+         double discount;
 
 	@CodeReviewComment(teacher = "Зачем это свойство? Где оно используется?")
-         double actualPrice = 0.0;
+         double actualPrice0;
 
          public Product(String name) {
              this.name = name;

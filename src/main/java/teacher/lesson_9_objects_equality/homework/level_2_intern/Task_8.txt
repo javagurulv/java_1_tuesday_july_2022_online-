@@ -1,0 +1,12 @@
+Исправьте код класса ProtectedClass так, чтобы он компилировался.
+
+protected class ProtectedClass {
+
+    private String title;
+    private String author;
+
+
+}
+
+Как вы думаете, почему protected классы создавать нельзя?
+Напиши свой ответ в комментарии над исправленным кодом.

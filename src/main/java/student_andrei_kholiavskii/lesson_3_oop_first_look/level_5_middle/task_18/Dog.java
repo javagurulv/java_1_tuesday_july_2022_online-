@@ -1,13 +1,28 @@
 package student_andrei_kholiavskii.lesson_3_oop_first_look.level_5_middle.task_18;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Dog {
 
-String dogName = "Smokie";
+	String dogName;
 
-void voice() {
+	public Dog(String dogName) {
+		this.dogName = dogName;
+	}
 
-    System.out.println(dogName + " " + dogName + " " + dogName + "!");
+/*
+	public void changeDogName(String newDogName) {
+		this.dogName = newDogName;
+	}
+*/
 
-}
+	public String getDogName() {
+		return dogName;
+	}
+
+	void voice() {
+		System.out.println(dogName + " " + this.dogName + " " + dogName + "!");
+	}
 
 }
