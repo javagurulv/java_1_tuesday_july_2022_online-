@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_3.level7.task_29;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Bike {
     String type;
     int numberOfGears;

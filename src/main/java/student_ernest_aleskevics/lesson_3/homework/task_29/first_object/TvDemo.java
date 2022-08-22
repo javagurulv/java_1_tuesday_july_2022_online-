@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_3.homework.task_29.first_object;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class TvDemo {
 
     public static void main(String[] args) {

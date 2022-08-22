@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_7_senior.task_32;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class BankAccountDemo {
 
     public static void main(String[] args) {

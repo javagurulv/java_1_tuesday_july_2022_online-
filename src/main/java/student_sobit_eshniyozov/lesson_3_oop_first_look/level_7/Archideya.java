@@ -1,5 +1,11 @@
 package student_sobit_eshniyozov.lesson_3_oop_first_look.level_7;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "В корне не правильная модель данных!"
+		+ "Что представляет этот класс: одну орхидею или несколько?")
 class Archideya {
     double height;
     int leaves;

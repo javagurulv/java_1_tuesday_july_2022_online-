@@ -1,5 +1,10 @@
 package student_artjom_vakhromeev.lesson_4.task_3;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Имя класса с большой буквы!")
 public class dayOfTheWeek {
     int dayOfTheWeek;
 

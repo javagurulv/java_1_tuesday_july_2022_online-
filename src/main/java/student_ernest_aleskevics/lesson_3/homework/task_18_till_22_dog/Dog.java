@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_3.homework.task_18_till_22_dog;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Dog {
     String nickName, color;
     int age;

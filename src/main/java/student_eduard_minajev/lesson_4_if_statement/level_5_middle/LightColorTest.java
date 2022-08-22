@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_4_if_statement.level_5_middle;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class LightColorTest {
 
     public static void main(String[] args){

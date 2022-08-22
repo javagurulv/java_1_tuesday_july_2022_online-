@@ -2,6 +2,9 @@ package student_olegs_radigins.lesson_4.level_1.task_3;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class DayOfTheWeek {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

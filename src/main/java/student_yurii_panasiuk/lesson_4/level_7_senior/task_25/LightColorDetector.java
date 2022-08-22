@@ -1,5 +1,11 @@
 package student_yurii_panasiuk.lesson_4.level_7_senior.task_25;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Почему класс final?"
+		+ "Зачем у этого класса свойство wavelength?")
  final class LightColorDetector {
  int wavelength;
 

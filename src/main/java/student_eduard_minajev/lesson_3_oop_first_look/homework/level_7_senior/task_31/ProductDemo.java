@@ -2,6 +2,9 @@ package student_eduard_minajev.lesson_3_oop_first_look.homework.level_7_senior.t
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class ProductDemo {
 
      public static void main(String[] args){

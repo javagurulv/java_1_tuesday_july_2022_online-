@@ -2,6 +2,11 @@ package student_olegs_radigins.lesson_4.level_3.tasks_8_9_10;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Попробуй придумать более простую логику решения для этой задачи!")
 class NumberComparison2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

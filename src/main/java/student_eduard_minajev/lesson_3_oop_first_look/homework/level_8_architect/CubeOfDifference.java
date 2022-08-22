@@ -2,6 +2,9 @@ package student_eduard_minajev.lesson_3_oop_first_look.homework.level_8_architec
 
 import java.lang.Math;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class CubeOfDifference {
 
     double operandA;

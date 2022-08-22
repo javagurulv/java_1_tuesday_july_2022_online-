@@ -1,0 +1,31 @@
+WARNING: плохое название класса! Плохое название свойства (userinput),
+плохое название метода even() (не содержит глагола).
+
+public class evenOrOdd {
+    int userinput;
+
+    public evenOrOdd(int userinput) {
+        this.userinput = userinput;
+    }
+
+    boolean even(){
+        return this.userinput % 2 == 0;
+    }
+
+}
+
+
+Лучше:
+
+public class EvenChecker {
+    int number;
+
+    public EvenChecker(int number) {
+        this.number = number;
+    }
+
+    boolean isEven(){
+        return this.number % 2 == 0;
+    }
+
+}

@@ -1,7 +1,8 @@
 package student_ivan_mostepanov.lesson_3.DogDemo;
 
-import student_ivan_mostepanov.lesson_3.DogDemo.Dog;
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 class DogApplication {
 
     public static void main(String[] args) {

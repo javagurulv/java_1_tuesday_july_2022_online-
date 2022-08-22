@@ -1,0 +1,12 @@
+WARNING: не объявляйте несколько свойств класса в одной строке,
+это ухудшает читабельность кода!
+
+class Dog {
+    String nickName, color;
+
+Лучше:
+
+class Dog {
+    String nickName;
+    String color;
+

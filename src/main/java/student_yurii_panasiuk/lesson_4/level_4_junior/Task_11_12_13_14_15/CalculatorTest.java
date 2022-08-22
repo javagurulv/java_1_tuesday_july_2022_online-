@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_4.level_4_junior.Task_11_12_13_14_15;
 
 import java.util.Arrays;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CalculatorTest {
 
     public static void main(String[] args) {

@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_4.level_7_senior.task_25;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class LightColorDetectorTest {
     public static void main(String[] args) {
         LightColorDetector detector = new LightColorDetector();

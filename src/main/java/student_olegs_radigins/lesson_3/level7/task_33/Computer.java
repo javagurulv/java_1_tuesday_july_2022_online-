@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_3.level7.task_33;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Computer {
     String manufacturer;
     String model;

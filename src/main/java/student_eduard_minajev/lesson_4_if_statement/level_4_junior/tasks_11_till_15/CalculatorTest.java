@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_4_if_statement.level_4_junior.tasks_11_till_15;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class CalculatorTest {
 
     public static void main(String[] args) {

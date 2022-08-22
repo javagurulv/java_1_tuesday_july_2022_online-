@@ -2,6 +2,9 @@ package student_artjom_vakhromeev.lesson_4.task_4;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = false)
 public class evenOrOddDemo {
     public static void main(String[] args) {
 

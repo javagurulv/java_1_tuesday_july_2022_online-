@@ -1,5 +1,8 @@
 package student_ivan_mostepanov.lesson_3.DogDemo;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Dog {
 
     String name;

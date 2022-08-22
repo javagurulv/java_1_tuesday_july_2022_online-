@@ -4,6 +4,7 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 
+@CodeReview(approved = true)
  class Dog {
     String dogName;
     int dogAge;

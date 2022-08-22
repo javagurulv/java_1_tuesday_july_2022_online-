@@ -1,6 +1,8 @@
 package student_eduard_minajev.lesson_3_oop_first_look.homework.level_8_architect;
 
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 public class DifferenceOfSquares {
 
     double operandA;

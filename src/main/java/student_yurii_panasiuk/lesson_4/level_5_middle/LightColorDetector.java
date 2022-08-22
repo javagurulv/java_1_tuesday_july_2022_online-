@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_4.level_5_middle;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class LightColorDetector {
 
  void  detect(int wavelength) {

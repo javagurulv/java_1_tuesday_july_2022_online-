@@ -1,5 +1,8 @@
 package student_sobit_eshniyozov.lesson_3_oop_first_look.level_7;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CircleDemo {
     public static void main(String[] args) {
         Circle circle1 = new Circle(5);
