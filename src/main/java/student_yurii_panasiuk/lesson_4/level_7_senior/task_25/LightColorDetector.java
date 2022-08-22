@@ -6,7 +6,7 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 @CodeReviewComment(teacher = "Почему класс final?"
 		+ "Зачем у этого класса свойство wavelength?")
- final class LightColorDetector {
+ class LightColorDetector {
  int wavelength;
 
          String wavelength(int wavelength) {
