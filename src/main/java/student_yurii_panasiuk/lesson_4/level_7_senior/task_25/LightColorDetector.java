@@ -7,11 +7,11 @@ import teacher.codereview.CodeReviewComment;
 @CodeReviewComment(teacher = "Почему класс final?"
 		+ "Зачем у этого класса свойство wavelength?")
  class LightColorDetector {
- int wavelength;
+ //int wavelength;
 
          String wavelength(int wavelength) {
 
-              this.wavelength = wavelength;
+            //  this.wavelength = wavelength;
 
               if (wavelength >= 380 && wavelength <= 449) {
                   return "Violet";
