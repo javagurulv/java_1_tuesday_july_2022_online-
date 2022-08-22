@@ -35,8 +35,6 @@ class TransactionTypeDemo {
 
         TransactionType transactionType = TransactionType.WITHDRAWAL;
 
-        // transactionType = TransactionType.DEPOSIT;
-
         if (transactionType == TransactionType.WITHDRAWAL) {
             System.out.println("This transaction is withdrawal transaction!");
         }
