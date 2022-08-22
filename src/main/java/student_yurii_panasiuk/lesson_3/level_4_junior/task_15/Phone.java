@@ -4,8 +4,8 @@ class Phone {
 
     String model;
 
-        Phone(String newModel) {
-            this.model = newModel;
+        Phone(String model) {
+            this.model = model;
         }
 
         String getModel() {
