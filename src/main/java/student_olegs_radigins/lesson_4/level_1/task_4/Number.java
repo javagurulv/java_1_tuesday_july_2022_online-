@@ -11,11 +11,11 @@ class Number {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number: ");
-        int dayOfTheWeek = scanner.nextInt();
-        if(dayOfTheWeek%2 == 0){
+        int enteredNumber = scanner.nextInt();
+        if(enteredNumber%2 == 0){
             System.out.println("You entered an even number.");
         }else {
-            System.out.println("You enteres an odd number.");
+            System.out.println("You entered an odd number.");
         }
     }
 }
