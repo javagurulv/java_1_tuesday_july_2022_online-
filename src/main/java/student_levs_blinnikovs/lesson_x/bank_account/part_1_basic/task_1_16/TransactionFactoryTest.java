@@ -6,26 +6,21 @@ class TransactionFactoryTest {
         return realResult == expectedResult;
     }
 
+    String prepareTestResult(boolean isTestOK) {
+        String testString = "Transaction factory test is ";
+        return isTestOK ? testString + "OK" : testString + "NOT OK";
+    }
+
+    void printTestResults(String testResult) {
+        System.out.println(testResult);
+    }
+
     void createDepositTransactionTest() {
-        Transaction depositTestTransaction = TransactionFactory.createDepositTransaction(100);
-        boolean expectedIsDepositTransaction = true;
-        boolean realIsDepositTransaction = depositTestTransaction.isDeposit();
-        if (compareRealExpected(realIsDepositTransaction, expectedIsDepositTransaction)) {
-            System.out.println("Deposit transaction factory test OK");
-        } else {
-            System.out.println("Deposit transaction factory test NOT OK");
-        }
+        printTestResults(prepareTestResult(compareRealExpected(TransactionFactory.createDepositTransaction(100).isDeposit(), true)));
     }
 
     void createWithdrawalTransaction() {
-        Transaction withdrawalTestTransaction = TransactionFactory.createWithdrawalTransaction(200, ExpenseCategory.OTHERS);
-        boolean expectedIsWithdrawalTransaction = true;
-        boolean realIsWithdrawalTransaction = withdrawalTestTransaction.isWithdrawal();
-        if (compareRealExpected(realIsWithdrawalTransaction, expectedIsWithdrawalTransaction)) {
-            System.out.println("Withdrawal transaction factory test OK");
-        } else {
-            System.out.println("Withdrawal transaction factory test NOT OK");
-        }
+        printTestResults(prepareTestResult(compareRealExpected(TransactionFactory.createWithdrawalTransaction(200, ExpenseCategory.OTHERS).isWithdrawal(), true)));
     }
 
     public static void main(String[] args) {
