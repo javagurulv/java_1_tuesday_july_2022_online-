@@ -52,6 +52,19 @@ class ArrayExample {
 		System.out.println(marks[1]);
 		System.out.println(marks[2]);
 		System.out.println(marks[3]);
+
+		for (int i = 0; i < marks.length; i++) {
+			System.out.println(marks[i]);
+		}
+
+	}
+
+	private static int sum(int[] marks) {
+		int sum = 0;
+		for (int i = 0; i < marks.length; i++) {
+			sum = sum + marks[i];
+		}
+		return sum;
 	}
 
 }
