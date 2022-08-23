@@ -1,6 +1,6 @@
-package student_roman_hytt.level_1_intern;
+package student_roman_hytt.lesson_3.level_1_intern;
 
-import student_roman_hytt.level_1_intern.Robot;
+import student_roman_hytt.lesson_3.level_1_intern.Robot;
 
 public class RobotDemo {
 
