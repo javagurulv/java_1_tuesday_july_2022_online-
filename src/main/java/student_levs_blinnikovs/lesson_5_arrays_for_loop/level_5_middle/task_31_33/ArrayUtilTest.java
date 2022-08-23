@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_middle.task_31_32;
+package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_middle.task_31_33;
 
 /*
 Создайте класс ArrayUtilTest.
