@@ -25,13 +25,13 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = true)
 class CircleOperations {
 
-	@CodeReviewComment(teacher = "calculateCircumference(...)")
-    static double getCircumference(double radius) {
+	@CodeReviewComment(teacher = "calculateCircumference(...)", student = "fxd")
+    static double calculateCircumference(double radius) {
         return 2 * PI * radius;
     }
 
-	@CodeReviewComment(teacher = "calculateArea(...)")
-    static double getArea(double radius) {
+	@CodeReviewComment(teacher = "calculateArea(...)", student = "fxd")
+    static double calculateArea(double radius) {
         return PI * pow(radius, 2);
     }
 
@@ -45,8 +45,8 @@ class CircleOperations {
 
         System.out.println("Your radius of choice is " + circleRadius + " units. \n");
 
-        System.out.println("Circumference is " + getCircumference(circleRadius));
-        System.out.println("Area is " + getArea(circleRadius));
+        System.out.println("Circumference is " + calculateCircumference(circleRadius));
+        System.out.println("Area is " + calculateArea(circleRadius));
 
 
     }
