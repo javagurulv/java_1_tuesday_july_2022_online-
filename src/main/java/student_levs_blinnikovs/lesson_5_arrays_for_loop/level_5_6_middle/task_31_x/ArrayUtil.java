@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_middle.task_31_33;
+package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x;
 
 /*
 Создайте класс ArrayUtil.
@@ -21,10 +21,9 @@ class ArrayUtil {
         }
     }
 
-    public void fillArrayWithRandomNumbers(int[] array, int maxRandom) {
-        Random random = new Random();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(maxRandom);
+    public void printArrayToConsole(int[] array) {
+        for (int i : array) {
+            System.out.println(i);
         }
     }
 

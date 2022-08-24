@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_middle.task_31_33;
+package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x;
 
 /*
 Создайте класс ArrayUtilTest.
@@ -24,11 +24,17 @@ class ArrayUtilTest {
 class ArrayUtilTest {
 
     public static void main(String[] args) {
+
         ArrayUtilTest test = new ArrayUtilTest();
+
         test.shouldCreateArray();
+        test.shouldFillArrayWithRandomNumbers();
+        test.shouldPrintArrayToConsole();
+
     }
 
     public void shouldCreateArray() {
+        System.out.println("\nTest 1");
         ArrayUtil testArrayUtilObj = new ArrayUtil();
         int realArrayLength = testArrayUtilObj.createArray(5).length;
         int expectedArrayLength = 5;
@@ -37,7 +43,24 @@ class ArrayUtilTest {
         } else {
             System.err.println("Array created incorrectly!");
         }
+    }
 
+    public void shouldFillArrayWithRandomNumbers() {
+        System.out.println("\nTest 2");
+        ArrayUtil testArrayUtilObj = new ArrayUtil();
+        int[] testArray = testArrayUtilObj.createArray(3);
+        testArrayUtilObj.fillArrayWithRandomNumbers(testArray);
+        for (int i = 0; i < testArray.length; i++) {
+            System.out.println(testArray[i]);
+        }
+    }
+
+    public void shouldPrintArrayToConsole() {
+        System.out.println("\nTest 3");
+        ArrayUtil testArrayUtilObj = new ArrayUtil();
+        int[] testArray = testArrayUtilObj.createArray(3);
+        testArrayUtilObj.fillArrayWithRandomNumbers(testArray);
+        testArrayUtilObj.printArrayToConsole(testArray);
     }
 
 }
