@@ -1,4 +1,4 @@
-package student_eduard_minajev.lesson_4_if_statement.level_7_senior.task_27;
+package student_eduard_minajev.lesson_4_if_statement.level_7_senior.task_22;
 
 public class FizzBuzzTest {
 
@@ -8,7 +8,7 @@ public class FizzBuzzTest {
         fizzBuzzTest.fizzBuzzTest();
         fizzBuzzTest.fizzTest();
         fizzBuzzTest.buzzTest();
-        fizzBuzzTest.simpleTest();
+
 
 
 
@@ -49,17 +49,4 @@ public class FizzBuzzTest {
             System.out.println("Buzz Fail");
         }
     }
-
-    public void simpleTest (){
-        int testNumber = 11;
-        String expectedResult = "" + testNumber;
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String realResult = fizzBuzz.detect(testNumber);
-        if (expectedResult == realResult){
-            System.out.println("Simple OK");
-        }else {
-            System.out.println("Simple Fail");
-        }
-    }
-
 }
