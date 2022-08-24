@@ -10,7 +10,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_27;
 
 import java.util.Random;
 
-class ArrayVeryRandomOps {
+class ArrayRandomMaxFinder {
 
 
 

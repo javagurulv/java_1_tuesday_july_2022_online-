@@ -17,7 +17,7 @@ class ArrayUtil {
     public void fillArrayWithRandomNumbers(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt();
+            array[i] = random.nextInt(100);
         }
     }
 
@@ -25,6 +25,16 @@ class ArrayUtil {
         for (int i : array) {
             System.out.println(i);
         }
+    }
+
+    public int findMaxNumber(int[] array) {
+        int maxNumber = array[0];
+        for (int i : array) {
+            if (maxNumber < i) {
+                maxNumber = i;
+            }
+        }
+        return maxNumber;
     }
 
 }

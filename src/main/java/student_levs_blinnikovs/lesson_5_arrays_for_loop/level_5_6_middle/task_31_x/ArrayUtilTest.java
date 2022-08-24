@@ -30,6 +30,7 @@ class ArrayUtilTest {
         test.shouldCreateArray();
         test.shouldFillArrayWithRandomNumbers();
         test.shouldPrintArrayToConsole();
+        test.shouldReturnMaxNumber();
 
     }
 
@@ -61,6 +62,16 @@ class ArrayUtilTest {
         int[] testArray = testArrayUtilObj.createArray(3);
         testArrayUtilObj.fillArrayWithRandomNumbers(testArray);
         testArrayUtilObj.printArrayToConsole(testArray);
+    }
+
+    public void shouldReturnMaxNumber() {
+        System.out.println("\nTest 4");
+        ArrayUtil testArrayUtilObj = new ArrayUtil();
+        int[] testArray = testArrayUtilObj.createArray(3);
+        testArrayUtilObj.fillArrayWithRandomNumbers(testArray);
+        testArrayUtilObj.printArrayToConsole(testArray);
+        int maxNumber = testArrayUtilObj.findMaxNumber(testArray);
+        System.out.println("Max is: " + maxNumber);
     }
 
 }
