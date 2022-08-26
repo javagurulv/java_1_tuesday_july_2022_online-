@@ -21,17 +21,17 @@ class ArrayOps {
         Scanner userInput = new Scanner(System.in);
         int arrayLength = userInput.nextInt();
 
-        int[] userDefinedArr = new int[arrayLength];
+        int[] userDefinedNumbers = new int[arrayLength];
 
         System.out.println("Please fill in your desired array. ");
-        for (int i = 0; i < userDefinedArr.length; i++) {
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
             System.out.println("Enter value of " + (i + 1) + ". element:");
-            userDefinedArr[i] = userInput.nextInt();
+            userDefinedNumbers[i] = userInput.nextInt();
         }
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            System.out.print(userDefinedArr[i] + " ");
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            System.out.print(userDefinedNumbers[i] + " ");
         }
 
     }
