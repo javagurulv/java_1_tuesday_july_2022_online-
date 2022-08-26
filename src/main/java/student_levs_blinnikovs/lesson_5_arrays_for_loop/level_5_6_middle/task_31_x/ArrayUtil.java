@@ -13,7 +13,7 @@ import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Переименуй i в циклах for each в более подходящее название."
-		+ "src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_2.txt")
+		+ "src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_2.txt", student = "Fixed")
 class ArrayUtil {
 
     public int[] createArray(int arrayLength) {
@@ -28,16 +28,16 @@ class ArrayUtil {
     }
 
     public void printArrayToConsole(int[] array) {
-        for (int i : array) {
-            System.out.println(i);
+        for (int arrayElement : array) {
+            System.out.println(arrayElement);
         }
     }
 
     public int findMaxNumber(int[] array) {
         int maxNumber = array[0];
-        for (int i : array) {
-            if (maxNumber < i) {
-                maxNumber = i;
+        for (int arrayElement : array) {
+            if (maxNumber < arrayElement) {
+                maxNumber = arrayElement;
             }
         }
         return maxNumber;
@@ -45,9 +45,9 @@ class ArrayUtil {
 
     public int findMinNumber(int[] array) {
         int minNumber = array[0];
-        for (int i : array) {
-            if (minNumber > i) {
-                minNumber = i;
+        for (int arrayElement : array) {
+            if (minNumber > arrayElement) {
+                minNumber = arrayElement;
             }
         }
         return minNumber;
