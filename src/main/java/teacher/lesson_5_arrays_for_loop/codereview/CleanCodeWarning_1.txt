@@ -1,0 +1,42 @@
+WARNING: повторяющиеся действия нужно реализовывать при помощи циклов.
+
+    public static void main(String[] args){
+
+        Random randomGenerator = new Random();
+
+        int numberOne = randomGenerator.nextInt(50);
+        int numberTwo = randomGenerator.nextInt(50);
+        int numberThree = randomGenerator.nextInt(50);
+
+        int [] arrayOne = new int[] {numberOne, numberTwo, numberThree};
+        System.out.println(numberOne);
+        System.out.println(numberTwo);
+        System.out.println(numberThree);
+
+        int sum = numberOne + numberTwo + numberThree;
+        System.out.println("Sum is " + sum);
+
+    }
+
+Лучше:
+
+    public static void main(String[] args){
+
+        Random randomGenerator = new Random();
+        int [] array = new int[3];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = randomGenerator.nextInt(50);
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum = sum + array[i];
+        }
+
+        System.out.println("Sum is " + sum);
+    }
