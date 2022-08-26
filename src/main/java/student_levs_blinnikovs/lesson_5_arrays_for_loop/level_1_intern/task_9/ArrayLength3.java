@@ -9,7 +9,7 @@ class ArrayLength3 {
 
     public static void main(String[] args) {
         int[] numbers = new int[2];                   // тут опять же ссылку на массив интов
-        System.out.println(numbers.length);          // length не метод а свойство массива
+        System.out.println(numbers.length);          // length не метод, а свойство массива
     }
 
 }
