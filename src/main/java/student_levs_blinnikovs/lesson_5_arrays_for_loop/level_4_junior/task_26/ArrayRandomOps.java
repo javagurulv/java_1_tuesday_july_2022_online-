@@ -22,19 +22,19 @@ class ArrayRandomOps {
         Scanner userInput = new Scanner(System.in);
         int arrayLength = userInput.nextInt();
 
-        int[] userDefinedArr = new int[arrayLength];
+        int[] userDefinedNumbers = new int[arrayLength];
 
         System.out.println("Random will fill in your array. ");
 
         Random random = new Random();
 
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            userDefinedArr[i] = random.nextInt(10);
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            userDefinedNumbers[i] = random.nextInt(10);
         }
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            System.out.print(userDefinedArr[i] + " ");
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            System.out.print(userDefinedNumbers[i] + " ");
         }
 
     }
