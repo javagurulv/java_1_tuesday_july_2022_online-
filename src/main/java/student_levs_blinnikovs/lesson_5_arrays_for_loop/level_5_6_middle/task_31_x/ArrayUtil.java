@@ -22,6 +22,13 @@ public class ArrayUtil {
         return new int[arrayLength];
     }
 
+    public int[] createRandomLengthArray() {
+        System.out.println("System will create random (from 1 up to 10) length array: ");
+        Random random = new Random();
+        int arrayLength = random.nextInt(9) + 1;
+        return new int[arrayLength];
+    }
+
     public void fillArrayWithRandomNumbers(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
@@ -72,6 +79,7 @@ public class ArrayUtil {
     }
 
     public void findEvenNumbers(int[] array) {
+        System.out.println("Even numbers: ");
         for (int number : array) {
             if (number % 2 == 0) {
                 System.out.println(number);
@@ -80,6 +88,7 @@ public class ArrayUtil {
     }
 
     public void findOddNumbers(int[] array) {
+        System.out.println("Odd numbers: ");
         for (int number : array) {
             if (number % 2 != 0) {
                 System.out.println(number);

@@ -21,5 +21,4 @@ class ArrayOps {
         arrayUtil.fillArrayWithUserInput(userDefinedNumbers);
         arrayUtil.printArrayToConsole(userDefinedNumbers);
     }
-
 }

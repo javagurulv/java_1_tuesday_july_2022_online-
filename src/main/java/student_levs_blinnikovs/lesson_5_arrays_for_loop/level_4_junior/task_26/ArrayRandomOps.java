@@ -21,5 +21,4 @@ class ArrayRandomOps {
         arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
         arrayUtil.printArrayToConsole(randomNumbers);
     }
-
 }
