@@ -14,7 +14,7 @@ package student_levs_blinnikovs.lesson_4_if_statement.level_4_junior_7_senior.ta
 очень важна для заказчика. Все программисты делают ошибки
 в своём коде. Цель тестирования: найти эти ошибки как можно
 быстрее! Желательно до того как ваш код начнёт работать
-на продакшен среде.
+на продакшн среде.
 
 Протестировать код можно по крайней мере двумя способами:
 1. Протестировать вашу программу руками - "ручное тестирование";
@@ -73,7 +73,7 @@ class CalculatorTest {
         int secondNumber = 5;  // подготавливаем тестовые данные
         int expectedResult = 15;  // подготавливаем тестовые данные
         Calculator calculator = new Calculator();
-        int realResult = calculator.sum(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResult = calculator.sum(firstNumber, secondNumber);  // вызываем продакшн код, который хотим протестировать
         if (realResult == expectedResult) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Sum test = OK");
         } else {

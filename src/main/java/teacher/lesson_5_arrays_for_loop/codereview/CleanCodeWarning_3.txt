@@ -1,0 +1,27 @@
+WARNING: автоматический тест должен состоять из трёх шагов:
+1. подготовка тестовых данных (не случайных данных);
+2. вызов продакшн кода;
+3. проверка результатов.
+
+
+    // код из продакшн класса
+    public int findMinNumber(int[] array) {
+        int minNumber = array[0];
+        for (int arrayElement : array) {
+            if (minNumber > arrayElement) {
+                minNumber = arrayElement;
+            }
+        }
+        return minNumber;
+    }
+
+    // код из тестового класса
+    public void shouldReturnMinNumber() {
+        System.out.println("\nTest 5");
+        ArrayUtil testArrayUtilObj = new ArrayUtil();
+        int[] testArray = testArrayUtilObj.createArray(3);
+        testArrayUtilObj.fillArrayWithRandomNumbers(testArray);
+        testArrayUtilObj.printArrayToConsole(testArray);
+        int minNumber = testArrayUtilObj.findMinNumber(testArray);
+        System.out.println("Min is: " + minNumber);
+    }

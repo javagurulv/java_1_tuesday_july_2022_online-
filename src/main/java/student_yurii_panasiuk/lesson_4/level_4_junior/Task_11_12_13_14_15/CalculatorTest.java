@@ -26,28 +26,28 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
 
-        int realResultSum = calculator.sum(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResultSum = calculator.sum(firstNumber, secondNumber);  // вызываем продакшн код, который хотим протестировать
         if (realResultSum == expectedResultSum) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Sum test = OK");
         } else {
             System.out.println("Sum test = FAIL");
         }
 
-        int realResultSub = calculator.sub(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResultSub = calculator.sub(firstNumber, secondNumber);  // вызываем продакшн код, который хотим протестировать
         if (realResultSub == expectedResultSub) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Sub test = OK");
         } else {
             System.out.println("SuB test = FAIL");
         }
 
-        int realResultDiv = calculator.div(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResultDiv = calculator.div(firstNumber, secondNumber);  // вызываем продакшн код, который хотим протестировать
         if (realResultDiv == expectedResultDiv) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Div test = OK");
         } else {
             System.out.println("Div test = FAIL");
         }
 
-        int realResultMul = calculator.mul(firstNumber, secondNumber);  // вызываем продакшен код, который хотим протестировать
+        int realResultMul = calculator.mul(firstNumber, secondNumber);  // вызываем продакшн код, который хотим протестировать
         if (realResultMul == expectedResultMul) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Mul test = OK");
         } else {
@@ -55,7 +55,7 @@ class CalculatorTest {
         }
 
         boolean realResultEven = calculator.isEven(firstNumber);
-        boolean realResultOdd = calculator.isEven(secondNumber); // вызываем продакшен код, который хотим протестировать
+        boolean realResultOdd = calculator.isEven(secondNumber); // вызываем продакшн код, который хотим протестировать
 
         if ( realResultEven  && !realResultOdd ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Even/Odd test = OK");
@@ -64,7 +64,7 @@ class CalculatorTest {
         }
         int realResultLarger = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
         int realResultSmaller = calculator.maxOfTwoNumbers(secondNumber, firstNumber);
-        int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber); // вызываем продакшен код, который хотим протестировать
+        int realResulEqual = calculator.maxOfTwoNumbers(secondNumber, thirdNumber); // вызываем продакшн код, который хотим протестировать
 
         if ( realResultLarger == firstNumber ) {  // проверяем правильно ли сработал тестируемый код
             System.out.println("Larger test = OK");}

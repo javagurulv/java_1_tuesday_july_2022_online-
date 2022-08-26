@@ -27,7 +27,7 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Это не тесты, это маленькие Demo программы. "
 		+ "Тест это подготовка входных данных (не рандом если это можно),"
-		+ "вызов продакшен кода и проверка результатов.")
+		+ "вызов продакшн кода и проверка результатов.")
 class ArrayUtilTest {
 
     public static void main(String[] args) {
