@@ -10,17 +10,17 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_10;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-class ArrayTrainer10 {
+class ArrayTrainer {
     public static void main(String[] args) {
 
-        int[] numArray = new int[3];
+        int[] numbers = new int[3];
 
-        numArray[0] = 1;
-        numArray[1] = 100;
-        numArray[2] = 1000;
+        numbers[0] = 1;
+        numbers[1] = 100;
+        numbers[2] = 1000;
 
-        for (int i : numArray) {
-            System.out.println(i);
+        for (int number : numbers) {
+            System.out.println(number);
         }
     }
 }
