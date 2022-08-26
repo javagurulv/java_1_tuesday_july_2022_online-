@@ -24,6 +24,8 @@ class ArrayUtilTest {
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+import java.util.ArrayList;
+
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Это не тесты, это маленькие Demo программы. "
 		+ "Тест это подготовка входных данных (не рандом если это можно),"

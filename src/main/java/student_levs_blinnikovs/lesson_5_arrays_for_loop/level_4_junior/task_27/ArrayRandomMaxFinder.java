@@ -10,6 +10,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_27;
 
 import java.util.Random;
 
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
@@ -24,27 +25,18 @@ class ArrayRandomMaxFinder {
         int arrayLength = random.nextInt(9) + 1;
         System.out.println("System decided to create array with length of " + arrayLength);
 
-        int[] userDefinedNumbers = new int[arrayLength];
+        ArrayUtil arrayUtil = new ArrayUtil();
+
+        int[] randomNumbers = arrayUtil.createArray(arrayLength);
 
         System.out.println("System now also will fill in your array (up to value of 10). ");
-
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            userDefinedNumbers[i] = random.nextInt(10);
-        }
+        arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            System.out.print(userDefinedNumbers[i] + " ");
-        }
+        arrayUtil.printArrayToConsole(randomNumbers);
 
         System.out.println("System now will print highest element: ");
-
-        int maxElement = userDefinedNumbers[0];
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            if (maxElement < userDefinedNumbers[i]) {
-                maxElement = userDefinedNumbers[i];
-            }
-        }
+        int maxElement = arrayUtil.findMaxNumber(randomNumbers);
 
         System.out.println("Max element is: " + maxElement);
 

@@ -6,6 +6,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_3
 массива целых чисел указанной длины.
  */
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import teacher.codereview.CodeReview;
@@ -14,7 +15,7 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Переименуй i в циклах for each в более подходящее название."
 		+ "src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_2.txt", student = "Fixed")
-class ArrayUtil {
+public class ArrayUtil {
 
     public int[] createArray(int arrayLength) {
         return new int[arrayLength];
@@ -51,6 +52,22 @@ class ArrayUtil {
             }
         }
         return minNumber;
+    }
+
+    public void findEvenNumbers(int[] array) {
+        for (int number : array) {
+            if (number % 2 == 0) {
+                System.out.println(number);
+            }
+        }
+    }
+
+    public void findOddNumbers(int[] array) {
+        for (int number : array) {
+            if (number % 2 != 0) {
+                System.out.println(number);
+            }
+        }
     }
 
 }

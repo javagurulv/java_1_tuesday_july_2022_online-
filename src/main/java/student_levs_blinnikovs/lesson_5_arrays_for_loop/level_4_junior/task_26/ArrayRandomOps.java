@@ -11,6 +11,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_26;
 import java.util.Random;
 import java.util.Scanner;
 
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
@@ -22,20 +23,15 @@ class ArrayRandomOps {
         Scanner userInput = new Scanner(System.in);
         int arrayLength = userInput.nextInt();
 
-        int[] userDefinedNumbers = new int[arrayLength];
+        ArrayUtil arrayUtil = new ArrayUtil();
+
+        int[] randomNumbers = arrayUtil.createArray(arrayLength);
 
         System.out.println("Random will fill in your array. ");
-
-        Random random = new Random();
-
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            userDefinedNumbers[i] = random.nextInt(10);
-        }
+        arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            System.out.print(userDefinedNumbers[i] + " ");
-        }
+        arrayUtil.printArrayToConsole(randomNumbers);
 
     }
 
