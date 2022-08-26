@@ -9,17 +9,19 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_2_intern;
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Всё сделай через циклы!")
+
 public class Task10v1 {
 
     public static void main(String[] args){
 
-        int [] numbers = new int [] {4,7,9};
-        System.out.println(numbers [0]);
-        System.out.println(numbers [1]);
-        System.out.println(numbers [2]);
+        int [] array = new int [3];
+
+        for (int i = 0; i < array.length; i++){
+            array[i]= i + 1;
+            System.out.println(array[i]);
+        }
 
     }
 
 }
+// исправленно

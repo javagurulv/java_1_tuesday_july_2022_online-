@@ -11,22 +11,17 @@ import java.util.Random;
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Всё сделай через циклы!")
+
 public class Task12 {
 
     public static void main(String[] args){
 
-        Random randomOne = new Random();
-        int numberOne = randomOne.nextInt(20);
-        int numberTwo = randomOne.nextInt(20);
-        int numberThree = randomOne.nextInt(20);
-
-        int [] arrayTwo = new int[]{numberOne, numberTwo,numberThree};
-
-        System.out.println(numberOne);
-        System.out.println(numberTwo);
-        System.out.println(numberThree);
+        Random random = new Random();
+        int [] array = new int [3];
+        for (int i = 0; i < array.length; i++){
+            array[i] = random.nextInt(100);
+            System.out.println(array[i]);
+        }
 
     }
 
