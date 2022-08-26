@@ -17,24 +17,11 @@ import teacher.codereview.CodeReview;
 class ArrayOps {
 
     public static void main(String[] args) {
-
-        System.out.println("Please choose array length (integer): ");
-        Scanner userInput = new Scanner(System.in);
-        int arrayLength = userInput.nextInt();
-
         ArrayUtil arrayUtil = new ArrayUtil();
-
+        int arrayLength = arrayUtil.getArrayLengthWithUserInput();
         int[] userDefinedNumbers = arrayUtil.createArray(arrayLength);
-
-        System.out.println("Please fill in your desired array. ");
-        for (int i = 0; i < userDefinedNumbers.length; i++) {
-            System.out.println("Enter value of " + (i + 1) + ". element:");
-            userDefinedNumbers[i] = userInput.nextInt();
-        }
-
-        System.out.println("Your array: ");
+        arrayUtil.fillArrayWithUserInput(userDefinedNumbers);
         arrayUtil.printArrayToConsole(userDefinedNumbers);
-
     }
 
 }

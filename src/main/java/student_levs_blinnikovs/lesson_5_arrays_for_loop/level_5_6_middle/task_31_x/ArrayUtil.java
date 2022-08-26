@@ -8,6 +8,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_3
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
@@ -28,7 +29,23 @@ public class ArrayUtil {
         }
     }
 
+    public int getArrayLengthWithUserInput() {
+        System.out.println("Enter array length: ");
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
+    }
+
+    public void fillArrayWithUserInput(int[] array) {
+        System.out.println("Please fill in your desired array. ");
+        Scanner userInput = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Enter next array element: ");
+            array[i] = userInput.nextInt();
+        }
+    }
+
     public void printArrayToConsole(int[] array) {
+        System.out.println("Your array: ");
         for (int arrayElement : array) {
             System.out.println(arrayElement);
         }
