@@ -8,9 +8,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_28;
 - найдите наименьшее число в массиве и выведите его на консоль.
  */
 
-import java.util.Random;
-
-import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x.ArrayUtil;
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)

@@ -8,10 +8,7 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_29;
 - найдите все чётные числа в массиве и выведите их на консоль.
  */
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x.ArrayUtil;
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)

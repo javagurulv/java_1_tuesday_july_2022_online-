@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_31_x;
+package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41;
 
 /*
 Создайте класс ArrayUtil.
