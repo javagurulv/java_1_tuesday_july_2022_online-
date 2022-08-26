@@ -24,25 +24,25 @@ class ArrayRandomMinFinder {
         int arrayLength = random.nextInt(9) + 1;
         System.out.println("System decided to create array with length of " + arrayLength);
 
-        int[] userDefinedArr = new int[arrayLength];
+        int[] userDefinedNumbers = new int[arrayLength];
 
         System.out.println("System now also will fill in your array (up to value of 10). ");
 
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            userDefinedArr[i] = random.nextInt(10);
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            userDefinedNumbers[i] = random.nextInt(10);
         }
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            System.out.print(userDefinedArr[i] + " ");
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            System.out.print(userDefinedNumbers[i] + " ");
         }
 
         System.out.println("System now will print min element: ");
 
-        int minElement = userDefinedArr[0];
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            if (minElement > userDefinedArr[i]) {
-                minElement = userDefinedArr[i];
+        int minElement = userDefinedNumbers[0];
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            if (minElement > userDefinedNumbers[i]) {
+                minElement = userDefinedNumbers[i];
             }
         }
 

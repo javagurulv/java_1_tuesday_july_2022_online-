@@ -24,25 +24,25 @@ class ArrayRandomMaxFinder {
         int arrayLength = random.nextInt(9) + 1;
         System.out.println("System decided to create array with length of " + arrayLength);
 
-        int[] userDefinedArr = new int[arrayLength];
+        int[] userDefinedNumbers = new int[arrayLength];
 
         System.out.println("System now also will fill in your array (up to value of 10). ");
 
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            userDefinedArr[i] = random.nextInt(10);
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            userDefinedNumbers[i] = random.nextInt(10);
         }
 
         System.out.println("Your array: ");
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            System.out.print(userDefinedArr[i] + " ");
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            System.out.print(userDefinedNumbers[i] + " ");
         }
 
         System.out.println("System now will print highest element: ");
 
-        int maxElement = userDefinedArr[0];
-        for (int i = 0; i < userDefinedArr.length; i++) {
-            if (maxElement < userDefinedArr[i]) {
-                maxElement = userDefinedArr[i];
+        int maxElement = userDefinedNumbers[0];
+        for (int i = 0; i < userDefinedNumbers.length; i++) {
+            if (maxElement < userDefinedNumbers[i]) {
+                maxElement = userDefinedNumbers[i];
             }
         }
 
