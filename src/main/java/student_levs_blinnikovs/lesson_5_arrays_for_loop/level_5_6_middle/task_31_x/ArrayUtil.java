@@ -8,6 +8,12 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_middle.task_3
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Переименуй i в циклах for each в более подходящее название."
+		+ "src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_2.txt")
 class ArrayUtil {
 
     public int[] createArray(int arrayLength) {
