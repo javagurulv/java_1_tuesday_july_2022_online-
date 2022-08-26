@@ -10,6 +10,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_4_junior.task_30;
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayRandomOddFinder {
 
     public static void main(String[] args) {

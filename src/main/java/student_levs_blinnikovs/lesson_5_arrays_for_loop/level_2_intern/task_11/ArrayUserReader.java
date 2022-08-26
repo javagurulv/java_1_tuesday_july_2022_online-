@@ -10,6 +10,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_11;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayUserReader {
     public static void main(String[] args) {
         int[] numArray = new int[3];

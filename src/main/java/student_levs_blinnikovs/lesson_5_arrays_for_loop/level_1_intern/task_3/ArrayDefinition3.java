@@ -5,6 +5,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_1_intern.task_3;
         Переменная numbers должна ссылаться на массив целых чисел.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayDefinition3 {
 
     public static void main(String[] args) {

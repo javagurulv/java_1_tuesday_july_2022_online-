@@ -5,6 +5,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_3_junior.task_24;
         выводила на консоль числа от 0 до 100:
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ForLoopDefinition8 {
 
     public static void main(String[] args) {

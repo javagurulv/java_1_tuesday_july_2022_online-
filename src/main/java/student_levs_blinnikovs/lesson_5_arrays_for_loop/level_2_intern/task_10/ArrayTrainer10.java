@@ -7,6 +7,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_10;
  - выведите значение каждой ячейки на консоль.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayTrainer10 {
     public static void main(String[] args) {
 

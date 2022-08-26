@@ -9,6 +9,9 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_12;
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayRandomizer {
     public static void main(String[] args) {
 
