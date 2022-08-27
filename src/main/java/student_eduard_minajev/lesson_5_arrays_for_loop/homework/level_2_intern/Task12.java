@@ -8,9 +8,6 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_2_intern;
 
 import java.util.Random;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
-
 
 public class Task12 {
 

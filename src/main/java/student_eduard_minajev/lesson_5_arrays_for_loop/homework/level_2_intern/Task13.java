@@ -9,29 +9,27 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_2_intern;
 
 import java.util.Random;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Всё сделай через циклы!")
+
 public class Task13 {
 
-    public static void main(String[] args){
+    public static void main (String [] args) {
 
-        Random randomGenerator = new Random();
+        int [] randomArray = new int[3];
+        Random random = new Random();
+        for (int i = 0; i < randomArray.length; i++){
+            randomArray[i] = random.nextInt(10);
+            System.out.println(randomArray[i]);
+        }
 
-        int numberOne = randomGenerator.nextInt(50);
-        int numberTwo = randomGenerator.nextInt(50);
-        int numberThree = randomGenerator.nextInt(50);
-
-        int [] arrayOne = new int[] {numberOne, numberTwo, numberThree};
-        System.out.println(numberOne);
-        System.out.println(numberTwo);
-        System.out.println(numberThree);
-
-        int sum = numberOne + numberTwo + numberThree;
-        System.out.println("Sum is " + sum);
+        int sum = 0;
+        for (int i = 0; i < randomArray.length; i ++){
+            sum += randomArray[i];
+        }
+            System.out.println("The sum is " + sum);
 
     }
+
+
 
 }
