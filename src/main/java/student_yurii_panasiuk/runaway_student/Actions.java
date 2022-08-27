@@ -38,13 +38,15 @@ class Actions {
      Student student = new Student( new double[] {0, 0, 0, 0, 0});
 
      Teacher teacher = new Teacher( new double[] {1, 1, 1, 1, 100});
-
+        /* // TEST
        System.out.println (teacher.getCoordinates()[1]);
        System.out.println(getDistanse(student.getCoordinates()[0], student.getCoordinates()[1], teacher.getCoordinates()[0], teacher.getCoordinates()[1]));
        System.out.println(vektorDescription(student.getCoordinates()[0], student.getCoordinates()[1], teacher.getCoordinates()[0], teacher.getCoordinates()[1])[0]
                + " " +
                vektorDescription(student.getCoordinates()[2], student.getCoordinates()[3], teacher.getCoordinates()[2], teacher.getCoordinates()[3])[1]);
-
+        // IT IS TOO CRUEL
+        //надо бы соединить эти все методы
+        */
        ;
 
 
