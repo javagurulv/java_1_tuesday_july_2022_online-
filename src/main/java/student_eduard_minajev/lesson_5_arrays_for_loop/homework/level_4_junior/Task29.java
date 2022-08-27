@@ -2,13 +2,13 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_4_junior;
 
 import java.util.Random;
 
-public class Task30 {
+public class Task29 {
 
     public static void main(String[] args){
 
         int sizeOfArray = generateArrayLength();
         int [] newArray = fillArrayRandomNumbers(sizeOfArray);
-        printOddNumbers(newArray);
+        printEvenNumbers(newArray);
 
 
     }
@@ -27,14 +27,11 @@ public class Task30 {
         } return randomArray;
     }
 
-    public static void printOddNumbers (int [] number){
+    public static void printEvenNumbers (int [] number){
         for (int i = 0; i< number.length; i++ ){
-            if (number[i] % 2 != 0 ) {
-                System.out.println("Odd numbers are " + number[i]);
+            if (number[i] % 2 == 0 ) {
+                System.out.println("Even numbers are " + number[i]);
             }
         }
     }
-
-
-
 }
