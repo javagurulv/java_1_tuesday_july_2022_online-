@@ -1,20 +1,29 @@
 package student_sobit_eshniyozov.lesson_4_if_statement.level_1;
 
+//        Написать программу, которая запрашивает у пользователя
+//        целое число и выводит на консоль чётное оно или нет.
+//
+//        Подсказка: используйте для определения чётное число или нет
+//        операцию остаток от деления (%). Если остаток от деления на 2
+//        равен нулю то число чётное, иначе не чётное.
+
 import java.util.Scanner;
 
-public class EvenOrOdd {
-    public static void main(String[] args) {
+class EvenOrOdd {
+    int inPut;
 
-        int number;
+    EvenOrOdd(){this.inPut=inPut;}
 
+    void showEvenOrOdd(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Write any number: ");
-        number = sc.nextInt();
-
-        if (number%2 == 0) {
-            System.out.println("Number is even");
-        } else {
-            System.out.println("Number is odd");
+        inPut = sc.nextInt();
+        if (inPut%2==0) {
+            System.out.println("Number is Even!");
         }
-    }
+           else{
+                System.out.println("Number is Odd!");
+           }
+        }
 }
+
