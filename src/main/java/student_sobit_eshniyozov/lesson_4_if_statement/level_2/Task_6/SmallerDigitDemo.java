@@ -11,7 +11,7 @@ class SmallerDigitDemo {
         System.out.println("Write number two:");
         int savedNumberTwo = inPutNumber.nextInt();
 
-        SmallerDigit biggerDigit = new SmallerDigit(savedNumberOne, savedNumberTwo);
-        biggerDigit.showSmallerDigit();
+        SmallerDigit smallerDigit = new SmallerDigit(savedNumberOne, savedNumberTwo);
+        smallerDigit.showSmallerDigit();
     }
 }

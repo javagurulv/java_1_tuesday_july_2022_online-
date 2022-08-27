@@ -1,8 +1,8 @@
-package student_sobit_eshniyozov.lesson_4_if_statement.level_3;
+package student_sobit_eshniyozov.lesson_4_if_statement.level_3.Task_9;
 
 import java.util.Scanner;
 
-class СomparingThreeDigitsDemo {
+public class IncreasingOrDecreasingDemo {
     public static void main(String[] args) {
 
         Scanner inPutNumber = new Scanner(System.in);
@@ -13,7 +13,7 @@ class СomparingThreeDigitsDemo {
         System.out.println("Write number three:");
         int savedNumberThree = inPutNumber.nextInt();
 
-        СomparingThreeDigits biggerDigit = new СomparingThreeDigits(savedNumberOne, savedNumberTwo, savedNumberThree);
-        biggerDigit.showСomparingThreeDigits();
+        IncreasingOrDecreasing increasingOrDecreasing = new IncreasingOrDecreasing(savedNumberOne, savedNumberTwo, savedNumberThree);
+        increasingOrDecreasing.showIncreasingOrDecreasing();
     }
 }

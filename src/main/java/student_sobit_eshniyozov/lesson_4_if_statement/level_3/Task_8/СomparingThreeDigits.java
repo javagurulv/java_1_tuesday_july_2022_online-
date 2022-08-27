@@ -1,4 +1,4 @@
-package student_sobit_eshniyozov.lesson_4_if_statement.level_3;
+package student_sobit_eshniyozov.lesson_4_if_statement.level_3.Task_8;
 //        Write a Java program that accepts three numbers and prints:
 //        - "All numbers are equal" if all three numbers are equal,
 //        - "All numbers are different" if all three numbers are different

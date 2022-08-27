@@ -11,7 +11,7 @@ class EqualsOrDifferentDemo {
         System.out.println("Write number two:");
         int savedNumberTwo = inPutNumber.nextInt();
 
-        EqualsOrDifferent biggerDigit = new EqualsOrDifferent(savedNumberOne, savedNumberTwo);
-        biggerDigit.showEqualsOrDifferent();
+        EqualsOrDifferent equalsOrDifferent = new EqualsOrDifferent(savedNumberOne, savedNumberTwo);
+        equalsOrDifferent.showEqualsOrDifferent();
     }
 }
