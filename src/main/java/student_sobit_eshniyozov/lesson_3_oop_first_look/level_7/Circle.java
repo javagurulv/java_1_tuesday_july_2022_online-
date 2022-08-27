@@ -8,13 +8,13 @@ import teacher.codereview.CodeReviewComment;
 @CodeReviewComment(teacher = "Число PI это константа. Объяви ее правильно!")
 class Circle {
     double radius;
-    double pi = 3.14;
+    double PI = 3.14;
     Circle(double radius){
         this.radius = radius;
         }
     void calculateArea(){
 
-        double result=this.pi*Math.pow(this.radius,2);
+        double result=this.PI*Math.pow(this.radius,2);
         System.out.println("Area of circle is: "+result);
     }
 
