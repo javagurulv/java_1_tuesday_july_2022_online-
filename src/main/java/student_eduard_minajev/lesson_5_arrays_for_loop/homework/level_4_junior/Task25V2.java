@@ -4,7 +4,7 @@
 - заполните массив числами полученными от пользователя;
 - распечатайте на консоль все элементы массива. */
 
-package student_eduard_minajev.lesson_5_arrays_for_loop.homework.leve_4_junior;
+package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_4_junior;
 
 import java.util.Scanner;
 
