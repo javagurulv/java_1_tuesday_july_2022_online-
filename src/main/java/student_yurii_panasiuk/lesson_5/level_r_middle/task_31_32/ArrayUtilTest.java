@@ -12,6 +12,8 @@ class ArrayUtilTest {
     public static void main(String[] args) {
         ArrayUtilTest test = new ArrayUtilTest();
         test.shouldCreateArray();
+        test.printRandomArray();
+
     }
 
      void shouldCreateArray() {
@@ -19,6 +21,13 @@ class ArrayUtilTest {
         int [] testLength = ArrayUtil.createArray(10); // тестовый образец
          System.out.print("Length test is ");
          testResult(testLength.length == 10 );
+    }
+
+    void printRandomArray (){
+        int [] testFilling = ArrayUtil.createArray(10);
+        ArrayUtil.fillArrayWithRandomNumbers(testFilling);
+        ArrayUtil.printArrayToConsole(testFilling);
+
     }
 
 
