@@ -1,4 +1,4 @@
-package student_sobit_eshniyozov.lesson_4_if_statement.level_1;
+package student_sobit_eshniyozov.lesson_4_if_statement.level_1.Task_4;
 
 //        Написать программу, которая запрашивает у пользователя
 //        целое число и выводит на консоль чётное оно или нет.
