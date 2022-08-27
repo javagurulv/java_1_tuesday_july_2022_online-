@@ -1,6 +1,5 @@
 package student_olegs_radigins.lesson_4.level_4.task_11;
 
-import java.awt.desktop.ScreenSleepEvent;
 
 class Calculator {
     public int sum(int firstNumber, int secondNumber) {
