@@ -13,6 +13,8 @@ class ArrayUtilTest {
         ArrayUtilTest test = new ArrayUtilTest();
         test.shouldCreateArray();
         test.printRandomArray();
+        test.shouldFindMaxNumber();
+
 
     }
 
@@ -30,7 +32,11 @@ class ArrayUtilTest {
 
     }
 
-
+    void shouldFindMaxNumber() {
+        System.out.print("\n"+"Max number test is ");
+        int [] testFilling = {1, 2, 3, 4, 5, 6};
+        testResult((ArrayUtil.findMaxNumber(testFilling)) == 6);
+    }
 
 
 

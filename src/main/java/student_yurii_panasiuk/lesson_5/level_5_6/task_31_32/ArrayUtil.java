@@ -23,11 +23,13 @@ class ArrayUtil {
         }
     }
 
-    int findMaxNumber(int[] array) {
+    static int findMaxNumber(int[] array) {
         int [] sortArray = array;
          Arrays.sort(sortArray);
         return sortArray[sortArray.length-1];
     }
+
+
 
     }
 
