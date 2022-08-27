@@ -29,7 +29,11 @@ class ArrayUtil {
         return sortArray[sortArray.length-1];
     }
 
-
+    public static int findMinNumber(int[] array) {
+        int [] sortArray = array;
+        Arrays.sort(sortArray);
+        return sortArray[0];
+    }
 
     }
 

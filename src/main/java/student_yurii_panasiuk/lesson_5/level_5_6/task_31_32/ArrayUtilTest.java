@@ -14,7 +14,7 @@ class ArrayUtilTest {
         test.shouldCreateArray();
         test.printRandomArray();
         test.shouldFindMaxNumber();
-
+        test.shouldFindMinNumber();
 
     }
 
@@ -38,6 +38,11 @@ class ArrayUtilTest {
         testResult((ArrayUtil.findMaxNumber(testFilling)) == 6);
     }
 
+    public void shouldFindMinNumber() {
+        System.out.print("\n"+"Min number test is ");
+        int [] testFilling = {1, 2, 3, 4, 5, 6};
+        testResult((ArrayUtil.findMinNumber(testFilling)) == 1);
+    }
 
 
 
@@ -47,5 +52,6 @@ class ArrayUtilTest {
         else {System.out.println(" FAIL");}
 
     }
+
 
 }
