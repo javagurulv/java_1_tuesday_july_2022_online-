@@ -12,11 +12,12 @@ public class Task_14 {
         Integer[] numbers = new Integer[10];
         int i;
         int randomUpperLevel =10;
+        int randomLoverLevel =1;
         int numbersSum = 0;
         int numbersAverage=0;
         for (i = 0; i < numbers.length; i++) {
 
-            numbers[i]=(int) (Math.random() * randomUpperLevel);
+            numbers[i]=(int) (randomLoverLevel+Math.random() * randomUpperLevel);
         }
 
         for (i = 0; i < numbers.length; i++) {

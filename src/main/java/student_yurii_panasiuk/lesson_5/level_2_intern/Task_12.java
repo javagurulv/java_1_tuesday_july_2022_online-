@@ -16,10 +16,11 @@ public class Task_12 {
         Integer[] numbers = new Integer[10];
         int i;
         int randomUpperLevel =10;
+        int randomLoverLevel = 1;
 
         for (i = 0; i < numbers.length; i++) {
 
-            numbers[i]=(int) (Math.random() * randomUpperLevel);
+            numbers[i]=(int) (randomLoverLevel+Math.random() * randomUpperLevel);
         }
 
         for (i = 0; i < numbers.length; i++) {
