@@ -12,15 +12,16 @@ class ArrayUtil {
         int randomUpperLevel =10;
         int randomLoverLevel =1;
 
-        for (int i = 0; i < array.length; i++) {
-            array[i]=(int) (randomLoverLevel+Math.random() * randomUpperLevel);
-        }
+        Arrays.setAll(array, i -> (int) (randomLoverLevel + Math.random() * randomUpperLevel));
     }
 
     static void printArrayToConsole(int[] array) {
-        for (int j : array) {
+       /* for (int j : array) {
         System.out.print(j + " ");
         }
+        */                                                  // оставляем это как пример for each
+        System.out.print(Arrays.toString(array));
+
     }
 
     static int findMaxNumber(int[] array) {
@@ -32,6 +33,7 @@ class ArrayUtil {
      static int findMinNumber(int[] array) {
         int [] sortArray = array;
         Arrays.sort(sortArray);
+
         return sortArray[0];
     }
 

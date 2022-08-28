@@ -44,14 +44,9 @@ class ArrayUtilTest {
         testResult((ArrayUtil.findMinNumber(testFilling)) == 1);
     }
 
-
-
     static void testResult(boolean check) {
-
         if (check){ System.out.println(" OK");}
         else {System.out.println(" FAIL");}
-
     }
-
 
 }

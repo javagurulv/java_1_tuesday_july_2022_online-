@@ -27,6 +27,8 @@ import java.util.List;
            j++;
        }                                                // вариант 3 цикл while
 
+        System.out.print("\n" + Arrays.toString(numbers));      // вариант 4 используя метод toString делаем из массива строку
+
 
     }
 }
