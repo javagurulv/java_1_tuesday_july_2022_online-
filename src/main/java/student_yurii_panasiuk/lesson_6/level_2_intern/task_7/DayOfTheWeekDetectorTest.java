@@ -5,7 +5,7 @@ package student_yurii_panasiuk.lesson_6.level_2_intern.task_7;
      public static void main(String[] args) {
      DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
 
-     System.out.print("DayOfTheWeekDetector test - = ");
+     System.out.print("DayOfTheWeekDetector test - ");
      testResult (detector.findDayOfTheWeek(1).equals("Monday") &&
                        detector.findDayOfTheWeek(2).equals("Tuesday") &&
                        detector.findDayOfTheWeek(3).equals("Wednesday") &&
