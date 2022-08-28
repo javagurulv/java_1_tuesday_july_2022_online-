@@ -31,8 +31,8 @@ public class ArrayUtil {
         int [] randomArray = new int[number];
         Random random = new Random();
         for (int i = 0; i < randomArray.length; i++){
-            randomArray[i] = random.nextInt(1000);
-             /*System.out.println(randomArray[i]);*/
+            randomArray[i] = random.nextInt(100);
+             /*System.out.println(randomArray[i]); // сделал протестировать */
         } return randomArray;
     }
 
@@ -51,7 +51,7 @@ public class ArrayUtil {
         for (int i = 0; i < array.length;){
             if (array[i] > maxValueOfArray){
                 maxValueOfArray = array[i];
-            }System.out.println(maxValueOfArray);
+            }System.out.println("Max value is " + maxValueOfArray);
         }return maxValueOfArray;
     }
 
@@ -62,7 +62,7 @@ public class ArrayUtil {
         for (int i = 0; i < array.length;){
             if(array[i] < minValueOfArray){
                 minValueOfArray = array[i];
-            }System.out.println(minValueOfArray);
+            }System.out.println("The min value is " + minValueOfArray);
         }return minValueOfArray;
     }
 
