@@ -20,7 +20,7 @@ class ArrayUtil {
         System.out.print(j + " ");
         }
         */                                                  // оставляем это как пример for each
-        System.out.print(Arrays.toString(array));
+        System.out.print(Arrays.toString(array));       //видимо тут массив удалится. проверим.
 
     }
 
