@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_5.level_5_6.task_31_32;
+package student_yurii_panasiuk.lesson_5.level_5_6.task_31_40;
 
 import java.util.Arrays;
 
@@ -19,17 +19,17 @@ class ArrayUtil {
 
     static void printArrayToConsole(int[] array) {
         for (int j : array) {
-            System.out.print(j + " ");
+        System.out.print(j + " ");
         }
     }
 
     static int findMaxNumber(int[] array) {
         int [] sortArray = array;
-         Arrays.sort(sortArray);
+        Arrays.sort(sortArray);
         return sortArray[sortArray.length-1];
     }
 
-    public static int findMinNumber(int[] array) {
+     static int findMinNumber(int[] array) {
         int [] sortArray = array;
         Arrays.sort(sortArray);
         return sortArray[0];

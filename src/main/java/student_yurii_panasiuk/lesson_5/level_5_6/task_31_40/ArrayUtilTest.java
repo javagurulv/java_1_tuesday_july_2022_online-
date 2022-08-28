@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_5.level_5_6.task_31_32;
+package student_yurii_panasiuk.lesson_5.level_5_6.task_31_40;
 
 /*Создайте класс ArrayUtilTest.
         В этом классе напишите автоматический тест
