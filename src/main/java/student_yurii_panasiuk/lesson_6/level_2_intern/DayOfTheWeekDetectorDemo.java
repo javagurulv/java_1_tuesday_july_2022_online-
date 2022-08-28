@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_6.level_2_intern.task_7;
+package student_yurii_panasiuk.lesson_6.level_2_intern;
 
 class DayOfTheWeekDetectorDemo {
 
