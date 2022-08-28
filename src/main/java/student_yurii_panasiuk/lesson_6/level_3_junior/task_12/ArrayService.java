@@ -9,18 +9,18 @@ package student_yurii_panasiuk.lesson_6.level_3_junior.task_12;
      int givenNumber;
      int[] array = new int[givenNumber];
 
-
-     public ArrayService(int[] array, int givenNumber) {
+     ArrayService(int[] array, int givenNumber) {
          this.array = array;
          this.givenNumber = givenNumber;
      }
 
-
-
      boolean checkForNumber()   {
          boolean result = false;
-                  for (int j : this.array) {
-             if (j == this.givenNumber) { result = true;}
+           for (int j : this.array) {
+               if (j == this.givenNumber) {
+                   result = true;
+                   break;
+               }
              }
          return result;
          }

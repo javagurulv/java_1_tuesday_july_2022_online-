@@ -4,7 +4,7 @@ public class ArrayServiceDemo {
 
     public static void main(String[] args) {
 
-      ArrayService newArrayCheck = new ArrayService(new int[]{1, 2, 3, 4}, 4);
+      ArrayService newArrayCheck = new ArrayService(new int[]{1, 2, 3, 4}, 5);
 
 
         System.out.println(newArrayCheck.checkForNumber());
