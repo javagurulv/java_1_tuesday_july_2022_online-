@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_12_17;
+package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_12_17.with_other;
 
 class ArrayService {
 
