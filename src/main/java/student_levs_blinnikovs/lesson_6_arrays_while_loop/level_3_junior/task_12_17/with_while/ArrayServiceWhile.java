@@ -25,5 +25,17 @@ class ArrayServiceWhile {
         return occurredCount;
     }
 
+    public boolean replaceFirstOccurrence(int[] array, int numberToFind, int replacingNumber) {
+        int i = 0;
+        while (i < array.length) {
+            if (array[i] == numberToFind) {
+                array[i] = replacingNumber;
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
 
 }
