@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_5.level_2.task_13;
+package student_ernest_aleskevics.lesson_5.level_2.task_13_till_15;
 
 import java.util.Random;
 
@@ -9,10 +9,13 @@ public class RandomNumberSum {
         printNumbersToConsole(randomNumbers);
         int sumRandomNumbers = calculateRandomNumbers(randomNumbers);
         System.out.println(sumRandomNumbers);
+        double avarageRandomNumbers = calculateAvarageRandomNumbers(sumRandomNumbers,randomNumbers);
+        System.out.println(avarageRandomNumbers);
+
     }
 
-    private static int[] generateRandomNumbers(int numberCount) {
-        int[] randomNumbers = new int[numberCount];
+    private static int[] generateRandomNumbers(int randomNumberCount) {
+        int[] randomNumbers = new int[randomNumberCount];
         Random random = new Random();
         for (int i = 0; i < randomNumbers.length; i++) {
             int newRandomNumber = random.nextInt(10);
@@ -32,6 +35,10 @@ public class RandomNumberSum {
             System.out.println(randomNumbers[i]);
         }
     }
+    private static double calculateAvarageRandomNumbers (int sumRandomNumbers,int randomNumbers[]) {
+        return ((double) sumRandomNumbers / randomNumbers.length);
+    }
+
 }
 
 
