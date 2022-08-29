@@ -1,4 +1,4 @@
-package student_ivan_mostepanov.lesson_3_oop_first_look.level_7_senior.task30;
+package student_ivan_mostepanov.lesson_3_oop_first_look.level_7_senior.task_30;
 
 class CircleDemo {
 
