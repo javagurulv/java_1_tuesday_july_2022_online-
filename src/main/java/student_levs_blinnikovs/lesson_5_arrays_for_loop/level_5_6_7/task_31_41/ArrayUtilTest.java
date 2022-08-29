@@ -24,6 +24,8 @@ class ArrayUtilTest {
 import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
+import java.util.Arrays;
+
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Это не тесты, это маленькие Demo программы. "
 		+ "Тест это подготовка входных данных (не рандом если это можно),"
@@ -31,13 +33,13 @@ import teacher.codereview.CodeReviewComment;
 class ArrayUtilTest {
 
     public static void main(String[] args) {
-
         ArrayUtilTest test = new ArrayUtilTest();
-
         test.shouldCreateArray();
         test.shouldReturnMaxNumber();
         test.shouldReturnMinNumber();
-
+        test.shouldReturnElementSum();
+        test.shouldReturnElementAvg();
+        test.shouldIncrementEachElementBy();
     }
 
     public ArrayUtil prepareTestObject() {
@@ -64,16 +66,38 @@ class ArrayUtilTest {
 
     public void shouldReturnMaxNumber() {
         int[] testArray = {1,2,3};
-        int realMaxNumber = prepareTestObject().findMaxNumber(testArray);
         int expectedMaxNumber = 3;
+        int realMaxNumber = prepareTestObject().findMaxNumber(testArray);
         reportTest(prepareTestResult(compareRealExpected(realMaxNumber, expectedMaxNumber)));
     }
 
     public void shouldReturnMinNumber() {
         int[] testArray = {1,2,3};
-        int realMinNumber = prepareTestObject().findMinNumber(testArray);
         int expectedMinNumber = 1;
+        int realMinNumber = prepareTestObject().findMinNumber(testArray);
         reportTest(prepareTestResult(compareRealExpected(realMinNumber, expectedMinNumber)));
+    }
+
+    public void shouldReturnElementSum() {
+        int[] testArray = {1,2,3};
+        int expectedElementSum = 6;
+        int realElementSum = prepareTestObject().findElementSum(testArray);
+        reportTest(prepareTestResult(compareRealExpected(realElementSum, expectedElementSum)));
+    }
+
+    public void shouldReturnElementAvg() {
+        int[] testArray = {1,2,3};
+        int expectedElementAvg = 2;
+        int realElementAvg = prepareTestObject().findElementAvg(testArray);
+        reportTest(prepareTestResult(compareRealExpected(realElementAvg, expectedElementAvg)));
+    }
+
+    public void shouldIncrementEachElementBy() {
+        int[] testArray = {1,2,3};
+        int increment = 2;
+        int[] expectedIncrementedArray = {3,4,5};
+        int[] realIncrementedArray = prepareTestObject().incrementEachElementBy(testArray, increment);
+        reportTest(prepareTestResult(Arrays.equals(realIncrementedArray, expectedIncrementedArray)));
     }
 
 }

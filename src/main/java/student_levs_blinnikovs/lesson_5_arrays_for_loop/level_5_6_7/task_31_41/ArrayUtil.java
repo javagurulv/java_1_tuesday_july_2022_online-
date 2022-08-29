@@ -6,7 +6,6 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41;
 массива целых чисел указанной длины.
  */
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -94,6 +93,26 @@ public class ArrayUtil {
                 System.out.println(number);
             }
         }
+    }
+
+    public int findElementSum(int[] array) {
+        int elementSum = 0;
+        for (int element : array) {
+            elementSum += element;
+        }
+        return elementSum;
+    }
+
+    public int findElementAvg(int[] array) {
+        return findElementSum(array) / array.length;
+    }
+
+    public int[] incrementEachElementBy(int[] array, int increment) {
+        int[] incrementedNumbers = createArray(array.length);
+        for (int i = 0; i < incrementedNumbers.length; i++) {
+            incrementedNumbers[i] = array[i] + increment;
+        }
+        return incrementedNumbers;
     }
 
 }

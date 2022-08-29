@@ -9,23 +9,15 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_12;
 
 import java.util.Random;
 
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
 class ArrayRandomizer {
     public static void main(String[] args) {
-
-        int[] randomNumbers = new int[3];
-
-        Random random = new Random();
-
-        for (int i = 0; i < randomNumbers.length; i++) {
-            randomNumbers[i] = random.nextInt(100);
-        }
-
-        for (int randomNumber : randomNumbers) {
-            System.out.println(randomNumber);
-        }
-
+        ArrayUtil arrayUtil = new ArrayUtil();
+        int[] randomNumbers = arrayUtil.createArray(3);
+        arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
+        arrayUtil.printArrayToConsole(randomNumbers);
     }
 }

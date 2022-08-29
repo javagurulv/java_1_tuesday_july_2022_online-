@@ -23,4 +23,12 @@ public class Stock {
     void getPriceInformation(){
         System.out.println("Company: " + companyName + ". Current price: " + currentPrice + ". Min price: " + minPrice + ". Max price: " + maxPrice);
     }
+
+    public int getMinimumPrice(){
+        return minPrice;
+    }
+
+    public int getMaximumPrice(){
+        return maxPrice;
+    }
 }
