@@ -10,7 +10,7 @@ class Circle {
     void calculateArea() {
         System.out.println("Radius = " + radius);
         this.radius = PI * (radius * radius);
-        System.out.println("Circle area = " + radius);
+        System.out.println("Circle area = " + this.radius);
 
     }
 }
