@@ -2,8 +2,7 @@ package student_ivan_mostepanov.lesson_4_if_statement.level_1_intern;
 
 import java.util.Scanner;
 
-class Task1 {
-
+class Task2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -15,6 +14,9 @@ class Task1 {
         }
         if (number < 0) {
             System.out.println("Number is Negative!");
+        }
+        if (number == 0) {
+            System.out.println("Number is Zero!");
         }
 
     }
