@@ -9,39 +9,18 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_15;
  - выведите значение каждой ячейки на консоль.
  */
 
-import java.util.Random;
-
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
 class ArrayOps {
 
     public static void main(String[] args) {
-
-        int[] randomNumbers = new int[3];
-
-        Random random = new Random();
-
-        for (int i = 0; i < randomNumbers.length; i++) {
-            randomNumbers[i] = random.nextInt(10);
-        }
-
-        System.out.println("Random numbers: ");
-        for (int randomNumber : randomNumbers) {
-            System.out.println(randomNumber);
-        }
-
-        int[] incrementedNumbers = new int[3];
-
-        for (int i = 0; i < incrementedNumbers.length; i++) {
-            incrementedNumbers[i] = randomNumbers[i] + 2;
-        }
-
-        System.out.println("\nIncremented numbers: ");
-        for (int incrementedNumber : incrementedNumbers) {
-            System.out.println(incrementedNumber);
-        }
-
+        ArrayUtil arrayUtil = new ArrayUtil();
+        int[] randomNumbers = arrayUtil.createArray(3);
+        arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
+        arrayUtil.printArrayToConsole(randomNumbers);
+        int[] incrementedNumbers = arrayUtil.incrementEachElementBy(randomNumbers, 2);
+        arrayUtil.printArrayToConsole(incrementedNumbers);
     }
-
 }

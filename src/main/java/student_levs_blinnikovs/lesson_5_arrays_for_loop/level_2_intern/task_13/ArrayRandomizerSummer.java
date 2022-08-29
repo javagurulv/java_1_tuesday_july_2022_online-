@@ -9,27 +9,16 @@ package student_levs_blinnikovs.lesson_5_arrays_for_loop.level_2_intern.task_13;
 
 import java.util.Random;
 
+import student_levs_blinnikovs.lesson_5_arrays_for_loop.level_5_6_7.task_31_41.ArrayUtil;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
 class ArrayRandomizerSummer {
     public static void main(String[] args) {
-
-        int[] randomNumbers = new int[3];
-
-        Random random = new Random();
-
-        for (int i = 0; i < randomNumbers.length; i++) {
-            randomNumbers[i] = random.nextInt(100);
-        }
-
-        int elementSum = 0;
-
-        for (int randomNumber : randomNumbers) {
-            elementSum += randomNumber;
-        }
-
+        ArrayUtil arrayUtil = new ArrayUtil();
+        int[] randomNumbers = arrayUtil.createArray(3);
+        arrayUtil.fillArrayWithRandomNumbers(randomNumbers);
+        int elementSum = arrayUtil.findElementSum(randomNumbers);
         System.out.println("Total elements sum is: " + elementSum);
-
     }
 }
