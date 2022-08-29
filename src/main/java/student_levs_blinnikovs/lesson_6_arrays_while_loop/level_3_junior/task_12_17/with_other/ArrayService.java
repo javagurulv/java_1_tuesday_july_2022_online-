@@ -31,4 +31,15 @@ class ArrayService {
         return false;
     }
 
+    public int replaceAllOccurrences(int[] array, int numberToFind, int replacingNumber) {
+        int replaceCount = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == numberToFind) {
+                array[i] = replacingNumber;
+                replaceCount++;
+            }
+        }
+        return replaceCount;
+    }
+
 }

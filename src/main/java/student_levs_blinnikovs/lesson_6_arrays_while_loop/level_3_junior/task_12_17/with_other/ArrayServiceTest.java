@@ -66,6 +66,26 @@ public class ArrayServiceTest {
         checkTestResult((reallyReplaced == expectedReplaced), "Shouldn't replace as doesn't occur test");
     }
 
+    private void shouldReplaceAllOccurrences() {
+        int[] testArray = {1,2,3,3};
+        int numberToFind = 3;
+        int newNumber = 5;
+        int expectedReplacedCount = 2;
+        ArrayService arrayService = new ArrayService();
+        int realReplacedCount = arrayService.replaceAllOccurrences(testArray, numberToFind, newNumber);
+        checkTestResult((realReplacedCount == expectedReplacedCount), "Replace two occurrences test");
+    }
+
+    private void shouldNotReplaceAllAsThereAreNoOccurrences() {
+        int[] testArray = {1,2,3,3};
+        int numberToFind = 4;
+        int newNumber = 5;
+        int expectedReplacedCount = 0;
+        ArrayService arrayService = new ArrayService();
+        int realReplacedCount = arrayService.replaceAllOccurrences(testArray, numberToFind, newNumber);
+        checkTestResult((realReplacedCount == expectedReplacedCount), "Replace zero occurrences test");
+    }
+
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
         test.shouldContain();
@@ -76,6 +96,9 @@ public class ArrayServiceTest {
 
         test.shouldReplaceFirstOccurrence();
         test.shouldNotReplaceAsThereAreNoOccurrences();
+
+        test.shouldReplaceAllOccurrences();
+        test.shouldNotReplaceAllAsThereAreNoOccurrences();
 
     }
 }
