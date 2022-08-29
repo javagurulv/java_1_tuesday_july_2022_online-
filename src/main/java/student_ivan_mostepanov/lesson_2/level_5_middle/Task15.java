@@ -1,6 +1,6 @@
 package student_ivan_mostepanov.lesson_2.level_5_middle;
 
-class Task_15 {
+class Task15 {
 
     public static void main (String[]args){
         System.out.println("Writing... ");

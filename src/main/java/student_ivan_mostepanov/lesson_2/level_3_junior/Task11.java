@@ -2,7 +2,7 @@ package student_ivan_mostepanov.lesson_2.level_3_junior;
 
 import java.util.Scanner;
 
-class Task_11 {
+class Task11 {
 
     public static void main (String[]args){
 

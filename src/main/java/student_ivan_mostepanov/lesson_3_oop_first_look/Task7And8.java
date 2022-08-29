@@ -1,6 +1,6 @@
 package student_ivan_mostepanov.lesson_3_oop_first_look;
 
-class TaskNr_7_8 {
+class Task7And8 {
 
 
 

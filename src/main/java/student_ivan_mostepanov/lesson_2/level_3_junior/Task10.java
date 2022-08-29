@@ -2,7 +2,7 @@ package student_ivan_mostepanov.lesson_2.level_3_junior;
 
 import java.util.Scanner;
 
-class Task_10 {
+class Task10 {
 
     static final double PI = 3.14159265;
 

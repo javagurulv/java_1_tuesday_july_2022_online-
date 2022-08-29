@@ -5,7 +5,7 @@ import java.util.Scanner;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-    public class Task_8 {
+    public class Task8 {
 
 
         public static void main(String[] args) {
