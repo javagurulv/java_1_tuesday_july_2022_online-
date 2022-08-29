@@ -21,5 +21,14 @@ class ArrayService {
         return occurredCount;
     }
 
+    public boolean replaceFirstOccurrence(int[] array, int numberToFind, int replacingNumber) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == numberToFind) {
+                array[i] = replacingNumber;
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

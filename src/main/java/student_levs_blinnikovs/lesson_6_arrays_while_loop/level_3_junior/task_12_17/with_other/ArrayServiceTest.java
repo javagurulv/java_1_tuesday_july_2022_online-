@@ -46,11 +46,36 @@ public class ArrayServiceTest {
         checkTestResult((realOccurrences == expectedOccurrences), "Doesn't occur test");
     }
 
+    private void shouldReplaceFirstOccurrence() {
+        int[] testArray = {1,2,3,3};
+        int numberToFind = 3;
+        int newNumber = 5;
+        boolean expectedReplaced = true; // можно конечно ещё потестить что не меняет последний элемент.. int expectedAtIndex4 or expectedSameAfterFirstOccurrence...
+        ArrayService arrayService = new ArrayService();
+        boolean reallyReplaced = arrayService.replaceFirstOccurrence(testArray, numberToFind, newNumber);
+        checkTestResult((reallyReplaced == expectedReplaced), "Replacing first occurrence test");
+    }
+
+    private void shouldNotReplaceAsThereAreNoOccurrences() {
+        int[] testArray = {1,2,3,3};
+        int numberToFind = 4;
+        int newNumber = 5;
+        boolean expectedReplaced = false;
+        ArrayService arrayService = new ArrayService();
+        boolean reallyReplaced = arrayService.replaceFirstOccurrence(testArray, numberToFind, newNumber);
+        checkTestResult((reallyReplaced == expectedReplaced), "Shouldn't replace as doesn't occur test");
+    }
+
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
         test.shouldContain();
         test.shouldNotContain();
+
         test.shouldOccurTwoTimes();
         test.shouldNotOccur();
+
+        test.shouldReplaceFirstOccurrence();
+        test.shouldNotReplaceAsThereAreNoOccurrences();
+
     }
 }
