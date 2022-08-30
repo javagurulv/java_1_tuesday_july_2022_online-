@@ -2,7 +2,7 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_2.Task_11;
 
 import java.util.Scanner;
 
-public class GroupTwo {
+class GroupTwo {
     public static void main(String[] args) {
 
         int[] group = new int[10];
