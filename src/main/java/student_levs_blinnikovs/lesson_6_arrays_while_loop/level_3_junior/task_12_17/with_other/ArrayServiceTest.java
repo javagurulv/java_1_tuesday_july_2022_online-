@@ -104,6 +104,22 @@ public class ArrayServiceTest {
         checkTestResult((Arrays.equals(testArray, expectedRevertedArray)), "Revert odd array test");
     }
 
+    private void shouldSort() {
+        int[] testArray = {4,2,1,3};
+        int[] expectedSortedArray = {1,2,3,4};
+        ArrayService arrayService = new ArrayService();
+        arrayService.sort(testArray);
+        checkTestResult((Arrays.equals(testArray, expectedSortedArray)), "Sort array test");
+    }
+
+    private void shouldNotSortSorted() {
+        int[] testArray = {1,2,3,4};
+        int[] expectedSortedArray = {1,2,3,4};
+        ArrayService arrayService = new ArrayService();
+        arrayService.sort(testArray);
+        checkTestResult((Arrays.equals(testArray, expectedSortedArray)), "Shouldn't sort sorted array test");
+    }
+
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
         test.shouldContain();
@@ -120,6 +136,9 @@ public class ArrayServiceTest {
 
         test.shouldRevertEven();
         test.shouldRevertOdd();
+
+        test.shouldSort();
+        test.shouldNotSortSorted();
 
     }
 }

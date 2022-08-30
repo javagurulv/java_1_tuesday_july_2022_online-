@@ -50,4 +50,38 @@ class ArrayService {
             array[array.length-1-i] = buffer;
         }
     }
+
+    public void sort(int[] array) {
+        boolean swapped = true;
+        int j = 0;
+        int buffer;
+        while (swapped) {
+            swapped = false;
+            j++;
+            for (int i = 0; i < array.length - j; i++) {
+                if (array[i] > array[i + 1]) {
+                    buffer = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = buffer;
+                    swapped = true;
+                }
+            }
+        }
+    }
+
 }
+
+/*
+        int[] array = {4,2,1,3};  needs to become 1 2 3 4
+
+        4 2 1 3   4 is not smaller than 4
+        4 2 1 3   2 is smaller than 4, needs to be before it
+        2 4 1 3   2 is not smaller than 2
+        2 4 1 3   4 is not smaller than 2
+        2 4 1 3   1 is smaller than 2, needs to be before it
+        1 2 4 3   bla bla
+        1 2 4 3   3 is smaller than 4, needs to be before it
+
+
+
+ */
