@@ -47,9 +47,9 @@ class ArrayService {
         int buffer2;
         for (int i = 0; i < array.length/2; i++) {
             buffer1 = array[i];
-            buffer2 = array[array.length-(i+1)];
+            buffer2 = array[array.length-1-i];
             array[i] = buffer2;
-            array[array.length-(i+1)] = buffer1;
+            array[array.length-1-i] = buffer1;
         }
     }
 }
