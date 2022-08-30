@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_5.level_2.task_12;
+package student_olegs_radigins.lesson_5.level_2.tasks_12_13_14_15;
 
 import java.util.Random;
 
