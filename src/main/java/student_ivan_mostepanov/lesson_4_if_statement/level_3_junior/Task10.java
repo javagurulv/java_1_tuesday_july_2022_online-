@@ -16,19 +16,6 @@ class Task10 {
 
 
         /*
-        <= <,
-        <= >,
-        >= <,
-        >= >,
-        < <=,
-        < >=,
-        > <=,
-        > >=,
-        < <,
-        < >,
-        > <,
-        > >,
-
         (x>y) & (y>z)=x
         (x<y) & (y>z)=y
         (x>y) & (x<z)=z
@@ -42,26 +29,50 @@ class Task10 {
         (x=y) & (y=z)=x
               */
 
-        if ((firstNumber > secondNumber) && (secondNumber < thirdNumber))
+        if (((firstNumber > secondNumber) && (secondNumber > thirdNumber)))
         {
             System.out.println("Number " + firstNumber + " is bigger");
         }
-
-        else if ((firstNumber < secondNumber) && (secondNumber > thirdNumber))
+        else if (((firstNumber < secondNumber) && (secondNumber > thirdNumber)))
         {
             System.out.println("Number " + secondNumber + " is bigger");
         }
-        else if ((firstNumber < secondNumber) && (secondNumber < thirdNumber))
+        else if (((firstNumber > secondNumber) && (firstNumber < thirdNumber)))
         {
             System.out.println("Number " + thirdNumber + " is bigger");
         }
-
-
-
-        else {
-            System.out.println("Neither all are equal or different ");
+        else if (((firstNumber < secondNumber) && (secondNumber < thirdNumber)))
+        {
+            System.out.println("Number " + thirdNumber + " is bigger");
         }
-
+        else if (((firstNumber > secondNumber) && (secondNumber == thirdNumber)))
+        {
+            System.out.println("Number " + firstNumber + " is bigger");
+        }
+        else if (((firstNumber < secondNumber) && (secondNumber == thirdNumber)))
+        {
+            System.out.println("Number " + secondNumber + " is bigger");
+        }
+        else if (((firstNumber == secondNumber) && (firstNumber > thirdNumber)))
+        {
+            System.out.println("Number " + firstNumber + " is bigger");
+        }
+        else if (((firstNumber == secondNumber) && (secondNumber < thirdNumber)))
+        {
+            System.out.println("Number " + thirdNumber + " is bigger");
+        }
+        else if (((firstNumber == thirdNumber) && (secondNumber > thirdNumber)))
+        {
+            System.out.println("Number " + secondNumber + " is bigger");
+        }
+        else if (((firstNumber == thirdNumber) && (secondNumber < thirdNumber)))
+        {
+            System.out.println("Number " + thirdNumber + " is bigger");
+        }
+        else if (((firstNumber == secondNumber) && (secondNumber == thirdNumber)))
+        {
+            System.out.println("Number " + firstNumber + " is bigger");
+        }
 
     }
 
