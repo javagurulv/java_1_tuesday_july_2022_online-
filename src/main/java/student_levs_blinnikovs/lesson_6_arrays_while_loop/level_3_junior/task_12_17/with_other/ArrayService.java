@@ -43,13 +43,11 @@ class ArrayService {
     }
 
     public void revert(int[] array) {
-        int buffer1;
-        int buffer2;
+        int buffer;
         for (int i = 0; i < array.length/2; i++) {
-            buffer1 = array[i];
-            buffer2 = array[array.length-1-i];
-            array[i] = buffer2;
-            array[array.length-1-i] = buffer1;
+            buffer = array[i];
+            array[i] = array[array.length-1-i];
+            array[array.length-1-i] = buffer;
         }
     }
 }
