@@ -28,6 +28,18 @@ class Task10 {
         < >,
         > <,
         > >,
+
+        (x>y) & (y>z)=x
+        (x<y) & (y>z)=y
+        (x>y) & (x<z)=z
+        (x<y) & (y<z)=z
+        (x>y) & (y=z)=x
+        (x<y) & (y=z)=y
+        (x=y) & (x>z)=x
+        (x=y) & (x<z)=z
+        (x=z) & (y>z)=y
+        (x=z) & (y<z)=z
+        (x=y) & (y=z)=x
               */
 
         if ((firstNumber > secondNumber) && (secondNumber < thirdNumber))
