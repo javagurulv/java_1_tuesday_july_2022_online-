@@ -22,7 +22,7 @@ public static void main (String[]args) {
         System.out.println(secondNumber + " is lager");
 
     }
-else if(thirdNumber>firstNumber && thirdNumber>secondNumber)System.out.println(thirdNumber + " is lager");
+else if (thirdNumber>firstNumber && thirdNumber>secondNumber)System.out.println(thirdNumber + " is lager");
 
 
  if (firstNumber==secondNumber&& firstNumber==thirdNumber && secondNumber==thirdNumber) System.out.println("All numbers are equal");
