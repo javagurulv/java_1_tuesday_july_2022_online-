@@ -13,7 +13,7 @@ class ArrayNumbers {
         numbers[7] = 8;
         numbers[8] = 9;
         numbers[9] = 10;
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < numbers.length; i++){
             System.out.println(numbers[i]);
         }
 
