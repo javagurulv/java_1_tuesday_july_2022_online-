@@ -42,4 +42,14 @@ class ArrayService {
         return replaceCount;
     }
 
+    public void revert(int[] array) {
+        int buffer1;
+        int buffer2;
+        for (int i = 0; i < array.length/2; i++) {
+            buffer1 = array[i];
+            buffer2 = array[array.length-(i+1)];
+            array[i] = buffer2;
+            array[array.length-(i+1)] = buffer1;
+        }
+    }
 }

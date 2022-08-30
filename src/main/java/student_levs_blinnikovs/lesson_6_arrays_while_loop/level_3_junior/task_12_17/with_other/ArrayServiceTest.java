@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_12_17.with_other;
 
+import java.util.Arrays;
+
 public class ArrayServiceTest {
 
     private void checkTestResult(boolean condition, String testName) {
@@ -86,6 +88,22 @@ public class ArrayServiceTest {
         checkTestResult((realReplacedCount == expectedReplacedCount), "Replace zero occurrences test");
     }
 
+    private void shouldRevertEven() {
+        int[] testArray = {1,2,3,4};
+        int[] expectedRevertedArray = {4,3,2,1};
+        ArrayService arrayService = new ArrayService();
+        arrayService.revert(testArray);
+        checkTestResult((Arrays.equals(testArray, expectedRevertedArray)), "Revert even array test");
+    }
+
+    private void shouldRevertOdd() {
+        int[] testArray = {1,2,3,4,5};
+        int[] expectedRevertedArray = {5,4,3,2,1};
+        ArrayService arrayService = new ArrayService();
+        arrayService.revert(testArray);
+        checkTestResult((Arrays.equals(testArray, expectedRevertedArray)), "Revert odd array test");
+    }
+
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
         test.shouldContain();
@@ -99,6 +117,9 @@ public class ArrayServiceTest {
 
         test.shouldReplaceAllOccurrences();
         test.shouldNotReplaceAllAsThereAreNoOccurrences();
+
+        test.shouldRevertEven();
+        test.shouldRevertOdd();
 
     }
 }
