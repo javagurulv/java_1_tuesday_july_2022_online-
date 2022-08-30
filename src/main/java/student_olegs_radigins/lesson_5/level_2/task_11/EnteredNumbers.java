@@ -5,12 +5,12 @@ import java.util.Scanner;
 class EnteredNumbers {
     public static void main(String[] args) {
         int[] numbers = new int[10];
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < numbers.length; i++){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter number " +(i + 1) + ":");
             numbers[i] = scanner.nextInt();
         }
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < numbers.length; i++){
             System.out.println(numbers[i]);
         }
     }
