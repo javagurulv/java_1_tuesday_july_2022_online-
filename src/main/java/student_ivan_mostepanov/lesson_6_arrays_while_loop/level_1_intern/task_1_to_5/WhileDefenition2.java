@@ -1,6 +1,6 @@
-package student_ivan_mostepanov.lesson_6_arrays_while_loop.level_1_intern;
+package student_ivan_mostepanov.lesson_6_arrays_while_loop.level_1_intern.task_1_to_5;
 
-public class WhileDefenition2 {
+class WhileDefenition2 {
 
     public static void main(String[] args) {
         int i = 1;
