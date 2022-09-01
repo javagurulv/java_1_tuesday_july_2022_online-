@@ -4,35 +4,33 @@ class TicTacToeDemo {
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
 
-        // here horizontals mean verticals. Array is transposed because of the way how it's presented
+        int[][] noOneWinningGame = {{-1, -1, -1},
+                                    {-1, -1, -1},
+                                    {-1, -1, -1}};
 
-        int[][] emptyField = {  {-1, -1, -1},
-                                {-1, -1, -1},
-                                {-1, -1, -1}};
+        int[][] playerOneWinningGame1 = {   {0,  0,  0},
+                                            {0, -1, -1},
+                                            {0, -1, -1}};
 
-        int[][] playerOneWinningGame1 = {{0, -1, -1},
-                                        {0, -1, -1},
-                                        {0, -1, -1}};
+        int[][] playerOneWinningGame2 = {   {-1, -1, -1},
+                                            { 0,  0,  0},
+                                            {-1, -1, -1}};
 
-        int[][] playerOneWinningGame2 = {{-1, 0, -1},
-                                        {-1, 0, -1},
-                                        {-1, 0, -1}};
+        int[][] playerOneWinningGame3 = {   {-1, -1, -1},
+                                            {-1, -1, -1},
+                                            { 0,  0,  0}};
 
-        int[][] playerOneWinningGame3 = {{-1, -1, 0},
-                                        {-1, -1, 0},
-                                        {-1, -1, 0}};
+        int[][] playerTwoWinningGame4 = {   { 1,  1,  1},
+                                            {-1, -1, -1},
+                                            {-1, -1, -1}};
 
-        int[][] playerTwoWinningGame4 = {{1, -1, -1},
-                                        {1, -1, -1},
-                                        {1, -1, -1}};
+        int[][] playerTwoWinningGame5 = {   {-1, -1, -1},
+                                            { 1,  1,  1},
+                                            {-1, -1, -1}};
 
-        int[][] playerTwoWinningGame5 = {{-1, 1, -1},
-                                        {-1, 1, -1},
-                                        {-1, 1, -1}};
-
-        int[][] playerTwoWinningGame6 = {{-1, -1, 1},
-                                        {-1, -1, 1},
-                                        {-1, -1, 1}};
+        int[][] playerTwoWinningGame6 = {   {-1, -1, -1},
+                                            {-1, -1, -1},
+                                            {1,   1,  1}};
 
         int playerOne = 0;
         boolean isGame1Player1Win = game.isWinPositionForHorizontals(playerOneWinningGame1, playerOne);
@@ -53,6 +51,10 @@ class TicTacToeDemo {
 
         boolean isGame6Player2Win = game.isWinPositionForHorizontals(playerTwoWinningGame6, playerTwo);
         System.out.println("Expected win: Player Two (1): " + isGame6Player2Win);
+
+        int emptyField = -1;
+        boolean noOneWins = game.isWinPositionForHorizontals(noOneWinningGame, emptyField);
+        System.out.println("No one wins as field is empty: " + noOneWins);
 
     }
 }

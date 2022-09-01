@@ -38,19 +38,19 @@ class TicTacToe {
 
     private boolean isHorizontalOneFilledBy(int[][] field, int playerToCheck) {
         return field[0][0] == playerToCheck
-                && field[1][0] == playerToCheck
-                && field[2][0] == playerToCheck;
+                && field[0][1] == playerToCheck
+                && field[0][2] == playerToCheck;
     }
 
     private boolean isHorizontalTwoFilledBy(int[][] field, int playerToCheck) {
-        return field[0][1] == playerToCheck
+        return field[1][0] == playerToCheck
                 && field[1][1] == playerToCheck
-                && field[2][1] == playerToCheck;
+                && field[1][2] == playerToCheck;
     }
 
     private boolean isHorizontalThreeFilledBy(int[][] field, int playerToCheck) {
-        return field[0][2] == playerToCheck
-                && field[1][2] == playerToCheck
+        return field[2][0] == playerToCheck
+                && field[2][1] == playerToCheck
                 && field[2][2] == playerToCheck;
     }
 
