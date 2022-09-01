@@ -10,5 +10,12 @@ class GroupThree {
             group[i] = ((int)(Math.random() * 222));
             System.out.println((j++)+". "+group[i]);
         }
+
+        int sum = 0;
+        for (int i = 0; i < group.length; i++) {
+            sum = sum + group[i];
+        }
+        System.out.println(sum);
+
     }
 }
