@@ -37,27 +37,68 @@ class TicTacToe {
     }
 
     private boolean isHorizontalOneFilledBy(int[][] field, int playerToCheck) {
-        return field[0][0] == playerToCheck
+            return field[0][0] == playerToCheck
                 && field[0][1] == playerToCheck
                 && field[0][2] == playerToCheck;
     }
 
     private boolean isHorizontalTwoFilledBy(int[][] field, int playerToCheck) {
-        return field[1][0] == playerToCheck
+            return field[1][0] == playerToCheck
                 && field[1][1] == playerToCheck
                 && field[1][2] == playerToCheck;
     }
 
     private boolean isHorizontalThreeFilledBy(int[][] field, int playerToCheck) {
-        return field[2][0] == playerToCheck
+            return field[2][0] == playerToCheck
                 && field[2][1] == playerToCheck
                 && field[2][2] == playerToCheck;
+    }
+
+    private boolean isVerticalOneFilledBy(int[][] field, int playerToCheck) {
+            return field[0][0] == playerToCheck
+                && field[1][0] == playerToCheck
+                && field[2][0] == playerToCheck;
+    }
+
+    private boolean isVerticalTwoFilledBy(int[][] field, int playerToCheck) {
+            return field[0][1] == playerToCheck
+                && field[1][1] == playerToCheck
+                && field[2][1] == playerToCheck;
+    }
+
+    private boolean isVerticalThreeFilledBy(int[][] field, int playerToCheck) {
+            return field[0][2] == playerToCheck
+                && field[1][2] == playerToCheck
+                && field[2][2] == playerToCheck;
+    }
+
+    private boolean isDiagonalOneFilledBy(int[][] field, int playerToCheck) {
+            return field[0][0] == playerToCheck
+                && field[1][1] == playerToCheck
+                && field[2][2] == playerToCheck;
+    }
+
+    private boolean isDiagonalTwoFilledBy(int[][] field, int playerToCheck) {
+            return field[0][2] == playerToCheck
+                && field[1][1] == playerToCheck
+                && field[2][0] == playerToCheck;
     }
 
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
         return isHorizontalOneFilledBy(field, playerToCheck)
                 || isHorizontalTwoFilledBy(field, playerToCheck)
                 || isHorizontalThreeFilledBy(field, playerToCheck);
+    }
+
+    public boolean isWinPositionForVerticals(int[][] field, int playerToCheck) {
+        return isVerticalOneFilledBy(field, playerToCheck)
+                || isVerticalTwoFilledBy(field, playerToCheck)
+                || isVerticalThreeFilledBy(field, playerToCheck);
+    }
+
+    public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck) {
+        return isDiagonalOneFilledBy(field, playerToCheck)
+                || isDiagonalTwoFilledBy(field, playerToCheck);
     }
 
 }
