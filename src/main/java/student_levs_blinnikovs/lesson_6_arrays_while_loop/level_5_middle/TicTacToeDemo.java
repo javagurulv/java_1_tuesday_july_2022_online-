@@ -54,7 +54,7 @@ class TicTacToeDemo {
 
         int emptyField = -1;
         boolean noOneWins = game.isWinPositionForHorizontals(noOneWinningGame, emptyField);
-        System.out.println("No one wins as field is empty: " + noOneWins);
+        System.out.println("No one wins as field is empty (-1): " + noOneWins);
 
     }
 }
