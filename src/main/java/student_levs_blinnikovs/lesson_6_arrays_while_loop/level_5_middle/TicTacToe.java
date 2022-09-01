@@ -36,6 +36,14 @@ class TicTacToe {
         return true; // TODO .. field[horizontal][i] == playerToCheck ... field[i][vertical] == playerToCheck
     }
 
+    private boolean isLineFilledBy(int[][] field, int playerToCheck, int lineType) {
+        return true; // TODO
+    }
+
+    private boolean loopIterator(int[][] field) {
+        return true; // TODO
+    }
+
     private boolean isHorizontalFilledBy(int[][] field, int playerToCheck, int horizontal) {
         boolean isHorizontalFilledByPlayer = false;
         for (int i = 0; i < field[horizontal].length; i++) {
@@ -72,7 +80,7 @@ class TicTacToe {
         boolean isTopRightToBottomLeftDiagonal = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
-                if (field[i][field[i].length - j] == playerToCheck) {
+                if (field[i][(field[i].length - j)] == playerToCheck) {
                     isTopRightToBottomLeftDiagonal = true;
                 }
             }
