@@ -29,11 +29,35 @@ public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck).
 
 class TicTacToe {
 
-    int[] field = new int[0];
+    int[][] field = new int[3][3];
     int playerToCheck;
 
+    private boolean isFieldFilledBy(int[][] field, int playerToCheck) {
+        return true; // todo
+    }
+
+    private boolean isHorizontalOneFilledBy(int[][] field, int playerToCheck) {
+        return field[0][0] == playerToCheck
+                && field[1][0] == playerToCheck
+                && field[2][0] == playerToCheck;
+    }
+
+    private boolean isHorizontalTwoFilledBy(int[][] field, int playerToCheck) {
+        return field[0][1] == playerToCheck
+                && field[1][1] == playerToCheck
+                && field[2][1] == playerToCheck;
+    }
+
+    private boolean isHorizontalThreeFilledBy(int[][] field, int playerToCheck) {
+        return field[0][2] == playerToCheck
+                && field[1][2] == playerToCheck
+                && field[2][2] == playerToCheck;
+    }
+
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
-        return true;
+        return isHorizontalOneFilledBy(field, playerToCheck)
+                || isHorizontalTwoFilledBy(field, playerToCheck)
+                || isHorizontalThreeFilledBy(field, playerToCheck);
     }
 
 }
