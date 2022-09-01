@@ -101,4 +101,10 @@ class TicTacToe {
                 || isDiagonalTwoFilledBy(field, playerToCheck);
     }
 
+    public boolean isWinPosition(int[][] field, int playerToCheck) {
+        return isWinPositionForHorizontals(field, playerToCheck)
+                || isWinPositionForVerticals(field, playerToCheck)
+                || isWinPositionForDiagonals(field, playerToCheck);
+    }
+
 }
