@@ -32,73 +32,78 @@ class TicTacToe {
     int[][] field = new int[3][3];
     int playerToCheck;
 
-    private boolean isFieldFilledBy(int[][] field, int playerToCheck) {
-        return true; // todo
+    private boolean isSingleFieldFilledBy(int[][] field, int playerToCheck) {
+        return true; // TODO .. field[horizontal][i] == playerToCheck ... field[i][vertical] == playerToCheck
     }
 
-    private boolean isHorizontalOneFilledBy(int[][] field, int playerToCheck) {
-            return field[0][0] == playerToCheck
-                && field[0][1] == playerToCheck
-                && field[0][2] == playerToCheck;
+    private boolean isHorizontalFilledBy(int[][] field, int playerToCheck, int horizontal) {
+        boolean isHorizontalFilledByPlayer = false;
+        for (int i = 0; i < field[horizontal].length; i++) {
+            if (field[horizontal][i] == playerToCheck) {
+                isHorizontalFilledByPlayer = true;
+            };
+        }
+        return isHorizontalFilledByPlayer;
     }
 
-    private boolean isHorizontalTwoFilledBy(int[][] field, int playerToCheck) {
-            return field[1][0] == playerToCheck
-                && field[1][1] == playerToCheck
-                && field[1][2] == playerToCheck;
+    private boolean isVerticalFilledBy(int[][] field, int playerToCheck, int vertical) {
+        boolean isVerticalFilledByPlayer = false;
+        for (int i = 0; i < field.length; i++) {
+            if (field[i][vertical] == playerToCheck) {
+                isVerticalFilledByPlayer = true;
+            };
+        }
+        return isVerticalFilledByPlayer;
     }
 
-    private boolean isHorizontalThreeFilledBy(int[][] field, int playerToCheck) {
-            return field[2][0] == playerToCheck
-                && field[2][1] == playerToCheck
-                && field[2][2] == playerToCheck;
+    private boolean isTopLeftToBottomRightDiagonalFilledBy(int[][] field, int playerToCheck) {
+        boolean isTopLeftToBottomRightDiagonal = false;
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                if (field[i][j] == playerToCheck) {
+                    isTopLeftToBottomRightDiagonal = true;
+                }
+            }
+        }
+        return isTopLeftToBottomRightDiagonal;
     }
 
-    private boolean isVerticalOneFilledBy(int[][] field, int playerToCheck) {
-            return field[0][0] == playerToCheck
-                && field[1][0] == playerToCheck
-                && field[2][0] == playerToCheck;
-    }
+    private boolean isTopRightToBottomLeftDiagonalFilledBy(int[][] field, int playerToCheck) {
+        boolean isTopRightToBottomLeftDiagonal = false;
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                if (field[i][field[i].length - j] == playerToCheck) {
+                    isTopRightToBottomLeftDiagonal = true;
+                }
+            }
+        }
+        return isTopRightToBottomLeftDiagonal;
 
-    private boolean isVerticalTwoFilledBy(int[][] field, int playerToCheck) {
-            return field[0][1] == playerToCheck
-                && field[1][1] == playerToCheck
-                && field[2][1] == playerToCheck;
-    }
-
-    private boolean isVerticalThreeFilledBy(int[][] field, int playerToCheck) {
-            return field[0][2] == playerToCheck
-                && field[1][2] == playerToCheck
-                && field[2][2] == playerToCheck;
-    }
-
-    private boolean isDiagonalOneFilledBy(int[][] field, int playerToCheck) {
-            return field[0][0] == playerToCheck
-                && field[1][1] == playerToCheck
-                && field[2][2] == playerToCheck;
-    }
-
-    private boolean isDiagonalTwoFilledBy(int[][] field, int playerToCheck) {
-            return field[0][2] == playerToCheck
-                && field[1][1] == playerToCheck
-                && field[2][0] == playerToCheck;
     }
 
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
-        return isHorizontalOneFilledBy(field, playerToCheck)
-                || isHorizontalTwoFilledBy(field, playerToCheck)
-                || isHorizontalThreeFilledBy(field, playerToCheck);
+        boolean isWinPositionForHorizontal = false;
+        for (int i = 0; i < field.length; i++) {
+            if (isHorizontalFilledBy(field, playerToCheck, i)) {
+                isWinPositionForHorizontal = true;
+            }
+        }
+        return isWinPositionForHorizontal;
     }
 
     public boolean isWinPositionForVerticals(int[][] field, int playerToCheck) {
-        return isVerticalOneFilledBy(field, playerToCheck)
-                || isVerticalTwoFilledBy(field, playerToCheck)
-                || isVerticalThreeFilledBy(field, playerToCheck);
+        boolean isWinPositionForVertical = false;
+        for (int i = 0; i < field[0].length; i++) {                                      // here not sure if this is best way to get length.. but any first level sub-arays will be same length...
+            if (isVerticalFilledBy(field, playerToCheck, i)) {
+                isWinPositionForVertical = true;
+            }
+        }
+        return isWinPositionForVertical;
     }
 
     public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck) {
-        return isDiagonalOneFilledBy(field, playerToCheck)
-                || isDiagonalTwoFilledBy(field, playerToCheck);
+        return isTopLeftToBottomRightDiagonalFilledBy(field, playerToCheck)
+                || isTopRightToBottomLeftDiagonalFilledBy(field, playerToCheck);
     }
 
     public boolean isWinPosition(int[][] field, int playerToCheck) {
