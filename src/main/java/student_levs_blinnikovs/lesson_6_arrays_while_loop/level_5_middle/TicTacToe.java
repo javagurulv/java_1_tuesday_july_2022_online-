@@ -40,24 +40,13 @@ class TicTacToe {
         return getCellPlayerValue(field, indexOne, indexTwo) == playerToCheck;
     }
 
-    private boolean isLineFilledBy(int[][] field, int playerToCheck) {
-        return true; // TODO
-    }
-
-    private boolean isLineFilledBy(int[][] field, int playerToCheck, int lineType) {
-        return true; // TODO
-    }
-
-    private boolean loopIterator(int[][] field) {
-        return true; // TODO
-    }
-
     private boolean isHorizontalFilledBy(int[][] field, int playerToCheck, int horizontal) {
         boolean isHorizontalFilledByPlayer = false;
         for (int i = 0; i < field[horizontal].length; i++) {
-            if (field[horizontal][i] == playerToCheck) {
+            if (isCellFilledBy(field, horizontal, i, playerToCheck)) {
                 isHorizontalFilledByPlayer = true;
-            };
+                break;
+            }
         }
         return isHorizontalFilledByPlayer;
     }
@@ -65,9 +54,10 @@ class TicTacToe {
     private boolean isVerticalFilledBy(int[][] field, int playerToCheck, int vertical) {
         boolean isVerticalFilledByPlayer = false;
         for (int i = 0; i < field.length; i++) {
-            if (field[i][vertical] == playerToCheck) {
+            if (isCellFilledBy(field, i, vertical, playerToCheck)) {
                 isVerticalFilledByPlayer = true;
-            };
+                break;
+            }
         }
         return isVerticalFilledByPlayer;
     }
@@ -76,8 +66,9 @@ class TicTacToe {
         boolean isTopLeftToBottomRightDiagonal = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
-                if (field[i][j] == playerToCheck) {
+                if (isCellFilledBy(field, i, j, playerToCheck)) {
                     isTopLeftToBottomRightDiagonal = true;
+                    break;
                 }
             }
         }
@@ -88,8 +79,9 @@ class TicTacToe {
         boolean isTopRightToBottomLeftDiagonal = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
-                if (field[i][(field[i].length - j)] == playerToCheck) {
+                if (isCellFilledBy(field, i, (field[i].length - j), playerToCheck)) {
                     isTopRightToBottomLeftDiagonal = true;
+                    break;
                 }
             }
         }
@@ -102,6 +94,7 @@ class TicTacToe {
         for (int i = 0; i < field.length; i++) {
             if (isHorizontalFilledBy(field, playerToCheck, i)) {
                 isWinPositionForHorizontal = true;
+                break;
             }
         }
         return isWinPositionForHorizontal;
@@ -112,6 +105,7 @@ class TicTacToe {
         for (int i = 0; i < field[0].length; i++) {                                      // here not sure if this is best way to get length.. but any first level sub-arays will be same length...
             if (isVerticalFilledBy(field, playerToCheck, i)) {
                 isWinPositionForVertical = true;
+                break;
             }
         }
         return isWinPositionForVertical;
