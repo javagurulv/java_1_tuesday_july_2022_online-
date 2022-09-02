@@ -32,6 +32,14 @@ class TicTacToe {
     int[][] field = new int[3][3];
     int playerToCheck;
 
+    /*
+
+    isCellFilledByIffer() {...
+
+
+
+     */
+
     private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
         return field[indexOne][indexTwo];
     }
@@ -41,83 +49,70 @@ class TicTacToe {
     }
 
     private boolean isHorizontalFilledBy(int[][] field, int playerToCheck, int horizontal) {
-        boolean isHorizontalFilledByPlayer = false;
         for (int i = 0; i < field[horizontal].length; i++) {
             if (isCellFilledBy(field, horizontal, i, playerToCheck)) {
-                isHorizontalFilledByPlayer = true;
-                break;
+                return true;
             }
         }
-        return isHorizontalFilledByPlayer;
+        return false;
     }
 
     private boolean isVerticalFilledBy(int[][] field, int playerToCheck, int vertical) {
-        boolean isVerticalFilledByPlayer = false;
         for (int i = 0; i < field.length; i++) {
             if (isCellFilledBy(field, i, vertical, playerToCheck)) {
-                isVerticalFilledByPlayer = true;
-                break;
+                return true;
             }
         }
-        return isVerticalFilledByPlayer;
+        return false;
     }
 
     private boolean isTopLeftToBottomRightDiagonalFilledBy(int[][] field, int playerToCheck) {
-        boolean isTopLeftToBottomRightDiagonal = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
                 if (isCellFilledBy(field, i, j, playerToCheck)) {
-                    isTopLeftToBottomRightDiagonal = true;
-                    break;
+                    return true;
                 }
             }
         }
-        return isTopLeftToBottomRightDiagonal;
+        return false;
     }
 
     private boolean isTopRightToBottomLeftDiagonalFilledBy(int[][] field, int playerToCheck) {
-        boolean isTopRightToBottomLeftDiagonal = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
                 if (isCellFilledBy(field, i, (field[i].length - j), playerToCheck)) {
-                    isTopRightToBottomLeftDiagonal = true;
-                    break;
+                    return true;
                 }
             }
         }
-        return isTopRightToBottomLeftDiagonal;
-
+        return false;
     }
 
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
-        boolean isWinPositionForHorizontal = false;
         for (int i = 0; i < field.length; i++) {
             if (isHorizontalFilledBy(field, playerToCheck, i)) {
-                isWinPositionForHorizontal = true;
-                break;
+                return true;
             }
         }
-        return isWinPositionForHorizontal;
+        return false;
     }
 
     public boolean isWinPositionForVerticals(int[][] field, int playerToCheck) {
-        boolean isWinPositionForVertical = false;
-        for (int i = 0; i < field[0].length; i++) {                                      // here not sure if this is best way to get length.. but any first level sub-arays will be same length...
+        for (int i = 0; i < field[0].length; i++) {        // here not sure if this is best way to get length.. but any first level sub-arays will be same length...
             if (isVerticalFilledBy(field, playerToCheck, i)) {
-                isWinPositionForVertical = true;
-                break;
+                return true;
             }
         }
-        return isWinPositionForVertical;
+        return false;
     }
 
     public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck) {
-        return isTopLeftToBottomRightDiagonalFilledBy(field, playerToCheck)
+            return isTopLeftToBottomRightDiagonalFilledBy(field, playerToCheck)
                 || isTopRightToBottomLeftDiagonalFilledBy(field, playerToCheck);
     }
 
     public boolean isWinPosition(int[][] field, int playerToCheck) {
-        return isWinPositionForHorizontals(field, playerToCheck)
+            return isWinPositionForHorizontals(field, playerToCheck)
                 || isWinPositionForVerticals(field, playerToCheck)
                 || isWinPositionForDiagonals(field, playerToCheck);
     }
