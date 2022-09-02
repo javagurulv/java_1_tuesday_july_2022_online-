@@ -7,7 +7,7 @@ class ArrayUntil {
     public static void main(String[] args) {
         ArrayUntil arrayUntilOne = new ArrayUntil();
         arrayUntilOne.createArray(6);
-        arrayUntilOne.createRandomArray(6);
+        arrayUntilOne.createRandomArray(5);
     }
     public int[] createArray(int arrayLength) {
 
