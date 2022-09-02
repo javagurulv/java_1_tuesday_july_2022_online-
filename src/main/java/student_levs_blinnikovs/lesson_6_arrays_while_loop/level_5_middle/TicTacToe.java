@@ -32,12 +32,12 @@ class TicTacToe {
     int[][] field = new int[3][3];
     int playerToCheck;
 
-    private int getSingleFieldPlayerValue(int[][] field, int indexOne, int indexTwo) {
+    private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
         return field[indexOne][indexTwo];
     }
 
-    private boolean isSingleFieldFilledBy(int[][] field, int indexOne, int indexTwo, int playerToCheck) {
-        return getSingleFieldPlayerValue(field, indexOne, indexTwo) == playerToCheck;
+    private boolean isCellFilledBy(int[][] field, int indexOne, int indexTwo, int playerToCheck) {
+        return getCellPlayerValue(field, indexOne, indexTwo) == playerToCheck;
     }
 
     private boolean isLineFilledBy(int[][] field, int playerToCheck) {
