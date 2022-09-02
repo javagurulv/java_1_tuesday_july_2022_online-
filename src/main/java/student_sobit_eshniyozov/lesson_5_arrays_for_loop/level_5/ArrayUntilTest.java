@@ -1,6 +1,6 @@
 package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_5;
 
-//class ArrayUntilTest {
+class ArrayUntilTest {
 //    public static void main(String[] args) {
 //        ArrayUtilTest test = new ArrayUtilTest();
 //        test.shouldCreateArray();
@@ -18,4 +18,4 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_5;
 //        // Напишите реализацию !!!
 //        // Проверьте, что метод создаёт массив указанной длины
 //    }
-//}
+}
