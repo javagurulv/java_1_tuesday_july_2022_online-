@@ -17,7 +17,6 @@ public class Task30 {
         int arrayLength = randomLength.nextInt(10);
         return arrayLength;
     }
-
     public static int [] fillArrayRandomNumbers (int number){
         int [] randomArray = new int[number];
         Random random = new Random();
@@ -26,6 +25,7 @@ public class Task30 {
             System.out.println(randomArray[i]);
         } return randomArray;
     }
+
 
     public static void printOddNumbers (int [] number){
         for (int i = 0; i< number.length; i++ ){

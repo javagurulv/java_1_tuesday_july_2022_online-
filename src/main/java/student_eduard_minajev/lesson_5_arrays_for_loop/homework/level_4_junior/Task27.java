@@ -12,6 +12,7 @@ public class Task27 {
         findMaxValue(newArray);
 
     }
+
     public static int generateArrayLength () {
         Random randomLength = new Random();
         int arrayLength = randomLength.nextInt(10);
@@ -26,6 +27,7 @@ public class Task27 {
             System.out.println(randomArray[i]);
         } return randomArray;
     }
+
 
     public static void findMaxValue (int [] number) {
         int maxNumber = 0;

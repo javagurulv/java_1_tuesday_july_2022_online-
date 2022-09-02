@@ -10,7 +10,6 @@ public class Task29 {
         int [] newArray = fillArrayRandomNumbers(sizeOfArray);
         printEvenNumbers(newArray);
 
-
     }
     public static int generateArrayLength () {
         Random randomLength = new Random();

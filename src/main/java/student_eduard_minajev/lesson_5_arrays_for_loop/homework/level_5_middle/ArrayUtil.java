@@ -16,41 +16,35 @@ import java.util.Random;
 import java.util.Scanner;
 public class ArrayUtil {
 
-
+    /* Task 31 - done */
     public  int[] createArray(int arrayLength){
         int[] newArray = new  int [arrayLength];
         for (int i = 0; i< newArray.length; i++){
-            newArray[i]= newArray[i] + i;
-            System.out.println(newArray[i]);
-        }
-        return newArray;
+            /* System.out.println(newArray[i]); */
+        } return newArray;
     }
-
+    /* Task 33 - done */
     public int [] fillArrayWithRandomNumbers (int number){
         int [] randomArray = new int[number];
         Random random = new Random();
         for (int i = 0; i < randomArray.length; i++){
             randomArray[i] = random.nextInt(100);
-             /*System.out.println(randomArray[i]); // сделал протестировать */
         } return randomArray;
     }
 
     /* Task 34  */
-
     public void printArrayToConsole(int[] array){
-        for (int i= 0; i< array.length; i++){
-            System.out.println(array[i]);
-        }
+        System.out.println(array);
     }
 
     /* Task 35 */
 
     public int findMaxNumber(int[] array) {
         int maxValueOfArray = 0;
-        for (int i = 0; i < array.length;){
+        for (int i = 0; i < array.length; i++){
             if (array[i] > maxValueOfArray){
                 maxValueOfArray = array[i];
-            }System.out.println("Max value is " + maxValueOfArray);
+            }
         }return maxValueOfArray;
     }
 
@@ -58,10 +52,10 @@ public class ArrayUtil {
 
     public int findMinNumber(int[] array) {
         int minValueOfArray = array[0];
-        for (int i = 0; i < array.length;){
+        for (int i = 0; i < array.length; i++){
             if(array[i] < minValueOfArray){
                 minValueOfArray = array[i];
-            }System.out.println("The min value is " + minValueOfArray);
+            }
         }return minValueOfArray;
     }
 
