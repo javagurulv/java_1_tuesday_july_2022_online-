@@ -8,6 +8,17 @@ class TicTacToeDemo {
         int playerTwo = 1;
         int emptyField = -1;
 
+        int[][] emptyExistsPosition = {              {-1, 0, -1},
+                                                    {-1, -1, -1},
+                                                    {-1, -1, -1}
+        };
+
+        // hasEmptyField
+
+        System.out.println("Empty fields exist test: ");
+        boolean isEmptyFieldPosition = game.isWinPosition(emptyExistsPosition, playerOne); // TODO gives false positive results
+        System.out.println("Empty fields exist: " + isEmptyFieldPosition);
+
         int[][] noOneWinningGame = {        {-1, -1, -1},
                                             {-1, -1, -1},
                                             {-1, -1, -1}};

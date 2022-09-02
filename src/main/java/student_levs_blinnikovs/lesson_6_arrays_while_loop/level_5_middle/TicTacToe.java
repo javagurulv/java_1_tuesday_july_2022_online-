@@ -32,14 +32,6 @@ class TicTacToe {
     int[][] field = new int[3][3];
     int playerToCheck;
 
-    /*
-
-    isCellFilledByIffer() {...
-
-
-
-     */
-
     private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
         return field[indexOne][indexTwo];
     }
@@ -115,6 +107,21 @@ class TicTacToe {
             return isWinPositionForHorizontals(field, playerToCheck)
                 || isWinPositionForVerticals(field, playerToCheck)
                 || isWinPositionForDiagonals(field, playerToCheck);
+    }
+
+    public boolean hasEmptyField(int[][] field) {
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                if (isCellFilledBy(field, i, j, -1)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isDrawPosition(int[][] field, int playerToCheck) {
+            return !isWinPosition(field, playerToCheck) && hasEmptyField(field);
     }
 
 }
