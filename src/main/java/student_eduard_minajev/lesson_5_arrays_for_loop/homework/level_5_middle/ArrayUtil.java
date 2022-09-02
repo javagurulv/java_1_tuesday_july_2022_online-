@@ -15,8 +15,7 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_5_middle;
 import java.util.Random;
 import java.util.Scanner;
 
-public class
-ArrayUtil {
+public class ArrayUtil {
 
 
     public  int[] createArray(int arrayLength){
