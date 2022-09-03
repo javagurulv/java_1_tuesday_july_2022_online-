@@ -35,11 +35,16 @@ public class RandomNumberSum {
             System.out.println(randomNumbers[i]);
         }
     }
-    private static double calculateAvarageRandomNumbers (int sumRandomNumbers,int randomNumbers[]) {
+    private static double calculateAvarageRandomNumbers (int sumRandomNumbers,int[] randomNumbers) {
         return ((double) sumRandomNumbers / randomNumbers.length);
     }
 
+
+
+
+
 }
+
 
 
 
