@@ -29,12 +29,24 @@ public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck).
 
 import teacher.codereview.CodeReviewComment;
 
+import java.util.Scanner;
+
 class TicTacToe {
 
     int[][] field = new int[3][3];
     int playerToCheck;
 
-    private int[][] fillWithEmpty(int[][] field) {
+    public Move getNextMove() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Please provide coordinates for your move: ");
+        System.out.println("Provide first coordinate \"x\": ");
+        int x = userInput.nextInt();
+        System.out.println("Provide second coordinate \"y\": ");
+        int y = userInput.nextInt();
+        return new Move(x, y);
+    }
+
+    private int[][] returnFieldFilledWithEmptyCells(int[][] field) {
         for (int horizontal = 0; horizontal < field.length; horizontal++) {
             for (int vertical = 0; vertical < field[horizontal].length; vertical++) {
                 field[horizontal][vertical] = -1;
@@ -44,8 +56,7 @@ class TicTacToe {
     }
 
     public int[][] createField() {
-        int[][] field = new int[3][3];
-        return fillWithEmpty(field);
+        return returnFieldFilledWithEmptyCells(new int[3][3]);
     }
 
     private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
