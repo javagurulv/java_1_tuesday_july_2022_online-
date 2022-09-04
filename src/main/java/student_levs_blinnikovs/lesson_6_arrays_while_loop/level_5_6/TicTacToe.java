@@ -46,6 +46,16 @@ class TicTacToe {
         return new Move(x, y);
     }
 
+    public void printFieldToConsole(int[][] field) {
+        for (int horizontal = 0; horizontal < field.length; horizontal++) {
+            System.out.print("\n");
+            for (int vertical = 0; vertical < field[horizontal].length; vertical++) {
+                System.out.print(field[horizontal][vertical] + " ");
+            }
+        }
+        System.out.print("\n");
+    }
+
     private int[][] returnFieldFilledWithEmptyCells(int[][] field) {
         for (int horizontal = 0; horizontal < field.length; horizontal++) {
             for (int vertical = 0; vertical < field[horizontal].length; vertical++) {

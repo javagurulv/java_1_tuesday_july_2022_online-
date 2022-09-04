@@ -6,6 +6,15 @@ class TicTacToeDemo {
         return new TicTacToe();
     }
 
+    public void printFieldToConsoleDemo() {
+        int[][] printingDemoField = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        startGame().printFieldToConsole(printingDemoField);
+    }
+
     public void printDemoResult(String demoMethod, int player, boolean isWin) {
         System.out.println("This is " + demoMethod + " demo. Expected player " + player + " win, actually is: " + isWin);
     }
@@ -143,37 +152,40 @@ class TicTacToeDemo {
     public static void main(String[] args) {
         TicTacToeDemo demo = new TicTacToeDemo();
 
-        System.out.println("\nSmoke tests:");
-        demo.shouldExistEmptyCell();
-        demo.shouldNotExistEmptyCell();
+        System.out.println("Field printing demo: ");
+        demo.printFieldToConsoleDemo();
 
-        System.out.println("\nDraw tests:");
-        demo.shouldBeDraw();
-
-        System.out.println("\nHorizontal tests:");
-        demo.shouldPlayerWinByHorizontal0(0);
-        demo.shouldPlayerWinByHorizontal1(0);
-        demo.shouldPlayerWinByHorizontal2(0);
-
-        demo.shouldPlayerWinByHorizontal0(1);
-        demo.shouldPlayerWinByHorizontal1(1);
-        demo.shouldPlayerWinByHorizontal2(1);
-
-        System.out.println("\nVertical tests:");
-        demo.shouldPlayerWinByVertical0(0);
-        demo.shouldPlayerWinByVertical1(0);
-        demo.shouldPlayerWinByVertical2(0);
-
-        demo.shouldPlayerWinByVertical0(1);
-        demo.shouldPlayerWinByVertical1(1);
-        demo.shouldPlayerWinByVertical2(1);
-
-        System.out.println("\nDiagonal tests:");
-        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(0);
-        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(0);
-
-        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(1);
-        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(1);
+//        System.out.println("\nSmoke tests:");
+//        demo.shouldExistEmptyCell();
+//        demo.shouldNotExistEmptyCell();
+//
+//        System.out.println("\nDraw tests:");
+//        demo.shouldBeDraw();
+//
+//        System.out.println("\nHorizontal tests:");
+//        demo.shouldPlayerWinByHorizontal0(0);
+//        demo.shouldPlayerWinByHorizontal1(0);
+//        demo.shouldPlayerWinByHorizontal2(0);
+//
+//        demo.shouldPlayerWinByHorizontal0(1);
+//        demo.shouldPlayerWinByHorizontal1(1);
+//        demo.shouldPlayerWinByHorizontal2(1);
+//
+//        System.out.println("\nVertical tests:");
+//        demo.shouldPlayerWinByVertical0(0);
+//        demo.shouldPlayerWinByVertical1(0);
+//        demo.shouldPlayerWinByVertical2(0);
+//
+//        demo.shouldPlayerWinByVertical0(1);
+//        demo.shouldPlayerWinByVertical1(1);
+//        demo.shouldPlayerWinByVertical2(1);
+//
+//        System.out.println("\nDiagonal tests:");
+//        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(0);
+//        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(0);
+//
+//        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(1);
+//        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(1);
 
     }
 }
