@@ -25,32 +25,46 @@ class TicTacToeDemo {
         printDemoResult("diagonal", player, isWin);
     }
 
+    public void runEmptyExistsDemoSteps(int[][] position) {
+        boolean doesEmptyCellExist = startGame().hasEmptyField(position);
+        System.out.println("Empty field exists: " + doesEmptyCellExist);
+    }
+
+    public void runEmptyDoesNotExistDemoSteps(int[][] position) {
+        boolean doesEmptyFieldNotExist = startGame().hasEmptyField(position);
+        System.out.println("Empty field DOES NOT exist: " + !doesEmptyFieldNotExist);
+    }
+
+    public void runDrawDemoSteps(int[][] position) {
+        boolean isDraw = startGame().isDrawPosition(position);
+        System.out.println("Is draw: " + isDraw);
+    }
+
     public void shouldExistEmptyCell() {
-        int[][] emptyCellExists = {
+        int[][] emptyCellExistsPosition = {
                 { 0,  0, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}
+                {-1,  1, -1},
+                { 1, -1,  0}
         };
-        boolean doesEmptyFieldExist = startGame().hasEmptyField(emptyCellExists); // TODO for isWin().. gives false positive results because treats -1 as win. Need to include -1 logic in TicTacToe methods
-        System.out.println("Empty field exists: " + doesEmptyFieldExist);
+        runEmptyExistsDemoSteps(emptyCellExistsPosition);
     }
 
     public void shouldNotExistEmptyCell() {
-        int[][] emptyCellDoesNotExist = {
+        int[][] emptyCellDoesNotExistPosition = {
                 {0, 0, 0},
                 {1, 1, 1},
-                {0, 1, 1}};
-        boolean doesEmptyFieldDoesNotExist = startGame().hasEmptyField(emptyCellDoesNotExist);
-        System.out.println("Empty field DOEST NOT exist: " + !doesEmptyFieldDoesNotExist);
+                {0, 1, 1}
+        };
+        runEmptyDoesNotExistDemoSteps(emptyCellDoesNotExistPosition);
     }
 
-    public void shouldNoOneWin() {
-        int[][] position = {
-                {-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
-        boolean isWin = startGame().isWinPosition(position, -1);
-        System.out.println("No one wins as field is empty (-1): " + isWin);
+    public void shouldBeDraw() {
+        int[][] drawPosition = {
+                { 1,  0,  1},
+                { 0,  0,  1},
+                { 1,  1,  0}
+        };
+        runDrawDemoSteps(drawPosition);
     }
 
     public void shouldPlayerWinByHorizontal0(int playerToWin) {
@@ -129,12 +143,14 @@ class TicTacToeDemo {
     public static void main(String[] args) {
         TicTacToeDemo demo = new TicTacToeDemo();
 
-//        System.out.println("Smoke tests:");
-//        demo.shouldExistEmptyCell();
-//        demo.shouldNotExistEmptyCell();
-//        demo.shouldNoOneWin();
+        System.out.println("\nSmoke tests:");
+        demo.shouldExistEmptyCell();
+        demo.shouldNotExistEmptyCell();
 
-        System.out.println("Horizontal tests:");
+        System.out.println("\nDraw tests:");
+        demo.shouldBeDraw();
+
+        System.out.println("\nHorizontal tests:");
         demo.shouldPlayerWinByHorizontal0(0);
         demo.shouldPlayerWinByHorizontal1(0);
         demo.shouldPlayerWinByHorizontal2(0);
@@ -143,7 +159,7 @@ class TicTacToeDemo {
         demo.shouldPlayerWinByHorizontal1(1);
         demo.shouldPlayerWinByHorizontal2(1);
 
-        System.out.println("Vertical tests:");
+        System.out.println("\nVertical tests:");
         demo.shouldPlayerWinByVertical0(0);
         demo.shouldPlayerWinByVertical1(0);
         demo.shouldPlayerWinByVertical2(0);
@@ -152,7 +168,7 @@ class TicTacToeDemo {
         demo.shouldPlayerWinByVertical1(1);
         demo.shouldPlayerWinByVertical2(1);
 
-        System.out.println("Diagonal tests:");
+        System.out.println("\nDiagonal tests:");
         demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(0);
         demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(0);
 

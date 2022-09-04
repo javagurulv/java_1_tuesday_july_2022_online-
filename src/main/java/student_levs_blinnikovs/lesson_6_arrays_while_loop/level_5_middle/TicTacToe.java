@@ -120,8 +120,8 @@ class TicTacToe {
         return false;
     }
 
-    public boolean isDrawPosition(int[][] field, int playerToCheck) {
-            return !isWinPosition(field, playerToCheck) && hasEmptyField(field);
+    public boolean isDrawPosition(int[][] field) {
+            return !(isWinPosition(field, this.playerToCheck) && hasEmptyField(field));
     }
 
 }
