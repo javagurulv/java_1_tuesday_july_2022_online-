@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_5_6;
+package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_5_6_middle;
 
 /*
 Пошагово создаём игру крестики нолики.
@@ -26,8 +26,6 @@ public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck).
 
 Создать класс TicTacToeTest, написать тесты для разработанного метода.
  */
-
-import teacher.codereview.CodeReviewComment;
 
 import java.util.Scanner;
 
