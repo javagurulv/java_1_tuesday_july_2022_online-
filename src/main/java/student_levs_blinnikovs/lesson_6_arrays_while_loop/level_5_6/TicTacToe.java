@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_5_middle;
+package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_5_6;
 
 /*
 Пошагово создаём игру крестики нолики.
@@ -27,10 +27,26 @@ public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck).
 Создать класс TicTacToeTest, написать тесты для разработанного метода.
  */
 
+import teacher.codereview.CodeReviewComment;
+
 class TicTacToe {
 
     int[][] field = new int[3][3];
     int playerToCheck;
+
+    private int[][] fillWithEmpty(int[][] field) {
+        for (int horizontal = 0; horizontal < field.length; horizontal++) {
+            for (int vertical = 0; vertical < field[horizontal].length; vertical++) {
+                field[horizontal][vertical] = -1;
+            }
+        }
+        return field;
+    }
+
+    public int[][] createField() {
+        int[][] field = new int[3][3];
+        return fillWithEmpty(field);
+    }
 
     private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
         return field[indexOne][indexTwo];
@@ -40,9 +56,10 @@ class TicTacToe {
         return getCellPlayerValue(field, indexOne, indexTwo) == playerToCheck;
     }
 
+    @CodeReviewComment(student = "need help, see in TODO")
     private boolean isWinBySpecifiedHorizontal(int[][] field, int playerToCheck, int horizontal) {
         for (int i = 0; i < field[horizontal].length; i++) {
-            if (isCellFilledBy(field, horizontal, i, playerToCheck)) {
+            if (isCellFilledBy(field, horizontal, i, playerToCheck)) {  // TODO I think this is wrong. I need a way to write a cycle that check every cell in specified horizontal, and if all of them are playerToCheck, then return true. I think now it returns on first occurrence
                 return true;
             }
         }
