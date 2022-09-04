@@ -155,37 +155,37 @@ class TicTacToeDemo {
         System.out.println("Field printing demo: ");
         demo.printFieldToConsoleDemo();
 
-//        System.out.println("\nSmoke tests:");
-//        demo.shouldExistEmptyCell();
-//        demo.shouldNotExistEmptyCell();
-//
-//        System.out.println("\nDraw tests:");
-//        demo.shouldBeDraw();
-//
-//        System.out.println("\nHorizontal tests:");
-//        demo.shouldPlayerWinByHorizontal0(0);
-//        demo.shouldPlayerWinByHorizontal1(0);
-//        demo.shouldPlayerWinByHorizontal2(0);
-//
-//        demo.shouldPlayerWinByHorizontal0(1);
-//        demo.shouldPlayerWinByHorizontal1(1);
-//        demo.shouldPlayerWinByHorizontal2(1);
-//
-//        System.out.println("\nVertical tests:");
-//        demo.shouldPlayerWinByVertical0(0);
-//        demo.shouldPlayerWinByVertical1(0);
-//        demo.shouldPlayerWinByVertical2(0);
-//
-//        demo.shouldPlayerWinByVertical0(1);
-//        demo.shouldPlayerWinByVertical1(1);
-//        demo.shouldPlayerWinByVertical2(1);
-//
-//        System.out.println("\nDiagonal tests:");
-//        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(0);
-//        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(0);
-//
-//        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(1);
-//        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(1);
+        System.out.println("\nSmoke tests:");
+        demo.shouldExistEmptyCell();
+        demo.shouldNotExistEmptyCell();
+
+        System.out.println("\nDraw tests:");
+        demo.shouldBeDraw();
+
+        System.out.println("\nHorizontal tests:");
+        demo.shouldPlayerWinByHorizontal0(0);
+        demo.shouldPlayerWinByHorizontal1(0);
+        demo.shouldPlayerWinByHorizontal2(0);
+
+        demo.shouldPlayerWinByHorizontal0(1);
+        demo.shouldPlayerWinByHorizontal1(1);
+        demo.shouldPlayerWinByHorizontal2(1);
+
+        System.out.println("\nVertical tests:");
+        demo.shouldPlayerWinByVertical0(0);
+        demo.shouldPlayerWinByVertical1(0);
+        demo.shouldPlayerWinByVertical2(0);
+
+        demo.shouldPlayerWinByVertical0(1);
+        demo.shouldPlayerWinByVertical1(1);
+        demo.shouldPlayerWinByVertical2(1);
+
+        System.out.println("\nDiagonal tests:");
+        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(0);
+        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(0);
+
+        demo.shouldPlayerWinByTopLeftToBottomRightDiagonal(1);
+        demo.shouldPlayerWinByTopRightToBottomLeftDiagonal(1);
 
     }
 }

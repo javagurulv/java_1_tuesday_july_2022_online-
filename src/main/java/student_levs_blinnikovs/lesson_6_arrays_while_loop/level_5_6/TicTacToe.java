@@ -69,53 +69,105 @@ class TicTacToe {
         return returnFieldFilledWithEmptyCells(new int[3][3]);
     }
 
-    private int getCellPlayerValue(int[][] field, int indexOne, int indexTwo) {
-        return field[indexOne][indexTwo];
-    }
+    public void play() {
+        int[][] field = createField();
+        while(true) {
+            printFieldToConsole(field);
+            System.out.println("Player 0 move:");
+            Move move0 = getNextMove();
+            field[move0.getY()][move0.getX()] = 0;    // reversed for better usability when entering values maybe TODO +1 so user enter 1 instead of 0...
+            printFieldToConsole(field);
+            if (isWinPosition(field, 0)) {
+                System.out.println("Player 0 WIN!");
+                break;
+            }
+            if (isDrawPosition(field)) {
+                System.out.println("DRAW!");
+                break;
+            }
 
-    private boolean isCellFilledBy(int[][] field, int indexOne, int indexTwo, int playerToCheck) {
-        return getCellPlayerValue(field, indexOne, indexTwo) == playerToCheck;
-    }
-
-    @CodeReviewComment(student = "need help, see in TODO")
-    private boolean isWinBySpecifiedHorizontal(int[][] field, int playerToCheck, int horizontal) {
-        for (int i = 0; i < field[horizontal].length; i++) {
-            if (isCellFilledBy(field, horizontal, i, playerToCheck)) {  // TODO I think this is wrong. I need a way to write a cycle that check every cell in specified horizontal, and if all of them are playerToCheck, then return true. I think now it returns on first occurrence
-                return true;
+            printFieldToConsole(field);
+            System.out.println("Player 1 move:");
+            Move move1 = getNextMove();
+            field[move1.getY()][move1.getX()] = 1;     // reversed for better usability when entering values maybe TODO +1 so user enter 1 instead of 0...
+            printFieldToConsole(field);
+            if (isWinPosition(field, 1)) {
+                System.out.println("Player 1 WIN!");
+                break;
+            }
+            if (isDrawPosition(field)) {
+                System.out.println("DRAW!");
+                break;
             }
         }
-        return false;
     }
 
-    private boolean isWinBySpecifiedVertical(int[][] field, int playerToCheck, int vertical) {
-        for (int i = 0; i < field.length; i++) {
-            if (isCellFilledBy(field, i, vertical, playerToCheck)) {
-                return true;
-            }
-        }
-        return false;
+    private int getCellPlayerValue(int[][] field, int horizontal, int vertical) {
+        return field[horizontal][vertical];
     }
 
-    private boolean isWinByTopLeftToBottomRightDiagonal(int[][] field, int playerToCheck) {
-        for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field[i].length; j++) {
-                if (isCellFilledBy(field, i, j, playerToCheck)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    private boolean isCellFilledBy(int[][] field, int horizontal, int vertical, int playerToCheck) {
+        return getCellPlayerValue(field, horizontal, vertical) == playerToCheck;
     }
 
-    private boolean isWinByTopRightToBottomLeftDiagonal(int[][] field, int playerToCheck) {
-        for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field[i].length; j++) {
-                if (isCellFilledBy(field, i, (field[i].length - j), playerToCheck)) {
-                    return true;
-                }
+    private boolean isWinBySpecifiedHorizontal(int[][] field, int playerToCheck, int specifiedHorizontal) {
+        boolean isWin = true;
+        for (int i = 0; i < field.length; i++) {                     // can do while if needed... Idea offers via code analysis
+            if (!isCellFilledBy(field, specifiedHorizontal, i, playerToCheck)) {
+                isWin = false;
+                break;
             }
         }
-        return false;
+        return isWin;
+    }
+
+    private boolean isWinBySpecifiedVertical(int[][] field, int playerToCheck, int specifiedVertical) {
+        boolean isWin = true;
+        for (int i = 0; i < field[0].length; i++) {                 // can do while if needed... Idea offers via code analysis + not sure about field[0]
+            if (!isCellFilledBy(field, i, specifiedVertical, playerToCheck)) {
+                isWin = false;
+                break;
+            }
+        }
+        return isWin;
+    }
+
+//    private boolean isWinByTopLeftToBottomRightDiagonal(int[][] field, int playerToCheck) {
+//        boolean isWin = true;
+//        for (int i = 0; i < field.length; i++) {
+//            for (int j = 0; j < field[i].length; j++) {
+//                if (!isCellFilledBy(field, i, j, playerToCheck)) {
+//                    isWin = false;
+//                    break;
+//                }
+//            }
+//        }
+//        return isWin;
+//    }
+
+    //    private boolean isWinByTopRightToBottomLeftDiagonal(int[][] field, int playerToCheck) {
+//        boolean isWin = true;
+//        for (int i = 0; i < field.length; i++) {
+//            for (int j = 0; j < field[0].length; j++) {
+//                if (!isCellFilledBy(field, i, (field[0].length - j), playerToCheck)) {
+//                    isWin = false;
+//                    break;
+//                }
+//            }
+//        }
+//        return isWin;
+//    }
+
+    private boolean isWinByTopLeftToBottomRightDiagonal(int[][] field, int playerToCheck) {   // TODO with loops
+                return isCellFilledBy(field, 0, 0, playerToCheck)
+                    && isCellFilledBy(field, 1, 1, playerToCheck)
+                    && isCellFilledBy(field, 2, 2, playerToCheck);
+    }
+
+    private boolean isWinByTopRightToBottomLeftDiagonal(int[][] field, int playerToCheck) {   // TODO with loops
+            return isCellFilledBy(field, 0, 2, playerToCheck)
+                && isCellFilledBy(field, 1, 1, playerToCheck)
+                && isCellFilledBy(field, 2, 0, playerToCheck);
     }
 
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
@@ -159,7 +211,12 @@ class TicTacToe {
     }
 
     public boolean isDrawPosition(int[][] field) {
-            return !(isWinPosition(field, this.playerToCheck) && hasEmptyField(field));
+        return !isWinPosition(field, this.playerToCheck) && !hasEmptyField(field);
+    }
+
+    public static void main(String[] args) {
+        TicTacToe game = new TicTacToe();
+        game.play();
     }
 
 }
