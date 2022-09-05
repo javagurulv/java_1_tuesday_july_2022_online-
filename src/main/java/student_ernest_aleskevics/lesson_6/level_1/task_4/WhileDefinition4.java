@@ -1,6 +1,7 @@
-package student_ernest_aleskevics.lesson_6.task_3;
+package student_ernest_aleskevics.lesson_6.level_1.task_4;
 
-public class WhileDefinition3 {
+public class WhileDefinition4 {
+
     public static void main(String[] args) {
         int i = 1;
         while (i <= 100) {

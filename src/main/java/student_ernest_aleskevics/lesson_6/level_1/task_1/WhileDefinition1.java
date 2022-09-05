@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_6.task_1;
+package student_ernest_aleskevics.lesson_6.level_1.task_1;
 
 public class WhileDefinition1 {
     public static void main(String[] args) {
