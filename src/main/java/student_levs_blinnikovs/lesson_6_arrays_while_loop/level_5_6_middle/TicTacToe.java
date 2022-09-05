@@ -178,7 +178,7 @@ class TicTacToe {
     }
 
     public boolean isWinPositionForVerticals(int[][] field, int playerToCheck) {
-        for (int vertical = 0; vertical < field[0].length; vertical++) {        // here not sure if this is best way to get length.. but any first level sub-arays will be same length...
+        for (int vertical = 0; vertical < field[0].length; vertical++) {        // here not sure if this is the best way to get length... but any first level sub-arrays will be same length...
             if (isWinBySpecifiedVertical(field, playerToCheck, vertical)) {
                 return true;
             }
