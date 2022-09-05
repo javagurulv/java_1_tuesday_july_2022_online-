@@ -73,7 +73,7 @@ class TicTacToe {
             printFieldToConsole(field);
             System.out.println("Player 0 move:");
             Move move0 = getNextMove();
-            field[move0.getY()][move0.getX()] = 0;    // reversed for better usability when entering values maybe TODO +1 so user enter 1 instead of 0...
+            field[move0.getY()-1][move0.getX()-1] = 0;    // reversed for better usability when entering values. -1 offset so user enter 1 instead of 0 - easier to play
             printFieldToConsole(field);
             if (isWinPosition(field, 0)) {
                 System.out.println("Player 0 WIN!");
@@ -87,7 +87,7 @@ class TicTacToe {
             printFieldToConsole(field);
             System.out.println("Player 1 move:");
             Move move1 = getNextMove();
-            field[move1.getY()][move1.getX()] = 1;     // reversed for better usability when entering values maybe TODO +1 so user enter 1 instead of 0...
+            field[move1.getY()-1][move1.getX()-1] = 1;  // reversed for better usability when entering values. -1 offset so user enter 1 instead of 0 - easier to play
             printFieldToConsole(field);
             if (isWinPosition(field, 1)) {
                 System.out.println("Player 1 WIN!");
