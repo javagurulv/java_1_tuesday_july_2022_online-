@@ -2,7 +2,7 @@ package student_roman_hytt.lesson_4.level_1;
 
 import java.util.Scanner;
 
-public class Number {
+public class PositiveOrNegative {
     public static void main(String[] args) {
         System.out.println("Please write you number!");
 

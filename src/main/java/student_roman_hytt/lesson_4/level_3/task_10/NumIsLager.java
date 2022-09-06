@@ -2,7 +2,7 @@ package student_roman_hytt.lesson_4.level_3.task_10;
 
 import java.util.Scanner;
 
-public class Numb {
+public class NumIsLager {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
