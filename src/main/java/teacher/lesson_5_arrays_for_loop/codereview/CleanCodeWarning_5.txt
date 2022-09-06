@@ -1,0 +1,24 @@
+WARNING: int maxValueOfArray = 0; - тип данных int может
+содержать не только позитивные, но и отрицательные значения.
+Какой результат вернёт этот метод если в массиве будут только
+отрицательные числа? Будет ли результат правильным?
+
+    public int findMaxNumber(int[] array) {
+        int maxValueOfArray = 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > maxValueOfArray){
+                maxValueOfArray = array[i];
+            }
+        }return maxValueOfArray;
+    }
+
+Лучше:
+
+    public int findMaxNumber(int[] array) {
+        int maxValueOfArray = array[0];
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > maxValueOfArray){
+                maxValueOfArray = array[i];
+            }
+        }return maxValueOfArray;
+    }

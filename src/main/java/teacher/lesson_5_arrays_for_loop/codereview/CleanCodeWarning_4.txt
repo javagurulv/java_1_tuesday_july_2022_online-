@@ -1,0 +1,17 @@
+WARNING: Не оставляйте в коде закомментированные фрагменты.
+Перед коммитом в репозиторий удаляйте закомментированный код.
+Так же не используйте циклы без тела, они просто бесполезны.
+
+
+    public  int[] createArray(int arrayLength){
+        int[] newArray = new  int [arrayLength];
+        for (int i = 0; i< newArray.length; i++){
+            /* System.out.println(newArray[i]); */
+        } return newArray;
+    }
+
+Лучше:
+
+    public  int[] createArray(int arrayLength){
+        return new  int [arrayLength];
+    }

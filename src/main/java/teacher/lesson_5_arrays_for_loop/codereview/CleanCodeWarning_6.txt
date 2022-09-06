@@ -1,0 +1,15 @@
+WARNING: Не используйте лишнюю переменную при возврате
+значения из метода.
+
+    public static int generateArrayLength () {
+        Random randomLength = new Random();
+        int arrayLength = randomLength.nextInt(10);
+        return arrayLength;
+    }
+
+Лучше:
+
+    public static int generateArrayLength () {
+        Random randomLength = new Random();
+        return randomLength.nextInt(10);
+    }

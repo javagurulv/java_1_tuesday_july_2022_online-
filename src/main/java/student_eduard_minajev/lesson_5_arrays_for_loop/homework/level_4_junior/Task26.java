@@ -3,6 +3,10 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_4_junior;
 import java.util.Random;
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
 public class Task26 {
 
     public static void main(String[] args) {
@@ -17,6 +21,7 @@ public class Task26 {
         return arrayLength;
     }
 
+	@CodeReviewComment(teacher = "смотри src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_7.txt")
     public static int [] fillArrayRandomNumbers (int number){
         int [] randomArray = new int[number];
         Random random = new Random();

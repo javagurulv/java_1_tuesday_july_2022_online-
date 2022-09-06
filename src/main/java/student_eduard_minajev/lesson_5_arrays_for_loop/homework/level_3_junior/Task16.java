@@ -12,6 +12,9 @@ class ForLoopDefinition1 {
 
 package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_3_junior;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task16 {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {  // отсутвие инициализации

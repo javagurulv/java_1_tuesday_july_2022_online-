@@ -1,0 +1,40 @@
+WARNING: Не создавайте методы, которые делают много вещей одновременно!
+(создают массив, заполняют его случайными числами, распечатывают на консоль).
+Для каждой такой операции создавайте свой метод! Это сделает ваш код
+более читабельным, легче понимаемым. А так же части кода (отдельные методы)
+будет проще переиспользовать в других задачах.
+
+    public static int [] fillArrayRandomNumbers (int number){
+        int [] randomArray = new int[number];
+        Random random = new Random();
+        for (int i = 0; i < randomArray.length; i++){
+            randomArray[i] = random.nextInt(1000);
+            System.out.println(randomArray[i]);
+        } return randomArray;
+    }
+
+Лучше:
+
+   public static void main(String[] args){
+        int[] array = createArray(10);
+        fillArrayWithRandomNumbers(array);
+        printArrayToConsole(array);
+   }
+
+    private static int[] createArray (int arrayLength){
+        return new int[arrayLength];
+    }
+
+
+    private static void fillArrayWithRandomNumbers(int[] array){
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++){
+            array[i] = random.nextInt(1000);
+        }
+    }
+
+    private static void printArrayToConsole(int[] array){
+        for (int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
