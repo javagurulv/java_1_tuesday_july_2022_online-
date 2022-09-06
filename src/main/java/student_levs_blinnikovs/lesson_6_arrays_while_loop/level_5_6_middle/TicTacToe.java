@@ -110,8 +110,8 @@ class TicTacToe {
 
     private boolean isWinBySpecifiedHorizontal(int[][] field, int playerToCheck, int specifiedHorizontal) {
         boolean isWin = true;
-        for (int i = 0; i < field.length; i++) {                     // can do while if needed... Idea offers via code analysis
-            if (!isCellFilledBy(field, specifiedHorizontal, i, playerToCheck)) {
+        for (int vertical = 0; vertical < field[0].length; vertical++) {                     // can do while if needed... Idea offers via code analysis
+            if (!isCellFilledBy(field, specifiedHorizontal, vertical, playerToCheck)) {
                 isWin = false;
                 break;
             }
@@ -121,8 +121,8 @@ class TicTacToe {
 
     private boolean isWinBySpecifiedVertical(int[][] field, int playerToCheck, int specifiedVertical) {
         boolean isWin = true;
-        for (int i = 0; i < field[0].length; i++) {                 // can do while if needed... Idea offers via code analysis + not sure about field[0]
-            if (!isCellFilledBy(field, i, specifiedVertical, playerToCheck)) {
+        for (int horizontal = 0; horizontal < field.length; horizontal++) {                 // can do while if needed... Idea offers via code analysis + not sure about field[0]
+            if (!isCellFilledBy(field, horizontal, specifiedVertical, playerToCheck)) {
                 isWin = false;
                 break;
             }

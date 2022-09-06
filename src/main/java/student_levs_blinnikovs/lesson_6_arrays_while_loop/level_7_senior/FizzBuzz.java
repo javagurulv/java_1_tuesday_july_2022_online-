@@ -19,14 +19,4 @@ class FizzBuzz {
         else return "" + number;
     }
 
-    public static void main(String[] args) {
-
-        FizzBuzz fizzBuzz = new FizzBuzz();
-
-        System.out.println(fizzBuzz.detect(15));
-        System.out.println(fizzBuzz.detect(3));
-        System.out.println(fizzBuzz.detect(5));
-
-    }
-
 }

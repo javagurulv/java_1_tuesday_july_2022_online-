@@ -1,53 +1,63 @@
-package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_12_17.with_other;
+package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_12_17;
 
 class ArrayService {
 
     public boolean contains(int[] array, int number) {
-        for (int element : array) {
-            if (element == number) {
+        int i = 0;
+        while (i < array.length) {
+            if (array[i] == number) {
                 return true;
             }
+            i++;
         }
         return false;
     }
 
     public int findOccurrences(int[] array, int number) {
         int occurredCount = 0;
-        for (int element : array) {
-            if (element == number) {
+        int i = 0;
+        while (i < array.length) {
+            if (array[i] == number) {
                 occurredCount++;
             }
+            i++;
         }
         return occurredCount;
     }
 
     public boolean replaceFirstOccurrence(int[] array, int numberToFind, int replacingNumber) {
-        for (int i = 0; i < array.length; i++) {
+        int i = 0;
+        while (i < array.length) {
             if (array[i] == numberToFind) {
                 array[i] = replacingNumber;
                 return true;
             }
+            i++;
         }
         return false;
     }
 
     public int replaceAllOccurrences(int[] array, int numberToFind, int replacingNumber) {
         int replaceCount = 0;
-        for (int i = 0; i < array.length; i++) {
+        int i = 0;
+        while (i < array.length) {
             if (array[i] == numberToFind) {
                 array[i] = replacingNumber;
                 replaceCount++;
             }
+            i++;
         }
         return replaceCount;
     }
 
     public void revert(int[] array) {
         int buffer;
-        for (int i = 0; i < array.length/2; i++) {
+        int i = 0;
+        while (i < array.length/2) {
             buffer = array[i];
             array[i] = array[array.length-1-i];
             array[array.length-1-i] = buffer;
+            i++;
         }
     }
 
