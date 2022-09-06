@@ -13,8 +13,8 @@ public class Task25V2 {
     public static void main(String[] args){
         int arrayLength = requestArrayLength();
         int [] newArray = createUserArray(arrayLength);
-        Task25V2 task25V2 = new Task25V2();
-        task25V2.printArrayToConsole(newArray);
+        fillUserArrayWithUserData(newArray);
+        printArrayToConsole(newArray);
     }
 
     public static int requestArrayLength (){
@@ -36,9 +36,8 @@ public class Task25V2 {
     }
 
 
-
     // исправленно. Создан новый метод для вывода массива в консоль
-    public void printArrayToConsole (int [] array){
+    public static void printArrayToConsole (int [] array){
         for (int i = 0; i < array.length; i++){
             System.out.println(array[i]);
         }
