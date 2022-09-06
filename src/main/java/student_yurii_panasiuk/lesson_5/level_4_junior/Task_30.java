@@ -6,6 +6,10 @@ package student_yurii_panasiuk.lesson_5.level_4_junior;
 - найдите все нечётные числа в массиве и выведите их на консоль.
 
  */
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_30 {
 
     public static void main(String[] args) {

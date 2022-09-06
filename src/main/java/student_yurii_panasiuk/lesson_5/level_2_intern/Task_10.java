@@ -3,11 +3,15 @@ package student_yurii_panasiuk.lesson_5.level_2_intern;
 import java.util.Arrays;
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
 /*Напишите программу, в которой:
  - создайте массив целых чисел длиной 10;
  - заполните каждую ячейку массива любым целым числом;
  - выведите значение каждой ячейки на консоль.
  */
+
+@CodeReview(approved = true)
  class Task_10 {
     public static void main(String[] args) {
         Integer[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // массив из класса Integer можно преобразовать в список

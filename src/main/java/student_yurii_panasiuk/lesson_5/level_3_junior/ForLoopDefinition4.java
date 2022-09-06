@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_5.level_3_junior;
 
 // программа должна выводить на консоль числа от 0 до 9.
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ForLoopDefinition4 {
 
     public static void main(String[] args) {

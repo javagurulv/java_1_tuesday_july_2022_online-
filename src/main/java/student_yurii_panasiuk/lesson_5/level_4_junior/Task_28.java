@@ -2,6 +2,8 @@ package student_yurii_panasiuk.lesson_5.level_4_junior;
 
 import java.util.Arrays;
 
+import teacher.codereview.CodeReview;
+
 /*Напишите программу, в которой:
 - создайте массив произвольной длины;
 - заполните массив случайными числами;
@@ -9,6 +11,8 @@ import java.util.Arrays;
 - найдите наименьшее число в массиве и выведите его на консоль.
 
  */
+
+@CodeReview(approved = true)
 public class Task_28 {
 
     public static void main(String[] args) {

@@ -5,6 +5,10 @@ package student_yurii_panasiuk.lesson_5.level_2_intern;
  - посчитайте среднее значение и выведите его на консоль.
 
  */
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_14 {
 
     public static void main(String[] args) {

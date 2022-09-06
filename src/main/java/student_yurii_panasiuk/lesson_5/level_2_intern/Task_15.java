@@ -8,6 +8,10 @@ package student_yurii_panasiuk.lesson_5.level_2_intern;
  - увеличьте значение каждой ячейки на 2;
  - выведите значение каждой ячейки на консоль.
  */
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_15 {
     public static void main(String[] args) {
 

@@ -2,6 +2,8 @@ package student_yurii_panasiuk.lesson_5.level_4_junior;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
 /*Напишите программу, в которой:
 - запросите у пользователя с консоли длину массива;
 - создайте массив указанной пользователем длины;
@@ -9,6 +11,8 @@ import java.util.Scanner;
 - распечатайте на консоль все элементы массива.
 
  */
+
+@CodeReview(approved = true)
 public class Task_25 {
 
     public static void main(String[] args) {

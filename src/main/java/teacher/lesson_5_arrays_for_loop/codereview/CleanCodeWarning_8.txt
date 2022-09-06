@@ -1,0 +1,23 @@
+WARNING: Не объявляйте счётчик цикла for до начала цикла.
+Если у вас несколько циклов, объявите счётчик цикла в каждом
+из циклов.
+
+        int i;
+
+        for (i = 0; i < numbers.length; i++) {
+            numbers[i] = (int) (1 + Math.random() * 10);
+        }
+
+        for (i = 0; i < numbers.length; i++) {
+            numbersSum = numbersSum + numbers[i];
+        }
+
+Лучше:
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = (int) (1 + Math.random() * 10);
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbersSum = numbersSum + numbers[i];
+        }

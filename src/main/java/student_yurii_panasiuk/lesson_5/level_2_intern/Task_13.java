@@ -6,6 +6,10 @@ package student_yurii_panasiuk.lesson_5.level_2_intern;
  - посчитайте сумму всех ячеек и распечатайте ее на консоль.
 
  */
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_13 {
     public static void main(String[] args) {
 
