@@ -1,0 +1,28 @@
+WARNING: Тестовый метод не должен возвращать результат, он должен
+быть void. А так же печатать как положительный, так и отрицательный
+результат теста.
+
+    public boolean isEvenTest() {
+        int checkNumber = 8;
+        boolean expectedResult = true;
+        NumberUtils numberUtils = new NumberUtils();
+        boolean actualResult = numberUtils.isEven(checkNumber);
+        if (actualResult == expectedResult) {
+            System.out.println("Test Ok");
+        }
+        return true;
+    }
+
+Лучше:
+
+    public void shouldCheckEvenNumber() {
+        int checkNumber = 8;
+        boolean expectedResult = true;
+        NumberUtils numberUtils = new NumberUtils();
+        boolean actualResult = numberUtils.isEven(checkNumber);
+        if (actualResult == expectedResult) {
+            System.out.println("Even Test Ok");
+        } else {
+            System.out.println("Even Test Fail");
+        }
+    }

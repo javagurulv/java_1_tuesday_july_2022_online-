@@ -1,0 +1,13 @@
+WARNING: Результат условия в Java это boolean.
+Не нужно отдельно пользоваться тернарным оператором
+и константами true и false.
+
+public boolean isEven(int number) {
+    return (number % 2 == 0) ? true : false;
+}
+
+Лучше:
+
+public boolean isEven(int number) {
+    return number % 2 == 0;
+}
