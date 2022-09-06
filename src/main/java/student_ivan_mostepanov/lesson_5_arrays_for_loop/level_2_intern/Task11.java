@@ -20,6 +20,8 @@ class Task11 {
 
         System.out.println("Your numbers are:");
 
+        /*for (int number : numbers)*/
+
         for (int i = 0; i < numbers.length; i++) {
 
             System.out.println(numbers[ i ]);
