@@ -2,10 +2,10 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_5;
 
 import java.util.Random;
 
-class ArrayUntil {
+class ArrayUtil {
 
     public static void main(String[] args) {
-        ArrayUntil arrayUntilOne = new ArrayUntil();
+        ArrayUtil arrayUntilOne = new ArrayUtil();
         arrayUntilOne.createArray(6);
         arrayUntilOne.createRandomArray(5);
     }
