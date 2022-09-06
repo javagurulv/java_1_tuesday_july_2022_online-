@@ -9,12 +9,10 @@ public class CalculatorTest {
         calculatorTest.subTest();
         calculatorTest.sumTest();
         calculatorTest.isEvenTest();
+
+
+
     }
-
-
-
-
-
 
 
     public void divTest() {
@@ -27,8 +25,10 @@ public class CalculatorTest {
         if (realResult == sumResult) {
             System.out.println("True");
         } else {
-            System.out.println("False");}
+            System.out.println("False");
+        }
     }
+
     public void mulTest() {
         int firstNumber = 6;
         int secondNumber = 3;
@@ -39,8 +39,10 @@ public class CalculatorTest {
         if (realResult == sumResult) {
             System.out.println("True");
         } else {
-            System.out.println("False");}
+            System.out.println("False");
+        }
     }
+
     public void subTest() {
         int firstNumber = 6;
         int secondNumber = 3;
@@ -49,9 +51,11 @@ public class CalculatorTest {
         int realResult = calculator.sub(firstNumber, secondNumber);
         if (realResult == sumResult) {
             System.out.println("True");
-        } else { System.out.println("False");
+        } else {
+            System.out.println("False");
         }
     }
+
     public void sumTest() {
         int firstNumber = 2;
         int secondNumber = 3;
@@ -62,27 +66,40 @@ public class CalculatorTest {
         int realResult = calculator.sum(firstNumber, secondNumber);
         if (realResult == sumResult) {
             System.out.println("True");
-        } else { System.out.println("False");
+        } else {
+            System.out.println("False");
 
         }
     }
-public boolean isEvenTest() {
-    int number = 3;
-    boolean result = true;
 
-    Calculator calculator = new Calculator();
+    public boolean isEvenTest() {
+        int number = 3;
+        boolean result = true;
 
-    boolean realResult = calculator.isEven(number);
-    if (realResult == result) {
-        System.out.println("True");
-    } else {
-        System.out.println("False");
+        Calculator calculator = new Calculator();
 
+        boolean realResult = calculator.isEven(number);
+        if (realResult == result) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+
+        }
+        return result;
     }
-    return result;
-}
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class EqualsOrDifferent {
 
     public static void main(String[] args) {
+
+
         System.out.println("Write number your first number");
         Scanner scanner = new Scanner(System.in);
         int firstNumber = scanner.nextInt();
