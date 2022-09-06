@@ -24,6 +24,15 @@ public class Calculator {
         return number % 2 == 0;
     }
 
+public int maxOfTwoNumbers ( int firstNumber,int secondNumber) {if (firstNumber>secondNumber)
+    return firstNumber;else return secondNumber;}
+public int maxOfThreeNumbers (int firstNumber, int secondNumber, int thirdNumber){ if (firstNumber>secondNumber &&
+
+firstNumber>thirdNumber) return firstNumber;else if (firstNumber<secondNumber && secondNumber>thirdNumber
+
+) return secondNumber;else return thirdNumber;}
+
+
 
 }
 

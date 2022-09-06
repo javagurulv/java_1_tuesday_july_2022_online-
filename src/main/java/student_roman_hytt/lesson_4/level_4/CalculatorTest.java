@@ -9,8 +9,8 @@ public class CalculatorTest {
         calculatorTest.subTest();
         calculatorTest.sumTest();
         calculatorTest.isEvenTest();
-
-
+        calculatorTest.maxOfTwoNumbersTest();
+        calculatorTest.maxOfThreeNumbersTest();
 
     }
 
@@ -73,7 +73,7 @@ public class CalculatorTest {
     }
 
     public boolean isEvenTest() {
-        int number = 3;
+        int number = 4;
         boolean result = true;
 
         Calculator calculator = new Calculator();
@@ -88,8 +88,36 @@ public class CalculatorTest {
         return result;
     }
 
-}
 
+    private void maxOfTwoNumbersTest(){
+     int fistNumber=2;
+     int secondNumber=5;
+     int result=5;
+
+     Calculator calculator=new Calculator();
+      int realResult= calculator.maxOfTwoNumbers(fistNumber,secondNumber);
+      if (realResult==result) {
+        System.out.println("True");}
+        else {System.out.println("False");}
+
+    }
+
+private void maxOfThreeNumbersTest() {
+    int firstNumber = 6;
+    int secondNumber = 4;
+    int thirdNumber = 9;
+    int result = 9;
+
+    Calculator calculator = new Calculator();
+
+    int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+    if (realResult == result) {
+        System.out.println("True");
+    } else {
+        System.out.println("False");}
+    }
+
+}
 
 
 
