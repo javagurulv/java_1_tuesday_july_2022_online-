@@ -6,8 +6,6 @@ class Task10 {
 
         int[] numbers = new int[10];
 
-
-
         for (int j = 0; j < numbers.length; j++) {
             numbers[j] = j+1;
             System.out.println(numbers[j]);
