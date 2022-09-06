@@ -22,14 +22,10 @@ class ArrayUtilTest {
  */
 
 import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
 import java.util.Arrays;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Это не тесты, это маленькие Demo программы. "
-		+ "Тест это подготовка входных данных (не рандом если это можно),"
-		+ "вызов продакшн кода и проверка результатов.", student = "Probably fixed.")
+@CodeReview(approved = true)
 class ArrayUtilTest {
 
     public static void main(String[] args) {
