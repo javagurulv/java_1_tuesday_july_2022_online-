@@ -1,35 +1,42 @@
 package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_4_junior;
 
+
 import java.util.Random;
 import java.util.Scanner;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
 public class Task26 {
-
+// Все переделал
     public static void main(String[] args) {
-        int arrayLength = requestArrayLength();
-        int [] newArray = fillArrayRandomNumbers(arrayLength);
-    }
 
-    public static int requestArrayLength (){
+        int userArrayLength = requestArrayLength();
+        int [] newUserArray = createNewArray(userArrayLength);
+        fillArrayRandomNumbers(newUserArray);
+        printArrayToConsole(newUserArray);
+    }
+    // упростил
+    public static int requestArrayLength() {
         System.out.println("Please enter array length");
         Scanner userArrayLength = new Scanner(System.in);
-        int arrayLength = userArrayLength.nextInt();
-        return arrayLength;
+        return userArrayLength.nextInt();
     }
-
-	@CodeReviewComment(teacher = "смотри src/main/java/teacher/lesson_5_arrays_for_loop/codereview/CleanCodeWarning_7.txt")
-    public static int [] fillArrayRandomNumbers (int number){
-        int [] randomArray = new int[number];
+    // Новый метод
+    public static int [] createNewArray(int arrayLength ) {
+        return new int [arrayLength];
+    }
+    // переработал метод
+     public static int [] fillArrayRandomNumbers (int [] array){
         Random random = new Random();
-        for (int i = 0; i < randomArray.length; i++){
-            randomArray[i] = random.nextInt(100);
-            System.out.println(randomArray[i]);
-        } return randomArray;
+        for (int i = 0; i < array.length; i++){
+            array[i] = random.nextInt(100);
+        } return array;
     }
 
+    // Новый объект создан
+    public static void printArrayToConsole (int [] array){
+        for (int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
 
 }
