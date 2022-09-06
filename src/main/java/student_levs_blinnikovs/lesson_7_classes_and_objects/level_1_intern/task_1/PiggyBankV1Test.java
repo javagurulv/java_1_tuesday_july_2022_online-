@@ -36,8 +36,7 @@ class PiggyBankV1Test {
     void shouldAddEurAs100Cents(int eurAdded, String eurLabel) {
         PiggyBankV1 testPiggyBankV1 = createPiggyBankV1();
         testPiggyBankV1.addCoin(createCoin(eurAdded, eurLabel));
-        int expectedCentsAdded = eurAdded * 100;
-        testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV1.getAmountOfMoneyInCents()));
+        testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
     public static void main(String[] args) {
@@ -49,9 +48,9 @@ class PiggyBankV1Test {
         test.shouldAddCents(10, "cENt");
         test.shouldAddCents(20, "CeNt");
         test.shouldAddCents(50, "Cent");
+
         test.shouldAddEurAs100Cents(1, "EUR");
         test.shouldAddEurAs100Cents(2, "eur");
-
 
     }
 
