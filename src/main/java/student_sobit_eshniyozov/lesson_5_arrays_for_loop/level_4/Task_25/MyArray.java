@@ -8,6 +8,9 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_4.Task_25;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class MyArray {
     public static void main(String[] args) {
 

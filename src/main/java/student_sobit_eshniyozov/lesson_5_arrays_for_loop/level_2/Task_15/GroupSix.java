@@ -7,6 +7,9 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_2.Task_15;
 //        - увеличьте значение каждой ячейки на 2;
 //        - выведите значение каждой ячейки на консоль.
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class GroupSix {
     public static void main(String[] args) {
 

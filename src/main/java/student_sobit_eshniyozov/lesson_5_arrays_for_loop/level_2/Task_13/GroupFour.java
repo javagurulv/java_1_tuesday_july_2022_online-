@@ -5,6 +5,9 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_2.Task_13;
 //        - заполните каждую ячейку массива случайным числом;
 //        - посчитайте сумму всех ячеек и распечатайте ее на консоль.
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class GroupFour {
     public static void main(String[] args) {
 

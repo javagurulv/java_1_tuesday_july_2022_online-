@@ -7,6 +7,9 @@ package student_sobit_eshniyozov.lesson_5_arrays_for_loop.level_4.Task_26;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class MyArrayRandom {
     public static void main(String[] args) {
 
