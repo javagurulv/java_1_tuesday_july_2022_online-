@@ -1,0 +1,72 @@
+WARNING: Тесты должны находиться в отдельном классе.
+NumberUtils - продакшн класс.
+NumberUtilsTest - тестовый класс.
+Это связано с тем, что автоматические тесты используются
+только в процессе разработки программного обеспечения и
+не нужны на продакшене. Если продакшн код и тесты лежат
+в отдельных файлах и классах их легко отделить друг от
+друга и для прода собрать сборку без тестов. Если тесты
+лежат вместе с продакшн кодом в одних файлах и классах,
+то при сборке приложения отделить их друг от друга невозможно.
+
+class NumberUtils {
+
+    public static void main(String[] args) {
+        System.out.print("Testing method isEven - ");
+        isEvenTest();
+    }
+
+    static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+     static void isEvenTest() {
+        boolean result = isEven(40);
+        testResult(result);
+    }
+
+    static void testResult(boolean check) {
+        if (check){ System.out.println(" OK");}
+        else {System.out.println(" FAIL");}
+    }
+
+}
+
+Лучше:
+
+class NumberUtils {
+
+    boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+}
+
+class NumberUtilsTest {  // в отдельном файле
+
+    public static void main(String[] args) {
+        System.out.print("Testing method isEven - ");
+        NumberUtilsTest test = new NumberUtilsTest();
+        test.isEvenTest();
+    }
+
+    private void isEvenTest() {
+        boolean result = isEven(40);
+        testResult(result);
+    }
+
+    private void isOddTest() {
+        boolean result = (isEven(41) == false);
+        testResult(result);
+    }
+
+    private void testResult(boolean check) {
+        if (check){
+            System.out.println(" OK");
+        }
+        else {
+            System.out.println(" FAIL");
+        }
+    }
+
+}

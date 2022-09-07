@@ -5,6 +5,12 @@ package student_yurii_panasiuk.lesson_6.level_1_intern;
 
  */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Тесты должны быть в отдельном классе.")
+@CodeReviewComment(teacher = "Тесты должны проверять как позитивный так и негативный сценарии.")
 class NumberUtils {
 
     public static void main(String[] args) {

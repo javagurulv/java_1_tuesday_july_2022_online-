@@ -1,0 +1,74 @@
+WARNING: В проектировании приложений выделяют несколько основных
+частей: UI (или Frontend) и бизнес логику. К UI относится всё то,
+что связано с взаимодействием программы и пользователя. К бизнес
+логике относится обработка данных и принятие решений. Эти две части
+программы строго разделяют, так как они выполняют совершенно разные
+вещи, и для их разработки применяют разные инструменты и технологии.
+В примере ниже метод getDayNumberFromUser() это часть программы,
+которая относится к взаимодействию с пользователем, это часть UI.
+Метод findDayOfTheWeek() является отличным примером бизнес логики.
+Эти две части надо отделять друг от друга. Один из вариантов как
+это сделать - перенести getDayNumberFromUser() в Demo класс.
+
+class DayOfTheWeekDetector {
+
+    int getDayNumberFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input day number between 1 and 7 : ");
+        return scanner.nextInt();
+    }
+
+    String findDayOfTheWeek(int dayNumber) {
+        String dayOfTheWeek;
+        switch (dayNumber) {
+            case 1 -> dayOfTheWeek = "Monday";
+            case 2 -> dayOfTheWeek = "Tuesday";
+            case 3 -> dayOfTheWeek = "Wednesday";
+            case 4 -> dayOfTheWeek = "Thursday";
+            case 5 -> dayOfTheWeek = "Friday";
+            case 6 -> dayOfTheWeek = "Saturday";
+            case 7 -> dayOfTheWeek = "Sunday";
+            default -> dayOfTheWeek = "Not correct day number";
+        }
+            return dayOfTheWeek;
+
+    }
+}
+
+Лучше:
+
+class DayOfTheWeekDetector {
+
+    String findDayOfTheWeek(int dayNumber) {
+        String dayOfTheWeek;
+        switch (dayNumber) {
+            case 1 -> dayOfTheWeek = "Monday";
+            case 2 -> dayOfTheWeek = "Tuesday";
+            case 3 -> dayOfTheWeek = "Wednesday";
+            case 4 -> dayOfTheWeek = "Thursday";
+            case 5 -> dayOfTheWeek = "Friday";
+            case 6 -> dayOfTheWeek = "Saturday";
+            case 7 -> dayOfTheWeek = "Sunday";
+            default -> dayOfTheWeek = "Not correct day number";
+        }
+        return dayOfTheWeek;
+    }
+}
+
+
+class DayOfTheWeekDetectorDemo {
+
+    public static void main(String[] args) {
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        int dayNumber = getDayNumberFromUser();
+        String dayOfTheWeek = detector.findDayOfTheWeek(dayNumber);
+        System.out.println(dayOfTheWeek);
+    }
+
+    private static int getDayNumberFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input day number between 1 and 7 : ");
+        return scanner.nextInt();
+    }
+
+}
