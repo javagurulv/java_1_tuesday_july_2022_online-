@@ -1,0 +1,76 @@
+WARNING: Была поставлена следующая задача:
+    создайте класс ArrayService и реализуйте в нём метод
+    для проверки содержит ли массив целых чисел заданное число.
+
+В чём недостаток следующей реализации?
+
+class ArrayService {
+     int givenNumber;
+     int[] array;
+
+     ArrayService(int[] array, int givenNumber) {
+         this.array = array;
+         this.givenNumber = givenNumber;
+     }
+
+     boolean checkForNumber()   {
+         boolean result = false;
+           for (int j : this.array) {
+               if (j == this.givenNumber) {
+                   result = true;
+                   break;
+               }
+             }
+         return result;
+     }
+
+}
+
+Недостаток этой реализации становится заметным, когда речь заходит
+о многократном его использовании. Например, у нас есть много массивов
+и в них мы хотим найти заданное число, или у нас есть один массив
+и в нём мы хотим поискать разные числа. Во всех этих случаях
+нам придётся создавать новый экземпляр класса ArrayService.
+
+ArrayService service = new ArrayService({1, 2, 3}, 3);
+boolean contains = service.checkForNumber();
+
+service = new ArrayService({1, 2, 3}, 4);
+contains = service.checkForNumber();
+
+service = new ArrayService({1, 2, 3}, 1);
+contains = service.checkForNumber();
+
+и так далее. Создание нового объекта для каждой операции
+это довольно накладная вещь. Можно написать решение и по другому.
+
+Лучше:
+
+class ArrayService {
+
+     boolean checkForNumber(int[] array, int givenNumber)   {
+         boolean result = false;
+           for (int j : array) {
+               if (j == givenNumber) {
+                   result = true;
+                   break;
+               }
+           }
+         return result;
+     }
+
+}
+
+ArrayService service = new ArrayService();
+
+boolean contains = service.checkForNumber({1, 2, 3}, 3);
+contains = service.checkForNumber({1, 2, 3}, 4);
+contains = service.checkForNumber({1, 2, 3}, 1);
+
+При этой реализации мы только один раз создаём экземпляр класса
+ArrayService и в дальнейшем пользуемся им многократно для выполнения
+операции поиска заданного числа в массиве. Сам массив и число, которое
+мы в нём пытаемся найти передаются как параметры метода и не
+сохраняются как свойства класса. Это делает класс ArrayService
+stateless (без состояния) и даёт возможность использовать одну
+и ту же его инстанцию многократно.
