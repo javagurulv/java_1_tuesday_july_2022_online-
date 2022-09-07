@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_6.level_3_junior.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ArrayServiceDemo {
 
     public static void main(String[] args) {

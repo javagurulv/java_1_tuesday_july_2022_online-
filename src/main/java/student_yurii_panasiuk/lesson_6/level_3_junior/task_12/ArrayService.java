@@ -5,6 +5,11 @@ package student_yurii_panasiuk.lesson_6.level_3_junior.task_12;
 
   */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Посмотри src/main/java/teacher/lesson_6_arrays_while_loop/codereview/CleanCodeWarning_6.txt")
  class ArrayService {
      int givenNumber;
      int[] array = new int[givenNumber];
