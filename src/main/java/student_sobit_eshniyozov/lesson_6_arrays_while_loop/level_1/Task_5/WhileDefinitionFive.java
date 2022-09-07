@@ -1,5 +1,8 @@
 package student_sobit_eshniyozov.lesson_6_arrays_while_loop.level_1.Task_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WhileDefinitionFive {
     public static void main(String[] args) {
         int i = 1;
