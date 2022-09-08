@@ -83,18 +83,3 @@ class ArrayService {
     }
 
 }
-
-/*
-        int[] array = {4,2,1,3};  needs to become 1 2 3 4
-
-        4 2 1 3   4 is not smaller than 4
-        4 2 1 3   2 is smaller than 4, needs to be before it
-        2 4 1 3   2 is not smaller than 2
-        2 4 1 3   4 is not smaller than 2
-        2 4 1 3   1 is smaller than 2, needs to be before it
-        1 2 4 3   bla bla
-        1 2 4 3   3 is smaller than 4, needs to be before it
-
-
-
- */
