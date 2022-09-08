@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_5_6_middle;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Move {
 
     private int x;

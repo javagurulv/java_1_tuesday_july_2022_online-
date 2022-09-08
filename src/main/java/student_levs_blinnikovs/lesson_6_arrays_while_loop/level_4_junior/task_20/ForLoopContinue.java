@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_4_junior.task_20;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ForLoopContinue {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {

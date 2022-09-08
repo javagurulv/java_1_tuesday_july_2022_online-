@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_4_junior.task_1
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WhileInfiniteLoopBreak {
     public static void main(String[] args) {
 

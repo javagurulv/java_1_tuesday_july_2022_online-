@@ -4,6 +4,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_1_intern.task_6
         Упростите работу метода, код внутри может быть написан в одну строку.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class NumberUtils {
 
     public boolean isEven(int number) {

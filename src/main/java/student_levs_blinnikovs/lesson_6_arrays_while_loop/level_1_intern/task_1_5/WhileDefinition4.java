@@ -4,6 +4,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_1_intern.task_1
         Программа должна выводить числа от 1 до 100 на консоль.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WhileDefinition4 {
 
     public static void main(String[] args) {

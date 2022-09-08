@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_1_intern.task_1
 
 // Найдите ошибку в программе и исправить её:
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WhileDefinition3 {
 
     public static void main(String[] args) {

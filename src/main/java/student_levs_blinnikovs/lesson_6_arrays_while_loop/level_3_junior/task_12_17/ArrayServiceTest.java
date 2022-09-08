@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_3_junior.task_1
 
 import java.util.Arrays;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ArrayServiceTest {
 
     private void checkTestResult(boolean condition, String testName) {

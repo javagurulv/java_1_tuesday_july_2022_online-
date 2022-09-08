@@ -16,6 +16,9 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_4_junior.task_2
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class TwoDimensionalArray {
     public static void main(String[] args) {
 

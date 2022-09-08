@@ -1,6 +1,8 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_7_senior;
 
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 class FizzBuzzTest {
 
     public void compareRealExpected(String realResult, String expectedResult) {
