@@ -2,6 +2,9 @@ package student_olegs_radigins.lesson_5.level_4.task_27_28_29_30;
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class RandomNumbers2 {
     public static void main(String[] args) {
         Random randomGenerator = new Random();

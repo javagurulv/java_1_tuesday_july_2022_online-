@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_5.level_2.task_10;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayNumbers {
     public static void main(String[] args) {
         int[] numbers = new int[10];

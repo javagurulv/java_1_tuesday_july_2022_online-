@@ -3,6 +3,9 @@ package student_olegs_radigins.lesson_5.level_4.task_26;
 import java.util.Random;
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class RandomNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
