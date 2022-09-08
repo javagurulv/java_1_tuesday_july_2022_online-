@@ -1,0 +1,29 @@
+WARNING: При использовании вложенных циклов не забывайте
+использовать {} для чёткого обозначения границ тела цикла.
+Даже если тело цикла состоит из одной команды! Это улучшает
+читабельность и восприятие кода, а так же если в будущем
+придётся добавить новые команды в тело цикла вы это
+точно сделаете правильно (а то можно скобки забыть поставить
+и программа тогда будет работать неправильно).
+
+    public int calculateSumOfArray (int[][] array) {
+        int sum = 0;
+        for (int[] innerArray : array)
+            for (int arr : innerArray)
+                sum = sum + arr;
+        System.out.println(sum);
+        return sum;
+    }
+
+
+Лучше:
+
+    public int calculateSumOfArray (int[][] array) {
+        int sum = 0;
+        for (int[] innerArray : array) {
+            for (int arr : innerArray) {
+                sum = sum + arr;
+            }
+        }
+        return sum;
+    }

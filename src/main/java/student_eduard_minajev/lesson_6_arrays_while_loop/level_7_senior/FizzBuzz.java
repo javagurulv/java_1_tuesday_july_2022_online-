@@ -22,6 +22,9 @@ class FizzBuzz {
 
 package student_eduard_minajev.lesson_6_arrays_while_loop.level_7_senior;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class FizzBuzz {
     private int initialNumber;
 

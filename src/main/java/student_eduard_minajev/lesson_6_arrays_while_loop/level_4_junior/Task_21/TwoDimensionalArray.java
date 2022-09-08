@@ -15,6 +15,9 @@ package student_eduard_minajev.lesson_6_arrays_while_loop.level_4_junior.Task_21
 import java.util.Arrays;
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class TwoDimensionalArray {
 // Гуглил все, так как еще мало опыта с двух мерными массивами
     public static void main(String[] args){
