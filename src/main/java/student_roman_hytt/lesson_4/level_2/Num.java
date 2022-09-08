@@ -1,5 +1,10 @@
 package student_roman_hytt.lesson_4.level_2;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Зачем нужны свойства num1 и num2?")
 public class Num {
 int num1;
 int num2;

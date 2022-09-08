@@ -1,7 +1,8 @@
 package student_roman_hytt.lesson_4.level_4;
 
+import teacher.codereview.CodeReview;
 
-
+@CodeReview(approved = true)
 public class Calculator {
 
     public int sum(int firstNumber, int secondNumber) {

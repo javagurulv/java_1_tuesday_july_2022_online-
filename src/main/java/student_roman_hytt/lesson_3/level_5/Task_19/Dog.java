@@ -1,5 +1,10 @@
 package student_roman_hytt.lesson_3.level_5.Task_19;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Собаку можно создавать только с кличкой или или только с возрастом?")
 public class Dog {
 String name;
 int age;

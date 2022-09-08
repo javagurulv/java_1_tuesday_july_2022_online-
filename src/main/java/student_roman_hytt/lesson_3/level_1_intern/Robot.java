@@ -1,5 +1,8 @@
 package student_roman_hytt.lesson_3.level_1_intern;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Robot {
 
 public void sayHello () { System.out.println ("Hello!");}

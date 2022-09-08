@@ -1,0 +1,44 @@
+WARNING: Тут что то не так, но что?
+
+class Dog {
+
+	String name;
+	int age;
+
+    Dog (String name) {
+		this.name = name;
+	}
+
+	Dog (int age) {
+		this.age = age;
+	}
+
+    void voice () {
+		System.out.println (name +" "+ age);
+	}
+
+}
+
+У класса два конструктора, у каждого по одному параметру.
+Экземпляр класса можно создать только с именем, но без
+возраста или только с возрастом, но без имени. Не до собака
+какая-то получается!
+
+
+Лучше:
+
+class Dog {
+
+	String name;
+	int age;
+
+    Dog (String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+    void voice () {
+		System.out.println (name +" "+ age);
+	}
+
+}
