@@ -3,6 +3,9 @@ package student_ivan_mostepanov.lesson_6_arrays_while_loop;
 import java.util.Random;
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class GuessRandomNumber {
 
     public static void main(String[] args) {

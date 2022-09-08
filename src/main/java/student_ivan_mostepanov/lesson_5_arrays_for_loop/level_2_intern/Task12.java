@@ -3,6 +3,9 @@ package student_ivan_mostepanov.lesson_5_arrays_for_loop.level_2_intern;
 import java.util.Random;
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task12 {
 
 

@@ -1,7 +1,10 @@
 package student_ivan_mostepanov.lesson_6_arrays_while_loop.level_1_intern.task_6;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
 
-
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "А где тест на негативный сценарий?")
 class NumberUtilsTest {
 
 

@@ -2,8 +2,11 @@ package student_ivan_mostepanov.lesson_4_if_statement.level_1_intern;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Task3 {
-int number;
+int number;  // зачем тут это свойство?
     public static void main(String[] args) {
         Scanner newDay = new Scanner(System.in);
         System.out.println("Enter number from 1 to 7 ");

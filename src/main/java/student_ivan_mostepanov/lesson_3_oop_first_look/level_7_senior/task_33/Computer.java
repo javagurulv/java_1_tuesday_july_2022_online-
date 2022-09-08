@@ -1,5 +1,8 @@
 package student_ivan_mostepanov.lesson_3_oop_first_look.level_7_senior.task_33;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Computer {
     String manufacturer;
     String model;
