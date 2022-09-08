@@ -15,7 +15,9 @@ package student_eduard_minajev.lesson_5_arrays_for_loop.homework.level_5_middle;
 import java.util.Random;
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 public class ArrayUtil {
 
     /* Task 31 - redone */
