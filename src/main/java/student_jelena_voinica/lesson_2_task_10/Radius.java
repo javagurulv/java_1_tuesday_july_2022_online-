@@ -1,5 +1,10 @@
 package student_jelena_voinica.lesson_2_task_10;
+
 import java.util.Scanner;
+
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Radius {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String []args){
