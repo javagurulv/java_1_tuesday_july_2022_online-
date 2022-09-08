@@ -6,8 +6,7 @@ import teacher.codereview.CodeReviewComment;
 @CodeReview(approved = false)
 @CodeReviewComment(teacher = "Зачем нужны свойства num1 и num2?")
 public class Num {
-int num1;
-int num2;
+
 
 int maxOfTwo (int num1,int num2){if (num1>num2) return num1; else return num2;
 }
