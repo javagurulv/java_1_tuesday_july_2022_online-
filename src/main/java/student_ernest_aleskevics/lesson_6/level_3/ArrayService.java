@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_6.level_3;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ArrayService {
 
     private boolean contains(int[] array, int numberToSearch) {

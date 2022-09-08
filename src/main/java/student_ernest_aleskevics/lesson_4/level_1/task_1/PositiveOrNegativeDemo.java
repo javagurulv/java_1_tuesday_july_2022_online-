@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_4.level_1.task_1;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class PositiveOrNegativeDemo {
 
     public static void main(String[] args) {

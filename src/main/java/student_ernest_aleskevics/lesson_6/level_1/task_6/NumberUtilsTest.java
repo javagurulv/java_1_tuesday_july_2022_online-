@@ -1,5 +1,10 @@
 package student_ernest_aleskevics.lesson_6.level_1.task_6;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "А где тест на негативный сценарий?")
 public class NumberUtilsTest {
 
     public static void main(String[] args) {

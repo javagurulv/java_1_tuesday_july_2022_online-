@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_5.level_2.task_10;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class TenNumbers {
 
     public static void main(String[] args) {

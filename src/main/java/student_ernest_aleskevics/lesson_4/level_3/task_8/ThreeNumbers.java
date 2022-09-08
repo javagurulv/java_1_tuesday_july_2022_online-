@@ -2,6 +2,9 @@ package student_ernest_aleskevics.lesson_4.level_3.task_8;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ThreeNumbers {
     public static void main(String[] args) {
 

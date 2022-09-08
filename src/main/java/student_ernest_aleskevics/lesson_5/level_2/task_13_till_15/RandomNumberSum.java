@@ -2,6 +2,9 @@ package student_ernest_aleskevics.lesson_5.level_2.task_13_till_15;
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class RandomNumberSum {
 
     public static void main(String[] args) {

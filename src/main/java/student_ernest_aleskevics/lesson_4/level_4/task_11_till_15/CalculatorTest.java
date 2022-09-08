@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_4.level_4.task_11_till_15;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class CalculatorTest {
 
     public static void main(String[] args) {

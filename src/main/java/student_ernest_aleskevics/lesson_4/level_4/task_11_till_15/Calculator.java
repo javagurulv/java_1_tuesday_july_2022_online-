@@ -1,5 +1,9 @@
 package student_ernest_aleskevics.lesson_4.level_4.task_11_till_15;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
 public class Calculator {
 
     public int sum(int firstNumber, int secondNumber) {
@@ -14,6 +18,8 @@ public class Calculator {
     public int div(int firstNumber, int secondNumber) {
         return firstNumber / secondNumber;
     }
+
+	@CodeReviewComment(teacher = "Этот код можно упростить!")
     public boolean isEven(int number) {
         if ((number % 2) == 0) {
             return true;
