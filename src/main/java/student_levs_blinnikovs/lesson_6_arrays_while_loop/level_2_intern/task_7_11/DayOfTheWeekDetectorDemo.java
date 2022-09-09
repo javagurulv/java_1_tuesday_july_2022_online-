@@ -1,7 +1,5 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_2_intern.task_7_11;
 
-import teacher.codereview.CodeReview;
-
 import java.util.Scanner;
 
 
