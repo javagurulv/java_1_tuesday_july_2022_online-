@@ -1,23 +1,19 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_1_intern.task_6;
 
-import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "А где тест на негативный сценарий?")
+@CodeReviewComment(teacher = "А где тест на негативный сценарий?", student = "Fixed, parametrized")
 class NumberUtilsTest {
 
-    void isEvenTest() {
+    void evenTest(int numberToTest, boolean expectedResult) {
         NumberUtils test = new NumberUtils();
-        int evenNumber = 2;
-        boolean expectedResult = true;
-        boolean realResult = test.isEven(evenNumber);
-        boolean testResult = expectedResult == realResult;
-        System.out.println("Test OK: " + testResult);
+        boolean realResult = test.isEven(numberToTest);
+        System.out.println("Even test OK: " + (expectedResult == realResult));
     }
 
     public static void main(String[] args) {
         NumberUtilsTest test = new NumberUtilsTest();
-        test.isEvenTest();
+        test.evenTest(2, true);
+        test.evenTest(1, false);
     }
 }
