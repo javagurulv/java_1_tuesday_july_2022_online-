@@ -1,6 +1,6 @@
-package student_levs_blinnikovs.lesson_7_classes_and_objects.level_1_intern.task_1;
+package student_levs_blinnikovs.lesson_7_classes_and_objects.level_1_intern.task_1.piggybank;
 
-class PiggyBankV1Test {
+class PiggyBankTest {
 
     /*
     Протестируйте добавление
@@ -9,6 +9,9 @@ class PiggyBankV1Test {
 
     PiggyBankV1 createPiggyBankV1() {
         return new PiggyBankV1();
+    }
+    PiggyBankV2 createPiggyBankV2(int coinCapacity) {
+        return new PiggyBankV2(coinCapacity);
     }
 
     Coin createCoin(int denomination, String title) {
@@ -33,15 +36,27 @@ class PiggyBankV1Test {
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
+    void shouldAddCents(int expectedCentsAdded, String centLabel, int coinCapacity) {
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(coinCapacity);
+        testPiggyBankV2.addCoin(createCoin(expectedCentsAdded, centLabel));
+        testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV2.getAmountOfMoneyInCents()));
+    }
+
     void shouldAddEurAs100Cents(int eurAdded, String eurLabel) {
         PiggyBankV1 testPiggyBankV1 = createPiggyBankV1();
         testPiggyBankV1.addCoin(createCoin(eurAdded, eurLabel));
         testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
+    void shouldAddEurAs100Cents(int eurAdded, String eurLabel, int coinCapacity) {
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(coinCapacity);
+        testPiggyBankV2.addCoin(createCoin(eurAdded, eurLabel));
+        testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV2.getAmountOfMoneyInCents()));
+    }
+
     public static void main(String[] args) {
 
-        PiggyBankV1Test test = new PiggyBankV1Test();
+        PiggyBankTest test = new PiggyBankTest();
         test.shouldAddCents(1, "cent");
         test.shouldAddCents(2, "CENT");
         test.shouldAddCents(5, "cEnT");
@@ -51,6 +66,17 @@ class PiggyBankV1Test {
 
         test.shouldAddEurAs100Cents(1, "EUR");
         test.shouldAddEurAs100Cents(2, "eur");
+
+        System.out.println("PiggyBankV2 tests: ");   // TODO make tests work
+//        test.shouldAddCents(1, "cent", 4);
+//        test.shouldAddCents(2, "CENT", 4);
+//        test.shouldAddCents(5, "cEnT", 4);
+//        test.shouldAddCents(10, "cENt", 4);
+//        test.shouldAddCents(20, "CeNt", 4);
+//        test.shouldAddCents(50, "Cent", 4);
+//
+//        test.shouldAddEurAs100Cents(1, "EUR", 4);
+//        test.shouldAddEurAs100Cents(2, "eur", 4);
 
     }
 
