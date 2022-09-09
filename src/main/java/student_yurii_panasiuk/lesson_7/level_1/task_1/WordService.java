@@ -24,7 +24,7 @@ class WordService {
          for (char ch : text.toCharArray()) {
              chars.add(ch);
          }
-         return chars;
+         //return chars;
          // System.out.println(chars);
 
 
