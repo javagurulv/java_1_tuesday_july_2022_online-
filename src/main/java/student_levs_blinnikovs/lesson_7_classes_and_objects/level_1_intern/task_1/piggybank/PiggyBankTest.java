@@ -67,16 +67,16 @@ class PiggyBankTest {
         test.shouldAddEurAs100Cents(1, "EUR");
         test.shouldAddEurAs100Cents(2, "eur");
 
-        System.out.println("PiggyBankV2 tests: ");   // TODO make tests work
-//        test.shouldAddCents(1, "cent", 4);
-//        test.shouldAddCents(2, "CENT", 4);
-//        test.shouldAddCents(5, "cEnT", 4);
-//        test.shouldAddCents(10, "cENt", 4);
-//        test.shouldAddCents(20, "CeNt", 4);
-//        test.shouldAddCents(50, "Cent", 4);
-//
-//        test.shouldAddEurAs100Cents(1, "EUR", 4);
-//        test.shouldAddEurAs100Cents(2, "eur", 4);
+        System.out.println("PiggyBankV2 tests: ");
+        test.shouldAddCents(1, "cent", 4);
+        test.shouldAddCents(2, "CENT", 4);
+        test.shouldAddCents(5, "cEnT", 4);
+        test.shouldAddCents(10, "cENt", 4);
+        test.shouldAddCents(20, "CeNt", 4);
+        test.shouldAddCents(50, "Cent", 4);
+
+        test.shouldAddEurAs100Cents(1, "EUR", 4);
+        test.shouldAddEurAs100Cents(2, "eur", 4);
 
     }
 
