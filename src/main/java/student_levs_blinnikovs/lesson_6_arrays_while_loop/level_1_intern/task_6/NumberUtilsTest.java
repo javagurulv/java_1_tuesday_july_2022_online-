@@ -1,8 +1,8 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_1_intern.task_6;
 
-import teacher.codereview.CodeReviewComment;
+import teacher.codereview.CodeReview;
 
-@CodeReviewComment(teacher = "А где тест на негативный сценарий?", student = "Fixed, parametrized")
+@CodeReview(approved = true)
 class NumberUtilsTest {
 
     void evenTest(int numberToTest, boolean expectedResult) {

@@ -1,8 +1,8 @@
 package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_2_intern.task_7_11;
 
-import teacher.codereview.CodeReviewComment;
+import teacher.codereview.CodeReview;
 
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_6_arrays_while_loop/codereview/CleanCodeWarning_5.txt", student = "made split")
+@CodeReview(approved = true)
 class DayOfTheWeekDetector {
 
     String findDayOfTheWeek(int dayNumber) {
