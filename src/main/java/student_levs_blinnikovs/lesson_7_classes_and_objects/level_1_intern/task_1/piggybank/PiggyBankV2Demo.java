@@ -6,6 +6,8 @@ class PiggyBankV2Demo {
 
         PiggyBankV2 testPiggyBankV2 = new PiggyBankV2(4);
 
+        // TODO all possible coins into virtual wallet array Coin[] and then reuse across tests
+        // TODO enumerated coin denomination values, and maybe label as well - then ignoreCase checks can be omitted
         Coin coin1Cent = new Coin(1, "cent");
         Coin coin2Cents = new Coin(2, "cent");
         Coin coin5Cents = new Coin(5, "cent");
