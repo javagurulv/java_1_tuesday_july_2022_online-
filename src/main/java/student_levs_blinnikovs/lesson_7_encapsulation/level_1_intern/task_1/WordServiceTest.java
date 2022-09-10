@@ -2,20 +2,28 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_1_intern.task_1;
 
 class WordServiceTest {
 
-    void shouldReturnFirstWordForNoMostOftenWords() {
-
+    void shouldReturnFirstWordForNoMostFrequentWords() {
+        String textWithNoMostFrequent = "This is test string for returning first word as there are no repeated ones.";
+        String expectedMostFrequentWord = "this";
+        WordService wordService = new WordService();
+        String realMostFrequentWord = wordService.findMostFrequentWord(textWithNoMostFrequent);
+        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
-    void shouldFindMostOftenWord() {
-
+    void shouldFindMostFrequentWord() {
+        String textContainingMostFrequent = "Burgers. I just love burgers. Don't you love burgers? Anyone loves burgers!";
+        String expectedMostFrequentWord = "burgers";
+        WordService wordService = new WordService();
+        String realMostFrequentWord = wordService.findMostFrequentWord(textContainingMostFrequent);
+        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
-    void shouldReturnFirstOccurrenceForEquallyOftenWords() {
-
-    }
-
-    boolean testComparator(boolean expectedResult, boolean realResult) {
-        return expectedResult == realResult; // TODO TBD what comparison methods to use here
+    void shouldReturnFirstOccurrenceForEquallyFrequentWords() {
+        String textContainingMultipleMostFrequentGroups = "Hmm... pizza or burgers? Good question. I just love burgers. Don't you love burgers? Are you saying that pizza is more superior? I'm not sure. I haven't got a good pizza in a while.";
+        String expectedMostFrequentWord = "pizza";
+        WordService wordService = new WordService();
+        String realMostFrequentWord = wordService.findMostFrequentWord(textContainingMultipleMostFrequentGroups);
+        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
     void testResultPrinter(boolean isTestOK) {
@@ -30,9 +38,9 @@ class WordServiceTest {
 
         WordServiceTest test = new WordServiceTest();
 
-        test.shouldReturnFirstWordForNoMostOftenWords();
-        test.shouldFindMostOftenWord();
-        test.shouldReturnFirstOccurrenceForEquallyOftenWords();
+        test.shouldReturnFirstWordForNoMostFrequentWords();
+        test.shouldFindMostFrequentWord();
+        test.shouldReturnFirstOccurrenceForEquallyFrequentWords();
 
     }
 
