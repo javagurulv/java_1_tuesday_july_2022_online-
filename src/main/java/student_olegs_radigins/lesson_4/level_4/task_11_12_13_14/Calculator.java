@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_4.level_4.task_11_12_13;
+package student_olegs_radigins.lesson_4.level_4.task_11_12_13_14;
 
 import teacher.codereview.CodeReview;
 
@@ -20,8 +20,20 @@ class Calculator {
         System.out.print("Can't divide by ");
         return secondNumber;
     }
-    public boolean isEven(int number) {
+    public boolean isEven(int number){
         return number % 2 == 0;
+    }
+
+    public boolean theFirstNumberIsTheGreaterOfTheTwo (int firstNumber, int secondNumber){
+        return firstNumber > secondNumber;
+    }
+
+    public boolean theSecondNumberIsTheGreaterOfTheTwo (int firstNumber, int secondNumber){
+        return firstNumber < secondNumber;
+    }
+
+    public boolean bothNumbersAreEqual (int firstNumber, int secondNumber){
+        return firstNumber == secondNumber;
     }
 }
 

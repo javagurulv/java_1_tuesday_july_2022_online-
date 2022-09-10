@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_4.level_4.task_11_12_13;
+package student_olegs_radigins.lesson_4.level_4.task_11_12_13_14;
 
 class CalculatorTest {
     public static void main(String[] args) {
@@ -8,6 +8,9 @@ class CalculatorTest {
         calculatorTest.multiply();
         calculatorTest.divide();
         calculatorTest.isEven();
+        calculatorTest.theFirstNumberIsTheGreaterOfTheTwo();
+        calculatorTest.theSecondNumberIsTheGreaterOfTheTwo();
+        calculatorTest.bothNumbersAreEqual();
           }
 
     public void sumTest() {
@@ -75,6 +78,47 @@ class CalculatorTest {
             System.out.println("Even test = FAIL");
         }
 
+
+    }
+    public void theFirstNumberIsTheGreaterOfTheTwo(){
+        int firstNumber = 15;
+        int secondNumber = 5;
+        boolean expectedResult = true;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.theFirstNumberIsTheGreaterOfTheTwo(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Test for greater first number = OK");
+        } else {
+            System.out.println("Test for greater first number = FAIL");
+        }
+
+    }
+
+    public void theSecondNumberIsTheGreaterOfTheTwo(){
+        int firstNumber = 15;
+        int secondNumber = 5;
+        boolean expectedResult = false;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.theSecondNumberIsTheGreaterOfTheTwo(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Test for greater second number = OK");
+        } else {
+            System.out.println("Test for greater second number = FAIL");
+        }
+
+    }
+
+    public void bothNumbersAreEqual(){
+        int firstNumber = 15;
+        int secondNumber = 5;
+        boolean expectedResult = false;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.bothNumbersAreEqual(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Test for equality of two numbers = OK");
+        } else {
+            System.out.println("Test for equality of two numbers = FAIL");
+        }
 
     }
 }
