@@ -8,11 +8,11 @@ class PiggyBankV2 {
         this.coins = new Coin[coinCapacity];
     }
 
-    private boolean isEmptySlot(int index) {
+    public boolean isEmptySlot(int index) {
         return coins[index] == null;
     }
 
-    private boolean isPiggyBankFull() {
+    public boolean isPiggyBankFull() {
         for (int i = 0; i < coins.length; i++) {
             if (isEmptySlot(i)) {
                 return false;

@@ -22,6 +22,10 @@ class PiggyBankTest {
         return expectedCentsAdded == realAmountOfMoneyInCents;
     }
 
+    boolean testComparator(boolean expectedResult, boolean realResult) {
+        return expectedResult == realResult;
+    }
+
     void testResultPrinter(boolean isTestOK) {
         if (isTestOK) {
             System.out.println("Test OK");
@@ -54,7 +58,7 @@ class PiggyBankTest {
         testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV2.getAmountOfMoneyInCents()));
     }
 
-    void addMultipleCoinsSmokeTest() {
+    void addMultipleCoinsFullCapacitySmokeTest() {
         PiggyBankV1 testPiggyBankV1 = createPiggyBankV1();
 
         Coin coin1Cent = createCoin(1, "cent");
@@ -80,7 +84,7 @@ class PiggyBankTest {
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
-    void addMultipleCoinsSmokeTestV2() {
+    void addMultipleCoinsFullCapacitySmokeTestV2() {
         PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(8);
 
         Coin coin1Cent = createCoin(1, "cent");
@@ -102,31 +106,86 @@ class PiggyBankTest {
         testPiggyBankV2.addCoin(coin1Cent);   // 3.88 EUR (388 cents)
 
         int expectedCentsAdded = 388;
-
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV2.getAmountOfMoneyInCents()));
     }
 
-    void cantAddDueToFullTest() {
-        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
-        // TODO hide in Coin[] wallet and reuse indexes maybe
-//        Coin coin1Cent = createCoin(1, "cent");
-//        Coin coin2Cent = createCoin(2, "cent");
-//        Coin coin5Cent = createCoin(5, "cent");
-//        Coin coin10Cent = createCoin(10, "cent");
+    void addMultipleCoinsPartialCapacitySmokeTestV2() {
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(8);
 
-        Coin coin20Cent = createCoin(20, "cent");
-        Coin coin50Cent = createCoin(50, "cent");
-        Coin coin1Eur = createCoin(1, "EUR");
-        Coin coin2Eur = createCoin(2, "EUR");
+        Coin coin1Cent = createCoin(1, "cent");
+        Coin coin2Cent = createCoin(2, "cent");
+        Coin coin5Cent = createCoin(5, "cent");
+        Coin coin10Cent = createCoin(10, "cent");
 
-        testPiggyBankV2.addCoin(coin2Eur);
-        testPiggyBankV2.addCoin(coin1Eur);
-        testPiggyBankV2.addCoin(coin50Cent);
-        testPiggyBankV2.addCoin(coin20Cent);
+        testPiggyBankV2.addCoin(coin10Cent);
+        testPiggyBankV2.addCoin(coin5Cent);
+        testPiggyBankV2.addCoin(coin2Cent);
+        testPiggyBankV2.addCoin(coin1Cent);   // 0.18 EUR (18 cents)
 
-        int expectedCentsAdded = 350;
-
+        int expectedCentsAdded = 18;
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV2.getAmountOfMoneyInCents()));
+    }
+
+    void shouldNotAddCoinOverPiggyBankCapacity() {
+        int coinCapacity = 3;
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(coinCapacity);
+
+        Coin coin50Cent = createCoin(50, "cent");
+
+        for (int i = 0; i < (coinCapacity + 1); i++) {
+            testPiggyBankV2.addCoin(coin50Cent); // should ignore adding 4th, making sum just 150 cents
+        }
+
+        int expectedCentsAdded = 150;
+        testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV2.getAmountOfMoneyInCents()));
+    }
+
+    void shouldReturnEmptySlot() {
+        Coin coin1Eur = createCoin(1, "EUR");
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
+        testPiggyBankV2.addCoin(coin1Eur);
+        testPiggyBankV2.addCoin(coin1Eur);
+        boolean expectedLastSlotIsEmpty = true;
+        boolean realLastSlotIsEmpty = testPiggyBankV2.isEmptySlot(2);
+        testResultPrinter(testComparator(expectedLastSlotIsEmpty, realLastSlotIsEmpty));
+    }
+
+    void shouldReturnNotEmptySlot() {
+        Coin coin1Eur = createCoin(1, "EUR");
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
+        testPiggyBankV2.addCoin(coin1Eur);
+        testPiggyBankV2.addCoin(coin1Eur);
+        boolean expectedFilledSlotIsEmpty = false;
+        boolean realLastSlotIsEmpty = testPiggyBankV2.isEmptySlot(1);
+        testResultPrinter(testComparator(expectedFilledSlotIsEmpty, realLastSlotIsEmpty));
+    }
+
+    void shouldReturnPiggyBankIsFull() {
+        Coin coin1Eur = createCoin(1, "EUR");
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
+        testPiggyBankV2.addCoin(coin1Eur);
+        testPiggyBankV2.addCoin(coin1Eur);
+        testPiggyBankV2.addCoin(coin1Eur);
+        boolean expectedPiggyBankIsFull = true;
+        boolean realPiggyBankIsFull = testPiggyBankV2.isPiggyBankFull();
+        testResultPrinter(testComparator(expectedPiggyBankIsFull, realPiggyBankIsFull));
+    }
+
+    void shouldReturnPiggyBankIsNotFull() {
+        Coin coin1Eur = createCoin(1, "EUR");
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
+        testPiggyBankV2.addCoin(coin1Eur);
+        testPiggyBankV2.addCoin(coin1Eur);
+        boolean expectedPiggyBankIsFull = false;
+        boolean realPiggyBankIsFull = testPiggyBankV2.isPiggyBankFull();
+        testResultPrinter(testComparator(expectedPiggyBankIsFull, realPiggyBankIsFull));
+    }
+
+    void shouldReturnEmptyPiggyBank() {
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(3);
+        int expectedPiggyBankAmountInCents = 0;
+        int realPiggyBankAmountInCents = testPiggyBankV2.getAmountOfMoneyInCents();
+        testResultPrinter(testComparator(expectedPiggyBankAmountInCents, realPiggyBankAmountInCents));
     }
 
 
@@ -147,8 +206,8 @@ class PiggyBankTest {
         test.addSingleEurCoinSmokeTest(2, "eur");
 
         System.out.println("\nPiggyBankV1 multiple coin addition tests:");
-        test.addMultipleCoinsSmokeTest();
-
+        test.addMultipleCoinsFullCapacitySmokeTest();
+        test.addMultipleCoinsPartialCapacitySmokeTestV2();
 
         System.out.println("\nPiggyBankV2 smoke tests: ");
         test.addSingleCoinSmokeTestV2(1, "cent");
@@ -162,26 +221,26 @@ class PiggyBankTest {
         test.addSingleEurCoinSmokeTestV2(2, "eur");
 
         System.out.println("\nPiggyBankV2 multiple coin addition tests:");
-        test.addMultipleCoinsSmokeTestV2();
+        test.addMultipleCoinsFullCapacitySmokeTestV2();
 
         System.out.println("\nPiggyBankV2 additional functionality tests: ");
-        System.out.println("\nSlot is empty unit test: ");
-        // TODO slot empty unit test
+        System.out.println("Slot is empty unit test: ");
+        test.shouldReturnEmptySlot();
 
         System.out.println("\nSlot is NOT empty unit test: ");
-        // TODO slot not empty unit test
+        test.shouldReturnNotEmptySlot();
 
-        System.out.println("\nPiggy bank is full unit tests: ");
-        // TODO piggy bank full unit test
+        System.out.println("\nPiggy bank is full unit test: ");
+        test.shouldReturnPiggyBankIsFull();
 
-        System.out.println("\nPiggy bank is NOT full unit tests: ");
-        // TODO piggy bank full unit test
+        System.out.println("\nPiggy bank is NOT full unit test: ");
+        test.shouldReturnPiggyBankIsNotFull();
 
-        System.out.println("\nPiggy bank is full (nothing new adds) tests: ");
-        test.cantAddDueToFullTest(); // when not full - covered by smoke tests
+        System.out.println("\nPiggy bank is full (nothing new adds) test: ");
+        test.shouldNotAddCoinOverPiggyBankCapacity(); // when not full - covered by smoke tests
 
-        System.out.println("\nPiggy bank is empty (no new calculations run) tests: ");
-        // TODO validate that no calculations run on empty cells
+        System.out.println("\nPiggy bank is empty test: ");
+        test.shouldReturnEmptyPiggyBank();
 
     }
 
