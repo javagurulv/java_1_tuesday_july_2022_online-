@@ -19,14 +19,14 @@ class PiggyBankV2Demo {
         testPiggyBankV2.addCoin(coin10Cents);
         testPiggyBankV2.addCoin(coin10Cents);
         testPiggyBankV2.addCoin(coin10Cents);
-        testPiggyBankV2.addCoin(coin2Eur); // expect 230. New coins are not added.
+        testPiggyBankV2.addCoin(coin2Eur); // -- calc runs 3 times only. Calc doesn't run despite capacity is 4 due to loop break
 
-        testPiggyBankV2.addCoin(coin1Eur); // msg about full piggy bank presented
-        testPiggyBankV2.addCoin(coin1Cent); // msg about full piggy bank presented
+        testPiggyBankV2.addCoin(coin1Eur);
+       // testPiggyBankV2.addCoin(coin1Cent); // msg about full piggy bank presented
 
 
         int result = testPiggyBankV2.getAmountOfMoneyInCents();
-        System.out.println(result);
+        System.out.println("Cents sum in the piggy bank is: " + result);
 
     }
 }

@@ -1,7 +1,5 @@
 package student_levs_blinnikovs.lesson_7_classes_and_objects.level_1_intern.task_1.piggybank;
 
-import java.util.Arrays;
-
 class PiggyBankV2 {
 
     private Coin[] coins;
@@ -10,9 +8,13 @@ class PiggyBankV2 {
         this.coins = new Coin[coinCapacity];
     }
 
+    private boolean isEmptySlot(int index) {
+        return coins[index] == null;
+    }
+
     private boolean isPiggyBankFull() {
         for (int i = 0; i < coins.length; i++) {
-            if (coins[i] == null) {
+            if (isEmptySlot(i)) {
                 return false;
             }
         }
@@ -22,7 +24,7 @@ class PiggyBankV2 {
     public void addCoin(Coin coin) {
         if (!isPiggyBankFull()) {
             for (int i = 0; i < coins.length; i++) {
-                if (coins[i] == null) {                                     // TODO: when there is a place in this cell
+                if (isEmptySlot(i)) {
                     coins[i] = coin;
                     break;
                 }
@@ -33,13 +35,16 @@ class PiggyBankV2 {
         public int getAmountOfMoneyInCents () {
             int denominationSum = 0;
             for (int i = 0; i < coins.length; i++) {
-                if (coins[i] != null) {                                               // TODO: checks on piggy bank cell is not empty.. meaning run calc only on real coins
+                if (!isEmptySlot(i)) {                                                  // running calculation just on slots filled with coins
                     if (coins[i].getTitle().equalsIgnoreCase("EUR")) {
                         denominationSum += (coins[i].getDenomination() * 100);
                     }
                     if (coins[i].getTitle().equalsIgnoreCase("cent")) {
                         denominationSum += coins[i].getDenomination();
                     }
+                } else {
+                    System.out.println("There are still " + (coins.length - i) + " empty slots in the piggy bank. Nothing to calculate."); // exit loop - stop iterating if there are empty cells - nothing to calculate
+                    break;
                 }
             }
             return denominationSum;

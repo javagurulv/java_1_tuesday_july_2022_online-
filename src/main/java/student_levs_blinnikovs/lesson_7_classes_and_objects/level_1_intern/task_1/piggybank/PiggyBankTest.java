@@ -67,7 +67,7 @@ class PiggyBankTest {
         test.shouldAddEurAs100Cents(1, "EUR");
         test.shouldAddEurAs100Cents(2, "eur");
 
-        System.out.println("PiggyBankV2 tests: ");
+        System.out.println("\nPiggyBankV2 smoke tests: ");
         test.shouldAddCents(1, "cent", 4);
         test.shouldAddCents(2, "CENT", 4);
         test.shouldAddCents(5, "cEnT", 4);
@@ -77,6 +77,8 @@ class PiggyBankTest {
 
         test.shouldAddEurAs100Cents(1, "EUR", 4);
         test.shouldAddEurAs100Cents(2, "eur", 4);
+
+        System.out.println("\nPiggyBankV2 additional functionality tests: ");
 
     }
 
