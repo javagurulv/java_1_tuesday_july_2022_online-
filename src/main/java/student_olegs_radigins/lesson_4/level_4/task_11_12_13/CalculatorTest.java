@@ -7,6 +7,7 @@ class CalculatorTest {
         calculatorTest.subtractionTest();
         calculatorTest.multiply();
         calculatorTest.divide();
+        calculatorTest.isEven();
           }
 
     public void sumTest() {
@@ -61,6 +62,19 @@ class CalculatorTest {
         } else {
             System.out.println("Divide test = FAIL");
         }
+
+    }
+    public void isEven() {
+        int number = 15;
+        boolean expectedResult = false;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.isEven(number);
+        if (realResult == expectedResult) {
+            System.out.println("Even test = OK");
+        } else {
+            System.out.println("Even test = FAIL");
+        }
+
 
     }
 }
