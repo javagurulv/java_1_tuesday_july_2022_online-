@@ -1,0 +1,19 @@
+Дан класс:
+
+class RandomNumberList {
+
+    private List<Integer> randomNumbers = new ArrayList<>();
+
+    public void add(int randomNumber) {
+        this.randomNumbers.add(randomNumber);
+    }
+
+    public int size() {
+        return this.randomNumbers.size();
+    }
+
+}
+
+Напишите программу, которая будет вызывать метод add() со случайно сгенерированными
+целыми числами из разных потоков. Докажите, что применение простого
+ArrayList в многопоточной среде не безопасно!

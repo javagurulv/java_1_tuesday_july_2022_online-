@@ -1,0 +1,32 @@
+Добавьте к классу NotThreadSafeIdGenerator функциональность
+определения чётности/не чётности id следующим образом:
+
+class NotThreadSafeIdGeneratorComplexState {
+
+    private int id;
+    private boolean even;
+
+    public int nextId() {
+        id++;
+        this.even = isEven(id);
+        return id;
+    }
+
+    public boolean isEven() {
+        return this.even;
+    }
+
+    private boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+}
+
+Напишите программу, которая продемонстрирует, что id и свойство even
+могут находиться в не согласованных состояниях.
+
+Для этого вызывайте метод nextId() многократно в нескольких потоках
+параллельно. Получив новое значение id тут же вызовите метод isEven()
+и проверьте согласованность полученных значений. Если полученные значения
+не согласованы (id чётное, а isEven() вернул не чётное и наоборот), то
+зафиксируйте этот факт выведя на консоль значения id и even.
