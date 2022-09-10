@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_4.level_4.task_11_12;
+package student_olegs_radigins.lesson_4.level_4.task_11_12_13;
 
 import teacher.codereview.CodeReview;
 
@@ -19,6 +19,9 @@ class Calculator {
         }
         System.out.print("Can't divide by ");
         return secondNumber;
+    }
+    public boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
 

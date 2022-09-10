@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_4.level_4.task_11_12;
+package student_olegs_radigins.lesson_4.level_4.task_11_12_13;
 
 class CalculatorTest {
     public static void main(String[] args) {
@@ -7,8 +7,7 @@ class CalculatorTest {
         calculatorTest.subtractionTest();
         calculatorTest.multiply();
         calculatorTest.divide();
-
-    }
+          }
 
     public void sumTest() {
         int firstNumber = 10;
