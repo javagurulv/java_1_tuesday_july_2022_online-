@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_7_encapsulation.level_1_intern.task_1;
+package student_levs_blinnikovs.lesson_7_encapsulation.level_1_intern.task_1_8;
 
 class WordServiceDemo {
 
