@@ -36,9 +36,9 @@ class PiggyBankTest {
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
-    void addSingleCoinSmokeTest(int expectedCentsAdded, String centLabel, int coinCapacity) { // overloaded to create V2 piggy bank
-        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(coinCapacity);
-        testPiggyBankV2.addCoin(createCoin(expectedCentsAdded, centLabel));
+    void addSingleCoinSmokeTestV2(int expectedCentsAdded, String centLabel) { // removed overloading for single coin tests
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(1);
+        testPiggyBankV2.addCoin(createCoin(expectedCentsAdded, centLabel));  // somehow would be better to pass object of PiggyBank superclass to the method
         testResultPrinter(testComparator(expectedCentsAdded, testPiggyBankV2.getAmountOfMoneyInCents()));
     }
 
@@ -48,8 +48,8 @@ class PiggyBankTest {
         testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV1.getAmountOfMoneyInCents()));
     }
 
-    void addSingleEurCoinSmokeTest(int eurAdded, String eurLabel, int coinCapacity) {
-        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(coinCapacity);
+    void addSingleEurCoinSmokeTestV2(int eurAdded, String eurLabel) {
+        PiggyBankV2 testPiggyBankV2 = createPiggyBankV2(1);
         testPiggyBankV2.addCoin(createCoin(eurAdded, eurLabel));
         testResultPrinter(testComparator((eurAdded * 100), testPiggyBankV2.getAmountOfMoneyInCents()));
     }
@@ -151,15 +151,15 @@ class PiggyBankTest {
 
 
         System.out.println("\nPiggyBankV2 smoke tests: ");
-        test.addSingleCoinSmokeTest(1, "cent", 1);
-        test.addSingleCoinSmokeTest(2, "CENT", 1);
-        test.addSingleCoinSmokeTest(5, "cEnT", 1);
-        test.addSingleCoinSmokeTest(10, "cENt", 1);
-        test.addSingleCoinSmokeTest(20, "CeNt", 1);
-        test.addSingleCoinSmokeTest(50, "Cent", 1);
+        test.addSingleCoinSmokeTestV2(1, "cent");
+        test.addSingleCoinSmokeTestV2(2, "CENT");
+        test.addSingleCoinSmokeTestV2(5, "cEnT");
+        test.addSingleCoinSmokeTestV2(10, "cENt");
+        test.addSingleCoinSmokeTestV2(20, "CeNt");
+        test.addSingleCoinSmokeTestV2(50, "Cent");
 
-        test.addSingleEurCoinSmokeTest(1, "EUR", 1);
-        test.addSingleEurCoinSmokeTest(2, "eur", 1);
+        test.addSingleEurCoinSmokeTestV2(1, "EUR");
+        test.addSingleEurCoinSmokeTestV2(2, "eur");
 
         System.out.println("\nPiggyBankV2 multiple coin addition tests:");
         test.addMultipleCoinsSmokeTestV2();
