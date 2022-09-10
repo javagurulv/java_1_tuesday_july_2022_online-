@@ -10,25 +10,25 @@ class PiggyBankV2 {
         this.coins = new Coin[coinCapacity];
     }
 
-    public void addCoin(Coin coin) {                                    // TODO: run addition only when place exist, run error when full
+    private boolean isPiggyBankFull() {
         for (int i = 0; i < coins.length; i++) {
-            if (coins[i] == null) {                                     // TODO: when there is a place in this cell
-                coins[i] = coin;
-                break;
+            if (coins[i] == null) {
+                return false;
             }
         }
+        return true;
     }
 
-//    private boolean isPiggyBankFull() {
-//        boolean piggyBankFullInd = true;
-//        for (int i = 0; i < coins.length; i++) {
-//            if (getCoin(i) == null) {
-//                piggyBankFullInd = false;
-//                break;
-//            }
-//        }
-//        return piggyBankFullInd;
-//    }
+    public void addCoin(Coin coin) {
+        if (!isPiggyBankFull()) {
+            for (int i = 0; i < coins.length; i++) {
+                if (coins[i] == null) {                                     // TODO: when there is a place in this cell
+                    coins[i] = coin;
+                    break;
+                }
+            }
+        } else System.out.println("Can't add " + coin.getDenomination() + " " + coin.getTitle() + " coin - piggy bank is full!");
+    }
 
         public int getAmountOfMoneyInCents () {
             int denominationSum = 0;

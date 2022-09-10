@@ -21,7 +21,8 @@ class PiggyBankV2Demo {
         testPiggyBankV2.addCoin(coin10Cents);
         testPiggyBankV2.addCoin(coin2Eur); // expect 230. New coins are not added.
 
-        testPiggyBankV2.addCoin(coin1Eur); // ignored - OK
+        testPiggyBankV2.addCoin(coin1Eur); // msg about full piggy bank presented
+        testPiggyBankV2.addCoin(coin1Cent); // msg about full piggy bank presented
 
 
         int result = testPiggyBankV2.getAmountOfMoneyInCents();
