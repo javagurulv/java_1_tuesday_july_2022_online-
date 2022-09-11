@@ -6,16 +6,14 @@
 Написать тестовые сценарии для класса PowerCalculator в классе PowerCalculatorTest.
 Все тестовые сценарии должны отрабатывать без ошибок. */
 
-package student_eduard_minajev.lesson_7_encapsulation;
+package student_eduard_minajev.lesson_7_encapsulation.power_calculator;
 
 public class PowerCalculator {
 
-    private int baseNumber;
-
-    private int exponent;
-
-    void powerCalculator (int baseNumber, int exponent) {
-
+    public int exponentNumber (int baseNumber, int exponentNumber){
+        int power = 1;
+        for (int i = 1; i <= exponentNumber; i++ ){
+            power = power * baseNumber;
+        } return power;
     }
-
 }
