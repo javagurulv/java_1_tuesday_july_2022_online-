@@ -12,8 +12,7 @@ class WordServiceDemo {
 
 
        String[] processedText = test.processing (text);
-       ArrayList<Integer> list = new ArrayList<Integer>(test.listOfResps(processedText));
-       int coordinates = test.findMaxCoordinates(list);
+       int coordinates = test.findMaxCoordinates(test.listOfResps(processedText));
        System.out.println(test.findMostFrequentWord(coordinates, processedText));
 
 
