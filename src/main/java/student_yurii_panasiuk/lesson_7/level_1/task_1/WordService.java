@@ -1,7 +1,7 @@
 package student_yurii_panasiuk.lesson_7.level_1.task_1;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.HashMap;
 
 /*     Дана строка с текстом.
         Написать метод, который находит слово
@@ -14,37 +14,23 @@ import java.util.List;
   */
 class WordService {
 
-        void wordCounter (String text){
-            int wordStart = 0;
-            int wordEnd = 0;
-            //int i = 0;
-            List words = new ArrayList<>();
-            List<Character> chars = new ArrayList<>();
+    void wordCounter(String text) {
 
-            for (char ch: text.toCharArray()) {
-                chars.add(ch);        }
-
-
-
-            if(chars.size() != 0){
-
-                for (int i = 0; i < chars.size(); i++) {
-                    if(text.charAt(i) == ' '){
-                       wordEnd = i;
-                        System.out.println(i);
-                        for (int j = wordStart; j <= wordEnd; j++) {
-                           System.out.println(wordStart);
-                           System.out.println(wordEnd);
-                          words.add(chars.get(j));
-                        }
-                        wordStart = i+1;
-                    }
-                }
+        String[] words = text.replaceAll("[-.?!)(,:]", "").split("\\s+");
+        //Метод split возвращает массив String (слов в данном случае), поэтому нет необходимости вручную добавлять слова в массив.
+        HashMap<String, Integer> wordToCount = new HashMap<>();
+        for (String word : words)
+        {
+            if (!wordToCount.containsKey(word))
+            {
+                wordToCount.put(word, 0);
             }
-
-          System.out.println(words);
-
-
+            wordToCount.put(word, wordToCount.get(word) + 1);
+        }
+        for (String word : wordToCount.keySet())
+        {
+            System.out.println(word + " " + wordToCount.get(word));
         }
 
+    }
 }

@@ -6,7 +6,7 @@ public class WordServiceDemo {
 
         WordService test = new WordService();
 
-    String  text = "qwe rty"; // Дана строка с текстом.
+    String  text = "qwe rty  10 ., mefdf., ereres, ereres ., mefdf.,"; // Дана строка с текстом.
 
 
         test.wordCounter (text);
