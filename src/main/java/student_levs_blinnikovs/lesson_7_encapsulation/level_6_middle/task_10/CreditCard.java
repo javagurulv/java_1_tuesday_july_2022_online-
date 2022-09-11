@@ -8,11 +8,15 @@ class CreditCard {
     int creditLimit;
     int loanAmount;
 
+    boolean isPinCodeOK(String pinCode) {
+        return pinCode.equals(this.pinCode);
+    }
+
     void deposit(String pinCode, int amount) {
-        if (!pinCode.equals(this.pinCode)) {
+        if (!isPinCodeOK(pinCode)) {
             System.out.println("PIN incorrect! Deposit declined.");
         }
-        if (pinCode.equals(this.pinCode)) {
+        if (isPinCodeOK(pinCode)) {
             if (this.loanAmount > 0) {
                 if (amount >= this.loanAmount) {
                     int depositToLoanAmount = this.loanAmount;
@@ -20,7 +24,7 @@ class CreditCard {
                     int depositToBalance = amount - depositToLoanAmount;
                     this.balance += depositToBalance;
                     System.out.println("Successfully deposited " + depositToLoanAmount + " into loan amount and " + depositToBalance + " into balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
-                } else if (amount < this.loanAmount) {
+                } else {
                     this.loanAmount -= amount;
                     System.out.println("Successfully deposited " + amount + " into loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
                 }
@@ -32,15 +36,15 @@ class CreditCard {
     }
 
     void withdraw(String pinCode, int amount) {
-        if (!pinCode.equals(this.pinCode)) {
+        if (!isPinCodeOK(pinCode)) {
             System.out.println("PIN incorrect! Withdrawal declined.");
         }
-        if (pinCode.equals(this.pinCode)){
+        if (isPinCodeOK(pinCode)){
             if (this.balance >= amount) {
                 this.balance -= amount;
                 System.out.println("Successfully withdrawn " + amount + " from balance. Current balance is " + this.balance + ".");
-            } else if (this.balance < amount) {
-                int withdrawFromBalance = this.balance;                     // may be redundant
+            } else {
+                int withdrawFromBalance = this.balance;                     // may be redundant, left for info messages
                 int withdrawFromLoanAmount = amount - withdrawFromBalance;
                 if (this.creditLimit >= (this.loanAmount + withdrawFromLoanAmount)) {
                     this.balance -= withdrawFromBalance;
