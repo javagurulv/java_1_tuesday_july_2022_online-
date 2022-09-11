@@ -6,13 +6,10 @@ public class WordServiceDemo {
 
         WordService test = new WordService();
 
-    String  text = "qw er"; // Дана строка с текстом.
+    String  text = "qwe rty"; // Дана строка с текстом.
 
-        System.out.println(test.StringToList (text));
 
-       // System.out.println ( test.DivIntoWords (test.StringToList (text)));
-
-        test.DivIntoWords (test.StringToList (text));
+        test.wordCounter (text);
 
 
 

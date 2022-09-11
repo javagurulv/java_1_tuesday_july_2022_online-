@@ -14,21 +14,37 @@ import java.util.List;
   */
 class WordService {
 
-     public static void main(String[] args) {
+        void wordCounter (String text){
+            int wordStart = 0;
+            int wordEnd = 0;
+            //int i = 0;
+            List words = new ArrayList<>();
+            List<Character> chars = new ArrayList<>();
 
-   // public String findMostFrequentWord(String text) {
-
-        String  text = "type text here"; // Дана строка с текстом.
-
-         List<Character> chars = new ArrayList<>();
-         for (char ch : text.toCharArray()) {
-             chars.add(ch);
-         }
-         //return chars;
-         // System.out.println(chars);
+            for (char ch: text.toCharArray()) {
+                chars.add(ch);        }
 
 
 
-    }
+            if(chars.size() != 0){
+
+                for (int i = 0; i < chars.size(); i++) {
+                    if(text.charAt(i) == ' '){
+                       wordEnd = i;
+                        System.out.println(i);
+                        for (int j = wordStart; j <= wordEnd; j++) {
+                           System.out.println(wordStart);
+                           System.out.println(wordEnd);
+                          words.add(chars.get(j));
+                        }
+                        wordStart = i+1;
+                    }
+                }
+            }
+
+          System.out.println(words);
+
+
+        }
 
 }
