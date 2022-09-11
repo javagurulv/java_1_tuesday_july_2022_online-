@@ -9,7 +9,8 @@ WARNING: int maxValueOfArray = 0; - тип данных int может
             if (array[i] > maxValueOfArray){
                 maxValueOfArray = array[i];
             }
-        }return maxValueOfArray;
+        }
+        return maxValueOfArray;
     }
 
 Лучше:

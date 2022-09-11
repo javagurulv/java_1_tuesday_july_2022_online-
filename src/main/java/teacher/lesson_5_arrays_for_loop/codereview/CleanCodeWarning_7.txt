@@ -10,7 +10,8 @@ WARNING: Не создавайте методы, которые делают м�
         for (int i = 0; i < randomArray.length; i++){
             randomArray[i] = random.nextInt(1000);
             System.out.println(randomArray[i]);
-        } return randomArray;
+        }
+        return randomArray;
     }
 
 Лучше:
