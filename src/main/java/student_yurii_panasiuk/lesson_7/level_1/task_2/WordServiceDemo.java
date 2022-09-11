@@ -8,7 +8,7 @@ class WordServiceDemo {
 
         WordService test = new WordService();
 
-    String  text = "aaqwwwwwe aaqwwwwwe aaqwwwwwe  ty  10 mefdf m mefdf mefdf, ereres , ereres  .,"; // Дана строка с текстом.
+    String  text = "aaqwwwwwe + aaqwwwwwe олр шщ aaqwwwwwe  ty 10 10 + + 10 + 10  10 mefdf m mefdf mefdf, ereres , ereres  .,"; // Дана строка с текстом.
 
 
        String[] processedText = test.processing (text);
