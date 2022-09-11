@@ -7,6 +7,7 @@ class CreditCardDemo {
 
         CreditCard masterCard = new CreditCard("5555555555554444", "0000");
         masterCard.setCreditLimit(0);
+        masterCard.deposit("1234", 2500);
         masterCard.deposit("0000", 500);
         masterCard.withdraw("0000", 300);
         masterCard.withdraw("0000", 150);
@@ -18,11 +19,18 @@ class CreditCardDemo {
 
         CreditCard visa = new CreditCard("4012888888881881", "0000");
         visa.setCreditLimit(1000);
-        masterCard.deposit("0000", 500);
-        masterCard.withdraw("0000", 300);
-        masterCard.withdraw("0000", 150);
-        masterCard.withdraw("0000", 100); // something is wrong here, tbd
-        masterCard.withdraw("0000", 50);
+        visa.deposit("0000", 500);
+        visa.withdraw("0000", 300);
+        visa.withdraw("0000", 500);
+        visa.withdraw("0000", 600);
+        visa.withdraw("0000", 200);
+        visa.withdraw("0000", 100);
+        visa.deposit("0000", 1500);
+        visa.withdraw("0000", 750);
+        visa.deposit("0000", 250);
+        visa.withdraw("0000", 300);
+        visa.deposit("0000", 100);
+        visa.deposit("0000", 250);
 
 
     }

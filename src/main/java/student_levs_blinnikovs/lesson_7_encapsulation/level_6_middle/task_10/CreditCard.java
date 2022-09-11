@@ -14,10 +14,16 @@ class CreditCard {
         }
         if (pinCode.equals(this.pinCode)) {
             if (this.loanAmount > 0) {
-                int depositToLoanAmount = this.loanAmount; // may be redundant
-                int depositToBalance = amount - depositToLoanAmount;
-                this.balance += depositToBalance;
-                System.out.println("Successfully deposited " + depositToLoanAmount + " into loan amount and " + depositToBalance + " into balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
+                if (amount >= this.loanAmount) {
+                    int depositToLoanAmount = this.loanAmount;
+                    this.loanAmount -= depositToLoanAmount;
+                    int depositToBalance = amount - depositToLoanAmount;
+                    this.balance += depositToBalance;
+                    System.out.println("Successfully deposited " + depositToLoanAmount + " into loan amount and " + depositToBalance + " into balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
+                } else if (amount < this.loanAmount) {
+                    this.loanAmount -= amount;
+                    System.out.println("Successfully deposited " + amount + " into loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
+                }
             } else if (this.loanAmount == 0) {
                 this.balance += amount;
                 System.out.println("Successfully deposited " + amount + " into balance. Current balance is " + this.balance + ".");
@@ -36,12 +42,12 @@ class CreditCard {
             } else if (this.balance < amount) {
                 int withdrawFromBalance = this.balance;                     // may be redundant
                 int withdrawFromLoanAmount = amount - withdrawFromBalance;
-                if (this.creditLimit >= withdrawFromLoanAmount) {           // maybe here need check for if creditLimit >= loanAmount instead.. TBD
-                    this.balance -= withdrawFromBalance;                        // might as well just assign 0, but this looks better
-                    this.loanAmount -= withdrawFromLoanAmount;
-                    System.out.println("Successfully withdrawn " + withdrawFromLoanAmount + " from loan amount and " + withdrawFromBalance + " from balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
-                } else if (this.creditLimit < withdrawFromLoanAmount) {      // maybe here need check for if creditLimit < loanAmount instead.. TBD
-                    System.out.println("Not enough credit limit, operation declined!");
+                if (this.creditLimit >= (this.loanAmount + withdrawFromLoanAmount)) {
+                    this.balance -= withdrawFromBalance;
+                    this.loanAmount += withdrawFromLoanAmount;
+                    System.out.println("Successfully withdrawn " + amount + ": " + withdrawFromBalance + " from balance and " + withdrawFromLoanAmount + " from loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
+                } else if (this.creditLimit < (this.loanAmount + withdrawFromLoanAmount)) {
+                    System.out.println("Not enough credit limit (" + this.creditLimit + ") for withdrawal of " + withdrawFromLoanAmount +  ". Loan amount is " + this.loanAmount + ", operation declined!");
                 }
 
             }
