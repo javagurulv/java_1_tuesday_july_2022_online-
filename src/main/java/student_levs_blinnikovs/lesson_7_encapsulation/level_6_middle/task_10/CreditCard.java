@@ -12,23 +12,27 @@ class CreditCard {
         return pinCode.equals(this.pinCode);
     }
 
+    boolean isInDebt() {
+        return this.loanAmount > 0;
+    }
+
     void deposit(String pinCode, int amount) {
         if (!isPinCodeOK(pinCode)) {
             System.out.println("PIN incorrect! Deposit declined.");
         }
         if (isPinCodeOK(pinCode)) {
-            if (this.loanAmount > 0) {
-                if (amount >= this.loanAmount) {
+            if (isInDebt()) {
+                if (amount >= this.loanAmount) {           // isTransactionFullyCoveringDebt(amount)...
                     int depositToLoanAmount = this.loanAmount;
                     this.loanAmount -= depositToLoanAmount;
                     int depositToBalance = amount - depositToLoanAmount;
-                    this.balance += depositToBalance;
+                    this.balance += depositToBalance;         // this.balance += (amount - depositToLoanAmount)
                     System.out.println("Successfully deposited " + depositToLoanAmount + " into loan amount and " + depositToBalance + " into balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
                 } else {
                     this.loanAmount -= amount;
                     System.out.println("Successfully deposited " + amount + " into loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
                 }
-            } else if (this.loanAmount == 0) {
+            } else if (this.loanAmount == 0) { // alternatively !isInDebt()... but need some checks that loanAmount can't go below 0
                 this.balance += amount;
                 System.out.println("Successfully deposited " + amount + " into balance. Current balance is " + this.balance + ".");
             }
@@ -40,13 +44,13 @@ class CreditCard {
             System.out.println("PIN incorrect! Withdrawal declined.");
         }
         if (isPinCodeOK(pinCode)){
-            if (this.balance >= amount) {
+            if (this.balance >= amount) {       // isEnoughBalanceForTransaction(amount) ...
                 this.balance -= amount;
                 System.out.println("Successfully withdrawn " + amount + " from balance. Current balance is " + this.balance + ".");
             } else {
                 int withdrawFromBalance = this.balance;                     // may be redundant, left for info messages
                 int withdrawFromLoanAmount = amount - withdrawFromBalance;
-                if (this.creditLimit >= (this.loanAmount + withdrawFromLoanAmount)) {
+                if (this.creditLimit >= (this.loanAmount + withdrawFromLoanAmount)) {  // isEnoughCreditLimitForTransaction... something
                     this.balance -= withdrawFromBalance;
                     this.loanAmount += withdrawFromLoanAmount;
                     System.out.println("Successfully withdrawn " + amount + ": " + withdrawFromBalance + " from balance and " + withdrawFromLoanAmount + " from loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
