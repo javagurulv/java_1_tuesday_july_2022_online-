@@ -21,6 +21,8 @@ class WordService {
         HashMap<String, Integer> wordToCount = new HashMap<>();
         for (String word : words)
         {
+
+          //  System.out.println(word + " " + wordToCount.get(word));
             if (!wordToCount.containsKey(word))
             {
                 wordToCount.put(word, 0);
