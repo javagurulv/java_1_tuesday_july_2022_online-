@@ -17,21 +17,21 @@ class CreditCardTest {
     void shouldCreateCardWithZeroBalance() {
         int expectedBalance = 0;
         CreditCard masterCard = createCreditCard();
-        int realBalance = masterCard.balance;
+        int realBalance = masterCard.getBalance();
         testResultPrinter(expectedBalance == realBalance);
     }
 
     void shouldCreateCardWithZeroLoanAmount() {
         int expectedLoanAmount = 0;
         CreditCard masterCard = createCreditCard();
-        int realLoanAmount = masterCard.loanAmount;
+        int realLoanAmount = masterCard.getLoanAmount();
         testResultPrinter(expectedLoanAmount == realLoanAmount);
     }
 
     void shouldCreateCardWithZeroCreditLimit() {
         int expectedCreditLimit = 0;
         CreditCard masterCard = createCreditCard();
-        int realCreditLimit = masterCard.creditLimit;
+        int realCreditLimit = masterCard.getCreditLimit();
         testResultPrinter(expectedCreditLimit == realCreditLimit);
     }
 
@@ -39,7 +39,7 @@ class CreditCardTest {
         int expectedCreditLimit = 1000;
         CreditCard masterCard = createCreditCard();
         masterCard.setCreditLimit(1000);
-        int realCreditLimit = masterCard.creditLimit;
+        int realCreditLimit = masterCard.getCreditLimit();
         testResultPrinter(expectedCreditLimit == realCreditLimit);
     }
 
@@ -47,24 +47,65 @@ class CreditCardTest {
         int expectedBalance = 0;
         CreditCard masterCard = createCreditCard();
         masterCard.deposit("1234", 100);
-        int realBalance = masterCard.balance;
+        int realBalance = masterCard.getBalance();
         testResultPrinter(expectedBalance == realBalance);
     }
 
     void shouldDeclineWithdrawalOverWrongPIN() {
-        int expectedBalance = 100;
+        int expectedBalance = 0;
         CreditCard masterCard = createCreditCard();
-        masterCard.deposit("0000", 100);
         masterCard.withdraw("1234", 50);
-        int realBalance = masterCard.balance;
+        int realBalance = masterCard.getBalance();      // this also kinda tests zero balance scenario.. and here can add deposit to test deposit.. but ok
         testResultPrinter(expectedBalance == realBalance);
     }
 
     // todo all withdrawal/deposit transaction tests
     // without credit limit
+    void shouldDeposit() {
+        int expectedBalance = 100;
+        CreditCard masterCard = createCreditCard();
+        masterCard.deposit("0000", 100);
+        int realBalance = masterCard.getBalance();
+        testResultPrinter(expectedBalance == realBalance);
+    }
+
     // try to withdraw from 0 and fail
+    void shouldFailWithdrawal() {
+        int expectedBalance = 0;
+        CreditCard masterCard = createCreditCard();
+        masterCard.withdraw("0000", 100);
+        int realBalance = masterCard.getBalance();
+        testResultPrinter(expectedBalance == realBalance);
+    }
+
     // add money and withdraw up to the balance
+    void shouldAllowWithdrawalUpToTheBalance() {
+        int expectedBalance = 900;
+        CreditCard masterCard = createCreditCard();
+        masterCard.deposit("0000", 1000);
+        masterCard.withdraw("0000", 100);
+        int realBalance = masterCard.getBalance();
+        testResultPrinter(expectedBalance == realBalance);
+    }
+
+    void shouldAllowWithdrawalOfTheFullBalance() {
+        int expectedBalance = 0;
+        CreditCard masterCard = createCreditCard();
+        masterCard.deposit("0000", 1000);
+        masterCard.withdraw("0000", 1000);
+        int realBalance = masterCard.getBalance();
+        testResultPrinter(expectedBalance == realBalance);
+    }
+
     // add money and try to withdraw more than, fail
+    void shouldNotAllowWithdrawalOfTheMoreThanFullBalance() {
+        int expectedBalance = 1000;
+        CreditCard masterCard = createCreditCard();
+        masterCard.deposit("0000", 1000);
+        masterCard.withdraw("0000", 1500);
+        int realBalance = masterCard.getBalance();
+        testResultPrinter(expectedBalance == realBalance);
+    }
 
     // with credit limit
     // add balance, withdraw from it up to balance
@@ -93,6 +134,12 @@ class CreditCardTest {
 
         test.shouldDeclineDepositOverWrongPIN();
         test.shouldDeclineWithdrawalOverWrongPIN();
+
+        test.shouldDeposit();
+        test.shouldFailWithdrawal();
+        test.shouldAllowWithdrawalUpToTheBalance();
+        test.shouldAllowWithdrawalOfTheFullBalance();
+        test.shouldNotAllowWithdrawalOfTheMoreThanFullBalance();
 
     }
 }

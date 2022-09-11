@@ -22,13 +22,13 @@ class CreditCard {
         }
         if (isPinCodeOK(pinCode)) {
             if (isInDebt()) {
-                if (amount >= this.loanAmount) {           // isTransactionFullyCoveringDebt(amount)...
+                if (amount >= this.loanAmount) {           // isTransactionFullyCoveringDebt(amount)... then some sum needs to be allocated to balance
                     int depositToLoanAmount = this.loanAmount;
                     this.loanAmount -= depositToLoanAmount;
                     int depositToBalance = amount - depositToLoanAmount;
                     this.balance += depositToBalance;         // this.balance += (amount - depositToLoanAmount)
                     System.out.println("Successfully deposited " + depositToLoanAmount + " into loan amount and " + depositToBalance + " into balance. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
-                } else {
+                } else { // otherwise just for loan repayment
                     this.loanAmount -= amount;
                     System.out.println("Successfully deposited " + amount + " into loan amount. Current loan amount is " + this.loanAmount + " and balance is " + this.balance + ".");
                 }
@@ -72,5 +72,17 @@ class CreditCard {
 
     void setCreditLimit(int newCreditLimit) {
         this.creditLimit = newCreditLimit;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public int getCreditLimit() {
+        return creditLimit;
+    }
+
+    public int getLoanAmount() {
+        return loanAmount;
     }
 }
