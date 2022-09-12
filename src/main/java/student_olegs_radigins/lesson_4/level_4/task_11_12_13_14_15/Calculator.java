@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_4.level_4.task_11_12_13_14;
+package student_olegs_radigins.lesson_4.level_4.task_11_12_13_14_15;
 
 import teacher.codereview.CodeReview;
 
@@ -34,6 +34,30 @@ class Calculator {
 
     public boolean bothNumbersAreEqual (int firstNumber, int secondNumber){
         return firstNumber == secondNumber;
+    }
+
+    public int maxOfThreeNumbers (int firstNumber,int secondNumber, int thirdNumber) {
+
+        if ((firstNumber > secondNumber) && (firstNumber > thirdNumber)) {
+            return firstNumber;
+        } else if ((secondNumber > firstNumber) && (secondNumber > thirdNumber)) {
+            return secondNumber;
+        } else if ((thirdNumber > firstNumber) && (thirdNumber > secondNumber)) {
+            return thirdNumber;
+        } else if ((firstNumber == secondNumber) && (firstNumber > thirdNumber)) {
+            return firstNumber;
+        } else if ((firstNumber == thirdNumber) && (firstNumber > secondNumber)) {
+            return firstNumber;
+        } else if ((secondNumber == thirdNumber) && (secondNumber > firstNumber)) {
+            return secondNumber;
+        } else if ((firstNumber == secondNumber) && (firstNumber == thirdNumber)) {
+            return firstNumber;
+        } else {
+            return 0;
+        }
+
+
+
     }
 }
 
