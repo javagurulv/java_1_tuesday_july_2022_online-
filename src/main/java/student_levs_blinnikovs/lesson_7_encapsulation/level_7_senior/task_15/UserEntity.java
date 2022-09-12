@@ -33,22 +33,33 @@ class UserEntity {
         this.personalCode = new PersonalCodeGenerator().generatePersonalCode();
     }
 
-    //сохранение пользователя
-    void addUser(UserEntity user) {
-        Users usersDatabase = new Users(10);
-        usersDatabase.addUserToDatabase(user);
+    public int getId() {
+        return id;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    //сохранение пользователя
 
     //получение пользователя по id
-    UserEntity getUserById(int id) {
-        return new UserEntity("First", "Last");  // TODO. .. how to make database with static memory spin in the background...?
-    }
+    // in user database
 
     //получение пользователей по имени
+    // in user database
 
     //получение всех пользователей
+    // todo
 
     //редактирование пользователя
+    // todo with setters
+
     //удаление пользователя
+    // todo
 
 }
