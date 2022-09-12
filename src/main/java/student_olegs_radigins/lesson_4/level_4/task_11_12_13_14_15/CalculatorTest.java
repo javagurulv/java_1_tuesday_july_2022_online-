@@ -11,6 +11,14 @@ class CalculatorTest {
         calculatorTest.theFirstNumberIsTheGreaterOfTheTwo();
         calculatorTest.theSecondNumberIsTheGreaterOfTheTwo();
         calculatorTest.bothNumbersAreEqual();
+        calculatorTest.theFirstNumberIsTheGreaterOfThree();
+        calculatorTest.theSecondNumberIsTheGreaterOfThree();
+        calculatorTest.theThirdNumberIsTheGreaterOfThree();
+        calculatorTest.theFirstAndSecondAreEqualAndGreaterThanTheThird();
+        calculatorTest.theFirstAndThirdAreEqualAndGreaterThanTheSecond();
+        calculatorTest.theSecondAndThirdAreEqualAndGreaterThanTheFirst();
+        calculatorTest.theThreeNumbersAreEqual();
+        calculatorTest.theThreeNumbersAreZero();
           }
 
     public void sumTest() {
@@ -121,4 +129,93 @@ class CalculatorTest {
         }
 
     }
+    public void theFirstNumberIsTheGreaterOfThree() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(15, 10, 5);
+        if (realResult == expectedResult) {
+            System.out.println("Test for greater first number of three = OK");
+        } else {
+            System.out.println("Test for greater first number of three = FAIL");
+        }
+    }
+    public void theSecondNumberIsTheGreaterOfThree() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(10, 15, 5);
+        if (realResult == expectedResult) {
+            System.out.println("Test for greater second number of three = OK");
+        } else {
+            System.out.println("Test for greater second number of three = FAIL");
+        }
+    }
+    public void theThirdNumberIsTheGreaterOfThree() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(5, 10, 15);
+        if (realResult == expectedResult) {
+            System.out.println("Test for greater third number of three = OK");
+        } else {
+            System.out.println("Test for greater third number of three = FAIL");
+        }
+    }
+    public void theFirstAndSecondAreEqualAndGreaterThanTheThird() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(15, 15, 5);
+        if (realResult == expectedResult) {
+            System.out.println("Test for the first and second are equal and greater than the third = OK");
+        } else {
+            System.out.println("Test for the first and second are equal and greater than the third = FAIL");
+        }
+    }
+    public void theFirstAndThirdAreEqualAndGreaterThanTheSecond() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(15, 5, 15);
+        if (realResult == expectedResult) {
+            System.out.println("Test for the first and third are equal and greater than the second = OK");
+        } else {
+            System.out.println("Test for the first and third are equal and greater than the second = FAIL");
+        }
+    }
+    public void theSecondAndThirdAreEqualAndGreaterThanTheFirst() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(5, 15, 15);
+        if (realResult == expectedResult) {
+            System.out.println("Test for the second and third are equal and greater than the first = OK");
+        } else {
+            System.out.println("Test for the second and third are equal and greater than the first = FAIL");
+        }
+    }
+    public void theThreeNumbersAreEqual() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 15;
+        int realResult = calculator.maxOfThreeNumbers(15, 15, 15);
+        if (realResult == expectedResult) {
+            System.out.println("Test for equality of three numbers = OK");
+        } else {
+            System.out.println("Test for equality of three numbers = FAIL");
+        }
+    }
+    public void theThreeNumbersAreZero() {
+
+        Calculator calculator = new Calculator();
+        int expectedResult = 0;
+        int realResult = calculator.maxOfThreeNumbers(0,0,0);
+        if (realResult == expectedResult) {
+            System.out.println("Test for Zero = OK");
+        } else {
+            System.out.println("Test for Zero = FAIL");
+        }
+    }
+
 }
