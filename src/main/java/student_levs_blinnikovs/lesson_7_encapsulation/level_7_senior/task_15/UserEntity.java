@@ -10,10 +10,6 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15;
 
  */
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Random;
-
 class UserEntity {
 
     private static int lastId = 0;
@@ -30,7 +26,7 @@ class UserEntity {
         this.id = lastId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.personalCode = new PersonalCodeGenerator().generatePersonalCode();
+        this.personalCode = new PersonalCodeGenerator().generatePersonalCode(false);
     }
 
     public int getId() {
@@ -43,6 +39,10 @@ class UserEntity {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getPersonalCode() {
+        return personalCode;
     }
 
     //сохранение пользователя

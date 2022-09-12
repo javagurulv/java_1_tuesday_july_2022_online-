@@ -1,9 +1,5 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15;
 
-import teacher.lesson_x.login_service.solutions.super_task_1.User;
-
-import java.util.Arrays;
-
 class UserEntityDemo {
 
     public static void main(String[] args) {
@@ -14,7 +10,7 @@ class UserEntityDemo {
         UserEntity user4 = new UserEntity("Mary", "Newman");
 
         PersonalCodeGenerator personalCodeGenerator = new PersonalCodeGenerator();
-        String user1PersonalCode = personalCodeGenerator.generatePersonalCode();
+        String user1PersonalCode = personalCodeGenerator.generatePersonalCode(true);
         System.out.println(user1PersonalCode);
 
 

@@ -21,6 +21,7 @@ class Users {
     }
 
     UserEntity[] getUserByFirstName(String firstName) {
+        System.out.println("Search results for \"" + firstName + "\": ");
         UserEntity[] firstNameSearchResults = new UserEntity[users.length];
         for (int i = 0; i < this.users.length; i++) {
             if (this.users[i] != null && this.users[i].getFirstName().equals(firstName)) {
@@ -31,6 +32,7 @@ class Users {
     }
 
     UserEntity[] getUserByLastName(String lastName) {
+        System.out.println("Search results for \"" + lastName + "\": ");
         UserEntity[] lastNameSearchResults = new UserEntity[users.length];
         for (int i = 0; i < this.users.length; i++) {
             if (this.users[i] != null && this.users[i].getLastName().equals(lastName)) {          // todo wrap null checks to methods
@@ -43,7 +45,15 @@ class Users {
     void printSearchResults(UserEntity[] searchResults) {
         for (UserEntity searchResult : searchResults) {
             if (searchResult != null) {
-                System.out.println("Found: id: " + searchResult.getId() + ", firstname: " + searchResult.getFirstName() + ", lastname: " + searchResult.getLastName());
+                System.out.println("Found: id: " +
+                        searchResult.getId() +
+                        ", firstname: " +
+                        searchResult.getFirstName() +
+                        ", lastname: " +
+                        searchResult.getLastName() +
+                        ", personal code: " +
+                        searchResult.getPersonalCode()
+                );
             }
         }
     }
