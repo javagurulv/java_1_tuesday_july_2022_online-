@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_7.level_1.task_1;
+package student_yurii_panasiuk.lesson_7.level_1.task_1_training;
 
  class WordServiceDemo {
 

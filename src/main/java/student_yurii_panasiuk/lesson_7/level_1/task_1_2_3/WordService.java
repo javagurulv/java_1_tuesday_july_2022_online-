@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_7.level_1.task_2;
+package student_yurii_panasiuk.lesson_7.level_1.task_1_2_3;
 
 
 import java.util.*;
@@ -41,7 +41,7 @@ class WordService {
         return listOfReps;
     }
 
-    Integer findMaxCoordinates (ArrayList<Integer> listOfReps){
+    Integer findMaxCoordinates (List<Integer> listOfReps){
         int maxCoordinates = 0;
         for (int i = 0; i < listOfReps.size(); i++) {
           //  System.out.print (i + "  ");

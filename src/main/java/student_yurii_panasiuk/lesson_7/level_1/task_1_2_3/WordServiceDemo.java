@@ -1,6 +1,4 @@
-package student_yurii_panasiuk.lesson_7.level_1.task_2;
-
-import java.util.ArrayList;
+package student_yurii_panasiuk.lesson_7.level_1.task_1_2_3;
 
 class WordServiceDemo {
 
