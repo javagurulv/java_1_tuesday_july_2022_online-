@@ -1,9 +1,11 @@
-package student_levs_blinnikovs.lesson_7_encapsulation.level_1_4.task_1_8;
+package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_13;
+
+// copied tests from level_1_4.task_1_8 and they are failing for now - returns NOT the first most ofter occurrence, but second, instead. In first TC - returns 'is' (expected 'this'), in third - 'burgers' (expected 'pizza')
 
 class WordServiceTest {
 
     void shouldReturnFirstWordForNoMostFrequentWords() {
-        String textWithNoMostFrequent = "This is test string for returning first word as there are no repeated ones.";
+        String textWithNoMostFrequent = "this is test string for returning first word as there are no repeated ones.";
         String expectedMostFrequentWord = "this";
         WordService wordService = new WordService();
         String realMostFrequentWord = wordService.findMostFrequentWord(textWithNoMostFrequent);
