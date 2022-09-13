@@ -14,22 +14,7 @@ class PersonalCodeGenerator {
         this.uniqueTrailing = lastUniqueTrailing;
     }
 
-    private String generateDatePart() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyy");
-        LocalDateTime now = LocalDateTime.now();
-        return formatter.format(now);
-    }
-
-    private int generateRandomTrailPart() {
-        Random random = new Random();
-        return 10000 + random.nextInt(89999); // currently generates from 10000 to 99999 TODO make possible from 00001 to 99999 maybe with some String 00000 and then based on int has 1 .. 5 digits, make further manipulations
-    }  // To ensure uniqueness needs to be complex data type PersonalCode that has UUID, or to do some increments here as well .. maybe using ID
-
-    private int generateUniqueTrailPart() {
-        return 10000 + uniqueTrailing;
-    }
-
-    String generatePersonalCode(boolean randomTrailing) {
+    public String generatePersonalCode(boolean randomTrailing) {
         String datePart = generateDatePart();
         if (randomTrailing) {
             return datePart + "-" + generateRandomTrailPart();
@@ -38,5 +23,23 @@ class PersonalCodeGenerator {
             return datePart + "-" + generateUniqueTrailPart();
         }
     }
+
+    private String generateDatePart() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyy");
+        LocalDateTime now = LocalDateTime.now();
+        return formatter.format(now);
+    }
+
+    private int generateUniqueTrailPart() {
+        return 10000 + uniqueTrailing;
+    }
+
+    // To ensure uniqueness could be complex data type PersonalCode that has String + UUID. Advised to use generateUniqueTrailPart()
+    private int generateRandomTrailPart() {
+        Random random = new Random();
+        return 10000 + random.nextInt(89999);
+    }
+
+
 
 }
