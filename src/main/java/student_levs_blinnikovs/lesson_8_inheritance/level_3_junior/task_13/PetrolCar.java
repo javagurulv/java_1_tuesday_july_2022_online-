@@ -4,7 +4,6 @@ class PetrolCar extends Car {
 
     private double petrolTankCapacity;
 
-    @Override
     void accelerate() {
         petrolTankCapacity--;
     }

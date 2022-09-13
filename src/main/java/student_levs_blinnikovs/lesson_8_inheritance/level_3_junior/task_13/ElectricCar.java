@@ -4,7 +4,6 @@ class ElectricCar extends Car {
 
     private int batteryCharge;
 
-    @Override
     void accelerate() {
         batteryCharge--;
     }
