@@ -6,7 +6,8 @@ class DefaultConstructor {
     double doubleExample;
 
     DefaultConstructor() {
-
+        this.intExample = 0;     // I'm not sure what you meant.. that's what happens behind the scenes...
+        doubleExample = 0.0;
     }
 
 }
