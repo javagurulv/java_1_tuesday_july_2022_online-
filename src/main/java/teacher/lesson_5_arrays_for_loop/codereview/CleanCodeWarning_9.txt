@@ -4,7 +4,7 @@ WARNING: Метод поиска наибольшего элемента в ма
 Метод должен делать то, что указано в его названии и по
 возможности не иметь побочных эффектов.
 
-    static int findMaxNumber(int[] array) {
+    int findMaxNumber(int[] array) {
         int [] sortArray = array;
         Arrays.sort(sortArray);
         return sortArray[sortArray.length-1];
@@ -12,7 +12,7 @@ WARNING: Метод поиска наибольшего элемента в ма
 
 Лучше:
 
-    public int findMaxNumber(int[] array) {
+    int findMaxNumber(int[] array) {
         int maxNumber = array[0];
         for (int arrayElement : array) {
             if (maxNumber < arrayElement) {

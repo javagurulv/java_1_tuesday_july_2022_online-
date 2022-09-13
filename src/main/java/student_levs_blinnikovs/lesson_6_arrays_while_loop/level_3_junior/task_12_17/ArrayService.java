@@ -58,8 +58,8 @@ class ArrayService {
         int i = 0;
         while (i < array.length/2) {
             buffer = array[i];
-            array[i] = array[array.length-1-i];
-            array[array.length-1-i] = buffer;
+            array[i] = array[array.length-(i+1)];
+            array[array.length-(i+1)] = buffer;
             i++;
         }
     }

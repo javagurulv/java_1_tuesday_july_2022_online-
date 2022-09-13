@@ -37,7 +37,6 @@ public class TicTacToe {
 
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
 
-
         int rowSum1 = 0;
         for (int row1 = 0; row1 < field.length; row1++) {
             for (int colm1 = 0; colm1 < field.length; colm1++) {
@@ -67,5 +66,14 @@ public class TicTacToe {
             return false;
         }
 
+    }
+
+    public int [] [] createField (){
+        int [] [] newArray = new int [3] [3];
+        for (int i = 0; i < newArray.length; i++){
+            for (int j = 0; j < newArray.length; j++) {
+                newArray[i][j] = -1;
+            }
+        } return newArray;
     }
 }

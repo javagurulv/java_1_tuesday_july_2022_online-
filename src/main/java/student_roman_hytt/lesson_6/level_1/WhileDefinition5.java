@@ -1,5 +1,8 @@
 package student_roman_hytt.lesson_6.level_1;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class WhileDefinition5 {
 
     public static void main(String[] args) {

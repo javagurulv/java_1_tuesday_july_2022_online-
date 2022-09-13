@@ -1,0 +1,22 @@
+WARNING: Лишнее создание экземпляров класса.
+В коде ниже экземпляр класса Random создаётся при каждой
+итерации цикла. Это бессмысленная и более трудо затратная
+операция. Если массив будет длинной в миллион ячеек,
+то будет создан миллион объектов Random.
+
+    public void fillArrayWithRandomNumbers(int[] array) {
+        for (int count = 0; count < array.length; count++) {
+            int rndValue = new Random().nextInt(11);
+            array[count] = rndValue;
+        }
+    }
+
+
+Лучше:
+
+    public void fillArrayWithRandomNumbers(int[] array) {
+        Random randomGenerator = new Random();
+        for (int count = 0; count < array.length; count++) {
+            array[count] = randomGenerator.nextInt(11);
+        }
+    }
