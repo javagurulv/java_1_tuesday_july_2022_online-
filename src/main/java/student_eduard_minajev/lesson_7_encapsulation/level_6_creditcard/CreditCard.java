@@ -41,85 +41,107 @@ import java.util.Scanner;
 
 public class CreditCard {
 
-    private long cardNumber;
+    private String cardNumber;
 
-    private int pinCode;
+    private String pinCode;
 
-    private double accountBalance;
+    private int accountBalance;
 
-    private double creditLimit;
+    private int creditLimit;
 
-    private double creditDebt;
+    private int creditDebt;
 
-    CreditCard(long cardNumber, int pinCode, double accountBalance, double creditLimit, double creditDebt) {
+    CreditCard(String cardNumber, String pinCode, int creditLimit) {
         this.cardNumber = cardNumber;
         this.pinCode = pinCode;
-        this.accountBalance = accountBalance;
+        this.accountBalance = 0;
         this.creditLimit = creditLimit;
-        this.creditDebt = creditDebt;
+        this.creditDebt = 0;
     }
 
-    public long getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public int getPinCode() {
+    public String getPinCode() {
         return pinCode;
     }
 
-    public double getAccountBalance() {
+    public int getAccountBalance() {
         return accountBalance;
     }
 
-    public double getCreditLimit() {
+    public int getCreditLimit() {
         return creditLimit;
     }
 
-    public double getCreditDebt() {
+    public int getCreditDebt() {
         return creditDebt;
     }
 
-    public void setAccountBalance(double newAccountBalance) {
+    public void setAccountBalance(int newAccountBalance) {
         this.accountBalance = newAccountBalance;
     }
-    public void setCreditLimit (double newCreditLimit){
+    public void setCreditLimit (int newCreditLimit){
         this.creditLimit = newCreditLimit;
     }
-    public void setCreditDebt (double newCreditDebt) {
+    public void setCreditDebt (int newCreditDebt) {
         this.creditDebt = newCreditDebt;
     }
 
-    // Создаем отдельный метод для проверки Пин-кода. Это должен быть Булеан. Если код совпадает - тру.
-    public boolean checkPin () {
+    // Отдельный методу сканера, который закидывает данные ввода в метод сравнения пин-кода
+    public String enterPinCode () {
         System.out.println("Please enter your card's PIN code!");
         Scanner scanner = new Scanner(System.in);
-        int userPin = scanner.nextInt();
-        int cardPin = getPinCode();
-        if (userPin == cardPin) { return true;
+        String enteredPinCode = scanner.next();
+        return enteredPinCode;
+    }
+    // Отдельный метод сравнения пин-кода, который получает исходные данные от метода enterPinCode
+    public boolean comparePinCodes (String pinCode) {
+        String pinFromUser = pinCode;
+        String cardPin = getPinCode();
+        if (pinFromUser == cardPin) { return true;
         } else {
             return false;
         }
 
     }
     // Отдельный метод для погашения задолжности по кредиту. Сумма автоматически должна вычитываться из суммы на депозите.
-    public double payOffDebt (){
+    // По условию должен быть интегрирован в метод депозит.
+    public int payOffDebt (){
         getCreditDebt();
         setAccountBalance(accountBalance - getCreditDebt());
         return accountBalance;
     }
     // Отдельный метод для определения суммы взноса
-    public double depositValue () {
-        System.out.println("Please enter desired deposit value!");
-        Scanner scanner = new Scanner(System.in);
-        double depositSum = scanner.nextDouble();
-        return depositSum;
-
+    public int depositValue () {
+        int valueEuro = valueOfEuros();
+        int valueCents = valueOfCents();
+        setAccountBalance(valueEuro + valueCents);
+        return accountBalance;
     }
+
+    public int valueOfEuros () {
+        System.out.println("Please enter amount of Euro");
+        Scanner scanner = new Scanner(System.in);
+        int depositSum = scanner.nextInt();
+        if (depositSum > 0) {
+        } return depositSum * 100;
+    }
+
+    public int valueOfCents () {
+        System.out.println("Please enter amount of cents");
+        Scanner scanner = new Scanner(System.in);
+        int depositSum = scanner.nextInt();
+        if (depositSum > 0) {
+        } return depositSum;
+    }
+
+
     // непосредственно сам метод взноса
-    public double deposit (){
-        if (checkPin() == true){
-            double value = depositValue(); // убрать нельзя, иначе во время работы программа будет запрашивать сумму взноса два раза.
-            double newDeposit = getAccountBalance() + value;
+    public int deposit (int depositSum){
+        if (comparePinCodes(enterPinCode()) == true){
+            int newDeposit = getAccountBalance() + depositSum;
             setAccountBalance(newDeposit);
             payOffDebt(); // Загрузка метода погашения долга по кредиту. Если долга нет, будет вычтен 0.
             System.out.println("Your current Balance is " + getAccountBalance());
@@ -127,34 +149,56 @@ public class CreditCard {
 
     }
 
-    public void printBalanceToConsole (){
-        System.out.println("Your account balance is: " + getAccountBalance() + " Your credit debit is: " + getCreditDebt());
+    public double prepareBalanceForDisplay () {
+        double actualBalance = getAccountBalance()/100;
+        return actualBalance;
     }
 
-    public double applyCreditLimit (double newCreditLimit) {
+    public double prepareCreditDebtForDisplay () {
+        double actualCreditDebt = getCreditDebt()/100;
+        return actualCreditDebt;
+    }
+
+    public void printBalanceToConsole (){
+        System.out.println("Your account balance is: " + prepareBalanceForDisplay() + " Your credit debt is: " + prepareCreditDebtForDisplay());
+    }
+
+    public int introduceCreditDebt (int newCreditDebt) {
+        if (newCreditDebt > 0){
+            setCreditDebt(newCreditDebt);
+        }return creditDebt;
+    }
+
+    public int applyCreditLimit (int newCreditLimit) {
         if (newCreditLimit > 0) {
             setCreditLimit(newCreditLimit);
         }
         return creditLimit;
     }
 
-    public double withdrawValue () {
+    public int withdrawValue () {
         System.out.println("Please enter desired withdraw value!");
         Scanner scanner = new Scanner(System.in);
-        double withdrawValue = scanner.nextDouble();
+        int withdrawValue = scanner.nextInt();
         return withdrawValue;
     }
 
-    public double withdraw () {
-        if (checkPin() == true){
-            double value = withdrawValue();
-            double newDeposit = getAccountBalance() - value;
+    public int calculateRequiredDebt (int newDeposit){
+        int requiredDebt = 0;
+        while ((newDeposit - requiredDebt) > 0 ){
+            requiredDebt++;
+        }
+        return requiredDebt;
+    }
+
+    public int withdraw (int withdrawValue) {
+        if (comparePinCodes(enterPinCode()) == true){
+            int newDeposit = getAccountBalance() - withdrawValue;
             if (newDeposit >= 0){
-                setAccountBalance(newDeposit);
+                setAccountBalance(getAccountBalance() - withdrawValue);
                 return accountBalance;
-            } else if (newDeposit >= getCreditLimit()) {
-                setCreditDebt(newDeposit);
-                return creditDebt;
+            } else if (newDeposit <= getCreditLimit()) {
+                setCreditDebt(calculateRequiredDebt(newDeposit));
             }else {
             System.out.println("Your account does not enough funds, and you have exceeded your credit limit.");
             }
