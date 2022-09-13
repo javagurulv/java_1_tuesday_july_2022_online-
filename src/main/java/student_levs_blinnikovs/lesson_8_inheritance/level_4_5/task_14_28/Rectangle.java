@@ -2,20 +2,20 @@ package student_levs_blinnikovs.lesson_8_inheritance.level_4_5.task_14_28;
 
 class Rectangle extends Shape {   // по сути-то Square extends Rectangle ;)
 
-    private double longSide;
-    private double shortSide;
+    private double sideOne;
+    private double sideTwo;
 
-    Rectangle(double longSide, double shortSide) {
+    Rectangle(double sideOne, double sideTwo) {
         super("Rectangle");
-        this.longSide = longSide;
-        this.shortSide = shortSide;
+        this.sideOne = sideOne;
+        this.sideTwo = sideTwo;
     }
 
     double calculateArea() {
-        return longSide * shortSide;
+        return sideOne * sideTwo;
     }
 
     double calculatePerimeter() {
-        return 2 * (longSide + shortSide);
+        return 2 * (sideOne + sideTwo);
     }
 }
