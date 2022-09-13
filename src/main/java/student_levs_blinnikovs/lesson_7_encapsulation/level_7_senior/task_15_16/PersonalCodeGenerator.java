@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15;
+package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +26,7 @@ class PersonalCodeGenerator {
      *
      */
     public String generatePersonalCode(boolean randomTrailing) {
-        String datePart = generateDatePart();
+        String datePart = createDatePart();
         if (randomTrailing) {
             return datePart + "-" + generateRandomTrailPart();
         }
@@ -35,7 +35,7 @@ class PersonalCodeGenerator {
         }
     }
 
-    private String generateDatePart() {
+    private String createDatePart() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyy");
         LocalDateTime now = LocalDateTime.now();
         return formatter.format(now);

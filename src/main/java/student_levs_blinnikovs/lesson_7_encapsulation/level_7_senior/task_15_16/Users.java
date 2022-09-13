@@ -1,6 +1,4 @@
-package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15;
-
-import teacher.lesson_x.login_service.solutions.super_task_1.User;
+package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16;
 
 class Users {
 
