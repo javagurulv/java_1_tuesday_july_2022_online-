@@ -1,16 +1,16 @@
-package student_levs_blinnikovs.lesson_8_inheritance.level_4_junior.task_14_19;
+package student_levs_blinnikovs.lesson_8_inheritance.level_4_5.task_14_28;
 
-class CircleTest {
+class TriangleTest {
 
     void shouldCalculateArea() {
-        double expectedArea = 28.274333882308138;
-        double realArea = new Circle(3).calculateArea();
+        double expectedArea = 1.7320508075688772;
+        double realArea = new Triangle(2).calculateArea();
         testResultPrinter(expectedArea == realArea);
     }
 
     void shouldCalculatePerimeter() {
-        double expectedPerimeter = 18.84955592153876;
-        double realPerimeter = new Circle(3).calculatePerimeter();
+        double expectedPerimeter = 6;
+        double realPerimeter = new Triangle(2).calculatePerimeter();
         testResultPrinter(expectedPerimeter == realPerimeter);
     }
 
@@ -24,7 +24,7 @@ class CircleTest {
 
     public static void main(String[] args) {
 
-        CircleTest test = new CircleTest();
+        TriangleTest test = new TriangleTest();
 
         test.shouldCalculateArea();
         test.shouldCalculatePerimeter();
