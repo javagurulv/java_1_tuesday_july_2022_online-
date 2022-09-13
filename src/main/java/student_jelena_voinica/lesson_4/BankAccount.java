@@ -1,5 +1,10 @@
-package student_jelena_voinica_lesson_4;
+package student_jelena_voinica.lesson_4;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "На будущее класс и Demo класс создавайте в разных файлах.")
  class BankAccount {
      String ownerFirstName;
      String ownerLastName;

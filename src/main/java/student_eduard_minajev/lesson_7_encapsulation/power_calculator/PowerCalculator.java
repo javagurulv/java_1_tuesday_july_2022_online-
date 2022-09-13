@@ -8,6 +8,9 @@
 
 package student_eduard_minajev.lesson_7_encapsulation.power_calculator;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class PowerCalculator {
 
     public int exponentNumber (int baseNumber, int exponentNumber){

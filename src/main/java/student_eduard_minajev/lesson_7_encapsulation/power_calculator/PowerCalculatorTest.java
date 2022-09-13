@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_7_encapsulation.power_calculator;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class PowerCalculatorTest {
 
     public static void main(String[] args) {

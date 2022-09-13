@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_7_classes_and_objectives;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Coin {
 
     private int denomination;
