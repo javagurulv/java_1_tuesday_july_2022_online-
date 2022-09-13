@@ -1,0 +1,84 @@
+WARNING: Для лучшей читабельности кода нужно публичные методы
+класса располагать в начале, затем package level access методы,
+а в конце приватные методы.
+Для соблюдения правила инкапсуляции не оставляйте методы
+package level access если их можно сделать приватными. Чем
+больше возможностей для использования класса вы оставите,
+тем в больших вариантах кода его будут использовать в будущем,
+и тем сложнее будет его изменять в будущем. Если класс
+можно использовать разными способами - это, то же самое,
+что метод делает много задач одновременно, это прямое нарушение
+Single Responsibility Principle!
+Разбивайте методы до конца, на самом верхнем уровне в идеальном коде
+должен быть четко виден алгоритм решения, а не его детали.
+
+
+class WordService {
+
+    String[] splitToComparableWords(String text) {
+        return text.toLowerCase().split("\\W+");
+    }
+
+    int countWordRepetitions(String[] words, String wordToCheck) {
+        int wordRepetitionCount = 0;
+        for (String word : words) {
+            if (word.equals(wordToCheck)) {
+                wordRepetitionCount++;
+            }
+        }
+        return wordRepetitionCount;
+    }
+
+    public String findMostFrequentWord(String text) {
+        String[] words = splitToComparableWords(text);
+        int maxRepetitionCount = 0;
+        String mostOftenWord = "";
+        for (String word : words) {
+            int currentWordRepetitionCount = countWordRepetitions(words, word);
+            if (currentWordRepetitionCount > maxRepetitionCount) {
+                maxRepetitionCount = currentWordRepetitionCount;
+                mostOftenWord = word;
+            }
+        }
+        return mostOftenWord;
+    }
+
+}
+
+Лучше:
+
+class WordService {
+
+	public String findMostFrequentWord(String text) {
+		String[] words = splitToComparableWords(text);
+		return findMostFrequentWord(words);
+	}
+
+	private String findMostFrequentWord(String[] words) {
+		int maxRepetitionCount = 0;
+		String mostFrequentWord = "";
+		for (String word : words) {
+			int currentWordRepetitionCount = countWordRepetitions(words, word);
+			if (currentWordRepetitionCount > maxRepetitionCount) {
+				maxRepetitionCount = currentWordRepetitionCount;
+				mostFrequentWord = word;
+			}
+		}
+		return mostFrequentWord;
+	}
+
+	private String[] splitToComparableWords(String text) {
+        return text.toLowerCase().split("\\W+");
+    }
+
+    private int countWordRepetitions(String[] words, String wordToCheck) {
+        int wordRepetitionCount = 0;
+        for (String word : words) {
+            if (word.equals(wordToCheck)) {
+                wordRepetitionCount++;
+            }
+        }
+        return wordRepetitionCount;
+    }
+
+}
