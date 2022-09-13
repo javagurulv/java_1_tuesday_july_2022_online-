@@ -1,6 +1,6 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16;
 
-class UserEntityDemo {
+class UsersDemo {
 
     public static void main(String[] args) {
 
@@ -14,7 +14,7 @@ class UserEntityDemo {
         System.out.println(user1PersonalCode);
 
 
-        Users db = new Users(10);
+        UserEntityDatabase db = new UserEntityDatabase(10);
         db.addUserToDatabase(user1);
         db.addUserToDatabase(user2);
         db.addUserToDatabase(user3);

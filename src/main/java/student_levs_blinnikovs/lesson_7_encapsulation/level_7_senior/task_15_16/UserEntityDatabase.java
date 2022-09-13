@@ -1,14 +1,15 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16;
 
-class Users {
+class UserEntityDatabase {
 
     UserEntity[] users;
 
     // creates DB with specified capacity
-    Users(int usersDataBaseCapacity) {
+    UserEntityDatabase(int usersDataBaseCapacity) {
         this.users = new UserEntity[usersDataBaseCapacity];
     }
 
+    // todo leave only methods from class diagram
     UserEntity getUserById(int id) {                            // TODO probably move to UserActions... and this class leave just for UserDB actions
         for (UserEntity user : this.users) {
             if (id == user.getId()) {

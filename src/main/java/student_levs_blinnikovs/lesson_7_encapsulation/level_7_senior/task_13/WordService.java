@@ -38,7 +38,7 @@ class WordService {
         }
 
         int max = 0;
-        for (int count =0; count < wordCountArray.length; count++) {
+        for (int count = 0; count < wordCountArray.length; count++) {
             if (wordCountArray[count] > max) {
                 max = count;
             }

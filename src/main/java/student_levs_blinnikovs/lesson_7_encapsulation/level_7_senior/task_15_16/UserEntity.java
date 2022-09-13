@@ -29,6 +29,7 @@ class UserEntity {
         this.personalCode = new PersonalCodeGenerator().generatePersonalCode(false);
     }
 
+    // todo leave only getters setters
     public int getId() {
         return id;
     }
