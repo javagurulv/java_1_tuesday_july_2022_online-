@@ -1,8 +1,6 @@
 package student_eduard_minajev.lesson_7_encapsulation.level_6_creditcard;
 
-import teacher.codereview.CodeReview;
 
-@CodeReview(approved = true)
 public class CreditCardTest {
 
     public static void main(String[] args) {
