@@ -16,6 +16,8 @@ abstract class LibraryService {
 
     abstract void assignPenalty(User user, Book book);
 
-    abstract void addNewBook(Book book);
+    void addNewBook(Book book, BookDatabase bookDatabase) {
+
+    }
 
 }

@@ -5,9 +5,9 @@ class Book {
     private static int lastId = 0;
     private final int id;
 
-    public String title;
-    public String author;
-    public int publicationYear;
+    private String title;
+    private String author;
+    private int publicationYear;
 
     Book(String title, String author, int publicationYear) {
         lastId++;
@@ -32,6 +32,18 @@ class Book {
 
     public int getPublicationYear() {
         return publicationYear;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
     }
 
 }
