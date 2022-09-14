@@ -145,7 +145,6 @@ class CalculatorTest {
         }
     }
 
-    // Function ... or lambdas. TODO
     public void sumTest(int firstNumber, int secondNumber, int expectedResult) {
         Calculator calculator = new Calculator();
         int realResult = calculator.sum(firstNumber, secondNumber);

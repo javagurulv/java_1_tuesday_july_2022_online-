@@ -38,7 +38,7 @@ class PowerCalculatorTest {
         test.shouldCalculatePower(1,100,1);
 
         test.shouldCalculatePower(1, 0, 1);
-        // TODO any base to power of 0 should return 1 but works incorrectly
+        // by math rules any base to power of 0 should return 1 but works incorrectly... need to make some logic
         test.shouldCalculatePower(100, 0, 1); // wrong...
 
         test.shouldCalculatePower(0, 1, 0);
