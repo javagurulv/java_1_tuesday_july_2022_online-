@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.lesson_8.task_1;
+package student_ernest_aleskevics.lesson_8.level_1.task_1;
 
 public class DefaultConstructor {
 
