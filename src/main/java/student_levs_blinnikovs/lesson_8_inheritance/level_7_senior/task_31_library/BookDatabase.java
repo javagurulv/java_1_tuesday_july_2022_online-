@@ -4,18 +4,13 @@ import java.util.ArrayList;
 
 class BookDatabase {
 
-    ArrayList<Book> books;
-
-//    this can be used to initialize some pre-defined library
-//    public void setBooks(ArrayList<Book> books) {
-//        this.books = books;
-//    }
+    ArrayList<Book> books = new ArrayList<>();  // better in explicit constructor?
 
     void addBook(Book book) {
         books.add(book);
     }
 
-    Book getBook(int id) {          //not satisfied how this is done. Maybe better with Map (id, Book).. to avoid loop. Or maybe using something other than loop for getBook(int id);
+    Book getBook(int id) {          //not fully satisfied how this is done. Maybe better with Map (id, Book).. to avoid loop. Or maybe using something other than loop for getBook(int id);
         for (Book book : books) {
             if (book.getId() == id) {
                 return book;
@@ -36,6 +31,5 @@ class BookDatabase {
 //        bookToUpdate.setAuthor(author);
 //        bookToUpdate.setPublicationYear(publicationYear);
 //    }
-
 
 }
