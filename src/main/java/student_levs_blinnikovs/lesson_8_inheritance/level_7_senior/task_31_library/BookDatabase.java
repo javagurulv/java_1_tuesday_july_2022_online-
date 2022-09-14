@@ -6,10 +6,6 @@ class BookDatabase {
 
     ArrayList<Book> books;
 
-    BookDatabase() {
-
-    }
-
 //    this can be used to initialize some pre-defined library
 //    public void setBooks(ArrayList<Book> books) {
 //        this.books = books;

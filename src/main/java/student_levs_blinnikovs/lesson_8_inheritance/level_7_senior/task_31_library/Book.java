@@ -9,11 +9,9 @@ class Book {
     private String author;
     private int publicationYear;
 
-    private boolean isReserved;   // maybe here complex data type 'Reservation'
     private User reservedBy;
 
-    private boolean isTaken;      // maybe here complex data type 'Assignment'
-    private User takenBy;
+    private User takenBy;  // no need for boolean flag, if null then not taken
 
     Book(String title, String author, int publicationYear) {
         lastId++;
@@ -52,4 +50,19 @@ class Book {
         this.publicationYear = publicationYear;
     }
 
+    public User getReservedBy() {
+        return reservedBy;
+    }
+
+    public void setReservedBy(User reservedBy) {
+        this.reservedBy = reservedBy;
+    }
+
+    public User getTakenBy() {
+        return takenBy;
+    }
+
+    public void setTakenBy(User takenBy) {
+        this.takenBy = takenBy;
+    }
 }
