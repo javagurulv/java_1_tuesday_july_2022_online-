@@ -2,22 +2,19 @@ package student_levs_blinnikovs.lesson_8_inheritance.level_6_middle.task_30;
 
 class VarargsDemo {
 
-    static void varargsPrintPhrase(String ... words) {
-
+    void printPhrase(String ... words) {
         for (String word : words) {
             System.out.print(word + " ");
         }
-
     }
 
     public static void main(String[] args) {
 
-        varargsPrintPhrase("Hi!");
+        VarargsDemo demo = new VarargsDemo();
 
-        varargsPrintPhrase("Hello,", "how", "are", "you", "?");
-
-        varargsPrintPhrase();
-
+        demo.printPhrase();
+        demo.printPhrase("Hi!");
+        demo.printPhrase("Hello,", "how", "are", "you?");
 
     }
 }
