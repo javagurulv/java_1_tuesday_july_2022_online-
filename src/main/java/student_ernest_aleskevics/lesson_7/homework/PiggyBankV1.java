@@ -1,4 +1,4 @@
-package student_ernest_aleskevics.level_7;
+package student_ernest_aleskevics.lesson_7.homework;
 
  class PiggyBankV1 {
 
