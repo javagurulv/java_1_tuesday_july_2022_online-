@@ -9,6 +9,12 @@ class Book {
     private String author;
     private int publicationYear;
 
+    private boolean isReserved;   // maybe here complex data type 'Reservation'
+    private User reservedBy;
+
+    private boolean isTaken;      // maybe here complex data type 'Assignment'
+    private User takenBy;
+
     Book(String title, String author, int publicationYear) {
         lastId++;
         this.id = lastId;

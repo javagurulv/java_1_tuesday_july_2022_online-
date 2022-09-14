@@ -10,9 +10,10 @@ class BookDatabase {
 
     }
 
-    public void setBooks(ArrayList<Book> books) {
-        this.books = books;
-    }
+//    this can be used to initialize some pre-defined library
+//    public void setBooks(ArrayList<Book> books) {
+//        this.books = books;
+//    }
 
     void addBook(Book book) {
         books.add(book);
@@ -27,16 +28,18 @@ class BookDatabase {
         return null;
     }
 
-    void deleteBook(int id) {
-        books.remove(getBook(id));
-    }
+//    not in the requirements
+//    void deleteBook(int id) {
+//        books.remove(getBook(id));
+//    }
 
-    void updateBook(int id, String title, String author, int publicationYear) {
-        Book bookToUpdate = getBook(id);
-        bookToUpdate.setTitle(title);
-        bookToUpdate.setAuthor(author);
-        bookToUpdate.setPublicationYear(publicationYear);
-    }
+//    not in the requirements
+//    void updateBook(int id, String title, String author, int publicationYear) {
+//        Book bookToUpdate = getBook(id);
+//        bookToUpdate.setTitle(title);
+//        bookToUpdate.setAuthor(author);
+//        bookToUpdate.setPublicationYear(publicationYear);
+//    }
 
 
 }
