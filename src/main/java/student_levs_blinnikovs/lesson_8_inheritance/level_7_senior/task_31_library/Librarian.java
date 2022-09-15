@@ -1,12 +1,20 @@
 package student_levs_blinnikovs.lesson_8_inheritance.level_7_senior.task_31_library;
 
-abstract class Librarian {
+class Librarian {
 
     Search searchObj;
     BookIssueService issueService;
+    BookDatabase bookDatabase;
 
-    public abstract void addBook(Book book);
-    // deleteBook.. need item and Book remains as just title. Items as physical books.. args id/barcode etc.
+    public void addBook(Book book) {
+        bookDatabase.addBook(book);
+    }
+    // deleteBook... Could be done as BookItem extends Book, book remains as just title, and them BookItems as physical books... fields id/barcode etc.
+
+    public void deleteBook(Book book) {
+        //
+    }
+
     // edit book item.. args bookItem
 
 }

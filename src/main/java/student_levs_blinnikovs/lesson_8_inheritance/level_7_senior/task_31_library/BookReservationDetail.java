@@ -4,4 +4,11 @@ class BookReservationDetail extends BookLending {
 
     ReservationStatus reservationStatus;
 
+    public ReservationStatus getReservationStatus() {
+        return reservationStatus;
+    }
+
+    public void setReservationStatus(ReservationStatus reservationStatus) {
+        this.reservationStatus = reservationStatus;
+    }
 }

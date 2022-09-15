@@ -10,7 +10,7 @@ class BookDatabase {
         books.add(book);
     }
 
-    Book getBook(int id) {          //not fully satisfied how this is done. Maybe better with Map (id, Book).. to avoid loop. Or maybe using something other than loop for getBook(int id);
+    Book getBookById(int id) {          //not fully satisfied how this is done. Maybe better with Map (id, Book).. to avoid loop. Or maybe using something other than loop for getBook(int id);
         for (Book book : books) {
             if (book.getId() == id) {
                 return book;
@@ -19,10 +19,38 @@ class BookDatabase {
         return null;
     }
 
+    Book getBookByTitle(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    Book getBookByAuthor(Author author) {
+        for (Book book : books) {
+            if (book.getAuthor().equals(author)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    Book getBookByPublicationYear(int year) {
+        for (Book book : books) {
+            if (book.getPublicationYear() == year) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+
 //    not in the requirements
-//    void deleteBook(int id) {
-//        books.remove(getBook(id));
-//    }
+    void deleteBook(int id) {
+        books.remove(getBookById(id));
+    }
 
 //    not in the requirements
 //    void updateBook(int id, String title, String author, int publicationYear) {

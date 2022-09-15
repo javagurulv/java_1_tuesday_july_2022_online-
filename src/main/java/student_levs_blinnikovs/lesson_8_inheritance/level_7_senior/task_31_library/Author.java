@@ -18,4 +18,8 @@ class Author extends Person {
         return this.lastName;
     }
 
+    public void addBooksPublished(List<Book> booksPublished) {
+        this.booksPublished = booksPublished;
+    }
+
 }

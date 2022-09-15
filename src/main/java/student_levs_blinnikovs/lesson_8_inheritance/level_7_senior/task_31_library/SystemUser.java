@@ -4,10 +4,10 @@ class SystemUser extends Person {
 
     String email;
     String phoneNumber;
+    Account account;
 
     SystemUser(String firstName, String lastName) {
         super(firstName, lastName);
     }
-    // Account account?
 
 }

@@ -2,8 +2,8 @@ package student_levs_blinnikovs.lesson_8_inheritance.level_7_senior.task_31_libr
 
 public enum ReservationStatus {
 
-    RESERVATION_SUCCESSFUL,
-    USER_IN_WAIT_LIST,
-    MAX_NUM_OF_BOOKS_RESERVED
+    SUCCESS_RESERVATION,
+    FAIL_USER_IN_WAIT_LIST,
+    FAIL_MAX_NUM_OF_BOOKS_RESERVED
 
 }

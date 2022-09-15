@@ -6,4 +6,11 @@ class BookIssueDetail extends BookLending {
 
     Date dueDate;
 
+    public Date getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
+    }
 }

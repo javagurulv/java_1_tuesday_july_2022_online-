@@ -10,7 +10,7 @@ abstract class LibraryService {
         return book.getBookStatus().equals(BookStatus.RESERVED);
     }
 
-    void takeBook(Book book, User user) {
+    void takeBook(Book book) {
         if (!isTaken(book) && !isReserved(book)) {
             book.setBookStatus(BookStatus.TAKEN);
         } else {

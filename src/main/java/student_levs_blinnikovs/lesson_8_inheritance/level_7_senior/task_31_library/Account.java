@@ -7,9 +7,12 @@ class Account {
     String userName;
     String password;
 
-    Account() {
+    Account(String userName, String password) {
         lastAccountId++;
         this.accountId = lastAccountId;
+
+        this.userName = userName;
+        this.password = password;
     }
 
 }

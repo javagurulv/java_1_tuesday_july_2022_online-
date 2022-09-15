@@ -2,10 +2,18 @@ package student_levs_blinnikovs.lesson_8_inheritance.level_7_senior.task_31_libr
 
 import java.util.List;
 
-abstract class Search {
+class Search {
 
-    public abstract List<Book> getBookByTitle(String title);
-    public abstract List<Book> getBookByAuthor(Author author);
-    public abstract List<Book> getBookByPublicationYear(int publicationYear);
+    BookDatabase bookDatabase;
+
+    public List<Book> getBookByTitle(String title) {
+        return List.of(bookDatabase.getBookByTitle(title));
+    }
+    public List<Book> getBookByAuthor(Author author) {
+        return List.of(bookDatabase.getBookByAuthor(author));
+    }
+    public List<Book> getBookByPublicationYear(int publicationYear) {
+        return List.of(bookDatabase.getBookByPublicationYear(publicationYear));
+    }
 
 }
