@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16_user_entity;
+package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16_user_entity.main;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
