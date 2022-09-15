@@ -1,21 +1,12 @@
 package student_levs_blinnikovs.lesson_8_inheritance.level_7_senior.task_31_library;
 
+import java.util.Date;
+
 class Penalty {
 
-    private int penaltyAmount;
-    private String penaltyReason;
-    private User forUser;
+    private Date penaltyDate;
     private Book forBook;
-
-    Penalty(int penaltyAmount, User forUser, Book forBook) {
-        this.penaltyAmount = penaltyAmount;
-        this.penaltyReason = "For overdue book";
-        this.forUser = forUser;
-        this.forBook = forBook;
-    }
-
-    void assign() {
-
-    }
+    private SystemUser forUser;
+    private int penaltyAmount;
 
 }

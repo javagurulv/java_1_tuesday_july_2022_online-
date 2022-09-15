@@ -6,14 +6,12 @@ class Book {
     private final int id;
 
     private String title;
-    private String author;
+    private Author author;
     private int publicationYear;
 
-    private User reservedBy;
+    private BookStatus bookStatus;
 
-    private User takenBy;  // no need for boolean flag, if null then not taken
-
-    Book(String title, String author, int publicationYear) {
+    Book(String title, Author author, int publicationYear) {
         lastId++;
         this.id = lastId;
 
@@ -30,7 +28,7 @@ class Book {
         return title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
@@ -38,31 +36,11 @@ class Book {
         return publicationYear;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public BookStatus getBookStatus() {
+        return bookStatus;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
-    }
-
-    public User getReservedBy() {
-        return reservedBy;
-    }
-
-    public void setReservedBy(User reservedBy) {
-        this.reservedBy = reservedBy;
-    }
-
-    public User getTakenBy() {
-        return takenBy;
-    }
-
-    public void setTakenBy(User takenBy) {
-        this.takenBy = takenBy;
+    public void setBookStatus(BookStatus bookStatus) {
+        this.bookStatus = bookStatus;
     }
 }
