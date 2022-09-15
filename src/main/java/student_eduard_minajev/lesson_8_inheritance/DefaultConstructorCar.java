@@ -2,11 +2,11 @@ package student_eduard_minajev.lesson_8_inheritance;
 
 public class DefaultConstructorCar {
 
-    String brandName;
+    String brandName = null;
 
-    String bodyType;
+    String bodyType = null;
 
-    double millage;
+    double millage = 0.0;
 
 
 
