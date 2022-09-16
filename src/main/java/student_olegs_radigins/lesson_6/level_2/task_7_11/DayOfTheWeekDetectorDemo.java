@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_6.level_2.task_7_8_9;
+package student_olegs_radigins.lesson_6.level_2.task_7_11;
 
 
 class DayOfTheWeekDetectorDemo {
