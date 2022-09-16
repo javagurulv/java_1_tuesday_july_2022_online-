@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_6.level_2.task_7;
+package student_olegs_radigins.lesson_6.level_2.task_7_8_9;
 
 import java.util.Scanner;
 
