@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_7.level_1.task_1_2_3;
+package student_yurii_panasiuk.lesson_7.level_1_2_3.task_1_2_3_4;
 
 
 import java.util.*;
@@ -27,7 +27,7 @@ class WordService {
     ArrayList<Integer> listOfResps (String []words){ // создаем список, вместо слов - количество повторений слова
                int reps = 0;
                ArrayList<Integer> listOfReps = new ArrayList<Integer>();
-               HashMap<String, Integer> wordToCount = new HashMap<>();
+              // HashMap<String, Integer> wordToCount = new HashMap<>();
                for (int i = 0; i < words.length; i++) {
                    reps = 0;
                    for (int j = 0; j < words.length; j++) {

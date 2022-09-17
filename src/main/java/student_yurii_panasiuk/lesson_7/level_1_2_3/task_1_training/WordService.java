@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_7.level_1.task_1_training;
+package student_yurii_panasiuk.lesson_7.level_1_2_3.task_1_training;
 
 
 import java.util.HashMap;
