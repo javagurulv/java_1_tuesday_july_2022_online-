@@ -1,4 +1,6 @@
-package student_eduard_minajev.lesson_8_inheritance;
+package student_eduard_minajev.lesson_8_inheritance.level_1_intern;
+
+import student_eduard_minajev.lesson_8_inheritance.level_1_intern.DefaultConstructorCar;
 
 public class DefaultConstructorCarDemo {
 
