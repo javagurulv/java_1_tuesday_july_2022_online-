@@ -1,4 +1,4 @@
-package student_eduard_minajev.lesson_8_inheritance.level_3_junior.Task_12;
+package student_eduard_minajev.lesson_8_inheritance.level_3_junior.task_12;
 
 public class CarDemo {
 
