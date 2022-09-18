@@ -61,7 +61,7 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
      }
 
     private void loanRepayment (double depositAmount) {
-        double depositAmountAfteRepayment = depositAmount;
+        double depositAmountAfteRepayment = depositAmount; // ясно что переменная лишняя но мне так легче понять
             if (this.loanDebt < depositAmount){
                 depositAmountAfteRepayment = depositAmount - loanDebt;
                 this.loanDebt = this.loanDebt - depositAmountAfteRepayment;
