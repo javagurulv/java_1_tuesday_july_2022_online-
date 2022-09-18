@@ -76,9 +76,9 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
     private boolean pinCodeCheck (int pinCode){
           return pinCode == this.pinCode;
      }
-     private void  pinCodeErrorMasage () {
+    private void  pinCodeErrorMasage () {
          System.out.println("WRONG PIN");
-     }
+    }
 
      private void  withdrawErrorMasage () {
          System.out.println("INSUFFICIENT FUNDS");
