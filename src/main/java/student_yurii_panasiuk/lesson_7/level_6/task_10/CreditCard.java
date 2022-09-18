@@ -40,6 +40,18 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
           }
      }
 
+     void withdraw (double withdrawAmount) {
+         if (this.balance >= withdrawAmount) {
+             this.balance = this.balance - withdrawAmount;
+         }
+         else if (this.creditLimit + this.balance) >= withdrawAmount{
+             this.creditLimit = this.creditLimit - (this.balance - withdrawAmount)
+             this.loanDebt = this.loanDebt + (withdrawAmount - this.balance);
+         }
+         else {
+                 withdrawErrorMasage();
+             }
+     }
 
       void loanRepayment (double depositAmount) {
         double depositAmountAfteRepayment = depositAmount;
@@ -51,12 +63,16 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
             else {
                 this.loanDebt = this.loanDebt - depositAmount;
             }
-     }
+      }
      boolean pinCodeCheck (int pinCode){
           return pinCode == this.pinCode;
-      }
+     }
      void  pinCodeErrorMasage () {
          System.out.println("WRONG PIN");
+     }
+
+     void  withdrawErrorMasage () {
+         System.out.println("INSUFFICIENT FUNDS");
      }
 
      void depositeWithPinCode (int pinCode, double depositAmount){
