@@ -10,12 +10,7 @@ class PowerCalculator {
         return result;
     }
     boolean verificationPower(double power) {
-        if (power % 1 != 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return power % 1 != 0;
     }
     void verificationFailedMessage () {
             System.out.println("power must be an integer greater than 0");
