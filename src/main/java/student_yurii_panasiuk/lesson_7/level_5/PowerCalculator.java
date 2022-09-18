@@ -12,7 +12,8 @@ class PowerCalculator {
     boolean verificationPower(double power) {
         if (power % 1 != 0) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }

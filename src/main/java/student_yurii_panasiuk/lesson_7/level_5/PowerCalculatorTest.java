@@ -30,7 +30,9 @@ import java.util.List;
                 (listOfAnswers.get(i))){
                 correctAnswerCounter++;
                 }
-            if (correctAnswerCounter == listOfNubers.size() ){ System.out.println(" OK");}
+            if (correctAnswerCounter == listOfNubers.size() ){
+                System.out.println(" OK");
+            }
              else {System.out.println(" FAIL");}
         }
     }
