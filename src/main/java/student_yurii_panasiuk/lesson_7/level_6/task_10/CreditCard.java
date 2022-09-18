@@ -5,9 +5,13 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
     private int pinCode;
     private double creditLimit = 0.0;
     private double balance = 0.0;
-    private double loanDebt = 5.0;
+    private double loanDebt = 0.0;
 
-      int getCardNumber() {
+     void setCreditLimit(double creditLimit) {
+         this.creditLimit = creditLimit;
+     }
+
+     int getCardNumber() {
          return cardNumber;
      }
 
@@ -32,47 +36,61 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
          this.pinCode = pinCode;
      }
 
-      void deposit (double depositAmount) {
+    private void deposit (double depositAmount) {
           if (this.loanDebt == 0)
          this.balance = this.balance+depositAmount;
           else {
               loanRepayment(depositAmount);
           }
-     }
+    }
 
-     void withdraw (double withdrawAmount) {
-         if (this.balance >= withdrawAmount) {
-             this.balance = this.balance - withdrawAmount;
-         }
-         else if (this.creditLimit + this.balance) >= withdrawAmount{
-             this.creditLimit = this.creditLimit - (this.balance - withdrawAmount)
-             this.loanDebt = this.loanDebt + (withdrawAmount - this.balance);
-         }
+    private void withdraw (double withdrawAmount) {
+         double depositAmountAfteWithdraw = this.balance;
+          if (this.balance >= withdrawAmount) {
+             depositAmountAfteWithdraw = this.balance - withdrawAmount;
+             this.balance = depositAmountAfteWithdraw;
+             }
+         else if ((this.creditLimit + this.balance) >= withdrawAmount){
+             double creditLimitAfterWithdraw = this.creditLimit - (withdrawAmount - this.balance);
+             this.creditLimit = creditLimitAfterWithdraw;
+             this.loanDebt = this.loanDebt + withdrawAmount;
+             }
          else {
                  withdrawErrorMasage();
              }
      }
 
-      void loanRepayment (double depositAmount) {
+    private void loanRepayment (double depositAmount) {
         double depositAmountAfteRepayment = depositAmount;
             if (this.loanDebt < depositAmount){
                 depositAmountAfteRepayment = depositAmount - loanDebt;
                 this.loanDebt = this.loanDebt - depositAmountAfteRepayment;
                 this.balance = this.balance + depositAmountAfteRepayment;
+                this.creditLimit = this.creditLimit + depositAmountAfteRepayment;
             }
             else {
                 this.loanDebt = this.loanDebt - depositAmount;
+                this.creditLimit = this.creditLimit + depositAmount;
             }
       }
-     boolean pinCodeCheck (int pinCode){
+    private boolean pinCodeCheck (int pinCode){
           return pinCode == this.pinCode;
      }
-     void  pinCodeErrorMasage () {
+     private void  pinCodeErrorMasage () {
          System.out.println("WRONG PIN");
      }
 
-     void  withdrawErrorMasage () {
+     private void  withdrawErrorMasage () {
          System.out.println("INSUFFICIENT FUNDS");
+     }
+
+     void withdrawWithPinCode (int pinCode, double withdrawAmount){
+         if (pinCodeCheck(pinCode)){
+             withdraw(withdrawAmount);
+         }
+         else {
+             withdrawErrorMasage();
+         }
      }
 
      void depositeWithPinCode (int pinCode, double depositAmount){
