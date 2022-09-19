@@ -8,13 +8,13 @@ class FraudDetector {
         this.fraudRules = fraudRules;
     }
 
-    boolean isFraud(Transaction transaction) {
+    FraudDetectionResult isFraud(Transaction transaction) {
         for (FraudRule fraudRule : fraudRules) {
             if (fraudRule.isFraud(transaction)) {
-                return true;
+                return new FraudDetectionResult(true, fraudRule.getRuleName());
             }
         }
-        return false;
+        return new FraudDetectionResult(false, null);
     }
 
 }

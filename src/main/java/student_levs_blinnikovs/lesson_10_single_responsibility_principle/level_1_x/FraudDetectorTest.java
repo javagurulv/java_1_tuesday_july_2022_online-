@@ -10,10 +10,14 @@ class FraudDetectorTest {
         FraudRuleCountryAndAmount fraudRuleCountryAndAmount = new FraudRuleCountryAndAmount("Germany, more than 1000");
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountryAndAmount, fraudRuleCountry};
-        boolean expectedExistFraudulentTransactions = true;
+        FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(true, "Germany, more than 1000");
+        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
+        String expectedRuleName = expectedExistFraudulentTransactions.getRuleName();
         FraudDetector detector = new FraudDetector(fraudRules);
-        boolean realExistFraudulentTransactions = detector.isFraud(transaction);
-        testResultPrinter(expectedExistFraudulentTransactions == realExistFraudulentTransactions);
+        FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
+        boolean realFraud = realExistFraudulentTransactions.getFraud();
+        String realRuleName = realExistFraudulentTransactions.getRuleName();
+        testResultPrinter((expectedFraud == realFraud) && expectedRuleName.equals(realRuleName)); // todo - I didn't quite get how to compare 2 objects each having 2 attrs
     }
 
     void shouldNotCatchAsThereAreNoFraudulentTransactionsTest() {
@@ -22,10 +26,12 @@ class FraudDetectorTest {
         FraudRuleCountryAndAmount fraudRuleCountryAndAmount = new FraudRuleCountryAndAmount("Germany, more than 1000");
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountryAndAmount, fraudRuleCountry};
-        boolean expectedExistFraudulentTransactions = false;
+        FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(false,null);
+        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
         FraudDetector detector = new FraudDetector(fraudRules);
-        boolean realExistFraudulentTransactions = detector.isFraud(transaction);
-        testResultPrinter(expectedExistFraudulentTransactions == realExistFraudulentTransactions);
+        FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
+        boolean realFraud = realExistFraudulentTransactions.getFraud();
+        testResultPrinter(expectedFraud == realFraud);
     }
 
     void shouldNotCatchAsSpecificFraudRuleIsNotCheckedTest() {
@@ -33,10 +39,12 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 2000);
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountry};
-        boolean expectedExistFraudulentTransactions = false;
+        FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(false, null);
+        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
         FraudDetector detector = new FraudDetector(fraudRules);
-        boolean realExistFraudulentTransactions = detector.isFraud(transaction);
-        testResultPrinter(expectedExistFraudulentTransactions == realExistFraudulentTransactions);
+        FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
+        boolean realFraud = realExistFraudulentTransactions.getFraud();
+        testResultPrinter(expectedFraud == realFraud);
     }
 
 
