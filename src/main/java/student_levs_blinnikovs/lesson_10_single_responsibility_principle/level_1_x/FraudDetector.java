@@ -2,8 +2,8 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 class FraudDetector {
 
-    boolean isFraud(Transaction t) {
-        return true;
+    boolean isFraud(Transaction transaction) {
+        return transaction.getTrader().getFullName().equals("Pokemon");
     }
 
 }
