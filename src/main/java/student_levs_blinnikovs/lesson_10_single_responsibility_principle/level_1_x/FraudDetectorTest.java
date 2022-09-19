@@ -28,9 +28,9 @@ class FraudDetectorTest {
         testResultPrinter(expectedExistFraudulentTransactions == realExistFraudulentTransactions);
     }
 
-    void shouldNotCatchAsFraudRuleIsNotCheckedTest() {
+    void shouldNotCatchAsSpecificFraudRuleIsNotCheckedTest() {
         Trader trader = new Trader("Karl Marx", "Dresden", "Germany");
-        Transaction transaction = new Transaction(trader, 900);
+        Transaction transaction = new Transaction(trader, 2000);
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountry};
         boolean expectedExistFraudulentTransactions = false;
@@ -45,7 +45,7 @@ class FraudDetectorTest {
         FraudDetectorTest test = new FraudDetectorTest();
         test.shouldCatchFraudulentTransactionTest();
         test.shouldNotCatchAsThereAreNoFraudulentTransactionsTest();
-        test.shouldNotCatchAsFraudRuleIsNotCheckedTest();
+        test.shouldNotCatchAsSpecificFraudRuleIsNotCheckedTest();
     }
 
 }
