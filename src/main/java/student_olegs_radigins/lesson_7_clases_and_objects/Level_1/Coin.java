@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_7.Level_1;
+package student_olegs_radigins.lesson_7_clases_and_objects.Level_1;
 
 class Coin {
     private int denomination;
