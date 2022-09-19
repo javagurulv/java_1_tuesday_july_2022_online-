@@ -20,7 +20,7 @@ class PremiumCalculator {
         double premium = 0;
 
         for (RiskItem riskItem : policy.getRiskItems()) {                          // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
-            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {
+            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {            // todo hide in getTotalSumInsured()... ?
                 if (riskSubItem.getRiskType().equals(RiskType.FIRE)) {
                     totalSumInsured += riskSubItem.getSumInsured();
                 }
