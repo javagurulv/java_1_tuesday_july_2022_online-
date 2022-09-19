@@ -2,8 +2,19 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 class FraudDetector {
 
+    FraudRule[] fraudRules;
+
+    public FraudDetector(FraudRule[] fraudRules) {
+        this.fraudRules = fraudRules;
+    }
+
     boolean isFraud(Transaction transaction) {
-        return true;
+        for (FraudRule fraudRule : fraudRules) {
+            if (fraudRule.isFraud(transaction)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
