@@ -10,20 +10,8 @@ class RiskItem {
         this.riskSubItems = riskSubItems;
     }
 
-//    private double calculateRiskSubItemTotalSumInsuredByRiskType(RiskSubItem[] riskSubItems, RiskType riskType) {         // todo remove or reuse
-//        for (RiskSubItem riskSubItem : riskSubItems) {
-//            if (riskSubItem.getRiskType().equals(riskType)) {
-//                totalSumInsured += riskSubItem.getSumInsured();
-//            }
-//        }
-//        return totalSumInsured;
-//    }
-
     public RiskSubItem[] getRiskSubItems() {
         return riskSubItems;
     }
 
-    public double getTotalSumInsured() {
-        return totalSumInsured;
-    }
 }
