@@ -11,12 +11,12 @@ class PremiumCalculator {
     private static final double COEFFICIENT_THEFT_HIGH_LIMIT = 0.05;
     private static final int THEFT_HIGH_LIMIT = 15;
 
-    private double calculate(Policy policy) {
+    double calculate(Policy policy) {
         return calculatePremiumFire(policy) + calculatePremiumTheft(policy);
     }
 
     private double calculatePremiumFire(Policy policy) {
-        int totalSumInsured = 0;
+        double totalSumInsured = 0;
         double premium = 0;
 
         for (RiskItem riskItem : policy.getRiskItems()) {                          // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
@@ -27,11 +27,11 @@ class PremiumCalculator {
             }
         }
 
-        if (totalSumInsured >= FIRE_HIGH_LIMIT) {                                   // todo need something better, like turn in 1 method...
+        if (totalSumInsured > FIRE_HIGH_LIMIT) {                                   // todo need something better, like turn in 1 method...
             premium = totalSumInsured * COEFFICIENT_FIRE_HIGH_LIMIT;
         }
-        if (totalSumInsured < FIRE_HIGH_LIMIT) {
-            premium = totalSumInsured * COEFFICIENT_THEFT;
+        if (totalSumInsured <= FIRE_HIGH_LIMIT) {
+            premium = totalSumInsured * COEFFICIENT_FIRE;
         }
 
         return premium;
@@ -39,7 +39,7 @@ class PremiumCalculator {
 
 
     private double calculatePremiumTheft(Policy policy) {
-        int totalSumInsured = 0;
+        double totalSumInsured = 0;
         double premium = 0;
 
         for (RiskItem riskItem : policy.getRiskItems()) {
@@ -50,10 +50,10 @@ class PremiumCalculator {
             }
         }
 
-        if (totalSumInsured >= THEFT_HIGH_LIMIT) {
+        if (totalSumInsured > THEFT_HIGH_LIMIT) {
             premium = totalSumInsured * COEFFICIENT_THEFT_HIGH_LIMIT;
         }
-        if (totalSumInsured < THEFT_HIGH_LIMIT) {
+        if (totalSumInsured <= THEFT_HIGH_LIMIT) {
             premium = totalSumInsured * COEFFICIENT_THEFT;
         }
 

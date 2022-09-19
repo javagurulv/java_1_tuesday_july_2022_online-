@@ -4,9 +4,13 @@ class RiskItem {
 
     private String riskItemName;
     private RiskSubItem[] riskSubItems;
-    private int totalSumInsured;                                // TODO ask Viktor - maybe redundant
+    private double totalSumInsured;
 
-    private int calculateRiskSubItemTotalSumInsuredByRiskType(RiskSubItem[] riskSubItems, RiskType riskType) {
+    RiskItem(RiskSubItem[] riskSubItems) {
+        this.riskSubItems = riskSubItems;
+    }
+
+    private double calculateRiskSubItemTotalSumInsuredByRiskType(RiskSubItem[] riskSubItems, RiskType riskType) {
         for (RiskSubItem riskSubItem : riskSubItems) {
             if (riskSubItem.getRiskType().equals(riskType)) {
                 totalSumInsured += riskSubItem.getSumInsured();
@@ -19,7 +23,7 @@ class RiskItem {
         return riskSubItems;
     }
 
-    public int getTotalSumInsured() {
+    public double getTotalSumInsured() {
         return totalSumInsured;
     }
 }

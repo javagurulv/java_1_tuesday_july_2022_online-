@@ -3,14 +3,20 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_te
 class RiskSubItem {
 
     private String riskSubItemName;
-    private int sumInsured;
+    private double sumInsured;
     private RiskType riskType;
+
+    RiskSubItem(String riskSubItemName, double sumInsured, RiskType riskType) {
+        this.riskSubItemName = riskSubItemName;
+        this.sumInsured = sumInsured;
+        this.riskType = riskType;
+    }
 
     public RiskType getRiskType() {
         return riskType;
     }
 
-    public int getSumInsured() {
+    public double getSumInsured() {
         return sumInsured;
     }
 

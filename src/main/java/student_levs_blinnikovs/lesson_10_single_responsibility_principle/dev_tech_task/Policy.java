@@ -6,6 +6,10 @@ class Policy {
     private PolicyStatus policystatus;
     private RiskItem[] riskItems;
 
+    Policy(RiskItem[] riskItems) {
+        this.riskItems = riskItems;
+    }
+
     public RiskItem[] getRiskItems() {
         return riskItems;
     }
