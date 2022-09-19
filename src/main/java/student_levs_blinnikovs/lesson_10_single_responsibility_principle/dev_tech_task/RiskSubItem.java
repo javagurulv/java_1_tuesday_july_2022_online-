@@ -1,12 +1,14 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_tech_task;
 
+import java.math.BigDecimal;
+
 class RiskSubItem {
 
     private String riskSubItemName;
-    private double sumInsured;
+    private BigDecimal sumInsured;
     private RiskType riskType;
 
-    RiskSubItem(String riskSubItemName, double sumInsured, RiskType riskType) {
+    RiskSubItem(String riskSubItemName, BigDecimal sumInsured, RiskType riskType) {
         this.riskSubItemName = riskSubItemName;
         this.sumInsured = sumInsured;
         this.riskType = riskType;
@@ -16,7 +18,7 @@ class RiskSubItem {
         return riskType;
     }
 
-    public double getSumInsured() {
+    public BigDecimal getSumInsured() {
         return sumInsured;
     }
 

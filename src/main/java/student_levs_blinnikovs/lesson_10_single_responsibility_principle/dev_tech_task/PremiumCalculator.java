@@ -1,60 +1,62 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_tech_task;
 
+import java.math.BigDecimal;
+
 class PremiumCalculator {
 
     private Policy policy;
-    private static final double COEFFICIENT_FIRE = 0.014;
-    private static final double COEFFICIENT_FIRE_HIGH_LIMIT = 0.024;
-    private static final double FIRE_HIGH_LIMIT = 100;
+    private static final BigDecimal COEFFICIENT_FIRE = new BigDecimal("0.014");
+    private static final BigDecimal COEFFICIENT_FIRE_HIGH_LIMIT = new BigDecimal("0.024");
+    private static final BigDecimal FIRE_HIGH_LIMIT = new BigDecimal("100.00");
 
-    private static final double COEFFICIENT_THEFT = 0.11;
-    private static final double COEFFICIENT_THEFT_HIGH_LIMIT = 0.05;
-    private static final double THEFT_HIGH_LIMIT = 15;
+    private static final BigDecimal COEFFICIENT_THEFT = new BigDecimal("0.11");
+    private static final BigDecimal COEFFICIENT_THEFT_HIGH_LIMIT = new BigDecimal("0.05");
+    private static final BigDecimal THEFT_HIGH_LIMIT = new BigDecimal("15.00");
 
-    double calculate(Policy policy) {
-        return calculatePremiumFire(policy) + calculatePremiumTheft(policy);
+    BigDecimal calculate(Policy policy) {
+        return calculatePremiumFire(policy).add(calculatePremiumTheft(policy));
     }
 
-    private double calculatePremiumFire(Policy policy) {
-        double totalSumInsured = 0;
-        double premium = 0;
+    private BigDecimal calculatePremiumFire(Policy policy) {
+        BigDecimal totalSumInsured = new BigDecimal("0.00");
+        BigDecimal premium = new BigDecimal("0.00");
 
         for (RiskItem riskItem : policy.getRiskItems()) {                          // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
             for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {            // todo hide in getTotalSumInsured()... ?
                 if (riskSubItem.getRiskType().equals(RiskType.FIRE)) {
-                    totalSumInsured += riskSubItem.getSumInsured();
+                    totalSumInsured = totalSumInsured.add(riskSubItem.getSumInsured());
                 }
             }
         }
 
-        if (totalSumInsured > FIRE_HIGH_LIMIT) {                                   // todo need something better, like turn in 1 method...
-            premium = totalSumInsured * COEFFICIENT_FIRE_HIGH_LIMIT;
+        if (totalSumInsured.compareTo(FIRE_HIGH_LIMIT) > 0) {                                   // todo need something better, like turn in 1 method...
+            premium = totalSumInsured.multiply(COEFFICIENT_FIRE_HIGH_LIMIT);
         }
-        if (totalSumInsured <= FIRE_HIGH_LIMIT) {
-            premium = totalSumInsured * COEFFICIENT_FIRE;
+        if (totalSumInsured.compareTo(FIRE_HIGH_LIMIT) <= 0) {
+            premium = totalSumInsured.multiply(COEFFICIENT_FIRE);
         }
 
         return premium;
     }
 
 
-    private double calculatePremiumTheft(Policy policy) {
-        double totalSumInsured = 0;
-        double premium = 0;
+    private BigDecimal calculatePremiumTheft(Policy policy) {
+        BigDecimal totalSumInsured = new BigDecimal("0.00");
+        BigDecimal premium = new BigDecimal("0.00");
 
         for (RiskItem riskItem : policy.getRiskItems()) {
             for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {
                 if (riskSubItem.getRiskType().equals(RiskType.THEFT)) {
-                    totalSumInsured += riskSubItem.getSumInsured();
+                    totalSumInsured = totalSumInsured.add(riskSubItem.getSumInsured());
                 }
             }
         }
 
-        if (totalSumInsured > THEFT_HIGH_LIMIT) {
-            premium = totalSumInsured * COEFFICIENT_THEFT_HIGH_LIMIT;
+        if (totalSumInsured.compareTo(THEFT_HIGH_LIMIT) > 0) {
+            premium = totalSumInsured.multiply(COEFFICIENT_THEFT_HIGH_LIMIT);
         }
-        if (totalSumInsured <= THEFT_HIGH_LIMIT) {
-            premium = totalSumInsured * COEFFICIENT_THEFT;
+        if (totalSumInsured.compareTo(THEFT_HIGH_LIMIT) <= 0) {
+            premium = totalSumInsured.multiply(COEFFICIENT_THEFT);
         }
 
         return premium;
