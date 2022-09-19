@@ -5,11 +5,11 @@ class PremiumCalculator {
     private Policy policy;
     private static final double COEFFICIENT_FIRE = 0.014;
     private static final double COEFFICIENT_FIRE_HIGH_LIMIT = 0.024;
-    private static final int FIRE_HIGH_LIMIT = 100;
+    private static final double FIRE_HIGH_LIMIT = 100;
 
     private static final double COEFFICIENT_THEFT = 0.11;
     private static final double COEFFICIENT_THEFT_HIGH_LIMIT = 0.05;
-    private static final int THEFT_HIGH_LIMIT = 15;
+    private static final double THEFT_HIGH_LIMIT = 15;
 
     double calculate(Policy policy) {
         return calculatePremiumFire(policy) + calculatePremiumTheft(policy);
