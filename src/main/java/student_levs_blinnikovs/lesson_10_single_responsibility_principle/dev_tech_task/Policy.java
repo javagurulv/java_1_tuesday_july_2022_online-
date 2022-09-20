@@ -1,18 +1,18 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_tech_task;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class Policy {
 
     private String policyNumber;
     private PolicyStatus policystatus;
-    private ArrayList<RiskItem> riskItems;
+    private List<RiskItem> riskItems;
 
-    Policy(ArrayList<RiskItem> riskItems) {
+    Policy(List<RiskItem> riskItems) {
         this.riskItems = riskItems;
     }
 
-    public ArrayList<RiskItem> getRiskItems() {
+    public List<RiskItem> getRiskItems() {
         return riskItems;
     }
 }

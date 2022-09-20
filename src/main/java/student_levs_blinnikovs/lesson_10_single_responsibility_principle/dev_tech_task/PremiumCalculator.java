@@ -23,7 +23,7 @@ class PremiumCalculator {
         BigDecimal sumInsured = new BigDecimal("0.00");
         for (RiskItem riskItem : policy.getRiskItems()) {                       // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
             for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {        // todo hide in getTotalSumInsured()... ?
-                if (riskSubItem.getRiskType().equals(riskType)) {
+                if (riskSubItem.isInsuredFor(riskType)) {                           // todo extract logic into separate method and make (1) return risk sub items and (2) calculate
                     sumInsured = sumInsured.add(riskSubItem.getSumInsured());
                 }
             }

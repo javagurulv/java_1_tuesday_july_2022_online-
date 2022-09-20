@@ -1,18 +1,17 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_tech_task;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class RiskItem {
 
     private String riskItemName;
-    private ArrayList<RiskSubItem> riskSubItems;
-    private double totalSumInsured;
+    private List<RiskSubItem> riskSubItems;
 
-    RiskItem(ArrayList<RiskSubItem> riskSubItems) {
+    RiskItem(List<RiskSubItem> riskSubItems) {
         this.riskSubItems = riskSubItems;
     }
 
-    public ArrayList<RiskSubItem> getRiskSubItems() {
+    public List<RiskSubItem> getRiskSubItems() {
         return riskSubItems;
     }
 
