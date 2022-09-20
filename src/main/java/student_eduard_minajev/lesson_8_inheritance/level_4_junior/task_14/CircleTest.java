@@ -1,5 +1,10 @@
 package student_eduard_minajev.lesson_8_inheritance.level_4_junior.task_14;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_2.txt")
 public class CircleTest {
 
     public static void main(String[] args) {

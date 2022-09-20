@@ -14,6 +14,9 @@ package student_eduard_minajev.lesson_8_inheritance.level_4_junior.task_14;
 
 import java.util.Random;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class ShapeUtil  {
 
     Random random = new Random();

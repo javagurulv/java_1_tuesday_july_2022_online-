@@ -1,0 +1,76 @@
+WARNING: Лучше создавать тестовые данные внутри каждого теста.
+Это немного спорное предложение, так как независимость тестов
+можно обеспечить и тогда, когда они используют одни и те данные
+у которых не меняется состояние. Создавая тестовые данные внутри
+каждого тестового метода мы гарантируем то, что каждый метод
+будет использовать только свои тестовые данные.
+
+Главная идея заключается в том, чтобы сделать тесты полностью
+независимыми друг от друга. Это позволит запускать их в любом
+порядке, а так же в больших проектах использовать многопоточность
+для ускорения запуска всех тестов в проекте.
+
+public class CircleTest {
+
+    public static void main(String[] args) {
+        CircleTest test = new CircleTest();
+        test.shouldGive314Area();
+        test.shouldGive31Point4Perimeter();
+    }
+
+    Circle circle1 = new Circle("It's not a moon!",10);
+    Circle circle2 = new Circle("Death Star",5);
+
+    public void shouldGive314Area () {
+        double testArea = circle1.calculateArea();
+        checkTestResult(testArea == 314, "shouldGive314Area");
+    }
+
+    public void shouldGive31Point4Perimeter () {
+        double testPerimeter = circle2.calculatePerimeter();
+        double roundedPerimeterValue = (Math.round(testPerimeter));
+        checkTestResult(roundedPerimeterValue == 31, "shouldGive31Point4Perimeter");
+    }
+
+    private void checkTestResult(boolean condition, String testName) {
+        if (condition) {
+            System.out.println(testName + " = OK!");
+        } else {
+            System.out.println(testName + " = FAIL!");
+        }
+    }
+
+}
+
+Лучше:
+
+public class CircleTest {
+
+    public static void main(String[] args) {
+        CircleTest test = new CircleTest();
+        test.shouldGive314Area();
+        test.shouldGive31Point4Perimeter();
+    }
+
+    public void shouldGive314Area () {
+        Circle circle1 = new Circle("It's not a moon!",10);
+        double testArea = circle1.calculateArea();
+        checkTestResult(testArea == 314, "shouldGive314Area");
+    }
+
+    public void shouldGive31Point4Perimeter () {
+        Circle circle2 = new Circle("Death Star",5);
+        double testPerimeter = circle2.calculatePerimeter();
+        double roundedPerimeterValue = (Math.round(testPerimeter));
+        checkTestResult(roundedPerimeterValue == 31, "shouldGive31Point4Perimeter");
+    }
+
+    private void checkTestResult(boolean condition, String testName) {
+        if (condition) {
+            System.out.println(testName + " = OK!");
+        } else {
+            System.out.println(testName + " = FAIL!");
+        }
+    }
+
+}

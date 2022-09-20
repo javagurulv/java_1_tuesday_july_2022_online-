@@ -1,0 +1,16 @@
+WARNING: Используйте константу Math.PI вместо собственной переменной.
+
+    public double calculateArea() {
+        final double Pi = 3.14;
+        double circleArea = (Pi * (radius * radius));
+        System.out.println("The area of circle is : " + circleArea);
+        return circleArea;
+    }
+
+Лучше:
+
+    public double calculateArea() {
+        double circleArea = (Math.PI * (radius * radius));
+        System.out.println("The area of circle is : " + circleArea);
+        return circleArea;
+    }

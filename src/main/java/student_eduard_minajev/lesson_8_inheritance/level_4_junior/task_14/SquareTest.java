@@ -1,5 +1,8 @@
 package student_eduard_minajev.lesson_8_inheritance.level_4_junior.task_14;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class SquareTest {
 
     public static void main(String[] args) {
