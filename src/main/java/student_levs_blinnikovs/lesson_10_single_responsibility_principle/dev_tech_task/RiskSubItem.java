@@ -15,10 +15,6 @@ class RiskSubItem {
         this.riskTypes = riskTypes;
     }
 
-    public boolean isInsuredFor(RiskType riskType) {
-        return riskTypes.contains(riskType);
-    }
-
     public List<RiskType> getRiskTypes() {
         return riskTypes;
     }
