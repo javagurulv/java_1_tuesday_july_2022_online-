@@ -2,6 +2,7 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_te
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 
 
 class PremiumCalculatorTest {
@@ -15,11 +16,16 @@ class PremiumCalculatorTest {
     }
 
     void shouldCalculateLowRisk() {
+        ArrayList<RiskSubItem> riskSubItems = new ArrayList<>();
         RiskSubItem television = new RiskSubItem("TV", new BigDecimal("100.00"), RiskType.FIRE);
         RiskSubItem computer = new RiskSubItem("Computer", new BigDecimal("8.00"), RiskType.THEFT);
-        RiskSubItem[] riskSubItems = {television, computer};
+        riskSubItems.add(television);
+        riskSubItems.add(computer);
+
+        ArrayList<RiskItem> riskItems = new ArrayList<>();
         RiskItem house = new RiskItem(riskSubItems);
-        RiskItem[] riskItems = {house};
+        riskItems.add(house);
+
         Policy policy = new Policy(riskItems);
         PremiumCalculator calculator = new PremiumCalculator();
 
@@ -30,11 +36,16 @@ class PremiumCalculatorTest {
     }
 
     void shouldCalculateHighRisk() {
+        ArrayList<RiskSubItem> riskSubItems = new ArrayList<>();
         RiskSubItem television = new RiskSubItem("TV", new BigDecimal("500.00"), RiskType.FIRE);
         RiskSubItem computer = new RiskSubItem("Computer", new BigDecimal("102.51"), RiskType.THEFT);
-        RiskSubItem[] riskSubItems = {television, computer};
+        riskSubItems.add(television);
+        riskSubItems.add(computer);
+
+        ArrayList<RiskItem> riskItems = new ArrayList<>();
         RiskItem house = new RiskItem(riskSubItems);
-        RiskItem[] riskItems = {house};
+        riskItems.add(house);
+
         Policy policy = new Policy(riskItems);
         PremiumCalculator calculator = new PremiumCalculator();
 
