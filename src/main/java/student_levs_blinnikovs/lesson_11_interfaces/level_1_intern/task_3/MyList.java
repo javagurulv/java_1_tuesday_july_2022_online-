@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_11_interfaces.task_3;
+package student_levs_blinnikovs.lesson_11_interfaces.level_1_intern.task_3;
 
 interface MyList {
 

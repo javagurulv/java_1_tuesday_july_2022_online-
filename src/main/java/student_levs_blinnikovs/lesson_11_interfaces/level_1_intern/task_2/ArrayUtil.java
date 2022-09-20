@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_11_interfaces.task_2;
+package student_levs_blinnikovs.lesson_11_interfaces.level_1_intern.task_2;
 
 interface ArrayUtil {
 
