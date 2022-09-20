@@ -14,52 +14,48 @@ class PremiumCalculator {
     private static final BigDecimal THEFT_HIGH_LIMIT = new BigDecimal("15.00");
 
     BigDecimal calculate(Policy policy) {
-        return calculatePremiumFire(policy).add(calculatePremiumTheft(policy));
+        BigDecimal sumInsuredFire = calculateSumInsured(policy, RiskType.FIRE);                   // todo here better to in separate method, and iterate over RiskTypes
+        BigDecimal sumInsuredTheft = calculateSumInsured(policy, RiskType.THEFT);
+        return calculatePremiumFire(sumInsuredFire).add(calculatePremiumTheft(sumInsuredTheft));
     }
 
-    private BigDecimal calculatePremiumFire(Policy policy) {
-        BigDecimal totalSumInsured = new BigDecimal("0.00");
-        BigDecimal premium = new BigDecimal("0.00");
-
-        for (RiskItem riskItem : policy.getRiskItems()) {                          // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
-            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {            // todo hide in getTotalSumInsured()... ?
-                if (riskSubItem.getRiskType().equals(RiskType.FIRE)) {
-                    totalSumInsured = totalSumInsured.add(riskSubItem.getSumInsured());
+    private BigDecimal calculateSumInsured(Policy policy, RiskType riskType) {
+        BigDecimal sumInsured = new BigDecimal("0.00");
+        for (RiskItem riskItem : policy.getRiskItems()) {                       // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
+            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {        // todo hide in getTotalSumInsured()... ?
+                if (riskSubItem.getRiskType().equals(riskType)) {
+                    sumInsured = sumInsured.add(riskSubItem.getSumInsured());
                 }
             }
         }
+        return sumInsured;
+    }
 
-        if (totalSumInsured.compareTo(FIRE_HIGH_LIMIT) > 0) {                                   // todo need something better, like turn in 1 method...
-            premium = totalSumInsured.multiply(COEFFICIENT_FIRE_HIGH_LIMIT);
+    private BigDecimal calculatePremiumTheft(BigDecimal sumInsured) {
+        BigDecimal premium = new BigDecimal("0.00");
+
+        if (sumInsured.compareTo(THEFT_HIGH_LIMIT) > 0) {
+            premium = sumInsured.multiply(COEFFICIENT_THEFT_HIGH_LIMIT);
         }
-        if (totalSumInsured.compareTo(FIRE_HIGH_LIMIT) <= 0) {
-            premium = totalSumInsured.multiply(COEFFICIENT_FIRE);
+        if (sumInsured.compareTo(THEFT_HIGH_LIMIT) <= 0) {
+            premium = sumInsured.multiply(COEFFICIENT_THEFT);
         }
 
         return premium;
     }
 
-
-    private BigDecimal calculatePremiumTheft(Policy policy) {
-        BigDecimal totalSumInsured = new BigDecimal("0.00");
+    private BigDecimal calculatePremiumFire(BigDecimal sumInsured) {
         BigDecimal premium = new BigDecimal("0.00");
 
-        for (RiskItem riskItem : policy.getRiskItems()) {
-            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {
-                if (riskSubItem.getRiskType().equals(RiskType.THEFT)) {
-                    totalSumInsured = totalSumInsured.add(riskSubItem.getSumInsured());
-                }
-            }
+        if (sumInsured.compareTo(FIRE_HIGH_LIMIT) > 0) {                                   // todo need something better, like turn in 1 method...
+            premium = sumInsured.multiply(COEFFICIENT_FIRE_HIGH_LIMIT);
         }
-
-        if (totalSumInsured.compareTo(THEFT_HIGH_LIMIT) > 0) {
-            premium = totalSumInsured.multiply(COEFFICIENT_THEFT_HIGH_LIMIT);
-        }
-        if (totalSumInsured.compareTo(THEFT_HIGH_LIMIT) <= 0) {
-            premium = totalSumInsured.multiply(COEFFICIENT_THEFT);
+        if (sumInsured.compareTo(FIRE_HIGH_LIMIT) <= 0) {
+            premium = sumInsured.multiply(COEFFICIENT_FIRE);
         }
 
         return premium;
     }
+
 
 }
