@@ -35,10 +35,10 @@ class PremiumCalculator {
         BigDecimal premium = new BigDecimal("0.00");
 
         if (sumInsured.compareTo(THEFT_HIGH_LIMIT) >= 0) {
-            premium = sumInsured.multiply(COEFFICIENT_THEFT_HIGH_LIMIT);                // todo extract logic of finding coefs and multiplication methods as well
+            premium = sumInsured.multiply(COEFFICIENT_THEFT_HIGH_LIMIT);                // todo extract logic of finding coefs
         }
         if (sumInsured.compareTo(THEFT_HIGH_LIMIT) < 0) {
-            premium = sumInsured.multiply(COEFFICIENT_THEFT);
+            premium = sumInsured.multiply(COEFFICIENT_THEFT);                           // todo extract multiplication method
         }
 
         return premium;
@@ -48,7 +48,7 @@ class PremiumCalculator {
         BigDecimal premium = new BigDecimal("0.00");
 
         if (sumInsured.compareTo(FIRE_HIGH_LIMIT) > 0) {                                   // todo need something better, like turn in 1 method...
-            premium = sumInsured.multiply(COEFFICIENT_FIRE_HIGH_LIMIT);             // todo extract logic of finding coefs and multiplication methods as well
+            premium = sumInsured.multiply(COEFFICIENT_FIRE_HIGH_LIMIT);
         }
         if (sumInsured.compareTo(FIRE_HIGH_LIMIT) <= 0) {
             premium = sumInsured.multiply(COEFFICIENT_FIRE);
