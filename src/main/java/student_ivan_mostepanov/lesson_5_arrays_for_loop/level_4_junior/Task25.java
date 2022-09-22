@@ -1,4 +1,4 @@
-package student_ivan_mostepanov.lesson_5_arrays_for_loop.lesson_4_junior;
+package student_ivan_mostepanov.lesson_5_arrays_for_loop.level_4_junior;
 
 
 import java.util.Scanner;
