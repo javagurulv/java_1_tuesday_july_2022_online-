@@ -3,7 +3,7 @@ package student_ivan_mostepanov.lesson_5_arrays_for_loop.level_4_junior;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task26 {
+class Task26 {
 
     public static void main(String[] args){
         int[] array = createArray();
