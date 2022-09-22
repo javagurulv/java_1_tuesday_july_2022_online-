@@ -14,12 +14,29 @@ public  static  void main(String[]args) {
 
     NumberUtilsTest numberUtilstest = new NumberUtilsTest();
     numberUtilstest.isEvenTest();
+    numberUtilstest.isOddTest();
 
 }
     private void isEvenTest() {
 
 
         int number = 8;
+
+        boolean expectedResult = true;
+        NumberUtils numberUtils = new NumberUtils();
+        boolean realResult = numberUtils.isEven(number);
+        if (realResult == expectedResult) {
+            System.out.println("Even test = OK");
+        } else {
+            System.out.println("Even test = FAIL");
+        }
+
+    }
+
+    private void isOddTest() {
+
+
+        int number = 9;
 
         boolean expectedResult = true;
         NumberUtils numberUtils = new NumberUtils();
