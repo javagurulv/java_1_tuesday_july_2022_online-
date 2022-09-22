@@ -1,5 +1,6 @@
 package student_ivan_mostepanov.lesson_5_arrays_for_loop.lesson_4_junior;
 
+
 import java.util.Scanner;
 
 
@@ -24,8 +25,8 @@ class Task25 {
         }
     }
     private static void printArrayToConsole(int[] array){
-        for (int j : array) {
-            System.out.println(j);
+        for (int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
         }
     }
 
