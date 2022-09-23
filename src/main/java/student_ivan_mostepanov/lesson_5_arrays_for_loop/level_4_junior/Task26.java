@@ -12,6 +12,7 @@ class Task26 {
     }
     private static int[] createArray (){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter array length  ");
         int arrayLength = scanner.nextInt();
         return new int[arrayLength];
     }
