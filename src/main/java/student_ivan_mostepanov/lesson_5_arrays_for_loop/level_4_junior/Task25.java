@@ -14,12 +14,14 @@ class Task25 {
     }
     private static int[] createArray (){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter array length  ");
         int arrayLength = scanner.nextInt();
         return new int[arrayLength];
     }
 
     private static void fillArrayWithUserNumbers(int[] array){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter array numbers  ");
                 for (int i = 0; i < array.length; i++){
             array[i] = scanner.nextInt();
         }
