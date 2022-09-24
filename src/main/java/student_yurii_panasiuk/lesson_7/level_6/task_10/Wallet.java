@@ -2,17 +2,17 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
 
  class Wallet {
 
-    double monetAmmount;
+    double moneyAmmount;
 
-    public void setMonetAmmount(double monetAmmount) {
-        this.monetAmmount = monetAmmount;
+     void setMoneyAmmount(double monetAmmount) {
+        this.moneyAmmount = monetAmmount;
     }
 
-    public double getMonetAmmount() {
-        return monetAmmount;
+     double getMoneyAmmount() {
+        return moneyAmmount;
     }
 
-    public Wallet(double monetAmmount) {
-        this.monetAmmount = monetAmmount;
+     Wallet(double monetAmmount) {
+        this.moneyAmmount = monetAmmount;
     }
 }

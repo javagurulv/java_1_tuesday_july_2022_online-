@@ -2,10 +2,9 @@ package student_yurii_panasiuk.lesson_5.level_5_6.task_31_40;
 
 import java.util.Arrays;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
+
+
 class ArrayUtil {
 
      static int [] createArray(int arrayLength) {
@@ -28,18 +27,19 @@ class ArrayUtil {
 
     }
 
-	@CodeReviewComment(teacher = "Метод не должен менять местами элементы массива!")
+	//@CodeReviewComment(teacher = "Метод не должен менять местами элементы массива!") // Arrays.copyOf
     static int findMaxNumber(int[] array) {
-        int [] sortArray = array;
+        int [] sortArray = Arrays.copyOf (array, array.length);
+
         Arrays.sort(sortArray);
         return sortArray[sortArray.length-1];
     }
 
-	@CodeReviewComment(teacher = "Метод не должен менять местами элементы массива!")
+	//@CodeReviewComment(teacher = "Метод не должен менять местами элементы массива!")// Arrays.copyOf
 	static int findMinNumber(int[] array) {
-        int [] sortArray = array;
-        Arrays.sort(sortArray);
+        int [] sortArray =  Arrays.copyOf (array, array.length);
 
+        Arrays.sort(sortArray);
         return sortArray[0];
     }
 
