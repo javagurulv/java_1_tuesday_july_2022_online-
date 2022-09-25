@@ -8,7 +8,7 @@ class CircleTest {
     }
 
     public void areaTest() {
-        Circle circle = new Circle("FirstCircle", 2);
+        Circle circle = new Circle("Circle", 2);
         double expectedResult = 12.566370614359172;
         if (circle.calculateArea() ==  expectedResult){
             System.out.println("Circle area TEST OK");
@@ -18,12 +18,12 @@ class CircleTest {
     }
 
     public void perimeterTest() {
-        Circle circle = new Circle("FirstCircle", 2);
+        Circle circle = new Circle("Circle", 2);
         double expectedResult = 12.566370614359172;
         if (circle.calculatePerimeter() ==  expectedResult){
-            System.out.println("Circle area TEST OK");
+            System.out.println("Circle perimeter TEST OK");
         }else {
-            System.out.println(" Circle area TEST FALSE");
+            System.out.println(" Circle perimeter TEST FALSE");
         }
     }
 
