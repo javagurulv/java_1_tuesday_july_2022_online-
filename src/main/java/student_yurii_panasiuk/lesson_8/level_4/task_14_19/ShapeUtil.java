@@ -1,6 +1,8 @@
 package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
 
- class ShapeUtil {
+import java.util.Random;
+
+class ShapeUtil {
 
 
      public static void main(String[] args) {
@@ -22,9 +24,27 @@ package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
          //randomTriangle.createRandomTriangle();
          System.out.println((int)randomTriangle.createRandomTriangle().getSide());
 
+         ShapeUtil randomShape = new ShapeUtil();
+         randomShape.createRandomShape();
+
+
      }
 
-     Triangle createRandomTriangle(){
+    Shape createRandomShape() {
+        Random rnd = new Random();
+        int randomNumber = rnd.nextInt(4);
+        if (randomNumber == 0) {
+            return createRandomCircle();
+        } else if (randomNumber == 1) {
+            return createRandomSquare();
+        } else if (randomNumber == 2) {
+            return createRandomRectangle();
+        } else {
+            return createRandomTriangle();
+        }
+    }
+
+    Triangle createRandomTriangle(){
          int minRanom = 1;
          int maxRanom = 10;
          int randomSide = (int)Math.round (minRanom + (Math.random () * maxRanom));
