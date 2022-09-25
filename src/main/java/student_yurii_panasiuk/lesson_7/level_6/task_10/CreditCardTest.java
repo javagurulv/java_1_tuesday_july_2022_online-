@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
 
 import java.util.Objects;
 
-public class CreditCardTest {
+ class CreditCardTest {
 
     public static void main(String[] args) {
 
