@@ -18,7 +18,19 @@ package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
          System.out.println((int)randomRectangle.createRandomRectangle().getSideOne() + "  " +
                  (int)randomRectangle.createRandomRectangle().getSideTwo());
 
+         ShapeUtil randomTriangle = new ShapeUtil();
+         //randomTriangle.createRandomTriangle();
+         System.out.println((int)randomTriangle.createRandomTriangle().getSide());
 
+     }
+
+     Triangle createRandomTriangle(){
+         int minRanom = 1;
+         int maxRanom = 10;
+         int randomSide = (int)Math.round (minRanom + (Math.random () * maxRanom));
+         Triangle randomTriangle = new Triangle("Random Triangle", randomSide);
+
+         return randomTriangle;
      }
 
      Rectangle createRandomRectangle(){
@@ -29,7 +41,6 @@ package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
          Rectangle randomRectangle = new Rectangle("Random Rectangle", randomSide1, randomSide2);
 
          return randomRectangle;
-
      }
 
      Circle createRandomCircle() {
