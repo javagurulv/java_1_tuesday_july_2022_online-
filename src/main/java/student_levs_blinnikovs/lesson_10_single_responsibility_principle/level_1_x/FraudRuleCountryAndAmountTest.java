@@ -5,11 +5,14 @@ import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.
 class FraudRuleCountryAndAmountTest {
 
     void shouldBeFraudTransaction(int amount, boolean expectedFraudTransaction) {
-        FraudRuleCountryAndAmount fraudRuleName = new FraudRuleCountryAndAmount("Transactions from Germany over 1000 are not allowed");
         Trader trader = new Trader("Angela Merkel", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, amount);
-        boolean realFraudTransaction = fraudRuleName.isFraud(transaction);
-        testResultPrinter(expectedFraudTransaction == realFraudTransaction);
+        FraudRuleCountryAndAmount fraudRuleCountryAndAmount = new FraudRuleCountryAndAmount("Transactions from Germany over 1000 are not allowed");
+        FraudRule[] fraudRules = {fraudRuleCountryAndAmount};
+        FraudDetector detector = new FraudDetector(fraudRules);
+        FraudDetectionResult realFraudTransaction = detector.isFraud(transaction);
+        boolean realFraud = realFraudTransaction.getFraud();
+        testResultPrinter(expectedFraudTransaction == realFraud);
     }
     
     public static void main(String[] args) {

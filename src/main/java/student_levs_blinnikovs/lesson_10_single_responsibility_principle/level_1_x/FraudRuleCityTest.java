@@ -4,12 +4,15 @@ import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.
 
 class FraudRuleCityTest {
 
-    void shouldBeFraudTransaction(String city, boolean expectedFraudTransaction) {
-        FraudRuleCity fraudRuleName = new FraudRuleCity("Transactions from Sydney are not allowed");
+    void shouldBeFraudTransaction(String city, boolean expectedFraud) {
         Trader trader = new Trader("Aussie", city, "Australia");
         Transaction transaction = new Transaction(trader, 100);
-        boolean realFraudTransaction = fraudRuleName.isFraud(transaction);
-        testResultPrinter(expectedFraudTransaction == realFraudTransaction);
+        FraudRuleCity fraudRuleCity = new FraudRuleCity("Transactions from Sydney are not allowed");
+        FraudRule[] fraudRules = {fraudRuleCity};
+        FraudDetector detector = new FraudDetector(fraudRules);
+        FraudDetectionResult realFraudTransaction = detector.isFraud(transaction);
+        boolean realFraud = realFraudTransaction.getFraud();
+        testResultPrinter(expectedFraud == realFraud);
     }
     
     public static void main(String[] args) {

@@ -4,12 +4,15 @@ import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.
 
 class FraudRuleAmountTest {
 
-    void shouldBeFraudTransaction(int amount, boolean expectedFraudTransaction) {
-        FraudRuleAmount fraudRuleName = new FraudRuleAmount("Amount too high");
+    void shouldBeFraudTransaction(int amount, boolean expectedFraud) {
         Trader trader = new Trader("Nomekop", "Warsaw", "Poland");
         Transaction transaction = new Transaction(trader, amount);
-        boolean realFraudTransaction = fraudRuleName.isFraud(transaction);
-        testResultPrinter(expectedFraudTransaction == realFraudTransaction);
+        FraudRuleAmount fraudRuleAmount = new FraudRuleAmount("Amount too high");
+        FraudRule[] fraudRules = {fraudRuleAmount};
+        FraudDetector detector = new FraudDetector(fraudRules);
+        FraudDetectionResult realFraudTransaction = detector.isFraud(transaction);
+        boolean realFraud = realFraudTransaction.getFraud();
+        testResultPrinter(expectedFraud == realFraud) ;
     }
     
     public static void main(String[] args) {

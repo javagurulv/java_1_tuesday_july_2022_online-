@@ -12,6 +12,15 @@ class Trader {
         this.country = country;
     }
 
+    @Override
+    public String toString() {
+        return "Trader{" +
+                "fullName='" + fullName + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -23,6 +32,7 @@ class Trader {
     public String getCountry() {
         return country;
     }
+
 }
 
 
