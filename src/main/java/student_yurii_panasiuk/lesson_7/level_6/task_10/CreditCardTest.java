@@ -22,12 +22,18 @@ public class CreditCardTest {
             testResult (newCard.getPinCode() == 1234);
 
             System.out.print("Card Deposite Test Is ");
+            double moneyAmountBeforeDeposite = newCard.getBalance();
             newCard.depositeWithPinCode(1234, 10);
-            testResult (newCard.getBalance() == 10);
+            double moneyAmountAfterDeposite = newCard.getBalance();
+            testResult (newCard.getBalance() == 10 &&
+                    (moneyAmountAfterDeposite - moneyAmountBeforeDeposite) == 10);
 
             System.out.print("Card Withdraw Test Is ");
+            double moneyAmountBeforeWithdraw = newCard.getBalance();
             newCard.withdrawWithPinCode(1234, 10);
-            testResult (newCard.getBalance() == 0);
+            double moneyAmountAfterWithdraw = newCard.getBalance();
+            testResult (newCard.getBalance() == 0 &&
+                    (moneyAmountBeforeWithdraw - moneyAmountAfterWithdraw) == 10);
 
             System.out.print("Card CreditLimit Test Is ");
             testResult(newCard.getCreditLimit() == 10 && newCard.getBalance() == 0 &&

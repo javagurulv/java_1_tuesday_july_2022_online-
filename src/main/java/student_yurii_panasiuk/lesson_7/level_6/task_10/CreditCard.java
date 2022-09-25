@@ -7,6 +7,8 @@ package student_yurii_panasiuk.lesson_7.level_6.task_10;
     private double balance = 0.0;
     private double loanDebt = 0.0;
 
+
+
      void setCreditLimit(double creditLimit) {
          this.creditLimit = creditLimit;
      }
