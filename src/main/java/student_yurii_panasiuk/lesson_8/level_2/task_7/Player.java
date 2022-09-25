@@ -16,7 +16,7 @@ class HumanPlayer extends Player {
 
      HumanPlayer(String name) {
         super(name);
-        this.name = name;
+
     }
 
 }
