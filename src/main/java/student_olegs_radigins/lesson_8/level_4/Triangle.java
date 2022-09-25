@@ -2,8 +2,8 @@ package student_olegs_radigins.lesson_8.level_4;
 
 class Triangle extends Shape {
     private double sideA;
-    private double sideB = sideA;
-    private double sideC = sideB;
+    private final double sideB = sideA;
+    private final double sideC = sideB;
 
     public Triangle(String title, double sideA) {
         super(title);
