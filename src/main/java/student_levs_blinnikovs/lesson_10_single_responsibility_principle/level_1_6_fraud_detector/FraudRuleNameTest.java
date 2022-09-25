@@ -1,6 +1,6 @@
-package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_x;
+package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
-import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_x.TestUtil.testResultPrinter;
+import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.testResultPrinter;
 
 class FraudRuleNameTest {
 

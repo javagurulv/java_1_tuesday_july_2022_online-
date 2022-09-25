@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_x;
+package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
 class FraudRuleCity extends FraudRule {
 
