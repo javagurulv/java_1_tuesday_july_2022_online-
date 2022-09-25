@@ -11,6 +11,14 @@ package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
          this.sideTwo = side2;
      }
 
+     public double getSideOne() {
+         return sideOne;
+     }
+
+     public double getSideTwo() {
+         return sideTwo;
+     }
+
      @Override
      double calculateArea() {
          return (this.sideOne * sideTwo);
