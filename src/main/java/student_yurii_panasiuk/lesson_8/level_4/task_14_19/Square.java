@@ -4,6 +4,10 @@ package student_yurii_panasiuk.lesson_8.level_4.task_14_19;
 
      private double side;
 
+     public double getSide() {
+         return side;
+     }
+
      public Square(String title, int side) {
          super(title);
          this.side = side;
