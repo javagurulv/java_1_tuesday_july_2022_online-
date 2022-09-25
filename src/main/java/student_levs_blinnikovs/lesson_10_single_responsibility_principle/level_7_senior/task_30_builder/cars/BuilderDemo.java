@@ -9,10 +9,12 @@ class BuilderDemo {
         CarBuilder carBuilder = new CarBuilder();
         director.makeCar(carBuilder);
         Car car = carBuilder.getResult();
+        System.out.println(car);
 
         Porsche911Builder porsche911Builder = new Porsche911Builder();
         director.makePorsche911(porsche911Builder);
         Porsche911 porsche911 = porsche911Builder.getResult();
+        System.out.println(porsche911);
 
     }
 

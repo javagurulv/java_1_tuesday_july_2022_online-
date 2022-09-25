@@ -4,6 +4,5 @@ interface Builder {
 
     void reset();
     void setReleaseYear(int releaseYear);
-    void setTopSpeed(int topSpeed);
 
 }

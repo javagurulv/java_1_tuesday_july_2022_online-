@@ -14,7 +14,6 @@ class Porsche911Builder implements Builder {
         porsche911.setReleaseYear(releaseYear);
     }
 
-    @Override
     public void setTopSpeed(int topSpeed) {
         porsche911.setTopSpeed(topSpeed);
     }

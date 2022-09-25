@@ -5,7 +5,6 @@ class Director {
     void makeCar(CarBuilder carBuilder) {
         carBuilder.reset();
         carBuilder.setReleaseYear(1991);
-        carBuilder.setTopSpeed(180);
     }
 
     void makePorsche911(Porsche911Builder porsche911Builder) {

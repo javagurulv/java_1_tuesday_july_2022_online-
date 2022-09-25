@@ -14,11 +14,6 @@ class CarBuilder implements Builder {
         car.setReleaseYear(releaseYear);
     }
 
-    @Override
-    public void setTopSpeed(int topSpeed) {
-        car.setTopSpeed(topSpeed);
-    }
-
     public Car getResult() {
         return car;
     }
