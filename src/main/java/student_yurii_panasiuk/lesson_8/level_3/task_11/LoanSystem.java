@@ -11,7 +11,7 @@ package student_yurii_panasiuk.lesson_8.level_3.task_11;
 
 abstract class LoanSystem {
 
-    abstract <Human> boolean canReceiveLoan(Human human);  // дженерик Human странно что он не описан и компилируется
+    abstract boolean canReceiveLoan(Human human);  // дженерик Human странно что он не описан и компилируется
 
 
 }
