@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_7.level_1_2_3.task_1_2_3_4;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WordServiceDemo {
 
     public static void main(String[] args) {

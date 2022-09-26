@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class WordServiceTests {
 
     public static void main(String[] args) {
