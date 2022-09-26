@@ -31,7 +31,7 @@ class PowerCalculator {
 
     public double exponentiation(double number, int power) {
         if (power == 0) {
-            return 0.0D;
+            return 1.0D;
         }
         if (power < 0) {
             return 1 / positivePower(number, power);
