@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_7.level_6.task_10;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class CreditCard {
     private int cardNumber;
     private int pinCode;

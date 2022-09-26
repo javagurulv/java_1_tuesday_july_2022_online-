@@ -1,21 +1,9 @@
-package student_yurii_panasiuk.lesson_7.level_6.task_10;
+WARNING: Хорошие тесты, точно так же как и методы, должны
+следовать принципу одной ответственности (Single Responsibility).
+Тест, который проверяет всё по факту не проверяет ничего кроме
+выдуманного happy path упуская при этом очень много деталей
+и нюансов.
 
-import java.util.Objects;
-
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
-
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Каждый тест кейс должен быть оформлен в отдельном тестовом методе!")
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_7_encapsulation/codereview/CleanCodeWarning_5.txt")
- class CreditCardTest {
-
-    public static void main(String[] args) {
-
-
-        CreditCardTest();
-
-    }
 
         static void CreditCardTest () {
             CreditCard newCard = new CreditCard(1111, 1234);
@@ -55,8 +43,12 @@ import teacher.codereview.CodeReviewComment;
             System.out.println(" FAIL");
         }
     }
-}
 
-
-
-
+Про каждую тестируемую функциональность нужно думать отдельно
+и составлять для неё свой набор тестов, которые проверяют
+как happy path, так и поведение при граничных значениях.
+Тестовые сценарии должны быть придуманы и записаны на бумаге
+до написания кода тестов. Придумывание тестовых сценариев это
+одна работа, их кодирование это другая. При их смешивании вы
+упустите из виду возможные сценарии и забудете написать для
+них тесты.
