@@ -10,9 +10,9 @@ class PowerCalculatorTest {
         }
     }
 
-    void shouldCalculatePower(int base, int power, int expectedResult) {
+    void shouldCalculatePower(int base, int power, double expectedResult) {
         PowerCalculator powerCalculator = new PowerCalculator();
-        int realResult = powerCalculator.power(base, power);
+        double realResult = powerCalculator.power(base, power);
         testResultPrinter(expectedResult == realResult);
     }
 
@@ -20,29 +20,39 @@ class PowerCalculatorTest {
 
         PowerCalculatorTest test = new PowerCalculatorTest();
 
+        // power 0
+        test.shouldCalculatePower(0, 0, 1);
+        test.shouldCalculatePower(1, 0, 1);
+        test.shouldCalculatePower(2, 0, 1);
+
+        // power 1
+        test.shouldCalculatePower(0, 1, 0);
+        test.shouldCalculatePower(1,1,1);
+        test.shouldCalculatePower(2, 1, 2);
+
+        // base 0
+        test.shouldCalculatePower(0, 1, 0);
+        test.shouldCalculatePower(0, 2, 0);
+
+        // base 1
+        test.shouldCalculatePower(1,2,1);
+        test.shouldCalculatePower(1, 3, 1);
+
+        // normal
         test.shouldCalculatePower(2,2,4);
         test.shouldCalculatePower(2,3,8);
-        test.shouldCalculatePower(2,4,16);
-        test.shouldCalculatePower(2,5,32);
-        test.shouldCalculatePower(2,6,64);
-        test.shouldCalculatePower(2,7,128);
-        test.shouldCalculatePower(2,8,256);
-        test.shouldCalculatePower(2,9,512);
-        test.shouldCalculatePower(2,10,1024);
 
-        test.shouldCalculatePower(3,2,9);
-        test.shouldCalculatePower(3,3,27);
-        test.shouldCalculatePower(3,4,81);
+        // negative
+        test.shouldCalculatePower(2, -1, 0.5);
+        test.shouldCalculatePower(2, -2, 0.25);
+        test.shouldCalculatePower(2, -3, 0.125);
 
-        test.shouldCalculatePower(1,1,1);
-        test.shouldCalculatePower(1,100,1);
 
-        test.shouldCalculatePower(1, 0, 1);
-        // by math rules any base to power of 0 should return 1 but works incorrectly... need to make some logic
-        test.shouldCalculatePower(100, 0, 1); // wrong...
 
-        test.shouldCalculatePower(0, 1, 0);
-        test.shouldCalculatePower(0, 100, 0);
+
+
+
+
 
 
     }
