@@ -1,0 +1,51 @@
+WARNING: По задаче нужно было возвести число в степень (целое число).
+Степень может быть как положительной, так и отрицательной и 0.
+В коде ниже эти детали не были учтены. То есть перед написанием
+кода не было произведено изучение/анализ поставленной задачи,
+не были выявлены все возможные входные параметры и их комбинации.
+
+
+class PowerCalculator {
+
+    double exponentiation(double number, int power) {
+        double result = 1.0;
+        for (int i = 0; i < power; i++) {
+            result = result * number;
+        }
+        return result;
+    }
+
+    boolean verificationPower(double power) {
+        return power % 1 != 0;
+    }
+
+    void verificationFailedMessage () {
+            System.out.println("power must be an integer greater than 0");
+    }
+}
+
+
+Лучше:
+
+class PowerCalculator {
+
+    public double exponentiation(double number, int power) {
+        if (power == 0) {
+            return 0.0D;
+        }
+        if (power < 0) {
+            return 1 / positivePower(number, power);
+        } else {
+            return positivePower(number, power);
+        }
+    }
+
+    private double positivePower(double number, int power) {
+        double result = 1.0;
+        for (int i = 0; i < power; i++) {
+            result = result * number;
+        }
+        return result;
+    }
+
+}
