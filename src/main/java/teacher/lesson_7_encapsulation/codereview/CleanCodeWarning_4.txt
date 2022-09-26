@@ -1,0 +1,48 @@
+WARNING: Неплохая попытка написать параметризованные тесты.
+Если нужно проверить много вариантов, то один из способов
+уменьшить количество кода в тестах это создание параметризованных
+тестов.
+
+        static void powerCalculatorTest() {
+            PowerCalculator calculator = new PowerCalculator();
+
+            List<Double> listOfNubers = List.of(1.0, 2.0, 3.0);
+            List<Double> listOfPowers = List.of(1.0, 2.0, 3.0);
+            List<Double> listOfAnswers = List.of(1.0, 4.0, 27.0);
+
+            System.out.print("powerCalculatorTest - ");
+            int correctAnswerCounter = 0;
+
+            for (int i = 0; i < listOfNubers.size(); i++ )
+
+            if ((calculator.exponentiation(listOfNubers.get(i), listOfPowers.get(i))) ==
+                (listOfAnswers.get(i))){
+                correctAnswerCounter++;
+                }
+            if (correctAnswerCounter == listOfNubers.size() ){
+                System.out.println(" OK");
+            }
+             else {System.out.println(" FAIL");}
+        }
+
+
+Лучше:
+
+        static void powerCalculatorTest () {
+            List<Double> numbers = List.of(1.0, 2.0, 3.0);
+            List<Double> powers = List.of(1.0, 2.0, 3.0);
+            List<Double> answers = List.of(1.0, 4.0, 27.0);
+			for (int i = 0; i < numbers.size(); i++) {
+				checkTestCase(numbers.get(i), powers.get(i), answers.get(i));
+			}
+        }
+
+		static void checkTestCase(double number, double power, double expectedResult) {
+			PowerCalculator calculator = new PowerCalculator();
+			double realResult = calculator.exponentiation(number, power);
+			if (Math.abs(realResult - expectedResult) < 0.00001D) {
+				System.out.println("OK [number = " + number + "; power = " + power + "]");
+			} else {
+				System.out.println("FAIL [number = " + number + "; power = " + power + "]");
+			}
+		}

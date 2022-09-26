@@ -1,6 +1,11 @@
 package student_yurii_panasiuk.lesson_7.level_5;
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_7_encapsulation/codereview/CleanCodeWarning_4.txt")
  class PowerCalculatorTest {
 
     public static void main(String[] args) {
