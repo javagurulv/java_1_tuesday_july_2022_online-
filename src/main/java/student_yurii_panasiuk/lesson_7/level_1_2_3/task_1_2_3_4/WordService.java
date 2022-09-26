@@ -3,6 +3,9 @@ package student_yurii_panasiuk.lesson_7.level_1_2_3.task_1_2_3_4;
 
 import java.util.*;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
 /*     Дана строка с текстом.
         Написать метод, который находит слово
         в тексте встречающееся больше всего раз.
@@ -11,6 +14,9 @@ import java.util.*;
         максимальное число раз, то возвращаем, то слово,
         которое встречается в тексте первым.
   */
+@CodeReview(approved = true)
+@CodeReviewComment(teacher = "Теперь бы из отдельных методов собрать полный алгоритм.")
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_7_encapsulation/codereview/CleanCodeWarning_2.txt")
 class WordService {
 
     String [] processing (String text) {

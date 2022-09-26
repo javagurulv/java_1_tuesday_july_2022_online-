@@ -1,0 +1,91 @@
+WARNING: По задаче нужно было найти слово чаще всех встречающееся
+в тексте. В классе WordService представлены отдельные части
+(детали) реализации алгоритма, но нет самого главного - самого
+алгоритма. Нет метода публичного метода с сигнатурой:
+public String findMostFrequentWord(String text).
+В реальности клиентов (тех кто будет вызывать этот код) этого кода
+не интересуют детали реализации алгоритма. Их интересует только
+общий алгоритм и как им пользоваться в удобном виде. Все детали
+реализации должны быть скрыты, то есть быть приватными (должны
+следовать принципу инкапсуляции).
+
+
+class WordService {
+
+    String [] processing (String text) {
+        String[] words = text.replaceAll("[-.?!)(,:]", "").split("\\s+");
+        return  words;
+    }
+
+    ArrayList<Integer> listOfResps (String []words){ // создаем список, вместо слов - количество повторений слова
+               int reps = 0;
+               ArrayList<Integer> listOfReps = new ArrayList<Integer>();
+                 for (int i = 0; i < words.length; i++) {
+                   reps = 0;
+                   for (int j = 0; j < words.length; j++) {
+                       if (words[i].equals(words[j])) {
+                           reps++;
+                       }
+                   }
+                  listOfReps.add (reps);
+                 }
+             return listOfReps;
+    }
+
+    Integer findMaxCoordinates (List<Integer> listOfReps){
+        int maxCoordinates = 0;
+        for (int i = 0; i < listOfReps.size(); i++) {
+                if(listOfReps.get(i) > listOfReps.get(maxCoordinates)) {
+                    maxCoordinates = i;
+                }
+        }
+        return maxCoordinates;
+    }
+
+    String findMostFrequentWord (int maxCoordinates, String [] words){
+        return words[maxCoordinates];
+    }
+}
+
+
+Лучше:
+
+class WordService {
+
+    public String findMostFrequentWord (String text) {
+        String[] processedText = processing(text);
+        int coordinates = findMaxCoordinates(listOfResps(processedText));
+        return processedText[coordinates];
+    }
+
+    private String [] processing (String text) {
+        String[] words = text.replaceAll("[-.?!)(,:]", "").split("\\s+");
+        return  words;
+    }
+
+    private ArrayList<Integer> listOfResps (String []words){ // создаем список, вместо слов - количество повторений слова
+               int reps = 0;
+               ArrayList<Integer> listOfReps = new ArrayList<Integer>();
+                 for (int i = 0; i < words.length; i++) {
+                   reps = 0;
+                   for (int j = 0; j < words.length; j++) {
+                       if (words[i].equals(words[j])) {
+                           reps++;
+                       }
+                   }
+                  listOfReps.add (reps);
+                 }
+             return listOfReps;
+    }
+
+    private Integer findMaxCoordinates (List<Integer> listOfReps){
+        int maxCoordinates = 0;
+        for (int i = 0; i < listOfReps.size(); i++) {
+                if(listOfReps.get(i) > listOfReps.get(maxCoordinates)) {
+                    maxCoordinates = i;
+                }
+        }
+        return maxCoordinates;
+    }
+
+}
