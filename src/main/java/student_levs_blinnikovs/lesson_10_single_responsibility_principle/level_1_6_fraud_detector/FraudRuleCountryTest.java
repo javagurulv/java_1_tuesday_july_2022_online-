@@ -1,6 +1,6 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
-import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.testResultPrinter;
+import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.printTestResult;
 
 class FraudRuleCountryTest {
 
@@ -12,7 +12,7 @@ class FraudRuleCountryTest {
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realFraudTransaction = detector.isFraud(transaction);
         boolean realFraud = realFraudTransaction.getFraud();
-        testResultPrinter(expectedFraud == realFraud);
+        printTestResult(expectedFraud == realFraud);
     }
     
     public static void main(String[] args) {

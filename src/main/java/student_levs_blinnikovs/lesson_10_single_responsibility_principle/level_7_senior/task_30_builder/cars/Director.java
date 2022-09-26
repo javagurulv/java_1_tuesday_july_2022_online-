@@ -2,15 +2,15 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 class Director {
 
-    void makeCar(CarBuilder carBuilder) {
+    void makeCar(CarBuilder carBuilder, int releaseYear) {
         carBuilder.reset();
-        carBuilder.setReleaseYear(1991);
+        carBuilder.setReleaseYear(releaseYear);
     }
 
-    void makePorsche911(Porsche911Builder porsche911Builder) {
+    void makePorsche911(Porsche911Builder porsche911Builder, int releaseYear, int topSpeed) {
         porsche911Builder.reset();
-        porsche911Builder.setReleaseYear(2000);
-        porsche911Builder.setTopSpeed(250);
+        porsche911Builder.setReleaseYear(releaseYear);
+        porsche911Builder.setTopSpeed(topSpeed);
     }
 
 }

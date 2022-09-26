@@ -6,7 +6,7 @@ class CarBuilder implements Builder {
 
     @Override
     public void reset() {
-        car = new Car();
+        car = new Car(0);
     }
 
     @Override

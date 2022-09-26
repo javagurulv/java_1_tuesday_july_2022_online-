@@ -2,7 +2,7 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 class TestUtil {
 
-    static void testResultPrinter(boolean isTestOK) {
+    static void printTestResult(boolean isTestOK) {
         if (isTestOK) {
             System.out.println("Test OK");
         } else {

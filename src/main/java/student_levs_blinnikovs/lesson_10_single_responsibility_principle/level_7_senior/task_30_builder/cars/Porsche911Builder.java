@@ -6,7 +6,7 @@ class Porsche911Builder implements Builder {
 
     @Override
     public void reset() {
-        porsche911 = new Porsche911();
+        porsche911 = new Porsche911(0, 0);
     }
 
     @Override

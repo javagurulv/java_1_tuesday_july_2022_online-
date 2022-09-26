@@ -7,12 +7,12 @@ class BuilderDemo {
         Director director = new Director();
 
         CarBuilder carBuilder = new CarBuilder();
-        director.makeCar(carBuilder);
+        director.makeCar(carBuilder, 1991);
         Car car = carBuilder.getResult();
         System.out.println(car);
 
         Porsche911Builder porsche911Builder = new Porsche911Builder();
-        director.makePorsche911(porsche911Builder);
+        director.makePorsche911(porsche911Builder, 2000, 250);
         Porsche911 porsche911 = porsche911Builder.getResult();
         System.out.println(porsche911);
 

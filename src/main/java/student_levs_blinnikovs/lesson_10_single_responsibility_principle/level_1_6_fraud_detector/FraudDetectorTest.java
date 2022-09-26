@@ -1,6 +1,6 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
-import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.testResultPrinter;
+import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.printTestResult;
 
 class FraudDetectorTest {
 
@@ -17,7 +17,7 @@ class FraudDetectorTest {
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
         boolean realFraud = realExistFraudulentTransactions.getFraud();
         String realRuleName = realExistFraudulentTransactions.getRuleName();
-        testResultPrinter((expectedFraud == realFraud) && expectedRuleName.equals(realRuleName)); // todo - I didn't quite get how to compare 2 objects each having 2 attrs
+        printTestResult((expectedFraud == realFraud) && expectedRuleName.equals(realRuleName)); // todo - I didn't quite get how to compare 2 objects each having 2 attrs
     }
 
     void shouldNotCatchAsThereAreNoFraudulentTransactionsTest() {
@@ -31,7 +31,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
         boolean realFraud = realExistFraudulentTransactions.getFraud();
-        testResultPrinter(expectedFraud == realFraud);
+        printTestResult(expectedFraud == realFraud);
     }
 
     void shouldNotCatchAsSpecificFraudRuleIsNotCheckedTest() {
@@ -44,7 +44,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
         boolean realFraud = realExistFraudulentTransactions.getFraud();
-        testResultPrinter(expectedFraud == realFraud);
+        printTestResult(expectedFraud == realFraud);
     }
 
 
