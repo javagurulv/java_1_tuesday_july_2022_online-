@@ -1,0 +1,46 @@
+WARNING: В иерархии наследования свойство должно быть только
+у одного класса. В примере ниже в классе HumanPlayer не должно
+быть свойства String name; так как оно есть в родительском классе.
+
+class Player {
+
+    private String name;
+
+    Player(String name) {
+        this.name = name;
+    }
+
+}
+
+class HumanPlayer extends Player {
+
+    String name;
+
+     HumanPlayer(String name) {
+        super(name);
+
+    }
+
+}
+
+
+Лучше:
+
+class Player {
+
+    private String name;
+
+    Player(String name) {
+        this.name = name;
+    }
+
+}
+
+class HumanPlayer extends Player {
+
+     HumanPlayer(String name) {
+        super(name);
+
+    }
+
+}
