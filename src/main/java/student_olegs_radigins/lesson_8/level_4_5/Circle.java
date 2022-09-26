@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_8.level_4;
+package student_olegs_radigins.lesson_8.level_4_5;
 
 class Circle extends Shape {
     private double radius;
