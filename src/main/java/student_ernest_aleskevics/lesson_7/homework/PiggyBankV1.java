@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_7.homework;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class PiggyBankV1 {
 
     private int amountOfMoneyInCents;

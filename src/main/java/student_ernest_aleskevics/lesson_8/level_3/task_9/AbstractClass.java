@@ -1,5 +1,8 @@
 package student_ernest_aleskevics.lesson_8.level_3.task_9;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class AbstractClass {
 
     /* Абстрактный класс похож на обычный класс. В абстрактном классе также можно определить поля и методы,
