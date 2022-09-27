@@ -23,11 +23,9 @@ class FraudDetectorTest {
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountryAndAmount, fraudRuleCountry};
         FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(false,null);
-        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
-        boolean realFraud = realExistFraudulentTransactions.getFraud();
-        printTestResult(expectedFraud == realFraud);
+        printTestResult(expectedExistFraudulentTransactions.equals(realExistFraudulentTransactions));
     }
 
     void shouldNotCatchAsSpecificFraudRuleIsNotCheckedTest() {
@@ -35,15 +33,11 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, 2000);
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountry};
-        FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(false, null);
-        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
+        FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(false,null);
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
-        boolean realFraud = realExistFraudulentTransactions.getFraud();
-        printTestResult(expectedFraud == realFraud);
+        printTestResult(expectedExistFraudulentTransactions.equals(realExistFraudulentTransactions));
     }
-
-
 
     public static void main(String[] args) {
         FraudDetectorTest test = new FraudDetectorTest();
