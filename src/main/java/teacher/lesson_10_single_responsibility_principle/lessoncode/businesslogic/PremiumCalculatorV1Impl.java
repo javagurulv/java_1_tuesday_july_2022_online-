@@ -1,18 +1,23 @@
-package teacher.lesson_10_single_responsibility_principle.lessoncode;
+package teacher.lesson_10_single_responsibility_principle.lessoncode.businesslogic;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import teacher.lesson_10_single_responsibility_principle.lessoncode.coefficient.CoefficientCalculatorService;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.businesslogic.coefficient.CoefficientCalculatorService;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.Policy;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.PolicyObject;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.RiskType;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.SubObject;
 
-public class PremiumCalculator {
+public class PremiumCalculatorV1Impl implements PremiumCalculator {
 
 	private CoefficientCalculatorService coefficientCalculatorService;
 
-	public PremiumCalculator() {
+	public PremiumCalculatorV1Impl() {
 		coefficientCalculatorService = new CoefficientCalculatorService();
 	}
 
+	@Override
 	public double calculate(Policy policy) {
 		return calculatePremiumFire(policy)
 				+ calculatePremiumTheft(policy);

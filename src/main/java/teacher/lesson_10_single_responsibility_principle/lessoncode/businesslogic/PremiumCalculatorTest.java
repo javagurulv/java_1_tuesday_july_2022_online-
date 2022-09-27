@@ -1,8 +1,13 @@
-package teacher.lesson_10_single_responsibility_principle.lessoncode;
+package teacher.lesson_10_single_responsibility_principle.lessoncode.businesslogic;
 
 import java.util.List;
 
-public class PremiumCalculatorTest {
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.Policy;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.PolicyObject;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.RiskType;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.SubObject;
+
+class PremiumCalculatorTest {
 
 	public static void main(String[] args) {
 		PremiumCalculatorTest test = new PremiumCalculatorTest();
@@ -16,7 +21,7 @@ public class PremiumCalculatorTest {
 		PolicyObject home = new PolicyObject("Home", List.of(tv, comp));
 		Policy policy = new Policy(List.of(home));
 
-		PremiumCalculator calculator = new PremiumCalculator();
+		PremiumCalculatorV1Impl calculator = new PremiumCalculatorV1Impl();
 		double premium = calculator.calculate(policy);
 		System.out.println("Test case 1 = " + premium);
 	}
@@ -27,7 +32,7 @@ public class PremiumCalculatorTest {
 		PolicyObject home = new PolicyObject("Home", List.of(tv, comp));
 		Policy policy = new Policy(List.of(home));
 
-		PremiumCalculator calculator = new PremiumCalculator();
+		PremiumCalculatorV1Impl calculator = new PremiumCalculatorV1Impl();
 		double premium = calculator.calculate(policy);
 		System.out.println("Test case 2 = " + premium);
 	}

@@ -1,4 +1,4 @@
-package teacher.lesson_10_single_responsibility_principle.lessoncode;
+package teacher.lesson_10_single_responsibility_principle.lessoncode.domain;
 
 import java.util.List;
 

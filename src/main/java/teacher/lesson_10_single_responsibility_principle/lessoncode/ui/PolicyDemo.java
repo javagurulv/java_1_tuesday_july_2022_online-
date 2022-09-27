@@ -1,6 +1,11 @@
-package teacher.lesson_10_single_responsibility_principle.lessoncode;
+package teacher.lesson_10_single_responsibility_principle.lessoncode.ui;
 
 import java.util.List;
+
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.Policy;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.PolicyObject;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.RiskType;
+import teacher.lesson_10_single_responsibility_principle.lessoncode.domain.SubObject;
 
 public class PolicyDemo {
 
