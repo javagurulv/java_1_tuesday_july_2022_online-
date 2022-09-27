@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
+import java.util.Objects;
+
 class FraudDetectionResult {
 
     private boolean fraud;
@@ -27,5 +29,18 @@ class FraudDetectionResult {
 
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FraudDetectionResult that = (FraudDetectionResult) o;
+        return fraud == that.fraud && Objects.equals(ruleName, that.ruleName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fraud, ruleName);
     }
 }

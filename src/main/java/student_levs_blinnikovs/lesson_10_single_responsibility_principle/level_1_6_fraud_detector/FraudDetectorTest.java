@@ -11,13 +11,9 @@ class FraudDetectorTest {
         FraudRuleCountry fraudRuleCountry = new FraudRuleCountry("Transactions from Jamaica are not allowed");
         FraudRule[] fraudRules = {fraudRuleCountryAndAmount, fraudRuleCountry};
         FraudDetectionResult expectedExistFraudulentTransactions = new FraudDetectionResult(true, "Germany, more than 1000");
-        boolean expectedFraud = expectedExistFraudulentTransactions.getFraud();
-        String expectedRuleName = expectedExistFraudulentTransactions.getRuleName();
         FraudDetector detector = new FraudDetector(fraudRules);
         FraudDetectionResult realExistFraudulentTransactions = detector.isFraud(transaction);
-        boolean realFraud = realExistFraudulentTransactions.getFraud();
-        String realRuleName = realExistFraudulentTransactions.getRuleName();
-        printTestResult((expectedFraud == realFraud) && expectedRuleName.equals(realRuleName)); // todo - I didn't quite get how to compare 2 objects each having 2 attrs
+        printTestResult(expectedExistFraudulentTransactions.equals(realExistFraudulentTransactions));
     }
 
     void shouldNotCatchAsThereAreNoFraudulentTransactionsTest() {
