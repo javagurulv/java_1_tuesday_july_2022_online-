@@ -23,12 +23,13 @@ class DayOfTheWeekDetectorTestWithTypePassed {
                 "Sunday",
         };
 
+        // each new ... () can be passed to the for loop as well
         DayOfTheWeekDetector arrayVersion = new DayOfTheWeekDetectorArrayVersion();
-        DayOfTheWeekDetectorInitializedArrayVersion initializedArrayVersion = new DayOfTheWeekDetectorInitializedArrayVersion();
-        DayOfTheWeekDetectorIfVersion ifVersion = new DayOfTheWeekDetectorIfVersion();
-        DayOfTheWeekDetectorIfVersionSingleExitPoint ifVersionSingleExitPoint = new DayOfTheWeekDetectorIfVersionSingleExitPoint();
-        DayOfTheWeekDetectorSwitchCaseVersion switchCaseVersion = new DayOfTheWeekDetectorSwitchCaseVersion();
-        DayOfTheWeekDetectorSwitchEnhancedLambdaVersion switchEnhancedLambdaVersion = new DayOfTheWeekDetectorSwitchEnhancedLambdaVersion();
+        DayOfTheWeekDetector initializedArrayVersion = new DayOfTheWeekDetectorInitializedArrayVersion();
+        DayOfTheWeekDetector ifVersion = new DayOfTheWeekDetectorIfVersion();
+        DayOfTheWeekDetector ifVersionSingleExitPoint = new DayOfTheWeekDetectorIfVersionSingleExitPoint();
+        DayOfTheWeekDetector switchCaseVersion = new DayOfTheWeekDetectorSwitchCaseVersion();
+        DayOfTheWeekDetector switchEnhancedLambdaVersion = new DayOfTheWeekDetectorSwitchEnhancedLambdaVersion();
 
 
         for (int day = 0; day < weekdays.length; day++) {
