@@ -12,7 +12,9 @@ interface MyList {
 
     void swap(int elementToSwap, int elementToSwapWith);
 
-    void sort();
+    void sortAsc();
+
+    void sortDesc();
 
     void findMax(); // just for ints?
 
