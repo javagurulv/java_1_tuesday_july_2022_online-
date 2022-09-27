@@ -1,5 +1,9 @@
 package student_olegs_radigins.lesson_8.level_4_5;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
 class SquareTest {
     public static void main(String[] args) {
         SquareTest squareTest = new SquareTest();

@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_8.level_3.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BikeScott extends Bicycle{
     private boolean fullSuspension;
 

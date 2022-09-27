@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_8.level_3.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 abstract class Bicycle {
     private int numberOfGears;
     private int frameSize;

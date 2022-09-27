@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_8.level_1.task_1;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class DefaultConstructor {
     String name;
     int age;
