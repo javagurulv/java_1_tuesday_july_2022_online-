@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_6.level_2.task_7_11;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class DayOfTheWeekDetectorTest {
     public static void main(String[] args) {
         DayOfTheWeekDetectorTest test = new DayOfTheWeekDetectorTest();
