@@ -1,5 +1,8 @@
 package student_jelena_voinica.lesson_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_1 {
    class ArrayDefinition1 {
 
