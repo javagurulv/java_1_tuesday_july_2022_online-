@@ -4,7 +4,6 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt")
 class Rectangle extends Shape {
     double sideA;
     double sideB;
@@ -15,10 +14,12 @@ class Rectangle extends Shape {
         this.sideB = sideB;
     }
 
+    @Override
     double calculateArea() {
         return sideA * sideB;
     }
 
+    @Override
     double calculatePerimeter() {
         return (sideA + sideB) * 2;
     }

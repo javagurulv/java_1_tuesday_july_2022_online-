@@ -4,7 +4,6 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt")
 class Triangle extends Shape {
     private double sideA;
     private final double sideB = sideA;
@@ -15,10 +14,12 @@ class Triangle extends Shape {
         this.sideA = sideA;
     }
 
+    @Override
     double calculateArea() {
         return Math.sqrt(3) * sideA *sideA /4;
     }
 
+    @Override
     double calculatePerimeter() {
         return sideA * 3;
     }

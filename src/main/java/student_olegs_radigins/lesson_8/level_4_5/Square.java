@@ -4,7 +4,6 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt")
 class Square extends Shape{
     private double side;
 
@@ -13,10 +12,12 @@ class Square extends Shape{
         this.side = side;
     }
 
+    @Override
     double calculateArea() {
         return side * side;
     }
 
+    @Override
     double calculatePerimeter() {
         return side * 4;
     }

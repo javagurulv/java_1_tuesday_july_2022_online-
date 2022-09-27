@@ -4,7 +4,6 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt")
 class Circle extends Shape {
     private double radius;
 
@@ -13,12 +12,13 @@ class Circle extends Shape {
         this.radius = radius;
     }
 
+    @Override
     double calculateArea() {
         return Math.PI * radius *radius;
     }
 
+    @Override
     double calculatePerimeter() {
-        return 2 * radius *Math.PI ;
+        return 2 * radius *Math.PI;
     }
-
 }
