@@ -1,0 +1,71 @@
+WARNING: Код программы человек читает сверху вниз.
+Поэтому логично располагать выше в коде те элементы,
+с которых должно начинаться знакомство человека с вашим кодом.
+В примере выше логично, что все начинается с метода
+public static void main(String[] args) - с входной точки программы.
+Все другие методы вызываются именно от туда.
+
+class PiggyBankV1Test {
+
+    public void testOneEur() {...}
+
+    public void testTwoEur() {...}
+
+    public void testOneCent() {...}
+
+    public void testTwoCent() {...}
+
+    public void testFiveCent() {...}
+
+    public void testTenCent() {...}
+
+    public void testTwentyCent() {...}
+
+    public void testFiftyCent() {...}
+
+    public static void main(String[] args) {
+        PiggyBankV1Test piggyBankV1Test = new PiggyBankV1Test();
+        piggyBankV1Test.testOneEur();
+        piggyBankV1Test.testTwoEur();
+        piggyBankV1Test.testOneCent();
+        piggyBankV1Test.testTwoCent();
+        piggyBankV1Test.testFiveCent();
+        piggyBankV1Test.testTenCent();
+        piggyBankV1Test.testTwentyCent();
+        piggyBankV1Test.testFiftyCent();
+    }
+}
+
+Лучше: (так код более приспособлен для чтения сверху вниз)
+
+class PiggyBankV1Test {
+
+    public static void main(String[] args) {
+        PiggyBankV1Test piggyBankV1Test = new PiggyBankV1Test();
+        piggyBankV1Test.testOneEur();
+        piggyBankV1Test.testTwoEur();
+        piggyBankV1Test.testOneCent();
+        piggyBankV1Test.testTwoCent();
+        piggyBankV1Test.testFiveCent();
+        piggyBankV1Test.testTenCent();
+        piggyBankV1Test.testTwentyCent();
+        piggyBankV1Test.testFiftyCent();
+    }
+
+    public void testOneEur() {...}
+
+    public void testTwoEur() {...}
+
+    public void testOneCent() {...}
+
+    public void testTwoCent() {...}
+
+    public void testFiveCent() {...}
+
+    public void testTenCent() {...}
+
+    public void testTwentyCent() {...}
+
+    public void testFiftyCent() {...}
+
+}
