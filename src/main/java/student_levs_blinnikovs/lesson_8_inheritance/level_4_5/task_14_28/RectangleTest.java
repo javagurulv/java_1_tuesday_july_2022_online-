@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_8_inheritance.level_4_5.task_14_28;
 
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
+
 class RectangleTest {
 
     void shouldCalculateArea() {

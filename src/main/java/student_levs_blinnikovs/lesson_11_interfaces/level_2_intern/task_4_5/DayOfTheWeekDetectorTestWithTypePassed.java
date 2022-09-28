@@ -1,13 +1,8 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_2_intern.task_4_5;
 
-import static student_levs_blinnikovs.lesson_11_interfaces.level_2_intern.task_4_5.TestUtil.printTestResult;
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
 class DayOfTheWeekDetectorTestWithTypePassed {
-
-    void hybridVersionTest(int dayNumber, String dayName, DayOfTheWeekDetector detector) {
-        printTestResult(dayName.equals(detector.detectDayName(dayNumber)),
-                "Is \"" + dayNumber + "\" really \"" + dayName + "\"? Test with " + detector.getClass().getSimpleName());
-    }
 
     public static void main(String[] args) {
         DayOfTheWeekDetectorTestWithTypePassed test = new DayOfTheWeekDetectorTestWithTypePassed();
@@ -40,6 +35,10 @@ class DayOfTheWeekDetectorTestWithTypePassed {
             test.hybridVersionTest(day, weekdays[day], switchCaseVersion);
             test.hybridVersionTest(day, weekdays[day], switchEnhancedLambdaVersion);
         }
+    }
 
+    void hybridVersionTest(int dayNumber, String dayName, DayOfTheWeekDetector detector) {
+        printTestResult(dayName.equals(detector.detectDayName(dayNumber)),
+                "Is \"" + dayNumber + "\" really \"" + dayName + "\" test with " + detector.getClass().getSimpleName());
     }
 }

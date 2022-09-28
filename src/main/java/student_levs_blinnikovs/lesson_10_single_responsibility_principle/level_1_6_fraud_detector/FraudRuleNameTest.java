@@ -1,8 +1,14 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
-import static student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector.TestUtil.printTestResult;
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
 class FraudRuleNameTest {
+
+    public static void main(String[] args) {
+        FraudRuleNameTest test = new FraudRuleNameTest();
+        test.shouldBeFraudTransaction("Pokemon", true);
+        test.shouldBeFraudTransaction("Nomekop", false);
+    }
 
     void shouldBeFraudTransaction(String traderName, boolean expectedFraud) {
         Trader trader = new Trader(traderName, "Saransk", "Russia");
@@ -13,13 +19,5 @@ class FraudRuleNameTest {
         FraudDetectionResult realFraudTransaction = detector.isFraud(transaction);
         boolean realFraud = realFraudTransaction.getFraud();
         printTestResult(expectedFraud == realFraud);
-    }
-    
-    public static void main(String[] args) {
-        
-        FraudRuleNameTest test = new FraudRuleNameTest();
-        test.shouldBeFraudTransaction("Pokemon", true);
-        test.shouldBeFraudTransaction("Nomekop", false);
-        
     }
 }

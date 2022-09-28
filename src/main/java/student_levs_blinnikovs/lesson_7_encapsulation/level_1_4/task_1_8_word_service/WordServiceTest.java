@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_1_4.task_1_8_word_service;
 
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
+
 class WordServiceTest {
 
     void shouldReturnFirstWordForNoMostFrequentWords() {
@@ -7,7 +9,7 @@ class WordServiceTest {
         String expectedMostFrequentWord = "this";
         WordService wordService = new WordService();
         String realMostFrequentWord = wordService.findMostFrequentWord(textWithNoMostFrequent);
-        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
+        printTestResult(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
     void shouldFindMostFrequentWord() {
@@ -15,7 +17,7 @@ class WordServiceTest {
         String expectedMostFrequentWord = "burgers";
         WordService wordService = new WordService();
         String realMostFrequentWord = wordService.findMostFrequentWord(textContainingMostFrequent);
-        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
+        printTestResult(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
     void shouldReturnFirstOccurrenceForEquallyFrequentWords() {
@@ -23,7 +25,7 @@ class WordServiceTest {
         String expectedMostFrequentWord = "pizza";
         WordService wordService = new WordService();
         String realMostFrequentWord = wordService.findMostFrequentWord(textContainingMultipleMostFrequentGroups);
-        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
+        printTestResult(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
     void shouldReturnFirstOccurrenceForEquallyFrequentWordsV2() {
@@ -31,15 +33,7 @@ class WordServiceTest {
         String expectedMostFrequentWord = "burgers";
         WordService wordService = new WordService();
         String realMostFrequentWord = wordService.findMostFrequentWord(textContainingMultipleMostFrequentGroups);
-        testResultPrinter(expectedMostFrequentWord.equals(realMostFrequentWord));
-    }
-
-    void testResultPrinter(boolean isTestOK) {
-        if (isTestOK) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test NOT OK!");
-        }
+        printTestResult(expectedMostFrequentWord.equals(realMostFrequentWord));
     }
 
     public static void main(String[] args) {

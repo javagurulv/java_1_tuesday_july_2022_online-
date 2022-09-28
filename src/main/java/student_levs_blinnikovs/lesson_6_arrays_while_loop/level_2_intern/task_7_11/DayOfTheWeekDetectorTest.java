@@ -2,22 +2,10 @@ package student_levs_blinnikovs.lesson_6_arrays_while_loop.level_2_intern.task_7
 
 import teacher.codereview.CodeReview;
 
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
+
 @CodeReview(approved = true)
 class DayOfTheWeekDetectorTest {
-
-    private void checkTestResult(boolean condition, String testName) {
-        if (condition) {
-            System.out.println(testName + " = OK!");
-        } else {
-            System.out.println(testName + " = FAIL!");
-        }
-    }
-
-    void shouldReturn(int dayOfTheWeek, String expectedDay) {
-        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
-        String realDayResult = detector.findDayOfTheWeek(dayOfTheWeek);
-        checkTestResult(expectedDay.equals(realDayResult), expectedDay + " test");
-    }
 
     public static void main(String[] args) {
         DayOfTheWeekDetectorTest test = new DayOfTheWeekDetectorTest();
@@ -32,4 +20,11 @@ class DayOfTheWeekDetectorTest {
         test.shouldReturn(8, "Not correct day number");
 
     }
+
+    void shouldReturn(int dayOfTheWeek, String expectedDay) {
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String realDayResult = detector.findDayOfTheWeek(dayOfTheWeek);
+        printTestResult(expectedDay.equals(realDayResult), expectedDay + " test");
+    }
+
 }

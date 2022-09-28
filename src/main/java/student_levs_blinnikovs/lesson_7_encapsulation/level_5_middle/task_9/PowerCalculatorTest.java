@@ -1,20 +1,8 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_5_middle.task_9;
 
+import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
+
 class PowerCalculatorTest {
-
-    void testResultPrinter(boolean isTestOK) {
-        if (isTestOK) {
-            System.out.println("Test OK");
-        } else {
-            System.out.println("Test NOT OK!");
-        }
-    }
-
-    void shouldCalculatePower(int base, int power, double expectedResult) {
-        PowerCalculator powerCalculator = new PowerCalculator();
-        double realResult = powerCalculator.power(base, power);
-        testResultPrinter(expectedResult == realResult);
-    }
 
     public static void main(String[] args) {
 
@@ -47,13 +35,12 @@ class PowerCalculatorTest {
         test.shouldCalculatePower(2, -2, 0.25);
         test.shouldCalculatePower(2, -3, 0.125);
 
-
-
-
-
-
-
-
-
     }
+
+    void shouldCalculatePower(int base, int power, double expectedResult) {
+        PowerCalculator powerCalculator = new PowerCalculator();
+        double realResult = powerCalculator.power(base, power);
+        printTestResult(expectedResult == realResult);
+    }
+
 }
