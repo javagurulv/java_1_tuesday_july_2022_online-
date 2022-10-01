@@ -16,6 +16,11 @@ public class FraudDetectorTest {
         test.fraudStatePositiveTest();
         test.fraudStateNegativeTest();
 
+        test.fraudRule5PositiveTest();
+        test.fraudRule5NegativeTest();
+
+        //самые простые тесты. тут и так более 100 строк
+
     }
 
          void fraudNickPositiveTest(){
@@ -89,6 +94,24 @@ public class FraudDetectorTest {
               System.out.print("Fraud state negative test is");
               testResult(!fraudTest.isFraudState(transaction1));
          }
+
+        void fraudRule5PositiveTest() {
+             Trader trader1 = new Trader("pokemone", "City1", "Germany");
+             int moneyAmmount = 1001;
+             Transaction transaction1 = new Transaction(trader1, moneyAmmount);
+             FraudDetector fraudTest = new FraudDetector();
+             System.out.print("Fraud Rule 5 positive test is");
+             testResult(fraudTest.Rule5(transaction1));
+        }
+
+    void fraudRule5NegativeTest() {
+        Trader trader1 = new Trader("pokemone", "City1", "Japan");
+        int moneyAmmount = 1000;
+        Transaction transaction1 = new Transaction(trader1, moneyAmmount);
+        FraudDetector fraudTest = new FraudDetector();
+        System.out.print("Fraud Rule 5 negative test is");
+        testResult(!fraudTest.Rule5(transaction1));
+    }
 
     static void testResult(boolean check) {
         if (check) {

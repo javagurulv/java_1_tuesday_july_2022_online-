@@ -39,4 +39,10 @@ class FraudDetector {
         }
     }
 
+    boolean Rule5 (Transaction t) {
+        Rule_5 stateAndAmmount = new Rule_5();
+        return stateAndAmmount.getState().equals(t.getTrader().getState()) &&
+                stateAndAmmount.getMaximumAmount() < t.getAmount();
+    }
+
 }
