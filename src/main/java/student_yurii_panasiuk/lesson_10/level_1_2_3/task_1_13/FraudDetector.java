@@ -8,35 +8,19 @@ class FraudDetector {
     String stateBlocked = "Ямайка";
 
     boolean isFraudName(Transaction t) {
-        if (t.getTrader().getFullName().equals(fraudTraderNick)) {
-            return true;
-        } else {
-            return false;
-        }
+        return t.getTrader().getFullName().equals(fraudTraderNick);
     }
 
     boolean isMaximun(Transaction t) {
-        if (t.getAmount() > maximumAmount) {
-            return true;
-        } else {
-            return false;
-        }
+        return t.getAmount() > maximumAmount;
     }
 
     boolean isFraudCity(Transaction t) {
-        if (t.getTrader().getCity().equals(fraudCity)) {
-            return true;
-        } else {
-            return false;
-        }
+        return t.getTrader().getCity().equals(fraudCity);
     }
 
     boolean isFraudState(Transaction t) {
-        if (t.getTrader().getState().equals(stateBlocked)) {
-            return true;
-        } else {
-            return false;
-        }
+        return t.getTrader().getState().equals(stateBlocked);
     }
 
     boolean Rule5 (Transaction t) {

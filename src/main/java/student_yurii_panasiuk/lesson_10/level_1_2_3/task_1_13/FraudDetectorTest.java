@@ -104,14 +104,14 @@ public class FraudDetectorTest {
              testResult(fraudTest.Rule5(transaction1));
         }
 
-    void fraudRule5NegativeTest() {
-        Trader trader1 = new Trader("pokemone", "City1", "Japan");
-        int moneyAmmount = 1000;
-        Transaction transaction1 = new Transaction(trader1, moneyAmmount);
-        FraudDetector fraudTest = new FraudDetector();
-        System.out.print("Fraud Rule 5 negative test is");
-        testResult(!fraudTest.Rule5(transaction1));
-    }
+         void fraudRule5NegativeTest() {
+             Trader trader1 = new Trader("pokemone", "City1", "Japan");
+             int moneyAmmount = 1000;
+             Transaction transaction1 = new Transaction(trader1, moneyAmmount);
+             FraudDetector fraudTest = new FraudDetector();
+             System.out.print("Fraud Rule 5 negative test is");
+             testResult(!fraudTest.Rule5(transaction1));
+         }
 
     static void testResult(boolean check) {
         if (check) {

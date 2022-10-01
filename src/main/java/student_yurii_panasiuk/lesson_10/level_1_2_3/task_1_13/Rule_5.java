@@ -13,5 +13,5 @@ public class Rule_5 {
         return maximumAmount;
     }
 
-
+// можно все правила вынести отдельно. но слишком уж они простые
 }
