@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1;
+package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1_13;
 
 public class FraudDetectorTest {
 
@@ -14,6 +14,9 @@ public class FraudDetectorTest {
 
         test.fraudCityPositiveTest();
         test.fraudCityNegativeTest();
+
+        test.fraudStatePositiveTest();
+        test.fraudStateNegativeTest();
 
     }
 
@@ -70,6 +73,24 @@ public class FraudDetectorTest {
               FraudDetector fraudTest = new FraudDetector();
               System.out.print("Fraud city negative test is");
               testResult(!fraudTest.isFraudCity(transaction1));
+         }
+
+          void fraudStatePositiveTest() {
+              Trader trader1 = new Trader("pokemone", "cидней", "Ямайка");
+              int moneyAmmount = 1;
+              Transaction transaction1 = new Transaction(trader1, moneyAmmount);
+              FraudDetector fraudTest = new FraudDetector();
+              System.out.print("Fraud state negative test is");
+              testResult(fraudTest.isFraudState(transaction1));
+          }
+
+         void fraudStateNegativeTest(){
+             Trader trader1 = new Trader("pokemone", "cидней", "ямайка");
+              int moneyAmmount = 1;
+              Transaction transaction1 = new Transaction(trader1, moneyAmmount);
+              FraudDetector fraudTest = new FraudDetector();
+              System.out.print("Fraud state negative test is");
+              testResult(!fraudTest.isFraudState(transaction1));
          }
 
     static void testResult(boolean check) {

@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1;
+package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1_13;
 
    /*      Каждая транзакция в системе должна быть проверена на мошенничество (fraud).
         Для автоматического обнаружения мошенничества при проверке транзакций
@@ -11,7 +11,19 @@ class Trader {
     private String fullName;
     private String city;
 
-     Trader(String fullName, String city) {
+    private String state;
+
+    Trader(String fullName, String city, String state) {
+        this.fullName = fullName;
+        this.city = city;
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    Trader(String fullName, String city) {
         this.fullName = fullName;
         this.city = city;
     }

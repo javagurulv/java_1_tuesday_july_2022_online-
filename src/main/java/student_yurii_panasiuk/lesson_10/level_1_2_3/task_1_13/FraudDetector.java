@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1;
+package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1_13;
 
 class FraudDetector {
 
@@ -6,6 +6,8 @@ class FraudDetector {
     int maximumAmount = 1000000;
 
     String fraudCity = "Сидней";
+
+    String stateBlocked = "Ямайка";
 
     boolean isFraudName(Transaction t) {
         if (t.getTrader().getFullName().equals(fraudTraderNick)) {
@@ -26,6 +28,14 @@ class FraudDetector {
 
     boolean isFraudCity(Transaction t) {
         if (t.getTrader().getCity().equals(fraudCity)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    boolean isFraudState(Transaction t) {
+        if (t.getTrader().getState().equals(stateBlocked)) {
             return true;
         } else {
             return false;
