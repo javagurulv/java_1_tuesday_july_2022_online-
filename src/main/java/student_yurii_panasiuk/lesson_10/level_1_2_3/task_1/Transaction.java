@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1.task_1;
+package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1;
 
 class Transaction {
 

@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1.task_1;
+package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1;
 
 class FraudDetector {
 
@@ -15,7 +15,7 @@ class FraudDetector {
 
 
     boolean isMaximun(Transaction t) {
-        if (maximumAmount == t.getAmount()) {
+        if (t.getAmount() > maximumAmount) {
             return true;
         } else {
             return false;
