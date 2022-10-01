@@ -5,7 +5,9 @@ class FraudDetector {
     String fraudTraderNick = "Pokemone";
     int maximumAmount = 1000000;
 
-    boolean isFraud(Transaction t) {
+    String fraudCity = "Сидней";
+
+    boolean isFraudName(Transaction t) {
         if (t.getTrader().getFullName().equals(fraudTraderNick)) {
             return true;
         } else {
@@ -16,6 +18,14 @@ class FraudDetector {
 
     boolean isMaximun(Transaction t) {
         if (t.getAmount() > maximumAmount) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    boolean isFraudCity(Transaction t) {
+        if (t.getTrader().getCity().equals(fraudCity)) {
             return true;
         } else {
             return false;
