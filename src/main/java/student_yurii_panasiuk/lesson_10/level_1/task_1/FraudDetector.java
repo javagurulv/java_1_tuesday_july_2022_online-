@@ -15,7 +15,7 @@ class FraudDetector {
 
 
     boolean isMaximun(Transaction t) {
-        if (t.getTrader().getAmount() = maximumAmount) {
+        if (maximumAmount == t.getAmount()) {
             return true;
         } else {
             return false;
