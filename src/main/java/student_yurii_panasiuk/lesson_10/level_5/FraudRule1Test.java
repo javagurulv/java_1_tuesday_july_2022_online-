@@ -1,8 +1,10 @@
 package student_yurii_panasiuk.lesson_10.level_5;
 
-public class FraudRule1Test {
+import student_yurii_panasiuk.lesson_10.level_1_4.task_1_16.FraudDetectorTest;
 
-    void fraudNickPositiveTest(){
+class FraudRule1Test {
+
+     void fraudNickPositiveTest(){
         Trader trader1 = new Trader("Pokemone", "City1");
         int moneyAmmount = 1;
         Transaction transaction1 = new Transaction(trader1, moneyAmmount);

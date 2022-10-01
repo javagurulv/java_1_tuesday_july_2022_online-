@@ -1,6 +1,6 @@
 package student_yurii_panasiuk.lesson_10.level_5;
 
-public class TestResultOutput {
+ class TestResultOutput {
 
     static void testResult(boolean check) {
         if (check) {
