@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_10.level_5;
 
 import java.util.List;
 
-public class FraudTests {
+public class Main_FraudTests {
     public static void main(String[] args) {
     List<FraudRule> listOfFraudRules =List.of(
             new FraudRule1("Fraud Nick"),
