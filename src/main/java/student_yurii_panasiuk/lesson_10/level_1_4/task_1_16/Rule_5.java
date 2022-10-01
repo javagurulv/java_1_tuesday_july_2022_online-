@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1_13;
+package student_yurii_panasiuk.lesson_10.level_1_4.task_1_16;
 
 public class Rule_5 {
 
