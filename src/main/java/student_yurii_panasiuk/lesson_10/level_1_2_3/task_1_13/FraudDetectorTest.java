@@ -1,7 +1,5 @@
 package student_yurii_panasiuk.lesson_10.level_1_2_3.task_1_13;
-
 public class FraudDetectorTest {
-
     public static void main(String[] args) {
 
         FraudDetectorTest test = new FraudDetectorTest();
@@ -19,7 +17,6 @@ public class FraudDetectorTest {
         test.fraudStateNegativeTest();
 
     }
-
 
          void fraudNickPositiveTest(){
             Trader trader1 = new Trader("Pokemone", "City1");
@@ -58,7 +55,7 @@ public class FraudDetectorTest {
          }
 
          void fraudCityPositiveTest(){
-             Trader trader1 = new Trader("Pokemone", "Сидней");
+             Trader trader1 = new Trader("pokemone", "Сидней");
              int moneyAmmount = 1;
              Transaction transaction1 = new Transaction(trader1, moneyAmmount);
              FraudDetector fraudTest = new FraudDetector();
@@ -67,7 +64,7 @@ public class FraudDetectorTest {
          }
 
          void fraudCityNegativeTest(){
-              Trader trader1 = new Trader("Pokemone", "cидней");
+              Trader trader1 = new Trader("pokemone", "cидней");
               int moneyAmmount = 1;
               Transaction transaction1 = new Transaction(trader1, moneyAmmount);
               FraudDetector fraudTest = new FraudDetector();

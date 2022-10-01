@@ -4,9 +4,7 @@ class FraudDetector {
 
     String fraudTraderNick = "Pokemone";
     int maximumAmount = 1000000;
-
     String fraudCity = "Сидней";
-
     String stateBlocked = "Ямайка";
 
     boolean isFraudName(Transaction t) {
@@ -16,7 +14,6 @@ class FraudDetector {
             return false;
         }
     }
-
 
     boolean isMaximun(Transaction t) {
         if (t.getAmount() > maximumAmount) {
