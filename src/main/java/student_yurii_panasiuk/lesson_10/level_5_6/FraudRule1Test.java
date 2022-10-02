@@ -1,6 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_5;
-
-import student_yurii_panasiuk.lesson_10.level_1_4.task_1_16.FraudDetectorTest;
+package student_yurii_panasiuk.lesson_10.level_5_6;
 
 class FraudRule1Test {
 

@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_5;
+package student_yurii_panasiuk.lesson_10.level_5_6;
 
 class FraudRule5Test {
 

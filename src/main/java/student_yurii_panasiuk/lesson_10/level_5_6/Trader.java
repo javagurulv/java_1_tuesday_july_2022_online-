@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_10.level_5;
+package student_yurii_panasiuk.lesson_10.level_5_6;
 
    /*      Каждая транзакция в системе должна быть проверена на мошенничество (fraud).
         Для автоматического обнаружения мошенничества при проверке транзакций
