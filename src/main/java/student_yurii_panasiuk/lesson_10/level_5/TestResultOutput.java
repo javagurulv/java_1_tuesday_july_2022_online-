@@ -10,4 +10,15 @@ package student_yurii_panasiuk.lesson_10.level_5;
         }
     }
 
+     static void transactionDataOutput (Transaction transactiontoOunput) {
+
+         System.out.println("Trader name - " +   transactiontoOunput.getTrader().getFullName());
+
+         System.out.println("Trader city - " + transactiontoOunput.getTrader().getCity());
+
+         System.out.println("Trader state - " +  transactiontoOunput.getTrader().getState());
+
+         System.out.println("Transaction volume - " +  transactiontoOunput.getAmount());
+
+     }
 }

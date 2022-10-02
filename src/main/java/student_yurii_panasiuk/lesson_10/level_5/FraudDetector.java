@@ -10,14 +10,14 @@ class FraudDetector {
         this.listOfRules = listOfRules;
     }
 
-    boolean isFraud (Transaction transaction){
-        int resultCounter = 0;
+    FraudDetectionResult isFraud (Transaction transaction){
+        FraudDetectionResult result = new FraudDetectionResult(false, "null");
         for (int i = 0; i < listOfRules.size(); i++){
             if (listOfRules.get(i).isFraud(transaction)) {
-                resultCounter = 1;
-               // break;
+               result.setRuleName(listOfRules.get(i).getRuleName());
+               result.setFraud(true);
             }
         }
-        return resultCounter == 1;
+        return result;
     }
 }

@@ -13,21 +13,57 @@ public class Main_FraudTests {
 
     FraudDetector transactionsList = new FraudDetector (listOfFraudRules);
 
-       // Test 1
+       // Test 1 Nick +
         Trader trader1 = new Trader("Pokemone", "City1", "state");
         int moneyAmmount = 1;
         Transaction transaction1 = new Transaction(trader1, moneyAmmount);
 
-        System.out.print("Fraud nick positive test is");
-        TestResultOutput.testResult(transactionsList.isFraud(transaction1) );
+        System.out.print("\nFraud nick positive test - ");
+        System.out.println(transactionsList.isFraud(transaction1).getRuleName());
 
-        // Test 2
+        if (transactionsList.isFraud(transaction1).getFraud()){
+        System.out.println("Transaction details: ");
+        TestResultOutput.transactionDataOutput(transaction1);
+        }
+
+        // Test 2 Nick -
         Trader trader2 = new Trader("pokemone", "City1", "state");
         int moneyAmmount2 = 1;
         Transaction transaction2 = new Transaction(trader2, moneyAmmount2);
 
-        System.out.print("Fraud nick negative test is");
-        TestResultOutput.testResult(!transactionsList.isFraud(transaction2) );
+        System.out.print("\nFraud nick negative test is - ");
+        System.out.println(transactionsList.isFraud(transaction2).getRuleName());
+
+        if (transactionsList.isFraud(transaction2).getFraud()){
+            System.out.println("Transaction details: ");
+            TestResultOutput.transactionDataOutput(transaction2);
+        }
+
+        //Test 3 Max +
+        Trader trader3 = new Trader("pokemone", "City1", "state");
+        int moneyAmmount3 = 1000001;
+        Transaction transaction3 = new Transaction(trader2, moneyAmmount3);
+
+        System.out.print("\nFraud Maximun transaction volume positive test is - ");
+        System.out.println(transactionsList.isFraud(transaction3).getRuleName());
+
+        if (transactionsList.isFraud(transaction3).getFraud()){
+            System.out.println("Transaction details: ");
+            TestResultOutput.transactionDataOutput(transaction3);
+        }
+
+        //Test 4 Max -
+        Trader trader4 = new Trader("pokemone", "City1", "state");
+        int moneyAmmount4 = 1000000;
+        Transaction transaction4 = new Transaction(trader4, moneyAmmount4);
+
+        System.out.print("\nFraud Maximun transaction volume positive test is - ");
+        System.out.println(transactionsList.isFraud(transaction4).getRuleName());
+
+        if (transactionsList.isFraud(transaction4).getFraud()){
+            System.out.println("Transaction details: ");
+            TestResultOutput.transactionDataOutput(transaction4);
+        }
 
 }
 }

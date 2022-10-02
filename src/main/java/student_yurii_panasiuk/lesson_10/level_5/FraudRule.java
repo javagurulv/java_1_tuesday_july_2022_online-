@@ -10,4 +10,8 @@ abstract class FraudRule {
 
      abstract boolean isFraud(Transaction t);
 
+    String getRuleName() {
+        return ruleName;
+    }
+
 }
