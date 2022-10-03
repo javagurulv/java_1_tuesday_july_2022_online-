@@ -22,6 +22,9 @@ class BookReaderImplTest {
         test.shouldNotAddNullBoth();
         test.shouldNotAddEmptyAuthorNullTitle();
         test.shouldNotAddNullAuthorEmptyTitle();
+
+        test.shouldRemoveExisting();
+        test.shouldNotRemoveNotExisting();
     }
 
     void shouldAddNotExisting() {
@@ -74,10 +77,10 @@ class BookReaderImplTest {
         bookReader.addBook(book1);
         bookReader.addBook(book2);
 
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book3);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book3);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add book with existing title and author");
+        printTestResult(expectedAdded == reallyAdded, "Should not add book with existing title and author");
     }
 
     void shouldNotAddSameBook() {
@@ -88,90 +91,119 @@ class BookReaderImplTest {
         bookReader.addBook(book1);
         bookReader.addBook(book2);
 
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book2);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book2);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add same book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add same book");
     }
 
     void shouldNotAddEmptyAuthor() {
         Book book1 = new Book("", "1984");
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add empty string author book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add empty string author book");
     }
 
     void shouldNotAddNullAuthor() {
         Book book1 = new Book(null, "1984");
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add null author book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add null author book");
     }
 
     void shouldNotAddEmptyTitle() {
         Book book1 = new Book("George Orwell", "");
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add empty string title book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add empty string title book");
     }
 
     void shouldNotAddNullTitle() {
         Book book1 = new Book("George Orwell", null);
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add null title book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add null title book");
     }
 
     void shouldNotAddEmptyBoth() {
         Book book1 = new Book("", "");
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add empty string both book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add empty string both book");
     }
 
     void shouldNotAddNullBoth() {
         Book book1 = new Book(null, null);
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add null both book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add null both book");
     }
 
     void shouldNotAddEmptyAuthorNullTitle() {
         Book book1 = new Book("", null);
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add empty author null title book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add empty author null title book");
     }
 
     void shouldNotAddNullAuthorEmptyTitle() {
         Book book1 = new Book(null, "");
 
         BookReaderImpl bookReader = new BookReaderImpl();
-        boolean expectedShouldNotAdd = false;
-        boolean reallyShouldNotAdd = bookReader.addBook(book1);
+        boolean expectedAdded = false;
+        boolean reallyAdded = bookReader.addBook(book1);
 
-        printTestResult(expectedShouldNotAdd == reallyShouldNotAdd, "Should not add null author empty title book");
+        printTestResult(expectedAdded == reallyAdded, "Should not add null author empty title book");
+    }
+
+    void shouldRemoveExisting() {
+        Book book1 = new Book("George Orwell", "1984");
+        Book book2 = new Book("Nicholas Sparks", "Dreamland");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+
+        boolean expectedRemoved = true;
+        boolean reallyRemoved = bookReader.removeBook(book2);
+
+        printTestResult(expectedRemoved == reallyRemoved, "Should remove existing book");
+    }
+
+    void shouldNotRemoveNotExisting() {
+        Book book1 = new Book("George Orwell", "1984");
+        Book book2 = new Book("Nicholas Sparks", "Dreamland");
+        Book book3 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+
+        boolean expectedRemoved = false;
+        boolean reallyRemoved = bookReader.removeBook(book3);
+
+        printTestResult(expectedRemoved == reallyRemoved, "Should not remove not existing book");
     }
 
 }

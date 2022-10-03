@@ -4,4 +4,6 @@ interface BookReader {
 
     boolean addBook(Book book);
 
+    boolean removeBook(Book book);
+
 }

@@ -9,14 +9,24 @@ class BookReaderImpl implements BookReader {
     @Override
     public boolean addBook(Book book) {
         boolean isAdded = false;
-        if (!alreadyExists(book) && !(isTitleEmpty(book) || isAuthorEmpty(book))) {
+        if (!existsInReader(book) && !(titleNotFilledIn(book) || authorNotFilledIn(book))) {
             booksInReader.add(book);
             isAdded = true;
         }
         return isAdded;
     }
 
-    private boolean alreadyExists(Book book) {
+    @Override
+    public boolean removeBook(Book book) {
+        boolean isRemoved = false;
+        if (existsInReader(book)) {
+            booksInReader.remove(book);
+            isRemoved = true;
+        }
+        return isRemoved;
+    }
+
+    private boolean existsInReader(Book book) {
         boolean exists = false;
         for (Book bookInReader : booksInReader) {
             if (bookInReader.getTitle().equals(book.getTitle()) &&
@@ -28,11 +38,11 @@ class BookReaderImpl implements BookReader {
         return exists;
     }
 
-    private boolean isAuthorEmpty(Book book) {
+    private boolean authorNotFilledIn(Book book) {
         return book.getAuthor() == null || book.getAuthor().isEmpty();
     }
 
-    private boolean isTitleEmpty(Book book) {
+    private boolean titleNotFilledIn(Book book) {
         return book.getTitle() == null || book.getTitle().isEmpty();
     }
 
