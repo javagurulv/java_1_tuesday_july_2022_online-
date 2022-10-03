@@ -1,0 +1,23 @@
+Для чего применяются объекты этого класса?
+
+-  Optional is generally used as a return type for methods that might not always have a result to return.
+
+Какие два состояния могут быть у объектов этого класса?
+
+- A container object which may or may not contain a non-null value.
+
+Как создаются экземпляры данного класса?
+
+- Optional<String> empty = Optional.empty();
+
+Как можно проверить в каком состоянии находится экземпляр данного класса?
+
+- If a value is present, isPresent() will return true
+
+Как можно получить объект, который находится внутри Optional?
+
+- get() will return the value.
+
+Additional methods that depend on the presence or absence of a contained value are provided,
+such as orElse() (return a default value if value not present)
+and ifPresent() (execute a block of code if the value is present).

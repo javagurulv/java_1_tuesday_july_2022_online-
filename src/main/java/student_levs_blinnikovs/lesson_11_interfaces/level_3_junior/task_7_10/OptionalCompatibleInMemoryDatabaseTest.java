@@ -1,16 +1,18 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_3_junior.task_7_10;
 
+import java.util.Optional;
+
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
-class InMemoryDatabaseTest {
+class OptionalCompatibleInMemoryDatabaseTest {
 
     public static void main(String[] args) {
-        InMemoryDatabaseTest test = new InMemoryDatabaseTest();
+        OptionalCompatibleInMemoryDatabaseTest test = new OptionalCompatibleInMemoryDatabaseTest();
 
         test.emptyDatabaseTest();
 
-        test.firstSaveShouldIncreaseInMemoryDataBaseLengthByOne();
-        test.nextSaveShouldIncreaseInMemoryDataBaseLengthByOne();
+        test.firstSaveShouldIncreaseOptionalCompatibleInMemoryDatabaseLengthByOne();
+        test.nextSaveShouldIncreaseOptionalCompatibleInMemoryDatabaseLengthByOne();
         test.shouldAddNextAtLastPosition();
 
         test.shouldSaveAndFindFirstProduct();
@@ -19,12 +21,12 @@ class InMemoryDatabaseTest {
     }
 
     void emptyDatabaseTest() {
-        InMemoryDatabase db = new InMemoryDatabase();
-        printTestResult(null == db.findByTitle("test"));
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
+        printTestResult(db.findByTitle("test").isEmpty());
     }
 
-    void firstSaveShouldIncreaseInMemoryDataBaseLengthByOne() {
-        InMemoryDatabase db = new InMemoryDatabase();
+    void firstSaveShouldIncreaseOptionalCompatibleInMemoryDatabaseLengthByOne() {
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         db.save(productA);
         int expectedDataBaseLength = 1;
@@ -32,8 +34,8 @@ class InMemoryDatabaseTest {
         printTestResult(expectedDataBaseLength == realDataBaseLength);
     }
 
-    void nextSaveShouldIncreaseInMemoryDataBaseLengthByOne() {
-        InMemoryDatabase db = new InMemoryDatabase();
+    void nextSaveShouldIncreaseOptionalCompatibleInMemoryDatabaseLengthByOne() {
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         Product productB = new Product("B");
         db.save(productA);
@@ -44,36 +46,37 @@ class InMemoryDatabaseTest {
     }
 
     void shouldSaveAndFindFirstProduct() {
-        InMemoryDatabase db = new InMemoryDatabase();
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         db.save(productA);
-        Product findByTitleResult = db.findByTitle("A");
-        printTestResult(productA.equals(findByTitleResult));
+        Optional<Product> findByTitleResult = db.findByTitle("A");
+        printTestResult(productA.equals(findByTitleResult.get()));
     }
 
     void shouldSaveAndFindNextProduct() {
-        InMemoryDatabase db = new InMemoryDatabase();
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         Product productB = new Product("B");
         db.save(productA);
         db.save(productB);
-        Product findByTitleResult = db.findByTitle("B");
-        printTestResult(productB.equals(findByTitleResult));
+        Optional<Product> findByTitleResult = db.findByTitle("B");
+        printTestResult(productB.equals(findByTitleResult.get()));
     }
 
     void shouldSaveAndFindBoth() {
-        InMemoryDatabase db = new InMemoryDatabase();
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         Product productB = new Product("B");
         db.save(productA);
         db.save(productB);
-        Product findByTitleResultProductA = db.findByTitle("A");
-        Product findByTitleResultProductB = db.findByTitle("B");
-        printTestResult(productA.equals(findByTitleResultProductA) && productB.equals(findByTitleResultProductB));
+        Optional<Product> findByTitleResultProductA = db.findByTitle("A");
+        Optional<Product> findByTitleResultProductB = db.findByTitle("B");
+        printTestResult(productA.equals(findByTitleResultProductA.get())
+                && productB.equals(findByTitleResultProductB.get()));
     }
 
     void shouldAddNextAtLastPosition() {
-        InMemoryDatabase db = new InMemoryDatabase();
+        OptionalCompatibleInMemoryDatabase db = new OptionalCompatibleInMemoryDatabase();
         Product productA = new Product("A");
         Product productB = new Product("B");
         db.save(productA);
