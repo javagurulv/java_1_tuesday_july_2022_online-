@@ -34,6 +34,19 @@ class BookReaderImpl implements BookReader {
         return new String[]{Arrays.toString(books)};
     }
 
+    @Override
+    public String[] showBooks(String author) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for (Book book : booksInReader) {
+            if (book.getAuthor().equals(author)) {
+                searchResult.add(book);
+            }
+        }
+        Book[] booksFound = new Book[searchResult.size()];
+        searchResult.toArray(booksFound);
+        return new String[]{Arrays.toString(booksFound)};
+    }
+
     private boolean existsInReader(Book book) {
         boolean exists = false;
         for (Book bookInReader : booksInReader) {

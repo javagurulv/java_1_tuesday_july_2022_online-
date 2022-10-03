@@ -2,8 +2,8 @@ package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_26
 
 class Book {
 
-    String author;
-    String title;
+    private String author;
+    private String title;
 
     public Book(String author, String title) {
         this.author = author;

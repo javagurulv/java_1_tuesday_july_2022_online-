@@ -8,4 +8,6 @@ interface BookReader {
 
     String[] showBooks();
 
+    String[] showBooks(String author);
+
 }
