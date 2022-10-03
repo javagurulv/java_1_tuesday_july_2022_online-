@@ -6,31 +6,14 @@ class TemperatureDisplayerTest {
 
     public static void main(String[] args) {
         TemperatureDisplayerTest test = new TemperatureDisplayerTest();
-        test.shouldDisplayCelsius();
-        test.shouldDisplayFahrenheit();
-        test.shouldDisplayKelvin();
+        test.shouldDisplayTemperature(0, 0.0, new CelsiusDisplayer());
+        test.shouldDisplayTemperature(0, 32.0, new FahrenheitDisplayer());
+        test.shouldDisplayTemperature(0, 273.15, new KelvinDisplayer());
     }
 
-
-    void shouldDisplayCelsius() {
-        TemperatureDisplayer celsiusDisplayer = new CelsiusDisplayer();
-        double expectedCelsius = 0.0;
-        double realCelsius = celsiusDisplayer.displayTemperature(0);
-        printTestResult(expectedCelsius == realCelsius, "Celsius");
-    }
-
-    void shouldDisplayFahrenheit() {
-        TemperatureDisplayer fahrehneitDisplayer = new FahrenheitDisplayer();
-        double expectedFahrenheit = 32.0;
-        double realFahrenheit = fahrehneitDisplayer.displayTemperature(0);
-        printTestResult(expectedFahrenheit == realFahrenheit, "Fahrenheit");
-    }
-
-    void shouldDisplayKelvin() {
-        TemperatureDisplayer kelvinDisplayer = new KelvinDisplayer();
-        double expectedKelvin = 273.15;
-        double realKelvin = kelvinDisplayer.displayTemperature(0);
-        printTestResult(expectedKelvin == realKelvin, "Kelvin");
+    void shouldDisplayTemperature(double celsius, double expected, TemperatureDisplayer displayer) {
+        double real = displayer.displayTemperature(celsius);
+        printTestResult(expected == real, displayer.getClass().getSimpleName());
     }
 
 }
