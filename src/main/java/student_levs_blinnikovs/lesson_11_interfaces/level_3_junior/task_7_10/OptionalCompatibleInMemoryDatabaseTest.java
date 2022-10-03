@@ -50,7 +50,7 @@ class OptionalCompatibleInMemoryDatabaseTest {
         Product productA = new Product("A");
         db.save(productA);
         Optional<Product> findByTitleResult = db.findByTitle("A");
-        printTestResult(productA.equals(findByTitleResult.get()));
+        printTestResult(productA.equals(findByTitleResult.orElse(null)));
     }
 
     void shouldSaveAndFindNextProduct() {
@@ -60,7 +60,7 @@ class OptionalCompatibleInMemoryDatabaseTest {
         db.save(productA);
         db.save(productB);
         Optional<Product> findByTitleResult = db.findByTitle("B");
-        printTestResult(productB.equals(findByTitleResult.get()));
+        printTestResult(productB.equals(findByTitleResult.orElse(null)));
     }
 
     void shouldSaveAndFindBoth() {
@@ -71,8 +71,8 @@ class OptionalCompatibleInMemoryDatabaseTest {
         db.save(productB);
         Optional<Product> findByTitleResultProductA = db.findByTitle("A");
         Optional<Product> findByTitleResultProductB = db.findByTitle("B");
-        printTestResult(productA.equals(findByTitleResultProductA.get())
-                && productB.equals(findByTitleResultProductB.get()));
+        printTestResult(productA.equals(findByTitleResultProductA.orElse(null))
+                && productB.equals(findByTitleResultProductB.orElse(null)));
     }
 
     void shouldAddNextAtLastPosition() {
