@@ -38,7 +38,7 @@ class BookReaderImpl implements BookReader {
     public String[] showBooks(String author) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : booksInReader) {
-            if (isAuthorFullMatch(book, author) || isAuthorSimilarTo(book, author)) {
+            if (isAuthorFullMatch(book, author) || isAuthorSimilarTo(book, author)) {         // can wrap in one method if needed
                 searchResult.add(book);
             }
         }
@@ -47,11 +47,11 @@ class BookReaderImpl implements BookReader {
         return new String[]{Arrays.toString(booksFound)};
     }
 
-    public boolean isAuthorFullMatch(Book book, String author) {
+    private boolean isAuthorFullMatch(Book book, String author) {                           // can make both methods || if needed
         return book.getAuthor().equals(author);
     }
 
-    public boolean isAuthorSimilarTo(Book book, String authorPartly) {
+    private boolean isAuthorSimilarTo(Book book, String authorPartly) {
         return book.getAuthor().startsWith(authorPartly);
     }
 
