@@ -1,6 +1,7 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_26;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class BookReaderImpl implements BookReader {
 
@@ -24,6 +25,13 @@ class BookReaderImpl implements BookReader {
             isRemoved = true;
         }
         return isRemoved;
+    }
+
+    @Override
+    public String[] showBooks() {
+        Book[] books = new Book[booksInReader.size()];
+        booksInReader.toArray(books);
+        return new String[]{Arrays.toString(books)};
     }
 
     private boolean existsInReader(Book book) {

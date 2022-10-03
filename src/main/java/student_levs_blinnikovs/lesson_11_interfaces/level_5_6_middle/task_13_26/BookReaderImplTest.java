@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_26;
 
+import java.util.Arrays;
+
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
 class BookReaderImplTest {
@@ -25,6 +27,9 @@ class BookReaderImplTest {
 
         test.shouldRemoveExisting();
         test.shouldNotRemoveNotExisting();
+
+        test.shouldShowBooks();
+
     }
 
     void shouldAddNotExisting() {
@@ -204,6 +209,25 @@ class BookReaderImplTest {
         boolean reallyRemoved = bookReader.removeBook(book3);
 
         printTestResult(expectedRemoved == reallyRemoved, "Should not remove not existing book");
+    }
+
+    void shouldShowBooks() {
+        Book book1 = new Book("George Orwell", "1984");
+        Book book2 = new Book("Nicholas Sparks", "Dreamland");
+        Book book3 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+        bookReader.addBook(book3);
+
+        String[] expectedBookList = {
+                "[1984 [George Orwell], Dreamland [Nicholas Sparks], Fairy Tale [Stephen King]]"
+        };
+
+        String[] realBookList = bookReader.showBooks();
+
+        printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return same book list String[]");
     }
 
 }

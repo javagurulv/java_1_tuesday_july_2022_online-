@@ -6,4 +6,6 @@ interface BookReader {
 
     boolean removeBook(Book book);
 
+    String[] showBooks();
+
 }
