@@ -10,6 +10,9 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16
 
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class UserEntity {
 
     private static int lastId = 0;

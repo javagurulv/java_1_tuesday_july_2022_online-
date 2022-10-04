@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_5_middle.task_9;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class PowerCalculatorTest {
 
     public static void main(String[] args) {

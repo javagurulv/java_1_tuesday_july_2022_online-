@@ -3,6 +3,9 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16
 import java.util.ArrayList;
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class UserEntityDatabase {
 
     List<UserEntity> users = new ArrayList<>();

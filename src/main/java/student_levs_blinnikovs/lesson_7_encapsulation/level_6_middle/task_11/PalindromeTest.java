@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_6_middle.task_11;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class PalindromeTest {
 
     public static void main(String[] args) {

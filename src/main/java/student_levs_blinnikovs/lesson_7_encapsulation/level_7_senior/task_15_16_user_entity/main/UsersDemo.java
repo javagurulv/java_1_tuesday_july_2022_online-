@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_7_encapsulation.level_7_senior.task_15_16
 
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class UsersDemo {
 
     public static void main(String[] args) {

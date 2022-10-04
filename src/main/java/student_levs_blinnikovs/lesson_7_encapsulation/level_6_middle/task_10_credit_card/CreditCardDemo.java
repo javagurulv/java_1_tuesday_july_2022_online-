@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_6_middle.task_10_credit_card;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class CreditCardDemo {
     public static void main(String[] args) {
 

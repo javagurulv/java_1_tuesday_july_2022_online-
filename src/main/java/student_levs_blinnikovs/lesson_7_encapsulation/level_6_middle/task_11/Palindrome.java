@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_6_middle.task_11;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Palindrome {
 
     boolean isPalindrome(String text) {

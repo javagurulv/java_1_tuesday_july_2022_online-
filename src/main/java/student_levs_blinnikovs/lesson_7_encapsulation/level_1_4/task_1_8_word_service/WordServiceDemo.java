@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_1_4.task_1_8_word_service;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class WordServiceDemo {
 
     public static void main(String[] args) {

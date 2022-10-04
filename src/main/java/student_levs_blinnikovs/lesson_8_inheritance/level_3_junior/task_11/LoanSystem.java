@@ -7,6 +7,9 @@ package student_levs_blinnikovs.lesson_8_inheritance.level_3_junior.task_11;
         (тоесть метод без реализации), то класс должен быть абстрактным.
  */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 abstract class LoanSystem {
 
     abstract boolean canReceiveLoan(Human human);

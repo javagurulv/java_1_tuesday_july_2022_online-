@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_7_encapsulation.level_6_middle.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayCopy {
 
     private boolean elementMatchesRule(int[] array, int index, int numberFrom, int numberTo) {

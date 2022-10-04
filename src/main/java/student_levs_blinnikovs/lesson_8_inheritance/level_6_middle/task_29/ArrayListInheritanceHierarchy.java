@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_8_inheritance.level_6_middle.task_29;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ArrayListInheritanceHierarchy {
 
     /*
