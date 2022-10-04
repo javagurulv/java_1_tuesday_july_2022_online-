@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_11_interfaces.level_4_junior.task_11;
+package student_levs_blinnikovs.lesson_11_interfaces.level_4_junior.task_11_12;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 

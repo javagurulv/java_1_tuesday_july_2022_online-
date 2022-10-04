@@ -1,6 +1,5 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_3_junior.task_7_10;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 class OptionalCompatibleInMemoryDatabase implements OptionalProductDatabase {
@@ -20,10 +19,15 @@ class OptionalCompatibleInMemoryDatabase implements OptionalProductDatabase {
     public Optional<Product> findByTitle(String productTitle) {
         Optional<Product> optionalProduct = Optional.empty();
         for (Product product : this.products) {
-            if (product.getTitle().equals(productTitle)) {
+            if (titleEquals(product, productTitle)) {
                 optionalProduct = Optional.of(product);
             }
         }
         return optionalProduct;
     }
+
+    private boolean titleEquals(Product product, String productTitle) {
+        return product.getTitle().equals(productTitle);
+    }
+
 }

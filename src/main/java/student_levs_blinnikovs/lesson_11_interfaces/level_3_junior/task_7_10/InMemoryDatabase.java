@@ -30,10 +30,15 @@ class InMemoryDatabase implements ProductDatabase {
     @Override
     public Product findByTitle(String productTitle) {
         for (Product product : this.products) {
-            if (product.getTitle().equals(productTitle)) {
+            if (titleEquals(product, productTitle)) {
                 return product;
             }
         }
         return null;
     }
+
+    private boolean titleEquals(Product product, String productTitle) {
+        return product.getTitle().equals(productTitle);
+    }
+
 }
