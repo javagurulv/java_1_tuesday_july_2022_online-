@@ -49,6 +49,7 @@ class PersonalCodeGenerator {
     }
 
     // To ensure uniqueness could be complex data type PersonalCode that has String + UUID. Advised to use generateUniqueTrailPart()
+    // TODO check - if 10000 + randomly generated is unique number (already generated previously/exists from prev. generations) and if not, retry, check until unique
     private int generateRandomTrailPart() {
         Random random = new Random();
         return 10000 + random.nextInt(89999);

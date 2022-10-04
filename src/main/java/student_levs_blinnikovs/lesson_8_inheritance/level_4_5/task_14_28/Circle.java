@@ -7,7 +7,7 @@ import teacher.codereview.CodeReview;
 import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt")
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_8_inheritance/codereview/CleanCodeWarning_5.txt", student = "Done, added @Override")
 class Circle extends Shape {
 
     private double radius;
@@ -16,11 +16,12 @@ class Circle extends Shape {
         super("Circle");
         this.radius = radius;
     }
-
+    @Override
     double calculateArea() {  // why Idea adds @Override? And why it works without it?
         return PI * pow(radius, 2);
     }
 
+    @Override
     double calculatePerimeter() {
         return 2 * PI * radius;
     }

@@ -4,6 +4,6 @@ import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
 class Child extends Mother {
-    // todo не понимаю. Нужно обсудить. Не понимаю как это сделать меняя только чайлд. Если добавить 2 поля Father i Mother только
+    // todo update make Family class or composition of Child as having Mother mother; Father father;
 }
 

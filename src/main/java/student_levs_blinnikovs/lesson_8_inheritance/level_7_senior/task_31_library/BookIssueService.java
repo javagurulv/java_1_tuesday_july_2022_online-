@@ -9,7 +9,7 @@ class BookIssueService {
     BookIssueDetail bookIssueDetail;
 
     public BookReservationDetail getReservationDetail(Book book) {
-        return bookReservationDetail; // I'm not sure what it does, honestly I've just copied it - need to check in the viedeo
+        return bookReservationDetail; // I'm not sure what it does, honestly I've just copied it - need to check in the video
     }
     public void updateReservationDetail(BookReservationDetail bookReservationDetail) {
         bookReservationDetail.setReservationStatus(ReservationStatus.SUCCESS_RESERVATION); // todo if logic if not reserved... and not taken
