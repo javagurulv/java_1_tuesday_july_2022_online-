@@ -11,6 +11,7 @@ public class SetExample extends Object {
 		Set<String> authors = new HashSet<>();
 
 		System.out.println("Set isEmpty = " + authors.isEmpty());
+		System.out.println("Set size = " + authors.size());
 
 		authors.add("D");
 		authors.add("E");
@@ -44,7 +45,7 @@ public class SetExample extends Object {
 		boolean containsA = authors.contains("B");
 		System.out.println("Contains A = " + containsA);
 
-		Set<String> titles = new TreeSet<>();
+		Set<String> titles = new TreeSet();
 
 		int result = "A".compareTo("B"); // -1 | 0 | +1
 		System.out.println("Compare To = " + result);

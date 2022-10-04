@@ -1,8 +1,10 @@
 package teacher.lesson_12_collections.lessoncode;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class MapExample {
 
@@ -20,6 +22,7 @@ public class MapExample {
 
 		Map<String, Integer> wordToCountMap = new HashMap<>();
 
+		wordToCountMap.put("abc", null);
 		wordToCountMap.put("cat", 5);
 		wordToCountMap.put("dog", 5);
 		wordToCountMap.put("phone", 1);
@@ -35,6 +38,15 @@ public class MapExample {
 		for (String key : wordToCountMap.keySet()) {
 			Integer value = wordToCountMap.get(key);
 			System.out.println("Key = " + key + " , value = " + value);
+		}
+
+		Map<String, Integer> superMap = new TreeMap<>();
+
+		Set<String> keys = wordToCountMap.keySet();
+		Iterator<String> keyIterator = keys.iterator();
+		while (keyIterator.hasNext()) {
+			String value = keyIterator.next();
+			// .... for each body
 		}
 
 	}
