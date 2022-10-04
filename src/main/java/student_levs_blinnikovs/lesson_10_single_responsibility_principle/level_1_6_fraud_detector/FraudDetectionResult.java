@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 import java.util.Objects;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FraudDetectionResult {
 
     private boolean fraud;

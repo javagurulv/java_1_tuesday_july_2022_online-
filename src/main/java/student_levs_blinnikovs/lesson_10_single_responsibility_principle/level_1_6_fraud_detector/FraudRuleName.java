@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_1_6_fraud_detector;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FraudRuleName extends FraudRule {
 
     public FraudRuleName(String ruleName) {

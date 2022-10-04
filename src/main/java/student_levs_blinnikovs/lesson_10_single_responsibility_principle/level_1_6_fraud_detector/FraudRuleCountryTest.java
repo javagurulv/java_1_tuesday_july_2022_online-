@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.level_
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FraudRuleCountryTest {
 
     public static void main(String[] args) {

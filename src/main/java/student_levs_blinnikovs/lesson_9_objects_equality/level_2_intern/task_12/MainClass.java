@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_9_objects_equality.level_2_intern.task_12;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class A {
     public A() {
         System.out.println("Class A Constructor");
