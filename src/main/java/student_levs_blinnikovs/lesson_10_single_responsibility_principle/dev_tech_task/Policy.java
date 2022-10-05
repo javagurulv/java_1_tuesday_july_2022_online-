@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_te
 
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Policy {
 
     private String policyNumber;

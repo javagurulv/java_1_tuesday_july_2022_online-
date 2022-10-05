@@ -2,8 +2,13 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_te
 
 import java.math.BigDecimal;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = true)
 class PremiumCalculator {
 
+	@CodeReviewComment(teacher = "Зачем тут это свойство?")
     private Policy policy;
     private static final BigDecimal COEFFICIENT_FIRE = new BigDecimal("0.014");
     private static final BigDecimal COEFFICIENT_FIRE_HIGH_LIMIT = new BigDecimal("0.024");

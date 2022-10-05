@@ -5,7 +5,9 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+import teacher.codereview.CodeReview;
 
+@CodeReview(approved = true)
 class PremiumCalculatorTest {
 
     private void printTestResult(boolean isTestOK) {
