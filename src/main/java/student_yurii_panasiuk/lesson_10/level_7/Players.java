@@ -1,6 +1,6 @@
 package student_yurii_panasiuk.lesson_10.level_7;
 
- abstract class Player {
+ abstract class Players {
     int [] coordinates = new int [2];
     Figures color;
 

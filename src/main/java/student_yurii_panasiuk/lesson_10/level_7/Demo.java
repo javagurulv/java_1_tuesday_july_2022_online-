@@ -11,14 +11,34 @@ public class Demo {
 
 
         board.boardOutput();
-        firstPlayerTurn(player1, board);
-        board.setBoard(player1.getCoordinates(),player1.color);
-        secondPlayerTurn(player2, board);;
-        board.setBoard(player2.getCoordinates(),player2.color);
-        board.boardOutput();
+        move(board, player1, player2);
+        move(board, player1, player2);
+        move(board, player1, player2);
+        move(board, player1, player2);
+        move(board, player1, player2);
+        move(board, player1, player2);move(board, player1, player2);move(board, player1, player2);
+        move(board, player1, player2);move(board, player1, player2);
+
+
+
 
     }
 
+
+    static void move(Playground board, White_player player1, Black_Player player2){
+            firstPlayerTurn(player1, board);
+            board.setBoard(player1.getCoordinates(),player1.color);
+
+            secondPlayerTurn(player2, board);
+            board.setBoard(player2.getCoordinates(),player2.color);
+
+            board.lowerTheChip(player1.getColor());
+            board.lowerTheChip(player2.getColor());
+            board.boardOutput();
+            board.checkResult(player1.getColor());
+            board.checkResult(player2.getColor());
+
+    }
 
 
         static void firstPlayerTurn (White_player player1,Playground board) {
