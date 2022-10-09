@@ -1,0 +1,47 @@
+package student_yurii_panasiuk.lesson_10.level_7;
+
+import java.util.Scanner;
+
+public class Demo {
+    public static void main(String[] args) {
+
+        Playground board = new Playground();
+        White_player player1 = new White_player();
+        Black_Player player2 = new Black_Player();
+
+
+        board.boardOutput();
+        firstPlayerTurn(player1, board);
+        board.setBoard(player1.getCoordinates(),player1.color);
+        secondPlayerTurn(player2, board);;
+        board.setBoard(player2.getCoordinates(),player2.color);
+        board.boardOutput();
+
+    }
+
+
+
+        static void firstPlayerTurn (White_player player1,Playground board) {
+
+            System.out.println("White player, type your coordinattes");
+            Scanner scanner = new Scanner(System.in);
+            int player1Coordinates[] = new int[2];
+            player1Coordinates[0] = 0;
+            player1Coordinates[1] = scanner.nextInt();
+            player1.setCoordinates (player1Coordinates, board);
+
+        }
+
+        static void secondPlayerTurn (Black_Player player2,Playground board) {
+
+            System.out.println("Black player, type your coordinattes");
+            Scanner scanner = new Scanner(System.in);
+            int player2Coordinates[] = new int[2];
+            player2Coordinates[0] = 0;
+            player2Coordinates[1] = scanner.nextInt();
+            player2.setCoordinates (player2Coordinates, board);
+        }
+
+
+
+}
