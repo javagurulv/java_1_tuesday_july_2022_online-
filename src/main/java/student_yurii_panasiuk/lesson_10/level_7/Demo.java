@@ -35,8 +35,8 @@ public class Demo {
             board.lowerTheChip(player1.getColor());
             board.lowerTheChip(player2.getColor());
             board.boardOutput();
-            board.checkResult(player1.getColor());
-            board.checkResult(player2.getColor());
+           // board.checkResult(player1.getColor());
+            //board.checkResult(player2.getColor());
 
     }
 

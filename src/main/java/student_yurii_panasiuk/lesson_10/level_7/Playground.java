@@ -38,7 +38,7 @@ class Playground {
             }
             }
     }
-
+/*
     void checkResult (Figures color) {
         int i;
         int j;
@@ -59,16 +59,17 @@ class Playground {
 
                     // организуем проверку вверх
                     for ( up = i; up == 0 ; up-- ) { if (board[up][j] == color) {upCounter++;} }
-                    // организуем проверку вниз
-                    for (up = i; up < (board.length); up++) { if (board[up][j] == color) {downCounter++;} }
+                   // // организуем проверку вниз
+                  //  for (up = i; up < (board.length); up++) { if (board[up][j] == color) {downCounter++;} }
                     // организуем проверку вправо
                     for (right = j; right < (board[i].length); right++) { if (board[i][right] == color) {rightCounter++;} }
-                    // организуем проверку влево
-                    for (right = j; right == 0; right--) { if (board[i][right] == color) {leftCounter++;} }
+                   // // организуем проверку влево
+                    //for (right = j; right == 0; right--) { if (board[i][right] == color) {leftCounter++;} }
 
                     // организуем проверку вверх/вправо
                     for (rightUp = i; rightUp == 0; rightUp--) {
-                        for (rightUpJ = j; rightUp < board[i].length; rightUp++) {
+                        for (rightUpJ = j; rightUpJ < board[i].length; rightUpJ++) {
+
                             if (board[rightUp][rightUpJ] == color) {rightUpCounter++;}
                         }
                     }
@@ -80,12 +81,13 @@ class Playground {
                     }
 
 
-                    if (upCounter>3 || downCounter>3 || rightCounter>3 || leftCounter>3 ||
-                        rightUpCounter>3 || rightDownCounter>3) {
+                    if (upCounter>3 || rightCounter>3 || rightUpCounter>3 ) {
                         System.out.println( color + "player WIN's");
                     }
                 }
             }
         }
     }
+
+ */
 }
