@@ -32,6 +32,10 @@ class Book {
         this.isRead = isRead;
     }
 
+    public boolean getRead() {
+        return isRead;
+    }
+
     @Override
     public String toString() {
         return title + " [" + author + "]";

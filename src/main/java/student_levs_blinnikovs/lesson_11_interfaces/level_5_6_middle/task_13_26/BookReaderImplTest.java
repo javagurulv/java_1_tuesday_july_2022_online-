@@ -35,6 +35,8 @@ class BookReaderImplTest {
         test.shouldFindBooksByTitleFullMatch();
         test.shouldFindBooksByTitlePartly();
 
+        test.shouldNotBeReadByDefault();
+
         test.shouldMarkRead();
         test.shouldNotMarkReadNotExistingBook();
 
@@ -325,16 +327,29 @@ class BookReaderImplTest {
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by title partial input");
     }
 
+    void shouldNotBeReadByDefault() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+
+        boolean expectedIsRead = false;
+        boolean realIsRead = book1.getRead();
+
+        printTestResult(expectedIsRead == realIsRead, "Should not be read by default");
+    }
+
     void shouldMarkRead() {
         Book book1 = new Book("Stephen King", "Fairy Tale");
 
         BookReaderImpl bookReader = new BookReaderImpl();
         bookReader.addBook(book1);
 
-        boolean expectedIsRead = true;
-        boolean realIsRead = bookReader.markRead(book1, true);
+        boolean expectedReadOperationCompleted = true;
+        boolean realIsReadOperationCompleted = bookReader.markRead(book1, true);
 
-        printTestResult(expectedIsRead == realIsRead, "Should mark existing book read");
+        boolean expectedIsRead = true;
+        boolean realIsRead = book1.getRead();
+
+        printTestResult((expectedReadOperationCompleted == realIsReadOperationCompleted) &&
+                (expectedIsRead == realIsRead), "Should mark existing book read and return correct operation status");
     }
 
     void shouldNotMarkReadNotExistingBook() {
@@ -342,10 +357,14 @@ class BookReaderImplTest {
 
         BookReaderImpl bookReader = new BookReaderImpl();
 
-        boolean expectedIsRead = false;
-        boolean realIsRead = bookReader.markRead(book1, true);
+        boolean expectedReadOperationCompleted = false;
+        boolean realIsReadOperationCompleted = bookReader.markRead(book1, true);
 
-        printTestResult(expectedIsRead == realIsRead, "Should not mark read book which is not in the reader");
+        boolean expectedIsRead = false;
+        boolean realIsRead = book1.getRead();
+
+        printTestResult((expectedReadOperationCompleted == realIsReadOperationCompleted) &&
+                (expectedIsRead == realIsRead), "Should not mark read book which is not in the reader and return correct operation status");
     }
 
     void shouldMarkNotRead() {
@@ -355,10 +374,14 @@ class BookReaderImplTest {
         bookReader.addBook(book1);
         bookReader.markRead(book1, true);
 
-        boolean expectedIsNotRead = true;
-        boolean realIsNotRead = bookReader.markRead(book1, false);
+        boolean expectedIsNotReadOperationCompleted = true;
+        boolean realIsNotReadOperationCompleted = bookReader.markRead(book1, false);
 
-        printTestResult(expectedIsNotRead == realIsNotRead, "Should mark existing book not read");
+        boolean expectedIsRead = false;
+        boolean realIsRead = book1.getRead();
+
+        printTestResult((expectedIsNotReadOperationCompleted == realIsNotReadOperationCompleted) &&
+                (expectedIsRead == realIsRead), "Should mark existing book not read and return correct operation status");
     }
 
     void shouldNotMarkNotReadNotExistingBook() {
@@ -366,10 +389,14 @@ class BookReaderImplTest {
 
         BookReaderImpl bookReader = new BookReaderImpl();
 
-        boolean expectedIsNotRead = false;
-        boolean realIsNotRead = bookReader.markRead(book1, false);
+        boolean expectedIsNotReadOperationCompleted = false;
+        boolean realIsNotReadOperationCompleted = bookReader.markRead(book1, false);
 
-        printTestResult(expectedIsNotRead == realIsNotRead, "Should not mark not read book which is not in the reader");
+        boolean expectedIsRead = false;
+        boolean realIsRead = book1.getRead();
+
+        printTestResult((expectedIsNotReadOperationCompleted == realIsNotReadOperationCompleted) &&
+                (expectedIsRead == realIsRead), "Should not mark not read book which is not in the reader and return correct operation status");
     }
 
 }
