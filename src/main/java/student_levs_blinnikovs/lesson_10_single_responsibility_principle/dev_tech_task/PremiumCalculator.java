@@ -3,13 +3,10 @@ package student_levs_blinnikovs.lesson_10_single_responsibility_principle.dev_te
 import java.math.BigDecimal;
 
 import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
 
 @CodeReview(approved = true)
 class PremiumCalculator {
 
-	@CodeReviewComment(teacher = "Зачем тут это свойство?")
-    private Policy policy;
     private static final BigDecimal COEFFICIENT_FIRE = new BigDecimal("0.014");
     private static final BigDecimal COEFFICIENT_FIRE_HIGH_LIMIT = new BigDecimal("0.024");
     private static final BigDecimal FIRE_HIGH_LIMIT = new BigDecimal("100.00");
@@ -26,10 +23,10 @@ class PremiumCalculator {
 
     private BigDecimal calculateSumInsured(Policy policy, RiskType riskType) {
         BigDecimal sumInsured = new BigDecimal("0.00");
-        for (RiskItem riskItem : policy.getRiskItems()) {                       // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
-            for (RiskSubItem riskSubItem : riskItem.getRiskSubItems()) {        // todo hide in getTotalSumInsured()... ?
-                if (riskSubItem.getRiskTypes().contains(riskType)) {                           // todo extract logic into separate method and make (1) return risk sub items and (2) calculate
-                    sumInsured = sumInsured.add(riskSubItem.getSumInsured());
+        for (Object object : policy.getRiskItems()) {                       // todo here maybe better to pass not policy but RiskItem or even RiskSubItems to method call...
+            for (SubObject subObject : object.getRiskSubItems()) {        // todo hide in getTotalSumInsured()... ?
+                if (subObject.getRiskTypes().contains(riskType)) {                           // todo extract logic into separate method and make (1) return risk sub items and (2) calculate
+                    sumInsured = sumInsured.add(subObject.getSumInsured());
                 }
             }
         }

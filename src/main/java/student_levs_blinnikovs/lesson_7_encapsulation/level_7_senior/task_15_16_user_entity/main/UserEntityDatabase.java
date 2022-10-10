@@ -20,7 +20,7 @@ class UserEntityDatabase {
                 return user;
             }
         }
-        return null; // todo Optional (whatever that means
+        return null; // todo using Optional - here, null can be expected
     }
 
     List<UserEntity> getUsersByFirstName(String firstName) {

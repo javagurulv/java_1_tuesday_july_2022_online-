@@ -15,7 +15,8 @@ class ArrayCopy {
         for (int i = 0; i < in.length; i++) {
             if (elementMatchesRule(in, i, numberFrom, numberTo)) {
                 resultArrayLength++;
-                temporaryResult[i] = in[i]; // TODO so here is some problem. It has to be the value that matches the rule, not i-th element, I don't understand how to do it now. Another loop...
+                temporaryResult[i] = in[i]; // TODO so here is some problem. It has to be the value that matches the rule, not i-th element,
+                                            // I don't understand how to do it now. Another loop...
                 }
             }
 

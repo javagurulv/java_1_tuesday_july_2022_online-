@@ -9,13 +9,13 @@ class Policy {
 
     private String policyNumber;
     private PolicyStatus policystatus;
-    private List<RiskItem> riskItems;
+    private List<Object> objects;
 
-    Policy(List<RiskItem> riskItems) {
-        this.riskItems = riskItems;
+    Policy(List<Object> objects) {
+        this.objects = objects;
     }
 
-    public List<RiskItem> getRiskItems() {
-        return riskItems;
+    public List<Object> getRiskItems() {
+        return objects;
     }
 }

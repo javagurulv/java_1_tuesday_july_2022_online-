@@ -10,7 +10,7 @@ class ArrayCopyTest {
         test.shouldCopy();
     }
 
-    // todo fix tests, somehow failing
+    // tests currently failing because ArrayCopy.java problem
     void shouldCopy() {
         int[] in = {0, 1, 2, 3, 4};
         int numberFrom = 1;

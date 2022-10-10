@@ -19,17 +19,17 @@ class PremiumCalculatorTest {
     }
 
     void shouldCalculateLowRisk() {
-        ArrayList<RiskSubItem> riskSubItems = new ArrayList<>();
-        RiskSubItem television = new RiskSubItem("TV", new BigDecimal("100.00"), List.of(RiskType.FIRE));
-        RiskSubItem computer = new RiskSubItem("Computer", new BigDecimal("8.00"), List.of(RiskType.THEFT));
-        riskSubItems.add(television);
-        riskSubItems.add(computer);
+        ArrayList<SubObject> subObjects = new ArrayList<>();
+        SubObject television = new SubObject("TV", new BigDecimal("100.00"), List.of(RiskType.FIRE));
+        SubObject computer = new SubObject("Computer", new BigDecimal("8.00"), List.of(RiskType.THEFT));
+        subObjects.add(television);
+        subObjects.add(computer);
 
-        ArrayList<RiskItem> riskItems = new ArrayList<>();
-        RiskItem house = new RiskItem(riskSubItems);
-        riskItems.add(house);
+        ArrayList<Object> objects = new ArrayList<>();
+        Object house = new Object(subObjects);
+        objects.add(house);
 
-        Policy policy = new Policy(riskItems);
+        Policy policy = new Policy(objects);
         PremiumCalculator calculator = new PremiumCalculator();
 
         BigDecimal realPremiumResult = calculator.calculate(policy).setScale(2, RoundingMode.HALF_EVEN);
@@ -39,17 +39,17 @@ class PremiumCalculatorTest {
     }
 
     void shouldCalculateHighRisk() {
-        ArrayList<RiskSubItem> riskSubItems = new ArrayList<>();
-        RiskSubItem television = new RiskSubItem("TV", new BigDecimal("500.00"), List.of(RiskType.FIRE));
-        RiskSubItem computer = new RiskSubItem("Computer", new BigDecimal("102.51"), List.of(RiskType.THEFT));
-        riskSubItems.add(television);
-        riskSubItems.add(computer);
+        ArrayList<SubObject> subObjects = new ArrayList<>();
+        SubObject television = new SubObject("TV", new BigDecimal("500.00"), List.of(RiskType.FIRE));
+        SubObject computer = new SubObject("Computer", new BigDecimal("102.51"), List.of(RiskType.THEFT));
+        subObjects.add(television);
+        subObjects.add(computer);
 
-        ArrayList<RiskItem> riskItems = new ArrayList<>();
-        RiskItem house = new RiskItem(riskSubItems);
-        riskItems.add(house);
+        ArrayList<Object> objects = new ArrayList<>();
+        Object house = new Object(subObjects);
+        objects.add(house);
 
-        Policy policy = new Policy(riskItems);
+        Policy policy = new Policy(objects);
         PremiumCalculator calculator = new PremiumCalculator();
 
         BigDecimal realPremiumResult = calculator.calculate(policy).setScale(2, RoundingMode.HALF_EVEN);

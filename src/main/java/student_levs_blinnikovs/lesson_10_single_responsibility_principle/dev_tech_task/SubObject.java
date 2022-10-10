@@ -6,14 +6,14 @@ import java.util.List;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
-class RiskSubItem {
+class SubObject {
 
-    private String riskSubItemName;
+    private String subObjectName;
     private BigDecimal sumInsured;
     private List<RiskType> riskTypes;
 
-    RiskSubItem(String riskSubItemName, BigDecimal sumInsured, List<RiskType> riskTypes) {
-        this.riskSubItemName = riskSubItemName;
+    SubObject(String subObjectName, BigDecimal sumInsured, List<RiskType> riskTypes) {
+        this.subObjectName = subObjectName;
         this.sumInsured = sumInsured;
         this.riskTypes = riskTypes;
     }
