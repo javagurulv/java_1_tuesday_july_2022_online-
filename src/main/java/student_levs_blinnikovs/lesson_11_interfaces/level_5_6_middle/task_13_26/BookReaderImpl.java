@@ -28,7 +28,7 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public String[] showBooksByAuthor() {
+    public String[] showBooks() {
         Book[] books = new Book[booksInReader.size()];
         booksInReader.toArray(books);
         return new String[]{Arrays.toString(books)};
@@ -47,6 +47,7 @@ class BookReaderImpl implements BookReader {
         return new String[]{Arrays.toString(booksFound)};
     }
 
+    @Override
     public String[] showBooksByTitle(String title) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : booksInReader) {

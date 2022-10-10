@@ -33,6 +33,7 @@ class BookReaderImplTest {
         test.shouldFindBooksByAuthorPartly();
 
         test.shouldFindBooksByTitleFullMatch();
+        test.shouldFindBooksByTitlePartly();
 
     }
 
@@ -229,7 +230,7 @@ class BookReaderImplTest {
                 "[1984 [George Orwell], Dreamland [Nicholas Sparks], Fairy Tale [Stephen King]]"
         };
 
-        String[] realBookList = bookReader.showBooksByAuthor();
+        String[] realBookList = bookReader.showBooks();
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return same book list String[]");
     }
@@ -295,6 +296,27 @@ class BookReaderImplTest {
         String[] realBookList = bookReader.showBooksByTitle("Life after life");
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by title full match");
+    }
+
+    void shouldFindBooksByTitlePartly() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+        Book book3 = new Book("George Orwell", "1984");
+        Book book4 = new Book("Kate Atkinson", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+        bookReader.addBook(book3);
+        bookReader.addBook(book4);
+
+        String[] expectedBookList = {
+                "[Life after life [Jill McCorkle], Life after life [Kate Atkinson]]"
+        };
+
+        String[] realBookList = bookReader.showBooksByTitle("L");
+
+        printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by title partial input");
     }
 
 }
