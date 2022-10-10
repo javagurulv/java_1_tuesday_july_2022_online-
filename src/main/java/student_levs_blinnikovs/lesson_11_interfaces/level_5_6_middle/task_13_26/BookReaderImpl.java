@@ -28,13 +28,13 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean markRead(Book book) {
-        boolean isRead = false;
+    public boolean markRead(Book book, boolean isRead) {
+        boolean status = false;
         if (existsInReader(book)) {
-            book.setRead();
-            isRead = true;
+            book.setRead(isRead);
+            status = true;
         }
-        return isRead;
+        return status;
     }
 
     @Override

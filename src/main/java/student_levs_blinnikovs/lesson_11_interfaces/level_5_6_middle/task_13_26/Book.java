@@ -28,8 +28,8 @@ class Book {
         this.title = title;
     }
 
-    public void setRead() {
-        this.isRead = true;
+    public void setRead(boolean isRead) {
+        this.isRead = isRead;
     }
 
     @Override

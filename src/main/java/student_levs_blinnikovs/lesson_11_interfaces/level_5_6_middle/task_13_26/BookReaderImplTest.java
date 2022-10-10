@@ -38,6 +38,9 @@ class BookReaderImplTest {
         test.shouldMarkRead();
         test.shouldNotMarkReadNotExistingBook();
 
+        test.shouldMarkNotRead();
+        test.shouldNotMarkNotReadNotExistingBook();
+
     }
 
     void shouldAddNotExisting() {
@@ -329,7 +332,7 @@ class BookReaderImplTest {
         bookReader.addBook(book1);
 
         boolean expectedIsRead = true;
-        boolean realIsRead = bookReader.markRead(book1);
+        boolean realIsRead = bookReader.markRead(book1, true);
 
         printTestResult(expectedIsRead == realIsRead, "Should mark existing book read");
     }
@@ -340,9 +343,33 @@ class BookReaderImplTest {
         BookReaderImpl bookReader = new BookReaderImpl();
 
         boolean expectedIsRead = false;
-        boolean realIsRead = bookReader.markRead(book1);
+        boolean realIsRead = bookReader.markRead(book1, true);
 
         printTestResult(expectedIsRead == realIsRead, "Should not mark read book which is not in the reader");
+    }
+
+    void shouldMarkNotRead() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.markRead(book1, true);
+
+        boolean expectedIsNotRead = true;
+        boolean realIsNotRead = bookReader.markRead(book1, false);
+
+        printTestResult(expectedIsNotRead == realIsNotRead, "Should mark existing book not read");
+    }
+
+    void shouldNotMarkNotReadNotExistingBook() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+
+        boolean expectedIsNotRead = false;
+        boolean realIsNotRead = bookReader.markRead(book1, false);
+
+        printTestResult(expectedIsNotRead == realIsNotRead, "Should not mark not read book which is not in the reader");
     }
 
 }
