@@ -70,6 +70,19 @@ class BookReaderImpl implements BookReader {
         return new String[]{Arrays.toString(booksFound)};
     }
 
+    @Override
+    public String[] showReadBooks() {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for (Book book : booksInReader) {
+            if (book.getRead()) {
+                searchResult.add(book);
+            }
+        }
+        Book[] booksFound = new Book[searchResult.size()];
+        searchResult.toArray(booksFound);
+        return new String[]{Arrays.toString(booksFound)};
+    }
+
     private boolean isAuthorFullMatch(Book book, String author) {                           // can make both methods || if needed
         return book.getAuthor().equals(author);
     }

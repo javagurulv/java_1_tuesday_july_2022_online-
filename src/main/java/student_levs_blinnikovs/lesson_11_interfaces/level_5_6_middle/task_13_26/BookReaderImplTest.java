@@ -43,6 +43,9 @@ class BookReaderImplTest {
         test.shouldMarkNotRead();
         test.shouldNotMarkNotReadNotExistingBook();
 
+        test.shouldFindReadBooks();
+        test.shouldNotReturnNotReadBooks();
+
     }
 
     void shouldAddNotExisting() {
@@ -397,6 +400,47 @@ class BookReaderImplTest {
 
         printTestResult((expectedIsNotReadOperationCompleted == realIsNotReadOperationCompleted) &&
                 (expectedIsRead == realIsRead), "Should not mark not read book which is not in the reader and return correct operation status");
+    }
+
+    void shouldFindReadBooks() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+        Book book3 = new Book("George Orwell", "1984");
+        Book book4 = new Book("Kate Atkinson", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+        bookReader.addBook(book3);
+        bookReader.addBook(book4);
+
+        String[] expectedReadBookList = {"[Life after life [Jill McCorkle], 1984 [George Orwell]]"};
+
+        bookReader.markRead(book2, true);
+        bookReader.markRead(book3, true);
+
+        String[] realReadBookList = bookReader.showReadBooks();
+
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should return read books");
+    }
+
+    void shouldNotReturnNotReadBooks() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+        Book book3 = new Book("George Orwell", "1984");
+        Book book4 = new Book("Kate Atkinson", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+        bookReader.addBook(book3);
+        bookReader.addBook(book4);
+
+        String[] expectedReadBookList = {"[]"};
+
+        String[] realReadBookList = bookReader.showReadBooks();
+
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should not return not read books");
     }
 
 }
