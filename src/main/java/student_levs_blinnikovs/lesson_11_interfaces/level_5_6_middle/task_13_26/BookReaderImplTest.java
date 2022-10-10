@@ -32,6 +32,8 @@ class BookReaderImplTest {
         test.shouldFindBooksByAuthorFullMatch();
         test.shouldFindBooksByAuthorPartly();
 
+        test.shouldFindBooksByTitleFullMatch();
+
     }
 
     void shouldAddNotExisting() {
@@ -227,7 +229,7 @@ class BookReaderImplTest {
                 "[1984 [George Orwell], Dreamland [Nicholas Sparks], Fairy Tale [Stephen King]]"
         };
 
-        String[] realBookList = bookReader.showBooks();
+        String[] realBookList = bookReader.showBooksByAuthor();
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return same book list String[]");
     }
@@ -248,7 +250,7 @@ class BookReaderImplTest {
                 "[1984 [George Orwell], Animal Farm [George Orwell]]"
         };
 
-        String[] realBookList = bookReader.showBooks("George Orwell");
+        String[] realBookList = bookReader.showBooksByAuthor("George Orwell");
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by author");
     }
@@ -269,9 +271,30 @@ class BookReaderImplTest {
                 "[1984 [George Orwell], Animal Farm [George Orwell]]"
         };
 
-        String[] realBookList = bookReader.showBooks("Ge");
+        String[] realBookList = bookReader.showBooksByAuthor("Ge");
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by author partial input");
+    }
+
+    void shouldFindBooksByTitleFullMatch() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+        Book book3 = new Book("George Orwell", "1984");
+        Book book4 = new Book("Kate Atkinson", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+        bookReader.addBook(book3);
+        bookReader.addBook(book4);
+
+        String[] expectedBookList = {
+                "[Life after life [Jill McCorkle], Life after life [Kate Atkinson]]"
+        };
+
+        String[] realBookList = bookReader.showBooksByTitle("Life after life");
+
+        printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by title full match");
     }
 
 }

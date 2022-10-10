@@ -28,17 +28,29 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public String[] showBooks() {
+    public String[] showBooksByAuthor() {
         Book[] books = new Book[booksInReader.size()];
         booksInReader.toArray(books);
         return new String[]{Arrays.toString(books)};
     }
 
     @Override
-    public String[] showBooks(String author) {
+    public String[] showBooksByAuthor(String author) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : booksInReader) {
             if (isAuthorFullMatch(book, author) || isAuthorSimilarTo(book, author)) {         // can wrap in one method if needed
+                searchResult.add(book);
+            }
+        }
+        Book[] booksFound = new Book[searchResult.size()];
+        searchResult.toArray(booksFound);
+        return new String[]{Arrays.toString(booksFound)};
+    }
+
+    public String[] showBooksByTitle(String title) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for (Book book : booksInReader) {
+            if (isTitleFullMatch(book, title) || isTitleSimilarTo(book, title)) {
                 searchResult.add(book);
             }
         }
@@ -53,6 +65,14 @@ class BookReaderImpl implements BookReader {
 
     private boolean isAuthorSimilarTo(Book book, String authorPartly) {
         return book.getAuthor().startsWith(authorPartly);
+    }
+
+    private boolean isTitleFullMatch(Book book, String title) {
+        return book.getTitle().equals(title);
+    }
+
+    private boolean isTitleSimilarTo(Book book, String titlePartly) {
+        return book.getTitle().startsWith(titlePartly);
     }
 
     private boolean existsInReader(Book book) {
