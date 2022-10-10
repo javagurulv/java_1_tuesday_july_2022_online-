@@ -31,7 +31,7 @@ class BookReaderImpl implements BookReader {
     public boolean markRead(Book book) {
         boolean isRead = false;
         if (existsInReader(book)) {
-            book.setRead(true);
+            book.setRead();
             isRead = true;
         }
         return isRead;
