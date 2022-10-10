@@ -15,7 +15,7 @@ class UsersDemo {
         UserEntity user4 = new UserEntity("Mary", "Newman");
 
         PersonalCodeGenerator personalCodeGenerator = new PersonalCodeGenerator();
-        String user1PersonalCode = personalCodeGenerator.generatePersonalCode(true);
+        String user1PersonalCode = personalCodeGenerator.generatePersonalCode();
         System.out.println(user1PersonalCode);
 
 

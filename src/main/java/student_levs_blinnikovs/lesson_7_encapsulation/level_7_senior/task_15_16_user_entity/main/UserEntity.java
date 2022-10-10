@@ -29,7 +29,7 @@ class UserEntity {
         this.id = lastId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.personalCode = new PersonalCodeGenerator().generatePersonalCode(false);
+        this.personalCode = new PersonalCodeGenerator().generatePersonalCode();
     }
 
     // todo leave only getters setters

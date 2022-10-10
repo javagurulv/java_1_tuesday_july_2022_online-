@@ -14,7 +14,7 @@ class UserEntityDatabase {
         this.users = users;
     }
 
-    UserEntity getUserById(int id) {                            // TODO probably move to UserActions... and this class leave just for UserDB actions
+    UserEntity getUserById(int id) {     // TODO probably move to UserActions... and this class leave just for UserDB actions
         for (UserEntity user : this.users) {
             if (id == user.getId()) {
                 return user;

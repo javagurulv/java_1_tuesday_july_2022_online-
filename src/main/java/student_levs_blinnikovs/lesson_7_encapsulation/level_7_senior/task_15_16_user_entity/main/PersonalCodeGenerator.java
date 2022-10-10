@@ -19,23 +19,18 @@ class PersonalCodeGenerator {
 
     /**
      * By Levs B 13/9/2022
-     * This method generates Latvian (LV) old format personal code - ddMMyyyy-XXXXX where ddMMyyyy is date of method call and XXXXX is a five-digit number.
-     * @param randomTrailing if set as true, random trailing XXXXX part will be used - caution, uniqueness is not implemented there.
-     *                       if set as false, trailing will be generated from 10001 to 99999
+     *
+     * This method generates Latvian (LV) old format personal code -
+     * ddMMyyyy-XXXXX where ddMMyyyy is date of method call and XXXXX is
+     * a five-digit number that is incrementing from 10000 to 99999
+     *
      * @return returns personal code in aforementioned format
      *
      * Further plans include:   - generate unique random
      *                          - create date as param in overloaded method so not only now() can be used but user specified date
-     *
      */
-    public String generatePersonalCode(boolean randomTrailing) {
-        String datePart = createDatePart();
-        if (randomTrailing) {
-            return datePart + "-" + generateRandomTrailPart();
-        }
-        else {
-            return datePart + "-" + generateUniqueTrailPart();
-        }
+    public String generatePersonalCode() {
+        return createDatePart() + "-" + generateUniqueTrailPart();
     }
 
     private String createDatePart() {
@@ -47,14 +42,5 @@ class PersonalCodeGenerator {
     private int generateUniqueTrailPart() {
         return 10000 + uniqueTrailing;
     }
-
-    // To ensure uniqueness could be complex data type PersonalCode that has String + UUID. Advised to use generateUniqueTrailPart()
-    // TODO check - if 10000 + randomly generated is unique number (already generated previously/exists from prev. generations) and if not, retry, check until unique
-    private int generateRandomTrailPart() {
-        Random random = new Random();
-        return 10000 + random.nextInt(89999);
-    }
-
-
 
 }
