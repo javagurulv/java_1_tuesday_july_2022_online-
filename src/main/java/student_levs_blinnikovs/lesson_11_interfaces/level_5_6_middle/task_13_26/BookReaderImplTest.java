@@ -35,6 +35,9 @@ class BookReaderImplTest {
         test.shouldFindBooksByTitleFullMatch();
         test.shouldFindBooksByTitlePartly();
 
+        test.shouldMarkRead();
+        test.shouldNotMarkReadNotExistingBook();
+
     }
 
     void shouldAddNotExisting() {
@@ -317,6 +320,29 @@ class BookReaderImplTest {
         String[] realBookList = bookReader.showBooksByTitle("L");
 
         printTestResult(Arrays.equals(expectedBookList, realBookList), "Should return book list by title partial input");
+    }
+
+    void shouldMarkRead() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+
+        boolean expectedIsRead = true;
+        boolean realIsRead = bookReader.markRead(book1);
+
+        printTestResult(expectedIsRead == realIsRead, "Should mark existing book read");
+    }
+
+    void shouldNotMarkReadNotExistingBook() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+
+        boolean expectedIsRead = false;
+        boolean realIsRead = bookReader.markRead(book1);
+
+        printTestResult(expectedIsRead == realIsRead, "Should not mark read book which is not in the reader");
     }
 
 }

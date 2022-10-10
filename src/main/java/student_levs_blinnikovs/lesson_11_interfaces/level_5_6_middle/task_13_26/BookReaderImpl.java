@@ -28,6 +28,16 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
+    public boolean markRead(Book book) {
+        boolean isRead = false;
+        if (existsInReader(book)) {
+            book.setRead(true);
+            isRead = true;
+        }
+        return isRead;
+    }
+
+    @Override
     public String[] showBooks() {
         Book[] books = new Book[booksInReader.size()];
         booksInReader.toArray(books);

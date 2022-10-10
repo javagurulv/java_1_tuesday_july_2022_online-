@@ -4,10 +4,12 @@ class Book {
 
     private String author;
     private String title;
+    private boolean isRead;
 
     public Book(String author, String title) {
         this.author = author;
         this.title = title;
+        this.isRead = false;
     }
 
     public String getAuthor() {
@@ -24,6 +26,10 @@ class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setRead(boolean isRead) {
+        this.isRead = isRead;
     }
 
     @Override
