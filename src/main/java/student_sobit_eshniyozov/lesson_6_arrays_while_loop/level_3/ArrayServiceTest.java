@@ -1,4 +1,8 @@
 package student_sobit_eshniyozov.lesson_6_arrays_while_loop.level_3;
+
+import javax.naming.PartialResultException;
+import java.util.Arrays;
+
 class ArrayServiceTest {
 
     public static void main(String[] args) {
@@ -8,6 +12,7 @@ class ArrayServiceTest {
         test.shouldCountOccurrences();
         test.shouldReplaceFirstNumber();
         test.shouldReplaceAllNumbers();
+        test.shouldRevert();
 
 
     }
@@ -21,38 +26,48 @@ class ArrayServiceTest {
     }
 
     private void shouldContain() {
-        int[] testArray = {1,2,3};
+        int[] testArray = {1, 2, 3};
         int numberToSearch = 3;
         boolean expectedResult = true;
         ArrayService arrayService = new ArrayService();
         boolean realResult = arrayService.contains(testArray, numberToSearch);
-        printResult(expectedResult==realResult, "Test should Contain");
+        printResult(expectedResult == realResult, "Test should Contain");
     }
 
     private void shouldCountOccurrences() {
-        int[] testArray = {1,2,3,3};
+        int[] testArray = {1, 2, 3, 3};
         int numberToSearch = 3;
         int expectedResult = 2;
         ArrayService arrayService = new ArrayService();
         int realResult = arrayService.countOccurrences(testArray, numberToSearch);
-        printResult((expectedResult==realResult), "Test should Count Occur");
+        printResult((expectedResult == realResult), "Test should Count Occur");
     }
+
     private void shouldReplaceFirstNumber() {
-        int[] testArray = {1,2,3,};
+        int[] testArray = {1, 2, 3,};
         int numberToReplace = 1;
         int newNumber = 5;
         boolean expectedReplace = true;
         ArrayService arrayService = new ArrayService();
         boolean realReplace = arrayService.replaceFirstNumber(testArray, numberToReplace, newNumber);
-        printResult((expectedReplace==realReplace), "Test should replace number");
+        printResult((expectedReplace == realReplace), "Test should replace number");
     }
+
     private void shouldReplaceAllNumbers() {
-        int[] testArray = {1,3,3,};
+        int[] testArray = {1, 3, 3,};
         int numberToReplace = 3;
         int newNumber = 5;
         int expectedReplace = 2;
         ArrayService arrayService = new ArrayService();
         int realReplace = arrayService.replaceAllNumbers(testArray, numberToReplace, newNumber);
-        printResult((expectedReplace==realReplace), "Test should replace all numbers");
+        printResult((expectedReplace == realReplace), "Test should replace all numbers");
+    }
+
+    private void shouldRevert() {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] expectedRevert = {5,4,3,2,1};
+        ArrayService arrayService = new ArrayService();
+        arrayService.revert(arr);
+        printResult(Arrays.equals(arr,expectedRevert), "Test should revert");
     }
 }
