@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_26;
+package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_24;
 
 import java.util.ArrayList;
 import java.util.Arrays;
