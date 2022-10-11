@@ -83,6 +83,19 @@ class BookReaderImpl implements BookReader {
         return new String[]{Arrays.toString(booksFound)};
     }
 
+    @Override
+    public String[] showNotReadBooks() {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for (Book book : booksInReader) {
+            if (!book.getRead()) {
+                searchResult.add(book);
+            }
+        }
+        Book[] booksFound = new Book[searchResult.size()];
+        searchResult.toArray(booksFound);
+        return new String[]{Arrays.toString(booksFound)};
+    }
+
     private boolean isAuthorFullMatch(Book book, String author) {                           // can make both methods || if needed
         return book.getAuthor().equals(author);
     }
@@ -91,12 +104,20 @@ class BookReaderImpl implements BookReader {
         return book.getAuthor().startsWith(authorPartly);
     }
 
+    private boolean authorNotFilledIn(Book book) {
+        return book.getAuthor() == null || book.getAuthor().isEmpty();
+    }
+
     private boolean isTitleFullMatch(Book book, String title) {
         return book.getTitle().equals(title);
     }
 
     private boolean isTitleSimilarTo(Book book, String titlePartly) {
         return book.getTitle().startsWith(titlePartly);
+    }
+
+    private boolean titleNotFilledIn(Book book) {
+        return book.getTitle() == null || book.getTitle().isEmpty();
     }
 
     private boolean existsInReader(Book book) {
@@ -109,14 +130,6 @@ class BookReaderImpl implements BookReader {
             }
         }
         return exists;
-    }
-
-    private boolean authorNotFilledIn(Book book) {
-        return book.getAuthor() == null || book.getAuthor().isEmpty();
-    }
-
-    private boolean titleNotFilledIn(Book book) {
-        return book.getTitle() == null || book.getTitle().isEmpty();
     }
 
 }

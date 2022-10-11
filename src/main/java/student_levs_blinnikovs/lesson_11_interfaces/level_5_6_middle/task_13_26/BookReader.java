@@ -16,4 +16,6 @@ interface BookReader {
 
     String[] showReadBooks();
 
+    String[] showNotReadBooks();
+
 }

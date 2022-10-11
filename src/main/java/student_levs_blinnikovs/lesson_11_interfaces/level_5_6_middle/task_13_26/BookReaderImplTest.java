@@ -46,6 +46,10 @@ class BookReaderImplTest {
         test.shouldFindReadBooks();
         test.shouldNotReturnNotReadBooks();
 
+        test.shouldFindDefaultNotReadBooks();
+        test.shouldNotReturnReadBooks();
+        test.shouldReturnUnReadBooks();
+
     }
 
     void shouldAddNotExisting() {
@@ -441,6 +445,59 @@ class BookReaderImplTest {
         String[] realReadBookList = bookReader.showReadBooks();
 
         printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should not return not read books");
+    }
+
+    void shouldFindDefaultNotReadBooks() {
+        Book book1 = new Book("Jill McCorkle", "Life after life");
+        Book book2 = new Book("George Orwell", "1984");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+
+        String[] expectedNotReadBookList = {"[Life after life [Jill McCorkle], 1984 [George Orwell]]"};
+
+        String[] realNotReadBookList = bookReader.showNotReadBooks();
+
+        printTestResult(Arrays.equals(expectedNotReadBookList, realNotReadBookList), "Should return default not read books");
+    }
+
+    void shouldNotReturnReadBooks() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+
+        bookReader.markRead(book1, true);
+        bookReader.markRead(book2, true);
+
+        String[] expectedReadBookList = {"[]"};
+
+        String[] realReadBookList = bookReader.showNotReadBooks();
+
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should not return read books");
+    }
+
+    void shouldReturnUnReadBooks() {
+        Book book1 = new Book("Stephen King", "Fairy Tale");
+        Book book2 = new Book("Jill McCorkle", "Life after life");
+
+        BookReaderImpl bookReader = new BookReaderImpl();
+        bookReader.addBook(book1);
+        bookReader.addBook(book2);
+
+        bookReader.markRead(book1, true);
+        bookReader.markRead(book2, true);
+
+        bookReader.markRead(book1, false);
+
+        String[] expectedReadBookList = {"[Fairy Tale [Stephen King]]"};
+
+        String[] realReadBookList = bookReader.showNotReadBooks();
+
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should return unread books");
     }
 
 }
