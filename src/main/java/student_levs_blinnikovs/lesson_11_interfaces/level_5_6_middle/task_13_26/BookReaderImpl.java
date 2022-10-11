@@ -39,8 +39,7 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public String[] showBooks() {
-        Book[] books = new Book[booksInReader.size()];
-        booksInReader.toArray(books);
+        Book[] books = booksInReader.toArray(new Book[0]);
         return new String[]{Arrays.toString(books)};
     }
 
@@ -52,8 +51,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = new Book[searchResult.size()];
-        searchResult.toArray(booksFound);
+        Book[] booksFound = searchResult.toArray(new Book[0]);
         return new String[]{Arrays.toString(booksFound)};
     }
 
@@ -65,8 +63,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = new Book[searchResult.size()];
-        searchResult.toArray(booksFound);
+        Book[] booksFound = searchResult.toArray(new Book[0]);
         return new String[]{Arrays.toString(booksFound)};
     }
 
@@ -78,8 +75,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = new Book[searchResult.size()];
-        searchResult.toArray(booksFound);
+        Book[] booksFound = searchResult.toArray(new Book[0]);
         return new String[]{Arrays.toString(booksFound)};
     }
 
@@ -91,8 +87,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = new Book[searchResult.size()];
-        searchResult.toArray(booksFound);
+        Book[] booksFound = searchResult.toArray(new Book[0]);
         return new String[]{Arrays.toString(booksFound)};
     }
 
