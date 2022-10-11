@@ -43,7 +43,6 @@ public class Demo {
 
         static void firstPlayerTurn (White_player player1,Playground board) {
 
-           6
             Scanner scanner = new Scanner(System.in);
             int player1Coordinates[] = new int[2];
             player1Coordinates[0] = 0;
