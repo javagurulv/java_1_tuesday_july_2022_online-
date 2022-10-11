@@ -50,8 +50,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = searchResult.toArray(new Book[0]);
-        return new String[]{Arrays.toString(booksFound)};
+        return Arrays.stream(searchResult.toArray()).map(Object::toString).toArray(String[]::new);
     }
 
     @Override
@@ -62,8 +61,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = searchResult.toArray(new Book[0]);
-        return new String[]{Arrays.toString(booksFound)};
+        return Arrays.stream(searchResult.toArray()).map(Object::toString).toArray(String[]::new);
     }
 
     @Override
@@ -74,8 +72,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = searchResult.toArray(new Book[0]);
-        return new String[]{Arrays.toString(booksFound)};
+        return Arrays.stream(searchResult.toArray()).map(Object::toString).toArray(String[]::new);
     }
 
     @Override
@@ -86,8 +83,7 @@ class BookReaderImpl implements BookReader {
                 searchResult.add(book);
             }
         }
-        Book[] booksFound = searchResult.toArray(new Book[0]);
-        return new String[]{Arrays.toString(booksFound)};
+        return Arrays.stream(searchResult.toArray()).map(Object::toString).toArray(String[]::new);
     }
 
     private boolean isAuthorFullMatch(Book book, String author) {                           // can make both methods || if needed

@@ -265,7 +265,8 @@ class BookReaderImplTest {
         bookReader.addBook(book4);
 
         String[] expectedBookList = {
-                "[1984 [George Orwell], Animal Farm [George Orwell]]"
+                "1984 [George Orwell]",
+                "Animal Farm [George Orwell]"
         };
 
         String[] realBookList = bookReader.showBooksByAuthor("George Orwell");
@@ -286,7 +287,8 @@ class BookReaderImplTest {
         bookReader.addBook(book4);
 
         String[] expectedBookList = {
-                "[1984 [George Orwell], Animal Farm [George Orwell]]"
+                "1984 [George Orwell]",
+                "Animal Farm [George Orwell]",
         };
 
         String[] realBookList = bookReader.showBooksByAuthor("Ge");
@@ -307,7 +309,8 @@ class BookReaderImplTest {
         bookReader.addBook(book4);
 
         String[] expectedBookList = {
-                "[Life after life [Jill McCorkle], Life after life [Kate Atkinson]]"
+                "Life after life [Jill McCorkle]",
+                "Life after life [Kate Atkinson]"
         };
 
         String[] realBookList = bookReader.showBooksByTitle("Life after life");
@@ -328,7 +331,8 @@ class BookReaderImplTest {
         bookReader.addBook(book4);
 
         String[] expectedBookList = {
-                "[Life after life [Jill McCorkle], Life after life [Kate Atkinson]]"
+                "Life after life [Jill McCorkle]",
+                "Life after life [Kate Atkinson]"
         };
 
         String[] realBookList = bookReader.showBooksByTitle("L");
@@ -420,7 +424,10 @@ class BookReaderImplTest {
         bookReader.addBook(book3);
         bookReader.addBook(book4);
 
-        String[] expectedReadBookList = {"[Life after life [Jill McCorkle], 1984 [George Orwell]]"};
+        String[] expectedReadBookList = {
+                "Life after life [Jill McCorkle]",
+                "1984 [George Orwell]"
+        };
 
         bookReader.markRead(book2, true);
         bookReader.markRead(book3, true);
@@ -442,11 +449,11 @@ class BookReaderImplTest {
         bookReader.addBook(book3);
         bookReader.addBook(book4);
 
-        String[] expectedReadBookList = {"[]"};
+        String[] expectedReadBookList = {};
 
         String[] realReadBookList = bookReader.showReadBooks();
 
-        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should not return not read books");
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "showReadBooks() Should not return not read books");
     }
 
     void shouldFindDefaultNotReadBooks() {
@@ -457,7 +464,10 @@ class BookReaderImplTest {
         bookReader.addBook(book1);
         bookReader.addBook(book2);
 
-        String[] expectedNotReadBookList = {"[Life after life [Jill McCorkle], 1984 [George Orwell]]"};
+        String[] expectedNotReadBookList = {
+                "Life after life [Jill McCorkle]",
+                "1984 [George Orwell]"
+        };
 
         String[] realNotReadBookList = bookReader.showNotReadBooks();
 
@@ -475,11 +485,11 @@ class BookReaderImplTest {
         bookReader.markRead(book1, true);
         bookReader.markRead(book2, true);
 
-        String[] expectedReadBookList = {"[]"};
+        String[] expectedReadBookList = {};
 
         String[] realReadBookList = bookReader.showNotReadBooks();
 
-        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "Should not return read books");
+        printTestResult(Arrays.equals(expectedReadBookList, realReadBookList), "showNotReadBooks() Should not return read books");
     }
 
     void shouldReturnUnReadBooks() {
@@ -495,7 +505,9 @@ class BookReaderImplTest {
 
         bookReader.markRead(book1, false);
 
-        String[] expectedReadBookList = {"[Fairy Tale [Stephen King]]"};
+        String[] expectedReadBookList = {
+                "Fairy Tale [Stephen King]"
+        };
 
         String[] realReadBookList = bookReader.showNotReadBooks();
 
