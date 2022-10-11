@@ -242,7 +242,9 @@ class BookReaderImplTest {
         bookReader.addBook(book3);
 
         String[] expectedBookList = {
-                "[1984 [George Orwell], Dreamland [Nicholas Sparks], Fairy Tale [Stephen King]]"
+                "1984 [George Orwell]",
+                "Dreamland [Nicholas Sparks]",
+                "Fairy Tale [Stephen King]"
         };
 
         String[] realBookList = bookReader.showBooks();

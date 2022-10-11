@@ -39,8 +39,7 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public String[] showBooks() {
-        Book[] books = booksInReader.toArray(new Book[0]);
-        return new String[]{Arrays.toString(books)};
+        return Arrays.stream(booksInReader.toArray()).map(Object::toString).toArray(String[]::new);
     }
 
     @Override
