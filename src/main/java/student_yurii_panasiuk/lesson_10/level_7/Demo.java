@@ -35,15 +35,15 @@ public class Demo {
             board.lowerTheChip(player1.getColor());
             board.lowerTheChip(player2.getColor());
             board.boardOutput();
-           // board.checkResult(player1.getColor());
-            //board.checkResult(player2.getColor());
+            board.checkResult(player1.getColor());
+            board.checkResult(player2.getColor());
 
     }
 
 
         static void firstPlayerTurn (White_player player1,Playground board) {
 
-            System.out.println("White player, type your coordinattes");
+           6
             Scanner scanner = new Scanner(System.in);
             int player1Coordinates[] = new int[2];
             player1Coordinates[0] = 0;

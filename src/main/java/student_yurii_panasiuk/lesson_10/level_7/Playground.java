@@ -38,7 +38,7 @@ class Playground {
             }
             }
     }
-/*
+
     void checkResult (Figures color) {
         int i;
         int j;
@@ -57,20 +57,34 @@ class Playground {
                     int rightUpCounter = 0;
                     int rightDownCounter = 0;
 
-                    // организуем проверку вверх
-                    for ( up = i; up == 0 ; up-- ) { if (board[up][j] == color) {upCounter++;} }
-                   // // организуем проверку вниз
-                  //  for (up = i; up < (board.length); up++) { if (board[up][j] == color) {downCounter++;} }
-                    // организуем проверку вправо
-                    for (right = j; right < (board[i].length); right++) { if (board[i][right] == color) {rightCounter++;} }
-                   // // организуем проверку влево
-                    //for (right = j; right == 0; right--) { if (board[i][right] == color) {leftCounter++;} }
+                    // организуем проверку по вертикали
+                    for (up = i; up < (board.length); up++) {
+                          if (board[up][j] == color) {
+                            downCounter++;
+                                if (downCounter == 4) {
+                                    System.out.println( color + "player WIN's");
+                                    return;}
+                          }
+                    }
+                    // организуем проверку по горизонтали
+                    for (right = j; right < (board[i].length); right++) {
+                        if (board[i][right] == color) {
+                            rightCounter++;
+                            if (rightCounter == 4) {
+                                System.out.println( color + "player WIN's");
+                                return;
+                            }
+                        }
+                    }
 
-                    // организуем проверку вверх/вправо
-                    for (rightUp = i; rightUp == 0; rightUp--) {
-                        for (rightUpJ = j; rightUpJ < board[i].length; rightUpJ++) {
 
-                            if (board[rightUp][rightUpJ] == color) {rightUpCounter++;}
+                    // организуем проверку по диагонали1
+                    for (up = i; up < (board.length); up++) {
+                        if (board[up][j+1] == color) {
+                            rightDownCounter++;
+                            if (rightDownCounter == 4) {
+                                System.out.println( color + "player WIN's");
+                                return;}
                         }
                     }
                     // организуем проверку вниз/вправо
@@ -89,5 +103,5 @@ class Playground {
         }
     }
 
- */
+
 }
