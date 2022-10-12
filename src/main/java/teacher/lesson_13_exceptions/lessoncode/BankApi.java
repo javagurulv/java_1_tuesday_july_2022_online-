@@ -20,7 +20,7 @@ public class BankApi {
 	}
 
 	public static void main(String[] args) throws AccessDeniedException {
-		try {
+//		try {
 			BankApi bankApi = new BankApi();
 			Optional<String> result = bankApi.getClientFullName("sds", 1L);
 			if (result.isEmpty()) {
@@ -28,12 +28,14 @@ public class BankApi {
 			} else {
 				System.out.println("Client full name " + result.get());
 			}
+/*
 		} catch (AccessDeniedException exception) {
 			System.out.println(exception.getMessage());
 			System.out.println(exception.getInvalidSequrityKey());
 		} finally {
 			System.out.println("Finally");
 		}
+*/
 	}
 
 }
