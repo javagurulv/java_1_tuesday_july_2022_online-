@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_10.level_1_2;
+package student_olegs_radigins.lesson_10.level_1_2_3;
 
 class Transaction {
     private Trader trader;
