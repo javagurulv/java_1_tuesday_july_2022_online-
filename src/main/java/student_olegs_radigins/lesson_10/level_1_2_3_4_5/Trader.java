@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_10.level_1_2_3_4;
+package student_olegs_radigins.lesson_10.level_1_2_3_4_5;
 
 class Trader {
     private String fullName;
