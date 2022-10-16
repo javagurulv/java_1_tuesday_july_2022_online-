@@ -1,0 +1,40 @@
+WARNING: Класс ниже не реализует заданной функциональности.
+По заданию в данном классе должен быть реализован метод
+
+    boolean isFraud(Transaction t) {
+
+    }
+
+который бы давал ответ на вопрос является ли транзакция мошенничеством
+или нет.
+
+class FraudDetector {
+
+    String fraudTraderNick = "Pokemone";
+    int maximumAmount = 1000000;
+    String fraudCity = "Сидней";
+    String stateBlocked = "Ямайка";
+
+    boolean isFraudName(Transaction t) {
+        return t.getTrader().getFullName().equals(fraudTraderNick);
+    }
+
+    boolean isMaximum(Transaction t) {
+        return t.getAmount() > maximumAmount;
+    }
+
+    boolean isFraudCity(Transaction t) {
+        return t.getTrader().getCity().equals(fraudCity);
+    }
+
+    boolean isFraudState(Transaction t) {
+        return t.getTrader().getState().equals(stateBlocked);
+    }
+
+    boolean Rule5 (Transaction t) {
+        Rule_5 stateAndAmount = new Rule_5();
+        return stateAndAmount.getState().equals(t.getTrader().getState()) &&
+                stateAndAmount.getMaximumAmount() < t.getAmount();
+    }
+
+}

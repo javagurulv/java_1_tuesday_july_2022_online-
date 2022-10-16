@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_9.level_1.task_3;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class PrivateClass {
 /*
  Modifier 'private' not allowed here

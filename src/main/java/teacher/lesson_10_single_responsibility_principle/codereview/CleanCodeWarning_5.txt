@@ -1,0 +1,71 @@
+WARNING: При использовании иерархии наследования
+неправильно объявлять одно и то же свойство на разных
+уровнях в иерархии наследования. Если свойство объявлено
+в родительском классе его нужно правильно инициализировать
+и не объявлять заново в классах потомков.
+
+enum Figure {
+    BLACK, WHITE, EMPTY
+}
+
+abstract class Player {
+
+    private Figure color;
+
+     public Figure getColor() {
+         return color;
+     }
+
+}
+
+ class BlackPlayer extends Player {
+
+     private Figure color = Figure.BLACK;
+
+     @Override
+     public Figure getColor() {
+         return color;
+     }
+ }
+
+ class WhitePlayer extends Player {
+
+     Figure color = Figure.WHITE;
+
+     @Override
+     public Figure getColor() {
+         return color;
+     }
+ }
+
+Лучше:
+
+enum Figure {
+    BLACK, WHITE, EMPTY
+}
+
+abstract class Player {
+
+    private Figure color;
+
+    public Players(Figure color) {
+        this.color = color;
+    }
+
+     public Figure getColor() {
+         return color;
+     }
+
+}
+
+ class BlackPlayer extends Player {
+     public BlackPlayer() {
+        super(Figure.BLACK);
+     }
+ }
+
+ class WhitePlayer extends Player {
+     public WhitePlayer() {
+        super(Figure.WHITE);
+     }
+ }

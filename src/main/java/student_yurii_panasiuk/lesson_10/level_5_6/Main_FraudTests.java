@@ -2,6 +2,11 @@ package student_yurii_panasiuk.lesson_10.level_5_6;
 
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_10_single_responsibility_principle/codereview/CleanCodeWarning_4.txt")
 public class Main_FraudTests {
     public static void main(String[] args) {
     List<FraudRule> listOfFraudRules =List.of(

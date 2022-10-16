@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_10.level_5_6;
 
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FraudDetector {
 
      List<FraudRule> listOfRules;
