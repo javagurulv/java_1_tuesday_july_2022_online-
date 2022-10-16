@@ -1,4 +1,4 @@
-package student_olegs_radigins.lesson_10.level_1_2_3;
+package student_olegs_radigins.lesson_10.level_1_2_3_4;
 
 class FraudDetectorTest {
     public static void main(String[] args) {
@@ -9,10 +9,14 @@ class FraudDetectorTest {
         fraudDetectorTest.negativeMaxAmountTest();
         fraudDetectorTest.positiveFraudCityTest();
         fraudDetectorTest.negativeFraudCityTest();
+        fraudDetectorTest.positiveFraudCountryTest();
+        fraudDetectorTest.negativeFraudCountryTest();
+        fraudDetectorTest.positiveWarningCountryTest();
+        fraudDetectorTest.negativeWarningCountryTest();
 
     }
         void positiveFraudNameTest(){
-        Trader fraudTrader = new Trader("Pokemon", "London");
+        Trader fraudTrader = new Trader("Pokemon", "London", "UK");
         Transaction transaction = new Transaction(fraudTrader, 1);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isFraudName(transaction) == true){
@@ -23,7 +27,7 @@ class FraudDetectorTest {
     }
 
     void negativeFraudNameTest(){
-        Trader trader = new Trader("NePokemon", "London");
+        Trader trader = new Trader("NePokemon", "London", "UK");
         Transaction transaction = new Transaction(trader, 1);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isFraudName(transaction) == false){
@@ -34,7 +38,7 @@ class FraudDetectorTest {
     }
 
     void positiveMaxAmountTest(){
-        Trader fraudTrader = new Trader("NePokemon", "London");
+        Trader fraudTrader = new Trader("NePokemon", "London", "UK");
         Transaction transaction = new Transaction(fraudTrader, 2000000);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isMoreThanMaximum(transaction) == true){
@@ -45,7 +49,7 @@ class FraudDetectorTest {
     }
 
     void negativeMaxAmountTest(){
-        Trader fraudTrader = new Trader("NePokemon", "London");
+        Trader fraudTrader = new Trader("NePokemon", "London", "UK");
         Transaction transaction = new Transaction(fraudTrader, 200000);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isMoreThanMaximum(transaction) == false){
@@ -55,7 +59,7 @@ class FraudDetectorTest {
         }
     }
     void positiveFraudCityTest(){
-        Trader fraudTrader = new Trader("NePokemon", "Сидней");
+        Trader fraudTrader = new Trader("NePokemon", "Сидней", "UK");
         Transaction transaction = new Transaction(fraudTrader, 1);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isFraudCity(transaction) == true){
@@ -66,13 +70,57 @@ class FraudDetectorTest {
     }
 
     void negativeFraudCityTest(){
-        Trader trader = new Trader("NePokemon", "London");
+        Trader trader = new Trader("NePokemon", "London", "UK");
         Transaction transaction = new Transaction(trader, 1);
         FraudDetector fraudDetector = new FraudDetector();
         if(fraudDetector.isFraudCity(transaction) == false){
             System.out.println("Not fraud city test Ok");
         }else {
             System.out.println("Not fraud city test Fail");
+        }
+    }
+
+    void positiveFraudCountryTest(){
+        Trader fraudTrader = new Trader("Pokemon", "London", "Ямайка");
+        Transaction transaction = new Transaction(fraudTrader, 1);
+        FraudDetector fraudDetector = new FraudDetector();
+        if(fraudDetector.isFraudCountry(transaction) == true){
+            System.out.println("Fraud country test Ok");
+        }else {
+            System.out.println("Fraud country test Fail");
+        }
+    }
+
+    void negativeFraudCountryTest(){
+        Trader trader = new Trader("NePokemon", "London", "UK");
+        Transaction transaction = new Transaction(trader, 1);
+        FraudDetector fraudDetector = new FraudDetector();
+        if(fraudDetector.isFraudCountry(transaction) == false){
+            System.out.println("Not fraud country test Ok");
+        }else {
+            System.out.println("Not fraud country test Fail");
+        }
+    }
+
+    void positiveWarningCountryTest(){
+        Trader fraudTrader = new Trader("Pokemon", "London", "Germany");
+        Transaction transaction = new Transaction(fraudTrader, 2200);
+        FraudDetector fraudDetector = new FraudDetector();
+        if(fraudDetector.isWarningCountry(transaction) == true){
+            System.out.println("Warning country test Ok");
+        }else {
+            System.out.println("Warning country test Fail");
+        }
+    }
+
+    void negativeWarningCountryTest(){
+        Trader trader = new Trader("NePokemon", "London", "germany");
+        Transaction transaction = new Transaction(trader, 2000);
+        FraudDetector fraudDetector = new FraudDetector();
+        if(fraudDetector.isWarningCountry(transaction) == false){
+            System.out.println("Not fraud country test Ok");
+        }else {
+            System.out.println("Not fraud country test Fail");
         }
     }
 }

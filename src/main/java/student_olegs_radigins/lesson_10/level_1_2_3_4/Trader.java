@@ -1,12 +1,15 @@
-package student_olegs_radigins.lesson_10.level_1_2_3;
+package student_olegs_radigins.lesson_10.level_1_2_3_4;
 
 class Trader {
     private String fullName;
     private String city;
+    private String country;
 
-    public Trader(String fullName, String city) {
+
+    public Trader(String fullName, String city, String country) {
         this.fullName = fullName;
         this.city = city;
+        this.country = country;
     }
 
     public String getFullName() {
@@ -15,5 +18,9 @@ class Trader {
 
     public String getCity() {
         return city;
+    }
+
+    public String getCountry() {
+        return country;
     }
 }
