@@ -6,6 +6,9 @@ package student_yurii_panasiuk.lesson_10.level_1_4.task_1_16;
 
     */
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Trader {
 
     private String fullName;

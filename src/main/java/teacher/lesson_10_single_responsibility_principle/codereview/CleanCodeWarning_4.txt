@@ -1,12 +1,10 @@
-package student_yurii_panasiuk.lesson_10.level_5_6;
+WARNING: В классе ниже написано много автоматических тестов.
+Строго говоря это скорее acceptance тесты. Суть acceptance
+тестов заключается в тестировании всей системы целиком с точки
+зрения пользователя.
+В коде ниже плохо то, что отдельные тест кейсы свалены в одну кучу.
+В идеале каждый тест кейс должен быть написан в своём отдельном методе.
 
-import java.util.List;
-
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
-
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_10_single_responsibility_principle/codereview/CleanCodeWarning_4.txt")
 public class Main_FraudTests {
     public static void main(String[] args) {
     List<FraudRule> listOfFraudRules =List.of(
@@ -69,6 +67,6 @@ public class Main_FraudTests {
             System.out.println("Transaction details: ");
             TestResultOutput.transactionDataOutput(transaction4);
         }
+    }
 
-}
 }

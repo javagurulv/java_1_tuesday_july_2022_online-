@@ -1,0 +1,18 @@
+WARNING: Класс ниже не похож на правило. Обычно правило принимает
+какое-то решение. В коде ниже этот класс не принимает никакого
+решения, а просто содержит свойства с заранее заданными значениями.
+
+public class Rule_5 {
+
+    private String state = "Germany";
+    private int maximumAmount = 1000;
+
+     String getState() {
+        return state;
+    }
+
+     int getMaximumAmount() {
+        return maximumAmount;
+    }
+
+}
