@@ -60,7 +60,7 @@ class Test {
 
         int trstcounter = 0;
         for (int i = 0; i < answer.size(); i++) {
-            DayOfTheWeekDetectorIfVersion2 detectorIfVersion2 = new DayOfTheWeekDetectorIfVersion2();
+            DayOfTheWeekDetectorVersion2 detectorIfVersion2 = new DayOfTheWeekDetectorVersion2();
             // или третий входящий параметр сделать
             if (detectorIfVersion2.detectDayName(input.get(i)).equals(answer.get(i))) {
                 trstcounter++;
