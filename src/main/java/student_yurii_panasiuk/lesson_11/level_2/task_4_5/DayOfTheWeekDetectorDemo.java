@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_2.task_4;
+package student_yurii_panasiuk.lesson_11.level_2.task_4_5;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ class DayOfTheWeekDetectorDemo {
      DayOfTheWeekDetectorDemo(DayOfTheWeekDetector dayOfTheWeekDetector) {
          this.dayOfTheWeekDetector = dayOfTheWeekDetector;
      }
-      void printFoundDayOfTheWeek() {
+     void printFoundDayOfTheWeek() {
           System.out.println (foundDayOfTheWeek);
      }
      void setFoundDayOfTheWeek(String foundDayOfTheWeek) {

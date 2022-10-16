@@ -1,11 +1,11 @@
-package student_yurii_panasiuk.lesson_11.level_2.task_4;
+package student_yurii_panasiuk.lesson_11.level_2.task_4_5;
 
 import java.util.List;
 
 class Test {
      public static void main(String[] args) {
 
-         List testReturn = List.of (
+         List<String> testReturn = List.of (
              "Monday",
              "Tuesday",
              "Wednesday",
@@ -14,7 +14,7 @@ class Test {
              "Saturday",
              "Sunday",
              "Please input a valid number between 1 and 7");
-         List testInput = List.of (
+         List<Integer> testInput = List.of (
                  1,
                  2,
                  3,
@@ -25,18 +25,14 @@ class Test {
                  0);
 
 
-         Test test1 = new Test();
-
         for (int i = 0; i < testInput.size(); i++) {
         System.out.print(" Test 1 case " + (i+1) + " is ");
-        test1.testResult (answersComparator1(testInput, testReturn));
+        testResult (answersComparator1(testInput, testReturn));
          }
 
-         Test test2 = new Test();
-
-         for (int i = 0; i < testInput.size(); i++) {
-             System.out.print(" Test 2 case " + (i+1) + " is ");
-             test1.testResult (answersComparator2(testInput, testReturn));
+        for (int i = 0; i < testInput.size(); i++) {
+        System.out.print(" Test 2 case " + (i+1) + " is ");
+        testResult (answersComparator2(testInput, testReturn));
          }
 
 
@@ -45,14 +41,13 @@ class Test {
     static boolean answersComparator1 (List<Integer> input, List<String> answer) {
 
             int trstcounter = 0;
-        for (int i = 0; i < answer.size(); i++) {
-            DayOfTheWeekDetectorIfVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorIfVersion1();
-            // или третий входящий параметр сделать
-            if (detectorIfVersion1.detectDayName(input.get(i)).equals(answer.get(i))) {
-                trstcounter++;
+            for (int i = 0; i < answer.size(); i++) {
+                DayOfTheWeekDetectorIfVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorIfVersion1();
+                    // или третий входящий параметр сделать
+                    if (detectorIfVersion1.detectDayName(input.get(i)).equals(answer.get(i))) {
+                        trstcounter++;
+                    }
             }
-
-        }
         return trstcounter == input.size();
     }
 
@@ -61,13 +56,12 @@ class Test {
         int trstcounter = 0;
         for (int i = 0; i < answer.size(); i++) {
             DayOfTheWeekDetectorVersion2 detectorIfVersion2 = new DayOfTheWeekDetectorVersion2();
-            // или третий входящий параметр сделать
-            if (detectorIfVersion2.detectDayName(input.get(i)).equals(answer.get(i))) {
-                trstcounter++;
-            }
-
+                // или третий входящий параметр сделать
+                if (detectorIfVersion2.detectDayName(input.get(i)).equals(answer.get(i))) {
+                    trstcounter++;
+                }
         }
-        return trstcounter == input.size();
+      return trstcounter == input.size();
     }
     static void testResult(boolean check) {
         if (check) {

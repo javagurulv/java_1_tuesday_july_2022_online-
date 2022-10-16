@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_2.task_4;
+package student_yurii_panasiuk.lesson_11.level_2.task_4_5;
 
 class DayOfTheWeekDetectorVersion2 implements DayOfTheWeekDetector{
 
