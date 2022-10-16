@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_2_3.task_4_5_6;
+package student_yurii_panasiuk.lesson_11.level_2_3_.task_4_5_6;
 
 import java.util.Scanner;
 
