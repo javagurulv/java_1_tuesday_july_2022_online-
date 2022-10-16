@@ -6,6 +6,11 @@ package student_yurii_panasiuk.lesson_9.level_2.task_10;
         конструктор с одним параметром.
  */
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "Смотри src/main/java/teacher/lesson_9_objects_equality/codereview/CleanCodeWarning_1.txt")
 class ConstructorChaining {
 
     private String constructorName;

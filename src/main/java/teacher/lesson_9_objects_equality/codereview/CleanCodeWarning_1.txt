@@ -1,0 +1,34 @@
+WARNING: При constructor chaining передавайте в конструктор
+с меньшим числом параметров реальные значения, а не hard coded values.
+
+class ConstructorChaining {
+
+    private String constructorName;
+    private int parameterCount;
+
+    private ConstructorChaining(String constructorName) {
+        this.constructorName = constructorName;
+    }
+
+    public ConstructorChaining(String constructorName, int parameterCount) {
+        this("test");
+        this.parameterCount = parameterCount;
+    }
+}
+
+Лучше:
+
+class ConstructorChaining {
+
+    private String constructorName;
+    private int parameterCount;
+
+    private ConstructorChaining(String constructorName) {
+        this.constructorName = constructorName;
+    }
+
+    public ConstructorChaining(String constructorName, int parameterCount) {
+        this(constructorName);
+        this.parameterCount = parameterCount;
+    }
+}

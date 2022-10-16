@@ -3,6 +3,9 @@ package student_yurii_panasiuk.lesson_9.level_1.task_5;
 
 import static java.math.BigDecimal.valueOf;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Safe2Demo {
      public static void main(String[] args) {
      Safe2 safe2Demo = new Safe2("pass", valueOf(10));
