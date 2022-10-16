@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_2.task_4_5;
+package student_yurii_panasiuk.lesson_11.level_2.task_4_5_6;
 
 import java.util.Scanner;
 
@@ -24,11 +24,11 @@ class DayOfTheWeekDetectorDemo {
      }
     public static void main(String[] args) {
 
-       DayOfTheWeekDetectorIfVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorIfVersion1();
+       DayOfTheWeekDetectorVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorVersion1();
        DayOfTheWeekDetectorDemo version1 = new DayOfTheWeekDetectorDemo(detectorIfVersion1);
        version1.run();
 
-       DayOfTheWeekDetectorIfVersion1 detectorVersion2 = new DayOfTheWeekDetectorIfVersion1();
+       DayOfTheWeekDetectorVersion1 detectorVersion2 = new DayOfTheWeekDetectorVersion1();
        DayOfTheWeekDetectorDemo version2 = new DayOfTheWeekDetectorDemo(detectorVersion2);
        version2.run();
 

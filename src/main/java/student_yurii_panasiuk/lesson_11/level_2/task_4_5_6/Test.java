@@ -1,20 +1,21 @@
-package student_yurii_panasiuk.lesson_11.level_2.task_4_5;
+package student_yurii_panasiuk.lesson_11.level_2.task_4_5_6;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 class Test {
      public static void main(String[] args) {
 
-         List<String> testReturn = List.of (
-             "Monday",
-             "Tuesday",
-             "Wednesday",
-             "Thursday",
-             "Friday",
-             "Saturday",
-             "Sunday",
-             "Please input a valid number between 1 and 7");
-         List<Integer> testInput = List.of (
+         List<String> testReturn = List.of(
+                 "Monday",
+                 "Tuesday",
+                 "Wednesday",
+                 "Thursday",
+                 "Friday",
+                 "Saturday",
+                 "Sunday",
+                 "Please input a valid number between 1 and 7");
+         List<Integer> testInput = List.of(
                  1,
                  2,
                  3,
@@ -24,15 +25,24 @@ class Test {
                  7,
                  0);
 
+         Consumer<Boolean> printTestResult = check -> {   // функциональный интерфейс - интерфейс с одним абстрактным методом
+             if (check) {
+                 System.out.println(" OK");
+             } else {
+                 System.out.println(" FAIL");
+             }
+         };
 
         for (int i = 0; i < testInput.size(); i++) {
         System.out.print(" Test 1 case " + (i+1) + " is ");
-        testResult (answersComparator1(testInput, testReturn));
+//      testResult (answersComparator1(testInput, testReturn));
+        printTestResult.accept(answersComparator1(testInput, testReturn));
          }
 
         for (int i = 0; i < testInput.size(); i++) {
         System.out.print(" Test 2 case " + (i+1) + " is ");
-        testResult (answersComparator2(testInput, testReturn));
+//      testResult (answersComparator2(testInput, testReturn));
+        printTestResult.accept(answersComparator2(testInput, testReturn));
          }
 
 
@@ -42,7 +52,7 @@ class Test {
 
             int trstcounter = 0;
             for (int i = 0; i < answer.size(); i++) {
-                DayOfTheWeekDetectorIfVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorIfVersion1();
+                DayOfTheWeekDetectorVersion1 detectorIfVersion1 = new DayOfTheWeekDetectorVersion1();
                     // или третий входящий параметр сделать
                     if (detectorIfVersion1.detectDayName(input.get(i)).equals(answer.get(i))) {
                         trstcounter++;
@@ -63,13 +73,16 @@ class Test {
         }
       return trstcounter == input.size();
     }
-    static void testResult(boolean check) {
+  /*
+    static void testResult(boolean check) {   // заменил это функциональным интерфейсом Consumer
         if (check) {
             System.out.println(" OK");
         } else {
             System.out.println(" FAIL");
         }
-    }
+     }
+
+   */
 }
 
 
