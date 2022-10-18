@@ -1,0 +1,24 @@
+WARNING: В коде ниже Optional используется внутри метода,
+но не используется для возвращаемого значения. Тип Optional
+как раз был придуман для того, чтобы использовать его в методах
+поиска.
+
+    public int findMaxNumber(int[] array) {
+        int maxValue = -1;
+        OptionalInt max = Arrays.stream(array).max();
+        if(max.isPresent()) {
+            maxValue = max.getAsInt();
+        }
+        return maxValue;
+    }
+
+Лучше:
+
+    public Optional<Integer> findMaxNumber(int[] array) {
+        OptionalInt max = Arrays.stream(array).max();
+        if(max.isPresent()) {
+            return Optional.of(max.getAsInt());
+        } else {
+            return Optional.empty();
+        }
+    }
