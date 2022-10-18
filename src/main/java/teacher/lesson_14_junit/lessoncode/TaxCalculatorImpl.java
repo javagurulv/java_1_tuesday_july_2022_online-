@@ -7,4 +7,8 @@ public class TaxCalculatorImpl implements TaxCalculator {
 		return income * 0.25;
 	}
 
+	public int calc() {
+		return 0;
+	}
+
 }
