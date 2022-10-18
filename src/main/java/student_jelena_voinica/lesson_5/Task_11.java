@@ -2,6 +2,9 @@ package student_jelena_voinica.lesson_5;
 
 import java.util.Scanner;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class Task_11 {
     public static void main(String[]args){
         System.out.println("Input number");
