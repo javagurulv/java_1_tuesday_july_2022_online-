@@ -4,6 +4,9 @@ import java.util.Optional;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class OptionalCompatibleInMemoryDatabaseTest {
 
     public static void main(String[] args) {

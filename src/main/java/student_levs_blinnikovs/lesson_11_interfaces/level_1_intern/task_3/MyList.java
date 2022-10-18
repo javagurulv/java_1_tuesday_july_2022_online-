@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_1_intern.task_3;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 interface MyList {
 
     void add(int element);

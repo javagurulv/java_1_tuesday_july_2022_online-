@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_11_interfaces.level_2_intern.task_4_5;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class DayOfTheWeekDetectorTest {
 
     public static void main(String[] args) {

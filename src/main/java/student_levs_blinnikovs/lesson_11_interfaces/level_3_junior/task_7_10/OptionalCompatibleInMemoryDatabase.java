@@ -2,6 +2,9 @@ package student_levs_blinnikovs.lesson_11_interfaces.level_3_junior.task_7_10;
 
 import java.util.Optional;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class OptionalCompatibleInMemoryDatabase implements OptionalProductDatabase {
 
     Product[] products = new Product[0];

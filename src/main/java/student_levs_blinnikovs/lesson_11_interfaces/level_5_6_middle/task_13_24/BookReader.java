@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_5_6_middle.task_13_24;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 interface BookReader {
 
     boolean addBook(Book book);
