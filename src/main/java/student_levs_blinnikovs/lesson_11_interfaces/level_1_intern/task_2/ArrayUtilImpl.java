@@ -1,6 +1,7 @@
 package student_levs_blinnikovs.lesson_11_interfaces.level_1_intern.task_2;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.Random;
 
@@ -28,23 +29,24 @@ class ArrayUtilImpl implements ArrayUtil {
     }
 
     @Override
-    public int findMaxNumber(int[] array) {
-        int maxValue = -1;
+    public Optional<Integer> findMaxNumber(int[] array) {
         OptionalInt max = Arrays.stream(array).max();
         if(max.isPresent()) {
-            maxValue = max.getAsInt();
+            return Optional.of(max.getAsInt());
+        } else {
+            return Optional.empty();
         }
-        return maxValue;
     }
 
     @Override
-    public int findMinNumber(int[] array) {
-        int minValue = -1;
+    public Optional<Integer> findMinNumber(int[] array) {
         OptionalInt min = Arrays.stream(array).min();
         if(min.isPresent()) {
-            minValue = min.getAsInt();
+            return Optional.of(min.getAsInt());
+        } else {
+            return Optional.empty();
         }
-        return minValue;
+
     }
 
 }
