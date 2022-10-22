@@ -23,6 +23,7 @@ class WordServiceTest {
         String expectedResult = "bb";
         System.out.println("Negative test:");
         return wordService.findMostFrequentWord(text).equals(expectedResult);
+
     }
     void printResult(boolean result){
         if (result){
