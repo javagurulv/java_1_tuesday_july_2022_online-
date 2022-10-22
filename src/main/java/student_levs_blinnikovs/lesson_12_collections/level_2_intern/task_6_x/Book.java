@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_12_collections.level_1_intern.task_6;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
 import java.util.Objects;
 

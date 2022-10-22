@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_12_collections.level_1_intern.task_6;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
 class Demo {
     public static void main(String[] args) {
@@ -16,6 +16,14 @@ class Demo {
         System.out.println("Id of 2nd book should return 2: " + book2.getId());
         System.out.println("Id of 3rd book should return 3: " + book3.getId());
 
+        System.out.println("Deletion demos");
+        System.out.println("Result of 1st delete should return true: " + db.delete(1L));
+        System.out.println("Result of not existing delete should return false: " + db.delete(5L));
+        System.out.println("Result of 2nd delete should return true: " + db.delete(2L));
+        System.out.println("Result of 3rd delete should return true: " + db.delete(3L));
+        System.out.println("Result of previously existing (i.e. 3L) delete should return false: " + db.delete(3L));
+
+        // TODO turn demo scenarios into tests
 
     }
 }
