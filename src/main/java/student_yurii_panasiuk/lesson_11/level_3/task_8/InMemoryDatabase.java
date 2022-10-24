@@ -3,6 +3,8 @@ package student_yurii_panasiuk.lesson_11.level_3.task_8;
 
 import java.util.ArrayList;
 
+// тесты через JUnit позитивные только
+
 public class InMemoryDatabase implements ProductDatabase {
 
      ArrayList<Product> products = new ArrayList<>();
