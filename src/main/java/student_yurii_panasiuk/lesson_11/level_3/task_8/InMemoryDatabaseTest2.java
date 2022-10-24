@@ -1,6 +1,6 @@
 package student_yurii_panasiuk.lesson_11.level_3.task_8;
 
- class InMemoryDatabaseTest2 {
+ class InMemoryDatabaseTest2 { // сделал автоматический тест. это как тренировка
 
      public static void main(String[] args) {
 
