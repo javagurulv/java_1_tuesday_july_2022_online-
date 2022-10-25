@@ -37,6 +37,7 @@ public class BookReaderImplTest {
 
        assertTrue( bookReaderDemo.bookAdd(book1,library) );
        assertTrue( bookReaderDemo.bookAdd(book2,library) );
+       assertFalse( bookReaderDemo.bookAdd(book2,library) );
        assertFalse( bookReaderDemo.bookAdd(book1,library) );
        assertFalse( bookReaderDemo.bookAdd(book4,library) );
        assertFalse( bookReaderDemo.bookAdd(book5,library) );

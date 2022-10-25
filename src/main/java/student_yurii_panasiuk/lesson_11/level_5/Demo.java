@@ -38,11 +38,11 @@ public class Demo {
 
         BookReaderImpl bookReaderDemo = new BookReaderImpl();
 
-        bookReaderDemo.bookAdd(book1,library);
-        bookReaderDemo.bookAdd(book2,library);
-        bookReaderDemo.bookAdd(book3,library);
 
 
+        System.out.println(bookReaderDemo.bookAdd(book1,library));
+        System.out.println(bookReaderDemo.bookAdd(book2,library));
+        System.out.println(bookReaderDemo.bookAdd(book3,library));
         System.out.println(bookReaderDemo.bookAdd(book1,library));
         System.out.println(bookReaderDemo.bookAdd(book4,library));
         System.out.println(bookReaderDemo.bookAdd(book5,library));
