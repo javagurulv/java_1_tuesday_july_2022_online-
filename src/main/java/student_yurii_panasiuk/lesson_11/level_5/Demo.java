@@ -24,6 +24,14 @@ public class Demo {
         book3.setBookAutor("Tolkien");
         book3.setBookTitle("The Return of the King");
 
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+        //  book4.setBookTitle("Java");
+
+        Book book5 = new Book();
+        //  book5.setBookAutor("Herbert Schildt");
+        book5.setBookTitle("Java");
+
 
 
         BookList library = new BookList();
@@ -36,6 +44,8 @@ public class Demo {
 
 
         System.out.println(bookReaderDemo.bookAdd(book1,library));
+        System.out.println(bookReaderDemo.bookAdd(book4,library));
+        System.out.println(bookReaderDemo.bookAdd(book5,library));
 
 
 

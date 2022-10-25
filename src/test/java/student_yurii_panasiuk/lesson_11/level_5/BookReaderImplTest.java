@@ -9,9 +9,13 @@ public class BookReaderImplTest {
     @Test
     public void bookAdd() {
 
-        Book book0 = new Book();
-        book0.setBookAutor("Herbert Schildt");
-        book0.setBookTitle("Java");
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+      //  book4.setBookTitle("Java");
+
+        Book book5 = new Book();
+      //  book5.setBookAutor("Herbert Schildt");
+        book5.setBookTitle("Java");
 
         Book book1 = new Book();
         book1.setBookAutor("Tolkien");
@@ -34,6 +38,8 @@ public class BookReaderImplTest {
        assertTrue( bookReaderDemo.bookAdd(book1,library) );
        assertTrue( bookReaderDemo.bookAdd(book2,library) );
        assertFalse( bookReaderDemo.bookAdd(book1,library) );
+       assertFalse( bookReaderDemo.bookAdd(book4,library) );
+       assertFalse( bookReaderDemo.bookAdd(book5,library) );
 
     }
 }

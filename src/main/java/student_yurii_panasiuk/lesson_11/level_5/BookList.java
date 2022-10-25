@@ -9,8 +9,10 @@ class BookList {
 
 
 
-    void setBook(Book newBook) {
-        if (!this.books.contains(newBook)) {
+    void addBook(Book newBook) {
+        if (!this.books.contains(newBook) &&
+                newBook.getBookAutor() !=null &&
+                newBook.getBookTitle() !=null ) {
             this.books.add(newBook);
         }
     }

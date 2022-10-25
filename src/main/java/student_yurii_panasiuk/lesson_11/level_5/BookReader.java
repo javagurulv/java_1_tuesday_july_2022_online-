@@ -4,8 +4,6 @@ public interface BookReader {
 
   //  Book newBook;
 
-   public boolean bookAdd(Book newBook, BookList librar);
-
-
+    boolean bookAdd(Book newBook, BookList librar);
 
 }
