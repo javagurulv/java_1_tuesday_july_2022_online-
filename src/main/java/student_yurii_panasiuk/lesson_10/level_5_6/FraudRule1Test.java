@@ -1,12 +1,16 @@
 package student_yurii_panasiuk.lesson_10.level_5_6;
 
-import teacher.codereview.CodeReview;
-import teacher.codereview.CodeReviewComment;
+//import teacher.codereview.CodeReview;
+//import teacher.codereview.CodeReviewComment;
 
-@CodeReview(approved = false)
-@CodeReviewComment(teacher = "А где эти тесты запускаются?")
+//@CodeReview(approved = false)
+//@CodeReviewComment(teacher = "А где эти тесты запускаются?")
 class FraudRule1Test {
-
+    public static void main(String[] args) {
+        FraudRule1Test test = new FraudRule1Test();
+        test.fraudNickPositiveTest();
+        test.fraudNickNegativeTest();
+    }
      void fraudNickPositiveTest(){
         Trader trader1 = new Trader("Pokemone", "City1");
         int moneyAmmount = 1;
