@@ -8,4 +8,11 @@ package student_yurii_panasiuk.lesson_11.level_5;
         return library.librarySize() != sizeBeforeAddition;
       }
 
+     @Override
+     public boolean bookDel (Book newBook, BookList library) {
+         int sizeBeforeAddition = library.librarySize();
+         library.delBook(newBook);
+         return library.librarySize() != sizeBeforeAddition;
+     }
+
 }

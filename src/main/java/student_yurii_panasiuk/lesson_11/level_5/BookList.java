@@ -17,6 +17,14 @@ class BookList {
         }
     }
 
+    void delBook(Book newBook) {
+        if (this.books.contains(newBook) &&
+                newBook.getBookAutor() !=null &&
+                newBook.getBookTitle() !=null ) {
+            this.books.remove(newBook);
+        }
+    }
+
     ArrayList<Book> getBooks() {
 
         return this.books;

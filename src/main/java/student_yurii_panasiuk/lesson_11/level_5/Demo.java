@@ -46,6 +46,10 @@ public class Demo {
         System.out.println(bookReaderDemo.bookAdd(book1,library));
         System.out.println(bookReaderDemo.bookAdd(book4,library));
         System.out.println(bookReaderDemo.bookAdd(book5,library));
+        System.out.println("\\n");
+        System.out.println(bookReaderDemo.bookDel(book1,library));
+        System.out.println(bookReaderDemo.bookDel(book1,library));
+        System.out.println(bookReaderDemo.bookDel(book4,library));
 
 
 
