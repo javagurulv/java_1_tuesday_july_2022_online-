@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
 import org.junit.Test;
 
@@ -224,7 +224,5 @@ public class BookReaderImplTest {
         assertTrue(bookReaderDemo.setReadStatus(1,library));
         assertTrue(bookReaderDemo.setReadStatus(2,library));
         assertFalse(bookReaderDemo.setReadStatus(5,library));
-
     }
-
 }

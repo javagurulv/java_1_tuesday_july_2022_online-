@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,6 @@ class BookList  {
                 this.books.add(newBook);
         }
     }
-
 
     Book getBookByID (int id){
         Book foundBook = new Book();
@@ -49,7 +48,6 @@ class BookList  {
             System.out.print("id" + "  " + book.getId());
             System.out.print("      ");
             System.out.println("status" + "  " + book.getStatus());
-
         }
     }
     BookList searchByAutror (String searchedAuthor) {
@@ -94,7 +92,6 @@ class BookList  {
         return searchResultPartially;
     }
 
-
     int librarySize (){
         if (books.isEmpty()) {
             return 0;
@@ -105,8 +102,6 @@ class BookList  {
         Book extractBook (int bookNumber){
            return this.books.get(bookNumber);
         }
-
-
 
  }
 

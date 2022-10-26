@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
  class Book {
      private String bookAutor;
@@ -8,16 +8,15 @@ package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
 
      private ReadStatus status = ReadStatus.UNREAD;
 
+     Book() {
+     }
      public ReadStatus getStatus() {
          return status;
      }
 
-     Book() {
-     }
      public void setReadStatus() {
          this.status = ReadStatus.READ;
      }
-
 
      public int getId() {
          return id;
@@ -39,7 +38,7 @@ package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
          return bookAutor;
      }
 
-      String getBookTitle() {
+     String getBookTitle() {
          return bookTitle;
      }
  }

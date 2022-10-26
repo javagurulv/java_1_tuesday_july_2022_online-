@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
 public class Demo {
 
@@ -28,10 +28,8 @@ public class Demo {
         //  book5.setBookAutor("Herbert Schildt");
         book5.setBookTitle("Java");
 
-
         BookList library = new BookList();
         BookReaderImpl bookReaderDemo = new BookReaderImpl();
-
 
         System.out.println(bookReaderDemo.bookAdd(book1,library));
         System.out.println(bookReaderDemo.bookAdd(book2,library));
@@ -59,37 +57,27 @@ public class Demo {
 
         System.out.println(
         bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt", library),
-                bookReaderDemo.findBooksByAutorPartially("Herbe", library))
+        bookReaderDemo.findBooksByAutorPartially("Herbe", library))
         );
 
         bookReaderDemo.libraryToConsole(library);
 
-        bookReaderDemo.libraryToConsole(
-                (bookReaderDemo.findBooksByTitle("Java", library))
-        );
+        bookReaderDemo.libraryToConsole( (bookReaderDemo.findBooksByTitle("Java", library)) );
 
-        bookReaderDemo.libraryToConsole(
-                (bookReaderDemo.findBooksByTitlePartially("Jav", library))
-        );
+        bookReaderDemo.libraryToConsole( (bookReaderDemo.findBooksByTitlePartially("Jav", library))  );
 
         System.out.println(
                 bookReaderDemo.getBook(3, library).getBookAutor() +
                         "    " +
-                        bookReaderDemo.getBook(3, library).getBookTitle()
-
+                bookReaderDemo.getBook(3, library).getBookTitle()
         );
 
         bookReaderDemo.libraryToConsole(library);
-
 
         bookReaderDemo.getBook(3, library).setReadStatus();
         bookReaderDemo.getBook(1, library).setReadStatus();
 
         bookReaderDemo.libraryToConsole(library);
-
-
-
-
 
     }
 }
