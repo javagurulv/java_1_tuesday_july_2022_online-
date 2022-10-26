@@ -20,4 +20,6 @@ public interface BookReader {
     Book getBook (int id, BookList library);
 
     boolean setReadStatus(int id, BookList library);
+
+    boolean setUnreadStatus(int id, BookList library);
 }

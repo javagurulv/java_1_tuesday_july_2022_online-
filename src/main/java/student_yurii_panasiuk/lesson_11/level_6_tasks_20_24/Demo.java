@@ -79,5 +79,10 @@ public class Demo {
 
         bookReaderDemo.libraryToConsole(library);
 
+        bookReaderDemo.getBook(3, library).setUnreadStatus();
+        bookReaderDemo.getBook(1, library).setUnreadStatus();
+
+        bookReaderDemo.libraryToConsole(library);
+
     }
 }

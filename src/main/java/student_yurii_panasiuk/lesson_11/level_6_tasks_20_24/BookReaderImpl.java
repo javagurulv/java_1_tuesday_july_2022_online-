@@ -18,6 +18,16 @@ BookReaderImpl implements BookReader {
         }
         return false;
     }
+
+    public boolean setUnreadStatus(int id, BookList library){
+        for (int i = 0; i < library.librarySize(); i ++ ) {
+            if (library.books.get(i).getId() == id) {
+                library.getBookByID(id).setReadStatus();
+                return true;
+            }
+        }
+        return false;
+    }
     @Override
      public boolean bookAdd (Book newBook, BookList library) {
         int sizeBeforeAddition = library.librarySize();

@@ -10,19 +10,22 @@ package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
      Book() {
      }
-     public ReadStatus getStatus() {
+     ReadStatus getStatus() {
          return status;
      }
 
-     public void setReadStatus() {
+     void setReadStatus() {
          this.status = ReadStatus.READ;
      }
+     void setUnreadStatus() {
+         this.status = ReadStatus.UNREAD;
+     }
 
-     public int getId() {
+     int getId() {
          return id;
      }
 
-     public void setId(int id) {
+     void setId(int id) {
          this.id = id;
      }
 

@@ -29,10 +29,6 @@ public class BookReaderImplTest {
         book2.setBookAutor("Tolkien");
         book2.setBookTitle("The Two Towers");
 
-        Book book3 = new Book();
-        book3.setBookAutor("Tolkien");
-        book3.setBookTitle("The Return of the King");
-
         assertTrue( bookReaderDemo.bookAdd(book1,library) );
         assertTrue( bookReaderDemo.bookAdd(book2,library) );
         assertFalse( bookReaderDemo.bookAdd(book2,library) );
@@ -221,8 +217,36 @@ public class BookReaderImplTest {
         bookReaderDemo.bookAdd( book3,library );
         bookReaderDemo.bookAdd( book4,library );
 
-        assertTrue(bookReaderDemo.setReadStatus(1,library));
+        assertTrue(bookReaderDemo.setReadStatus(1,library)); // 2 раза можно статус поставить ))
         assertTrue(bookReaderDemo.setReadStatus(2,library));
         assertFalse(bookReaderDemo.setReadStatus(5,library));
+    }
+
+    @Test
+    public void setUnreadStatus() {
+        Book book1 = new Book();
+        book1.setBookAutor("Tolkien");
+        book1.setBookTitle("The Fellowship of the Ring");
+
+        Book book2 = new Book();
+        book2.setBookAutor("Tolkien");
+        book2.setBookTitle("The Two Towers");
+
+        Book book3 = new Book();
+        book3.setBookAutor("Tolkien");
+        book3.setBookTitle("The Return of the King");
+
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+        book4.setBookTitle("Java");
+
+        bookReaderDemo.bookAdd( book1,library );
+        bookReaderDemo.bookAdd( book2,library );
+        bookReaderDemo.bookAdd( book3,library );
+        bookReaderDemo.bookAdd( book4,library );
+
+        assertTrue(bookReaderDemo.setUnreadStatus(1,library)); // 2 раза можно статус непрочтенная поставить ))
+        assertTrue(bookReaderDemo.setUnreadStatus(2,library));
+        assertFalse(bookReaderDemo.setUnreadStatus(5,library));
     }
 }
