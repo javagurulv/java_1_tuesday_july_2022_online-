@@ -15,4 +15,9 @@ package student_yurii_panasiuk.lesson_11.level_5;
          return library.librarySize() != sizeBeforeAddition;
      }
 
+     @Override
+     public void libraryToConsole(BookList library){
+         library.printBooks();
+     }
+
 }

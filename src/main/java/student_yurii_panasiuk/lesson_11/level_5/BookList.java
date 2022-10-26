@@ -25,9 +25,14 @@ class BookList {
         }
     }
 
-    ArrayList<Book> getBooks() {
+    void printBooks() {
 
-        return this.books;
+        for (int i=0; i< books.size(); i++){
+          System.out.print(books.get(i).getBookAutor());
+            System.out.print("      ");
+          System.out.println(books.get(i).getBookTitle());
+
+        }
     }
 
     int librarySize (){

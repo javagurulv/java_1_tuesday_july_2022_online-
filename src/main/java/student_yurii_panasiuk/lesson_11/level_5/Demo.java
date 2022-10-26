@@ -43,10 +43,15 @@ public class Demo {
         System.out.println(bookReaderDemo.bookAdd(book1,library));
         System.out.println(bookReaderDemo.bookAdd(book2,library));
         System.out.println(bookReaderDemo.bookAdd(book3,library));
+
+        bookReaderDemo.libraryToConsole(library);
+
         System.out.println(bookReaderDemo.bookAdd(book1,library));
         System.out.println(bookReaderDemo.bookAdd(book4,library));
         System.out.println(bookReaderDemo.bookAdd(book5,library));
-        System.out.println("\n");
+
+        bookReaderDemo.libraryToConsole(library);
+
         System.out.println(bookReaderDemo.bookDel(book1,library));
         System.out.println(bookReaderDemo.bookDel(book1,library));
         System.out.println(bookReaderDemo.bookDel(book4,library));

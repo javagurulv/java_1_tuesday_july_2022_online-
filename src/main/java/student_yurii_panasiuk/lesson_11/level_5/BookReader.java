@@ -4,8 +4,9 @@ public interface BookReader {
 
   //  Book newBook;
 
-    boolean bookAdd(Book newBook, BookList librar);
+    boolean bookAdd(Book newBook, BookList library);
 
-    boolean bookDel(Book newBook, BookList librar);
+    boolean bookDel(Book newBook, BookList library);
+    void libraryToConsole (BookList library);
 
 }
