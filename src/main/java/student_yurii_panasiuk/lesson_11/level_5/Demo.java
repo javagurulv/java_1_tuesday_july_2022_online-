@@ -29,11 +29,8 @@ public class Demo {
         book5.setBookTitle("Java");
 
 
-
         BookList library = new BookList();
-
         BookReaderImpl bookReaderDemo = new BookReaderImpl();
-
 
 
         System.out.println(bookReaderDemo.bookAdd(book1,library));
@@ -61,15 +58,16 @@ public class Demo {
         bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutorPartially("Herbert", library));
 
         System.out.println(
-
-
         bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt", library),
                 bookReaderDemo.findBooksByAutorPartially("Herbe", library))
-
         );
 
-
         bookReaderDemo.libraryToConsole(library);
+
+        bookReaderDemo.libraryToConsole(
+                (bookReaderDemo.findBooksByTitle("Java", library))
+        );
+
 
 
     }

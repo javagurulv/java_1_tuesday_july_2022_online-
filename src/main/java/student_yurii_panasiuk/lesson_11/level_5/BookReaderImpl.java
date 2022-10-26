@@ -22,18 +22,22 @@ class BookReaderImpl implements BookReader {
 
      @Override
      public BookList findBooksByAutor(String author, BookList library){
-          return library.searchByAutror(author);
+         return library.searchByAutror(author);
      }
 
     @Override
     public BookList findBooksByAutorPartially(String author, BookList library){
         return library.searchByAutrorPartially(author);
     }
+    @Override
+    public BookList findBooksByTitle (String title, BookList library){
+        return library.searchByTitle(title);
+    }
 
     @Override
     public boolean librariesEquals (BookList o, BookList b) {
         if (b == o) return true;
-        if (o == null || b.getClass() != o.getClass() || b.librarySize() != o.librarySize()) return false;
+        if (o == null || b == null || b.getClass() != o.getClass() || b.librarySize() != o.librarySize()) return false;
         int counter1 = 0;
         int counter2 = 0;
 

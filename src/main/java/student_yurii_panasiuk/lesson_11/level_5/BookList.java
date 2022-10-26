@@ -40,6 +40,16 @@ class BookList  {
         return searchResult;
     }
 
+    BookList searchByTitle (String searchedTitle) {
+        BookList searchResult = new BookList();
+        for (Book book : books) {
+            if (book.getBookTitle().equals(searchedTitle)){
+                searchResult.addBook(book);
+            }
+        }
+        return searchResult;
+    }
+
     BookList searchByAutrorPartially (String searchedAuthor) {
         BookList searchResultPartially = new BookList();
         for (Book book : books) {
