@@ -11,9 +11,11 @@ public interface BookReader {
 
     BookList findBooksByAutor (String author, BookList library);
 
-     BookList findBooksByAutorPartially(String author, BookList library);
+    BookList findBooksByAutorPartially(String author, BookList library);
 
     BookList findBooksByTitle (String title, BookList library);
+
+    BookList findBooksByTitlePartially(String title, BookList library);
 
     boolean librariesEquals(BookList o, BookList b);
 }

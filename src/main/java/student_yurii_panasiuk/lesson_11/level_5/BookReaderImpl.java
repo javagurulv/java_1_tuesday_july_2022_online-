@@ -33,6 +33,10 @@ class BookReaderImpl implements BookReader {
     public BookList findBooksByTitle (String title, BookList library){
         return library.searchByTitle(title);
     }
+    @Override
+    public BookList findBooksByTitlePartially(String title, BookList library){
+        return library.searchByTitlePartially(title);
+    }
 
     @Override
     public boolean librariesEquals (BookList o, BookList b) {

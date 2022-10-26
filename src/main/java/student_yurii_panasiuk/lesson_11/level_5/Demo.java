@@ -68,6 +68,10 @@ public class Demo {
                 (bookReaderDemo.findBooksByTitle("Java", library))
         );
 
+        bookReaderDemo.libraryToConsole(
+                (bookReaderDemo.findBooksByTitlePartially("Jav", library))
+        );
+
 
 
     }

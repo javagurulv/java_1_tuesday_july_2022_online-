@@ -60,6 +60,18 @@ class BookList  {
         return searchResultPartially;
     }
 
+    BookList searchByTitlePartially (String searchedTitle) {
+        BookList searchResultPartially = new BookList();
+        boolean ignoreCase = true;
+        int symbolAmmountTosearch = searchedTitle.length();
+        for (Book book : books) {
+            if (book.getBookTitle().regionMatches(ignoreCase, 0, searchedTitle,0, symbolAmmountTosearch)){
+                searchResultPartially.addBook(book);
+            }
+        }
+        return searchResultPartially;
+    }
+
 
     int librarySize (){
         if (books.isEmpty()) {

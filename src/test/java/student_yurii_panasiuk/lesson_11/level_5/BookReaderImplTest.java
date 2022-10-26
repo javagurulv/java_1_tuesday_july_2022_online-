@@ -173,5 +173,39 @@ public class BookReaderImplTest {
                 searchResultTest));
     }
 
+    @Test
+    public void findBooksByTitlePartially() {
+        Book book1 = new Book();
+        book1.setBookAutor("Tolkien");
+        book1.setBookTitle("The Fellowship of the Ring");
+
+        Book book2 = new Book();
+        book2.setBookAutor("Tolkien");
+        book2.setBookTitle("The Two Towers");
+
+        Book book3 = new Book();
+        book3.setBookAutor("Tolkien");
+        book3.setBookTitle("The Return of the King");
+
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+        book4.setBookTitle("Java");
+
+        bookReaderDemo.bookAdd( book1,library );
+        bookReaderDemo.bookAdd( book2,library );
+        bookReaderDemo.bookAdd( book3,library );
+        bookReaderDemo.bookAdd( book4,library );
+
+
+        BookList searchResultTest = new BookList();
+        BookList searchResultTest2 = new BookList();
+
+        searchResultTest.addBook(book4);
+        searchResultTest2.addBook(book4);
+
+        assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByTitlePartially("Jav",library),
+                searchResultTest));
+    }
+
 
     }
