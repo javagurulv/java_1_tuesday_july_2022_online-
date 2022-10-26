@@ -27,10 +27,10 @@ class BookList {
 
     void printBooks() {
 
-        for (int i=0; i< books.size(); i++){
-          System.out.print(books.get(i).getBookAutor());
+        for (Book book : books) {
+            System.out.print(book.getBookAutor());
             System.out.print("      ");
-          System.out.println(books.get(i).getBookTitle());
+            System.out.println(book.getBookTitle());
 
         }
     }

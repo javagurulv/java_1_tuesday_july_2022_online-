@@ -1,10 +1,6 @@
 package student_yurii_panasiuk.lesson_11.level_5;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Demo {
-
 
     public static void main(String[] args) {
 
@@ -56,6 +52,7 @@ public class Demo {
         System.out.println(bookReaderDemo.bookDel(book1,library));
         System.out.println(bookReaderDemo.bookDel(book4,library));
 
+        bookReaderDemo.libraryToConsole(library);
 
 
     }
