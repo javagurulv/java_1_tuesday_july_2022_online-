@@ -33,11 +33,11 @@ class BookList {
 
         }
     }
-    ArrayList<Book> searchByAutror (String searchedAuthor) {
-        ArrayList<Book> searchResult = new ArrayList<>();
+    BookList searchByAutror (String searchedAuthor) {
+        BookList searchResult = new BookList();
         for (Book book : books) {
             if (book.getBookAutor().equals(searchedAuthor)){
-                searchResult.add(book);
+                searchResult.addBook(book);
             }
         }
         return searchResult;

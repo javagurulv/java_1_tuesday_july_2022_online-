@@ -54,7 +54,9 @@ public class Demo {
 
         bookReaderDemo.libraryToConsole(library);
 
-        bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutor("Tolkien", library));
+        System.out.println(bookReaderDemo.bookAdd(book0,library));
+
+        bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutor("Herbert Schildt", library));
 
 
     }

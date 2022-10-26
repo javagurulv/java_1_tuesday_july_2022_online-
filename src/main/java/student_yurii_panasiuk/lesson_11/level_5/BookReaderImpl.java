@@ -1,6 +1,8 @@
 package student_yurii_panasiuk.lesson_11.level_5;
 
- class BookReaderImpl implements BookReader {
+import java.util.ArrayList;
+
+class BookReaderImpl implements BookReader {
     @Override
     public boolean bookAdd (Book newBook, BookList library) {
         int sizeBeforeAddition = library.librarySize();
@@ -22,7 +24,7 @@ package student_yurii_panasiuk.lesson_11.level_5;
 
      @Override
      public BookList findBooksByAutor(String author, BookList library){
-        library.searchByAutror(author);
-        return library;
+
+        return library.searchByAutror(author);
      }
 }
