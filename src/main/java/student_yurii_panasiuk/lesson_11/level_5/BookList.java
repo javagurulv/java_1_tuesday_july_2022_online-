@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 class BookList  {
 
-
     ArrayList<Book> books = new ArrayList<>();
-
-
 
     void addBook(Book newBook) {
         if (!this.books.contains(newBook) &&

@@ -4,7 +4,6 @@ package student_yurii_panasiuk.lesson_11.level_5;
      private String bookAutor;
      private String bookTitle;
      Book() {
-
      }
 
      void setBookAutor(String bookAutor) {

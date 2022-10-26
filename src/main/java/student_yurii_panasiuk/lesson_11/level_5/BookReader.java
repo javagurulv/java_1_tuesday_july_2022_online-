@@ -1,7 +1,5 @@
 package student_yurii_panasiuk.lesson_11.level_5;
 
-import java.util.ArrayList;
-
 public interface BookReader {
 
   //  Book newBook;
@@ -15,5 +13,5 @@ public interface BookReader {
 
      BookList findBooksByAutorPartially(String author, BookList library);
 
-    boolean librarysEquals(BookList o, BookList b);
+    boolean librariesEquals(BookList o, BookList b);
 }

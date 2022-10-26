@@ -63,8 +63,8 @@ public class Demo {
         System.out.println(
 
 
-        bookReaderDemo.librarysEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt", library),
-                bookReaderDemo.findBooksByAutorPartially("Herbert", library))
+        bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt", library),
+                bookReaderDemo.findBooksByAutorPartially("Herbe", library))
 
         );
 

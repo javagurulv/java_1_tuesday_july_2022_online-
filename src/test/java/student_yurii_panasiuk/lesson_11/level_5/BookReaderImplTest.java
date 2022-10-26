@@ -98,7 +98,7 @@ public class BookReaderImplTest {
 
 
 
-            assertTrue(bookReaderDemo.librarysEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt",library),
+            assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt",library),
                     searchResultTest));
         }
 
@@ -135,7 +135,7 @@ public class BookReaderImplTest {
 
 
 
-        assertTrue(bookReaderDemo.librarysEquals(bookReaderDemo.findBooksByAutorPartially("Herbert Schildt",library),
+        assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutorPartially("Herbert Schildt",library),
                 searchResultTest));
     }
     }

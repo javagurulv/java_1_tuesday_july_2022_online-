@@ -31,7 +31,7 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean librarysEquals(BookList o, BookList b) {
+    public boolean librariesEquals (BookList o, BookList b) {
         if (b == o) return true;
         if (o == null || b.getClass() != o.getClass() || b.librarySize() != o.librarySize()) return false;
         int counter1 = 0;
