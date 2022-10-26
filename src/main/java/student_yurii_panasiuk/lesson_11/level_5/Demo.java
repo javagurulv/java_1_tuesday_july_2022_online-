@@ -58,6 +58,19 @@ public class Demo {
 
         bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutor("Herbert Schildt", library));
 
+        bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutorPartially("Herbert", library));
+
+        System.out.println(
+
+
+        bookReaderDemo.librarysEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt", library),
+                bookReaderDemo.findBooksByAutorPartially("Herbert", library))
+
+        );
+
+
+        bookReaderDemo.libraryToConsole(library);
+
 
     }
 }

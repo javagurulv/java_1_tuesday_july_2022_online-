@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_11.level_5;
 
 import java.util.ArrayList;
 
-class BookList {
+class BookList  {
 
 
     ArrayList<Book> books = new ArrayList<>();
@@ -43,6 +43,16 @@ class BookList {
         return searchResult;
     }
 
+    BookList searchByAutrorPartially (String searchedAuthor) {
+        BookList searchResultPartially = new BookList();
+        for (Book book : books) {
+            if (book.getBookAutor().contains(searchedAuthor)){
+                searchResultPartially.addBook(book);
+            }
+        }
+        return searchResultPartially;
+    }
+
 
     int librarySize (){
         if (books.isEmpty()) {
@@ -50,5 +60,12 @@ class BookList {
         }
           else{ return this.books.size();}
         }
-    }
+
+        Book extractBook (int bookNumber){
+           return this.books.get(bookNumber);
+        }
+
+
+
+ }
 
