@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_5;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,26 @@ class BookList  {
         if (!this.books.contains(newBook) &&
                 newBook.getBookAutor() !=null &&
                 newBook.getBookTitle() !=null ) {
-            this.books.add(newBook);
+            if (books.isEmpty()) {
+                newBook.setId(1);
+            }
+            else {
+                newBook.setId(
+                        ((books.get(books.size() - 1)).getId()) + 1);
+            }
+                this.books.add(newBook);
         }
+    }
+
+
+    Book getBookByID (int id){
+        Book foundBook = new Book();
+        for (Book book : books) {
+            if (book.getId() == id){
+                foundBook = book;
+            }
+        }
+        return foundBook;
     }
 
     void delBook(Book newBook) {
@@ -26,7 +44,11 @@ class BookList  {
         for (Book book : books) {
             System.out.print(book.getBookAutor());
             System.out.print("      ");
-            System.out.println(book.getBookTitle());
+            System.out.print(book.getBookTitle());
+            System.out.print("      ");
+            System.out.print("id" + "  " + book.getId());
+            System.out.print("      ");
+            System.out.println("status" + "  " + book.getStatus());
 
         }
     }

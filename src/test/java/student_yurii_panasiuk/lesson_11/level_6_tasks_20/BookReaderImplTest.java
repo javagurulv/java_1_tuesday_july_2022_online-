@@ -1,8 +1,9 @@
-package student_yurii_panasiuk.lesson_11.level_5;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class BookReaderImplTest {
 
@@ -32,13 +33,12 @@ public class BookReaderImplTest {
         book3.setBookAutor("Tolkien");
         book3.setBookTitle("The Return of the King");
 
-       assertTrue( bookReaderDemo.bookAdd(book1,library) );
-       assertTrue( bookReaderDemo.bookAdd(book2,library) );
-       assertFalse( bookReaderDemo.bookAdd(book2,library) );
-       assertFalse( bookReaderDemo.bookAdd(book1,library) );
-       assertFalse( bookReaderDemo.bookAdd(book4,library) );
-       assertFalse( bookReaderDemo.bookAdd(book5,library) );
-
+        assertTrue( bookReaderDemo.bookAdd(book1,library) );
+        assertTrue( bookReaderDemo.bookAdd(book2,library) );
+        assertFalse( bookReaderDemo.bookAdd(book2,library) );
+        assertFalse( bookReaderDemo.bookAdd(book1,library) );
+        assertFalse( bookReaderDemo.bookAdd(book4,library) );
+        assertFalse( bookReaderDemo.bookAdd(book5,library) );
     }
 
     @Test
@@ -55,52 +55,47 @@ public class BookReaderImplTest {
         Book book3 = new Book();
         book3.setBookAutor("Tolkien");
 
-
-         bookReaderDemo.bookAdd( book1,library );
-         bookReaderDemo.bookAdd( book2,library );
-
+        bookReaderDemo.bookAdd( book1,library );
+        bookReaderDemo.bookAdd( book2,library );
 
         assertTrue( bookReaderDemo.bookDel(book1,library) );
         assertFalse( bookReaderDemo.bookDel(book1,library) );
         assertFalse( bookReaderDemo.bookDel(book3,library) );
     }
 
-        @Test
-        public void findBooksByAuthor() {
+    @Test
+    public void findBooksByAuthor() {
 
-            Book book1 = new Book();
-            book1.setBookAutor("Tolkien");
-            book1.setBookTitle("The Fellowship of the Ring");
+        Book book1 = new Book();
+        book1.setBookAutor("Tolkien");
+        book1.setBookTitle("The Fellowship of the Ring");
 
-            Book book2 = new Book();
-            book2.setBookAutor("Tolkien");
-            book2.setBookTitle("The Two Towers");
+        Book book2 = new Book();
+        book2.setBookAutor("Tolkien");
+        book2.setBookTitle("The Two Towers");
 
-            Book book3 = new Book();
-            book3.setBookAutor("Tolkien");
-            book3.setBookTitle("The Return of the King");
+        Book book3 = new Book();
+        book3.setBookAutor("Tolkien");
+        book3.setBookTitle("The Return of the King");
 
-            Book book4 = new Book();
-            book4.setBookAutor("Herbert Schildt");
-            book4.setBookTitle("Java");
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+        book4.setBookTitle("Java");
 
-            bookReaderDemo.bookAdd( book1,library );
-            bookReaderDemo.bookAdd( book2,library );
-            bookReaderDemo.bookAdd( book3,library );
-            bookReaderDemo.bookAdd( book4,library );
+        bookReaderDemo.bookAdd( book1,library );
+        bookReaderDemo.bookAdd( book2,library );
+        bookReaderDemo.bookAdd( book3,library );
+        bookReaderDemo.bookAdd( book4,library );
 
+        BookList searchResultTest = new BookList();
+        BookList searchResultTest2 = new BookList();
 
-            BookList searchResultTest = new BookList();
-            BookList searchResultTest2 = new BookList();
+        searchResultTest.addBook(book4);
+        searchResultTest2.addBook(book4);
 
-            searchResultTest.addBook(book4);
-            searchResultTest2.addBook(book4);
-
-
-
-            assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt",library),
-                    searchResultTest));
-        }
+        assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutor("Herbert Schildt",library),
+                searchResultTest));
+    }
 
     @Test
     public void findBooksByAutorPartially() {
@@ -126,14 +121,11 @@ public class BookReaderImplTest {
         bookReaderDemo.bookAdd( book3,library );
         bookReaderDemo.bookAdd( book4,library );
 
-
         BookList searchResultTest = new BookList();
         BookList searchResultTest2 = new BookList();
 
         searchResultTest.addBook(book4);
         searchResultTest2.addBook(book4);
-
-
 
         assertTrue(bookReaderDemo.librariesEquals(bookReaderDemo.findBooksByAutorPartially("Herbert Schildt",library),
                 searchResultTest));
@@ -161,7 +153,6 @@ public class BookReaderImplTest {
         bookReaderDemo.bookAdd( book2,library );
         bookReaderDemo.bookAdd( book3,library );
         bookReaderDemo.bookAdd( book4,library );
-
 
         BookList searchResultTest = new BookList();
         BookList searchResultTest2 = new BookList();
@@ -207,5 +198,33 @@ public class BookReaderImplTest {
                 searchResultTest));
     }
 
+    @Test
+    public void setReadStatus() {
+        Book book1 = new Book();
+        book1.setBookAutor("Tolkien");
+        book1.setBookTitle("The Fellowship of the Ring");
+
+        Book book2 = new Book();
+        book2.setBookAutor("Tolkien");
+        book2.setBookTitle("The Two Towers");
+
+        Book book3 = new Book();
+        book3.setBookAutor("Tolkien");
+        book3.setBookTitle("The Return of the King");
+
+        Book book4 = new Book();
+        book4.setBookAutor("Herbert Schildt");
+        book4.setBookTitle("Java");
+
+        bookReaderDemo.bookAdd( book1,library );
+        bookReaderDemo.bookAdd( book2,library );
+        bookReaderDemo.bookAdd( book3,library );
+        bookReaderDemo.bookAdd( book4,library );
+
+        assertTrue(bookReaderDemo.setReadStatus(1,library));
+        assertTrue(bookReaderDemo.setReadStatus(2,library));
+        assertFalse(bookReaderDemo.setReadStatus(5,library));
 
     }
+
+}

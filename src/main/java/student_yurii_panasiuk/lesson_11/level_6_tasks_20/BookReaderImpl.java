@@ -1,14 +1,36 @@
-package student_yurii_panasiuk.lesson_11.level_5;
+package student_yurii_panasiuk.lesson_11.level_6_tasks_20;
 
-class BookReaderImpl implements BookReader {
-     @Override
+class
+BookReaderImpl implements BookReader {
+
+    @Override
+    /*
+    у каждой книги генерируется ID при добавлении.
+    Для того чтобы отметить прочитанную книгу нужно ввести ID.
+    ID можно узнать после вывода всех книг методом libraryToConsole.
+     */
+    public boolean setReadStatus(int id, BookList library){
+        for (int i = 0; i < library.librarySize(); i ++ ) {
+            if (library.books.get(i).getId() == id) {
+                library.getBookByID(id).setReadStatus();
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
      public boolean bookAdd (Book newBook, BookList library) {
         int sizeBeforeAddition = library.librarySize();
         library.addBook(newBook);
         return library.librarySize() != sizeBeforeAddition;
       }
 
-     @Override
+    @Override
+    public Book getBook(int id, BookList library ) {
+       return library.getBookByID(id);
+    }
+
+    @Override
      public boolean bookDel (Book newBook, BookList library) {
          int sizeBeforeAddition = library.librarySize();
          library.delBook(newBook);
@@ -54,6 +76,5 @@ class BookReaderImpl implements BookReader {
             }
         }
         return counter1 == counter2;
-
     }
 }

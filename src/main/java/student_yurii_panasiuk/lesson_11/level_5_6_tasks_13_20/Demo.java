@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_11.level_5;
+package student_yurii_panasiuk.lesson_11.level_5_6_tasks_13_20;
 
 public class Demo {
 
