@@ -26,7 +26,6 @@ class BookList {
     }
 
     void printBooks() {
-
         for (Book book : books) {
             System.out.print(book.getBookAutor());
             System.out.print("      ");
@@ -34,6 +33,16 @@ class BookList {
 
         }
     }
+    ArrayList<Book> searchByAutror (String searchedAuthor) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getBookAutor().equals(searchedAuthor)){
+                searchResult.add(book);
+            }
+        }
+        return searchResult;
+    }
+
 
     int librarySize (){
         if (books.isEmpty()) {

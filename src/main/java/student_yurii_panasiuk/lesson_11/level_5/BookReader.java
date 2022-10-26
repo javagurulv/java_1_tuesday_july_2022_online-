@@ -9,4 +9,6 @@ public interface BookReader {
     boolean bookDel(Book newBook, BookList library);
     void libraryToConsole (BookList library);
 
+    BookList findBooksByAutor (String author, BookList library);
+
 }

@@ -54,6 +54,8 @@ public class Demo {
 
         bookReaderDemo.libraryToConsole(library);
 
+        bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutor("Tolkien", library));
+
 
     }
 }

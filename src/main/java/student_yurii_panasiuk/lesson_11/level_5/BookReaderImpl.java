@@ -20,4 +20,9 @@ package student_yurii_panasiuk.lesson_11.level_5;
          library.printBooks();
      }
 
+     @Override
+     public BookList findBooksByAutor(String author, BookList library){
+        library.searchByAutror(author);
+        return library;
+     }
 }
