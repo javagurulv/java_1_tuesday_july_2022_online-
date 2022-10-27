@@ -49,11 +49,20 @@ BookReaderImpl implements BookReader {
 
      @Override
      public void libraryToConsole(BookList library){
-         library.printBooks();
+        library.printBooks();
      }
 
-     @Override
-     public BookList findBooksByAutor(String author, BookList library){
+    @Override
+    public void libraryToConsoleSimple(BookList library){
+        library.printBooksSimple();
+    }
+    @Override
+    public BookList findBooksRead(BookList library) {
+       return library.searchBooksRead();
+    }
+
+    @Override
+    public BookList findBooksByAutor(String author, BookList library){
          return library.searchByAutror(author);
      }
 

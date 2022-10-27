@@ -78,6 +78,8 @@ public class Demo {
         bookReaderDemo.getBook(1, library).setReadStatus();
 
         bookReaderDemo.libraryToConsole(library);
+        System.out.println();
+        bookReaderDemo.libraryToConsoleSimple( bookReaderDemo.findBooksRead(library) );
 
         bookReaderDemo.getBook(3, library).setUnreadStatus();
         bookReaderDemo.getBook(1, library).setUnreadStatus();

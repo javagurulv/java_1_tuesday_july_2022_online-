@@ -50,6 +50,25 @@ class BookList  {
             System.out.println("status" + "  " + book.getStatus());
         }
     }
+
+    void printBooksSimple() {
+        for (Book book : books) {
+                System.out.print(book.getBookAutor());
+                System.out.print("      ");
+                System.out.println(book.getBookTitle());
+        }
+    }
+
+    BookList searchBooksRead () {
+        BookList searchResult = new BookList();
+        for (Book book : books) {
+            if (book.getStatus() == ReadStatus.READ) {
+                searchResult.addBook(book);
+            }
+        }
+        return searchResult;
+    }
+
     BookList searchByAutror (String searchedAuthor) {
         BookList searchResult = new BookList();
         for (Book book : books) {
