@@ -36,7 +36,7 @@ public class Demo2 {
         bookReaderDemo.bookAdd(book1,library); // книга с одинаковым автором и названием не добавится
 
         bookReaderDemo.libraryToConsole(library); // вывод книг
-
+                System.out.println();
         // поиск по автору и вывод в расширенной форме
         bookReaderDemo.libraryToConsole(bookReaderDemo.findBooksByAutor("Herbert Schildt", library));
         // поиск с указанием неполного имени автора
@@ -45,20 +45,20 @@ public class Demo2 {
         bookReaderDemo.libraryToConsole( (bookReaderDemo.findBooksByTitle("Java", library)) );
         // поиск с указанием начала! названия
         bookReaderDemo.libraryToConsole( (bookReaderDemo.findBooksByTitlePartially("Jav", library))  );
-
-        bookReaderDemo.bookDel(book4,library); // удаление книги
+                System.out.println();
+        bookReaderDemo.bookDel(book3,library); // удаление книги
 
         bookReaderDemo.libraryToConsole(library); // вывод книг
 
         bookReaderDemo.getBook(1, library).setReadStatus(); // установка статуса "прочитанная" первой добавленной книге
         bookReaderDemo.getBook(2, library).setReadStatus(); // установка статуса "прочитанная" второй добавленной книге
         bookReaderDemo.getBook(3, library).setUnreadStatus(); // установка статуса "непрочитанная" третьей добавленной книге
-        bookReaderDemo.getBook(3, library).setUnreadStatus(); // установка статуса "непрочитанная" четвертой добавленной книге
-
+                System.out.println();
         bookReaderDemo.libraryToConsole(library); // вывод книг
-
+                System.out.println();
         // упрощенный вывод "прочитанных" книг
         bookReaderDemo.libraryToConsoleSimple( bookReaderDemo.findBooksRead(library) );
+                System.out.println();
         // упрощенный вывод "непрочитанных" книг
         bookReaderDemo.libraryToConsoleSimple( bookReaderDemo.findBooksUnread(library) );
     }
