@@ -69,6 +69,15 @@ class BookList  {
         return searchResult;
     }
 
+    BookList searchBooksUnread () {
+        BookList searchResult = new BookList();
+        for (Book book : books) {
+            if (book.getStatus() == ReadStatus.UNREAD) {
+                searchResult.addBook(book);
+            }
+        }
+        return searchResult;
+    }
     BookList searchByAutror (String searchedAuthor) {
         BookList searchResult = new BookList();
         for (Book book : books) {

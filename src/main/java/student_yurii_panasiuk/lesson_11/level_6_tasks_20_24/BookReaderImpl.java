@@ -62,6 +62,12 @@ BookReaderImpl implements BookReader {
     }
 
     @Override
+    public BookList findBooksUnread(BookList library) {
+        return library.searchBooksUnread();
+    }
+
+
+    @Override
     public BookList findBooksByAutor(String author, BookList library){
          return library.searchByAutror(author);
      }
