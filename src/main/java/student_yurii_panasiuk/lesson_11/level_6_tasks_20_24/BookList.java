@@ -15,7 +15,7 @@ class BookList  {
             }
             else {
                 newBook.setId(
-                        ((books.get(books.size() - 1)).getId()) + 1);
+                ((books.get(books.size() - 1)).getId()) + 1);
             }
                 this.books.add(newBook);
         }
