@@ -2,7 +2,6 @@ package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
 public class Demo2 {
 
-
     public static void main(String[] args) {
     // создание примера книг
     Book book0 = new Book();
@@ -19,9 +18,9 @@ public class Demo2 {
         book3.setBookTitle("The Return of the King");
     Book book4 = new Book();
         book4.setBookAutor("Herbert Schildt");
-    //  book4.setBookTitle("Java"); //книги без названия невозможно добавить в библиотеку
+    //  book4.setBookTitle("Java"); //книги без названия "невозможно" добавить в библиотеку
     Book book5 = new Book();
-    //  book5.setBookAutor("Herbert Schildt"); //книги без автора невозможно добавить в библиотеку
+    //  book5.setBookAutor("Herbert Schildt"); //книги без автора "невозможно" добавить в библиотеку
         book5.setBookTitle("Java");
 
         BookList library = new BookList(); // создаем библиотеку
