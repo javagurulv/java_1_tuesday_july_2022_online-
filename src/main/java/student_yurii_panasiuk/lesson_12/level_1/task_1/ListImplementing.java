@@ -8,14 +8,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 class ListImplementing {
 
-    AbstractList <String> one = new ArrayList<String>();
-    AbstractSequentialList<String> two = new LinkedList<String>();
-    List<String>  three = new ArrayList<String>();
-    List<String> four = new AttributeList<String>();
-    List<String> five = new CopyOnWriteArrayList<String>();
-    List<String> six = new LinkedList<String>();
-    List<String> seven = new RoleList<String>();
-    List<String> eight = new RoleUnresolvedList<String>();
+    AbstractList <String> one = new ArrayList<>();
+    AbstractSequentialList<String> two = new LinkedList<>();
+    List<String>  three = new ArrayList<>();
+    AttributeList four = new AttributeList();
+    List<String> five = new CopyOnWriteArrayList<>();
+    LinkedList<String> six = new LinkedList<>();
+    List seven = new RoleList();
+    List eight = new RoleUnresolvedList();
     List<String> nine = new Stack<>();
     List<String> ten = new Vector<>();
 
