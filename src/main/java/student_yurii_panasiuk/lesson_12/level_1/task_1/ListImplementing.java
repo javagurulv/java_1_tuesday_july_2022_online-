@@ -16,7 +16,7 @@ class ListImplementing {
     List<String> six = new LinkedList<String>();
     List<String> seven = new RoleList<String>();
     List<String> eight = new RoleUnresolvedList<String>();
-    List<String> nine = new Stack<String>();
-    List<String> ten = new Vector<String>();
+    List<String> nine = new Stack<>();
+    List<String> ten = new Vector<>();
 
 }
