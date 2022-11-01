@@ -92,5 +92,48 @@ public class FruitStoreTest {
 				};
 	}
 
+	@Test
+	public void findFruitsRedTomatos() {
+		List<Fruit> redTomatos = fruitStore.findFruitsBySearchCriteria(
+				new FruitSearchCriteria() {
+					@Override
+					public boolean test(Fruit fruit) {
+						return "tomato".equals(fruit.getTitle())
+								&& "red".equals(fruit.getColor());
+					}
+				}
+		);
+		assertEquals(redTomatos.size(), 1);
+
+
+		redTomatos = fruitStore.findFruitsBySearchCriteria(
+				fruit -> "tomato".equals(fruit.getTitle())
+					&& "red".equals(fruit.getColor())
+		);
+
+	}
+
+
+	@Test
+	public void performAction() {
+		fruitStore.doAction(
+				new FruitDoAction() {
+					@Override
+					public void perform(Fruit fruit) {
+						System.out.println(fruit.getTitle());
+					}
+				}
+		);
+
+		fruitStore.doAction(
+				fruit -> System.out.println(fruit.getTitle())
+		);
+
+		fruitStore.doAction(
+				fruit -> System.out.println(fruit)
+		);
+
+	}
+
 
 }

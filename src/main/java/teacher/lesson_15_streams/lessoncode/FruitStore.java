@@ -89,4 +89,10 @@ public class FruitStore {
 	}
 
 
+	public void doAction(FruitDoAction action) {
+		for (Fruit fruit : fruits) {
+			action.perform(fruit);
+		}
+	}
+
 }
