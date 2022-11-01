@@ -23,7 +23,5 @@ class Demo {
         System.out.println("Result of 3rd delete should return true: " + db.delete(3L));
         System.out.println("Result of previously existing (i.e. 3L) delete should return false: " + db.delete(3L));
 
-        // TODO turn demo scenarios into tests
-
     }
 }

@@ -6,14 +6,14 @@ import java.util.List;
 class BookDatabaseImpl implements BookDatabase {
 
     List<Book> books = new ArrayList<>();
-    private static Long lastId = 0L;
+    private Long lastId = 0L;
 
     @Override
     public Long save(Book book) {
         lastId++;
         book.setId(lastId);
         books.add(book);
-        return lastId;
+        return book.getId();
     }
 
     @Override
