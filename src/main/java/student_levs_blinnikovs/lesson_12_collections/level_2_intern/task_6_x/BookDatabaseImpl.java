@@ -26,4 +26,14 @@ class BookDatabaseImpl implements BookDatabase {
         return false;
     }
 
+    @Override
+    public boolean delete(Book book) {
+        for (Book bookInList : books) {
+            if (bookInList.equals(book)) {      // this way doesn't throw NullPointerException
+                return books.remove(bookInList);
+            }
+        }
+        return false;
+    }
+
 }

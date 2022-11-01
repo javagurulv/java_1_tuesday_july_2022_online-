@@ -16,10 +16,15 @@ class BookDatabaseTest {
         test.idOfSecondBookShouldReturnTwo();
         test.idOfThirdBookShouldReturnThree();
 
-        test.shouldDelete();
-        test.shouldNotDeleteNotExisting();
-        test.shouldNotDeleteFromEmptyReader();
-        test.shouldNotDeletePreviouslyDeleted();
+        test.shouldDeleteById();
+        test.shouldNotDeleteNotExistingById();
+        test.shouldNotDeleteFromEmptyReaderById();
+        test.shouldNotDeletePreviouslyDeletedById();
+
+        test.shouldDeleteByBookObject();
+        test.shouldNotDeleteNotSavedByBookObject();
+        test.shouldNotDeleteFromEmptyReaderByBookObject();
+        test.shouldNotDeletePreviouslyDeletedByBookObject();
 
     }
 
@@ -104,7 +109,7 @@ class BookDatabaseTest {
         printTestResult(expected.equals(real), "Id of 3rd book should return 3");
     }
 
-    void shouldDelete() {
+    void shouldDeleteById() {
         BookDatabaseImpl db = new BookDatabaseImpl();
         Book book1 = new Book("Sally Rooney", "Normal People");
 
@@ -116,7 +121,7 @@ class BookDatabaseTest {
         printTestResult(expectedDeleted == reallyDeleted, "Should delete");
     }
 
-    void shouldNotDeleteNotExisting() {
+    void shouldNotDeleteNotExistingById() {
         BookDatabaseImpl db = new BookDatabaseImpl();
         Book book1 = new Book("Sally Rooney", "Normal People");
 
@@ -128,7 +133,7 @@ class BookDatabaseTest {
         printTestResult(expectedDeleted == reallyDeleted, "Should not delete not existing ids");
     }
 
-    void shouldNotDeleteFromEmptyReader() {
+    void shouldNotDeleteFromEmptyReaderById() {
         BookDatabaseImpl db = new BookDatabaseImpl();
 
         boolean expectedDeleted = false;
@@ -137,7 +142,7 @@ class BookDatabaseTest {
         printTestResult(expectedDeleted == reallyDeleted, "Should not delete not existing ids from empty reader");
     }
 
-    void shouldNotDeletePreviouslyDeleted() {
+    void shouldNotDeletePreviouslyDeletedById() {
         BookDatabaseImpl db = new BookDatabaseImpl();
         Book book1 = new Book("Sally Rooney", "Normal People");
         Book book2 = new Book("1984", "George Orwell");
@@ -153,6 +158,59 @@ class BookDatabaseTest {
         boolean reallyDeleted = db.delete(3L);
 
         printTestResult(expectedDeleted == reallyDeleted, "Should not delete previously deleted - testing list functionality");
+    }
+
+    void shouldDeleteByBookObject() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+
+        db.save(book1);
+
+        boolean expectedDeleted = true;
+        boolean reallyDeleted = db.delete(book1);
+
+        printTestResult(expectedDeleted == reallyDeleted, "Should delete by object");
+    }
+
+    void shouldNotDeleteNotSavedByBookObject() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+
+        boolean expectedDeleted = false;
+
+        db.save(book1);
+        boolean reallyDeleted = db.delete(book2);
+
+        printTestResult(expectedDeleted == reallyDeleted, "Should not delete not saved book");
+    }
+
+    void shouldNotDeleteFromEmptyReaderByBookObject() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+
+        boolean expectedDeleted = false;
+        boolean reallyDeleted = db.delete(book1);
+
+        printTestResult(expectedDeleted == reallyDeleted, "Should not delete not added book from empty reader");
+    }
+
+    void shouldNotDeletePreviouslyDeletedByBookObject() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        boolean expectedDeleted = false;
+
+        db.delete(book3);
+        boolean reallyDeleted = db.delete(book3);
+
+        printTestResult(expectedDeleted == reallyDeleted, "Should not delete previously deleted by object - testing list functionality");
     }
 
 }
