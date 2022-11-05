@@ -17,4 +17,6 @@ interface BookDatabase {
 
     List<Book> findByTitle(String title);
 
+    int countAllBooks();
+
 }

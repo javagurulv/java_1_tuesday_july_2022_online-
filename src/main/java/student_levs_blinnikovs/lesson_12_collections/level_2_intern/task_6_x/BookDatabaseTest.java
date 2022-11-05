@@ -43,6 +43,10 @@ class BookDatabaseTest {
         test.findByTitleShouldNotReturnNotExisting();
         test.findByTitleShouldNotReturnEmptyForEmptyReader();
 
+        test.shouldCountMultiple();
+        test.shouldReturn0ForEmptyReader();
+        test.shouldRecalculateAfterBookRemoval();
+
     }
 
     void resultOfFirstSaveShouldReturnOne() {
@@ -380,6 +384,54 @@ class BookDatabaseTest {
         List<Book> dbBookSearchResult = db.findByTitle("The Cloud Atlas");
 
         printTestResult(dbBookSearchResult.isEmpty(), "Finding by title should NOT return books from an empty reader");
+    }
+
+    void shouldCountMultiple() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Life After Life", "Jill McCorkle");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        int dbSize = db.countAllBooks();
+
+        printTestResult(dbSize == 5, "Should calculate multiple");
+    }
+
+    void shouldReturn0ForEmptyReader() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        int dbSize = db.countAllBooks();
+
+        printTestResult(dbSize == 0, "Should return 0 for empty reader");
+    }
+
+    void shouldRecalculateAfterBookRemoval() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Life After Life", "Jill McCorkle");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        db.delete(book3);
+
+        int dbSize = db.countAllBooks();
+
+        printTestResult(dbSize == 4, "Should recalculate after deletion");
     }
 
 }
