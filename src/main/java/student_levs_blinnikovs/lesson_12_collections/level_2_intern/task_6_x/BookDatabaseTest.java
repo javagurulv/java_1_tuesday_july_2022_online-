@@ -1,5 +1,6 @@
 package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
+import java.util.List;
 import java.util.Optional;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
@@ -31,6 +32,11 @@ class BookDatabaseTest {
         test.findByIdShouldReturnExisting();
         test.findByIdShouldNotReturnNotExisting();
         test.findByIdShouldNotReturnNotExistingEmptyReader();
+
+        test.findByAuthorShouldReturn();
+        test.findByAuthorShouldReturnMultiple();
+        test.findByAuthorShouldNotReturnNotExisting();
+        test.findByAuthorShouldNotReturnEmptyForEmptyReader();
 
     }
 
@@ -247,6 +253,67 @@ class BookDatabaseTest {
         Optional<Book> dbBook = db.findById(1L);
 
         printTestResult(dbBook.equals(Optional.empty()), "Finding by id should NOT return NOT existing book in empty reader");
+    }
+
+    void findByAuthorShouldReturn() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        List<Book> dbBookSearchResult = db.findByAuthor("George Orwell");
+
+        printTestResult(dbBookSearchResult.equals(List.of(book2)), "Finding by author should return existing book single result");
+    }
+
+    void findByAuthorShouldReturnMultiple() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Burmese Days", "George Orwell");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        List<Book> dbBookSearchResult = db.findByAuthor("George Orwell");
+
+        printTestResult(dbBookSearchResult.equals(List.of(book2, book4, book5)), "Finding by author should return existing book multiple result");
+    }
+
+    void findByAuthorShouldNotReturnNotExisting() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Burmese Days", "George Orwell");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        List<Book> dbBookSearchResult = db.findByAuthor("Aldous Huxley");
+
+        printTestResult(dbBookSearchResult.isEmpty(), "Finding by author should NOT return books that do not exist");
+    }
+
+    void findByAuthorShouldNotReturnEmptyForEmptyReader() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        List<Book> dbBookSearchResult = db.findByAuthor("Aldous Huxley");
+
+        printTestResult(dbBookSearchResult.isEmpty(), "Finding by author should NOT return books from an empty reader");
     }
 
 }
