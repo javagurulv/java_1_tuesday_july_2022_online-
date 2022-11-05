@@ -47,6 +47,11 @@ class BookDatabaseTest {
         test.shouldReturn0ForEmptyReader();
         test.shouldRecalculateAfterBookRemoval();
 
+        test.shouldDeleteByAuthor();
+        test.shouldNotDeleteNotExistingByAuthor();
+        test.shouldNotDeleteFromEmptyReaderByAuthor();
+        test.shouldNotDeletePreviouslyDeletedByAuthor();
+
     }
 
     void resultOfFirstSaveShouldReturnOne() {
@@ -432,6 +437,64 @@ class BookDatabaseTest {
         int dbSize = db.countAllBooks();
 
         printTestResult(dbSize == 4, "Should recalculate after deletion");
+    }
+
+    void shouldDeleteByAuthor() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Life After Life", "Jill McCorkle");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        db.deleteByAuthor("George Orwell");
+
+        printTestResult(db.countAllBooks() == 3, "Should delete by author");
+    }
+
+    void shouldNotDeleteNotExistingByAuthor() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("Life After Life", "Jill McCorkle");
+        Book book3 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        db.deleteByAuthor("George Orwell");
+
+        printTestResult(db.countAllBooks() == 3, "Should not delete not existing books by author");
+    }
+
+    void shouldNotDeleteFromEmptyReaderByAuthor() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        db.deleteByAuthor("George Orwell");
+
+        printTestResult(db.countAllBooks() == 0, "Should not delete not existing books from empty reader"); // not sure how to test this... check that function didn't do anything...
+    }
+
+    void shouldNotDeletePreviouslyDeletedByAuthor() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("The Financier", "Theodore Dreiser");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        db.deleteByAuthor("Theodore Dreiser");
+        db.deleteByAuthor("Theodore Dreiser");
+
+        printTestResult(db.countAllBooks() == 2, "Should not delete previously deleted by author - testing list functionality");
     }
 
 }

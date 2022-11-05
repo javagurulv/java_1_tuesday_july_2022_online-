@@ -19,4 +19,6 @@ interface BookDatabase {
 
     int countAllBooks();
 
+    void deleteByAuthor(String author);
+
 }

@@ -74,4 +74,15 @@ class BookDatabaseImpl implements BookDatabase {
         return books.size();
     }
 
+    @Override
+    public void deleteByAuthor(String author) {
+        List<Book> booksToDelete = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getAuthor().equals(author)) {
+                booksToDelete.add(book);
+            }
+        }
+        books.removeAll(booksToDelete);
+    }
+
 }
