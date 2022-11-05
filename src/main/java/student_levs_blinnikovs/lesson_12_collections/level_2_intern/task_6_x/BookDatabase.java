@@ -21,4 +21,6 @@ interface BookDatabase {
 
     void deleteByAuthor(String author);
 
+    void deleteByTitle(String title);
+
 }

@@ -52,6 +52,11 @@ class BookDatabaseTest {
         test.shouldNotDeleteFromEmptyReaderByAuthor();
         test.shouldNotDeletePreviouslyDeletedByAuthor();
 
+        test.shouldDeleteByTitle();
+        test.shouldNotDeleteNotExistingByTitle();
+        test.shouldNotDeleteFromEmptyReaderByTitle();
+        test.shouldNotDeletePreviouslyDeletedByTitle();
+
     }
 
     void resultOfFirstSaveShouldReturnOne() {
@@ -495,6 +500,64 @@ class BookDatabaseTest {
         db.deleteByAuthor("Theodore Dreiser");
 
         printTestResult(db.countAllBooks() == 2, "Should not delete previously deleted by author - testing list functionality");
+    }
+
+    void shouldDeleteByTitle() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Normal People", "Sally Rooney");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Life After Life", "Jill McCorkle");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        db.deleteByTitle("Life After Life");
+
+        printTestResult(db.countAllBooks() == 3, "Should delete by title");
+    }
+
+    void shouldNotDeleteNotExistingByTitle() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Normal People", "Sally Rooney");
+        Book book2 = new Book("Life After Life", "Jill McCorkle");
+        Book book3 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        db.deleteByTitle("1984");
+
+        printTestResult(db.countAllBooks() == 3, "Should not delete not existing books by title");
+    }
+
+    void shouldNotDeleteFromEmptyReaderByTitle() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        db.deleteByTitle("1984");
+
+        printTestResult(db.countAllBooks() == 0, "Should not delete not existing books from empty reader by title"); // not sure how to test this... check that function didn't do anything...
+    }
+
+    void shouldNotDeletePreviouslyDeletedByTitle() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Normal People", "Sally Rooney");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("The Financier", "Theodore Dreiser");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        db.deleteByTitle("1984");
+        db.deleteByTitle("1984");
+
+        printTestResult(db.countAllBooks() == 2, "Should not delete previously deleted by title - testing list functionality");
     }
 
 }
