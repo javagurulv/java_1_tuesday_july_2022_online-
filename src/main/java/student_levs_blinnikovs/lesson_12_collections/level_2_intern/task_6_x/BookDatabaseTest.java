@@ -38,6 +38,11 @@ class BookDatabaseTest {
         test.findByAuthorShouldNotReturnNotExisting();
         test.findByAuthorShouldNotReturnEmptyForEmptyReader();
 
+        test.findByTitleShouldReturn();
+        test.findByTitleShouldReturnMultiple();
+        test.findByTitleShouldNotReturnNotExisting();
+        test.findByTitleShouldNotReturnEmptyForEmptyReader();
+
     }
 
     void resultOfFirstSaveShouldReturnOne() {
@@ -314,6 +319,67 @@ class BookDatabaseTest {
         List<Book> dbBookSearchResult = db.findByAuthor("Aldous Huxley");
 
         printTestResult(dbBookSearchResult.isEmpty(), "Finding by author should NOT return books from an empty reader");
+    }
+
+    void findByTitleShouldReturn() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+
+        List<Book> dbBookSearchResult = db.findByTitle("1984");
+
+        printTestResult(dbBookSearchResult.equals(List.of(book2)), "Finding by title should return existing book single result");
+    }
+
+    void findByTitleShouldReturnMultiple() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Life After Life", "Jill McCorkle");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Life After Life", "Kate Atkinson");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        List<Book> dbBookSearchResult = db.findByTitle("Life After Life");
+
+        printTestResult(dbBookSearchResult.equals(List.of(book3, book5)), "Finding by title should return existing book multiple result");
+    }
+
+    void findByTitleShouldNotReturnNotExisting() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book book1 = new Book("Sally Rooney", "Normal People");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("Theodore Dreiser", "The Financier");
+        Book book4 = new Book("Animal Farm", "George Orwell");
+        Book book5 = new Book("Burmese Days", "George Orwell");
+
+        db.save(book1);
+        db.save(book2);
+        db.save(book3);
+        db.save(book4);
+        db.save(book5);
+
+        List<Book> dbBookSearchResult = db.findByTitle("The Cloud Atlas");
+
+        printTestResult(dbBookSearchResult.isEmpty(), "Finding by title should NOT return books that do not exist");
+    }
+
+    void findByTitleShouldNotReturnEmptyForEmptyReader() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        List<Book> dbBookSearchResult = db.findByTitle("The Cloud Atlas");
+
+        printTestResult(dbBookSearchResult.isEmpty(), "Finding by title should NOT return books from an empty reader");
     }
 
 }
