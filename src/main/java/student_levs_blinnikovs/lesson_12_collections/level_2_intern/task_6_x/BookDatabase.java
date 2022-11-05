@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
+import java.util.Optional;
+
 interface BookDatabase {
 
     Long save(Book book);
@@ -7,5 +9,7 @@ interface BookDatabase {
     boolean delete(Long bookId);
 
     boolean delete(Book book);
+
+    Optional<Book> findById(Long bookId);
 
 }

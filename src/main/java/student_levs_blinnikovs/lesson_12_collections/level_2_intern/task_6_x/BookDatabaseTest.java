@@ -1,5 +1,7 @@
 package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
+import java.util.Optional;
+
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;
 
 class BookDatabaseTest {
@@ -25,6 +27,10 @@ class BookDatabaseTest {
         test.shouldNotDeleteNotSavedByBookObject();
         test.shouldNotDeleteFromEmptyReaderByBookObject();
         test.shouldNotDeletePreviouslyDeletedByBookObject();
+
+        test.findByIdShouldReturnExisting();
+        test.findByIdShouldNotReturnNotExisting();
+        test.findByIdShouldNotReturnNotExistingEmptyReader();
 
     }
 
@@ -211,6 +217,36 @@ class BookDatabaseTest {
         boolean reallyDeleted = db.delete(book3);
 
         printTestResult(expectedDeleted == reallyDeleted, "Should not delete previously deleted by object - testing list functionality");
+    }
+
+    void findByIdShouldReturnExisting() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book savedBook = new Book("Sally Rooney", "Normal People");
+
+        db.save(savedBook);
+
+        Optional<Book> dbBook = db.findById(1L);
+
+        printTestResult(dbBook.equals(Optional.of(savedBook)), "Finding by id should return existing book");
+    }
+
+    void findByIdShouldNotReturnNotExisting() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+        Book savedBook = new Book("Sally Rooney", "Normal People");
+
+        db.save(savedBook);
+
+        Optional<Book> dbBook = db.findById(2L);
+
+        printTestResult(dbBook.equals(Optional.empty()), "Finding by id should NOT return NOT existing book");
+    }
+
+    void findByIdShouldNotReturnNotExistingEmptyReader() {
+        BookDatabaseImpl db = new BookDatabaseImpl();
+
+        Optional<Book> dbBook = db.findById(1L);
+
+        printTestResult(dbBook.equals(Optional.empty()), "Finding by id should NOT return NOT existing book in empty reader");
     }
 
 }

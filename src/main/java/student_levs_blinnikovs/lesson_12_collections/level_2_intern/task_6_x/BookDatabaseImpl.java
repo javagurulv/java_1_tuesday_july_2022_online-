@@ -2,6 +2,7 @@ package student_levs_blinnikovs.lesson_12_collections.level_2_intern.task_6_x;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -34,6 +35,16 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return false;
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
     }
 
 }
