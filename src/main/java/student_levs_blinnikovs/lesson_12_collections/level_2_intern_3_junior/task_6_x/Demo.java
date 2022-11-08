@@ -1,5 +1,8 @@
 package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_junior.task_6_x;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Demo {
     public static void main(String[] args) {
         BookDatabaseImpl db = new BookDatabaseImpl();

@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_10.level_1_2_3_4_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 public class FraudRule5Test {
     void positiveTest(){
         Trader trader = new Trader("NePokemon", "Berlin", "Germany");

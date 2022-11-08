@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_11.level_3.task_8;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class InMemoryDatabaseDemo { // сделал автоматический тест. это как тренировка
 
      public static void main(String[] args) {

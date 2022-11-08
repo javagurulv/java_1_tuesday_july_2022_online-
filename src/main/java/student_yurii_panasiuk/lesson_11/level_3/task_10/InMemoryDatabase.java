@@ -2,13 +2,17 @@ package student_yurii_panasiuk.lesson_11.level_3.task_10;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+
+import teacher.codereview.CodeReview;
 
 // тесты через JUnit позитивные только
 
+@CodeReview(approved = true)
 public class InMemoryDatabase implements ProductDatabase {
 
-     ArrayList<Product> products = new ArrayList<>();
+     List<Product> products = new ArrayList<>();
 
      @Override
      public void save(Product product){

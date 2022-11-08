@@ -1,5 +1,8 @@
 package student_yurii_panasiuk.lesson_11.level_7.task_25;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
  class StrategyDemo {
 
      public static void main(String[] args) {

@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_11.level_5_6_tasks_13_20;
 
 import java.util.ArrayList;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class BookList  {
 
     ArrayList<Book> books = new ArrayList<>();

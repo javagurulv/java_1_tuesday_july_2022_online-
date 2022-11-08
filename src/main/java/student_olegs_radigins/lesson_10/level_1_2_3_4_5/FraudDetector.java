@@ -1,5 +1,10 @@
 package student_olegs_radigins.lesson_10.level_1_2_3_4_5;
 
+import teacher.codereview.CodeReview;
+import teacher.codereview.CodeReviewComment;
+
+@CodeReview(approved = false)
+@CodeReviewComment(teacher = "А почему правила не использовал тут?")
 class FraudDetector {
     String fraudName = "Pokemon";
     int maximumAmount = 1000000;

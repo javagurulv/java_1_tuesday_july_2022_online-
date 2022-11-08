@@ -6,6 +6,9 @@ import javax.management.relation.RoleUnresolvedList;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class ListImplementing {
 
     AbstractList <String> one = new ArrayList<>();

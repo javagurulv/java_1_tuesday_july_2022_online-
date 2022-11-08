@@ -1,7 +1,9 @@
 package student_yurii_panasiuk.lesson_11.level_6_tasks_20_24;
 
-class
-BookReaderImpl implements BookReader {
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
+class BookReaderImpl implements BookReader {
 
     @Override
     /*

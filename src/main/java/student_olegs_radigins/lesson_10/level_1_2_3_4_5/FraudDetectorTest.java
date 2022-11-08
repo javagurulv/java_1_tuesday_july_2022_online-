@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_10.level_1_2_3_4_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class FraudDetectorTest {
     public static void main(String[] args) {
         FraudDetectorTest fraudDetectorTest = new FraudDetectorTest();

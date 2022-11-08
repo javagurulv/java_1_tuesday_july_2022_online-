@@ -3,6 +3,9 @@ package student_levs_blinnikovs.lesson_12_collections.level_1_intern.task_3;
 import java.util.ArrayList;
 import java.util.List;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class IntegerListDemo {
 
     public static void main(String[] args) {

@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_9.level_1.task_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Safe2 {
     private String password;
     private int money;

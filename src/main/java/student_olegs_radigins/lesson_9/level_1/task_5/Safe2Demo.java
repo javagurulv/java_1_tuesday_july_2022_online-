@@ -1,5 +1,8 @@
 package student_olegs_radigins.lesson_9.level_1.task_5;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Safe2Demo {
     public static void main(String[] args) {
         Safe2 safe = new Safe2("12345", 100);

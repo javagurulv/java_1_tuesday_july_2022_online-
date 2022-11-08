@@ -1,5 +1,8 @@
 package student_ivan_mostepanov.lesson_7_classes_and_objects;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class PiggyBankV1Test {
 
     public static void main(String[] args) {

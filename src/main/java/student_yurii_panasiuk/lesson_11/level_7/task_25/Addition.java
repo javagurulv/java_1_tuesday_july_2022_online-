@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_11.level_7.task_25;
 
 import java.text.DecimalFormat;
 
+import teacher.codereview.CodeReview;
+
+@CodeReview(approved = true)
 class Addition implements Strategy {
 
     @Override
