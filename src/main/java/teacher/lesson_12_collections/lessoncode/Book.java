@@ -1,7 +1,5 @@
 package teacher.lesson_12_collections.lessoncode;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Book implements Comparable<Book> {
 
 	private String author;
