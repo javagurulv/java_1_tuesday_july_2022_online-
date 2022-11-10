@@ -13,31 +13,31 @@ class TitleSearchCriteriaTest {
     }
 
     void shouldMatchTitles() {
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
         Book book = new Book("1984", "George Orwell");
         printTestResult(titleSearchCriteria.match(book), "Title matches");
     }
 
     void shouldNotMatchDifferentCriteriaTitle() {
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
         Book book = new Book("1984", "George Orwell");
         printTestResult(!titleSearchCriteria.match(book), "Different criteria title doesn't match with real book title");
     }
 
     void shouldNotMatchNullCriteriaTitle() {
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria(null);
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria(null);
         Book book = new Book("1984", "George Orwell");
         printTestResult(!titleSearchCriteria.match(book), "null criteria title doesn't match with real book title");
     }
 
     void shouldNotMatchNullBookTitle() {
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
         Book book = new Book(null, "George Orwell");
         printTestResult(!titleSearchCriteria.match(book), "null book title doesn't match with real criteria title");
     }
 
     void shouldNotMatchBothNullTitle() {
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria(null);
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria(null);
         Book book = new Book(null, "George Orwell");
         printTestResult(!titleSearchCriteria.match(book), "null book title doesn't match with null criteria title");
     }

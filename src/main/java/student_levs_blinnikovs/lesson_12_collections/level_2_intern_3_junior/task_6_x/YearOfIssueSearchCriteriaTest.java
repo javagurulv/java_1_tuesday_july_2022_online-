@@ -15,43 +15,43 @@ class YearOfIssueSearchCriteriaTest {
     }
 
     void shouldMatchYearsOfIssue() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
         Book book = new Book("1984", "George Orwell", "1949");
         printTestResult(yearOfIssueSearchCriteria.match(book), "Year of issue matches");
     }
 
     void shouldNotMatchDifferentCriteriaYearOfIssue() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1984");
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1984");
         Book book = new Book("1984", "George Orwell", "1949");
         printTestResult(!yearOfIssueSearchCriteria.match(book), "Different criteria year of issue doesn't match with real book year of issue");
     }
 
     void shouldNotMatchNullCriteriaYearOfIssue() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
         Book book = new Book("1984", "George Orwell", "1949");
         printTestResult(!yearOfIssueSearchCriteria.match(book), "null criteria year of issue doesn't match with real book year of issue");
     }
 
     void shouldNotMatchNullBookYearOfIssue() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
         Book book = new Book("1984", "George Orwell", null);
         printTestResult(!yearOfIssueSearchCriteria.match(book), "null book year of issue doesn't match with real criteria year of issue");
     }
 
     void shouldNotMatchNullBookYearOfIssueVariationWithObjectWithUninitializedYear() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria("1949");
         Book book = new Book("1984", "George Orwell");
         printTestResult(!yearOfIssueSearchCriteria.match(book), "null book year of issue doesn't match with real criteria year of issue - variation with object with uninitialized year");
     }
 
     void shouldNotMatchBothNullYearOfIssue() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
         Book book = new Book("1984", "George Orwell", null);
         printTestResult(!yearOfIssueSearchCriteria.match(book), "null book year of issue doesn't match with null criteria year of issue");
     }
 
     void shouldNotMatchBothNullYearOfIssueVariationWithObjectWithUninitializedYear() {
-        YearOfIssueSearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
+        SearchCriteria yearOfIssueSearchCriteria = new YearOfIssueSearchCriteria(null);
         Book book = new Book("1984", "George Orwell");
         printTestResult(!yearOfIssueSearchCriteria.match(book), "null book year of issue doesn't match with null criteria year of issue - variation with object with uninitialized year");
     }

@@ -16,61 +16,61 @@ class OrSearchCriteriaTest {
     }
 
     void shouldMatchBothMatchingOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book("1984", "George Orwell");
         printTestResult(orSearchCriteria.match(book), "Both matching OR criteria");
     }
 
     void shouldMatchRightMatchingOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book("1984", "George Orwell");
         printTestResult(orSearchCriteria.match(book), "Right matching OR criteria");
     }
 
     void shouldMatchLeftMatchingOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book("1984", "George Orwell");
         printTestResult(orSearchCriteria.match(book), "Left matching OR criteria");
     }
 
     void shouldNotMatchDifferentBothOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1983");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book("1984", "George Orwell");
         printTestResult(!orSearchCriteria.match(book), "Shouldn't match with both criteria different from the book");
     }
 
     void shouldMatchPartiallyNullBookWithRealOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book("1984", null);
         printTestResult(orSearchCriteria.match(book), "Both real criteria should match partially null book");
     }
 
     void shouldNotMatchNullBookWithRealOrCriteria() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
-        TitleSearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("1984");
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         Book book = new Book(null, null);
         printTestResult(!orSearchCriteria.match(book), "Both real criteria shouldn't match null book");
     }
 
     void shouldNotMatchBothNullOrCriteriaWithRealBook() {
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(null, null);
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(null, null);
         Book book = new Book("1984", "George Orwell");
         printTestResult(!orSearchCriteria.match(book), "Both criteria as null shouldn't match real book");
     }
 
     void shouldNotMatchAllNull() {
-        OrSearchCriteria orSearchCriteria = new OrSearchCriteria(null, null);
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(null, null);
         Book book = new Book(null, null);
         printTestResult(!orSearchCriteria.match(book), "Shouldn't match all null");
     }

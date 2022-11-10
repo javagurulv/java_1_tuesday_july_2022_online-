@@ -13,31 +13,31 @@ class AuthorSearchCriteriaTest {
     }
 
     void shouldMatchAuthors() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
         Book book = new Book("1984", "George Orwell");
         printTestResult(authorSearchCriteria.match(book), "Author matches");
     }
 
     void shouldNotMatchDifferentCriteriaAuthor() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Clooney");
         Book book = new Book("1984", "George Orwell");
         printTestResult(!authorSearchCriteria.match(book), "Different criteria author doesn't match with real book author");
     }
 
     void shouldNotMatchNullCriteriaAuthor() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria(null);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria(null);
         Book book = new Book("1984", "George Orwell");
         printTestResult(!authorSearchCriteria.match(book), "null criteria author doesn't match with real book author");
     }
 
     void shouldNotMatchNullBookAuthor() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("George Orwell");
         Book book = new Book("1984", null);
         printTestResult(!authorSearchCriteria.match(book), "null book author doesn't match with real criteria author");
     }
 
     void shouldNotMatchBothNullAuthors() {
-        AuthorSearchCriteria authorSearchCriteria = new AuthorSearchCriteria(null);
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria(null);
         Book book = new Book("1984", null);
         printTestResult(!authorSearchCriteria.match(book), "null book author doesn't match with null criteria author");
     }
