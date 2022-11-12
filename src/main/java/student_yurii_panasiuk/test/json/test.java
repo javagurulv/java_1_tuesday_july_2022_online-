@@ -1,118 +1,40 @@
 package student_yurii_panasiuk.test.json;
-/*
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import java.io.*;
 import java.lang.reflect.Type;
-import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ArrayList;
 
 
 class test {
 
-     static String readUrl(String urlString) throws Exception {
-         BufferedReader reader = null;
-         try {
-             URL url = new URL(urlString);
-             reader = new BufferedReader(new InputStreamReader(url.openStream()));
-             StringBuffer buffer = new StringBuffer();
-             int read;
-             char[] chars = new char[1024];
-             while ((read = reader.read(chars)) != -1)
-             buffer.append(chars, 0, read);
-             return buffer.toString();
-         } finally {
-             if (reader != null)
-                 reader.close();
-         }
-     }
+    static IncomingData incomingData = new IncomingData(
+            "https://cbu.uz/oz/arkhiv-kursov-valyut/json/",
+            "D:\\Apache POI Excel File.xls");
+    public static void main(String[] args) throws Exception {
 
-    static class Currency {
-        int id;
-        int Code;
-        String Ccy;
-        String CcyNm_RU;
-        String	CcyNm_UZ;
-        String CcyNm_UZC;
-        String CcyNm_EN;
-        int Nominal;
-        BigDecimal Rate;
-        BigDecimal Diff;
-        String Date;
-
-        public int getId() {
-            return id;
-        }
-
-        public int getCode() {
-            return Code;
-        }
-
-        public String getCcy() {
-            return Ccy;
-        }
-
-        public String getCcyNm_RU() {
-            return CcyNm_RU;
-        }
-
-        public String getCcyNm_UZ() {
-            return CcyNm_UZ;
-        }
-
-        public String getCcyNm_UZC() {
-            return CcyNm_UZC;
-        }
-
-        public String getCcyNm_EN() {
-            return CcyNm_EN;
-        }
-
-        public int getNominal() {
-            return Nominal;
-        }
-
-        public BigDecimal getRate() {
-            return Rate;
-        }
-
-        public BigDecimal getDiff() {
-            return Diff;
-        }
-
-        public String getDate() {
-            return Date;
-        }
-    }
-
-    public static void main(String[] args)  throws Exception    {
-
-        String json = readUrl("https://cbu.uz/oz/arkhiv-kursov-valyut/json/");
-
-        Gson gson = new Gson();
+        String json = readUrl(incomingData.getUrlJson());
 
         Type userListType = new TypeToken<ArrayList<Currency>>(){}.getType();
-
-
+        Gson gson = new Gson();
         ArrayList<Currency> jsonArray = gson.fromJson(json, userListType);
 
-        for(Currency currency : jsonArray) {
-            System.out.println(currency.getCcy());
-        }
-
         // создание самого excel файла в памяти
-        HSSFWorkbook workbook = new HSSFWorkbook();
-        // создание листа с названием "Просто лист"
-        HSSFSheet sheet = workbook.createSheet("arkhiv-kursov-valyut");
+        Workbook workbook = new HSSFWorkbook();
+        // создание листа с названием "arkhiv-kursov-valyut"
+        Sheet sheet = workbook. createSheet("arkhiv-kursov-valyut");
 
         // счетчик для строк
         int rowNum = 0;
-        // создаем подписи к столбцам (это будет первая строчка в листе Excel файла)
+        // создаем подписи к столбцам
         Row row = sheet.createRow(rowNum);
+
         row.createCell(0).setCellValue("id");
         row.createCell(1).setCellValue("Code");
         row.createCell(2).setCellValue("getCcy");
@@ -126,7 +48,8 @@ class test {
         row.createCell(10).setCellValue("getDate");
 
         for(Currency currency : jsonArray) {
-            row = sheet.createRow(rowNum++);
+            rowNum++;
+            row = sheet.createRow(rowNum);
             row.createCell(0).setCellValue(currency.getId());
             row.createCell(1).setCellValue(currency.getCode());
             row.createCell(2).setCellValue(currency.getCcy());
@@ -141,18 +64,45 @@ class test {
         }
 
         // записываем созданный в памяти Excel документ в файл
-        try (FileOutputStream out = new FileOutputStream(new File("F:\\Apache POI Excel File.xls"))) {
+
+        FileOutputStream out = new FileOutputStream (incomingData.getWorkFolderAndFileName());
+        workbook.write(out);
+        out.close();
+
+        // или так
+    /*
+          try (FileOutputStream out = new FileOutputStream(new File(incomingData.getWorkFolderAndFileName()))) {
             workbook.write(out);
-        } catch (IOException e) {
+          } catch (IOException e) {
             e.printStackTrace();
         }
+     */
         System.out.println("Excel файл успешно создан!");
+        System.out.println(incomingData.getWorkFolderAndFileName());
     }
 
-
-
+    static String readUrl(String urlString) throws Exception {
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(urlString);
+            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            StringBuilder buffer = new StringBuilder();
+            int read;
+            char[] chars = new char[1024];
+            while ((read = reader.read(chars)) != -1)
+                buffer.append(chars, 0, read);
+            return buffer.toString();
+        } finally {
+            if (reader != null)
+                reader.close();
+        }
+    }
 
 }
 
- */
+
+
+
+
+
 
