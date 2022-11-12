@@ -4,5 +4,6 @@ interface ProductDatabase {
     void save(Product product);
 
     Product findByTitle(String productTitle);
+    //Нет. не является фкункциональным, так как два метода.
 
 }
