@@ -17,7 +17,7 @@ public class InMemoryDatabaseTest extends TestCase {
         inMemoryDatabase.save(milk);
         inMemoryDatabase.save(bread);
         inMemoryDatabase.save(meat);;
-        assertEquals("Milk", inMemoryDatabase.findByTitle("Milk").getTitle());
+        assertEquals(milk, inMemoryDatabase.findByTitle("Milk"));
         assertEquals(null, inMemoryDatabase.findByTitle("milk"));
     }
 }
