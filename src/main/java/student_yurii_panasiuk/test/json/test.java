@@ -65,20 +65,22 @@ class test {
         }
 
         // записываем созданный в памяти Excel документ в файл
-
+/*
         FileOutputStream out = new FileOutputStream (incomingData.getWorkFolderAndFileName());
         workbook.write(out);
         out.close();
         workbook.close();
 
+ */
+
         // или так
-    /*
+
           try (FileOutputStream out = new FileOutputStream(new File(incomingData.getWorkFolderAndFileName()))) {
             workbook.write(out);
           } catch (IOException e) {
             e.printStackTrace();
         }
-     */
+
         System.out.println("Excel файл успешно создан!");
         System.out.println(incomingData.getWorkFolderAndFileName());
     }
