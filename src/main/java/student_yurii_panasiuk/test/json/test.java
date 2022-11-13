@@ -7,7 +7,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.util.Configurator;
-
 import java.io.*;
 import java.lang.reflect.Type;
 import java.net.URL;
@@ -70,6 +69,7 @@ class test {
         FileOutputStream out = new FileOutputStream (incomingData.getWorkFolderAndFileName());
         workbook.write(out);
         out.close();
+        workbook.close();
 
         // или так
     /*
