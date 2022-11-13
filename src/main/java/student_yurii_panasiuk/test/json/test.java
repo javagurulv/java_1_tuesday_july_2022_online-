@@ -18,7 +18,7 @@ class test {
     static IncomingData incomingData = new IncomingData(
             "https://cbu.uz/oz/arkhiv-kursov-valyut/json/",
             "D:\\Apache POI Excel File.xls");
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException, Exception {
 
         String json = readUrl(incomingData.getUrlJson());
 
