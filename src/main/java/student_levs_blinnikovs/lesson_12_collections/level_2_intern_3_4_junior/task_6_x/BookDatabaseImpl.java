@@ -117,4 +117,13 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> searchResult = new HashSet<>();
+        for (Book book : books) {
+            searchResult.add(book.getTitle());
+        }
+        return searchResult;
+    }
+
 }
