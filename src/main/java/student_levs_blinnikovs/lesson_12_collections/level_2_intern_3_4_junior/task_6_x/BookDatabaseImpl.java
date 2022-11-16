@@ -131,4 +131,9 @@ class BookDatabaseImpl implements BookDatabase {
         return new HashSet<>(books);
     }
 
+    @Override
+    public boolean contains(Book book) {
+        return books.contains(book);
+    }
+
 }

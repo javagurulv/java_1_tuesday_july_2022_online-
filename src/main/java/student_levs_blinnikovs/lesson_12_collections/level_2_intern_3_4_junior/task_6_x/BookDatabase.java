@@ -35,4 +35,6 @@ interface BookDatabase {
 
     Set<Book> findUniqueBooks();
 
+    boolean contains(Book book);
+
 }
