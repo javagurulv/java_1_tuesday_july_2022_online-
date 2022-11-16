@@ -1,8 +1,6 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior.task_6_x;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import teacher.codereview.CodeReview;
 
@@ -106,6 +104,15 @@ class BookDatabaseImpl implements BookDatabase {
             if (searchCriteria.match(book)) {
                 searchResult.add(book);
             }
+        }
+        return searchResult;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> searchResult = new HashSet<>();
+        for (Book book : books) {
+            searchResult.add(book.getAuthor());
         }
         return searchResult;
     }

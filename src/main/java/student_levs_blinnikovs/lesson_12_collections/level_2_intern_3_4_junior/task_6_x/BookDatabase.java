@@ -1,7 +1,8 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior.task_6_x;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import teacher.codereview.CodeReview;
 
@@ -27,5 +28,7 @@ interface BookDatabase {
     void deleteByTitle(String title);
 
     List<Book> find(SearchCriteria searchCriteria);
+
+    Set<String> findUniqueAuthors();
 
 }
