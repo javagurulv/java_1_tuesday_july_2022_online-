@@ -1,6 +1,5 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_middle.task_6_x;
 
-import java.util.List;
 import java.util.Set;
 
 import static student_levs_blinnikovs.personal.test_utils.TestUtil.printTestResult;

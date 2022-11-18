@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_middle.task_6_x;
 
 import java.util.*;
 
@@ -134,6 +134,21 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public boolean contains(Book book) {
         return books.contains(book);
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        Map<String, List<Book>> authorToBooksMap = new HashMap<>();
+        Set<String> uniqueAuthors = findUniqueAuthors();                // TODO need to remove unique authors criteria because Map is always with unique keys
+        Set<Book> uniqueBooks = findUniqueBooks();
+        for (Book uniqueBook : uniqueBooks) {
+            for (String uniqueAuthor : uniqueAuthors) {
+                if (uniqueBook.getAuthor().equals(uniqueAuthor)) {
+                    authorToBooksMap.put(uniqueAuthor, findByAuthor(uniqueAuthor));
+                }
+            }
+        }
+        return authorToBooksMap;
     }
 
 }

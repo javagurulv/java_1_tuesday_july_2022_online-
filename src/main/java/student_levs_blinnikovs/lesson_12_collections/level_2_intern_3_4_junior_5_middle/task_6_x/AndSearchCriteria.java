@@ -1,4 +1,4 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_middle.task_6_x;
 
 class AndSearchCriteria implements SearchCriteria {
 
