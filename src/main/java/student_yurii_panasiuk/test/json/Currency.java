@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 class Currency {
 
-         int id;
+        int id;
         int Code;
         String Ccy;
         String CcyNm_RU;
