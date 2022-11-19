@@ -1,8 +1,6 @@
-package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_junior.task_6_x;
+package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_6_middle.task_6_x;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import teacher.codereview.CodeReview;
 
@@ -97,6 +95,76 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         books.removeAll(booksToDelete);
+    }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> searchResult = new ArrayList<>();
+        for (Book book : books) {
+            if (searchCriteria.match(book)) {
+                searchResult.add(book);
+            }
+        }
+        return searchResult;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> searchResult = new HashSet<>();
+        for (Book book : books) {
+            searchResult.add(book.getAuthor());
+        }
+        return searchResult;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> searchResult = new HashSet<>();
+        for (Book book : books) {
+            searchResult.add(book.getTitle());
+        }
+        return searchResult;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        return new HashSet<>(books);
+    }
+
+    @Override
+    public boolean contains(Book book) {
+        return books.contains(book);
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        Map<String, List<Book>> authorToBooksMap = new HashMap<>();
+        Set<String> uniqueAuthors = findUniqueAuthors();                // TODO need to remove unique authors criteria because Map is always with unique keys
+        Set<Book> uniqueBooks = findUniqueBooks();
+        for (Book uniqueBook : uniqueBooks) {
+            for (String uniqueAuthor : uniqueAuthors) {
+                if (uniqueBook.getAuthor().equals(uniqueAuthor)) {
+                    authorToBooksMap.put(uniqueAuthor, findByAuthor(uniqueAuthor));
+                }
+            }
+        }
+        return authorToBooksMap;
+    }
+
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+        Map<String, Integer> authorToBooksMap = new HashMap<>();
+        Set<String> uniqueAuthors = findUniqueAuthors();
+        Set<Book> uniqueBooks = findUniqueBooks();
+        for (Book uniqueBook : uniqueBooks) {
+            for (String uniqueAuthor : uniqueAuthors) {
+                if (uniqueBook.getAuthor().equals(uniqueAuthor)) {
+                    Integer bookCount = findByAuthor(uniqueAuthor).size();
+                    authorToBooksMap.put(uniqueAuthor, bookCount);
+                }
+            }
+        }
+        return authorToBooksMap;
     }
 
 }
