@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_12.level_1.task_3;
 
 import java.util.ArrayList;
 
-public class IntegerListDemo {
+ class IntegerListDemo {
 
     public static void main(String[] args) {
             Integer intNumber_0 = new Integer(0);
@@ -33,7 +33,7 @@ public class IntegerListDemo {
         isEmpty(integerslist);
 
         for (Integer number : integerslist) {
-            System.out.print("\n" + number);
+            System.out.print(number + "  ");
             }
 
     }
