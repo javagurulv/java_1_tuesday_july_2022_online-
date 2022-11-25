@@ -21,7 +21,7 @@ class BookDatabaseImpl implements BookDatabase {
 
     public boolean delete(Long bookId) {
         if (bookArrayList.isEmpty()) {
-            System.out.println("Datasbese is empty");
+            EmptyBaseMassege();
             return false;
         }
         for (Book book: bookArrayList) {
@@ -32,9 +32,13 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return false;
     }
+    static void EmptyBaseMassege () {
+        System.out.println("Datasbese is empty");
+    }
 
 
 }
+
 
 
 
