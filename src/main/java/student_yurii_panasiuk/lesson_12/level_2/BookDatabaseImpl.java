@@ -1,14 +1,14 @@
 package student_yurii_panasiuk.lesson_12.level_2;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 class BookDatabaseImpl implements BookDatabase {
 
     Long id;
     ArrayList<Book> bookArrayList = new ArrayList<Book>();
 
-    public Long save(Book book) {
+   @Override
+   public Long save(Book book) {
         if (bookArrayList.isEmpty()) {
             book.setId(1L);
         } else {
@@ -19,6 +19,7 @@ class BookDatabaseImpl implements BookDatabase {
         return book.getId();
     }
 
+    @Override
     public boolean delete(Long bookId) {
         if (bookArrayList.isEmpty()) {
             EmptyBaseMassege();
@@ -32,8 +33,22 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return false;
     }
+    @Override
+    public boolean delete(Book book){
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+            return false;
+        }
+        for (Book bookInTheList: bookArrayList) {
+            if (bookInTheList.equals(book)) {
+                bookArrayList.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
     static void EmptyBaseMassege () {
-        System.out.println("Datasbese is empty");
+        System.out.println("Databаse is empty");
     }
 
 

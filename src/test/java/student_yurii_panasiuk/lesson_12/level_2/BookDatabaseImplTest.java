@@ -16,7 +16,7 @@ public class BookDatabaseImplTest extends TestCase {
         assertTrue(bookDatabaseImplTest.save(book3) == 3L);
     }
 
-    public void testDelete() {
+    public void testDeleteByID() {
         bookDatabaseImplTest.save(book1);
         bookDatabaseImplTest.save(book2);
         assertTrue(bookDatabaseImplTest.delete(1L));
@@ -24,4 +24,10 @@ public class BookDatabaseImplTest extends TestCase {
         assertFalse(bookDatabaseImplTest.delete(3L));
         }
 
+    public void testDeleteByBook() {
+        bookDatabaseImplTest.save(book1);
+        assertTrue(bookDatabaseImplTest.delete(book1));
+        assertFalse(bookDatabaseImplTest.delete(book1));
+
+    }
 }

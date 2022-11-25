@@ -12,15 +12,12 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.save(book2));
         System.out.println(bookDatabaseImplDemo.save(book3));
 
-
-
-
-
        System.out.println(bookDatabaseImplDemo.delete(1L));
        System.out.println(bookDatabaseImplDemo.delete(2L));
-       System.out.println(bookDatabaseImplDemo.delete(3L));
+       System.out.println(bookDatabaseImplDemo.delete(book3));
        System.out.println(bookDatabaseImplDemo.delete(1L));
-       System.out.println(bookDatabaseImplDemo.delete(1L));
+       System.out.println(bookDatabaseImplDemo.delete(book2));
+
 
     }
 }
