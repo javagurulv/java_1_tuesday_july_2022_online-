@@ -2,6 +2,8 @@ package student_yurii_panasiuk.lesson_12.level_2;
 
 import junit.framework.TestCase;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class BookDatabaseImplTest extends TestCase {
@@ -10,6 +12,7 @@ public class BookDatabaseImplTest extends TestCase {
     Book book1 = new Book("Tolkien", "The Fellowship of the Ring");
     Book book2 = new Book("Tolkien", "The Two Towers");
     Book book3 = new Book("Tolkien", "The Return of the King");
+    Book book4 = new Book("Isaac Asimov", "Foundation");
 
 
     public void testSave() {
@@ -30,7 +33,6 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabaseImplTest.save(book1);
         assertTrue(bookDatabaseImplTest.delete(book1));
         assertFalse(bookDatabaseImplTest.delete(book1));
-
     }
 
     public void testFindById() {
@@ -41,6 +43,20 @@ public class BookDatabaseImplTest extends TestCase {
         assertEquals(bookDatabaseImplTest.findById(1L), Optional.of(book1));
         assertEquals(bookDatabaseImplTest.findById(2L), Optional.of(book2));
         assertNotSame(bookDatabaseImplTest.findById(3L), Optional.of(book1));
+        assertEquals(bookDatabaseImplTest.findById(4L), Optional.empty());
+    }
 
+    public void testFindByAuthor() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+
+        List<Book> testtList = new ArrayList<Book>();
+        testtList.add(book1);
+        testtList.add(book2);
+        testtList.add(book3);
+
+        assertEquals(bookDatabaseImplTest.findByAuthor("Tolkien"), testtList);
     }
 }

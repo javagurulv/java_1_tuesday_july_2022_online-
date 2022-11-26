@@ -25,6 +25,6 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.findById(1L).get().toString());
         System.out.println(bookDatabaseImplDemo.findById(4L));
 
-
+        System.out.println(bookDatabaseImplDemo.findByAuthor("Tolkien"));
     }
 }
