@@ -18,6 +18,12 @@ public class Demo {
        System.out.println(bookDatabaseImplDemo.delete(1L));
        System.out.println(bookDatabaseImplDemo.delete(book2));
 
+        System.out.println(bookDatabaseImplDemo.save(book1));
+        System.out.println(bookDatabaseImplDemo.save(book2));
+        System.out.println(bookDatabaseImplDemo.save(book3));
+
+        System.out.println(bookDatabaseImplDemo.findById(1L).get().toString());
+
 
     }
 }

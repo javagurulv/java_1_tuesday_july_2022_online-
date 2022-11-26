@@ -1,6 +1,7 @@
 package student_yurii_panasiuk.lesson_12.level_2;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -47,11 +48,24 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return false;
     }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+            return Optional.empty();
+        }
+        for (Book bookInTheList : bookArrayList) {
+            if (bookInTheList.getId().equals(bookId)) {
+               return Optional.ofNullable(bookInTheList);
+            }
+        }
+        return Optional.empty();
+    }
+
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");
     }
-
-
 }
 
 

@@ -2,6 +2,8 @@ package student_yurii_panasiuk.lesson_12.level_2;
 
 import junit.framework.TestCase;
 
+import java.util.Optional;
+
 public class BookDatabaseImplTest extends TestCase {
 
     BookDatabaseImpl bookDatabaseImplTest = new BookDatabaseImpl();
@@ -28,6 +30,17 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabaseImplTest.save(book1);
         assertTrue(bookDatabaseImplTest.delete(book1));
         assertFalse(bookDatabaseImplTest.delete(book1));
+
+    }
+
+    public void testFindById() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+
+        assertEquals(bookDatabaseImplTest.findById(1L), Optional.of(book1));
+        assertEquals(bookDatabaseImplTest.findById(2L), Optional.of(book2));
+        assertNotSame(bookDatabaseImplTest.findById(3L), Optional.of(book1));
 
     }
 }
