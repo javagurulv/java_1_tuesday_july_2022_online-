@@ -74,4 +74,17 @@ public class BookDatabaseImplTest extends TestCase {
         assertEquals(bookDatabaseImplTest.findByTitle("Foundation"), testtList);
     }
 
+    public void testcountAllBooks() {
+
+        assertEquals(bookDatabaseImplTest.countAllBooks(), 0);
+
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book5);
+
+
+        assertEquals(bookDatabaseImplTest.countAllBooks(), 5);
+    }
 }

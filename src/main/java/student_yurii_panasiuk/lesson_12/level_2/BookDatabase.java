@@ -13,5 +13,6 @@ public interface BookDatabase {
     public Optional<Book> findById(Long bookId);
     public List<Book> findByAuthor(String author);
     public List<Book> findByTitle(String title);
+    public int countAllBooks();
 
 }

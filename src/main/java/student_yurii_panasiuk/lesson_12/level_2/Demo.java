@@ -28,5 +28,7 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.findByAuthor("Tolkien"));
 
         System.out.println(bookDatabaseImplDemo.findByTitle("The Two Towers"));
+
+        System.out.println(bookDatabaseImplDemo.countAllBooks());
     }
 }

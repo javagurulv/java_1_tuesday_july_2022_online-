@@ -83,6 +83,14 @@ class BookDatabaseImpl implements BookDatabase {
         return soughtList;
     }
 
+    public int countAllBooks(){
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+            return 0;
+        }
+        return bookArrayList.size();
+    }
+
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");
     }
