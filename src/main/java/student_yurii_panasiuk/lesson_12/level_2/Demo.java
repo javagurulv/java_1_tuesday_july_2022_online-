@@ -23,6 +23,7 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.save(book3));
 
         System.out.println(bookDatabaseImplDemo.findById(1L).get().toString());
+        System.out.println(bookDatabaseImplDemo.findById(4L));
 
 
     }
