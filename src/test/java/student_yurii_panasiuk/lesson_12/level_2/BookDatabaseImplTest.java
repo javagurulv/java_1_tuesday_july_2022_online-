@@ -13,6 +13,7 @@ public class BookDatabaseImplTest extends TestCase {
     Book book2 = new Book("Tolkien", "The Two Towers");
     Book book3 = new Book("Tolkien", "The Return of the King");
     Book book4 = new Book("Isaac Asimov", "Foundation");
+    Book book5 = new Book("Asimov", "Foundation");
 
 
     public void testSave() {
@@ -59,4 +60,18 @@ public class BookDatabaseImplTest extends TestCase {
 
         assertEquals(bookDatabaseImplTest.findByAuthor("Tolkien"), testtList);
     }
+    public void testfindByTitle() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book5);
+
+        List<Book> testtList = new ArrayList<Book>();
+        testtList.add(book4);
+        testtList.add(book5);
+
+        assertEquals(bookDatabaseImplTest.findByTitle("Foundation"), testtList);
+    }
+
 }

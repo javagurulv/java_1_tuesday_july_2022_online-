@@ -12,5 +12,6 @@ public interface BookDatabase {
     public boolean delete(Book book);
     public Optional<Book> findById(Long bookId);
     public List<Book> findByAuthor(String author);
+    public List<Book> findByTitle(String title);
 
 }
