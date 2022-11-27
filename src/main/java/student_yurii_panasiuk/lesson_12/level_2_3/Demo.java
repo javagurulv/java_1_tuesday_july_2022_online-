@@ -13,11 +13,11 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.save(book2));
         System.out.println(bookDatabaseImplDemo.save(book3));
 
-       System.out.println(bookDatabaseImplDemo.delete(1L));
-       System.out.println(bookDatabaseImplDemo.delete(2L));
-       System.out.println(bookDatabaseImplDemo.delete(book3));
-       System.out.println(bookDatabaseImplDemo.delete(1L));
-       System.out.println(bookDatabaseImplDemo.delete(book2));
+        System.out.println(bookDatabaseImplDemo.delete(1L));
+        System.out.println(bookDatabaseImplDemo.delete(2L));
+        System.out.println(bookDatabaseImplDemo.delete(book3));
+        System.out.println(bookDatabaseImplDemo.delete(1L));
+        System.out.println(bookDatabaseImplDemo.delete(book2));
 
         System.out.println(bookDatabaseImplDemo.save(book1));
         System.out.println(bookDatabaseImplDemo.save(book2));
@@ -40,6 +40,17 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.toString());
         bookDatabaseImplDemo.deleteByAuthor("Tolkien");
         System.out.println(bookDatabaseImplDemo.toString());
+
+        System.out.println(bookDatabaseImplDemo.save(book1));
+        System.out.println(bookDatabaseImplDemo.save(book2));
+        System.out.println(bookDatabaseImplDemo.save(book3));
+        System.out.println(bookDatabaseImplDemo.save(book4));
+        System.out.println(bookDatabaseImplDemo.toString());
+        AndSearchCriteria andSearchCriteriaDemo = new AndSearchCriteria(
+                book -> {return book.getAuthor().equals("Isaac Asimov");},
+                book -> {return book.getTitle().equals("Foundation");}
+                );
+        System.out.println(andSearchCriteriaDemo.match(book4));
 
     }
 }
