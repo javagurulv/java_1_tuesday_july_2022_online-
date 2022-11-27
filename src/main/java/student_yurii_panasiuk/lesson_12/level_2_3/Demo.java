@@ -52,5 +52,13 @@ public class Demo {
                 );
         System.out.println(andSearchCriteriaDemo.match(book4));
 
+        OrSearchCriteria orSearchCriteriaDemo = new OrSearchCriteria(
+                book -> {return book.getAuthor().equals("Isaac Asimov");},
+                book -> {return book.getTitle().equals("The Fellowship of the Ring");}
+        );
+        System.out.println(orSearchCriteriaDemo.match(book4));
+        System.out.println(orSearchCriteriaDemo.match(book1));
+        System.out.println(orSearchCriteriaDemo.match(book2));
+
     }
 }
