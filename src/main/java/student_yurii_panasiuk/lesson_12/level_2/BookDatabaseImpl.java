@@ -112,6 +112,18 @@ class BookDatabaseImpl implements BookDatabase {
         }
         bookArrayList.removeAll(bookToDelList);
     }
+    public void deleteByTitle(String title){
+        ArrayList<Book> bookToDelList = new ArrayList<Book>();
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+        }
+        for (Book bookInTheList: bookArrayList) {
+            if (bookInTheList.getTitle().equals(title)) {
+                bookToDelList.add(bookInTheList);
+            }
+        }
+        bookArrayList.removeAll(bookToDelList);
+    }
 
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");

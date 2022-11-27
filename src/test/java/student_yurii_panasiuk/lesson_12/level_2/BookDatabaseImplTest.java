@@ -106,4 +106,32 @@ public class BookDatabaseImplTest extends TestCase {
 
     }
 
+    public void testdeleteByTitle() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+
+        List<Book> testtList1 = new ArrayList<Book>();
+        testtList1.add(book1);
+        testtList1.add(book2);
+        testtList1.add(book3);
+        testtList1.add(book4);
+        testtList1.remove(0);
+
+        List<Book> testtList2 = new ArrayList<Book>();
+        testtList2.add(book1);
+        testtList2.add(book2);
+        testtList2.add(book3);
+        testtList2.add(book4);
+        testtList2.remove(0);
+        testtList2.remove(2);
+
+        bookDatabaseImplTest.deleteByTitle("The Fellowship of the Ring");
+        assertEquals(bookDatabaseImplTest.bookArrayList, testtList1);
+        bookDatabaseImplTest.deleteByTitle("Foundation");
+        assertEquals(bookDatabaseImplTest.bookArrayList, testtList2);
+
+    }
+
 }

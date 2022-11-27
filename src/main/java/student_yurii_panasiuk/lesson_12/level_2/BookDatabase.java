@@ -13,5 +13,6 @@ public interface BookDatabase {
     public List<Book> findByTitle(String title);
     public int countAllBooks();
     public void deleteByAuthor(String author);
+    public void deleteByTitle(String title);
 
 }
