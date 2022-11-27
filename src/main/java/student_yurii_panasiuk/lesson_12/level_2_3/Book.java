@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_12.level_2;
+package student_yurii_panasiuk.lesson_12.level_2_3;
 
 import java.util.Objects;
 
