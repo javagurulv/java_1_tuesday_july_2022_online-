@@ -9,6 +9,10 @@ class BookDatabaseImpl implements BookDatabase {
     Long id;
     ArrayList<Book> bookArrayList = new ArrayList<Book>();
 
+    public ArrayList<Book> getBookArrayList() {
+        return bookArrayList;
+    }
+
     @Override
     public String toString() {
         return "BookDatabaseImpl{" +

@@ -15,7 +15,6 @@ public class BookDatabaseImplTest extends TestCase {
     Book book4 = new Book("Isaac Asimov", "Foundation");
     Book book5 = new Book("Asimov", "Foundation");
 
-
     public void testSave() {
         assertTrue(bookDatabaseImplTest.save(book1) == 1L);
         assertTrue(bookDatabaseImplTest.save(book2) == 2L);
