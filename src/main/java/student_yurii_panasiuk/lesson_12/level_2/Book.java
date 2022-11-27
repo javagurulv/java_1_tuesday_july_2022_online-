@@ -13,30 +13,30 @@ class Book {
              this.title = title;
          }
 
-         public void setId(Long id) {
+    public void setId(Long id) {
              this.id = id;
          }
 
-         public Long getId() {
+    public Long getId() {
              return this.id;
          }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                '}';
+    public String getTitle() {
+        return this.title;
     }
 
-    public String getTitle() {
-             return this.title;
-         }
+    public String getAuthor() {
+        return this.author;
+    }
 
-         public String getAuthor() {
-             return this.author;
-         }
+        @Override
+        public String toString() {
+            return "Book{" +
+                    "id=" + id +
+                    ", title='" + title + '\'' +
+                    ", author='" + author + '\'' +
+                    '}';
+        }
 
          @Override
          public boolean equals(Object o) {

@@ -7,6 +7,7 @@ public class Demo {
         Book book1 = new Book("Tolkien", "The Fellowship of the Ring");
         Book book2 = new Book("Tolkien", "The Two Towers");
         Book book3 = new Book("Tolkien", "The Return of the King");
+        Book book4 = new Book("Isaac Asimov", "Foundation");
 
         System.out.println(bookDatabaseImplDemo.save(book1));
         System.out.println(bookDatabaseImplDemo.save(book2));
@@ -30,5 +31,15 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.findByTitle("The Two Towers"));
 
         System.out.println(bookDatabaseImplDemo.countAllBooks());
+
+        System.out.println(bookDatabaseImplDemo.toString());
+        System.out.println(bookDatabaseImplDemo.save(book4));
+        System.out.println(bookDatabaseImplDemo.save(book4)); // it is possible to add duplicate
+        System.out.println(bookDatabaseImplDemo.toString());
+        bookDatabaseImplDemo.deleteByAuthor("Isaac Asimov");
+        System.out.println(bookDatabaseImplDemo.toString());
+        bookDatabaseImplDemo.deleteByAuthor("Tolkien");
+        System.out.println(bookDatabaseImplDemo.toString());
+
     }
 }

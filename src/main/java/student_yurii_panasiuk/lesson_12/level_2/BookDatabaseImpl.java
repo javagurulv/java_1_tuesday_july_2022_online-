@@ -9,7 +9,15 @@ class BookDatabaseImpl implements BookDatabase {
     Long id;
     ArrayList<Book> bookArrayList = new ArrayList<Book>();
 
-   @Override
+    @Override
+    public String toString() {
+        return "BookDatabaseImpl{" +
+                "id=" + id +
+                ", bookArrayList=" + bookArrayList +
+                '}';
+    }
+
+    @Override
    public Long save(Book book) {
         if (bookArrayList.isEmpty()) {
             book.setId(1L);
@@ -82,13 +90,27 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return soughtList;
     }
-
+    @Override
     public int countAllBooks(){
         if (bookArrayList.isEmpty()) {
             EmptyBaseMassege();
             return 0;
         }
         return bookArrayList.size();
+    }
+    @Override
+    public void deleteByAuthor(String author){
+        //Avoiding the ConcurrentModificationException
+        ArrayList<Book> bookToDelList = new ArrayList<Book>();
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+        }
+        for (Book bookInTheList: bookArrayList) {
+            if (bookInTheList.getAuthor().equals(author)) {
+                bookToDelList.add(bookInTheList);
+            }
+        }
+        bookArrayList.removeAll(bookToDelList);
     }
 
     static void EmptyBaseMassege () {

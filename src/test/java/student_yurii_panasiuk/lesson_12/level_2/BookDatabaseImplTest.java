@@ -87,4 +87,23 @@ public class BookDatabaseImplTest extends TestCase {
 
         assertEquals(bookDatabaseImplTest.countAllBooks(), 5);
     }
+
+    public void testdeleteByAuthor() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+
+        List<Book> testtList1 = new ArrayList<Book>();
+        testtList1.add(book1);
+        testtList1.add(book2);
+        testtList1.add(book3);
+
+        bookDatabaseImplTest.deleteByAuthor("Isaac Asimov");
+        assertEquals(bookDatabaseImplTest.bookArrayList, testtList1);
+        bookDatabaseImplTest.deleteByAuthor("Tolkien");
+        assertTrue(bookDatabaseImplTest.countAllBooks() == 0);
+
+    }
+
 }

@@ -5,8 +5,6 @@ import java.util.Optional;
 
 public interface BookDatabase {
 
-
-
     public Long save(Book book);
     public boolean delete(Long bookId);
     public boolean delete(Book book);
@@ -14,5 +12,6 @@ public interface BookDatabase {
     public List<Book> findByAuthor(String author);
     public List<Book> findByTitle(String title);
     public int countAllBooks();
+    public void deleteByAuthor(String author);
 
 }
