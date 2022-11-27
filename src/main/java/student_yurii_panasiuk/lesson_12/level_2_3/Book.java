@@ -8,9 +8,23 @@ class Book {
          private String title;
          private String author;
 
-         Book(String author, String title) {
+         private String yearOfIssue;
+
+    public String getYearOfIssue() {
+        return yearOfIssue;
+    }
+
+    public void setYearOfIssue(String yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
+    }
+    Book(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+    Book(String author, String title, String yearOfIssue) {  // переписывать все инициализации скучно
              this.author = author;
              this.title = title;
+             this.yearOfIssue = yearOfIssue;
          }
 
     public void setId(Long id) {
@@ -43,12 +57,13 @@ class Book {
              if (this == o) return true;
              if (o == null || getClass() != o.getClass()) return false;
              Book book = (Book) o;
-             return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+             return id.equals(book.id) && title.equals(book.title) && author.equals(book.author) &&
+                     yearOfIssue.equals(book.yearOfIssue);
          }
 
          @Override
          public int hashCode() {
-             return Objects.hash(id, title, author);
+             return Objects.hash(id, title, author, yearOfIssue);
          }
 
 }
