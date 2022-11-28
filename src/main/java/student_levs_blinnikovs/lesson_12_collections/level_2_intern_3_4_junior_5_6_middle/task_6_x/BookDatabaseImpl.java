@@ -10,6 +10,7 @@ class BookDatabaseImpl implements BookDatabase {
     List<Book> books = new ArrayList<>();
     private Long lastId = 0L;
 
+    // used in UI
     @Override
     public Long save(Book book) {
         lastId++;
@@ -18,6 +19,7 @@ class BookDatabaseImpl implements BookDatabase {
         return book.getId();
     }
 
+    // used in UI
     @Override
     public boolean delete(Long bookId) {
         for (Book book : books) {
@@ -28,6 +30,7 @@ class BookDatabaseImpl implements BookDatabase {
         return false;
     }
 
+    // used in UI
     @Override
     public boolean delete(Book book) {
         for (Book bookInList : books) {
@@ -38,6 +41,7 @@ class BookDatabaseImpl implements BookDatabase {
         return false;
     }
 
+    // used in UI
     @Override
     public Optional<Book> findById(Long bookId) {
         for (Book book : books) {
@@ -48,6 +52,7 @@ class BookDatabaseImpl implements BookDatabase {
         return Optional.empty();
     }
 
+    // used in UI
     @Override
     public List<Book> findByAuthor(String author) {
         List<Book> searchResult = new ArrayList<>();
@@ -59,6 +64,7 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    // used in UI
     @Override
     public List<Book> findByTitle(String title) {
         List<Book> searchResult = new ArrayList<>();
@@ -70,11 +76,13 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public int countAllBooks() {
         return books.size();
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public void deleteByAuthor(String author) {
         List<Book> booksToDelete = new ArrayList<>();
@@ -86,6 +94,7 @@ class BookDatabaseImpl implements BookDatabase {
         books.removeAll(booksToDelete);
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public void deleteByTitle(String title) {
         List<Book> booksToDelete = new ArrayList<>();
@@ -108,6 +117,7 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public Set<String> findUniqueAuthors() {
         Set<String> searchResult = new HashSet<>();
@@ -117,6 +127,7 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public Set<String> findUniqueTitles() {
         Set<String> searchResult = new HashSet<>();
@@ -126,6 +137,7 @@ class BookDatabaseImpl implements BookDatabase {
         return searchResult;
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public Set<Book> findUniqueBooks() {
         return new HashSet<>(books);
@@ -136,6 +148,7 @@ class BookDatabaseImpl implements BookDatabase {
         return books.contains(book);
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public Map<String, List<Book>> getAuthorToBooksMap() {
         Map<String, List<Book>> authorToBooksMap = new HashMap<>();
@@ -151,6 +164,7 @@ class BookDatabaseImpl implements BookDatabase {
         return authorToBooksMap;
     }
 
+    // TODO to include in UI in Task 38
     @Override
     public Map<String, Integer> getEachAuthorBookCount() {
         Map<String, Integer> authorToBooksMap = new HashMap<>();

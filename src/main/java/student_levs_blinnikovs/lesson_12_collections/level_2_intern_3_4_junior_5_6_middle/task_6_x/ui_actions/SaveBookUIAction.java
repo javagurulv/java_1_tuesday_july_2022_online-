@@ -5,7 +5,7 @@ import student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5
 
 import java.util.Scanner;
 
-class SaveBookUIAction implements UIAction {
+public class SaveBookUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
 

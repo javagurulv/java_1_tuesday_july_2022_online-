@@ -3,10 +3,9 @@ package student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_
 import student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_6_middle.task_6_x.Book;
 import student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5_6_middle.task_6_x.BookDatabase;
 
-import java.util.Optional;
 import java.util.Scanner;
 
-class DeleteByIdUIAction implements UIAction {
+public class DeleteByIdUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
 

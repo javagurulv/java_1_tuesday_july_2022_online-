@@ -6,7 +6,7 @@ import student_levs_blinnikovs.lesson_12_collections.level_2_intern_3_4_junior_5
 import java.util.Optional;
 import java.util.Scanner;
 
-class FindByIdUIAction implements UIAction {
+public class FindByIdUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
 
