@@ -5,13 +5,14 @@ import java.util.Objects;
 import teacher.codereview.CodeReview;
 
 @CodeReview(approved = true)
+public
 class Book {
     private Long id;
     private String title;
     private String author;
     private String yearOfIssue;
 
-    Book(String title, String author) {
+    public Book(String title, String author) {
         this.author = author;
         this.title = title;
     }
