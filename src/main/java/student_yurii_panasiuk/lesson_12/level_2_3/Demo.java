@@ -68,8 +68,9 @@ public class Demo {
         System.out.println(searchCriteria.match(book4));
         System.out.println(searchCriteria.match(book1));
         System.out.println(searchCriteria.match(book2));
+        System.out.println();
 
-        // еще бы пройтись по всему списку
+        System.out.println(bookDatabaseImplDemo.find(searchCriteria));
 
     }
 }

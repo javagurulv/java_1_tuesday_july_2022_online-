@@ -116,6 +116,7 @@ class BookDatabaseImpl implements BookDatabase {
         }
         bookArrayList.removeAll(bookToDelList);
     }
+    @Override
     public void deleteByTitle(String title){
         ArrayList<Book> bookToDelList = new ArrayList<Book>();
         if (bookArrayList.isEmpty()) {
@@ -127,6 +128,16 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         bookArrayList.removeAll(bookToDelList);
+    }
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria){
+        List<Book> soughtList = new ArrayList<Book>();
+        for (Book bookInTheList : bookArrayList) {
+            if (searchCriteria.match(bookInTheList)) {
+                soughtList.add(bookInTheList);
+            }
+        }
+        return soughtList;
     }
 
     static void EmptyBaseMassege () {

@@ -133,4 +133,21 @@ public class BookDatabaseImplTest extends TestCase {
 
     }
 
+    public void testfind() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book4);
+
+        List<Book> testtList1 = new ArrayList<Book>();
+        testtList1.add(book1);
+        testtList1.add(book4);
+
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("Isaac Asimov");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("The Fellowship of the Ring");
+        SearchCriteria searchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+
+        assertEquals(testtList1, bookDatabaseImplTest.find(searchCriteria));
+    }
+
+
 }

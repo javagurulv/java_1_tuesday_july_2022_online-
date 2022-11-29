@@ -14,5 +14,6 @@ public interface BookDatabase {
     public int countAllBooks();
     public void deleteByAuthor(String author);
     public void deleteByTitle(String title);
+    public List<Book> find(SearchCriteria searchCriteria);
 
 }
