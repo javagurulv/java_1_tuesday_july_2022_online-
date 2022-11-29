@@ -59,6 +59,17 @@ public class Demo {
         System.out.println(orSearchCriteriaDemo.match(book4));
         System.out.println(orSearchCriteriaDemo.match(book1));
         System.out.println(orSearchCriteriaDemo.match(book2));
+        System.out.println();
+
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("Isaac Asimov");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("The Fellowship of the Ring");
+        SearchCriteria searchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+
+        System.out.println(searchCriteria.match(book4));
+        System.out.println(searchCriteria.match(book1));
+        System.out.println(searchCriteria.match(book2));
+
+        // еще бы пройтись по всему списку
 
     }
 }
