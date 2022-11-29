@@ -1,10 +1,8 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class BookDatabaseImplTest extends TestCase {
 
@@ -149,5 +147,14 @@ public class BookDatabaseImplTest extends TestCase {
         assertEquals(testtList1, bookDatabaseImplTest.find(searchCriteria));
     }
 
+    public void testfindUniqueAuthors() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book5);
+
+        assertTrue( bookDatabaseImplTest.findUniqueAuthors().size() == 3 ); // three unique authors
+    }
 
 }

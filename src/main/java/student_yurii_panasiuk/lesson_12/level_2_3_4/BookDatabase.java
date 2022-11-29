@@ -1,7 +1,8 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface BookDatabase {
 
@@ -15,5 +16,6 @@ public interface BookDatabase {
     public void deleteByAuthor(String author);
     public void deleteByTitle(String title);
     public List<Book> find(SearchCriteria searchCriteria);
+    public Set<String> findUniqueAuthors();
 
 }

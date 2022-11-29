@@ -1,8 +1,6 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -138,6 +136,14 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return soughtList;
+    }
+    @Override
+    public Set<String> findUniqueAuthors(){
+        Set<String> soughtSet = new HashSet<>();
+        for (Book bookInTheList : bookArrayList) {
+            soughtSet.add(bookInTheList.getAuthor());
+            }
+        return soughtSet;
     }
 
     static void EmptyBaseMassege () {

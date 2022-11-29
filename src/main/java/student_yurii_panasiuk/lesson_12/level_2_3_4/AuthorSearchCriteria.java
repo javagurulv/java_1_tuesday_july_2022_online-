@@ -1,7 +1,4 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
-
-import java.util.ArrayList;
-import java.util.List;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 public class AuthorSearchCriteria implements SearchCriteria {
 

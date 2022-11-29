@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 public class YearOfIssueSearchCriteria implements SearchCriteria {
 

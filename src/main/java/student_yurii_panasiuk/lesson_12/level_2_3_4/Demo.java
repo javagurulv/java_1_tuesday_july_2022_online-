@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_12.level_2_3;
+package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 public class Demo {
     public static void main(String[] args) {
@@ -71,6 +71,11 @@ public class Demo {
         System.out.println();
 
         System.out.println(bookDatabaseImplDemo.find(searchCriteria));
+        System.out.println();
+
+        System.out.println(bookDatabaseImplDemo.findUniqueAuthors());
+        System.out.println(bookDatabaseImplDemo.findUniqueAuthors().size());
+
 
     }
 }
