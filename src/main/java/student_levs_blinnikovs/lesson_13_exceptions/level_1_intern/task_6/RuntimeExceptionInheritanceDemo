@@ -1,0 +1,5 @@
+RuntimeException
+        |_ Exception
+                |_ Throwable
+                        |_ Serializable
+                                |_ Serializable (Interface)
