@@ -13,6 +13,11 @@ public class BookDatabaseImplTest extends TestCase {
     Book book4 = new Book("Isaac Asimov", "Foundation");
     Book book5 = new Book("Asimov", "Foundation");
 
+    Book book6 = new Book("Tolkien", "The Fellowship of the Ring", "1954");
+    Book book7 = new Book("Tolkien", "The Two Towers");
+    Book book8 = new Book("Tolkien", "The Return of the King", "1955");
+    Book book9 = new Book("Isaac Asimov", "Foundation", "1951");
+
     public void testSave() {
         assertTrue(bookDatabaseImplTest.save(book1) == 1L);
         assertTrue(bookDatabaseImplTest.save(book2) == 2L);
@@ -179,4 +184,15 @@ public class BookDatabaseImplTest extends TestCase {
 
         assertTrue( bookDatabaseImplTest.findUniqueBooks().size() == 5 ); // four unique books
     }
+    public void testcontains() {
+        bookDatabaseImplTest.save(book6);
+        bookDatabaseImplTest.save(book7);
+        bookDatabaseImplTest.save(book8);
+
+
+        assertTrue(bookDatabaseImplTest.contains(book6));
+        assertTrue(bookDatabaseImplTest.contains(book8));
+        assertFalse(bookDatabaseImplTest.contains(book9));
+    }
+
 }

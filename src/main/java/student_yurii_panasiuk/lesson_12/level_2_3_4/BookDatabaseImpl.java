@@ -161,6 +161,20 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return soughtSet;
     }
+    @Override
+    public boolean contains(Book book){
+        if (bookArrayList.isEmpty()) {
+            EmptyBaseMassege();
+            return false;
+        }
+        for (Book bookСompare: bookArrayList) {
+            if (bookСompare.getAuthor().equals(book.getAuthor()) &&
+                bookСompare.getTitle().equals(book.getTitle()) &&
+                bookСompare.getYearOfIssue().equals(book.getYearOfIssue()) //год тоже внес. но проверки на пустой год нет
+            ) { return true; }
+        }
+        return false;
+    }
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");
     }
