@@ -18,6 +18,6 @@ public interface BookDatabase {
     public List<Book> find(SearchCriteria searchCriteria);
     public Set<String> findUniqueAuthors();
     public Set<String> findUniqueTitles();
-
+    public Set<Book> findUniqueBooks();
 
 }
