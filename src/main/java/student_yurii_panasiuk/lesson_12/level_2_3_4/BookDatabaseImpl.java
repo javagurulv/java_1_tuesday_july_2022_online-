@@ -153,7 +153,6 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return soughtSet;
     }
-
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");
     }

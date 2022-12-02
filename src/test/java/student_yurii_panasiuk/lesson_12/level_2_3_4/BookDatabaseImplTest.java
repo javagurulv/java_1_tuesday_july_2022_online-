@@ -166,5 +166,4 @@ public class BookDatabaseImplTest extends TestCase {
 
         assertTrue( bookDatabaseImplTest.findUniqueTitles().size() == 4 ); // four unique titles
     }
-
 }
