@@ -145,6 +145,14 @@ class BookDatabaseImpl implements BookDatabase {
             }
         return soughtSet;
     }
+    @Override
+    public Set<String> findUniqueTitles(){
+        Set<String> soughtSet = new HashSet<>();
+        for (Book bookInTheList : bookArrayList) {
+            soughtSet.add(bookInTheList.getTitle());
+        }
+        return soughtSet;
+    }
 
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");

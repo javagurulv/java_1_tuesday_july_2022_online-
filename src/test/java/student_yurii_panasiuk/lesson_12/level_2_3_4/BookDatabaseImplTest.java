@@ -157,4 +157,14 @@ public class BookDatabaseImplTest extends TestCase {
         assertTrue( bookDatabaseImplTest.findUniqueAuthors().size() == 3 ); // three unique authors
     }
 
+    public void testfindUniqueTitles() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book5);
+
+        assertTrue( bookDatabaseImplTest.findUniqueTitles().size() == 4 ); // four unique titles
+    }
+
 }
