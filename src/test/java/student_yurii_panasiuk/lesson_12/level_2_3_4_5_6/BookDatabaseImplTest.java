@@ -15,7 +15,7 @@ public class BookDatabaseImplTest extends TestCase {
 
 
     Book book6 = new Book("Tolkien", "The Fellowship of the Ring", "1954");
-    Book book7 = new Book("Tolkien", "The Two Towers");
+    Book book7 = new Book("Tolkien", "The Two Towers", "1954");
     Book book8 = new Book("Tolkien", "The Return of the King", "1955");
     Book book9 = new Book("Isaac Asimov", "Foundation", "1951");
 

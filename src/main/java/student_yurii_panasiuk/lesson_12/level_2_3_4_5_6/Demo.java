@@ -76,6 +76,13 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.findUniqueAuthors());
         System.out.println(bookDatabaseImplDemo.findUniqueAuthors().size());
 
+        System.out.println(bookDatabaseImplDemo.toString());
+        SaveBookUIAction saveBookUIDemo = new SaveBookUIAction(bookDatabaseImplDemo);
+        saveBookUIDemo.execute();
+        System.out.println(bookDatabaseImplDemo.toString());
+
+        FindByIdUIAction findByIdUIDemo = new FindByIdUIAction(bookDatabaseImplDemo);
+        findByIdUIDemo.execute();
 
     }
 }
