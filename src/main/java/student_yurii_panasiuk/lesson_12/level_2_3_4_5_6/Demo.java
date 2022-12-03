@@ -1,5 +1,9 @@
 package student_yurii_panasiuk.lesson_12.level_2_3_4_5_6;
 
+import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.FindByAuthorUIAction;
+import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.FindByIdUIAction;
+import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.SaveBookUIAction;
+
 public class Demo {
     public static void main(String[] args) {
 
@@ -83,6 +87,9 @@ public class Demo {
 
         FindByIdUIAction findByIdUIDemo = new FindByIdUIAction(bookDatabaseImplDemo);
         findByIdUIDemo.execute();
+
+        FindByAuthorUIAction findByAuthorUIDemo = new FindByAuthorUIAction(bookDatabaseImplDemo);
+        findByAuthorUIDemo.execute();
 
     }
 }

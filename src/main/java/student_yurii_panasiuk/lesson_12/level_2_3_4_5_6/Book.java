@@ -2,7 +2,7 @@ package student_yurii_panasiuk.lesson_12.level_2_3_4_5_6;
 
 import java.util.Objects;
 
-class Book {
+public class Book {
 
          private Long id;
          private String title;
@@ -21,7 +21,7 @@ class Book {
         this.author = author;
         this.title = title;
     }
-    Book(String author, String title, String yearOfIssue) {  // переписывать все инициализации скучно
+    public Book(String author, String title, String yearOfIssue) {  // переписывать все инициализации скучно
              this.author = author;
              this.title = title;
              this.yearOfIssue = yearOfIssue;
