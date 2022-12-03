@@ -1,9 +1,6 @@
 package student_yurii_panasiuk.lesson_12.level_2_3_4_5_6;
 
-import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.FindByAuthorUIAction;
-import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.FindByIdUIAction;
-import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.FindByTitleUIAction;
-import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.SaveBookUIAction;
+import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.*;
 
 public class Demo {
     public static void main(String[] args) {
@@ -96,5 +93,9 @@ public class Demo {
         FindByTitleUIAction findByTitleUIDemo = new FindByTitleUIAction(bookDatabaseImplDemo);
         findByTitleUIDemo.execute();
 
+        System.out.println(bookDatabaseImplDemo.toString());
+        DeleteByIdUIAction deleteByIdUIDemo = new DeleteByIdUIAction(bookDatabaseImplDemo);
+        deleteByIdUIDemo.execute();
+        System.out.println(bookDatabaseImplDemo.toString());
     }
 }

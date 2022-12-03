@@ -11,7 +11,6 @@ public class SaveBookUIAction implements UIAction {
     String tittle;
     String year;
     private BookDatabase bookDatabase;
-
     public SaveBookUIAction(BookDatabase bookDatabase) {
         this.bookDatabase = bookDatabase;
     }

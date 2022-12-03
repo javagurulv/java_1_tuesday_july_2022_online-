@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class FindByAuthorUIAction implements UIAction {
     String author;
     private BookDatabase bookDatabase;
-
     public FindByAuthorUIAction(BookDatabase bookDatabase) {
         this.bookDatabase = bookDatabase;
     }
