@@ -21,6 +21,7 @@ public interface BookDatabase {
     public Set<String> findUniqueTitles();
     public Set<Book> findUniqueBooks();
     public boolean contains(Book book);
-    public Map<String, List<Book>> getAuthorToBooksMap(String author);
+    public Map<String, List<Book>> getSinleAuthorToBooksMap(String author);
+    public Map<String, List<Book>> getAuthorToBooksMap();
 
 }

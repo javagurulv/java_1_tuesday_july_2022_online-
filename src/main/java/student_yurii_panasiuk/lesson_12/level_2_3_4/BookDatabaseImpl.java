@@ -176,7 +176,7 @@ class BookDatabaseImpl implements BookDatabase {
         return false;
     }
     @Override
-    public Map<String, List<Book>> getAuthorToBooksMap(String authorCompare) { //надеюсь я правильно понял что автор - параметр. иначе этих мапов будет столько сколько авторов
+    public Map<String, List<Book>> getSinleAuthorToBooksMap(String authorCompare) {
 
         List<Book> soughtList = new ArrayList<Book>();
 
@@ -188,6 +188,15 @@ class BookDatabaseImpl implements BookDatabase {
         Map<String, List<Book>> BooksByAuthor = new HashMap<>();
         BooksByAuthor.put(authorCompare, soughtList);
         return BooksByAuthor;
+    }
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap(){
+        Map<String, List<Book>> BooksByAllAuthorsMap = new HashMap<>();
+
+        for (String author : findUniqueAuthors()){
+            BooksByAllAuthorsMap.putAll(getSinleAuthorToBooksMap(author)); // могут перезаписатся значения может быть
+        }
+        return BooksByAllAuthorsMap;
     }
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");

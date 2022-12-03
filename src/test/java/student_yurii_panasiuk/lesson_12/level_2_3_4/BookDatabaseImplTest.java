@@ -13,10 +13,13 @@ public class BookDatabaseImplTest extends TestCase {
     Book book4 = new Book("Isaac Asimov", "Foundation");
     Book book5 = new Book("Asimov", "Foundation");
 
+
     Book book6 = new Book("Tolkien", "The Fellowship of the Ring", "1954");
     Book book7 = new Book("Tolkien", "The Two Towers");
     Book book8 = new Book("Tolkien", "The Return of the King", "1955");
     Book book9 = new Book("Isaac Asimov", "Foundation", "1951");
+
+    Book book10 = new Book("Isaac Asimov", "The End of Eternity");
 
     public void testSave() {
         assertTrue(bookDatabaseImplTest.save(book1) == 1L);
@@ -195,7 +198,7 @@ public class BookDatabaseImplTest extends TestCase {
         assertFalse(bookDatabaseImplTest.contains(book9));
     }
 
-    public void testgetAuthorToBooksMap() {
+    public void testgetSinleAuthorToBooksMap() {
         bookDatabaseImplTest.save(book1);
         bookDatabaseImplTest.save(book2);
         bookDatabaseImplTest.save(book3);
@@ -210,6 +213,30 @@ public class BookDatabaseImplTest extends TestCase {
         Map<String, List<Book>> testMap1 = new HashMap<>();
         testMap1.put("Tolkien", testtList1);
 
-        assertEquals(testMap1, bookDatabaseImplTest.getAuthorToBooksMap("Tolkien"));
+        assertEquals(testMap1, bookDatabaseImplTest.getSinleAuthorToBooksMap("Tolkien"));
+    }
+
+
+    public void testgetAuthorToBooksMap() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book10);
+
+        List<Book> testList1 = new ArrayList<Book>();
+        testList1.add(book1);
+        testList1.add(book2);
+        testList1.add(book3);
+
+        List<Book> testList2 = new ArrayList<Book>();
+        testList2.add(book4);
+        testList2.add(book10);
+
+        Map<String, List<Book>> testMap1 = new HashMap<>();
+        testMap1.put("Tolkien", testList1);
+        testMap1.put("Isaac Asimov", testList2);
+
+        assertEquals(testMap1, bookDatabaseImplTest.getAuthorToBooksMap());
     }
 }
