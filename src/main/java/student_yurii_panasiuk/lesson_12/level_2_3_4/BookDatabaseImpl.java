@@ -175,6 +175,20 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return false;
     }
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap(String authorCompare) { //надеюсь я правильно понял что автор - параметр. иначе этих мапов будет столько сколько авторов
+
+        List<Book> soughtList = new ArrayList<Book>();
+
+        for (Book bookСompare : bookArrayList) {
+            if (bookСompare.getAuthor().equals(authorCompare)) {
+                soughtList.add(bookСompare);
+            }
+        }
+        Map<String, List<Book>> BooksByAuthor = new HashMap<>();
+        BooksByAuthor.put(authorCompare, soughtList);
+        return BooksByAuthor;
+    }
     static void EmptyBaseMassege () {
         System.out.println("Databаse is empty");
     }

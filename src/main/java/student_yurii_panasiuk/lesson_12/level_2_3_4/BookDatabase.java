@@ -1,6 +1,7 @@
 package student_yurii_panasiuk.lesson_12.level_2_3_4;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -20,5 +21,6 @@ public interface BookDatabase {
     public Set<String> findUniqueTitles();
     public Set<Book> findUniqueBooks();
     public boolean contains(Book book);
+    public Map<String, List<Book>> getAuthorToBooksMap(String author);
 
 }

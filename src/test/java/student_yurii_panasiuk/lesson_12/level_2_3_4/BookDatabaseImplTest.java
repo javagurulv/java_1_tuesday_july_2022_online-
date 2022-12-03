@@ -195,4 +195,21 @@ public class BookDatabaseImplTest extends TestCase {
         assertFalse(bookDatabaseImplTest.contains(book9));
     }
 
+    public void testgetAuthorToBooksMap() {
+        bookDatabaseImplTest.save(book1);
+        bookDatabaseImplTest.save(book2);
+        bookDatabaseImplTest.save(book3);
+        bookDatabaseImplTest.save(book4);
+        bookDatabaseImplTest.save(book5);
+
+        List<Book> testtList1 = new ArrayList<Book>();
+        testtList1.add(book1);
+        testtList1.add(book2);
+        testtList1.add(book3);
+
+        Map<String, List<Book>> testMap1 = new HashMap<>();
+        testMap1.put("Tolkien", testtList1);
+
+        assertEquals(testMap1, bookDatabaseImplTest.getAuthorToBooksMap("Tolkien"));
+    }
 }
