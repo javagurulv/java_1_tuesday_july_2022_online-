@@ -1,4 +1,4 @@
-package student_yurii_panasiuk.lesson_12.level_2_3_4;
+package student_yurii_panasiuk.lesson_12.level_2_3_4_5_6;
 
 import java.util.HashSet;
 import java.util.Set;
