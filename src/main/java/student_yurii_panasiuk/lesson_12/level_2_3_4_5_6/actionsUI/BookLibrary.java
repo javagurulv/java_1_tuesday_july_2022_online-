@@ -20,10 +20,12 @@ public class BookLibrary {
             menuNumberToActionMap.put(3, new FindByAuthorUIAction(bookDatabase));
             menuNumberToActionMap.put(4, new FindByTitleUIAction(bookDatabase));
             menuNumberToActionMap.put(5, new DeleteByIdUIAction(bookDatabase));
+            menuNumberToActionMap.put(6, new FindByAuthorUIAction(bookDatabase, 1));
         }
 
         public void run() {
             Scanner sc = new Scanner(System.in);
+
 
             while (true) {
                 System.out.println("Please enter menu number: ");
