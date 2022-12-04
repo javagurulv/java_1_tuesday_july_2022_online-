@@ -107,15 +107,16 @@ public class Demo {
 
         System.out.println(bookDatabaseImplDemo.toString());
         System.out.println("paging");
-       // Paging showPage = new Paging(listToArrayList(bookDatabaseImplDemo.findByAuthor("Tolkien")));
-       Paging showPage = new Paging(bookDatabaseImplDemo.getBookArrayList());
+        ArrayList<Book> booksToPrint = new ArrayList<>();
+        booksToPrint.addAll(bookDatabaseImplDemo.findByAuthor("Tolkien"));
+        Paging showPage = new Paging(booksToPrint);
+       //Paging showPage = new Paging(bookDatabaseImplDemo.getBookArrayList());
+        System.out.println(booksToPrint);
 
-       for (Book book : showPage.getPage(2)){ System.out.println(book); }
        for (Book book : showPage.getPage(1)){ System.out.println(book); }
+       for (Book book : showPage.getPage(2)){ System.out.println(book); }
 
     }
 
-     static <T> ArrayList<T> listToArrayList(List<T> list) {
-        return list != null ? new ArrayList<>(list) : null;
-    }
+
 }

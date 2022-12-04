@@ -16,13 +16,13 @@ public class Paging {
         System.out.println("page: " + pageNumber);
         List<Book> soughtList = new ArrayList<Book>();
 
-       if ((pageNumber > bookArrayList.size()/linesPerPage) || pageNumber <= 0){
+       if ((pageNumber > (int)Math.ceil((double)bookArrayList.size()/linesPerPage)) || pageNumber <= 0){
         throw new IllegalArgumentException("invalid page: " + pageNumber);
     }
 
-       for (int i = 0; i <linesPerPage; i++){
+       for (int i = 0; i < linesPerPage; i++){
           int position = (i+(pageNumber*linesPerPage) - linesPerPage);
-          if (position <= bookArrayList.size()) {
+          if (position < bookArrayList.size()) {
              soughtList.add(bookArrayList.get(position));
            }
        }

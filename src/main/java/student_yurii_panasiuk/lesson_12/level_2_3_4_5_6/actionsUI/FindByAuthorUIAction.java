@@ -19,12 +19,10 @@ public class FindByAuthorUIAction implements UIAction {
         List<Book> soughtList = new ArrayList<Book>();
         soughtList =  bookDatabase.findByAuthor(author);
         System.out.println(soughtList.toString());
-
     }
     void dataRequest(){
         Scanner input = new Scanner(System.in);
         System.out.println("search by author");
-
         System.out.println("author:");
         author = input.nextLine();
     }
