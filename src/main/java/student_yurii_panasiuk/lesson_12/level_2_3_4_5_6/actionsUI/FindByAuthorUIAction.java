@@ -33,8 +33,6 @@ public class FindByAuthorUIAction implements UIAction {
            }
     }
 
-
-
     void dataRequest(){
         Scanner input = new Scanner(System.in);
         System.out.println("search by author");
