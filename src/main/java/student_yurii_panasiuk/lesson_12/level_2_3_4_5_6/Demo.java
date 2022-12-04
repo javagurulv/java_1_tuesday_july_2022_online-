@@ -2,6 +2,9 @@ package student_yurii_panasiuk.lesson_12.level_2_3_4_5_6;
 
 import student_yurii_panasiuk.lesson_12.level_2_3_4_5_6.actionsUI.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Demo {
     public static void main(String[] args) {
 
@@ -78,6 +81,8 @@ public class Demo {
         System.out.println(bookDatabaseImplDemo.findUniqueAuthors());
         System.out.println(bookDatabaseImplDemo.findUniqueAuthors().size());
 
+        /*
+
         System.out.println(bookDatabaseImplDemo.toString());
         SaveBookUIAction saveBookUIDemo = new SaveBookUIAction(bookDatabaseImplDemo);
         saveBookUIDemo.execute();
@@ -97,5 +102,20 @@ public class Demo {
         DeleteByIdUIAction deleteByIdUIDemo = new DeleteByIdUIAction(bookDatabaseImplDemo);
         deleteByIdUIDemo.execute();
         System.out.println(bookDatabaseImplDemo.toString());
+
+        */
+
+        System.out.println(bookDatabaseImplDemo.toString());
+        System.out.println("paging");
+       // Paging showPage = new Paging(listToArrayList(bookDatabaseImplDemo.findByAuthor("Tolkien")));
+       Paging showPage = new Paging(bookDatabaseImplDemo.getBookArrayList());
+
+       for (Book book : showPage.getPage(2)){ System.out.println(book); }
+       for (Book book : showPage.getPage(1)){ System.out.println(book); }
+
+    }
+
+     static <T> ArrayList<T> listToArrayList(List<T> list) {
+        return list != null ? new ArrayList<>(list) : null;
     }
 }
