@@ -1,5 +1,5 @@
 Исправьте код:
 
-class MyException extends Throwables {
+class MyException extends Throwable {
 
 }
