@@ -10,6 +10,8 @@ class BankApiImplTest {
         BankApiImplTest test = new BankApiImplTest();
         test.shouldFindByIdSmoke();
         test.shouldNotFindNonExistingByIdSmoke();
+        test.shouldNotFindInEmptyListSmoke();
+
         test.shouldNotThrowExceptionWithProperRoles();
         test.shouldThrowExceptionWithoutProperRoles();
     }
@@ -42,6 +44,21 @@ class BankApiImplTest {
         Optional<BankClient> realBankClient = api.findByUid(userCredentials, "2");
 
         printTestResult(!realBankClient.equals(expectedBankClient), "Should not find non existing by id");
+    }
+
+    void shouldNotFindInEmptyListSmoke() throws AccessDeniedException {
+        BankClient client1 = new BankClient("1", "Levs");
+
+        List<Role> roles = List.of(Role.CAN_SEARCH_CLIENTS);
+
+        List<BankClient> bankClients = List.of();   // empty list
+
+        UserCredentials userCredentials = new UserCredentials(roles);
+        BankApiImpl api = new BankApiImpl(bankClients);
+        Optional<BankClient> expectedBankClient = Optional.of(client1);
+        Optional<BankClient> realBankClient = api.findByUid(userCredentials, "1");
+
+        printTestResult(!realBankClient.equals(expectedBankClient), "Should not find in empty list");
     }
 
     void shouldNotThrowExceptionWithProperRoles() {
