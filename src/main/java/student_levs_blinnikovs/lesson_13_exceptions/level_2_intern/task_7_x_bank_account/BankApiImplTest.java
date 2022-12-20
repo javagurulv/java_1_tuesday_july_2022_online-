@@ -21,9 +21,9 @@ class BankApiImplTest {
 
         try {
             api.findByUid(userCredentials, "1");
-            System.out.println("TEST OK - Shouldn't throw AccessDeniedException and didn't.");
+            System.out.println("TEST OK - Shouldn't throw AccessDeniedException WITH proper roles and didn't.");
         } catch (AccessDeniedException e) {
-            System.out.println("TEST NOT OK - Should not throw AccessDeniedException but did.");
+            System.out.println("TEST NOT OK - Should not throw AccessDeniedException WITH proper roles but did.");
         }
     }
 
@@ -39,9 +39,9 @@ class BankApiImplTest {
 
         try {
             api.findByUid(userCredentials, "1");
-            System.out.println("TEST NOT OK - Didn't throw AccessDeniedException.");
+            System.out.println("TEST NOT OK - Didn't throw AccessDeniedException WITH NOT proper roles but had to.");
         } catch (AccessDeniedException e) {
-            System.out.println("TEST OK - Should not find non existing by id and throw AccessDeniedException.");
+            System.out.println("TEST OK - Did throw AccessDeniedException WITH NOT proper roles.");
         }
 
     }
