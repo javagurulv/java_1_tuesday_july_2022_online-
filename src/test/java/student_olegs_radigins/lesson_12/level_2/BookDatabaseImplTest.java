@@ -63,4 +63,11 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabase.deleteByTitle("Skazki");
         assertNotSame(List.of(),bookDatabase.findByTitle("Skazki"));
     }
+
+    public void testFind() {
+        SearchCriteria searchCriteria = new AuthorSearchCriteria("Pushkin");
+        SearchCriteria searchCriteria1 = new TitleSearchCriteria("Skazki");
+        assertEquals(true,searchCriteria.match(book));
+        assertEquals(false, searchCriteria1.match(book));
+    }
 }

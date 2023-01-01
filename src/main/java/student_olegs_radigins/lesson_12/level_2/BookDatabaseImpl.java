@@ -83,4 +83,15 @@ class BookDatabaseImpl implements BookDatabase {
     public void deleteByTitle(String title) {
         books.removeAll(findByTitle(title));
     }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> booksWithSearchCriteria = new ArrayList<>();
+        for (Book book : books){
+           if (searchCriteria.match(book)){
+               booksWithSearchCriteria.add(book);
+           }
+        }
+        return booksWithSearchCriteria;
+    }
 }
