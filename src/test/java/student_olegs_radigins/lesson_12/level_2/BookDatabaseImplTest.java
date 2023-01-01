@@ -82,4 +82,12 @@ public class BookDatabaseImplTest extends TestCase {
         assertEquals(Set.of("Pushkin", "Gogol"),bookDatabase.findUniqueAuthors());
 
     }
+
+    public void testFindUniqueTitles() {
+        assertEquals(Set.of(),bookDatabase.findUniqueTitles());
+        bookDatabase.save(new Book("Pushkin","Onegin"));
+        bookDatabase.save(new Book("Gogol","Skazki"));
+        bookDatabase.save(book);
+        assertEquals(Set.of("Onegin", "Skazki", "aaaa"),bookDatabase.findUniqueTitles());
+    }
 }
