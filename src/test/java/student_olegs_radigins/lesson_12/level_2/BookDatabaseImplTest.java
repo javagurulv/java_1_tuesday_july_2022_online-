@@ -65,9 +65,11 @@ public class BookDatabaseImplTest extends TestCase {
     }
 
     public void testFind() {
+        bookDatabase.save(book);
         SearchCriteria searchCriteria = new AuthorSearchCriteria("Pushkin");
         SearchCriteria searchCriteria1 = new TitleSearchCriteria("Skazki");
-        assertEquals(true,searchCriteria.match(book));
-        assertEquals(false, searchCriteria1.match(book));
+        assertEquals(List.of(book),bookDatabase.find(searchCriteria));
+        assertEquals(List.of(), bookDatabase.find(searchCriteria1));
+
     }
 }
