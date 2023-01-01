@@ -56,4 +56,11 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabase.deleteByAuthor("Pushkin");
         assertEquals(List.of(),bookDatabase.findByAuthor("Pushkin"));
     }
+
+    public void testDeleteByTitle() {
+        bookDatabase.save(new Book("Pushkin","Onegin"));
+        bookDatabase.save(new Book("Pushkin","Skazki"));
+        bookDatabase.deleteByTitle("Skazki");
+        assertNotSame(List.of(),bookDatabase.findByTitle("Skazki"));
+    }
 }
