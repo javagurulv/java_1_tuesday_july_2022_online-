@@ -57,4 +57,15 @@ class BookDatabaseImpl implements BookDatabase {
         return booksByAuthor;
 
     }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        List<Book> booksByTitle = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().equals(title)){
+                booksByTitle.add(book);
+            }
+        }
+        return booksByTitle;
+    }
 }
