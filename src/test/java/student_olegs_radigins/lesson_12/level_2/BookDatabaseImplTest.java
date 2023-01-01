@@ -39,14 +39,21 @@ public class BookDatabaseImplTest extends TestCase {
     }
 
     public void testFindByTitle() {
-        assertNotSame(List.of(),bookDatabase.findByTitle("bbb"));
+        assertEquals(List.of(),bookDatabase.findByTitle("bbb"));
         bookDatabase.save(book);
-        assertNotSame(List.of(book),bookDatabase.findByTitle("aaaa"));
+        assertEquals(List.of(book),bookDatabase.findByTitle("aaaa"));
     }
 
     public void testCountAllBooks() {
         assertEquals(0,bookDatabase.countAllBooks());
         bookDatabase.save(book);
         assertEquals(1,bookDatabase.countAllBooks());
+    }
+
+    public void testDeleteByAuthor() {
+        bookDatabase.save(new Book("Pushkin","Onegin"));
+        bookDatabase.save(new Book("Pushkin","Skazki"));
+        bookDatabase.deleteByAuthor("Pushkin");
+        assertEquals(List.of(),bookDatabase.findByAuthor("Pushkin"));
     }
 }

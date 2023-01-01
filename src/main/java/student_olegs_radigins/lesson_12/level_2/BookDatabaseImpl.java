@@ -73,4 +73,9 @@ class BookDatabaseImpl implements BookDatabase {
     public int countAllBooks() {
         return books.size();
     }
+
+    @Override
+    public void deleteByAuthor(String author) {
+        books.removeAll(findByAuthor(author));
+    }
 }
