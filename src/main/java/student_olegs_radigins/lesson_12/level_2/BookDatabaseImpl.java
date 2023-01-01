@@ -2,6 +2,7 @@ package student_olegs_radigins.lesson_12.level_2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class BookDatabaseImpl implements BookDatabase {
     List<Book> books = new ArrayList<>();
@@ -33,5 +34,15 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return false;
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)){
+                return Optional.of(book);
+            }
+        }
+        return Optional.empty();
     }
 }
