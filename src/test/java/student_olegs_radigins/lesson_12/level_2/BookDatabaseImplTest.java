@@ -2,6 +2,7 @@ package student_olegs_radigins.lesson_12.level_2;
 
 import junit.framework.TestCase;
 
+import java.util.List;
 import java.util.Optional;
 
 public class BookDatabaseImplTest extends TestCase {
@@ -29,5 +30,11 @@ public class BookDatabaseImplTest extends TestCase {
         assertEquals(Optional.empty(),bookDatabase.findById(3L));
         bookDatabase.save(book);
         assertEquals(Optional.of(book),bookDatabase.findById(3L));
+    }
+
+    public void testFindByAuthor() {
+        assertEquals(List.of(),bookDatabase.findByAuthor("aaa"));
+        bookDatabase.save(book);
+        assertEquals(List.of(book),bookDatabase.findByAuthor("Pushkin"));
     }
 }
