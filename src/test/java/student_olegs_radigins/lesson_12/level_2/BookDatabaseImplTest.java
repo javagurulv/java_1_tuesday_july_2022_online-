@@ -102,4 +102,10 @@ public class BookDatabaseImplTest extends TestCase {
 
 
     }
+
+    public void testContains() {
+        assertEquals(false,bookDatabase.contains(book));
+        bookDatabase.save(book);
+        assertEquals(true, bookDatabase.contains(book));
+    }
 }

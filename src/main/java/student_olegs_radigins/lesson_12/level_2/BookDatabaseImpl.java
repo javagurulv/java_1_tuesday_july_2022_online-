@@ -120,4 +120,14 @@ class BookDatabaseImpl implements BookDatabase {
         }
         return uniqueBooks;
     }
+
+    @Override
+    public boolean contains(Book book) {
+        for (Book book1 : books){
+            if (book.equals(book1)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

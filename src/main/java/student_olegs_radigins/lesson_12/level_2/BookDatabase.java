@@ -18,4 +18,5 @@ interface BookDatabase {
     Set<String> findUniqueAuthors();
     Set<String> findUniqueTitles();
     Set<Book> findUniqueBooks();
+    boolean contains(Book book);
 }
