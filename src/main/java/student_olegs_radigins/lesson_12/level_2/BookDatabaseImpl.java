@@ -1,8 +1,6 @@
 package student_olegs_radigins.lesson_12.level_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {
     List<Book> books = new ArrayList<>();
@@ -93,5 +91,14 @@ class BookDatabaseImpl implements BookDatabase {
            }
         }
         return booksWithSearchCriteria;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> authors = new HashSet<>();
+        for (Book book : books){
+            authors.add(book.getAuthor());
+        }
+        return authors;
     }
 }

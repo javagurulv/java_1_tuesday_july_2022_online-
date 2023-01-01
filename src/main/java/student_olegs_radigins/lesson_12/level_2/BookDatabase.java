@@ -2,6 +2,7 @@ package student_olegs_radigins.lesson_12.level_2;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 interface BookDatabase {
     Long save(Book book);
@@ -14,4 +15,5 @@ interface BookDatabase {
     void deleteByAuthor(String author);
     void deleteByTitle(String title);
     List<Book> find(SearchCriteria searchCriteria);
+    Set<String> findUniqueAuthors();
 }

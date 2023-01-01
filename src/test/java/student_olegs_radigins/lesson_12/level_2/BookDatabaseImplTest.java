@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public class BookDatabaseImplTest extends TestCase {
     Book book = new Book("Pushkin", "aaaa");
@@ -70,6 +71,15 @@ public class BookDatabaseImplTest extends TestCase {
         SearchCriteria searchCriteria1 = new TitleSearchCriteria("Skazki");
         assertEquals(List.of(book),bookDatabase.find(searchCriteria));
         assertEquals(List.of(), bookDatabase.find(searchCriteria1));
+
+    }
+
+    public void testFindUniqueAuthors() {
+        assertEquals(Set.of(), bookDatabase.findUniqueAuthors());
+        bookDatabase.save(new Book("Pushkin","Onegin"));
+        bookDatabase.save(new Book("Gogol","Skazki"));
+        bookDatabase.save(book);
+        assertEquals(Set.of("Pushkin", "Gogol"),bookDatabase.findUniqueAuthors());
 
     }
 }
