@@ -1,6 +1,7 @@
 package student_olegs_radigins.lesson_12.level_2;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 class BookDatabaseImpl implements BookDatabase {
     List<Book> books = new ArrayList<>();
@@ -109,5 +110,14 @@ class BookDatabaseImpl implements BookDatabase {
             titles.add(book.getTitle());
         }
         return titles;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        Set<Book> uniqueBooks = new HashSet<>();
+        for( Book book : books){
+            uniqueBooks.add(book);
+        }
+        return uniqueBooks;
     }
 }

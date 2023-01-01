@@ -90,4 +90,16 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabase.save(book);
         assertEquals(Set.of("Onegin", "Skazki", "aaaa"),bookDatabase.findUniqueTitles());
     }
+
+    public void testFindUniqueBooks() {
+        assertEquals(0,bookDatabase.findUniqueBooks().size());
+        bookDatabase.save(new Book("Pushkin","Onegin"));
+        bookDatabase.save(new Book("Gogol","Skazki"));
+        bookDatabase.save(book);
+        bookDatabase.save(book);
+        bookDatabase.save(book);
+        assertEquals(3,bookDatabase.findUniqueBooks().size());
+
+
+    }
 }
