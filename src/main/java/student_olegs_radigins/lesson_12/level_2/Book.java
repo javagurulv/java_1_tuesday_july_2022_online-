@@ -6,6 +6,15 @@ class Book {
     private Long id;
     private String title;
     private String author;
+    private String yearOfIssue;
+
+    public void setYearOfIssue(String yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
+    }
+
+    public String getYearOfIssue() {
+        return yearOfIssue;
+    }
 
     public Book(String author, String title) {
         this.title = title;
