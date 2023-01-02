@@ -108,4 +108,20 @@ public class BookDatabaseImplTest extends TestCase {
         bookDatabase.save(book);
         assertEquals(true, bookDatabase.contains(book));
     }
+
+    public void testGetAuthorToBooksMap() {
+        Book book1 = new Book("1","1");
+        Book book2 = new Book("1","2");
+        Book book3 = new Book("1","3");
+        Book book4 = new Book("2","4");
+        Book book5 = new Book("3","5");
+        Book book6 = new Book("3","6");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        bookDatabase.save(book5);
+        bookDatabase.save(book6);
+        assertEquals(List.of(book5,book6),bookDatabase.getAuthorToBooksMap().get("3"));
+    }
 }
