@@ -23,5 +23,12 @@ package student_yurii_panasiuk.lesson_14.level_3;
          boolean[][] culatedNextGeneration = testRule4.calculateRule4(currentGeneration);
          testRule4.Print(culatedNextGeneration);
 
+         GameOfLifeRandomStateGenerator generator = new GameOfLifeRandomStateGenerator(new boolean[50][50]);
+
+         GameOfLifeDisplayer displayer = new GameOfLifeDisplayer(new GliderGun().create());
+        // displayer.display();
+         displayer.startAnimation();
+
+
      }
 }

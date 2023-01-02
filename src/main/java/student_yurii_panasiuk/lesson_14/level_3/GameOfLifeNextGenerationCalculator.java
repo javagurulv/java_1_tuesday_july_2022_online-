@@ -6,12 +6,12 @@ class GameOfLifeNextGenerationCalculator {
     private boolean[][] grid;
     private boolean[][] nextGrid;
 
-    public GameOfLifeNextGenerationCalculator(boolean[][] grid) {
+     GameOfLifeNextGenerationCalculator(boolean[][] grid) {
         this.grid = grid;
         nextGrid = new boolean[grid.length][grid[0].length];
     }
 
-    public boolean[][] calculateRule1(boolean[][] currentGeneration) {
+     boolean[][] calculateRule1(boolean[][] currentGeneration) {
     // Rule One. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
@@ -26,7 +26,7 @@ class GameOfLifeNextGenerationCalculator {
         }
         return nextGrid;
     }
-    public boolean[][] calculateRule2(boolean[][] currentGeneration) {
+     boolean[][] calculateRule2(boolean[][] currentGeneration) {
     // Rule Two. Any live cell with more than three live neighbours dies, as if by overpopulation.
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
@@ -42,7 +42,7 @@ class GameOfLifeNextGenerationCalculator {
         return nextGrid;
     }
 
-    public boolean[][] calculateRule3(boolean[][] currentGeneration) {
+     boolean[][] calculateRule3(boolean[][] currentGeneration) {
     // Rule Three. Any live cell with two or three live neighbours lives on to the next generation.
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
@@ -57,7 +57,7 @@ class GameOfLifeNextGenerationCalculator {
         }
         return nextGrid;
    }
-   public boolean[][] calculateRule4(boolean[][] currentGeneration) {
+    boolean[][] calculateRule4(boolean[][] currentGeneration) {
    // Rule Four. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
    // Print(currentGeneration);
        int r = 0;
@@ -98,7 +98,7 @@ class GameOfLifeNextGenerationCalculator {
     private boolean isValid(int row, int col) {
         return row >= 0 && row < grid.length && col >= 0 && col < grid[0].length;
     }
-    public void Print ( boolean[][] array ) {
+     void Print ( boolean[][] array ) {
            for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j] + " ");
