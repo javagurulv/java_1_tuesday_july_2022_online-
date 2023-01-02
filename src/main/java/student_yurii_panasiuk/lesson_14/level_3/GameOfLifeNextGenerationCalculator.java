@@ -25,9 +25,23 @@ class GameOfLifeNextGenerationCalculator {
         }
         return nextGrid;
     }
+    // Rule Two. Any live cell with more than three live neighbours dies, as if by overpopulation.
+    public boolean[][] calculateRule2(boolean[][] currentGeneration) {
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[0].length; c++) {
+                int neighbors = countNeighbors(r, c);
+                if (grid[r][c]) {
+                    if (neighbors > 3  ) {
+                        nextGrid[r][c] = false;
+                    }
+                }
+            }
+        }
+        return nextGrid;
+    }
 
-        // Rule Two. Any live cell with two or three live neighbours lives on to the next generation.
-        public boolean[][] calculateRule2(boolean[][] currentGeneration) {
+        // Rule Three. Any live cell with two or three live neighbours lives on to the next generation.
+        public boolean[][] calculateRule3(boolean[][] currentGeneration) {
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
                 int neighbors = countNeighbors(r, c);

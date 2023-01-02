@@ -29,7 +29,35 @@ public class GameOfLifeNextGenerationCalculatorTest extends TestCase {
 
         Assert.assertArrayEquals(testRule1.calculateRule1(currentGeneration), nextGeneration);
    }
-    public void testCalculateRule2() {
+   /*Правило 2:
+Любая живая клетка с больше чем тремя живыми соседями умирает в следующем поколении.
+    */
+   public void testCalculateRule2() {
+       boolean[][] currentGeneration = {
+               {true, true, true, false, false},
+               {true, true, false, false, false},
+               {false, false, true, true, false},
+               {false, true, true, true, false},
+               {false, false, false, false, false}
+       };
+       boolean[][] nextGeneration = {
+               {true, false, true, false, false},
+               {true, false, false, false, false},
+               {false, false, false, true, false},
+               {false, true, false, true, false},
+               {false, false, false, false, false}
+       };
+
+       GameOfLifeNextGenerationCalculator testRule2 = new GameOfLifeNextGenerationCalculator(currentGeneration);
+
+       boolean[][] culatedNextGeneration = testRule2.calculateRule3(currentGeneration);
+
+       Assert.assertArrayEquals(testRule2.calculateRule3(currentGeneration), nextGeneration);
+   };
+   /*Правило 3:
+Любая живая клетка с двумя или тремя живыми соседями остаётся живой в следующем поколении.
+    */
+    public void testCalculateRule3() {
         boolean[][] currentGeneration = {
                 {false, false, true, false, false},
                 {false, true, true, true, false},
@@ -45,11 +73,11 @@ public class GameOfLifeNextGenerationCalculatorTest extends TestCase {
                 {true, false, false, false, false}
         };
 
-        GameOfLifeNextGenerationCalculator testRule2 = new GameOfLifeNextGenerationCalculator(currentGeneration);
+        GameOfLifeNextGenerationCalculator testRule3 = new GameOfLifeNextGenerationCalculator(currentGeneration);
 
-        boolean[][] culatedNextGeneration = testRule2.calculateRule2(currentGeneration);
+        boolean[][] culatedNextGeneration = testRule3.calculateRule3(currentGeneration);
 
-        Assert.assertArrayEquals(testRule2.calculateRule2(currentGeneration), nextGeneration);
+        Assert.assertArrayEquals(testRule3.calculateRule3(currentGeneration), nextGeneration);
         };
 
 }
