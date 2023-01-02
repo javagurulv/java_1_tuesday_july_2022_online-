@@ -3,6 +3,7 @@ package student_yurii_panasiuk.lesson_14.level_4;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
 
@@ -23,5 +24,14 @@ public class StringCalculatorTest {
         String Test5 = "1,O";
         new StringCalculator().add(Test5);
 
+    }
+    @Test
+    public void testAddMoreThanTwoNumbers() throws Exception {
+        String Test6 = "1,2,-1,-2, 5,5";
+        String Test7 = "1,2,-1,-2, 5\n5";
+        String Test8 = "1\n"; //- “1\n” - не разрешённый ввод ))
+        assertEquals(10, new StringCalculator().add(Test6));
+        assertEquals(10, new StringCalculator().add(Test7));
+        assertEquals(1, new StringCalculator().add(Test8));
     }
 }
