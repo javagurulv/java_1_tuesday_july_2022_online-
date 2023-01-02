@@ -11,13 +11,29 @@ class GameOfLifeNextGenerationCalculator {
         nextGrid = new boolean[grid.length][grid[0].length];
     }
 
-    public boolean[][] calculate(boolean[][] currentGeneration) {
+    public boolean[][] calculateRule1(boolean[][] currentGeneration) {
+        // Rule One. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
                 int neighbors = countNeighbors(r, c);
                 if (grid[r][c]) {
                     if (neighbors < 2) {
                         nextGrid[r][c] = false;
+                    }
+                }
+            }
+        }
+        return nextGrid;
+    }
+
+        // Rule Two. Any live cell with two or three live neighbours lives on to the next generation.
+        public boolean[][] calculateRule2(boolean[][] currentGeneration) {
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[0].length; c++) {
+                int neighbors = countNeighbors(r, c);
+                if (grid[r][c]) {
+                    if (neighbors >= 2 && neighbors <= 3  ) {
+                        nextGrid[r][c] = true;
                     }
                 }
             }
