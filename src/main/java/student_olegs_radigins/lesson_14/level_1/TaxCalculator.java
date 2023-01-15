@@ -1,0 +1,7 @@
+package student_olegs_radigins.lesson_14.level_1;
+
+import java.math.BigDecimal;
+
+interface TaxCalculator {
+    BigDecimal calculateTax(BigDecimal income);
+}
