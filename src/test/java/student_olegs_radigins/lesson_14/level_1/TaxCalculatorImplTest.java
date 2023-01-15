@@ -29,6 +29,12 @@ public class TaxCalculatorImplTest {
         var taxToPay = taxCalculator.calculateTax(income);
         assertEquals(taxToPay, new BigDecimal("5000.00"));
     }
+    @Test
+    public void shouldPay40PercentTaxWhenIncomeBiggerThen20000() {
+        var income = new BigDecimal(30000);
+        var taxToPay = taxCalculator.calculateTax(income);
+        assertEquals(taxToPay, new BigDecimal("9000.00"));
+    }
 
 
 }
