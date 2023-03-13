@@ -8,7 +8,12 @@ class Division {
         int a = 50;
         int b = 3;
         System.out.println("Result = " + a/b); // Первый вариант
-        int result = a/b;
+        extracted(a, b);
+
+    }
+
+    private static void extracted(int a, int b) {
+        int result = a / b;
         System.out.println("Result = " + result); // Второй вариант
     }
 }
